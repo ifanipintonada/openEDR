@@ -707,9 +707,10 @@ Weed LL. Medical records that guide and teach. N Engl J Med. 1968 Mar 14;278(11)
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"bcd7380c148bab86599bd8fbaf850fc0">
+		["MD5-CAM-1.0.1"] = <"b91ea0897e98bfb061f03cc0ab4d4264">
 		["build_uid"] = <"5084c995-e34b-4832-aa41-b43ca3fe7fdf">
 		["revision"] = <"1.4.1">
+		["ip_acknowledgements"] = <"This artefact includes content from SNOMED Clinical Terms® (SNOMED CT®) which is copyrighted material of the International Health Terminology Standards Development Organisation (IHTSDO). Where an implementation of this artefact makes use of SNOMED CT content, the implementer must have the appropriate SNOMED CT Affiliate license - for more information contact https://www.snomed.org/snomed-ct/get-snomed or info@snomed.org.">
 	>
 
 definition
@@ -719,16 +720,7 @@ definition
 				items cardinality matches {1..*; unordered} matches {
 					ELEMENT[at0002] matches {    -- Problem/Diagnosis name
 						value matches {
-							DV_CODED_TEXT matches {
-								defining_code matches {
-									[ac0000]
-								}
-							}
-						}
-					}
-					ELEMENT[at0079] occurrences matches {0..*} matches {    -- Variant
-						value matches {
-							DV_TEXT matches {*}
+							DV_CODED_TEXT matches {*}
 						}
 					}
 					ELEMENT[at0009] occurrences matches {0..1} matches {    -- Clinical description
@@ -770,15 +762,6 @@ definition
 									at0049]    -- Severe
 								}
 							}
-							DV_TEXT matches {*}
-						}
-					}
-					allow_archetype CLUSTER[at0043] occurrences matches {0..*} matches {    -- Specific details
-						include
-							archetype_id/value matches {/.*/}
-					}
-					ELEMENT[at0072] occurrences matches {0..1} matches {    -- Course description
-						value matches {
 							DV_TEXT matches {*}
 						}
 					}
@@ -830,13 +813,13 @@ definition
 	}
 
 ontology
-	terminologies_available = <"SnomedCT_Finding", ...>
+	terminologies_available = <"SNOMED-CT", ...>
 	term_definitions = <
 		["es"] = <
 			items = <
 				["at0000"] = <
-					text = <"Problema/Diagnóstico">
-					description = <"Detalles sobre una única condición de salud, lesión, discapacidad o cualquier otro problema identificado que afecte al bienestar físico, mental y/o social de un individuo.">
+					text = <"*Problem/Diagnosis(en)">
+					description = <"*Detalles sobre una única condición de salud, lesión, discapacidad o cualquier otro problema identificado que afecte al bienestar físico, mental y/o social de un individuo.">
 					comment = <"En la práctica, no es fácil distinguir claramente entre el alcance de un problema y el de un diagnóstico. A efectos de la documentación clínica con este arquetipo, el problema y el diagnóstico se consideran un continuo, con niveles crecientes de detalle y evidencia de apoyo que generalmente aportan peso a la etiqueta de \"diagnóstico\".">
 				>
 				["at0001"] = <
@@ -844,8 +827,8 @@ ontology
 					description = <"@ internal @">
 				>
 				["at0002"] = <
-					text = <"Nombre del problema/diagnóstico">
-					description = <"Identificación del problema o diagnóstico, por nombre.">
+					text = <"*Problem/Diagnosis name(en)">
+					description = <"*Identificación del problema o diagnóstico, por nombre.">
 					comment = <"Siempre que sea posible, es preferible codificar el nombre del problema o diagnóstico con una terminología.">
 				>
 				["at0003"] = <
@@ -885,11 +868,6 @@ Utilice este elemento de datos para registrar ubicaciones anatómicas precoordin
 
 Si la ubicación anatómica se incluye en el nombre del problema/diagnóstico mediante códigos precoordinados, el uso de este SLOT se vuelve redundante.">
 				>
-				["at0043"] = <
-					text = <"Detalles específicos">
-					description = <"Detalles que es necesario registrar adicionalmente como atributos únicos de este problema o diagnóstico.">
-					comment = <"Puede incluir detalles estructurados sobre la clasificación o estadificación del diagnóstico; criterios de diagnóstico, criterios de clasificación o evaluaciones de gravedad formales, como los Criterios Terminológicos Comunes para Eventos Adversos.">
-				>
 				["at0046"] = <
 					text = <"Estado">
 					description = <"Detalles estructurados para aspectos específicos del proceso de diagnóstico de ubicación, dominio, episodio o flujo de trabajo.">
@@ -920,10 +898,6 @@ Si la ubicación anatómica se incluye en el nombre del problema/diagnóstico me
 					description = <"Información adicional necesaria para registrar el contenido local o para alinearse con otros modelos/formalismos de referencia.">
 					comment = <"Por ejemplo: requisitos locales de información o metadatos adicionales para alinearse con los equivalentes de FHIR o CIMI.">
 				>
-				["at0072"] = <
-					text = <"Progreso">
-					description = <"Descripción narrativa sobre la evolución del problema o diagnóstico desde su aparición.">
-				>
 				["at0073"] = <
 					text = <"Certeza diagnóstica">
 					description = <"Nivel de confianza en la identificación del diagnóstico.">
@@ -951,18 +925,13 @@ Si la ubicación anatómica se incluye en el nombre del problema/diagnóstico me
 					description = <"Causa, conjunto de causas o manera de causar el problema o diagnóstico.">
 					comment = <"También denominada \"etiología\". Siempre que sea posible, es preferible codificar con una terminología.">
 				>
-				["at0079"] = <
-					text = <"Variante">
-					description = <"Variante o subtipo específico del Diagnóstico, si procede.">
-					comment = <"Por ejemplo: \"neuropatía axonal motora aguda\" como variante del síndrome de Guillain-Barré. Siempre que sea posible, es preferible codificar el nombre de la variante con una terminología.">
-				>
 			>
 		>
 		["es-ar"] = <
 			items = <
 				["at0000"] = <
-					text = <"Problema/Diagnóstico">
-					description = <"Detalles acerca de una condición de salud, lesión, incapacidad o cualquier otra cuerstión, univocamente identificadas, que impacta sobre el bienestar físico, mental y/o social de un individuo">
+					text = <"*Problem/Diagnosis(en)">
+					description = <"*Detalles acerca de una condición de salud, lesión, incapacidad o cualquier otra cuerstión, univocamente identificadas, que impacta sobre el bienestar físico, mental y/o social de un individuo">
 					comment = <"La delineación entre el alcance de un problema versus el diagnóstico puede no ser fácil de lograr en la práctica. A los fines de la documentación clínica mediante este arquetipo, problema y diagnóstico son considerados un continuo, donde niveles incrementales de detalles y evidencia de apoyo otorgan mas peso a la etiqueta de \"diagnóstico\".">
 				>
 				["at0001"] = <
@@ -970,8 +939,8 @@ Si la ubicación anatómica se incluye en el nombre del problema/diagnóstico me
 					description = <"*@ internal @(en)">
 				>
 				["at0002"] = <
-					text = <"Nombre del problema/diagnóstico">
-					description = <"Identificación del problema o diagnóstico, por nombre.">
+					text = <"*Problem/Diagnosis name(en)">
+					description = <"*Identificación del problema o diagnóstico, por nombre.">
 					comment = <"Se prefiere la codificación del nombre del problema o diagnóstico mediante una terminología cuando esto sea posible.">
 				>
 				["at0003"] = <
@@ -1010,11 +979,6 @@ Utilícese este dato para registrar localizaciones anatómicas precoordinadas. S
 					comment = <"Utilícese este slot para insertar los arqeutipos de CLUSTER.anatomical_location o CLUSTER.relative_location si los requerimientos de registro de la localización anatómica son determinados en tiempo de ejecución por la aplicación o se requiere un modelado más complejo tal como localizaciones relativas.
 Si la localización anatómica está incluida en el nombre del problema o diagnóstico mediante códigos precoordinados, este dato se torna redundante.">
 				>
-				["at0043"] = <
-					text = <"Detalles específicos">
-					description = <"Detalles adicionales requeridos para registrar como atributos unívocos del este problema o diagnóstico.">
-					comment = <"Puede incluir detalles estructurados acerca del grado o estadificación del diagnóstico, criterios diagnósticos, criterios de clasificación o una evaluación formal de severidad tal como los Criterios Terminológicos Comunes para Eventos Adversos.">
-				>
 				["at0046"] = <
 					text = <"Estado">
 					description = <"Detalles estructurados para los aspectos específicos de localización, dominio, episodio o decurso del proceso diagnóstico.">
@@ -1045,10 +1009,6 @@ Si la localización anatómica está incluida en el nombre del problema o diagn�
 					description = <"Información adicional requerida para consignar contenidos locales o alinear con otros modelos de referencia o formalismos.">
 					comment = <"Por ejemplo: requerimientos de información local o metadatos adicionales para alineamiento con equivalentes en FHIR o CIMI.">
 				>
-				["at0072"] = <
-					text = <"Descripción del curso">
-					description = <"Descripción narrativa del curso del problema o diagnóstico desde su aparición.">
-				>
 				["at0073"] = <
 					text = <"Certeza diagnóstica">
 					description = <"El nivel de certeza de la identificación del diagnóstico.">
@@ -1076,18 +1036,13 @@ Si la localización anatómica está incluida en el nombre del problema o diagn�
 					description = <"*A cause, set of causes, or manner of causation of the problem or diagnosis.(en)">
 					comment = <"*Also known as 'aetiology' or 'etiology'. Coding with an external terminology is preferred, where possible.(en)">
 				>
-				["at0079"] = <
-					text = <"*Variant (en)">
-					description = <"*Specific variant or subtype of the Diagnosis, if relevant. (en)">
-					comment = <"*For example: 'acute motor axonal neuropathy' as a variant of Guillain-Barre Syndrome. Coding of the name of the variant with a terminology is preferred, where possible.  (en)">
-				>
 			>
 		>
 		["de"] = <
 			items = <
 				["at0000"] = <
-					text = <"Problem/Diagnose">
-					description = <"Angaben über einen einzelnen identifizierten Gesundheitszustand, eine Verletzung, eine Behinderung oder ein Problem, welches das körperliche, geistige und/oder soziale Wohlergehen einer Einzelperson beeinträchtigt.">
+					text = <"*Problem/Diagnosis(en)">
+					description = <"*Angaben über einen einzelnen identifizierten Gesundheitszustand, eine Verletzung, eine Behinderung oder ein Problem, welches das körperliche, geistige und/oder soziale Wohlergehen einer Einzelperson beeinträchtigt.">
 					comment = <"Eine klare Abgrenzung zwischen Problem und Diagnose ist in der Praxis nicht einfach zu erreichen. Für die Zwecke der klinischen Dokumentation mit diesem Archetyp werden Problem und Diagnose als ein Kontinuum betrachtet, mit zunehmendem Detaillierungsgrad und unterstützenden Beweisen, die in der Regel dem Etikett \"Diagnose\" Gewicht verleihen.">
 				>
 				["at0001"] = <
@@ -1095,8 +1050,8 @@ Si la localización anatómica está incluida en el nombre del problema o diagn�
 					description = <"@ internal @">
 				>
 				["at0002"] = <
-					text = <"Name des Problems/ der Diagnose">
-					description = <"Namentliche Identifikation des Problems oder der Diagnose.">
+					text = <"*Problem/Diagnosis name(en)">
+					description = <"*Namentliche Identifikation des Problems oder der Diagnose.">
 					comment = <"Wo möglich, ist die Kodierung des Problems oder der Diagnose über eine Terminologie zu bevorzugen.">
 				>
 				["at0003"] = <
@@ -1133,11 +1088,6 @@ Si la localización anatómica está incluida en el nombre del problema o diagn�
 					description = <"Eine strukturierte anatomische Lokalisation des Problems oder der Diagnose.">
 					comment = <"Verwenden Sie diesen SLOT, um die Archetypen CLUSTER.anatomical_location oder CLUSTER.relative_location einzufügen, wenn die Anforderungen für die Aufnahme der anatomischen Position zur Laufzeit der Anwendung bestimmt werden oder komplexere Modellierungen wie z.B. relative Positionen erforderlich sind. Ist die anatomische Lokalisation über präkoordinierte Codes im Namen des Problems/Diagnose enthalten, wird die Verwendung dieses SLOT überflüssig.">
 				>
-				["at0043"] = <
-					text = <"Spezifische Angaben">
-					description = <"Zusätzlich benötigte Angaben, welche als eindeutige Merkmale des Problem/der Diagnose erfasst werden sollten.">
-					comment = <"Hier können strukturierte Angaben über die Einstufung oder das Stadium der Diagnose enthalten sein; diagnostische Kriterien, Klassifizierungskriterien oder formale Bewertungen des Schweregrades wie z.B. \"Common Terminology Criteria for Adverse Events\".">
-				>
 				["at0046"] = <
 					text = <"Status">
 					description = <"Strukturierte Angaben zu standort-, domänen-, episoden- oder workflow-spezifischen Aspekten des diagnostischen Prozesses.">
@@ -1168,10 +1118,6 @@ Si la localización anatómica está incluida en el nombre del problema o diagn�
 					description = <"Zusätzliche Informationen zur Erfassung lokaler Inhalte oder Anpassung an andere Referenzmodelle/Formalismen.">
 					comment = <"Zum Beispiel: Lokaler Informationsbedarf oder zusätzliche Metadaten zur Anpassung an FHIR-Ressourcen oder CIMI-Modelle.">
 				>
-				["at0072"] = <
-					text = <"Beschreibung des Verlaufs">
-					description = <"Beschreibung des Problem-/ Diagnoseverlaufs seit Beginn.">
-				>
 				["at0073"] = <
 					text = <"Diagnostische Sicherheit">
 					description = <"Grad der Sicherheit, mit der die Diagnose festgestellt wurde.">
@@ -1198,11 +1144,6 @@ Si la localización anatómica está incluida en el nombre del problema o diagn�
 					text = <"Ursache">
 					description = <"Die Ursache, eine Reihe von Ursachen oder eine Art und Weise der Verursachung des Problems oder der Diagnose.">
 					comment = <"Auch bekannt als „Ätiologie“. Die Codierung mit einer externen Terminologie wird nach Möglichkeit bevorzugt.">
-				>
-				["at0079"] = <
-					text = <"Variante">
-					description = <"Spezifische Variante oder Subtyp der Diagnose, falls relevant.">
-					comment = <"Zum Beispiel: „Akute motorische axonale Neuropathie“ als Variante des Guillain-Barre-Syndroms. Wo möglich, ist die Kodierung des Namens der Variante über eine Terminologie zu bevorzugen.">
 				>
 			>
 		>
@@ -1260,11 +1201,6 @@ Use this data element to record precoordinated anatomical locations. If the requ
 
 If the anatomical location is included in the Problem/diagnosis name via precoordinated codes, use of this SLOT becomes redundant.">
 				>
-				["at0043"] = <
-					text = <"Specific details">
-					description = <"Details that are additionally required to record as unique attributes of this problem or diagnosis.">
-					comment = <"May include structured detail about the grading or staging of the diagnosis; diagnostic criteria, classification criteria or formal severity assessments such as Common Terminology Criteria for Adverse Events.">
-				>
 				["at0046"] = <
 					text = <"Status">
 					description = <"Structured details for location-, domain-, episode- or workflow-specific aspects of the diagnostic process.">
@@ -1295,10 +1231,6 @@ If the anatomical location is included in the Problem/diagnosis name via precoor
 					description = <"Additional information required to capture local content or to align with other reference models/formalisms.">
 					comment = <"For example: local information requirements or additional metadata to align with FHIR or CIMI equivalents.">
 				>
-				["at0072"] = <
-					text = <"Course description">
-					description = <"Narrative description about the course of the problem or diagnosis since onset.">
-				>
 				["at0073"] = <
 					text = <"Diagnostic certainty">
 					description = <"The level of confidence in the identification of the diagnosis.">
@@ -1326,18 +1258,13 @@ If the anatomical location is included in the Problem/diagnosis name via precoor
 					description = <"A cause, set of causes, or manner of causation of the problem or diagnosis.">
 					comment = <"Also known as 'aetiology' or 'etiology'. Coding with an external terminology is preferred, where possible.">
 				>
-				["at0079"] = <
-					text = <"Variant">
-					description = <"Specific variant or subtype of the Diagnosis, if relevant.">
-					comment = <"For example: 'acute motor axonal neuropathy' as a variant of Guillain-Barre Syndrome. Coding of the name of the variant with a terminology is preferred, where possible. ">
-				>
 			>
 		>
 		["ar-sy"] = <
 			items = <
 				["at0000"] = <
 					text = <"*Problem/Diagnosis(en)">
-					description = <"*Details about a single identified health condition, injury, disability or any other issue which impacts on the physical, mental and/or social well-being of an individual.(en)">
+					description = <"*Details about a single identified health condition, injury, disability or any other issue which impacts on the physical, mental and/or social well-being of an individual.">
 					comment = <"*Clear delineation between the scope of a problem versus a diagnosis is not easy to achieve in practice. For the purposes of clinical documentation with this archetype, problem and diagnosis are regarded as a continuum, with increasing levels of detail and supportive evidence usually providing weight towards the label of 'diagnosis'.(en)">
 				>
 				["at0001"] = <
@@ -1346,7 +1273,7 @@ If the anatomical location is included in the Problem/diagnosis name via precoor
 				>
 				["at0002"] = <
 					text = <"*Problem/Diagnosis name(en)">
-					description = <"*Identification of the problem or diagnosis, by name.(en)">
+					description = <"*Identification of the problem or diagnosis, by name.">
 					comment = <"*Coding of the name of the problem or diagnosis with a terminology is preferred, where possible.(en)">
 				>
 				["at0003"] = <
@@ -1386,11 +1313,6 @@ Use this data element to record precoordinated anatomical locations. If the requ
 
 If the anatomical location is included in the Problem/diagnosis name via precoordinated codes, use of this SLOT becomes redundant.(en)">
 				>
-				["at0043"] = <
-					text = <"*Specific details(en)">
-					description = <"*Details that are additionally required to record as unique attributes of this problem or diagnosis.(en)">
-					comment = <"*May include structured detail about the grading or staging of the diagnosis; diagnostic criteria, classification criteria or formal severity assessments such as Common Terminology Criteria for Adverse Events.(en)">
-				>
 				["at0046"] = <
 					text = <"*Status(en)">
 					description = <"*Structured details for location-, domain-, episode- or workflow-specific aspects of the diagnostic process.(en)">
@@ -1421,10 +1343,6 @@ If the anatomical location is included in the Problem/diagnosis name via precoor
 					description = <"*Additional information required to capture local content or to align with other reference models/formalisms.(en)">
 					comment = <"*For example: local information requirements or additional metadata to align with FHIR or CIMI equivalents.(en)">
 				>
-				["at0072"] = <
-					text = <"*Course description(en)">
-					description = <"*Narrative description about the course of the problem or diagnosis since onset.(en)">
-				>
 				["at0073"] = <
 					text = <"*Diagnostic certainty(en)">
 					description = <"*The level of confidence in the identification of the diagnosis.(en)">
@@ -1451,18 +1369,13 @@ If the anatomical location is included in the Problem/diagnosis name via precoor
 					description = <"*A cause, set of causes, or manner of causation of the problem or diagnosis.(en)">
 					comment = <"*Also known as 'aetiology' or 'etiology'. Coding with an external terminology is preferred, where possible.(en)">
 				>
-				["at0079"] = <
-					text = <"*Variant (en)">
-					description = <"*Specific variant or subtype of the Diagnosis, if relevant. (en)">
-					comment = <"*For example: 'acute motor axonal neuropathy' as a variant of Guillain-Barre Syndrome. Coding of the name of the variant with a terminology is preferred, where possible.  (en)">
-				>
 			>
 		>
 		["pt-br"] = <
 			items = <
 				["at0000"] = <
-					text = <"Problema /Diagnóstico">
-					description = <"Detalhes sobre uma única condição de saúde identificada, lesões, deficiência ou qualquer outra questão que tenha impacto sobre o bem-estar físico, mental e / ou social de um indivíduo.">
+					text = <"*Problem/Diagnosis(en)">
+					description = <"*Detalhes sobre uma única condição de saúde identificada, lesões, deficiência ou qualquer outra questão que tenha impacto sobre o bem-estar físico, mental e / ou social de um indivíduo.">
 					comment = <"Delimitação clara entre o âmbito de um problema em comparação a um diagnóstico, não é fácil de se conseguir na prática. Para fins de documentação clínica com este arquétipo, problema e diagnóstico são considerados como uma continuidade, com níveis crescentes de detalhes e evidência de apoio, geralmente fornecendo peso para o rótulo de \"diagnóstico\".">
 				>
 				["at0001"] = <
@@ -1470,8 +1383,8 @@ If the anatomical location is included in the Problem/diagnosis name via precoor
 					description = <"@ internal @">
 				>
 				["at0002"] = <
-					text = <"Nome do Problema / Diagnóstico">
-					description = <"Identificação do problema ou diagnóstico, por nome.">
+					text = <"*Problem/Diagnosis name(en)">
+					description = <"*Identificação do problema ou diagnóstico, por nome.">
 					comment = <"Quando possível, é preferível usar a codificação do nome do problema ou diagnóstico com uma terminologia.">
 				>
 				["at0003"] = <
@@ -1514,11 +1427,6 @@ Se o tema do cuidado está com idade inferior a um ano, então a data completa o
 
 Se a localização anatômica está incluída ao nome Problema / diagnóstico, através de códigos pré-coordenados, o uso deste SLOT torna-se redundante.">
 				>
-				["at0043"] = <
-					text = <"Detalhes específicos">
-					description = <"Detalhes que são adicionalmente necessários para gravar atributos como únicos deste problema ou diagnóstico.">
-					comment = <"Pode incluir detalhes estruturados sobre a classificação ou a realização do diagnóstico; critérios de diagnóstico, critérios de classificação ou avaliação formal da severidade, como os critérios de terminologia comum para eventos adversos.">
-				>
 				["at0046"] = <
 					text = <"Estado">
 					description = <"Detalhes estruturados para localização, domínio, episódio ou aspectos específicos do fluxo de trabalho do processo de diagnóstico.">
@@ -1550,10 +1458,6 @@ Por exemplo: evolução do estado: inicial, inativo, resolvido, em remissão; es
 					description = <"Informações adicionais necessárias para capturar o conteúdo local ou para alinhar com outros modelos de referência / formalismos.">
 					comment = <"Por exemplo: requisitos de informação locais ou metadados adicionais para alinhar com FHIR ou CIMI equivalentes.">
 				>
-				["at0072"] = <
-					text = <"Descrição do curso">
-					description = <"Descrição narrativa sobre o curso do problema ou diagnóstico, desde o início.">
-				>
 				["at0073"] = <
 					text = <"Certeza do diagnóstico">
 					description = <"O nível de confiança da identificação do diagnóstico.">
@@ -1581,18 +1485,13 @@ Por exemplo: evolução do estado: inicial, inativo, resolvido, em remissão; es
 					description = <"*A cause, set of causes, or manner of causation of the problem or diagnosis.(en)">
 					comment = <"*Also known as 'aetiology' or 'etiology'. Coding with an external terminology is preferred, where possible.(en)">
 				>
-				["at0079"] = <
-					text = <"*Variant (en)">
-					description = <"*Specific variant or subtype of the Diagnosis, if relevant. (en)">
-					comment = <"*For example: 'acute motor axonal neuropathy' as a variant of Guillain-Barre Syndrome. Coding of the name of the variant with a terminology is preferred, where possible.  (en)">
-				>
 			>
 		>
 		["nb"] = <
 			items = <
 				["at0000"] = <
-					text = <"Problem/diagnose">
-					description = <"Detaljer om én identifisert helsetilstand, skade, funksjonshemming eller annet forhold som påvirker et individs fysiske, mentale og/eller sosiale velvære.">
+					text = <"*Problem/Diagnosis(en)">
+					description = <"*Detaljer om én identifisert helsetilstand, skade, funksjonshemming eller annet forhold som påvirker et individs fysiske, mentale og/eller sosiale velvære.">
 					comment = <"Det er i praksis ikke lett å oppnå et klart skille mellom et problem og en diagnose. I klinisk dokumentasjon med denne arketypen ses problem og diagnose som et kontinuum, med økende krav til detaljer og støttende evidens for å underbygge en diagnose.">
 				>
 				["at0001"] = <
@@ -1600,8 +1499,8 @@ Por exemplo: evolução do estado: inicial, inativo, resolvido, em remissão; es
 					description = <"@ internal @">
 				>
 				["at0002"] = <
-					text = <"Problem/diagnosenavn">
-					description = <"Identifisering av problemet eller diagnosen ved hjelp av navn.">
+					text = <"*Problem/Diagnosis name(en)">
+					description = <"*Identifisering av problemet eller diagnosen ved hjelp av navn.">
 					comment = <"Koding av navnet på problemet eller diagnosen med en terminologi er foretrukket hvis mulig.">
 				>
 				["at0003"] = <
@@ -1642,11 +1541,6 @@ Data registrert eller importert som \"alder ved bedring\" bør konverteres til e
 
 Dersom den anatomiske lokaliseringen inkluderes i feltet \"Problem/diagnosenavn\" via prekoordinerte koder blir dette dataelementet overflødig.">
 				>
-				["at0043"] = <
-					text = <"Spesifikke detaljer">
-					description = <"Detaljer som er nødvendige for å registrere det aktuelle problemet eller diagnosens unike egenskaper.">
-					comment = <"Kan omfatte strukturerte detaljer om klassifisering eller stadier av diagnosen; diagnosiske kriterier, klassifikasjon eller formelle vurderinger av alvorlighetsgrad, som f.eks. Common Terminology Criteria for Adverse Events.">
-				>
 				["at0046"] = <
 					text = <"Status">
 					description = <"Strukturerte detaljer for lokalisering-, fagområde-, episode- eller arbeidsflytsspesifikke aspekter av den diagnostiske prosessen.">
@@ -1677,10 +1571,6 @@ Dersom den anatomiske lokaliseringen inkluderes i feltet \"Problem/diagnosenavn\
 					description = <"Ytterligere informasjon som trengs for å kunne registrere lokalt definert innhold eller for å tilpasse til andre referansemodeller/formalismer.">
 					comment = <"For eksempel lokale informasjonsbehov, eller ytterligere metadata for å kunne tilpasse til tilsvarende konsepter i FHIR.">
 				>
-				["at0072"] = <
-					text = <"Forløpsbeskrivelse">
-					description = <"Fritekstbeskrivelse av forløpet av problemet eller diagnosen siden debut.">
-				>
 				["at0073"] = <
 					text = <"Diagnostisk sikkerhet">
 					description = <"Grad av sikkerhet i identifikasjonen av diagnosen.">
@@ -1708,18 +1598,13 @@ Dersom den anatomiske lokaliseringen inkluderes i feltet \"Problem/diagnosenavn\
 					description = <"En årsak, kjede av årsaker til, eller hendelsesforløp forut for problemet eller diagnosen.">
 					comment = <"Også kjent som 'etiologi'. Det anbefales å kode \"Årsak\" med en ekstern terminologi dersom det er mulig.">
 				>
-				["at0079"] = <
-					text = <"Variant">
-					description = <"Spesifikk variant eller subtype av diagnose, hvis det er relevant.">
-					comment = <"For eksempel \"akutt motorisk aksonal nevropati\" som en variant av Guillain-Barre Syndrom. Koding av navnet på varianten med en terminologi er foretrukket hvis mulig.">
-				>
 			>
 		>
 		["sv"] = <
 			items = <
 				["at0000"] = <
-					text = <"Problem/Diagnos">
-					description = <"Detaljer av ett enskilt identifierat hälsotillstånd, skada, funktionshinder eller något annat problem som påverkar individens fysiska, psykiska och eller sociala välbefinnande.">
+					text = <"*Problem/Diagnosis(en)">
+					description = <"*Detaljer av ett enskilt identifierat hälsotillstånd, skada, funktionshinder eller något annat problem som påverkar individens fysiska, psykiska och eller sociala välbefinnande.">
 					comment = <"Det är inte lätt att i praktiken uppnå en tydlig avgränsning mellan ett problem och en diagnos. Vid tillämpning av klinisk dokumentation med denna arketyp betraktas problem och diagnos som ett kontinuum, med plats för fler detaljer och stödjande bevis som vanligtvis ger tyngd till etiketten ”diagnos”.">
 				>
 				["at0001"] = <
@@ -1727,8 +1612,8 @@ Dersom den anatomiske lokaliseringen inkluderes i feltet \"Problem/diagnosenavn\
 					description = <"@ internal @">
 				>
 				["at0002"] = <
-					text = <"Problem/Diagnos namn">
-					description = <"Identifiering av problemet eller diagnosen efter namn.">
+					text = <"*Problem/Diagnosis name(en)">
+					description = <"*Identifiering av problemet eller diagnosen efter namn.">
 					comment = <"Kodning av namnet på problemet eller diagnosen med en terminologi är att föredra, om det är tillämpligt.">
 				>
 				["at0003"] = <
@@ -1765,11 +1650,6 @@ Dersom den anatomiske lokaliseringen inkluderes i feltet \"Problem/diagnosenavn\
 					description = <"En strukturerad anatomisk plats för problemet eller diagnosen.">
 					comment = <"Använd det här fältet för att infoga CLUSTER.anatomical_location eller CLUSTER.relative_location-arketyper om den anatomiska platsen bestäms automatiskt av applikationen eller kräver mer komplicerad modellering som exempelvis relativa platser. Om den anatomiska platsen är inkluderad i problem- och diagnos-namnet via förkoordinerade koder, blir detta fält överflödigt.">
 				>
-				["at0043"] = <
-					text = <"Specifika detaljer">
-					description = <"Detaljer som krävs för att kunna dokumenteras som unika egenskaper i den här problem eller diagnos arketypen.">
-					comment = <"Fältet kan innehålla strukturerad detalj om klassificering eller stadieindelning av diagnosen diagnostiska kriterier, klassificeringskriterier eller formella bedömningar av svårighetsgrad, såsom gemensamma terminologikriterier för biverkningar.">
-				>
 				["at0046"] = <
 					text = <"Status">
 					description = <"Strukturerade detaljer för plats-, domän-, episod-eller arbetsflödes specifika aspekter av diagnosprocessen.">
@@ -1804,10 +1684,6 @@ Inskrivningsstatus: Inskrivning och utskrivning Prioritetsstatus: Primär och se
 					description = <"Ytterligare uppgifter som krävs för att fånga lokalt innehåll eller för anpassning till andra referens modeller och formalismer.">
 					comment = <"Exempelvis: lokala informationskrav eller ytterligare metadata för anpassning till FHIR-eller CIMI -motsvarigheter.">
 				>
-				["at0072"] = <
-					text = <"Förlopp">
-					description = <"Beskrivning av problemets eller diagnosen förlopp sedan debuten.">
-				>
 				["at0073"] = <
 					text = <"Diagnostisk säkerhet">
 					description = <"Säkerhetsgraden för identifiering av diagnos.">
@@ -1835,18 +1711,13 @@ Inskrivningsstatus: Inskrivning och utskrivning Prioritetsstatus: Primär och se
 					description = <"*A cause, set of causes, or manner of causation of the problem or diagnosis.(en)">
 					comment = <"*Also known as 'aetiology' or 'etiology'. Coding with an external terminology is preferred, where possible.(en)">
 				>
-				["at0079"] = <
-					text = <"*Variant (en)">
-					description = <"*Specific variant or subtype of the Diagnosis, if relevant. (en)">
-					comment = <"*For example: 'acute motor axonal neuropathy' as a variant of Guillain-Barre Syndrome. Coding of the name of the variant with a terminology is preferred, where possible.  (en)">
-				>
 			>
 		>
 		["ko"] = <
 			items = <
 				["at0000"] = <
-					text = <"문제/진단">
-					description = <"한 개인의 신체, 정신 그리고/또는 사회적 웰빙에 영향을 주는 단일한 확인된 건강 성태, 상해, 장애 또는 다른 이슈에 대한 상세내용.">
+					text = <"*Problem/Diagnosis(en)">
+					description = <"*한 개인의 신체, 정신 그리고/또는 사회적 웰빙에 영향을 주는 단일한 확인된 건강 성태, 상해, 장애 또는 다른 이슈에 대한 상세내용.">
 					comment = <"실무에서 문제와 진단의 범위 간의 명확한 구분을 하기 쉽지 않음. 이 아키타입을 통한 임상 문서의 목적을 위해서, 증가하는 상세내용의 수준과 일반적으로 '진단'의 표시에 대한 무게감을 제공하는 지지할 수 있는 증거를 가지고, 문제와 진단은 연속된 것(a continuum)으로 간주됨.">
 				>
 				["at0001"] = <
@@ -1854,8 +1725,8 @@ Inskrivningsstatus: Inskrivning och utskrivning Prioritetsstatus: Primär och se
 					description = <"@ internal @">
 				>
 				["at0002"] = <
-					text = <"문제/진단명">
-					description = <"명칭으로 문제 또는 진단의 식별.">
+					text = <"*Problem/Diagnosis name(en)">
+					description = <"*명칭으로 문제 또는 진단의 식별.">
 					comment = <"가능하다면, 용어체계를 통한 문제 또는 진단의 명칭을 코딩하는 것이 좋음.">
 				>
 				["at0003"] = <
@@ -1895,11 +1766,6 @@ Inskrivningsstatus: Inskrivning och utskrivning Prioritetsstatus: Primär och se
 
 해부학적 위치가 문제/진단명에 선조합코드로 포함된다면 이 슬롯의 사용은 중복이 됨.">
 				>
-				["at0043"] = <
-					text = <"특정 상세내용">
-					description = <"이 문제 또는 진단의 유일한 속성으로 기록하는데 필요한 상세내용.">
-					comment = <"진단의 단계(grading 또는 staging)에 대한 구조화된 상세내용을 포함할 수 있음; 진단 기준, 분류 기준 또는 이상 상황(Adverse Events)을 위한 공통 용어체계 기준(Common Terminology Criteria)와 같은 정규적인 중등도 평가.">
-				>
 				["at0046"] = <
 					text = <"상태">
 					description = <"진단 과정의 위치-, 도메인-, 에피소드- 또는 워크플로우-특징적인 측면에 대한 구조화된 상세내용.">
@@ -1930,10 +1796,6 @@ Inskrivningsstatus: Inskrivning och utskrivning Prioritetsstatus: Primär och se
 					description = <"로컬 컨텐트를 획득하거나 다른 참조모델/표기형식과 조율하기 위해 필요한 추가적인 정보.">
 					comment = <"예: 로컬 정보 요구사항 또는 FHIR 또는 CIMI의 동등한 것과 조율하기위한 추가적인 메타데이터.">
 				>
-				["at0072"] = <
-					text = <"경과 서술">
-					description = <"발병이후 문제 또는 진단의 결과에 대한 서술.">
-				>
 				["at0073"] = <
 					text = <"진단적 확실성">
 					description = <"진단을 확인하는 신뢰의 수준.">
@@ -1961,18 +1823,13 @@ Inskrivningsstatus: Inskrivning och utskrivning Prioritetsstatus: Primär och se
 					description = <"*A cause, set of causes, or manner of causation of the problem or diagnosis.(en)">
 					comment = <"*Also known as 'aetiology' or 'etiology'. Coding with an external terminology is preferred, where possible.(en)">
 				>
-				["at0079"] = <
-					text = <"*Variant (en)">
-					description = <"*Specific variant or subtype of the Diagnosis, if relevant. (en)">
-					comment = <"*For example: 'acute motor axonal neuropathy' as a variant of Guillain-Barre Syndrome. Coding of the name of the variant with a terminology is preferred, where possible.  (en)">
-				>
 			>
 		>
 		["fi"] = <
 			items = <
 				["at0000"] = <
-					text = <"Ongelma/Diagnoosi">
-					description = <"Yksityiskohdat yksittäisestä tunnistetusta terveystilasta, vammasta, vammasta tai muusta aiheesta, joka vaikuttaa yksilön fyysiseen, henkiseen ja / tai sosiaaliseen hyvinvointiin.">
+					text = <"*Problem/Diagnosis(en)">
+					description = <"*Yksityiskohdat yksittäisestä tunnistetusta terveystilasta, vammasta, vammasta tai muusta aiheesta, joka vaikuttaa yksilön fyysiseen, henkiseen ja / tai sosiaaliseen hyvinvointiin.">
 					comment = <"*Clear delineation between the scope of a problem versus a diagnosis is not easy to achieve in practice. For the purposes of clinical documentation with this archetype, problem and diagnosis are regarded as a continuum, with increasing levels of detail and supportive evidence usually providing weight towards the label of 'diagnosis'.(en)">
 				>
 				["at0001"] = <
@@ -1980,8 +1837,8 @@ Inskrivningsstatus: Inskrivning och utskrivning Prioritetsstatus: Primär och se
 					description = <"@ internal @">
 				>
 				["at0002"] = <
-					text = <"Ongelman/Diagnoosin nimi">
-					description = <"Ongelman tai diagnoosin tunnistaminen nimellä.">
+					text = <"*Problem/Diagnosis name(en)">
+					description = <"*Ongelman tai diagnoosin tunnistaminen nimellä.">
 					comment = <"*Coding of the name of the problem or diagnosis with a terminology is preferred, where possible.(en)">
 				>
 				["at0003"] = <
@@ -2021,11 +1878,6 @@ Use this data element to record precoordinated anatomical locations. If the requ
 
 If the anatomical location is included in the Problem/diagnosis name via precoordinated codes, use of this SLOT becomes redundant.(en)">
 				>
-				["at0043"] = <
-					text = <"Tarkennettu tieto">
-					description = <"Tiedot, joita tarvitaan lisäksi tämän ongelman tai diagnoosin yksilöivinä ominaisuuksina tallentamiseksi.">
-					comment = <"*May include structured detail about the grading or staging of the diagnosis; diagnostic criteria, classification criteria or formal severity assessments such as Common Terminology Criteria for Adverse Events.(en)">
-				>
 				["at0046"] = <
 					text = <"Status">
 					description = <"Jäsennellyt yksityiskohdat diagnosointiprosessin sijainti-, alue-, jakso- tai työnkulkukohtaisista näkökohdista.">
@@ -2056,10 +1908,6 @@ If the anatomical location is included in the Problem/diagnosis name via precoor
 					description = <"Additional information required to capture local content or to align with other reference models/formalisms.">
 					comment = <"*For example: local information requirements or additional metadata to align with FHIR or CIMI equivalents.(en)">
 				>
-				["at0072"] = <
-					text = <"Ongelman kulku">
-					description = <"Kuvaus ongelman tai diagnoosin etenemisestä alusta.">
-				>
 				["at0073"] = <
 					text = <"Diagnoosin varmuus">
 					description = <"Diagnoosin tunnistamisen luotettavuus">
@@ -2087,18 +1935,13 @@ If the anatomical location is included in the Problem/diagnosis name via precoor
 					description = <"*A cause, set of causes, or manner of causation of the problem or diagnosis.(en)">
 					comment = <"*Also known as 'aetiology' or 'etiology'. Coding with an external terminology is preferred, where possible.(en)">
 				>
-				["at0079"] = <
-					text = <"*Variant (en)">
-					description = <"*Specific variant or subtype of the Diagnosis, if relevant. (en)">
-					comment = <"*For example: 'acute motor axonal neuropathy' as a variant of Guillain-Barre Syndrome. Coding of the name of the variant with a terminology is preferred, where possible.  (en)">
-				>
 			>
 		>
 		["it"] = <
 			items = <
 				["at0000"] = <
-					text = <"Problema/Diagnosi">
-					description = <"Dettagli su una specifica condizione di salute, una lesione, una disabilità o un qualsiasi altro problema individuato su un individuo che abbia un impatto sul benessere fisico, mentale e/o sociale.">
+					text = <"*Problem/Diagnosis(en)">
+					description = <"*Dettagli su una specifica condizione di salute, una lesione, una disabilità o un qualsiasi altro problema individuato su un individuo che abbia un impatto sul benessere fisico, mentale e/o sociale.">
 					comment = <"Nella pratica, non è facile fare una distinzione netta tra gli ambiti dei concetti 'problema' e 'diagnosi'. Ai fini della documentazione clinica con questo archetipo, problema e diagnosi sono considerati un continuum, con livelli crescenti di dettagli ed evidenze a supporto a supporto dell'etichetta 'diagnosi'.">
 				>
 				["at0001"] = <
@@ -2106,8 +1949,8 @@ If the anatomical location is included in the Problem/diagnosis name via precoor
 					description = <"@ internal @">
 				>
 				["at0002"] = <
-					text = <"Nome del problema/diagnosi">
-					description = <"Nome/identificativo del problema o della diagnosi.">
+					text = <"*Problem/Diagnosis name(en)">
+					description = <"*Nome/identificativo del problema o della diagnosi.">
 					comment = <"Si preferisce, ove possibile, la codifica del problema o diagnosi con una terminologia.">
 				>
 				["at0003"] = <
@@ -2144,11 +1987,6 @@ If the anatomical location is included in the Problem/diagnosis name via precoor
 					description = <"Una descrizione strutturata della localizzazione anatomica a cui il problema o la diagnosi si riferiscono.">
 					comment = <"Usare questo SLOT per inserire gli archetipi CLUSTER.anatomical_location o CLUSTER.relative_location se i requisiti per la registrazione della localizzazione sono determinati in fase di esecuzione dell'applicazione  (run-time) o se richiedono una modellazione più complessa, come ad esempio per le posizioni relative. Se la posizione anatomica è inclusa nel campo 'Nome del problema/diagnosi attraverso una codifica prestabilita, questo elemento risulta ridondante.">
 				>
-				["at0043"] = <
-					text = <"Ulteriori dettagli">
-					description = <"Ulteriori dettagli richiesti per memorizzare attributi specifici del problema o della diagnosi.">
-					comment = <"Può includere dettagli strutturati sulla classificazione o la stadiazione della diagnosi; criteri diagnostici, criteri di classificazione o valutazioni formali della severità, come ad esempio CTCAE - Common Terminology Criteria for Adverse Events.">
-				>
 				["at0046"] = <
 					text = <"Stato">
 					description = <"Dettagli strutturati per descrivere aspetti del processo diagnostico specifici in relazione alla localizzazione, dominio, episodio o workflow.">
@@ -2179,10 +2017,6 @@ If the anatomical location is included in the Problem/diagnosis name via precoor
 					description = <"Informazioni aggiuntive necessarie per registrare specifici contenuti locali o per allinearsi con altri modelli/formalismi di riferimento.">
 					comment = <"Ad esempio: requisiti informativi locali o metadati addizionali per l'allineamento ai corrispondenti modelli FHIR o CIMI.">
 				>
-				["at0072"] = <
-					text = <"Decorso">
-					description = <"Descrizione testuale del decorso del problema o della diagnosi a partire dall'insorgenza.">
-				>
 				["at0073"] = <
 					text = <"Certezza diagnostica">
 					description = <"Grado di certezza nell'identificazione della diagnosi.">
@@ -2210,11 +2044,6 @@ If the anatomical location is included in the Problem/diagnosis name via precoor
 					description = <"*A cause, set of causes, or manner of causation of the problem or diagnosis.(en)">
 					comment = <"*Also known as 'aetiology' or 'etiology'. Coding with an external terminology is preferred, where possible.(en)">
 				>
-				["at0079"] = <
-					text = <"*Variant (en)">
-					description = <"*Specific variant or subtype of the Diagnosis, if relevant. (en)">
-					comment = <"*For example: 'acute motor axonal neuropathy' as a variant of Guillain-Barre Syndrome. Coding of the name of the variant with a terminology is preferred, where possible.  (en)">
-				>
 			>
 		>
 		["nl"] = <
@@ -2240,10 +2069,6 @@ If the anatomical location is included in the Problem/diagnosis name via precoor
 					text = <"*Diagnostic certainty(en)">
 					description = <"*The level of confidence in the identification of the diagnosis.(en)">
 					comment = <"*If an alternative valueset is required, these values can be added to the DV_TEXT data type in a template.(en)">
-				>
-				["at0072"] = <
-					text = <"*Course description(en)">
-					description = <"*Narrative description about the course of the problem or diagnosis since onset.(en)">
 				>
 				["at0071"] = <
 					text = <"*Extension(en)">
@@ -2274,11 +2099,6 @@ If the anatomical location is included in the Problem/diagnosis name via precoor
 					text = <"*Status(en)">
 					description = <"*Structured details for location-, domain-, episode- or workflow-specific aspects of the diagnostic process.(en)">
 					comment = <"*Use status or context qualifiers with care, as they are variably used in practice and interoperability cannot be assured unless usage is clearly defined with the community of use. For example: active status - active, inactive, resolved, in remission; evolution status - initial, interim/working, final; temporal status - current, past; episodicity status - first, new, ongoing; admission status - admission, discharge; or priority status - primary, secondary.(en)">
-				>
-				["at0043"] = <
-					text = <"*Specific details(en)">
-					description = <"*Details that are additionally required to record as unique attributes of this problem or diagnosis.(en)">
-					comment = <"*May include structured detail about the grading or staging of the diagnosis; diagnostic criteria, classification criteria or formal severity assessments such as Common Terminology Criteria for Adverse Events.(en)">
 				>
 				["at0039"] = <
 					text = <"*Structured body site(en)">
@@ -2318,8 +2138,8 @@ Use this data element to record precoordinated anatomical locations. If the requ
 					comment = <"*Partial dates are acceptable. If the subject of care is under the age of one year, then the complete date or a minimum of the month and year is necessary to enable accurate age calculations - for example, if used to drive decision support. Data captured/imported as \"Age at time of clinical recognition\" should be converted to a date using the subject's date of birth.(en)">
 				>
 				["at0002"] = <
-					text = <"Naam van het probleem / de diagnose">
-					description = <"Identificatie van het probleem of de diagnose bij naam.
+					text = <"*Problem/Diagnosis name(en)">
+					description = <"*Identificatie van het probleem of de diagnose bij naam.
                             ">
 					comment = <"*Coding of the name of the problem or diagnosis with a terminology is preferred, where possible.(en)">
 				>
@@ -2328,8 +2148,8 @@ Use this data element to record precoordinated anatomical locations. If the requ
 					description = <"*@ internal @(en)">
 				>
 				["at0000"] = <
-					text = <"Probleem/Diagnose">
-					description = <"Informatie over een enkele vast te stellen medische aandoening, een letsel, beperking of andere zaak die invloed heeft op de fysieke, mentale en/of het sociale welbevinden van een individu.">
+					text = <"*Problem/Diagnosis(en)">
+					description = <"*Informatie over een enkele vast te stellen medische aandoening, een letsel, beperking of andere zaak die invloed heeft op de fysieke, mentale en/of het sociale welbevinden van een individu.">
 					comment = <"*Clear delineation between the scope of a problem versus a diagnosis is not easy to achieve in practice. For the purposes of clinical documentation with this archetype, problem and diagnosis are regarded as a continuum, with increasing levels of detail and supportive evidence usually providing weight towards the label of 'diagnosis'.(en)">
 				>
 				["at0078"] = <
@@ -2337,18 +2157,13 @@ Use this data element to record precoordinated anatomical locations. If the requ
 					description = <"*A cause, set of causes, or manner of causation of the problem or diagnosis.(en)">
 					comment = <"*Also known as 'aetiology' or 'etiology'. Coding with an external terminology is preferred, where possible.(en)">
 				>
-				["at0079"] = <
-					text = <"*Variant (en)">
-					description = <"*Specific variant or subtype of the Diagnosis, if relevant. (en)">
-					comment = <"*For example: 'acute motor axonal neuropathy' as a variant of Guillain-Barre Syndrome. Coding of the name of the variant with a terminology is preferred, where possible.  (en)">
-				>
 			>
 		>
 		["zh"] = <
 			items = <
 				["at0000"] = <
-					text = <"问题/诊断">
-					description = <"*Details about a single identified health condition, injury, disability or any other issue which impacts  the physical, mental and/or social wellbeing of an individual.(en)">
+					text = <"*Problem/Diagnosis(en)">
+					description = <"*Details about a single identified health condition, injury, disability or any other issue which impacts on the physical, mental and/or social well-being of an individual.">
 					comment = <"*Clear delineation between the scope of a problem versus a diagnosis is not easy to achieve in practice. For the purposes of clinical documentation with this archetype, problem and diagnosis are regarded as a continuum, with increasing levels of detail and supportive evidence usually providing weight towards the label of 'diagnosis'.(en)">
 				>
 				["at0001"] = <
@@ -2356,8 +2171,8 @@ Use this data element to record precoordinated anatomical locations. If the requ
 					description = <"@ internal @ (en)">
 				>
 				["at0002"] = <
-					text = <"问题/诊断名字">
-					description = <"*Identification of the problem or diagnosis, by name.(en)">
+					text = <"*Problem/Diagnosis name(en)">
+					description = <"*Identification of the problem or diagnosis, by name.">
 					comment = <"*Coding of the name of the problem or diagnosis with a terminology is preferred, where possible.(en)">
 				>
 				["at0003"] = <
@@ -2397,11 +2212,6 @@ Use this data element to record precoordinated anatomical locations. If the requ
 
 If the anatomical location is included in the Problem/diagnosis name via precoordinated codes, use of this SLOT becomes redundant.(en)">
 				>
-				["at0043"] = <
-					text = <"详情">
-					description = <"*Details that are additionally required to record as unique attributes of this problem or diagnosis.(en)">
-					comment = <"*May include structured detail about the grading or staging of the diagnosis; diagnostic criteria, classification criteria or formal severity assessments such as Common Terminology Criteria for Adverse Events.(en)">
-				>
 				["at0046"] = <
 					text = <"状态">
 					description = <"描述与位置，域，发作或者工作流程等诊断过程中特定方面相关的结构化细节。">
@@ -2432,10 +2242,6 @@ If the anatomical location is included in the Problem/diagnosis name via precoor
 					description = <"*Additional information required to capture local content or to align with other reference models/formalisms.(en)">
 					comment = <"*For example: local information requirements or additional metadata to align with FHIR or CIMI equivalents.(en)">
 				>
-				["at0072"] = <
-					text = <"过程描述">
-					description = <"*Narrative description about the course of the problem or diagnosis since onset.(en)">
-				>
 				["at0073"] = <
 					text = <"诊断确定性">
 					description = <"*The level of confidence in the identification of the diagnosis.(en)">
@@ -2462,18 +2268,13 @@ If the anatomical location is included in the Problem/diagnosis name via precoor
 					description = <"*A cause, set of causes, or manner of causation of the problem or diagnosis.(en)">
 					comment = <"*Also known as 'aetiology' or 'etiology'. Coding with an external terminology is preferred, where possible.(en)">
 				>
-				["at0079"] = <
-					text = <"*Variant (en)">
-					description = <"*Specific variant or subtype of the Diagnosis, if relevant. (en)">
-					comment = <"*For example: 'acute motor axonal neuropathy' as a variant of Guillain-Barre Syndrome. Coding of the name of the variant with a terminology is preferred, where possible.  (en)">
-				>
 			>
 		>
 		["ca"] = <
 			items = <
 				["at0000"] = <
-					text = <"Problema/Diagnòstic">
-					description = <"Detalls sobre una única condició de salut, lesió, discapacitat o qualsevol altre problema identificat que afecti al benestar físic, mental i/o social d'una persona.">
+					text = <"*Problem/Diagnosis(en)">
+					description = <"*Detalls sobre una única condició de salut, lesió, discapacitat o qualsevol altre problema identificat que afecti al benestar físic, mental i/o social d'una persona.">
 					comment = <"*Clear delineation between the scope of a problem versus a diagnosis is not easy to achieve in practice. For the purposes of clinical documentation with this archetype, problem and diagnosis are regarded as a continuum, with increasing levels of detail and supportive evidence usually providing weight towards the label of 'diagnosis'.(en)">
 				>
 				["at0001"] = <
@@ -2481,8 +2282,8 @@ If the anatomical location is included in the Problem/diagnosis name via precoor
 					description = <"@ internal @">
 				>
 				["at0002"] = <
-					text = <"Nom del Problema/Diagnòstic">
-					description = <"Identificació del problema o diagnòstic, pel nom.">
+					text = <"*Problem/Diagnosis name(en)">
+					description = <"*Identificació del problema o diagnòstic, pel nom.">
 					comment = <"*Coding of the name of the problem or diagnosis with a terminology is preferred, where possible.(en)">
 				>
 				["at0003"] = <
@@ -2523,11 +2324,6 @@ Use this data element to record precoordinated anatomical locations. If the requ
 
 If the anatomical location is included in the Problem/diagnosis name via precoordinated codes, use of this SLOT becomes redundant.(en)">
 				>
-				["at0043"] = <
-					text = <"Detalls específics">
-					description = <"Detalls que es requereixen addicionalment per registrar atributs únics d'aquest problema o diagnòstic.">
-					comment = <"*May include structured detail about the grading or staging of the diagnosis; diagnostic criteria, classification criteria or formal severity assessments such as Common Terminology Criteria for Adverse Events.(en)">
-				>
 				["at0046"] = <
 					text = <"Estat">
 					description = <"Detalls estructurats per a aspectes específics d'ubicació, domini, episodi o flux de treball del procés diagnòstic.">
@@ -2558,10 +2354,6 @@ If the anatomical location is included in the Problem/diagnosis name via precoor
 					description = <"Informació addicional necessària per capturar contingut local o per alinear-se amb altres models/formalismes de referència.">
 					comment = <"*For example: local information requirements or additional metadata to align with FHIR or CIMI equivalents.(en)">
 				>
-				["at0072"] = <
-					text = <"Descripció del curs">
-					description = <"Descripció narrativa sobre el curs del problema o diagnòstic des del inici.">
-				>
 				["at0073"] = <
 					text = <"Certesa diagnòstica">
 					description = <"El nivell de confiança en la identificació del diagnòstic.">
@@ -2589,18 +2381,13 @@ If the anatomical location is included in the Problem/diagnosis name via precoor
 					description = <"Una causa, conjunt de causes o el mecanisme causal del problema o diagnòstic.">
 					comment = <"*Also known as 'aetiology' or 'etiology'. Coding with an external terminology is preferred, where possible.(en)">
 				>
-				["at0079"] = <
-					text = <"Variant">
-					description = <"Variant o subtipus específic del Diagnòstic, si escau.">
-					comment = <"*For example: 'acute motor axonal neuropathy' as a variant of Guillain-Barre Syndrome. Coding of the name of the variant with a terminology is preferred, where possible. (en)">
-				>
 			>
 		>
 		["zh-cn"] = <
 			items = <
 				["at0000"] = <
-					text = <"问题/诊断">
-					description = <"关于单个已明确的健康状况、损伤、残疾或任何其他影响个人身体健康、心理健康和/或社会福祉的问题/事项的详情。">
+					text = <"*Problem/Diagnosis(en)">
+					description = <"*关于单个已明确的健康状况、损伤、残疾或任何其他影响个人身体健康、心理健康和/或社会福祉的问题/事项的详情。">
 					comment = <"在实践当中，问题与诊断范围的明确区分/划定并非易事。对于利用本原始型的临床文档记录目的来说，在此会将问题与诊断视为统一的连续体系，且由问题到诊断，不断增加的细节水平和支持性证据通常会为“诊断”标签带来更大的权重。">
 				>
 				["at0001"] = <
@@ -2608,8 +2395,8 @@ If the anatomical location is included in the Problem/diagnosis name via precoor
 					description = <"@ internal @">
 				>
 				["at0002"] = <
-					text = <"问题/诊断名称">
-					description = <"利用名称对问题或诊断的标识。">
+					text = <"*Problem/Diagnosis name(en)">
+					description = <"*利用名称对问题或诊断的标识。">
 					comment = <"尽可能首选采用术语标准对问题或诊断的名称进行编码。">
 				>
 				["at0003"] = <
@@ -2650,11 +2437,6 @@ If the anatomical location is included in the Problem/diagnosis name via precoor
 
 如果问题/诊断名称之中是利用先组[配]式代码（ precoordinated code）来记录相应的解剖位置，则本数据元就会变得多余。">
 				>
-				["at0043"] = <
-					text = <"特有详情">
-					description = <"记录当前问题或诊断特有的特征属性时所额外需要的详细信息。">
-					comment = <"可能包括关于当前诊断的分级或分期、诊断标准、分类标准或正式的严重程度评估（如不良事件通用术语标准）的结构化详情。">
-				>
 				["at0046"] = <
 					text = <"状态">
 					description = <"关于诊断过程的位置/场所、领域、服务节段/片段（episode）或工作流的特有方面的结构化详细信息。">
@@ -2685,10 +2467,6 @@ If the anatomical location is included in the Problem/diagnosis name via precoor
 					description = <"采集本地内容或与其他参考模型/形式化体系保持一致时所需的其他信息。">
 					comment = <"例如：本地信息需求/要求，或者是与 FHIR 或 CIMI 等效项保持一致时所需的其他元数据。">
 				>
-				["at0072"] = <
-					text = <"进程描述">
-					description = <"关于起始/发病以来当前问题或诊断的过程/进程/病程（course）的叙述性描述。">
-				>
 				["at0073"] = <
 					text = <"诊断确定性">
 					description = <"关于确定当前诊断的置信度水平。">
@@ -2716,18 +2494,13 @@ If the anatomical location is included in the Problem/diagnosis name via precoor
 					description = <"问题或诊断的原因、原因集合（成套/成组的原因）或因果作用方式（manner of causation）。">
 					comment = <"又称为“病因”（aetiology/etiology）。尽可能首选采用外部术语标准来进行编码。">
 				>
-				["at0079"] = <
-					text = <"变体/亚型">
-					description = <"当前诊断的特定变体/变异类型或亚型/子类型（如果相关/合适）。">
-					comment = <"例如：“急性运动轴突性神经病”（acute motor axonal neuropathy）就属于是吉兰-巴雷综合征（Guillain-Barre Syndrome）的变体。尽可能首选采用术语标准对变体/亚型的名称进行编码。">
-				>
 			>
 		>
 	>
-	constraint_binding = <
-		["SnomedCT_Finding"] = <
+	term_binding = <
+		["SNOMED-CT"] = <
 			items = <
-				["ac0000"] = <terminology:http://snomed.info/id/404684003>
+				["at0002"] = <[SNOMED-CT::404684003]>
 			>
 		>
 	>
