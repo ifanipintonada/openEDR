@@ -6,6 +6,13 @@ concept
 
 language
 	original_language = <[ISO_639-1::ja]>
+	translations = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			author = <
+			>
+		>
+	>
 
 description
 	original_author = <
@@ -19,6 +26,10 @@ description
 Shinji Kobayashi
 © openEHR Foundation">
 		>
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			copyright = <"© openEHR Foundation">
+		>
 	>
 	other_details = <
 		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/3.0/.">
@@ -26,7 +37,7 @@ Shinji Kobayashi
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"2443150FF3ACA32A33AF0FBCF5F960A9">
+		["MD5-CAM-1.0.1"] = <"f8b2a07edf15d7f86885a6b3603eab6d">
 		["build_uid"] = <"f2112ac3-bf66-41db-989d-27f623505a74">
 		["revision"] = <"0.0.1-alpha">
 	>
@@ -295,6 +306,146 @@ ontology
 				>
 				["at0035"] = <
 					text = <"Interdental gingivia">
+					description = <"*">
+				>
+			>
+		>
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"*Anatomical location gingiva (ja)">
+					description = <"*unknown (ja)">
+				>
+				["at0002"] = <
+					text = <"*Location (ja)">
+					description = <"*">
+				>
+				["at0003"] = <
+					text = <"*Normal status (ja)">
+					description = <"*">
+				>
+				["at0004"] = <
+					text = <"*Absolute measurement (ja)">
+					description = <"*">
+				>
+				["at0005"] = <
+					text = <"*Landmark (ja)">
+					description = <"*">
+				>
+				["at0006"] = <
+					text = <"*XYZ (ja)">
+					description = <"*">
+				>
+				["at0007"] = <
+					text = <"*Relative location (ja)">
+					description = <"*">
+				>
+				["at0008"] = <
+					text = <"*Landmark (ja)">
+					description = <"*">
+				>
+				["at0009"] = <
+					text = <"*Direction (ja)">
+					description = <"*">
+				>
+				["at0010"] = <
+					text = <"*Distance from landmark (ja)">
+					description = <"*">
+				>
+				["at0011"] = <
+					text = <"*Description (ja)">
+					description = <"*">
+				>
+				["at0012"] = <
+					text = <"*Site (ja)">
+					description = <"*">
+				>
+				["at0013"] = <
+					text = <"*Relative location (ja)">
+					description = <"*">
+				>
+				["at0014"] = <
+					text = <"*Absolute measurement (ja)">
+					description = <"*">
+				>
+				["at0015"] = <
+					text = <"*Name (ja)">
+					description = <"*">
+				>
+				["at0017"] = <
+					text = <"*Aspect (ja)">
+					description = <"*">
+				>
+				["at0018"] = <
+					text = <"*Buccal (ja)">
+					description = <"*">
+				>
+				["at0019"] = <
+					text = <"*Lingual (ja)">
+					description = <"*">
+				>
+				["at0020"] = <
+					text = <"*Medial (ja)">
+					description = <"*">
+				>
+				["at0021"] = <
+					text = <"*Distal (ja)">
+					description = <"*">
+				>
+				["at0022"] = <
+					text = <"*Aloveolar crest (ja)">
+					description = <"*">
+				>
+				["at0023"] = <
+					text = <"*N point(nasion) (ja)">
+					description = <"*">
+				>
+				["at0024"] = <
+					text = <"*S point(Sella turccia) (ja)">
+					description = <"*">
+				>
+				["at0025"] = <
+					text = <"*Baccal (ja)">
+					description = <"*">
+				>
+				["at0026"] = <
+					text = <"*Lingual (ja)">
+					description = <"*">
+				>
+				["at0027"] = <
+					text = <"*Medial (ja)">
+					description = <"*">
+				>
+				["at0028"] = <
+					text = <"*Distal (ja)">
+					description = <"*">
+				>
+				["at0029"] = <
+					text = <"*Periodontal pocket (ja)">
+					description = <"*">
+				>
+				["at0030"] = <
+					text = <"*Col (ja)">
+					description = <"*">
+				>
+				["at0031"] = <
+					text = <"*Alveolar mucosa (ja)">
+					description = <"*">
+				>
+				["at0032"] = <
+					text = <"*Mucogingival junction (ja)">
+					description = <"*">
+				>
+				["at0033"] = <
+					text = <"*Attached gingiva (ja)">
+					description = <"*">
+				>
+				["at0034"] = <
+					text = <"*Free gigiva (ja)">
+					description = <"*">
+				>
+				["at0035"] = <
+					text = <"*Interdental gingivia (ja)">
 					description = <"*">
 				>
 			>
