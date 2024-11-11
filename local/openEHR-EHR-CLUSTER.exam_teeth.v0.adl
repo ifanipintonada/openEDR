@@ -6,6 +6,18 @@ concept
 
 language
 	original_language = <[ISO_639-1::ja]>
+	translations = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			author = <
+			>
+		>
+		["sv"] = <
+			language = <[ISO_639-1::sv]>
+			author = <
+			>
+		>
+	>
 
 description
 	original_author = <
@@ -13,11 +25,19 @@ description
 	>
 	lifecycle_state = <"in_development">
 	details = <
+		["sv"] = <
+			language = <[ISO_639-1::sv]>
+			copyright = <"© openEHR Foundation">
+		>
 		["ja"] = <
 			language = <[ISO_639-1::ja]>
 			copyright = <"© Takahiro Nakahara
 Shinji Kobayashi
 © openEHR Foundation">
+		>
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			copyright = <"© openEHR Foundation">
 		>
 	>
 	other_details = <
@@ -26,7 +46,7 @@ Shinji Kobayashi
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"113CCC7E715601E5E93DA9215AD1DFCA">
+		["MD5-CAM-1.0.1"] = <"f847867bd3eb417bf2b3fb72d7d9055e">
 		["build_uid"] = <"774bce3d-fa13-4c58-9d96-595ea3cdd3fa">
 		["revision"] = <"0.0.1-alpha">
 	>
@@ -357,6 +377,318 @@ ontology
 				>
 				["at0037"] = <
 					text = <"Implanted">
+					description = <"*">
+				>
+			>
+		>
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"*Examination of teeth (ja)">
+					description = <"*unknown (ja)">
+				>
+				["at0001"] = <
+					text = <"*Specific findings (ja)">
+					description = <"*">
+				>
+				["at0002"] = <
+					text = <"*Type (ja)">
+					description = <"*">
+				>
+				["at0003"] = <
+					text = <"*Plaque (ja)">
+					description = <"*">
+				>
+				["at0004"] = <
+					text = <"*Status (ja)">
+					description = <"*">
+				>
+				["at0005"] = <
+					text = <"*Aspect (ja)">
+					description = <"*">
+				>
+				["at0006"] = <
+					text = <"*Missing (ja)">
+					description = <"*">
+				>
+				["at0007"] = <
+					text = <"*Atrition (ja)">
+					description = <"*">
+				>
+				["at0008"] = <
+					text = <"*Dislocation (ja)">
+					description = <"*">
+				>
+				["at0009"] = <
+					text = <"*Present (ja)">
+					description = <"*">
+				>
+				["at0010"] = <
+					text = <"*Direction (ja)">
+					description = <"*">
+				>
+				["at0011"] = <
+					text = <"*Axis (ja)">
+					description = <"*">
+				>
+				["at0012"] = <
+					text = <"*Treated (ja)">
+					description = <"*">
+				>
+				["at0013"] = <
+					text = <"*Crown (ja)">
+					description = <"*">
+				>
+				["at0014"] = <
+					text = <"*Filling (ja)">
+					description = <"*">
+				>
+				["at0015"] = <
+					text = <"*Inlay (ja)">
+					description = <"*">
+				>
+				["at0016"] = <
+					text = <"*Description (ja)">
+					description = <"*">
+				>
+				["at0017"] = <
+					text = <"*Caries (ja)">
+					description = <"*">
+				>
+				["at0018"] = <
+					text = <"*Decayed (ja)">
+					description = <"*">
+				>
+				["at0019"] = <
+					text = <"*Depth (ja)">
+					description = <"*">
+				>
+				["at0020"] = <
+					text = <"*Congenital anomaly (ja)">
+					description = <"*">
+				>
+				["at0021"] = <
+					text = <"*Present (ja)">
+					description = <"*">
+				>
+				["at0022"] = <
+					text = <"*Description (ja)">
+					description = <"*">
+				>
+				["at0023"] = <
+					text = <"*No abnormality detected (ja)">
+					description = <"*">
+				>
+				["at0024"] = <
+					text = <"*Clinical description (ja)">
+					description = <"*">
+				>
+				["at0025"] = <
+					text = <"*Examination findings (ja)">
+					description = <"*">
+				>
+				["at0026"] = <
+					text = <"*Examination not done (ja)">
+					description = <"*">
+				>
+				["at0027"] = <
+					text = <"*Teeth examined (ja)">
+					description = <"*">
+				>
+				["at0028"] = <
+					text = <"*Description (ja)">
+					description = <"*">
+				>
+				["at0029"] = <
+					text = <"*Anotomical location (ja)">
+					description = <"*">
+				>
+				["at0030"] = <
+					text = <"*Shape (ja)">
+					description = <"*">
+				>
+				["at0031"] = <
+					text = <"*Colour (ja)">
+					description = <"*">
+				>
+				["at0032"] = <
+					text = <"*Multimedia representation (ja)">
+					description = <"*">
+				>
+				["at0033"] = <
+					text = <"*Clinical interpretation (ja)">
+					description = <"*">
+				>
+				["at0034"] = <
+					text = <"*Comment (ja)">
+					description = <"*">
+				>
+				["at0035"] = <
+					text = <"*Permanent (ja)">
+					description = <"*">
+				>
+				["at0036"] = <
+					text = <"*Diciduous (ja)">
+					description = <"*">
+				>
+				["at0037"] = <
+					text = <"*Implanted (ja)">
+					description = <"*">
+				>
+			>
+		>
+		["sv"] = <
+			items = <
+				["at0000"] = <
+					text = <"*Examination of teeth (ja)">
+					description = <"*unknown (ja)">
+				>
+				["at0001"] = <
+					text = <"*Specific findings (ja)">
+					description = <"*">
+				>
+				["at0002"] = <
+					text = <"*Type (ja)">
+					description = <"*">
+				>
+				["at0003"] = <
+					text = <"*Plaque (ja)">
+					description = <"*">
+				>
+				["at0004"] = <
+					text = <"*Status (ja)">
+					description = <"*">
+				>
+				["at0005"] = <
+					text = <"*Aspect (ja)">
+					description = <"*">
+				>
+				["at0006"] = <
+					text = <"*Missing (ja)">
+					description = <"*">
+				>
+				["at0007"] = <
+					text = <"*Atrition (ja)">
+					description = <"*">
+				>
+				["at0008"] = <
+					text = <"*Dislocation (ja)">
+					description = <"*">
+				>
+				["at0009"] = <
+					text = <"*Present (ja)">
+					description = <"*">
+				>
+				["at0010"] = <
+					text = <"*Direction (ja)">
+					description = <"*">
+				>
+				["at0011"] = <
+					text = <"*Axis (ja)">
+					description = <"*">
+				>
+				["at0012"] = <
+					text = <"*Treated (ja)">
+					description = <"*">
+				>
+				["at0013"] = <
+					text = <"*Crown (ja)">
+					description = <"*">
+				>
+				["at0014"] = <
+					text = <"*Filling (ja)">
+					description = <"*">
+				>
+				["at0015"] = <
+					text = <"*Inlay (ja)">
+					description = <"*">
+				>
+				["at0016"] = <
+					text = <"*Description (ja)">
+					description = <"*">
+				>
+				["at0017"] = <
+					text = <"*Caries (ja)">
+					description = <"*">
+				>
+				["at0018"] = <
+					text = <"*Decayed (ja)">
+					description = <"*">
+				>
+				["at0019"] = <
+					text = <"*Depth (ja)">
+					description = <"*">
+				>
+				["at0020"] = <
+					text = <"*Congenital anomaly (ja)">
+					description = <"*">
+				>
+				["at0021"] = <
+					text = <"*Present (ja)">
+					description = <"*">
+				>
+				["at0022"] = <
+					text = <"*Description (ja)">
+					description = <"*">
+				>
+				["at0023"] = <
+					text = <"*No abnormality detected (ja)">
+					description = <"*">
+				>
+				["at0024"] = <
+					text = <"*Clinical description (ja)">
+					description = <"*">
+				>
+				["at0025"] = <
+					text = <"*Examination findings (ja)">
+					description = <"*">
+				>
+				["at0026"] = <
+					text = <"*Examination not done (ja)">
+					description = <"*">
+				>
+				["at0027"] = <
+					text = <"*Teeth examined (ja)">
+					description = <"*">
+				>
+				["at0028"] = <
+					text = <"*Description (ja)">
+					description = <"*">
+				>
+				["at0029"] = <
+					text = <"*Anotomical location (ja)">
+					description = <"*">
+				>
+				["at0030"] = <
+					text = <"*Shape (ja)">
+					description = <"*">
+				>
+				["at0031"] = <
+					text = <"*Colour (ja)">
+					description = <"*">
+				>
+				["at0032"] = <
+					text = <"*Multimedia representation (ja)">
+					description = <"*">
+				>
+				["at0033"] = <
+					text = <"*Clinical interpretation (ja)">
+					description = <"*">
+				>
+				["at0034"] = <
+					text = <"*Comment (ja)">
+					description = <"*">
+				>
+				["at0035"] = <
+					text = <"*Permanent (ja)">
+					description = <"*">
+				>
+				["at0036"] = <
+					text = <"*Diciduous (ja)">
+					description = <"*">
+				>
+				["at0037"] = <
+					text = <"*Implanted (ja)">
 					description = <"*">
 				>
 			>
