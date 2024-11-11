@@ -6,6 +6,18 @@ concept
 
 language
 	original_language = <[ISO_639-1::ja]>
+	translations = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			author = <
+			>
+		>
+		["sv"] = <
+			language = <[ISO_639-1::sv]>
+			author = <
+			>
+		>
+	>
 
 description
 	original_author = <
@@ -13,11 +25,19 @@ description
 	>
 	lifecycle_state = <"in_development">
 	details = <
+		["sv"] = <
+			language = <[ISO_639-1::sv]>
+			copyright = <"© openEHR Foundation">
+		>
 		["ja"] = <
 			language = <[ISO_639-1::ja]>
 			copyright = <"© Shinji Kobayashi
 Takahiro Nakahara
 © openEHR Foundation">
+		>
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			copyright = <"© openEHR Foundation">
 		>
 	>
 	other_details = <
@@ -26,7 +46,7 @@ Takahiro Nakahara
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"0658D74FC4B137CE2ED4D8F8FF191FB8">
+		["MD5-CAM-1.0.1"] = <"e386ea8fd8266851ed03b549dc7bf0dd">
 		["build_uid"] = <"7d8edfd5-9bf8-443c-b5d6-817d887982cb">
 		["revision"] = <"0.0.1-alpha">
 	>
@@ -283,6 +303,270 @@ ontology
 				>
 				["at0031"] = <
 					text = <"Indeterminate">
+					description = <"*">
+				>
+			>
+		>
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"*Examination of oral membrane (ja)">
+					description = <"*unknown (ja)">
+				>
+				["at0001"] = <
+					text = <"*Oral membrane examined (ja)">
+					description = <"*">
+				>
+				["at0002"] = <
+					text = <"*No abnormality detected (ja)">
+					description = <"*">
+				>
+				["at0003"] = <
+					text = <"*Clinical description (ja)">
+					description = <"*">
+				>
+				["at0004"] = <
+					text = <"*View (ja)">
+					description = <"*">
+				>
+				["at0005"] = <
+					text = <"*Membrane intact? (ja)">
+					description = <"*">
+				>
+				["at0006"] = <
+					text = <"*Appearance (ja)">
+					description = <"*">
+				>
+				["at0007"] = <
+					text = <"*Colour (ja)">
+					description = <"*">
+				>
+				["at0008"] = <
+					text = <"*Light reflex (ja)">
+					description = <"*">
+				>
+				["at0009"] = <
+					text = <"*Surface features (ja)">
+					description = <"*">
+				>
+				["at0010"] = <
+					text = <"*Fluid level presence (ja)">
+					description = <"*">
+				>
+				["at0011"] = <
+					text = <"*Fluid level description (ja)">
+					description = <"*">
+				>
+				["at0012"] = <
+					text = <"*Mobility (ja)">
+					description = <"*">
+				>
+				["at0013"] = <
+					text = <"*Examination findings (ja)">
+					description = <"*">
+				>
+				["at0014"] = <
+					text = <"*Multimedia representation (ja)">
+					description = <"*">
+				>
+				["at0015"] = <
+					text = <"*Clinical interpretation (ja)">
+					description = <"*">
+				>
+				["at0016"] = <
+					text = <"*Comment (ja)">
+					description = <"*">
+				>
+				["at0017"] = <
+					text = <"*Examination not done (ja)">
+					description = <"*">
+				>
+				["at0018"] = <
+					text = <"*Intact (ja)">
+					description = <"*">
+				>
+				["at0019"] = <
+					text = <"*Indeterminate (ja)">
+					description = <"*">
+				>
+				["at0020"] = <
+					text = <"*Perforated (ja)">
+					description = <"*">
+				>
+				["at0021"] = <
+					text = <"*Translucent (ja)">
+					description = <"*">
+				>
+				["at0022"] = <
+					text = <"*Opaque (ja)">
+					description = <"*">
+				>
+				["at0023"] = <
+					text = <"*Normal (ja)">
+					description = <"*">
+				>
+				["at0024"] = <
+					text = <"*Abnormal (ja)">
+					description = <"*">
+				>
+				["at0025"] = <
+					text = <"*Present (ja)">
+					description = <"*">
+				>
+				["at0026"] = <
+					text = <"*Absent (ja)">
+					description = <"*">
+				>
+				["at0027"] = <
+					text = <"*Immobile (ja)">
+					description = <"*">
+				>
+				["at0028"] = <
+					text = <"*Hypomobile (ja)">
+					description = <"*">
+				>
+				["at0029"] = <
+					text = <"*Mobile (ja)">
+					description = <"*">
+				>
+				["at0030"] = <
+					text = <"*Hypermobile (ja)">
+					description = <"*">
+				>
+				["at0031"] = <
+					text = <"*Indeterminate (ja)">
+					description = <"*">
+				>
+			>
+		>
+		["sv"] = <
+			items = <
+				["at0000"] = <
+					text = <"*Examination of oral membrane (ja)">
+					description = <"*unknown (ja)">
+				>
+				["at0001"] = <
+					text = <"*Oral membrane examined (ja)">
+					description = <"*">
+				>
+				["at0002"] = <
+					text = <"*No abnormality detected (ja)">
+					description = <"*">
+				>
+				["at0003"] = <
+					text = <"*Clinical description (ja)">
+					description = <"*">
+				>
+				["at0004"] = <
+					text = <"*View (ja)">
+					description = <"*">
+				>
+				["at0005"] = <
+					text = <"*Membrane intact? (ja)">
+					description = <"*">
+				>
+				["at0006"] = <
+					text = <"*Appearance (ja)">
+					description = <"*">
+				>
+				["at0007"] = <
+					text = <"*Colour (ja)">
+					description = <"*">
+				>
+				["at0008"] = <
+					text = <"*Light reflex (ja)">
+					description = <"*">
+				>
+				["at0009"] = <
+					text = <"*Surface features (ja)">
+					description = <"*">
+				>
+				["at0010"] = <
+					text = <"*Fluid level presence (ja)">
+					description = <"*">
+				>
+				["at0011"] = <
+					text = <"*Fluid level description (ja)">
+					description = <"*">
+				>
+				["at0012"] = <
+					text = <"*Mobility (ja)">
+					description = <"*">
+				>
+				["at0013"] = <
+					text = <"*Examination findings (ja)">
+					description = <"*">
+				>
+				["at0014"] = <
+					text = <"*Multimedia representation (ja)">
+					description = <"*">
+				>
+				["at0015"] = <
+					text = <"*Clinical interpretation (ja)">
+					description = <"*">
+				>
+				["at0016"] = <
+					text = <"*Comment (ja)">
+					description = <"*">
+				>
+				["at0017"] = <
+					text = <"*Examination not done (ja)">
+					description = <"*">
+				>
+				["at0018"] = <
+					text = <"*Intact (ja)">
+					description = <"*">
+				>
+				["at0019"] = <
+					text = <"*Indeterminate (ja)">
+					description = <"*">
+				>
+				["at0020"] = <
+					text = <"*Perforated (ja)">
+					description = <"*">
+				>
+				["at0021"] = <
+					text = <"*Translucent (ja)">
+					description = <"*">
+				>
+				["at0022"] = <
+					text = <"*Opaque (ja)">
+					description = <"*">
+				>
+				["at0023"] = <
+					text = <"*Normal (ja)">
+					description = <"*">
+				>
+				["at0024"] = <
+					text = <"*Abnormal (ja)">
+					description = <"*">
+				>
+				["at0025"] = <
+					text = <"*Present (ja)">
+					description = <"*">
+				>
+				["at0026"] = <
+					text = <"*Absent (ja)">
+					description = <"*">
+				>
+				["at0027"] = <
+					text = <"*Immobile (ja)">
+					description = <"*">
+				>
+				["at0028"] = <
+					text = <"*Hypomobile (ja)">
+					description = <"*">
+				>
+				["at0029"] = <
+					text = <"*Mobile (ja)">
+					description = <"*">
+				>
+				["at0030"] = <
+					text = <"*Hypermobile (ja)">
+					description = <"*">
+				>
+				["at0031"] = <
+					text = <"*Indeterminate (ja)">
 					description = <"*">
 				>
 			>
