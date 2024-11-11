@@ -12,6 +12,11 @@ language
 			author = <
 			>
 		>
+		["sv"] = <
+			language = <[ISO_639-1::sv]>
+			author = <
+			>
+		>
 	>
 
 description
@@ -20,6 +25,10 @@ description
 	>
 	lifecycle_state = <"in_development">
 	details = <
+		["sv"] = <
+			language = <[ISO_639-1::sv]>
+			copyright = <"© openEHR Foundation">
+		>
 		["ja"] = <
 			language = <[ISO_639-1::ja]>
 			copyright = <"© Shinji Kobayashi
@@ -37,7 +46,7 @@ Takahiro Nakahara
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"6885eec2a438f12d3bdebe4bc7a2c386">
+		["MD5-CAM-1.0.1"] = <"2aa06c8a01386a5639372a923126e7a3">
 		["build_uid"] = <"657a0f7e-8101-41c2-827e-b074b67bc555">
 		["revision"] = <"0.0.1-alpha">
 	>
@@ -409,6 +418,206 @@ ontology
 			>
 		>
 		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"*Anatomical location tooth (ja)">
+					description = <"*unknown (ja)">
+				>
+				["at0001"] = <
+					text = <"*Tooth site (ja)">
+					description = <"*">
+				>
+				["at0002"] = <
+					text = <"*Tooth name (ja)">
+					description = <"*">
+				>
+				["at0003"] = <
+					text = <"*Tooth number (ja)">
+					description = <"*">
+				>
+				["at0004"] = <
+					text = <"*Upper (ja)">
+					description = <"*">
+				>
+				["at0005"] = <
+					text = <"*Lower (ja)">
+					description = <"*">
+				>
+				["at0006"] = <
+					text = <"*Right (ja)">
+					description = <"*">
+				>
+				["at0007"] = <
+					text = <"*Left (ja)">
+					description = <"*">
+				>
+				["at0008"] = <
+					text = <"*Site name (ja)">
+					description = <"*">
+				>
+				["at0009"] = <
+					text = <"*Aspect (ja)">
+					description = <"*">
+				>
+				["at0010"] = <
+					text = <"*Tissue (ja)">
+					description = <"*">
+				>
+				["at0011"] = <
+					text = <"*Axis (ja)">
+					description = <"*">
+				>
+				["at0012"] = <
+					text = <"*Normal status (ja)">
+					description = <"*">
+				>
+				["at0013"] = <
+					text = <"*Absolute measurement (ja)">
+					description = <"*">
+				>
+				["at0014"] = <
+					text = <"*Relative dangle (ja)">
+					description = <"*">
+				>
+				["at0015"] = <
+					text = <"*Location (ja)">
+					description = <"*">
+				>
+				["at0016"] = <
+					text = <"*Normal status (ja)">
+					description = <"*">
+				>
+				["at0017"] = <
+					text = <"*Absolute measurement (ja)">
+					description = <"*">
+				>
+				["at0018"] = <
+					text = <"*Landmark (ja)">
+					description = <"*">
+				>
+				["at0019"] = <
+					text = <"*XYZ (ja)">
+					description = <"*">
+				>
+				["at0020"] = <
+					text = <"*Relative location (ja)">
+					description = <"*">
+				>
+				["at0021"] = <
+					text = <"*Landmark (ja)">
+					description = <"*">
+				>
+				["at0022"] = <
+					text = <"*Direction (ja)">
+					description = <"*">
+				>
+				["at0023"] = <
+					text = <"*Distance from landmark (ja)">
+					description = <"*">
+				>
+				["at0024"] = <
+					text = <"*Description (ja)">
+					description = <"*">
+				>
+				["at0025"] = <
+					text = <"*Cusp (ja)">
+					description = <"*">
+				>
+				["at0026"] = <
+					text = <"*Fissure (ja)">
+					description = <"*">
+				>
+				["at0027"] = <
+					text = <"*Root (ja)">
+					description = <"*">
+				>
+				["at0028"] = <
+					text = <"*Buccal (ja)">
+					description = <"*">
+				>
+				["at0029"] = <
+					text = <"*Lingual (ja)">
+					description = <"*">
+				>
+				["at0030"] = <
+					text = <"*Medial (ja)">
+					description = <"*">
+				>
+				["at0031"] = <
+					text = <"*Distal (ja)">
+					description = <"*">
+				>
+				["at0032"] = <
+					text = <"*Occlusal (ja)">
+					description = <"*">
+				>
+				["at0033"] = <
+					text = <"*Gingival (ja)">
+					description = <"*">
+				>
+				["at0034"] = <
+					text = <"*Coronal (ja)">
+					description = <"*">
+				>
+				["at0035"] = <
+					text = <"*Cervical (ja)">
+					description = <"*">
+				>
+				["at0036"] = <
+					text = <"*Enamel (ja)">
+					description = <"*">
+				>
+				["at0037"] = <
+					text = <"*Dentin (ja)">
+					description = <"*">
+				>
+				["at0038"] = <
+					text = <"*Cement (ja)">
+					description = <"*">
+				>
+				["at0039"] = <
+					text = <"*Pulp (ja)">
+					description = <"*">
+				>
+				["at0040"] = <
+					text = <"*Periodontal membrane (ja)">
+					description = <"*">
+				>
+				["at0041"] = <
+					text = <"*N point(nasion) (ja)">
+					description = <"*">
+				>
+				["at0042"] = <
+					text = <"*S point(Sella turccia) (ja)">
+					description = <"*">
+				>
+				["at0043"] = <
+					text = <"*Baccal (ja)">
+					description = <"*">
+				>
+				["at0044"] = <
+					text = <"*Lingual (ja)">
+					description = <"*">
+				>
+				["at0045"] = <
+					text = <"*Medial (ja)">
+					description = <"*">
+				>
+				["at0046"] = <
+					text = <"*Distal (ja)">
+					description = <"*">
+				>
+				["at0047"] = <
+					text = <"*Cervical (ja)">
+					description = <"*">
+				>
+				["at0048"] = <
+					text = <"*Incisal (ja)">
+					description = <"*">
+				>
+			>
+		>
+		["sv"] = <
 			items = <
 				["at0000"] = <
 					text = <"*Anatomical location tooth (ja)">
