@@ -6,6 +6,13 @@ concept
 
 language
 	original_language = <[ISO_639-1::ja]>
+	translations = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			author = <
+			>
+		>
+	>
 
 description
 	original_author = <
@@ -19,6 +26,10 @@ description
 Shinji Kobayashi
 © openEHR Foundation">
 		>
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			copyright = <"© openEHR Foundation">
+		>
 	>
 	other_details = <
 		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/3.0/.">
@@ -26,7 +37,7 @@ Shinji Kobayashi
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"D7071044302B06DEE7D9240FB66102EE">
+		["MD5-CAM-1.0.1"] = <"1bf396b91c6e50ad51bcbc0bde974958">
 		["build_uid"] = <"a51622a5-8395-4d38-9f73-69485d189a7b">
 		["revision"] = <"0.0.1-alpha">
 	>
@@ -248,6 +259,110 @@ ontology
 				>
 				["at0024"] = <
 					text = <"Site">
+					description = <"*">
+				>
+			>
+		>
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"*Examination of giginvae (ja)">
+					description = <"*unknown (ja)">
+				>
+				["at0001"] = <
+					text = <"*No abnormality detected (ja)">
+					description = <"*">
+				>
+				["at0002"] = <
+					text = <"*Clinical description (ja)">
+					description = <"*">
+				>
+				["at0003"] = <
+					text = <"*Examination findings (ja)">
+					description = <"*">
+				>
+				["at0004"] = <
+					text = <"*Multimedia representation (ja)">
+					description = <"*">
+				>
+				["at0005"] = <
+					text = <"*Clinical interpretation (ja)">
+					description = <"*">
+				>
+				["at0006"] = <
+					text = <"*Comment (ja)">
+					description = <"*">
+				>
+				["at0007"] = <
+					text = <"*Examination not done (ja)">
+					description = <"*">
+				>
+				["at0008"] = <
+					text = <"*Specific findings (ja)">
+					description = <"*">
+				>
+				["at0009"] = <
+					text = <"*Bleeding (ja)">
+					description = <"*">
+				>
+				["at0010"] = <
+					text = <"*Extent (ja)">
+					description = <"*">
+				>
+				["at0011"] = <
+					text = <"*Pocket depth (ja)">
+					description = <"*">
+				>
+				["at0012"] = <
+					text = <"*Swelling (ja)">
+					description = <"*">
+				>
+				["at0013"] = <
+					text = <"*Pus discharge (ja)">
+					description = <"*">
+				>
+				["at0014"] = <
+					text = <"*Ulceration (ja)">
+					description = <"*">
+				>
+				["at0015"] = <
+					text = <"*Number (ja)">
+					description = <"*">
+				>
+				["at0016"] = <
+					text = <"*Site (ja)">
+					description = <"*">
+				>
+				["at0017"] = <
+					text = <"*Anatomical location gingivae (ja)">
+					description = <"*">
+				>
+				["at0018"] = <
+					text = <"*Anatomical location gingivae (ja)">
+					description = <"*">
+				>
+				["at0019"] = <
+					text = <"*Wound of membrane (ja)">
+					description = <"*">
+				>
+				["at0020"] = <
+					text = <"*Present (ja)">
+					description = <"*">
+				>
+				["at0021"] = <
+					text = <"*Site (ja)">
+					description = <"*">
+				>
+				["at0022"] = <
+					text = <"*Limited (ja)">
+					description = <"*">
+				>
+				["at0023"] = <
+					text = <"*Extended (ja)">
+					description = <"*">
+				>
+				["at0024"] = <
+					text = <"*Site (ja)">
 					description = <"*">
 				>
 			>
