@@ -131,20 +131,6 @@ Kliniker kanske ibland vill dokumentera en sammanfattande fras som 'kronisk otit
 
 Ska inte användas för att registrera enskilda kliniska observationer - använd specifik OBSERVATION arketyp för det. Exempelvis OBSERVATION.blood_pressure, OBSERVATION.body_weight, eller OBSERVATION.height.">
 		>
-		["es-ar"] = <
-			language = <[ISO_639-1::es-ar]>
-			purpose = <"Para registrar una descripcion narrativa e interpretacion clinica de los hallazgos observados durante el examen fisico completo de una persona, y proveer un marco de referencia para anidar CLUSTER de arquetipos detallados, cada uno de los cuales posibilita registrar en detalle aspectos especificos del examen fisico">
-			keywords = <"examen","fisico","examen","hallazgos","clinicos">
-			copyright = <"© openEHR Foundation, Nasjonal IKT HF">
-			use = <"Utilizar para registrar una descripcion narrativa de los hallazgos observados durante el examen fisico general de una persona.
-
-Utilizar para incorporar la descripcion narrativa de hallazgos clinicos dentro de sistemas clinicos actuales o legados a un formato de arquetipos, utilizando el elemento de data \"Descripcion Clinica\". 
-
-Utilizar como un arquetipo contenedor - para proveer un arquetipo ENTRY consultable en el cual, puedan ser anidados arquetipos CLUSTER especificos de examenes, incluidos aquellos que detallan la inspeccion, palpacion, asucultacion, percusion y movimiento de los sistemas o estructuras anatomicas del cuerpo">
-			misuse = <"No debe ser utilizado para registrar observaciones de la toma de historia -utilizar arquetipos especificos de OBSERVACION y CLUSTER. Por ejemplo OBSERVACION.historia y CLUSTER.sintoma.
-
-No debe ser utilizado para registrar observaciones clinicas autonomas - utilizar arquetipos especificos OBSERVATION. Por ejemplo OBSERVATION.presion_arterial, OBSERVATION.peso_corporal, u OBSERVATION.altura. ">
-		>
 		["nb"] = <
 			language = <[ISO_639-1::nb]>
 			purpose = <"For å registrere funn ved fysisk undersøkelse av en helsetjenestemottaker.">
@@ -158,6 +144,20 @@ Noen ganger vil klinikere ønske å registrere et sammendrag, f.eks. \"kronisk o
 			misuse = <"Skal ikke anvendes for å registrere observasjoner gjort under anamneseopptak - bruk spesifikke OBSERVATION og CLUSTER-arketyper, for eksempel OBSERVATION.story eller CLUSTER.symptom.
 
 Skal ikke anvendes for å registrere frittstående observasjoner - bruk spesifikke OBSERVATION-arketyper, for eksempel OBSERVATION.body_weight (Kroppsvekt) eller OBSERVATION.height (Høyde/Lengde).">
+		>
+		["es-ar"] = <
+			language = <[ISO_639-1::es-ar]>
+			purpose = <"Para registrar una descripcion narrativa e interpretacion clinica de los hallazgos observados durante el examen fisico completo de una persona, y proveer un marco de referencia para anidar CLUSTER de arquetipos detallados, cada uno de los cuales posibilita registrar en detalle aspectos especificos del examen fisico">
+			keywords = <"examen","fisico","examen","hallazgos","clinicos">
+			copyright = <"© openEHR Foundation, Nasjonal IKT HF">
+			use = <"Utilizar para registrar una descripcion narrativa de los hallazgos observados durante el examen fisico general de una persona.
+
+Utilizar para incorporar la descripcion narrativa de hallazgos clinicos dentro de sistemas clinicos actuales o legados a un formato de arquetipos, utilizando el elemento de data \"Descripcion Clinica\". 
+
+Utilizar como un arquetipo contenedor - para proveer un arquetipo ENTRY consultable en el cual, puedan ser anidados arquetipos CLUSTER especificos de examenes, incluidos aquellos que detallan la inspeccion, palpacion, asucultacion, percusion y movimiento de los sistemas o estructuras anatomicas del cuerpo">
+			misuse = <"No debe ser utilizado para registrar observaciones de la toma de historia -utilizar arquetipos especificos de OBSERVACION y CLUSTER. Por ejemplo OBSERVACION.historia y CLUSTER.sintoma.
+
+No debe ser utilizado para registrar observaciones clinicas autonomas - utilizar arquetipos especificos OBSERVATION. Por ejemplo OBSERVATION.presion_arterial, OBSERVATION.peso_corporal, u OBSERVATION.altura. ">
 		>
 		["pt-br"] = <
 			language = <[ISO_639-1::pt-br]>
@@ -174,21 +174,12 @@ Os clínicos às vezes podem querer gravar uma frase resumida, como \"otite méd
 
 Não deve ser utilizado pra gravar observações clínicas isoladas - use arquétipos específicos OBSERVATION. Por exemplo: OBSERVATION.blood_pressure, OBSERVATION.body_weight, ou OBSERVATION.height.">
 		>
-		["sl"] = <
-			language = <[ISO_639-1::sl]>
-			purpose = <"Beleženje podrobnosti o ugotovitvah fizičnega pregleda obravnavane osebe.">
-			keywords = <"pregled","fizični","preiskava","ugotovitve","klinični">
+		["ar-sy"] = <
+			language = <[ISO_639-1::ar-sy]>
+			purpose = <"لتسجيل الموجودات التي تم العثور عليها عند الفحص البدني">
+			keywords = <"الفحص","البدني">
 			copyright = <"© openEHR Foundation, Nasjonal IKT HF">
-			use = <"Uporabiti za beleženje podrobnosti o ugotovitvah fizičnega pregleda obravnavane osebe. Lahko vključuje pripovedni opis ugotovitev, okvir, v katerega je možno ugnezditi podrobne CLUSTER arhetipe pregledov, in klinično interpretacijo ugotovitev. 
-
-Primeri podrobnih CLUSTER arhetipov pregledov vključujejo tiste, ki opisujejo inspekcijo, palpacijo, avskultacijo, perkusijo in gibanje telesnih sistemov ali anatomskih struktur, kot je CLUSTER.exam_pupils. 
-
-Pripovedne opise kliničnih ugotovitev iz obstoječih kliničnih sistemov je mogoče zajeti s podatkovnim elementom 'Opis'. 
-
-Zdravniki bodo morda včasih želeli zabeležiti povzemajočo besedno zvezo, kot je 'kronično vnetje srednjega ušesa', kot Interpretacijo fizičnega pregleda. V kontekstu arhetipa fizičnega pregleda naj bo to razumljeno samo kot 'fizični znaki so skladni s kroničnim vnetjem srednjega ušesa'. Čeprav se lahko zdi, da povzemajoča besedna zveza predstavlja diagnozo, varno in dosledno poizvedovanje zahteva, da se diagnoza zabeleži z uporabo arhetipa EVALUATION.problem_diagnosis, tudi če sta besedni zvezi enaki.">
-			misuse = <"Se ne uporablja za beleženje opažanj pri pridobivanju anamneze - uporabiti specifične OBSERVATION in CLUSTER arhetipe. Na primer OBSERVATION.story in CLUSTER.symptom. 
-
-Se ne uporablja za beleženje samostojnih kliničnih opažanj – uporabiti specifične OBSERVATION arhetipe. Na primer OBSERVATION.blood_pressure (krvni tlak), OBSERVATION.body_weight (telesna teža), or OBSERVATION.height (telesna višina).">
+			use = <"تم تصميم النموذج ليحتوي على عناقيد مفصلة متعلقة بالفحص بما في ذلك الاكتشاف, الجس, التسمع و القرع بما في هذه العناقيد من تخصيصات.">
 		>
 		["en"] = <
 			language = <[ISO_639-1::en]>
@@ -206,12 +197,21 @@ Clinicians may sometimes want to record a summative phrase such as 'chronic otit
 
 Not to be used to record stand-alone clinical observations - use specific OBSERVATION archetypes. For example OBSERVATION.blood_pressure, OBSERVATION.body_weight, or OBSERVATION.height.">
 		>
-		["ar-sy"] = <
-			language = <[ISO_639-1::ar-sy]>
-			purpose = <"لتسجيل الموجودات التي تم العثور عليها عند الفحص البدني">
-			keywords = <"الفحص","البدني">
+		["sl"] = <
+			language = <[ISO_639-1::sl]>
+			purpose = <"Beleženje podrobnosti o ugotovitvah fizičnega pregleda obravnavane osebe.">
+			keywords = <"pregled","fizični","preiskava","ugotovitve","klinični">
 			copyright = <"© openEHR Foundation, Nasjonal IKT HF">
-			use = <"تم تصميم النموذج ليحتوي على عناقيد مفصلة متعلقة بالفحص بما في ذلك الاكتشاف, الجس, التسمع و القرع بما في هذه العناقيد من تخصيصات.">
+			use = <"Uporabiti za beleženje podrobnosti o ugotovitvah fizičnega pregleda obravnavane osebe. Lahko vključuje pripovedni opis ugotovitev, okvir, v katerega je možno ugnezditi podrobne CLUSTER arhetipe pregledov, in klinično interpretacijo ugotovitev. 
+
+Primeri podrobnih CLUSTER arhetipov pregledov vključujejo tiste, ki opisujejo inspekcijo, palpacijo, avskultacijo, perkusijo in gibanje telesnih sistemov ali anatomskih struktur, kot je CLUSTER.exam_pupils. 
+
+Pripovedne opise kliničnih ugotovitev iz obstoječih kliničnih sistemov je mogoče zajeti s podatkovnim elementom 'Opis'. 
+
+Zdravniki bodo morda včasih želeli zabeležiti povzemajočo besedno zvezo, kot je 'kronično vnetje srednjega ušesa', kot Interpretacijo fizičnega pregleda. V kontekstu arhetipa fizičnega pregleda naj bo to razumljeno samo kot 'fizični znaki so skladni s kroničnim vnetjem srednjega ušesa'. Čeprav se lahko zdi, da povzemajoča besedna zveza predstavlja diagnozo, varno in dosledno poizvedovanje zahteva, da se diagnoza zabeleži z uporabo arhetipa EVALUATION.problem_diagnosis, tudi če sta besedni zvezi enaki.">
+			misuse = <"Se ne uporablja za beleženje opažanj pri pridobivanju anamneze - uporabiti specifične OBSERVATION in CLUSTER arhetipe. Na primer OBSERVATION.story in CLUSTER.symptom. 
+
+Se ne uporablja za beleženje samostojnih kliničnih opažanj – uporabiti specifične OBSERVATION arhetipe. Na primer OBSERVATION.blood_pressure (krvni tlak), OBSERVATION.body_weight (telesna teža), or OBSERVATION.height (telesna višina).">
 		>
 		["zh-cn"] = <
 			language = <[ISO_639-1::zh-cn]>
@@ -228,19 +228,6 @@ Not to be used to record stand-alone clinical observations - use specific OBSERV
 
 并非旨在用于记录单独的临床观察项目——此时请采用具体的观察（OBSERVATION）型原始型。例如，血压原始型OBSERVATION.blood_pressure、体重原始型OBSERVATION.body_weight，或者身高原始型OBSERVATION.height。">
 		>
-		["es"] = <
-			language = <[ISO_639-1::es]>
-			purpose = <"Este arquetipo será utilizado para registrar detalles sobre los hallazgos en el examen físico del paciente">
-			keywords = <"examinación","palpación","auscultación","percusión","hallazgos clínicos","examen físico">
-			use = <"Este arquetipo será utilizado para registrar detalles sobre los hallazgos en el examen físico del paciente.
-
-Puede utilizarse junto a otros arquetipos para incluir detalles de los hallazgos clínicos, para describir examinación por inspección, palpación, auscultación, percusión y movimiento de los sistemas o estructuras anatómicas. Por ejemplo se podrá utilizar el arquetipo CLUSTER.exam_pupils.
-
-La información registrada mediante este arquetipo debe estar relacionada con la examinación física y sus hallazgos. Algunas interpretaciones de los hallazgos pueden registrarse usando este arquetipo aunque parezcan diagnósticos, pero solo si están directamente relacionadas con el hallazgo. Para registrar un diagnóstico utilizar el arquetipo EVALUATION.problem_diagnosis, aunque el texto de la interpretación del hallazgo sea igual al diagnóstico.">
-			misuse = <"No se debe utilizar para registrar información histórica del paciente, para eso utilizar el arquetipo OBSERVATION.story
-
-No se debe utilizar para registrar observaciones independientes y signos, para eso utilizar arquetipos específicos como OBSERVATION.blood_pressure, OBSERVATION.body_weight, OBSERVATION.height, etc.">
-		>
 		["ca"] = <
 			language = <[ISO_639-1::ca]>
 			purpose = <"Registrar detalls sobre les troballes de l'examen físic del pacient.">
@@ -254,6 +241,19 @@ La informació registrada mitjançant aquest arquetip ha d'estar relacionada amb
 
 No s'ha de fer servir per registrar observacions independents i signes; per a això, utilitzeu arquetips específics com OBSERVATION.blood_pressure, OBSERVATION.body_weight, OBSERVATION.height, etc.">
 		>
+		["es"] = <
+			language = <[ISO_639-1::es]>
+			purpose = <"Este arquetipo será utilizado para registrar detalles sobre los hallazgos en el examen físico del paciente">
+			keywords = <"examinación","palpación","auscultación","percusión","hallazgos clínicos","examen físico">
+			use = <"Este arquetipo será utilizado para registrar detalles sobre los hallazgos en el examen físico del paciente.
+
+Puede utilizarse junto a otros arquetipos para incluir detalles de los hallazgos clínicos, para describir examinación por inspección, palpación, auscultación, percusión y movimiento de los sistemas o estructuras anatómicas. Por ejemplo se podrá utilizar el arquetipo CLUSTER.exam_pupils.
+
+La información registrada mediante este arquetipo debe estar relacionada con la examinación física y sus hallazgos. Algunas interpretaciones de los hallazgos pueden registrarse usando este arquetipo aunque parezcan diagnósticos, pero solo si están directamente relacionadas con el hallazgo. Para registrar un diagnóstico utilizar el arquetipo EVALUATION.problem_diagnosis, aunque el texto de la interpretación del hallazgo sea igual al diagnóstico.">
+			misuse = <"No se debe utilizar para registrar información histórica del paciente, para eso utilizar el arquetipo OBSERVATION.story
+
+No se debe utilizar para registrar observaciones independientes y signos, para eso utilizar arquetipos específicos como OBSERVATION.blood_pressure, OBSERVATION.body_weight, OBSERVATION.height, etc.">
+		>
 	>
 	other_details = <
 		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
@@ -262,10 +262,10 @@ No s'ha de fer servir per registrar observacions independents i signes; per a ai
 		["original_namespace"] = <"no.nasjonalikt">
 		["original_publisher"] = <"Nasjonal IKT">
 		["custodian_namespace"] = <"no.nasjonalikt">
-		["MD5-CAM-1.0.1"] = <"c126747c899dd9bd2dd544733d0571c4">
+		["MD5-CAM-1.0.1"] = <"52b92a8bb55b98b72f81861bea1f6383">
 		["build_uid"] = <"495be8df-5a53-4755-8323-21de4602ea35">
-		["revision"] = <"1.1.4">
 		["ip_acknowledgements"] = <"This artefact includes content from SNOMED Clinical Terms® (SNOMED CT®) which is copyrighted material of the International Health Terminology Standards Development Organisation (IHTSDO). Where an implementation of this artefact makes use of SNOMED CT content, the implementer must have the appropriate SNOMED CT Affiliate license - for more information contact https://www.snomed.org/snomed-ct/get-snomed or info@snomed.org.">
+		["revision"] = <"1.1.4">
 	>
 
 definition
@@ -279,7 +279,11 @@ definition
 								items cardinality matches {0..*; unordered} matches {
 									ELEMENT[at0011] occurrences matches {0..1} matches {    -- Examination Type
 										value matches {
-											DV_CODED_TEXT matches {*}
+											DV_CODED_TEXT matches {
+												defining_code matches {
+													[ac0000]
+												}
+											}
 										}
 									}
 									allow_archetype CLUSTER[at0005] occurrences matches {0..*} matches {    -- Site
@@ -301,7 +305,7 @@ definition
 	}
 
 ontology
-	terminologies_available = <"SNOMED-CT", ...>
+	terminologies_available = <"SNOMED-CT","SNOMED CT">
 	term_definitions = <
 		["ar-sy"] = <
 			items = <
@@ -683,6 +687,13 @@ Zum Beispiel: CLUSTER.palpation_of_uterus, CLUSTER.palpation_of_cervix und CLUST
 		["SNOMED-CT"] = <
 			items = <
 				["at0011"] = <[SNOMED-CT::5880005]>
+			>
+		>
+	>
+	constraint_binding = <
+		["SNOMED CT"] = <
+			items = <
+				["ac0000"] = <terminology:http://snomed.info/id/5880005>
 			>
 		>
 	>
