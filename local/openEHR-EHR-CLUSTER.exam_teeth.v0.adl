@@ -7,13 +7,13 @@ concept
 language
 	original_language = <[ISO_639-1::ja]>
 	translations = <
-		["en"] = <
-			language = <[ISO_639-1::en]>
+		["sv"] = <
+			language = <[ISO_639-1::sv]>
 			author = <
 			>
 		>
-		["sv"] = <
-			language = <[ISO_639-1::sv]>
+		["en"] = <
+			language = <[ISO_639-1::en]>
 			author = <
 			>
 		>
@@ -46,7 +46,7 @@ Shinji Kobayashi
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"f847867bd3eb417bf2b3fb72d7d9055e">
+		["MD5-CAM-1.0.1"] = <"b91856e9585ef5c49338c6051f3075b6">
 		["build_uid"] = <"774bce3d-fa13-4c58-9d96-595ea3cdd3fa">
 		["revision"] = <"0.0.1-alpha">
 	>
@@ -206,10 +206,6 @@ definition
 					DV_TEXT matches {*}
 				}
 			}
-			allow_archetype ELEMENT[at0032] occurrences matches {0..*} matches {    -- Multimedia representation
-				include
-					archetype_id/value matches {/openEHR-EHR-ELEMENT\.multimedia(-[a-zA-Z0-9_]+)*\.v1/}
-			}
 			ELEMENT[at0033] occurrences matches {0..1} matches {    -- Clinical interpretation
 				value matches {
 					DV_TEXT matches {*}
@@ -353,10 +349,6 @@ ontology
 				>
 				["at0031"] = <
 					text = <"Colour">
-					description = <"*">
-				>
-				["at0032"] = <
-					text = <"Multimedia representation">
 					description = <"*">
 				>
 				["at0033"] = <
@@ -511,10 +503,6 @@ ontology
 					text = <"*Colour (ja)">
 					description = <"*">
 				>
-				["at0032"] = <
-					text = <"*Multimedia representation (ja)">
-					description = <"*">
-				>
 				["at0033"] = <
 					text = <"*Clinical interpretation (ja)">
 					description = <"*">
@@ -665,10 +653,6 @@ ontology
 				>
 				["at0031"] = <
 					text = <"*Colour (ja)">
-					description = <"*">
-				>
-				["at0032"] = <
-					text = <"*Multimedia representation (ja)">
 					description = <"*">
 				>
 				["at0033"] = <
