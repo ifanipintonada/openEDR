@@ -126,29 +126,21 @@ In order for this list to be accurate and safe to use as the basis for decision 
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"8367D4F2CF2BA5BE59DC4442FD28C085">
+		["MD5-CAM-1.0.1"] = <"f82e6e16153118a6ea0748f06aacde71">
 		["build_uid"] = <"46c18c89-3428-4e56-8aaa-33e4907ea711">
 		["revision"] = <"0.0.1-alpha">
 	>
 
 definition
-	SECTION[at0000] matches {    -- Problem list
+	SECTION[at0000] matches {    -- Problem List
 		items cardinality matches {1..*; unordered} matches {
-			allow_archetype EVALUATION[at0001] occurrences matches {0..*} matches {    -- Problems, diagnoses, concerns or health issue threads
+			allow_archetype EVALUATION[at0001] occurrences matches {0..*} matches {    -- Diagnosis
 				include
 					archetype_id/value matches {/openEHR-EHR-EVALUATION\.problem_diagnosis(-[a-zA-Z0-9_]+)*\.v1/}
 			}
 			allow_archetype ACTION[at0002] occurrences matches {0..*} matches {    -- Procedures
 				include
 					archetype_id/value matches {/openEHR-EHR-ACTION\.procedure(-[a-zA-Z0-9_]+)*\.v1/}
-			}
-			allow_archetype EVALUATION[at0003] occurrences matches {0..*} matches {    -- Exclusion statement
-				include
-					archetype_id/value matches {/openEHR-EHR-EVALUATION\.exclusion_global(-[a-zA-Z0-9_]+)*\.v1/}
-			}
-			allow_archetype EVALUATION[at0004] occurrences matches {0..*} matches {    -- Absent information
-				include
-					archetype_id/value matches {/openEHR-EHR-EVALUATION\.absence(-[a-zA-Z0-9_]+)*\.v2/}
 			}
 		}
 	}
@@ -158,106 +150,66 @@ ontology
 		["en"] = <
 			items = <
 				["at0000"] = <
-					text = <"Problem list">
+					text = <"Problem List">
 					description = <"Framework for consistent modelling of content within a template for a Problem list.">
 					comment = <"Intended to be used within the COMPOSITION.problem_list.">
 				>
 				["at0001"] = <
-					text = <"Problems, diagnoses, concerns or health issue threads">
+					text = <"Diagnosis">
 					description = <"Positive statements about the presence of problems, diagnoses, concerns or health issue threads.">
 				>
 				["at0002"] = <
 					text = <"Procedures">
 					description = <"Positive statements about the presence of procedures that have been performed.">
 				>
-				["at0003"] = <
-					text = <"Exclusion statement">
-					description = <"A positive statement about the exclusion of known problems, diagnoses and procedures.">
-					comment = <"For example: \"No problems or diagnoses\" or No operations or procedures\".">
-				>
-				["at0004"] = <
-					text = <"Absent information">
-					description = <"A positive statement that no information is available about problems, diagnoses or procedures.">
-					comment = <"For example: \"No information available concerning procedures\".">
-				>
 			>
 		>
 		["pt-br"] = <
 			items = <
 				["at0000"] = <
-					text = <"Lista de problemas">
+					text = <"*Problem List (en)">
 					description = <"*Framework for consistent modelling of content within a template for a Problem list. (en)">
 				>
 				["at0001"] = <
-					text = <"*Problems, diagnoses, concerns or health issue threads(en)">
+					text = <"*Diagnosis (en)">
 					description = <"*Positive statements about the presence of problems, diagnoses, concerns or health issue threads. (en)">
 				>
 				["at0002"] = <
 					text = <"Procedimentos">
 					description = <"*Positive statements about the presence of procedures that have been performed. (en)">
 				>
-				["at0003"] = <
-					text = <"*Exclusion statement (en)">
-					description = <"*A positive statement about the exclusion of known problems, diagnoses and procedures. (en)">
-					comment = <"Por exemplo: \"Sem diagnóstico ou problema significante\" ou \"Sem histórico de operações ou procedimentos significantes\".">
-				>
-				["at0004"] = <
-					text = <"Informações de ausência">
-					description = <"*A positive statement that no information is available about problems, diagnoses or procedures. (en)">
-					comment = <"Por exemplo: \"Sem informações disponíveis sobre o procedimento correspondente\".">
-				>
 			>
 		>
 		["es-ar"] = <
 			items = <
 				["at0000"] = <
-					text = <"Lista de Problemas">
+					text = <"*Problem List (en)">
 					description = <"*Framework for consistent modelling of content within a template for a Problem list. (en)">
 				>
 				["at0001"] = <
-					text = <"*Problems, diagnoses, concerns or health issue threads(en)">
+					text = <"*Diagnosis (en)">
 					description = <"*Positive statements about the presence of problems, diagnoses, concerns or health issue threads. (en)">
 				>
 				["at0002"] = <
 					text = <"Procedimientos">
 					description = <"*Positive statements about the presence of procedures that have been performed. (en)">
 				>
-				["at0003"] = <
-					text = <"*Exclusion statement (en)">
-					description = <"*A positive statement about the exclusion of known problems, diagnoses and procedures. (en)">
-					comment = <"Por ejemplo: \\\"Sin problemas o diagnósticos significativos\\\" o \\\"Sin antecedentes de cirugías o procedimientos significativos\\\".">
-				>
-				["at0004"] = <
-					text = <"Información ausente">
-					description = <"*A positive statement that no information is available about problems, diagnoses or procedures. (en)">
-					comment = <"Por ejemplo: \\\"Sin información disponible acerca de procedimientos\\\".">
-				>
 			>
 		>
 		["de"] = <
 			items = <
 				["at0000"] = <
-					text = <"Problemliste">
+					text = <"*Problem List (en)">
 					description = <"Framework für die konsistente Modellierung von Inhalten in einem Template für eine Problemliste.">
 					comment = <"Für die Verwendung in der COMPOSITION.problem_list.">
 				>
 				["at0001"] = <
-					text = <"Probleme / Diagnosen / Bedenken oder Gesundheitsfragen">
+					text = <"*Diagnosis (en)">
 					description = <"Positive Aussagen über das Vorhandensein von Problemen, Diagnosen, Bedenken oder gesundheitlichen Fragen.">
 				>
 				["at0002"] = <
 					text = <"Prozeduren">
 					description = <"Positive Aussagen über das Vorhandensein von durchgeführten Prozeduren.">
-				>
-				["at0003"] = <
-					text = <"Ausschlusserklärung">
-					description = <"Eine positive Aussage über Ausschluss bekannter Probleme, Diagnosen und Prozeduren.">
-					comment = <"Zum Beispiel: \"Keine Probleme oder Diagnosen\" oder \"Keine Operationen oder Prozeduren\".">
-				>
-				["at0004"] = <
-					text = <"Fehlende Information">
-					description = <"Bestätigte Aussage, dass keine Informationen über Probleme, Diagnosen oder Prozeduren verfügbar sind.">
-					comment = <"Zum Beispiel: \"Keine Informationen zu Prozeduren verfügbar\".">
 				>
 			>
 		>
