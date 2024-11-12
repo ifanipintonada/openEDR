@@ -19,9 +19,9 @@
       "original_namespace" : "",
       "original_publisher" : "",
       "custodian_namespace" : "",
-      "sem_ver" : "0.1.0",
+      "sem_ver" : "1.0.0",
       "build_uid" : "",
-      "MD5-CAM-1.0.1" : "46737c3d8c20bf273e1f461e67ce5fea",
+      "MD5-CAM-1.0.1" : "58d68a2c14ea521d33c36f20f26c0ae7",
       "PARENT:MD5-CAM-1.0.1" : "327A8885F97587660404644C3C6053B6"
     },
     "details" : {
@@ -387,7 +387,177 @@
       "otherDetails" : {
         "PARENT:MD5-CAM-1.0.1" : "61D18256DA550BBFD431F41EF7307BE0"
       },
-      "details" : { }
+      "details" : {
+        "de" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "de"
+          },
+          "purpose" : "Zur detaillierten Aufzeichnung von Befunden der körperlichen Untersuchung eines Pflegebedürftigen.",
+          "keywords" : [ "Behandlung", "Untersuchung", "Ergebnis", "Befund", "Untersuchungsergebnis", "körperlich", "klinisch", "medizinisch" ],
+          "use" : "Dient zur detaillierten Aufzeichnung von Befunden der körperlichen Untersuchung eines Pflegebedürftigen. Dies kann eine Befundbeschreibung, ein Framework, in dem detaillierte CLUSTER-Untersuchungsarchetypen verschachtelt werden können und eine klinische Interpretation der Befunde umfassen.\r\n\r\nBeispiele für detaillierte CLUSTER-Untersuchungsarchetypen sind solche, die Inspektion, Palpation, Auskultation, Perkussion und Bewegung von Körpersystemen oder anatomischen Strukturen beschreiben, wie z.B. CLUSTER.exam_pupils.\r\n\r\nBeschreibungen von klinischen Befunden aus bestehenden klinischen Systemen können mit dem Datenelement 'Beschreibung' erfasst werden.\r\n\r\nKliniker möchten manchmal einen zusammenfassenden Ausdruck wie 'chronische Mittelohrentzündung' als Interpretation der körperlichen Untersuchung aufzeichnen. Im Zusammenhang mit dem Archetyp der körperlichen Untersuchung sollte dies nur so verstanden werden, dass \"die körperlichen Anzeichen mit einer chronischen Mittelohrentzündung vereinbar sind\". Obwohl der zusammenfassende Ausdruck eine Diagnose zu repräsentieren scheint, erfordert eine sichere und konsistente Abfrage die Aufzeichnung einer Diagnose unter Verwendung des Archetyps EVALUATION.problem_diagnosis, selbst wenn die Ausdrücke identisch sind.",
+          "misuse" : "Nicht zur Aufzeichnung von historischen Beobachtungen verwenden - Für diesen Zweck sollen spezifische OBSERVATION- und CLUSTER-Archetypen verwendet werden, z.B OBSERVATION.story und CLUSTER.symptom.\r\nNicht zur Aufzeichnung von eigenständigen klinischen Beobachtungen verwenden - Für diesen Zweck sollen spezifische OBSERVATION-Archetypen verwendet werden, z.B. OBSERVATION.blood_pressure, OBSERVATION.body_weight oder OBSERVATION.height.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "sv" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "sv"
+          },
+          "purpose" : "För registrering av detaljer om fynd vid fysisk undersökning.",
+          "keywords" : [ "undersökning", "fysisk", "fynd", "klinisk" ],
+          "use" : "Används för att registrera detaljer om fynd vid fysisk undersökning. Detta kan inkludera en detaljerad beskrivning av fynden, ett ramverk för detaljerade CLUSTER-undersökningsarketyper och en klinisk tolkning av resultaten.\r\n\r\nExempel på detaljerade CLUSTER-undersökningsarketyper inkluderar de som beskriver inspektion, palpation, auskultation, slagverk och rörelse av kroppssystem eller anatomiska strukturer, såsom CLUSTER.exam_pupils.\r\n\r\nDetaljerade beskrivningar av kliniska resultat från befintliga kliniska system kan fångas med hjälp av dataelemntet 'Beskrivning'.\r\n\r\nKliniker kanske ibland vill dokumentera en sammanfattande fras som 'kronisk otitis media' som en tolkning av den fysiska undersökningen. I sammanhanget med den fysiska undersöknings arketypen bör detta endast tolkas som \"fysiska tecken överensstämmer med kronisk otitis media\". Medan den sammanfattande frasen kan tyckas representera en diagnos, kräver en säker och konsekvent fråga att en diagnos ska registreras med EVALUATION.problem_diagnosis-arketypen, även om fraserna är identiska.",
+          "misuse" : "Ska inte användas för att registrera historiska observationer - används då specifika OBSERVATION och CLUSTER arketyper. Exempelvis OBSERVATION.story och CLUSTER.symptom.\r\n\r\nSka inte användas för att registrera enskilda kliniska observationer - använd specifik OBSERVATION arketyp för det. Exempelvis OBSERVATION.blood_pressure, OBSERVATION.body_weight, eller OBSERVATION.height.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "nb" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "nb"
+          },
+          "purpose" : "For å registrere funn ved fysisk undersøkelse av en helsetjenestemottaker.",
+          "keywords" : [ "klinisk undersøkelse", "fysisk undersøkelse", "undersøkelse", "funn", "klinisk", "legeundersøkelse", "observasjon", "kroppsundersøkelse" ],
+          "use" : "Benyttes ved registrering av detaljer om fysiske funn observert ved klinisk undersøkelse av et individ. Dette kan inkludere en tekstlig beskrivelse av funn og kliniske fortolkninger av funn. Tekstlige beskrivelser av kliniske funn innhentet fra eksisterende kliniske systemer kan fanges opp ved å benytte dataelementet \"Beskrivelse\". \r\n\r\nArketypen kan også benyttes som et rammeverk for innsetting av detaljer ved hjelp av CLUSTER.exam-arketyper. Eksempler på detaljer som kan beskrives ved hjelp av innsatte CLUSTER-arketyper er inspeksjon, palpasjon, auskultasjon, perkusjon og bevegelser i kroppsystemer eller anatomiske strukturer (feks CLUSTER.exam_pupils).\r\n\r\nNoen ganger vil klinikere ønske å registrere et sammendrag, f.eks. \"kronisk otitis media\", som en fortolkning av funn ved klinisk undersøkelse. I denne konteksten - arketypen 'Funn ved klinisk undersøkelse' - bør dette forståes som 'funn forenlig med kronisk otitis media', og ikke en fastsatt diagnose. Skulle sammendraget synes å representere en diagnose, vil sikker og konsistent dataspørring kreve en diagnose som registreres i EVALUATION.problem_diagnosis-arketypen, selv om sammendraget/frasen og diagnosen er identiske.",
+          "misuse" : "Skal ikke anvendes for å registrere observasjoner gjort under anamneseopptak - bruk spesifikke OBSERVATION og CLUSTER-arketyper, for eksempel OBSERVATION.story eller CLUSTER.symptom.\r\n\r\nSkal ikke anvendes for å registrere frittstående observasjoner - bruk spesifikke OBSERVATION-arketyper, for eksempel OBSERVATION.body_weight (Kroppsvekt) eller OBSERVATION.height (Høyde/Lengde).",
+          "copyright" : "© openEHR Foundation, Nasjonal IKT HF",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "es-ar" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "es-ar"
+          },
+          "purpose" : "Para registrar una descripcion narrativa e interpretacion clinica de los hallazgos observados durante el examen fisico completo de una persona, y proveer un marco de referencia para anidar CLUSTER de arquetipos detallados, cada uno de los cuales posibilita registrar en detalle aspectos especificos del examen fisico",
+          "keywords" : [ "examen", "fisico", "examen", "hallazgos", "clinicos" ],
+          "use" : "Utilizar para registrar una descripcion narrativa de los hallazgos observados durante el examen fisico general de una persona.\r\n\r\nUtilizar para incorporar la descripcion narrativa de hallazgos clinicos dentro de sistemas clinicos actuales o legados a un formato de arquetipos, utilizando el elemento de data \"Descripcion Clinica\". \r\n\r\nUtilizar como un arquetipo contenedor - para proveer un arquetipo ENTRY consultable en el cual, puedan ser anidados arquetipos CLUSTER especificos de examenes, incluidos aquellos que detallan la inspeccion, palpacion, asucultacion, percusion y movimiento de los sistemas o estructuras anatomicas del cuerpo",
+          "misuse" : "No debe ser utilizado para registrar observaciones de la toma de historia -utilizar arquetipos especificos de OBSERVACION y CLUSTER. Por ejemplo OBSERVACION.historia y CLUSTER.sintoma.\r\n\r\nNo debe ser utilizado para registrar observaciones clinicas autonomas - utilizar arquetipos especificos OBSERVATION. Por ejemplo OBSERVATION.presion_arterial, OBSERVATION.peso_corporal, u OBSERVATION.altura. ",
+          "copyright" : "© openEHR Foundation, Nasjonal IKT HF",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "pt-br" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "pt-br"
+          },
+          "purpose" : "Para registro de detalhes sobre os resultados no exame físico do sujeito do cuidado.",
+          "keywords" : [ "exame", "físico", "achados", "clínico" ],
+          "use" : "Use para registrar detalhes sobre achados no exame físico do sujeito do cuidado. Pode incluir uma descrição narrativa dos achados, uma estrutura em que aninhar detalhados arquétipos do exame do CLUSTER, e uma interpretação clínica dos achados.\r\n\r\nExemplos de arquétipos detalhados de exame CLUSTER incluem aqueles que descrevem inspeção, palpação, ausculta, percussão e movimento de sistemas corporais ou estruturas anatômicas, como CLUSTER.exam_pupils.\r\n\r\nAs descrições narrativas dos achados dos sistemas clínicos existentes podem ser capturadas utilizando o elemento de dados \"Descrição\".\r\n\r\nOs clínicos às vezes podem querer gravar uma frase resumida, como \"otite média crônica\", como Interpretação do exame físico. No contexto do arquétipo do exame físico, isso só deve ser entendido como \"os sinais físicos são consistentes com a otite média crônica\". Embora a expressão resumida possa parecer representar um diagnóstico, a consulta segura e consistente requer que um diagnóstico seja registrado usando o arquétipo EVALUATION.problem_diagnosis, mesmo que as frases sejam idênticas.",
+          "misuse" : "Não deve ser utilizado para gravação de anamnese observações - usar arquétipos específicos OBSERVATION e CLUSTER. Por exemplo, OBSERVATION.story e CLUSTER .symptom.\r\n\r\nNão deve ser utilizado pra gravar observações clínicas isoladas - use arquétipos específicos OBSERVATION. Por exemplo: OBSERVATION.blood_pressure, OBSERVATION.body_weight, ou OBSERVATION.height.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "ar-sy" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "ar-sy"
+          },
+          "purpose" : "لتسجيل الموجودات التي تم العثور عليها عند الفحص البدني",
+          "keywords" : [ "الفحص", "البدني" ],
+          "use" : "تم تصميم النموذج ليحتوي على عناقيد مفصلة متعلقة بالفحص بما في ذلك الاكتشاف, الجس, التسمع و القرع بما في هذه العناقيد من تخصيصات.",
+          "copyright" : "© openEHR Foundation, Nasjonal IKT HF",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "en" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "en"
+          },
+          "purpose" : "For recording details about findings on physical examination of the subject of care.",
+          "keywords" : [ "examination", "physical", "exam", "findings", "clinical" ],
+          "use" : "Use to record details about findings on physical examination of the subject of care. This may include a narrative description of the findings, a framework in which to nest detailed CLUSTER examination archetypes, and a clinical interpretation of the findings.\r\n\r\nExamples of detailed CLUSTER examination archetypes include those that describe inspection, palpation, auscultation, percussion and movement of body systems or anatomical structures, such as CLUSTER.exam_pupils.\r\n\r\nNarrative descriptions of clinical findings from existing clinical systems may be captured using the 'Description' data element.\r\n\r\nClinicians may sometimes want to record a summative phrase such as 'chronic otitis media' as an Interpretation of the physical examination. In the context of the physical examination archetype this should only be understood as 'physical signs are consistent with chronic otitis media'. While the summative phrase may appear to represent a diagnosis, safe and consistent querying requires a diagnosis to be recorded using the EVALUATION.problem_diagnosis archetype, even if the phrases are identical.",
+          "misuse" : "Not to be used for recording history-taking observations - use specific OBSERVATION and CLUSTER archetypes. For example OBSERVATION.story and CLUSTER.symptom.\r\n\r\nNot to be used to record stand-alone clinical observations - use specific OBSERVATION archetypes. For example OBSERVATION.blood_pressure, OBSERVATION.body_weight, or OBSERVATION.height.",
+          "copyright" : "© openEHR Foundation, Nasjonal IKT HF",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "sl" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "sl"
+          },
+          "purpose" : "Beleženje podrobnosti o ugotovitvah fizičnega pregleda obravnavane osebe.",
+          "keywords" : [ "pregled", "fizični", "preiskava", "ugotovitve", "klinični" ],
+          "use" : "Uporabiti za beleženje podrobnosti o ugotovitvah fizičnega pregleda obravnavane osebe. Lahko vključuje pripovedni opis ugotovitev, okvir, v katerega je možno ugnezditi podrobne CLUSTER arhetipe pregledov, in klinično interpretacijo ugotovitev. \r\n\r\nPrimeri podrobnih CLUSTER arhetipov pregledov vključujejo tiste, ki opisujejo inspekcijo, palpacijo, avskultacijo, perkusijo in gibanje telesnih sistemov ali anatomskih struktur, kot je CLUSTER.exam_pupils. \r\n\r\nPripovedne opise kliničnih ugotovitev iz obstoječih kliničnih sistemov je mogoče zajeti s podatkovnim elementom 'Opis'. \r\n\r\nZdravniki bodo morda včasih želeli zabeležiti povzemajočo besedno zvezo, kot je 'kronično vnetje srednjega ušesa', kot Interpretacijo fizičnega pregleda. V kontekstu arhetipa fizičnega pregleda naj bo to razumljeno samo kot 'fizični znaki so skladni s kroničnim vnetjem srednjega ušesa'. Čeprav se lahko zdi, da povzemajoča besedna zveza predstavlja diagnozo, varno in dosledno poizvedovanje zahteva, da se diagnoza zabeleži z uporabo arhetipa EVALUATION.problem_diagnosis, tudi če sta besedni zvezi enaki.",
+          "misuse" : "Se ne uporablja za beleženje opažanj pri pridobivanju anamneze - uporabiti specifične OBSERVATION in CLUSTER arhetipe. Na primer OBSERVATION.story in CLUSTER.symptom. \r\n\r\nSe ne uporablja za beleženje samostojnih kliničnih opažanj – uporabiti specifične OBSERVATION arhetipe. Na primer OBSERVATION.blood_pressure (krvni tlak), OBSERVATION.body_weight (telesna teža), or OBSERVATION.height (telesna višina).",
+          "copyright" : "© openEHR Foundation, Nasjonal IKT HF",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "zh-cn" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "zh-cn"
+          },
+          "purpose" : "用于记录关于对于特定主体对象体格检查发现的详情。",
+          "keywords" : [ "临床", "体格检查", "检查", "发现", "所见", "查体" ],
+          "use" : "用于记录关于对于特定主体对象体格检查发现的详情。其中，可包括关于这些发现的叙述型描述、一种用于嵌套若干详细的群簇（CLUSTER）型原始型的框架以及关于这些发现的临床解释。\r\n\r\n关于群簇（CLUSTER）型检查原始型的例子包括那些用于详细描述望诊、触诊、听诊、叩诊以及身体系统运动或者解剖结构的原始型，如瞳孔检查原始型CLUSTER.exam_pupils。\r\n\r\n对于现有临床系统之中临床发现的叙述型描述，可以采用名为“Description”（描述）的数据元进行采集。\r\n\r\n临床医生有时可能希望采用“慢性中耳炎”之类的概括性短语来记录对于体格检查的解释。在当前体格检查原始型的语境下，仅仅应当将其理解为“体征与慢性中耳炎相符或者说相一致”。尽管这种概括性短语可能看似用来表示某种诊断，但就安全一致的查询来说，依然需要采用问题诊断原始型EVALUATION.problem_diagnosis来记录诊断，即使是二者所采用的短语完全相同。",
+          "misuse" : "并非旨在用于记录病史采集类观察项目——此时请采用具体的观察（OBSERVATION）型和群簇（CLUSTER）型原始型。例如，纪事原始型OBSERVATION.story和症状原始型CLUSTER.symptom。\r\n\r\n并非旨在用于记录单独的临床观察项目——此时请采用具体的观察（OBSERVATION）型原始型。例如，血压原始型OBSERVATION.blood_pressure、体重原始型OBSERVATION.body_weight，或者身高原始型OBSERVATION.height。",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "ca" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "ca"
+          },
+          "purpose" : "Registrar detalls sobre les troballes de l'examen físic del pacient.",
+          "keywords" : [ "examen", "físic", "palpació", "auscultació", "percussió", "troballes clíniques", "examen físic", "clínic" ],
+          "use" : "Aquest arquetip serà utilitzat per registrar detalls sobre les troballes a l'examen físic del pacient.\r\n\r\nEs pot utilitzar juntament amb altres arquetips per incloure detalls de les troballes clíniques, per descriure examinació per inspecció, palpació, auscultació, percussió i moviment dels sistemes o estructures anatòmiques. Per exemple, es pot utilitzar l'arquetip CLUSTER.exam_pupils.\r\n\r\nLa informació registrada mitjançant aquest arquetip ha d'estar relacionada amb l'examinació física i les troballes. Algunes interpretacions de les troballes poden registrar-se usant aquest arquetip encara que semblin diagnòstics, però només si estan directament relacionades amb la troballa. Per registrar un diagnòstic utilitzeu l'arquetip EVALUATION.problem_diagnosis, encara que el text de la interpretació de la troballa sigui igual al diagnòstic.",
+          "misuse" : "No s'ha de fer servir per registrar informació històrica del pacient; utilitzar arquetips de tipus OBSERVATION i CLUSTER específics per fer-ho. Per exemple, OBSERVATION.story i CLUSTER.symptom.\r\n\r\nNo s'ha de fer servir per registrar observacions independents i signes; per a això, utilitzeu arquetips específics com OBSERVATION.blood_pressure, OBSERVATION.body_weight, OBSERVATION.height, etc.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "es" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "es"
+          },
+          "purpose" : "Este arquetipo será utilizado para registrar detalles sobre los hallazgos en el examen físico del paciente",
+          "keywords" : [ "examinación", "palpación", "auscultación", "percusión", "hallazgos clínicos", "examen físico" ],
+          "use" : "Este arquetipo será utilizado para registrar detalles sobre los hallazgos en el examen físico del paciente.\r\n\r\nPuede utilizarse junto a otros arquetipos para incluir detalles de los hallazgos clínicos, para describir examinación por inspección, palpación, auscultación, percusión y movimiento de los sistemas o estructuras anatómicas. Por ejemplo se podrá utilizar el arquetipo CLUSTER.exam_pupils.\r\n\r\nLa información registrada mediante este arquetipo debe estar relacionada con la examinación física y sus hallazgos. Algunas interpretaciones de los hallazgos pueden registrarse usando este arquetipo aunque parezcan diagnósticos, pero solo si están directamente relacionadas con el hallazgo. Para registrar un diagnóstico utilizar el arquetipo EVALUATION.problem_diagnosis, aunque el texto de la interpretación del hallazgo sea igual al diagnóstico.",
+          "misuse" : "No se debe utilizar para registrar información histórica del paciente, para eso utilizar el arquetipo OBSERVATION.story\r\n\r\nNo se debe utilizar para registrar observaciones independientes y signos, para eso utilizar arquetipos específicos como OBSERVATION.blood_pressure, OBSERVATION.body_weight, OBSERVATION.height, etc.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        }
+      }
     },
     "parentArchetypeId" : "openEHR-EHR-OBSERVATION.exam.v1",
     "differential" : true,
@@ -444,10 +614,10 @@
                       "@type" : "C_ARCHETYPE_ROOT",
                       "rmTypeName" : "CLUSTER",
                       "occurrences" : "0..1",
-                      "nodeId" : "at0005.6",
+                      "nodeId" : "at0005.1",
                       "attributes" : [ ],
                       "attributeTuples" : [ ],
-                      "archetypeRef" : "openEHR-EHR-CLUSTER.ovl-exam-mouth-001.v0",
+                      "archetypeRef" : "openEHR-EHR-CLUSTER.ovl-exam_teeth-001.v0",
                       "referenceType" : "archetypeOverlay"
                     } ]
                   } ],
@@ -659,822 +829,6 @@
     } ]
   }, {
     "@type" : "TEMPLATE_OVERLAY",
-    "uid" : "f869de3d-3916-40f0-9d91-b476944846f0",
-    "description" : {
-      "@type" : "RESOURCE_DESCRIPTION",
-      "originalAuthor" : { },
-      "otherContributors" : [ ],
-      "ipAcknowledgements" : { },
-      "references" : { },
-      "conversionDetails" : { },
-      "otherDetails" : {
-        "PARENT:MD5-CAM-1.0.1" : "dd2ae59e5731176cda9c0f168e9901f4"
-      },
-      "details" : { }
-    },
-    "parentArchetypeId" : "openEHR-EHR-CLUSTER.anatomical_location_gingivae.v0",
-    "differential" : true,
-    "archetypeId" : {
-      "@type" : "ARCHETYPE_HRID",
-      "value" : "openEHR-EHR-CLUSTER.ovl-anatomical_location_gingivae-001.v0"
-    },
-    "definition" : {
-      "@type" : "C_COMPLEX_OBJECT",
-      "rmTypeName" : "CLUSTER",
-      "nodeId" : "at0000.1",
-      "attributes" : [ ],
-      "attributeTuples" : [ ]
-    },
-    "terminology" : {
-      "@type" : "ARCHETYPE_TERMINOLOGY",
-      "conceptCode" : "at0000",
-      "termDefinitions" : {
-        "ja" : { },
-        "en" : { }
-      },
-      "termBindings" : { },
-      "terminologyExtracts" : { },
-      "valueSets" : { }
-    },
-    "adlVersion" : "1.4",
-    "buildUid" : "f2112ac3-bf66-41db-989d-27f623505a74",
-    "rmName" : "openehr",
-    "rmRelease" : "1.1.0",
-    "generated" : true,
-    "otherMetaData" : { },
-    "originalLanguage" : {
-      "terminologyId" : {
-        "value" : "ISO_639-1"
-      },
-      "codeString" : "ja"
-    },
-    "translations" : [ {
-      "@type" : "TRANSLATION_DETAILS",
-      "language" : {
-        "terminologyId" : {
-          "value" : "ISO_639-1"
-        },
-        "codeString" : "en"
-      },
-      "author" : { },
-      "otherDetails" : { }
-    } ]
-  }, {
-    "@type" : "TEMPLATE_OVERLAY",
-    "uid" : "4465f593-7700-410a-a913-0e529e731174",
-    "description" : {
-      "@type" : "RESOURCE_DESCRIPTION",
-      "originalAuthor" : { },
-      "otherContributors" : [ ],
-      "ipAcknowledgements" : { },
-      "references" : { },
-      "conversionDetails" : { },
-      "otherDetails" : {
-        "PARENT:MD5-CAM-1.0.1" : "2aa06c8a01386a5639372a923126e7a3"
-      },
-      "details" : { }
-    },
-    "parentArchetypeId" : "openEHR-EHR-CLUSTER.anatomical_location_tooth.v0",
-    "differential" : true,
-    "archetypeId" : {
-      "@type" : "ARCHETYPE_HRID",
-      "value" : "openEHR-EHR-CLUSTER.ovl-anatomical_location_tooth-001.v0"
-    },
-    "definition" : {
-      "@type" : "C_COMPLEX_OBJECT",
-      "rmTypeName" : "CLUSTER",
-      "nodeId" : "at0000.1",
-      "attributes" : [ ],
-      "attributeTuples" : [ ]
-    },
-    "terminology" : {
-      "@type" : "ARCHETYPE_TERMINOLOGY",
-      "conceptCode" : "at0000",
-      "termDefinitions" : {
-        "ja" : { },
-        "en" : { }
-      },
-      "termBindings" : { },
-      "terminologyExtracts" : { },
-      "valueSets" : { }
-    },
-    "adlVersion" : "1.4",
-    "buildUid" : "657a0f7e-8101-41c2-827e-b074b67bc555",
-    "rmName" : "openehr",
-    "rmRelease" : "1.1.0",
-    "generated" : true,
-    "otherMetaData" : { },
-    "originalLanguage" : {
-      "terminologyId" : {
-        "value" : "ISO_639-1"
-      },
-      "codeString" : "ja"
-    },
-    "translations" : [ {
-      "@type" : "TRANSLATION_DETAILS",
-      "language" : {
-        "terminologyId" : {
-          "value" : "ISO_639-1"
-        },
-        "codeString" : "en"
-      },
-      "author" : { },
-      "otherDetails" : { }
-    } ]
-  }, {
-    "@type" : "TEMPLATE_OVERLAY",
-    "uid" : "99230d74-af34-487d-8c51-e45e7a89a49c",
-    "description" : {
-      "@type" : "RESOURCE_DESCRIPTION",
-      "originalAuthor" : { },
-      "otherContributors" : [ ],
-      "ipAcknowledgements" : { },
-      "references" : { },
-      "conversionDetails" : { },
-      "otherDetails" : {
-        "PARENT:MD5-CAM-1.0.1" : "8a9d2536f7afd443c31b0a667e0ca84d"
-      },
-      "details" : { }
-    },
-    "parentArchetypeId" : "openEHR-EHR-CLUSTER.exam_dentition.v0",
-    "differential" : true,
-    "archetypeId" : {
-      "@type" : "ARCHETYPE_HRID",
-      "value" : "openEHR-EHR-CLUSTER.ovl-exam_dentition-001.v0"
-    },
-    "definition" : {
-      "@type" : "C_COMPLEX_OBJECT",
-      "rmTypeName" : "CLUSTER",
-      "nodeId" : "at0000.1",
-      "attributes" : [ ],
-      "attributeTuples" : [ ]
-    },
-    "terminology" : {
-      "@type" : "ARCHETYPE_TERMINOLOGY",
-      "conceptCode" : "at0000",
-      "termDefinitions" : {
-        "ja" : { },
-        "en" : { }
-      },
-      "termBindings" : { },
-      "terminologyExtracts" : { },
-      "valueSets" : { }
-    },
-    "adlVersion" : "1.4",
-    "buildUid" : "9c1c8e6a-7251-48e8-9767-ae88db2b3ab1",
-    "rmName" : "openehr",
-    "rmRelease" : "1.1.0",
-    "generated" : true,
-    "otherMetaData" : { },
-    "originalLanguage" : {
-      "terminologyId" : {
-        "value" : "ISO_639-1"
-      },
-      "codeString" : "ja"
-    },
-    "translations" : [ {
-      "@type" : "TRANSLATION_DETAILS",
-      "language" : {
-        "terminologyId" : {
-          "value" : "ISO_639-1"
-        },
-        "codeString" : "en"
-      },
-      "author" : { },
-      "otherDetails" : { }
-    } ]
-  }, {
-    "@type" : "TEMPLATE_OVERLAY",
-    "uid" : "ffdc818f-ba27-485d-8e55-246e0d6d4566",
-    "description" : {
-      "@type" : "RESOURCE_DESCRIPTION",
-      "originalAuthor" : { },
-      "otherContributors" : [ ],
-      "ipAcknowledgements" : { },
-      "references" : { },
-      "conversionDetails" : { },
-      "otherDetails" : {
-        "PARENT:MD5-CAM-1.0.1" : "29ae6962ce99446841e3574fa69741f7"
-      },
-      "details" : { }
-    },
-    "parentArchetypeId" : "openEHR-EHR-CLUSTER.exam_giginvae.v0",
-    "differential" : true,
-    "archetypeId" : {
-      "@type" : "ARCHETYPE_HRID",
-      "value" : "openEHR-EHR-CLUSTER.ovl-exam_giginvae-001.v0"
-    },
-    "definition" : {
-      "@type" : "C_COMPLEX_OBJECT",
-      "rmTypeName" : "CLUSTER",
-      "nodeId" : "at0000.1",
-      "attributes" : [ ],
-      "attributeTuples" : [ ]
-    },
-    "terminology" : {
-      "@type" : "ARCHETYPE_TERMINOLOGY",
-      "conceptCode" : "at0000",
-      "termDefinitions" : {
-        "ja" : { },
-        "en" : { }
-      },
-      "termBindings" : { },
-      "terminologyExtracts" : { },
-      "valueSets" : { }
-    },
-    "adlVersion" : "1.4",
-    "buildUid" : "a51622a5-8395-4d38-9f73-69485d189a7b",
-    "rmName" : "openehr",
-    "rmRelease" : "1.1.0",
-    "generated" : true,
-    "otherMetaData" : { },
-    "originalLanguage" : {
-      "terminologyId" : {
-        "value" : "ISO_639-1"
-      },
-      "codeString" : "ja"
-    },
-    "translations" : [ {
-      "@type" : "TRANSLATION_DETAILS",
-      "language" : {
-        "terminologyId" : {
-          "value" : "ISO_639-1"
-        },
-        "codeString" : "en"
-      },
-      "author" : { },
-      "otherDetails" : { }
-    } ]
-  }, {
-    "@type" : "TEMPLATE_OVERLAY",
-    "uid" : "5b2d8e78-f67c-41bd-a8ef-16af71704834",
-    "description" : {
-      "@type" : "RESOURCE_DESCRIPTION",
-      "originalAuthor" : { },
-      "otherContributors" : [ ],
-      "ipAcknowledgements" : { },
-      "references" : { },
-      "conversionDetails" : { },
-      "otherDetails" : {
-        "PARENT:MD5-CAM-1.0.1" : "65fa619758b2941c4bf4061de7cb6888"
-      },
-      "details" : { }
-    },
-    "parentArchetypeId" : "openEHR-EHR-CLUSTER.exam_occlusal.v0",
-    "differential" : true,
-    "archetypeId" : {
-      "@type" : "ARCHETYPE_HRID",
-      "value" : "openEHR-EHR-CLUSTER.ovl-exam_occlusal-001.v0"
-    },
-    "definition" : {
-      "@type" : "C_COMPLEX_OBJECT",
-      "rmTypeName" : "CLUSTER",
-      "nodeId" : "at0000.1",
-      "attributes" : [ ],
-      "attributeTuples" : [ ]
-    },
-    "terminology" : {
-      "@type" : "ARCHETYPE_TERMINOLOGY",
-      "conceptCode" : "at0000",
-      "termDefinitions" : {
-        "ja" : { },
-        "en" : { },
-        "sv" : { }
-      },
-      "termBindings" : { },
-      "terminologyExtracts" : { },
-      "valueSets" : { }
-    },
-    "adlVersion" : "1.4",
-    "buildUid" : "af3eace2-630e-45cf-b373-457919af33a7",
-    "rmName" : "openehr",
-    "rmRelease" : "1.1.0",
-    "generated" : true,
-    "otherMetaData" : { },
-    "originalLanguage" : {
-      "terminologyId" : {
-        "value" : "ISO_639-1"
-      },
-      "codeString" : "ja"
-    },
-    "translations" : [ {
-      "@type" : "TRANSLATION_DETAILS",
-      "language" : {
-        "terminologyId" : {
-          "value" : "ISO_639-1"
-        },
-        "codeString" : "sv"
-      },
-      "author" : { },
-      "otherDetails" : { }
-    }, {
-      "@type" : "TRANSLATION_DETAILS",
-      "language" : {
-        "terminologyId" : {
-          "value" : "ISO_639-1"
-        },
-        "codeString" : "en"
-      },
-      "author" : { },
-      "otherDetails" : { }
-    } ]
-  }, {
-    "@type" : "TEMPLATE_OVERLAY",
-    "uid" : "32fd4600-b5d8-4d24-87c6-ecf8cdc2142d",
-    "description" : {
-      "@type" : "RESOURCE_DESCRIPTION",
-      "originalAuthor" : { },
-      "otherContributors" : [ ],
-      "ipAcknowledgements" : { },
-      "references" : { },
-      "conversionDetails" : { },
-      "otherDetails" : {
-        "PARENT:MD5-CAM-1.0.1" : "e386ea8fd8266851ed03b549dc7bf0dd"
-      },
-      "details" : { }
-    },
-    "parentArchetypeId" : "openEHR-EHR-CLUSTER.exam_oral_membrane.v0",
-    "differential" : true,
-    "archetypeId" : {
-      "@type" : "ARCHETYPE_HRID",
-      "value" : "openEHR-EHR-CLUSTER.ovl-exam_oral_membrane-001.v0"
-    },
-    "definition" : {
-      "@type" : "C_COMPLEX_OBJECT",
-      "rmTypeName" : "CLUSTER",
-      "nodeId" : "at0000.1",
-      "attributes" : [ ],
-      "attributeTuples" : [ ]
-    },
-    "terminology" : {
-      "@type" : "ARCHETYPE_TERMINOLOGY",
-      "conceptCode" : "at0000",
-      "termDefinitions" : {
-        "ja" : { },
-        "en" : { },
-        "sv" : { }
-      },
-      "termBindings" : { },
-      "terminologyExtracts" : { },
-      "valueSets" : { }
-    },
-    "adlVersion" : "1.4",
-    "buildUid" : "7d8edfd5-9bf8-443c-b5d6-817d887982cb",
-    "rmName" : "openehr",
-    "rmRelease" : "1.1.0",
-    "generated" : true,
-    "otherMetaData" : { },
-    "originalLanguage" : {
-      "terminologyId" : {
-        "value" : "ISO_639-1"
-      },
-      "codeString" : "ja"
-    },
-    "translations" : [ {
-      "@type" : "TRANSLATION_DETAILS",
-      "language" : {
-        "terminologyId" : {
-          "value" : "ISO_639-1"
-        },
-        "codeString" : "sv"
-      },
-      "author" : { },
-      "otherDetails" : { }
-    }, {
-      "@type" : "TRANSLATION_DETAILS",
-      "language" : {
-        "terminologyId" : {
-          "value" : "ISO_639-1"
-        },
-        "codeString" : "en"
-      },
-      "author" : { },
-      "otherDetails" : { }
-    } ]
-  }, {
-    "@type" : "TEMPLATE_OVERLAY",
-    "uid" : "08967ea0-4d54-4faa-8c0a-81f0bf7bf60e",
-    "description" : {
-      "@type" : "RESOURCE_DESCRIPTION",
-      "originalAuthor" : { },
-      "otherContributors" : [ ],
-      "ipAcknowledgements" : { },
-      "references" : { },
-      "conversionDetails" : { },
-      "otherDetails" : {
-        "PARENT:MD5-CAM-1.0.1" : "f847867bd3eb417bf2b3fb72d7d9055e"
-      },
-      "details" : { }
-    },
-    "parentArchetypeId" : "openEHR-EHR-CLUSTER.exam_teeth.v0",
-    "differential" : true,
-    "archetypeId" : {
-      "@type" : "ARCHETYPE_HRID",
-      "value" : "openEHR-EHR-CLUSTER.ovl-exam_teeth-001.v0"
-    },
-    "definition" : {
-      "@type" : "C_COMPLEX_OBJECT",
-      "rmTypeName" : "CLUSTER",
-      "nodeId" : "at0000.1",
-      "attributes" : [ ],
-      "attributeTuples" : [ ]
-    },
-    "terminology" : {
-      "@type" : "ARCHETYPE_TERMINOLOGY",
-      "conceptCode" : "at0000",
-      "termDefinitions" : {
-        "ja" : { },
-        "en" : { },
-        "sv" : { }
-      },
-      "termBindings" : { },
-      "terminologyExtracts" : { },
-      "valueSets" : { }
-    },
-    "adlVersion" : "1.4",
-    "buildUid" : "774bce3d-fa13-4c58-9d96-595ea3cdd3fa",
-    "rmName" : "openehr",
-    "rmRelease" : "1.1.0",
-    "generated" : true,
-    "otherMetaData" : { },
-    "originalLanguage" : {
-      "terminologyId" : {
-        "value" : "ISO_639-1"
-      },
-      "codeString" : "ja"
-    },
-    "translations" : [ {
-      "@type" : "TRANSLATION_DETAILS",
-      "language" : {
-        "terminologyId" : {
-          "value" : "ISO_639-1"
-        },
-        "codeString" : "sv"
-      },
-      "author" : { },
-      "otherDetails" : { }
-    }, {
-      "@type" : "TRANSLATION_DETAILS",
-      "language" : {
-        "terminologyId" : {
-          "value" : "ISO_639-1"
-        },
-        "codeString" : "en"
-      },
-      "author" : { },
-      "otherDetails" : { }
-    } ]
-  }, {
-    "@type" : "TEMPLATE_OVERLAY",
-    "uid" : "8e1940d8-bb9f-44c1-b017-3f6c2c250484",
-    "description" : {
-      "@type" : "RESOURCE_DESCRIPTION",
-      "originalAuthor" : { },
-      "otherContributors" : [ ],
-      "ipAcknowledgements" : { },
-      "references" : { },
-      "conversionDetails" : { },
-      "otherDetails" : {
-        "PARENT:MD5-CAM-1.0.1" : "C87B541D2AD6AE7F80C98051F5765032"
-      },
-      "details" : { }
-    },
-    "parentArchetypeId" : "openEHR-EHR-CLUSTER.exam-mouth.v0",
-    "differential" : true,
-    "archetypeId" : {
-      "@type" : "ARCHETYPE_HRID",
-      "value" : "openEHR-EHR-CLUSTER.ovl-exam-mouth-001.v0"
-    },
-    "definition" : {
-      "@type" : "C_COMPLEX_OBJECT",
-      "rmTypeName" : "CLUSTER",
-      "nodeId" : "at0000.1.1",
-      "attributes" : [ {
-        "@type" : "C_ATTRIBUTE",
-        "rmAttributeName" : "items",
-        "children" : [ {
-          "@type" : "C_ARCHETYPE_ROOT",
-          "rmTypeName" : "CLUSTER",
-          "occurrences" : "0..*",
-          "nodeId" : "at0004.1.2",
-          "attributes" : [ ],
-          "attributeTuples" : [ ],
-          "archetypeRef" : "openEHR-EHR-CLUSTER.ovl-exam_teeth-001.v0",
-          "referenceType" : "archetypeOverlay"
-        }, {
-          "@type" : "C_ARCHETYPE_ROOT",
-          "rmTypeName" : "CLUSTER",
-          "occurrences" : "0..*",
-          "nodeId" : "at0004.1.1",
-          "attributes" : [ ],
-          "attributeTuples" : [ ],
-          "archetypeRef" : "openEHR-EHR-CLUSTER.ovl-exam-tooth-001.v0",
-          "referenceType" : "archetypeOverlay"
-        }, {
-          "@type" : "C_ARCHETYPE_ROOT",
-          "rmTypeName" : "CLUSTER",
-          "occurrences" : "0..*",
-          "nodeId" : "at0004.1.3",
-          "attributes" : [ ],
-          "attributeTuples" : [ ],
-          "archetypeRef" : "openEHR-EHR-CLUSTER.ovl-exam_occlusal-001.v0",
-          "referenceType" : "archetypeOverlay"
-        }, {
-          "@type" : "C_ARCHETYPE_ROOT",
-          "rmTypeName" : "CLUSTER",
-          "occurrences" : "0..*",
-          "nodeId" : "at0004.1.3",
-          "attributes" : [ ],
-          "attributeTuples" : [ ],
-          "archetypeRef" : "openEHR-EHR-CLUSTER.ovl-exam_dentition-001.v0",
-          "referenceType" : "archetypeOverlay"
-        }, {
-          "@type" : "C_ARCHETYPE_ROOT",
-          "rmTypeName" : "CLUSTER",
-          "occurrences" : "0..*",
-          "nodeId" : "at0004.1.2",
-          "attributes" : [ ],
-          "attributeTuples" : [ ],
-          "archetypeRef" : "openEHR-EHR-CLUSTER.ovl-exam-tongue-001.v0",
-          "referenceType" : "archetypeOverlay"
-        }, {
-          "@type" : "C_ARCHETYPE_ROOT",
-          "rmTypeName" : "CLUSTER",
-          "occurrences" : "0..*",
-          "nodeId" : "at0004.1.5",
-          "attributes" : [ ],
-          "attributeTuples" : [ ],
-          "archetypeRef" : "openEHR-EHR-CLUSTER.ovl-exam_giginvae-001.v0",
-          "referenceType" : "archetypeOverlay"
-        }, {
-          "@type" : "C_ARCHETYPE_ROOT",
-          "rmTypeName" : "CLUSTER",
-          "occurrences" : "0..*",
-          "nodeId" : "at0004.1.6",
-          "attributes" : [ ],
-          "attributeTuples" : [ ],
-          "archetypeRef" : "openEHR-EHR-CLUSTER.ovl-exam_oral_membrane-001.v0",
-          "referenceType" : "archetypeOverlay"
-        }, {
-          "@type" : "C_ARCHETYPE_ROOT",
-          "rmTypeName" : "CLUSTER",
-          "occurrences" : "0..*",
-          "nodeId" : "at0011.0.1",
-          "attributes" : [ ],
-          "attributeTuples" : [ ],
-          "archetypeRef" : "openEHR-EHR-CLUSTER.ovl-anatomical_location_tooth-001.v0",
-          "referenceType" : "archetypeOverlay"
-        }, {
-          "@type" : "C_ARCHETYPE_ROOT",
-          "rmTypeName" : "CLUSTER",
-          "occurrences" : "0..*",
-          "nodeId" : "at0011.0.2",
-          "attributes" : [ ],
-          "attributeTuples" : [ ],
-          "archetypeRef" : "openEHR-EHR-CLUSTER.ovl-anatomical_location_gingivae-001.v0",
-          "referenceType" : "archetypeOverlay"
-        }, {
-          "@type" : "C_ARCHETYPE_ROOT",
-          "rmTypeName" : "CLUSTER",
-          "occurrences" : "0..1",
-          "nodeId" : "at0005.0.1",
-          "attributes" : [ ],
-          "attributeTuples" : [ ],
-          "archetypeRef" : "openEHR-EHR-CLUSTER.ovl-media_file-001.v1",
-          "referenceType" : "archetypeOverlay"
-        } ]
-      } ],
-      "attributeTuples" : [ ]
-    },
-    "terminology" : {
-      "@type" : "ARCHETYPE_TERMINOLOGY",
-      "conceptCode" : "at0000.1",
-      "termDefinitions" : {
-        "en" : { },
-        "nb" : { },
-        "pt-br" : { }
-      },
-      "termBindings" : { },
-      "terminologyExtracts" : { },
-      "valueSets" : { }
-    },
-    "adlVersion" : "1.4",
-    "buildUid" : "88825865-4a4a-4f45-95d3-d2546c300887",
-    "rmName" : "openehr",
-    "rmRelease" : "1.1.0",
-    "generated" : true,
-    "otherMetaData" : { },
-    "originalLanguage" : {
-      "terminologyId" : {
-        "value" : "ISO_639-1"
-      },
-      "codeString" : "en"
-    },
-    "translations" : [ {
-      "@type" : "TRANSLATION_DETAILS",
-      "language" : {
-        "terminologyId" : {
-          "value" : "ISO_639-1"
-        },
-        "codeString" : "nb"
-      },
-      "author" : {
-        "name" : "Silje Ljosland Bakke",
-        "organisation" : "Nasjonal IKT HF"
-      },
-      "otherDetails" : { }
-    }, {
-      "@type" : "TRANSLATION_DETAILS",
-      "language" : {
-        "terminologyId" : {
-          "value" : "ISO_639-1"
-        },
-        "codeString" : "pt-br"
-      },
-      "author" : {
-        "name" : "Adriana Kitajima",
-        "organisation" : "Hospital Alemão Oswaldo Cruz - HAOC",
-        "email" : "adrianakitajima@gmail.com"
-      },
-      "otherDetails" : { }
-    } ]
-  }, {
-    "@type" : "TEMPLATE_OVERLAY",
-    "uid" : "b14bba7c-867b-4b50-b27b-c5e3db4a680e",
-    "description" : {
-      "@type" : "RESOURCE_DESCRIPTION",
-      "originalAuthor" : { },
-      "otherContributors" : [ ],
-      "ipAcknowledgements" : { },
-      "references" : { },
-      "conversionDetails" : { },
-      "otherDetails" : {
-        "PARENT:MD5-CAM-1.0.1" : "C8E5958F7ABF215D8946E14DF5B38A5A"
-      },
-      "details" : { }
-    },
-    "parentArchetypeId" : "openEHR-EHR-CLUSTER.exam-tooth.v0",
-    "differential" : true,
-    "archetypeId" : {
-      "@type" : "ARCHETYPE_HRID",
-      "value" : "openEHR-EHR-CLUSTER.ovl-exam-tooth-001.v0"
-    },
-    "definition" : {
-      "@type" : "C_COMPLEX_OBJECT",
-      "rmTypeName" : "CLUSTER",
-      "nodeId" : "at0000.1.1",
-      "attributes" : [ ],
-      "attributeTuples" : [ ]
-    },
-    "terminology" : {
-      "@type" : "ARCHETYPE_TERMINOLOGY",
-      "conceptCode" : "at0000.1",
-      "termDefinitions" : {
-        "en" : { },
-        "nb" : { },
-        "pt-br" : { },
-        "de" : { },
-        "sv" : { }
-      },
-      "termBindings" : { },
-      "terminologyExtracts" : { },
-      "valueSets" : { }
-    },
-    "adlVersion" : "1.4",
-    "buildUid" : "abe2efa2-dc13-44be-9594-bba2a3a15d55",
-    "rmName" : "openehr",
-    "rmRelease" : "1.1.0",
-    "generated" : true,
-    "otherMetaData" : { },
-    "originalLanguage" : {
-      "terminologyId" : {
-        "value" : "ISO_639-1"
-      },
-      "codeString" : "en"
-    },
-    "translations" : [ {
-      "@type" : "TRANSLATION_DETAILS",
-      "language" : {
-        "terminologyId" : {
-          "value" : "ISO_639-1"
-        },
-        "codeString" : "de"
-      },
-      "author" : {
-        "name" : "Nina Schewe",
-        "organisation" : "Medizinische Hochschule Hannover",
-        "email" : "schewe.nina@mh-hannover.de"
-      },
-      "otherDetails" : { }
-    }, {
-      "@type" : "TRANSLATION_DETAILS",
-      "language" : {
-        "terminologyId" : {
-          "value" : "ISO_639-1"
-        },
-        "codeString" : "sv"
-      },
-      "author" : {
-        "name" : "Erik Sundvall",
-        "organisation" : "Region Östergötland + Linköping University",
-        "email" : "erik.sundvall@regionostergotland.se"
-      },
-      "otherDetails" : { }
-    }, {
-      "@type" : "TRANSLATION_DETAILS",
-      "language" : {
-        "terminologyId" : {
-          "value" : "ISO_639-1"
-        },
-        "codeString" : "nb"
-      },
-      "author" : {
-        "name" : "Silje Ljosland Bakke",
-        "organisation" : "Nasjonal IKT HF"
-      },
-      "otherDetails" : { }
-    }, {
-      "@type" : "TRANSLATION_DETAILS",
-      "language" : {
-        "terminologyId" : {
-          "value" : "ISO_639-1"
-        },
-        "codeString" : "pt-br"
-      },
-      "author" : {
-        "name" : "Adriana Kitajima",
-        "organisation" : "Hospital Alemão Oswaldo Cruz - HAOC",
-        "email" : "adrianakitajima@gmail.com"
-      },
-      "otherDetails" : { }
-    } ]
-  }, {
-    "@type" : "TEMPLATE_OVERLAY",
-    "uid" : "7ffefb0c-8c16-45c8-94c7-d3e973599737",
-    "description" : {
-      "@type" : "RESOURCE_DESCRIPTION",
-      "originalAuthor" : { },
-      "otherContributors" : [ ],
-      "ipAcknowledgements" : { },
-      "references" : { },
-      "conversionDetails" : { },
-      "otherDetails" : {
-        "PARENT:MD5-CAM-1.0.1" : "F926170A17DEF1713C31D89053FCEB9D"
-      },
-      "details" : { }
-    },
-    "parentArchetypeId" : "openEHR-EHR-CLUSTER.exam-tongue.v0",
-    "differential" : true,
-    "archetypeId" : {
-      "@type" : "ARCHETYPE_HRID",
-      "value" : "openEHR-EHR-CLUSTER.ovl-exam-tongue-001.v0"
-    },
-    "definition" : {
-      "@type" : "C_COMPLEX_OBJECT",
-      "rmTypeName" : "CLUSTER",
-      "nodeId" : "at0000.1.1",
-      "attributes" : [ ],
-      "attributeTuples" : [ ]
-    },
-    "terminology" : {
-      "@type" : "ARCHETYPE_TERMINOLOGY",
-      "conceptCode" : "at0000.1",
-      "termDefinitions" : {
-        "en" : { },
-        "nb" : { }
-      },
-      "termBindings" : { },
-      "terminologyExtracts" : { },
-      "valueSets" : { }
-    },
-    "adlVersion" : "1.4",
-    "buildUid" : "a063e744-014c-4ae2-90bc-8fb6281c8bd3",
-    "rmName" : "openehr",
-    "rmRelease" : "1.1.0",
-    "generated" : true,
-    "otherMetaData" : { },
-    "originalLanguage" : {
-      "terminologyId" : {
-        "value" : "ISO_639-1"
-      },
-      "codeString" : "en"
-    },
-    "translations" : [ {
-      "@type" : "TRANSLATION_DETAILS",
-      "language" : {
-        "terminologyId" : {
-          "value" : "ISO_639-1"
-        },
-        "codeString" : "nb"
-      },
-      "author" : {
-        "name" : "Silje Ljosland Bakke",
-        "organisation" : "Nasjonal IKT HF"
-      },
-      "otherDetails" : { }
-    } ]
-  }, {
-    "@type" : "TEMPLATE_OVERLAY",
     "uid" : "e1870cd8-7f3e-4ccc-adc2-e64661389915",
     "description" : {
       "@type" : "RESOURCE_DESCRIPTION",
@@ -1486,7 +840,56 @@
       "otherDetails" : {
         "PARENT:MD5-CAM-1.0.1" : "95DF6824E934398A51AEB4DAADDF99D6"
       },
-      "details" : { }
+      "details" : {
+        "pt" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "pt"
+          },
+          "purpose" : "Para registrar o valor da profundidade de sondagem de forma simples e rápida por sextante.",
+          "keywords" : [ "Sondagem gengival", "PSR", "Registro periodontal simplificado", "Periodonto" ],
+          "use" : "Usado para registrar o valor da profundidade de sondagem de forma simples e rápida por sextante em qualquer paciente.",
+          "misuse" : "Nâo pode ser utilizado para sondar áreas que não sejam dento-alveorales.",
+          "copyright" : "© openEHR Foundation",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "pt-br" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "pt-br"
+          },
+          "purpose" : "*(pt)",
+          "keywords" : [ ],
+          "use" : "*(pt)",
+          "misuse" : "*(pt)",
+          "copyright" : "*(pt)",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "en" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "en"
+          },
+          "purpose" : "To register the value of probing depth of simply and quickly by sextant.",
+          "keywords" : [ "Gingival probling", "PSR", "Periodontal Screening and Recording", "Periodontium" ],
+          "use" : "Used to record the value of probing depth of simply and quickly by sextant in any patient.",
+          "misuse" : "Can not be used to probe areas other than dental-alveolus.",
+          "copyright" : "*© openEHR Foundation(pt)",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        }
+      }
     },
     "parentArchetypeId" : "openEHR-EHR-OBSERVATION.registro_periodontal_simplificado.v0",
     "differential" : true,
@@ -1581,7 +984,7 @@
     } ]
   }, {
     "@type" : "TEMPLATE_OVERLAY",
-    "uid" : "8919d37b-a2c6-460b-af83-140ceb05cae0",
+    "uid" : "2a60e4de-49b0-4cce-9ee1-1c357634495a",
     "description" : {
       "@type" : "RESOURCE_DESCRIPTION",
       "originalAuthor" : { },
@@ -1590,15 +993,15 @@
       "references" : { },
       "conversionDetails" : { },
       "otherDetails" : {
-        "PARENT:MD5-CAM-1.0.1" : "E1C0201AED51855810B4D9FD7633573E"
+        "PARENT:MD5-CAM-1.0.1" : "b91856e9585ef5c49338c6051f3075b6"
       },
       "details" : { }
     },
-    "parentArchetypeId" : "openEHR-EHR-CLUSTER.media_file.v1",
+    "parentArchetypeId" : "openEHR-EHR-CLUSTER.exam_teeth.v0",
     "differential" : true,
     "archetypeId" : {
       "@type" : "ARCHETYPE_HRID",
-      "value" : "openEHR-EHR-CLUSTER.ovl-media_file-001.v1"
+      "value" : "openEHR-EHR-CLUSTER.ovl-exam_teeth-001.v0"
     },
     "definition" : {
       "@type" : "C_COMPLEX_OBJECT",
@@ -1611,19 +1014,16 @@
       "@type" : "ARCHETYPE_TERMINOLOGY",
       "conceptCode" : "at0000",
       "termDefinitions" : {
+        "ja" : { },
         "en" : { },
-        "sv" : { },
-        "de" : { },
-        "nb" : { },
-        "nl" : { },
-        "sk" : { }
+        "sv" : { }
       },
       "termBindings" : { },
       "terminologyExtracts" : { },
       "valueSets" : { }
     },
     "adlVersion" : "1.4",
-    "buildUid" : "a5332c85-dd4d-4b75-915b-c7c65e990200",
+    "buildUid" : "774bce3d-fa13-4c58-9d96-595ea3cdd3fa",
     "rmName" : "openehr",
     "rmRelease" : "1.1.0",
     "generated" : true,
@@ -1632,7 +1032,7 @@
       "terminologyId" : {
         "value" : "ISO_639-1"
       },
-      "codeString" : "en"
+      "codeString" : "ja"
     },
     "translations" : [ {
       "@type" : "TRANSLATION_DETAILS",
@@ -1640,27 +1040,9 @@
         "terminologyId" : {
           "value" : "ISO_639-1"
         },
-        "codeString" : "de"
-      },
-      "author" : {
-        "name" : "Natalia Strauch",
-        "organisation" : "Medizinische Hochschule Hannover",
-        "email" : "Strauch.Natalia@mh-hannover.de"
-      },
-      "otherDetails" : { }
-    }, {
-      "@type" : "TRANSLATION_DETAILS",
-      "language" : {
-        "terminologyId" : {
-          "value" : "ISO_639-1"
-        },
         "codeString" : "sv"
       },
-      "author" : {
-        "name" : "Åsa Skagerhult, Erik Sundvall, Manna Vosta",
-        "organisation" : "Region Östergötland, Karolinska University Hospital",
-        "email" : "asa.skagerhult@regionostergotland.se, erik.sundvall@regionostergotland.se, manna.vosta@regionstockholm.se"
-      },
+      "author" : { },
       "otherDetails" : { }
     }, {
       "@type" : "TRANSLATION_DETAILS",
@@ -1668,40 +1050,9 @@
         "terminologyId" : {
           "value" : "ISO_639-1"
         },
-        "codeString" : "nb"
+        "codeString" : "en"
       },
-      "author" : {
-        "name" : "Liv Laugen, John Tore Valand",
-        "organisation" : "​Oslo University Hospital, Norway, Helse Bergen",
-        "email" : "liv.laugen@ous-hf.no, john.tore.valand@helse-bergen.no"
-      },
-      "otherDetails" : { }
-    }, {
-      "@type" : "TRANSLATION_DETAILS",
-      "language" : {
-        "terminologyId" : {
-          "value" : "ISO_639-1"
-        },
-        "codeString" : "sk"
-      },
-      "author" : {
-        "name" : "Maritn Kapinos",
-        "organisation" : "PROSOFT Košice, a.s.",
-        "email" : "kapinos.martin@prosoftke.sk"
-      },
-      "otherDetails" : { }
-    }, {
-      "@type" : "TRANSLATION_DETAILS",
-      "language" : {
-        "terminologyId" : {
-          "value" : "ISO_639-1"
-        },
-        "codeString" : "nl"
-      },
-      "author" : {
-        "name" : "Jelte Zeilstra",
-        "organisation" : "Nedap"
-      },
+      "author" : { },
       "otherDetails" : { }
     } ]
   } ],
