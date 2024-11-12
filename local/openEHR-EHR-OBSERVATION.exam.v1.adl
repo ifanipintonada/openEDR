@@ -262,14 +262,14 @@ No s'ha de fer servir per registrar observacions independents i signes; per a ai
 		["original_namespace"] = <"no.nasjonalikt">
 		["original_publisher"] = <"Nasjonal IKT">
 		["custodian_namespace"] = <"no.nasjonalikt">
-		["MD5-CAM-1.0.1"] = <"fecd10630bae82485bd93de1c087746b">
+		["MD5-CAM-1.0.1"] = <"c126747c899dd9bd2dd544733d0571c4">
 		["build_uid"] = <"495be8df-5a53-4755-8323-21de4602ea35">
 		["revision"] = <"1.1.4">
 		["ip_acknowledgements"] = <"This artefact includes content from SNOMED Clinical Terms® (SNOMED CT®) which is copyrighted material of the International Health Terminology Standards Development Organisation (IHTSDO). Where an implementation of this artefact makes use of SNOMED CT content, the implementer must have the appropriate SNOMED CT Affiliate license - for more information contact https://www.snomed.org/snomed-ct/get-snomed or info@snomed.org.">
 	>
 
 definition
-	OBSERVATION[at0000] matches {    -- Physical examination findings
+	OBSERVATION[at0000] matches {    -- Physical Examination
 		data matches {
 			HISTORY[at0001] matches {    -- Event Series
 				events cardinality matches {1..*; unordered} matches {
@@ -306,7 +306,7 @@ ontology
 		["ar-sy"] = <
 			items = <
 				["at0000"] = <
-					text = <"*Physical Examination Findings(en)">
+					text = <"*Physical Examination (en)">
 					description = <"*Findings observed during the physical examination of a subject.(en)">
 				>
 				["at0001"] = <
@@ -340,7 +340,7 @@ ontology
 		["sl"] = <
 			items = <
 				["at0000"] = <
-					text = <"Ugotovitve fizičnega pregleda">
+					text = <"*Physical Examination (en)">
 					description = <"Za dokumentiranje ugotovitev/znakov fizikalnega pregleda subjekta">
 				>
 				["at0001"] = <
@@ -374,7 +374,7 @@ ontology
 		["es-ar"] = <
 			items = <
 				["at0000"] = <
-					text = <"Hallazgos del Examen Fisico">
+					text = <"*Physical Examination (en)">
 					description = <"Hallazgos observados durante el examen fisico de una persona">
 				>
 				["at0001"] = <
@@ -408,7 +408,7 @@ ontology
 		["en"] = <
 			items = <
 				["at0000"] = <
-					text = <"Physical examination findings">
+					text = <"Physical Examination">
 					description = <"Findings observed during the physical examination of a subject of care.">
 				>
 				["at0001"] = <
@@ -442,7 +442,7 @@ ontology
 		["nb"] = <
 			items = <
 				["at0000"] = <
-					text = <"Funn ved fysisk undersøkelse">
+					text = <"*Physical Examination (en)">
 					description = <"Funn ved fysisk undersøkelse av en helsetjenestemottaker.">
 				>
 				["at0001"] = <
@@ -476,7 +476,7 @@ ontology
 		["es"] = <
 			items = <
 				["at0000"] = <
-					text = <"Hallazgos de la examinación física">
+					text = <"*Physical Examination (en)">
 					description = <"Hallazgos observados durante la examinación física del paciente">
 				>
 				["at0001"] = <
@@ -510,7 +510,7 @@ ontology
 		["pt-br"] = <
 			items = <
 				["at0000"] = <
-					text = <"Achados de exame físico">
+					text = <"*Physical Examination (en)">
 					description = <"Resultados observados durante o exame físico de um sujeito de atenção.">
 				>
 				["at0001"] = <
@@ -544,7 +544,7 @@ ontology
 		["zh-cn"] = <
 			items = <
 				["at0000"] = <
-					text = <"体格检查发现">
+					text = <"*Physical Examination (en)">
 					description = <"对于特定主体对象进行体格检查过程中所获得的发现。">
 				>
 				["at0001"] = <
@@ -578,7 +578,7 @@ ontology
 		["de"] = <
 			items = <
 				["at0000"] = <
-					text = <"Ergebnisse der körperlichen Untersuchung">
+					text = <"*Physical Examination (en)">
 					description = <"Während der körperlichen Untersuchung eines Patienten beobachtete Befunde.">
 				>
 				["at0001"] = <
@@ -613,7 +613,7 @@ Zum Beispiel: CLUSTER.palpation_of_uterus, CLUSTER.palpation_of_cervix und CLUST
 		["sv"] = <
 			items = <
 				["at0000"] = <
-					text = <"Fysiska undersökningsfynd">
+					text = <"*Physical Examination (en)">
 					description = <"Observerade fynd under en fysisk undersökning av mottagaren av hälso- och sjukvård.">
 				>
 				["at0001"] = <
@@ -647,7 +647,7 @@ Zum Beispiel: CLUSTER.palpation_of_uterus, CLUSTER.palpation_of_cervix und CLUST
 		["ca"] = <
 			items = <
 				["at0000"] = <
-					text = <"Troballes de l'exploració física">
+					text = <"*Physical Examination (en)">
 					description = <"Troballes observades durant l'examen físic del pacient.">
 				>
 				["at0001"] = <
