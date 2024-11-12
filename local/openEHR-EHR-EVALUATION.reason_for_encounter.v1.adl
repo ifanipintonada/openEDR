@@ -142,22 +142,32 @@ No debe ser utilizado para registrar diagnósticos. Para eso utilizar el arqueti
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"8F5F414D89192FFF36DB35A41CBCB740">
+		["MD5-CAM-1.0.1"] = <"db37a0733831e9753261627841cd7e3d">
 		["build_uid"] = <"7b026d2d-41e6-4911-a964-11a9ce4fba26">
 		["revision"] = <"1.0.2">
+		["ip_acknowledgements"] = <"This artefact includes content from SNOMED Clinical Terms® (SNOMED CT®) which is copyrighted material of the International Health Terminology Standards Development Organisation (IHTSDO). Where an implementation of this artefact makes use of SNOMED CT content, the implementer must have the appropriate SNOMED CT Affiliate license - for more information contact https://www.snomed.org/snomed-ct/get-snomed or info@snomed.org.">
 	>
 
 definition
-	EVALUATION[at0000] matches {    -- Reason for encounter
+	EVALUATION[at0000] matches {    -- Visit
 		data matches {
 			ITEM_TREE[at0001] matches {    -- Tree
 				items cardinality matches {0..*; unordered} matches {
-					ELEMENT[at0002] occurrences matches {0..*} matches {    -- Contact type
+					ELEMENT[at0005] occurrences matches {0..1} matches {    -- Visit Time
 						value matches {
-							DV_TEXT matches {*}
+							DV_DATE_TIME matches {*}
 						}
 					}
-					ELEMENT[at0004] occurrences matches {0..*} matches {    -- Presenting problem
+					ELEMENT[at0002] occurrences matches {0..*} matches {    -- Visit Type
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[ac0000]
+								}
+							}
+						}
+					}
+					ELEMENT[at0004] occurrences matches {0..*} matches {    -- Visit Reason
 						value matches {
 							DV_TEXT matches {*}
 						}
@@ -168,11 +178,12 @@ definition
 	}
 
 ontology
+	terminologies_available = <"SNOMED-CT","SNOMED CT">
 	term_definitions = <
 		["en"] = <
 			items = <
 				["at0000"] = <
-					text = <"Reason for encounter">
+					text = <"Visit">
 					description = <"The reason for initiation of any healthcare encounter or contact by the individual who is the subject of care.">
 				>
 				["at0001"] = <
@@ -180,23 +191,27 @@ ontology
 					description = <"@ internal @">
 				>
 				["at0002"] = <
-					text = <"Contact type">
+					text = <"Visit Type">
 					description = <"Identification of the type, or administrative category, of healthcare sought or required by the subject of care.">
 					comment = <"Coding of the 'Contact type' with a terminology is desirable, where possible. Examples include: pre-employment medical, routine antenatal visit, women's health check, pre-operative assessment, or annual medical check-up.
 ">
 				>
 				["at0004"] = <
-					text = <"Presenting problem">
+					text = <"Visit Reason">
 					description = <"Identification of the clinical or social problem motivating the subject of care to seeking healthcare.">
 					comment = <"Coding of the 'Presenting problem' with a terminology is desirable, where possible. Clinical or social reasons for seeking healthcare can include health issues, symptoms or physical signs. Examples: health issues - desire to quit smoking, domestic violence; symptoms - abdominal pain, shortness of breath; physical signs - an altered conscious state. 'Chief complaint' may be used as a valid synonym for 'Presenting problem' in templates.
  ">
+				>
+				["at0005"] = <
+					text = <"Visit Time">
+					description = <"">
 				>
 			>
 		>
 		["pt-br"] = <
 			items = <
 				["at0000"] = <
-					text = <"Motivo para o encontro">
+					text = <"*Visit (en)">
 					description = <"O motivo de início de qualquer encontro em saúde ou contato pelo indivíduo que é sujeito do cuidado.">
 				>
 				["at0001"] = <
@@ -204,22 +219,26 @@ ontology
 					description = <"*@ internal @">
 				>
 				["at0002"] = <
-					text = <"Tipo de contato">
+					text = <"*Visit Type (en)">
 					description = <"Identificação do tipo, ou categoria administrativa, ou cuidado em saúde procurado ou exigido pelo sujeito do cuidado.">
 					comment = <"Codificação do \"tipo de contato\" com uma terminologia é desejável, quando possível. Exemplos incluem: Exame pré-admissional, visita pré-natal de rotina, saúde da mulher, risco cirúrgico, ou avaliação médica anual.">
 				>
 				["at0004"] = <
-					text = <"Problema apresentado">
+					text = <"*Visit Reason (en)">
 					description = <"Identificação do problema clínico ou social que motiva o sujeito do cuidado a procurar cuidado em saúde.">
 					comment = <"
 Codificação do \"Problema apresentado\" com uma terminologia é desejável, quando possível. Razões clínicas ou sociais na busca de cuidado em saúde podem incluir problemas de saúde, sintomas ou sinais físicos. Exemplos: problemas de saúde - desejo de parar de fumar, violência doméstica; sintomas - dor abdominal, falta de ar; sinais físicos - um estado de consciência alterado. \"Queixa principal\" pode ser usada como um sinônimo válido para \"Problema apresentado\" nos modelos.">
+				>
+				["at0005"] = <
+					text = <"*Visit Time (en)">
+					description = <"">
 				>
 			>
 		>
 		["es"] = <
 			items = <
 				["at0000"] = <
-					text = <"Motivo de consulta">
+					text = <"*Visit (en)">
 					description = <"Motivo del paciente por el cual se inició un encuentro clínico o contacto.">
 				>
 				["at0001"] = <
@@ -227,21 +246,25 @@ Codificação do \"Problema apresentado\" com uma terminologia é desejável, qu
 					description = <"@ internal @">
 				>
 				["at0002"] = <
-					text = <"Tipo de contacto">
+					text = <"*Visit Type (en)">
 					description = <"Identificación del tipo o categoría administrativa por la cuál el paciente busca asistencia médica.">
 					comment = <"Es deseable la codificación del 'Tipo de contacto' mediante una terminología. Algunos ejemplos incluyen: control previo al empleo, visita prenatal de rutina, control de salud femenino, evaluación preoperatoria, o control médico anual.">
 				>
 				["at0004"] = <
-					text = <"Problema presentado">
+					text = <"*Visit Reason (en)">
 					description = <"Problema o síntoma reportado por el paciente, que da inicio a la consulta médica">
 					comment = <"Es desable la codificación del 'Problema presentado' mediante una terminología. Motivos clínicos o sociales para buscar atención médica pueden incluir estos problemas, síntomas o signos físicos: deseo de dejar de fumar, violencia doméstica, dolor abdominal, problemas al respirar, alteración del estado de conciencia. En una plantilla, 'Problema principal' puede usarse como sinónimo al 'Problema presentado'.">
+				>
+				["at0005"] = <
+					text = <"*Visit Time (en)">
+					description = <"">
 				>
 			>
 		>
 		["de"] = <
 			items = <
 				["at0000"] = <
-					text = <"Grund für den Kontakt">
+					text = <"*Visit (en)">
 					description = <"Der Grund für die Initiierung eines Arztbesuchs durch den Patienten.">
 				>
 				["at0001"] = <
@@ -249,22 +272,26 @@ Codificação do \"Problema apresentado\" com uma terminologia é desejável, qu
 					description = <"@ internal @">
 				>
 				["at0002"] = <
-					text = <"Kontakt Typ">
+					text = <"*Visit Type (en)">
 					description = <"Identifizierung des Typs oder der Verwaltungskategorie des Gesundheitswesens, der von dem Pflegebedürftigen gesucht oder benötigt wird.">
 					comment = <"Die Kodierung des \"Kontakttyps\" sollte, wenn möglich, mit einer Terminologie erfolgen. Beispiele hierfür sind: vorbereitende Untersuchungen, routinemäßiger vorgeburtlicher Vorsorgetermin, Gesundheitscheck für Frauen.">
 				>
 				["at0004"] = <
-					text = <"Hauptbeschwerde">
+					text = <"*Visit Reason (en)">
 					description = <"Identifikation des klinischen oder sozialen Problems, welches den Patienten motiviert die medizinische Versorgung aufzusuchen.">
 					comment = <"Die Kodierung der \"Problemdarstellung\" sollte, wenn möglich, mit einer Terminologie erfolgen. Klinische oder soziale Gründe für das Aufsuchen der Gesundheitsversorgung können u.a. Gesundheitsprobleme, Symptome oder andere körperliche Anzeichen sein. 
 Beispiele: Gesundheitsfragen - Wunsch, mit dem Rauchen aufzuhören, häusliche Gewalt; Symptome - Bauchschmerzen, Kurzatmigkeit; körperliche Zeichen - ein veränderter Bewusstseinszustand. \"Hauptbeschwerde\" kann als gültiges Synonym für \"Problemdarstellung\" in den Vorlagen verwendet werden.">
+				>
+				["at0005"] = <
+					text = <"*Visit Time (en)">
+					description = <"">
 				>
 			>
 		>
 		["nb"] = <
 			items = <
 				["at0000"] = <
-					text = <"Kontaktårsak">
+					text = <"*Visit (en)">
 					description = <"For å registrere årsaken til kontakt mellom helsepersonell og individet.">
 				>
 				["at0001"] = <
@@ -272,15 +299,33 @@ Beispiele: Gesundheitsfragen - Wunsch, mit dem Rauchen aufzuhören, häusliche G
 					description = <"@ internal @">
 				>
 				["at0002"] = <
-					text = <"Administrativ kontaktårsak">
+					text = <"*Visit Type (en)">
 					description = <"Type eller administrativ kategori av helsetjenester som er årsak til at individet oppsøker eller behøver helsetjenester.">
 					comment = <"Koding av \"kontaktårsak\" med en terminologi foretrekkes når mulig. Eksempler: Helsesjekk før ansettelse, svangerskapskontroll, gynekologisk undersøkelse, preoperativ undersøkelse eller årlig medisinsk kontroll.">
 				>
 				["at0004"] = <
-					text = <"Klinisk kontaktårsak">
+					text = <"*Visit Reason (en)">
 					description = <"Klinisk eller sosial årsak til at individet oppsøker helsevesenet.">
 					comment = <"Koding av \"Klinisk problemstilling\" med en terminologi foretrekkes når mulig. Kliniske årsaker kan omfatte helseproblemer, symptomer, eller fysiske sykdomstegn. Eksempler: Helseproblemer - ønske om å slutte å røyke eller vold i hjemmet, symptomer - magesmerter eller kortpusthet, fysiske sykdomstegn - endret bevissthetsnivå. \"Hovedproblemstilling\" kan bli benyttet som et synonym for \"Klinisk kontaktårsak\" i templater.">
 				>
+				["at0005"] = <
+					text = <"*Visit Time (en)">
+					description = <"">
+				>
+			>
+		>
+	>
+	term_binding = <
+		["SNOMED-CT"] = <
+			items = <
+				["at0002"] = <[SNOMED-CT::308335008]>
+			>
+		>
+	>
+	constraint_binding = <
+		["SNOMED CT"] = <
+			items = <
+				["ac0000"] = <terminology:http://snomed.info/id/308335008>
 			>
 		>
 	>
