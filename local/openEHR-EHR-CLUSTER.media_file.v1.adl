@@ -230,7 +230,7 @@ Niet te gebruiken om een verwijzing naar een kennisbank op te nemen - gebruik hi
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"E1C0201AED51855810B4D9FD7633573E">
+		["MD5-CAM-1.0.1"] = <"a3715ed33aa08a966fbe37fa90141a14">
 		["build_uid"] = <"a5332c85-dd4d-4b75-915b-c7c65e990200">
 		["revision"] = <"1.0.3">
 	>
@@ -243,14 +243,14 @@ definition
 					DV_MULTIMEDIA matches {*}
 				}
 			}
-			ELEMENT[at0002] occurrences matches {0..1} matches {    -- Content name
-				value matches {
-					DV_TEXT matches {*}
-				}
-			}
 			ELEMENT[at0010] occurrences matches {0..*} matches {    -- Identifier
 				value matches {
 					DV_IDENTIFIER matches {*}
+					DV_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0002] occurrences matches {0..1} matches {    -- Content name
+				value matches {
 					DV_TEXT matches {*}
 				}
 			}
@@ -268,19 +268,6 @@ definition
 			allow_archetype CLUSTER[at0012] occurrences matches {0..*} matches {    -- Creator
 				include
 					archetype_id/value matches {/openEHR-EHR-CLUSTER\.person(-[a-zA-Z0-9_]+)*\.v1|openEHR-EHR-CLUSTER\.person(-[a-zA-Z0-9_]+)*\.v0/}
-			}
-			allow_archetype CLUSTER[at0011] occurrences matches {0..*} matches {    -- Source device
-				include
-					archetype_id/value matches {/openEHR-EHR-CLUSTER\.device\.v1/}
-			}
-			allow_archetype CLUSTER[at0013] occurrences matches {0..*} matches {    -- Additional details
-				include
-					archetype_id/value matches {/.*/}
-			}
-			ELEMENT[at0007] occurrences matches {0..1} matches {    -- Comment
-				value matches {
-					DV_TEXT matches {*}
-				}
 			}
 		}
 	}
@@ -311,26 +298,13 @@ ontology
 					text = <"Description">
 					description = <"Narrative description about the media file.">
 				>
-				["at0007"] = <
-					text = <"Comment">
-					description = <"Additional narrative about the media file not captured in other fields.">
-				>
 				["at0010"] = <
 					text = <"Identifier">
 					description = <"Unique ID for the media file.">
 				>
-				["at0011"] = <
-					text = <"Source device">
-					description = <"Details about the device used to generate or author the media file.">
-					comment = <"For example: the camera used to capture an image.">
-				>
 				["at0012"] = <
 					text = <"Creator">
 					description = <"Details about the individual or organisation who generated or authored the media file.">
-				>
-				["at0013"] = <
-					text = <"Additional details">
-					description = <"Additional structured details about the media file.">
 				>
 			>
 		>
@@ -358,26 +332,13 @@ ontology
 					text = <"Beskrivning">
 					description = <"Narrativ beskrivning av mediefilen.">
 				>
-				["at0007"] = <
-					text = <"Kommentar">
-					description = <"Ytterligare redogörelse om mediefilen som inte beskrivits i andra fält.">
-				>
 				["at0010"] = <
 					text = <"Identifierare">
 					description = <"Unikt ID för mediefilen.">
 				>
-				["at0011"] = <
-					text = <"Enhetskälla">
-					description = <"Detaljer om källan använd för att skapa mediefilen.">
-					comment = <"Till exempel: kameran som användes för att ta en bild.">
-				>
 				["at0012"] = <
 					text = <"Skapare">
 					description = <"Detaljer om individ eller organisation som skapade mediefilen.">
-				>
-				["at0013"] = <
-					text = <"Ytterligare detaljer">
-					description = <"Ytterligare strukturerade detaljer om mediefilen.">
 				>
 			>
 		>
@@ -405,26 +366,13 @@ ontology
 					text = <"Beschreibung">
 					description = <"Kurze Beschreibung der Mediendatei.">
 				>
-				["at0007"] = <
-					text = <"Kommentar">
-					description = <"Zusätzliche Information zu der Mediendatei, die nicht in anderen Feldern erfasst wurde.">
-				>
 				["at0010"] = <
 					text = <"Identifikator">
 					description = <"Eindeutige ID für die Mediendatei.">
 				>
-				["at0011"] = <
-					text = <"Quellgerät">
-					description = <"Informationen zu dem Gerät, mit dem die Mediendatei generiert oder erzeugt wurde.">
-					comment = <"Zum Beispiel: Die Kamera, mit der ein Bild aufgenommen wurde.">
-				>
 				["at0012"] = <
 					text = <"Urheber">
 					description = <"Informationen zu der Person oder Organisation, die die Mediendatei generiert oder verfasst hat.">
-				>
-				["at0013"] = <
-					text = <"Zusätzliche Informationen">
-					description = <"Zusätzliche strukturierte Details zur Mediendatei.">
 				>
 			>
 		>
@@ -454,26 +402,13 @@ ontology
 					text = <"Beskrivelse">
 					description = <"Fritekstlig beskrivelse av mediafilen.">
 				>
-				["at0007"] = <
-					text = <"Kommentar">
-					description = <"Ytterligere fritekst om mediafilen som ikke dekkes av andre elementer.">
-				>
 				["at0010"] = <
 					text = <"ID">
 					description = <"Unik identifikator til mediafilen.">
 				>
-				["at0011"] = <
-					text = <"Kildeenhet">
-					description = <"Detaljer om enheten som ble brukt til å generere eller skape mediafilen.">
-					comment = <"For eksempel: kamera som ble brukt til å ta bildet.">
-				>
 				["at0012"] = <
 					text = <"Forfatter">
 					description = <"Detaljer om personen eller organisasjonen som genererte eller skapte mediafilen.">
-				>
-				["at0013"] = <
-					text = <"Ytterligere detaljer">
-					description = <"Ytterligere strukturerte detaljer om mediafilen.">
 				>
 			>
 		>
@@ -501,26 +436,13 @@ ontology
 					text = <"Beschrijving">
 					description = <"Verhalende beschrijving van het mediabestand.">
 				>
-				["at0007"] = <
-					text = <"Opmerking">
-					description = <"Aanvullende beschrijving over het mediabestand dat niet in andere velden is vastgelegd.">
-				>
 				["at0010"] = <
 					text = <"Identificatie">
 					description = <"Unieke identificatie voor het mediabestand.">
 				>
-				["at0011"] = <
-					text = <"Bronapparaat">
-					description = <"Details over het apparaat dat is gebruikt om het mediabestand te genereren of te maken.">
-					comment = <"Bijvoorbeeld: de camera die wordt gebruikt om een beeld vast te leggen.">
-				>
 				["at0012"] = <
 					text = <"Aangemaakt door">
 					description = <"Details over de persoon of organisatie die het mediabestand heeft gegenereerd of gemaakt.">
-				>
-				["at0013"] = <
-					text = <"Aanvullende details">
-					description = <"Aanvullende gestructureerde details over het mediabestand.">
 				>
 			>
 		>
@@ -548,26 +470,13 @@ ontology
 					text = <"Popis">
 					description = <"Naratívny popis o mediálnom súbore.">
 				>
-				["at0007"] = <
-					text = <"Poznámky">
-					description = <"Dodatočné poznámky o mediálnom súbore nezachytené v iných poliach.">
-				>
 				["at0010"] = <
 					text = <"Identifikátor">
 					description = <"Jedinečný identifikátor pre mediálny súbor.">
 				>
-				["at0011"] = <
-					text = <"Zdrojový prístroj">
-					description = <"Podrobnosti o prístroji použitom na generovanie alebo vytvorenie mediálneho súboru.">
-					comment = <"Napríklad: fotoaparát použitý zachytenie snímky.">
-				>
 				["at0012"] = <
 					text = <"Tvorca">
 					description = <"Podrobnosti o jednotlivcovi alebo organizácii, ktorá vygenerovala alebo vytvorila mediálny súbor.">
-				>
-				["at0013"] = <
-					text = <"Ďalšie detaily">
-					description = <"Ďalšie štruktúrované detaily o mediálnom súbore.">
 				>
 			>
 		>
