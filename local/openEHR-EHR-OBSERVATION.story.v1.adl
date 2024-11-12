@@ -131,22 +131,6 @@ Användningsområden:
 Används för att införliva de beskrivningar av sjukdomshistorier som finns dokumenterade i befintliga eller äldre kliniska system i ett arketypiskt format med hjälp av dataelementet ”Berättelse”.">
 			misuse = <"Ska inte användas för att registrera formella bedömningar av kliniker. Dessa registreras vanligtvis med EVALUATION-klassen av arketyper.">
 		>
-		["es-ar"] = <
-			language = <[ISO_639-1::es-ar]>
-			purpose = <"*To record a narrative description of the clinical history, as told to a clinician or recorded directly by an individual/patient, and to provide a framework in which to nest detailed CLUSTER archetypes, each of which will describe the various aspects of the clinical history in further detail.(en)">
-			copyright = <"© openEHR Foundation">
-		>
-		["ko"] = <
-			language = <[ISO_639-1::ko]>
-			purpose = <"개인/환자가 의사에게 이야기하거나 직접 기록한 임상 병력에 대한 서술을 기록하기 위한 것과 상세한 CLUSTER archetypes를 포함할 수 있는 프레임워크를 제공하는 것으로 각각에 임상 병력의 다양한 측면들을 상세하게 기술될 것이다.">
-			keywords = <"*병력(ko)","*현재(ko)","*호소(ko)","*이야기(ko)">
-			copyright = <"© openEHR Foundation">
-			use = <"환자가 의사에게 이야기한 공식적인 '현재 호소하는 병력(History of Presenting Complaint)'을 기록하기 위해서 사용함; 또는 (예를 들어 개인건강기록에 있는) 개인 자신의 증상들의 '이야기(story)를 설명한 것을 기록하기 위해 사용함.
-
-기존 또는 이전의 임상 시스템 내의 임상 병력의 서술을 'Story' data element을 사용하여 archetyped format으로 통합하기위해 사용함.
-
-단순한 서술을 기록하기 위해 사용함 그리고/또는 container archetype으로써 - 추가적이고 특정한 그리고 상세한 CLUSTER archetypes에 의해 확장될 수 있는 공통의 쿼리가능한 ENTRY archetype framework를 제공함. 각각에 임상병력의 다양한 측면을 기술될 것임. 병력과 관련된 CLUSTER archetypes의 예는 CLUSTER.symptom 또는 CLUSTER.health_event를 포함한다.">
-		>
 		["nb"] = <
 			language = <[ISO_639-1::nb]>
 			purpose = <"For å registrere en fritekstbeskrivelse av individets sykehistorie/anamnese og som et rammeverk for å nøste detaljerte CLUSTER-arketyper som hver for seg kan detaljere ulike aspekter av sykehistorien, som symptomer, helserelaterte hendelser, og andre tilgrensende emner.
@@ -163,6 +147,22 @@ Brukes:
 
 Brukes for å kunne gjenbruke anamnese i eksisterende systemer inn i et arketypeformat ved hjelp av 'Anamnese'-dataelementet.">
 			misuse = <"Skal ikke brukes for å registrere formelle vurderinger av klinikere. Disse registreres ved hjelp av forskjellige arketyper av klassen EVALUATION.">
+		>
+		["ko"] = <
+			language = <[ISO_639-1::ko]>
+			purpose = <"개인/환자가 의사에게 이야기하거나 직접 기록한 임상 병력에 대한 서술을 기록하기 위한 것과 상세한 CLUSTER archetypes를 포함할 수 있는 프레임워크를 제공하는 것으로 각각에 임상 병력의 다양한 측면들을 상세하게 기술될 것이다.">
+			keywords = <"*병력(ko)","*현재(ko)","*호소(ko)","*이야기(ko)">
+			copyright = <"© openEHR Foundation">
+			use = <"환자가 의사에게 이야기한 공식적인 '현재 호소하는 병력(History of Presenting Complaint)'을 기록하기 위해서 사용함; 또는 (예를 들어 개인건강기록에 있는) 개인 자신의 증상들의 '이야기(story)를 설명한 것을 기록하기 위해 사용함.
+
+기존 또는 이전의 임상 시스템 내의 임상 병력의 서술을 'Story' data element을 사용하여 archetyped format으로 통합하기위해 사용함.
+
+단순한 서술을 기록하기 위해 사용함 그리고/또는 container archetype으로써 - 추가적이고 특정한 그리고 상세한 CLUSTER archetypes에 의해 확장될 수 있는 공통의 쿼리가능한 ENTRY archetype framework를 제공함. 각각에 임상병력의 다양한 측면을 기술될 것임. 병력과 관련된 CLUSTER archetypes의 예는 CLUSTER.symptom 또는 CLUSTER.health_event를 포함한다.">
+		>
+		["es-ar"] = <
+			language = <[ISO_639-1::es-ar]>
+			purpose = <"*To record a narrative description of the clinical history, as told to a clinician or recorded directly by an individual/patient, and to provide a framework in which to nest detailed CLUSTER archetypes, each of which will describe the various aspects of the clinical history in further detail.(en)">
+			copyright = <"© openEHR Foundation">
 		>
 		["pt-br"] = <
 			language = <[ISO_639-1::pt-br]>
@@ -181,11 +181,6 @@ Usar:
 Use para incorporar as descrições narrativas da história clínica capturadas de sistemas clínicos existentes ou herdados em um formato arquetipado, usando o elemento de dados de texto \"História\".">
 			misuse = <"Não deve ser usado para gravar avaliações formais por médicos que normalmente seriam gravadas usando a classe de arquétipos EVALUATION.">
 		>
-		["ar-sy"] = <
-			language = <[ISO_639-1::ar-sy]>
-			purpose = <"*To record a narrative description of the clinical history, as told to a clinician or recorded directly by an individual/patient, and to provide a framework in which to nest detailed CLUSTER archetypes, each of which will describe the various aspects of the clinical history in further detail.(en)">
-			copyright = <"© openEHR Foundation">
-		>
 		["en"] = <
 			language = <[ISO_639-1::en]>
 			purpose = <"To record a narrative description of the clinical history of the subject of care and to provide a framework in which to nest detailed CLUSTER archetypes, each of which will support the narrative with additional structured detail for symptoms, health events and related topics.
@@ -203,6 +198,11 @@ Use:
 
 Use to incorporate the narrative descriptions of clinical history captured from existing or legacy clinical systems into an archetyped format, using the 'Story' text data element.">
 			misuse = <"Not to be used to record formal assessments by clinicians which would usually be recorded using the EVALUATION class of archetypes.">
+		>
+		["ar-sy"] = <
+			language = <[ISO_639-1::ar-sy]>
+			purpose = <"*To record a narrative description of the clinical history, as told to a clinician or recorded directly by an individual/patient, and to provide a framework in which to nest detailed CLUSTER archetypes, each of which will describe the various aspects of the clinical history in further detail.(en)">
+			copyright = <"© openEHR Foundation">
 		>
 		["it"] = <
 			language = <[ISO_639-1::it]>
@@ -265,42 +265,32 @@ Use to incorporate the narrative descriptions of clinical history captured from 
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"C372CBF8FD903DD4B96B6327ABBBAE1F">
+		["MD5-CAM-1.0.1"] = <"2cc05514215770d03410e800c1a41f55">
 		["build_uid"] = <"f147f076-2f91-47cb-a18f-e3b0ae5d0eda">
 		["revision"] = <"1.3.0">
 	>
 
 definition
-	OBSERVATION[at0000] matches {    -- Story/History
+	OBSERVATION[at0000] matches {    -- Chief Complaint
 		data matches {
 			HISTORY[at0001] matches {    -- Event Series
 				events cardinality matches {1..*; unordered} matches {
-					EVENT[at0002] occurrences matches {0..*} matches {    -- Any event
+					EVENT[at0002] occurrences matches {0..*} matches {    -- Chief Complaint
 						data matches {
 							ITEM_TREE[at0003] matches {    -- Tree
 								items cardinality matches {1..*; unordered} matches {
-									ELEMENT[at0004] occurrences matches {0..*} matches {    -- Story
+									ELEMENT[at0004] occurrences matches {0..*} matches {    -- Complaint
 										value matches {
 											DV_TEXT matches {*}
 										}
 									}
-									allow_archetype CLUSTER[at0006] occurrences matches {0..*} matches {    -- Structured detail
+									allow_archetype CLUSTER[at0006] occurrences matches {0..*} matches {    -- Symptoms/Signs
 										include
-											archetype_id/value matches {/openEHR-EHR-CLUSTER\.health_event(-[a-zA-Z0-9_]+)*\.v0|openEHR-EHR-CLUSTER\.issue(-[a-zA-Z0-9_]+)*\.v0|openEHR-EHR-CLUSTER\.symptom_sign(-[a-zA-Z0-9_]+)*\.v2/}
+											archetype_id/value matches {/openEHR-EHR-CLUSTER\.symptom_sign(-[a-zA-Z0-9_]+)*\.v2/}
 									}
 								}
 							}
 						}
-					}
-				}
-			}
-		}
-		protocol matches {
-			ITEM_TREE[at0007] matches {    -- Tree
-				items cardinality matches {0..*; unordered} matches {
-					allow_archetype CLUSTER[at0008] occurrences matches {0..*} matches {    -- Extension
-						include
-							archetype_id/value matches {/.*/}
 					}
 				}
 			}
@@ -312,7 +302,7 @@ ontology
 		["ar-sy"] = <
 			items = <
 				["at0000"] = <
-					text = <"*Story/History(en)">
+					text = <"*Chief Complaint (en)">
 					description = <"*The subjective clinical history of the subject of care as recorded directly by the subject, or reported to a clinician by the subject or a carer.(en)">
 				>
 				["at0001"] = <
@@ -320,7 +310,7 @@ ontology
 					description = <"*@ internal @(en)">
 				>
 				["at0002"] = <
-					text = <"إحدى الوقائع">
+					text = <"*Chief Complaint (en)">
 					description = <"*Default, unspecified point in time or interval event which may be explicitly defined in a template or at run-time.(en)">
 				>
 				["at0003"] = <
@@ -328,29 +318,20 @@ ontology
 					description = <"*@ internal @(en)">
 				>
 				["at0004"] = <
-					text = <"*Story(en)">
+					text = <"*Complaint (en)">
 					description = <"*Narrative description of the story or clinical history for the subject of care.(en)">
 				>
 				["at0006"] = <
-					text = <"*Structured detail(en)">
+					text = <"*Symptoms/Signs (en)">
 					description = <"*Structured detail about the individual's story or patient's history.(en)">
 					comment = <"*For example: a specific symptom such as nausea or pain; an event such as a fall off a bicycle; or an issue such as a desire to quit using tobacco.(en)">
-				>
-				["at0007"] = <
-					text = <"*Tree(en)">
-					description = <"*@ internal @(en)">
-				>
-				["at0008"] = <
-					text = <"*Extension(en)">
-					description = <"*Additional information required to capture local content or to align with other reference models/formalisms.(en)">
-					comment = <"*For example: Local information requirements or additional metadata to align with FHIR equivalents. (en)">
 				>
 			>
 		>
 		["en"] = <
 			items = <
 				["at0000"] = <
-					text = <"Story/History">
+					text = <"Chief Complaint">
 					description = <"The subjective clinical history of the subject of care as recorded directly by the subject, or reported to a clinician by the subject or a carer.">
 				>
 				["at0001"] = <
@@ -358,7 +339,7 @@ ontology
 					description = <"@ internal @">
 				>
 				["at0002"] = <
-					text = <"Any event">
+					text = <"Chief Complaint">
 					description = <"Default, unspecified point in time or interval event which may be explicitly defined in a template or at run-time.">
 				>
 				["at0003"] = <
@@ -366,29 +347,20 @@ ontology
 					description = <"@ internal @">
 				>
 				["at0004"] = <
-					text = <"Story">
+					text = <"Complaint">
 					description = <"Narrative description of the story or clinical history for the subject of care.">
 				>
 				["at0006"] = <
-					text = <"Structured detail">
+					text = <"Symptoms/Signs">
 					description = <"Structured detail about the individual's story or patient's history.">
 					comment = <"For example: a specific symptom such as nausea or pain; an event such as a fall off a bicycle; or an issue such as a desire to quit using tobacco.">
-				>
-				["at0007"] = <
-					text = <"Tree">
-					description = <"@ internal @">
-				>
-				["at0008"] = <
-					text = <"Extension">
-					description = <"Additional information required to capture local content or to align with other reference models/formalisms.">
-					comment = <"For example: Local information requirements or additional metadata to align with FHIR equivalents.">
 				>
 			>
 		>
 		["es-ar"] = <
 			items = <
 				["at0000"] = <
-					text = <"*Story/History(en)">
+					text = <"*Chief Complaint (en)">
 					description = <"*The subjective clinical history of the subject of care as recorded directly by the subject, or reported to a clinician by the subject or a carer.(en)">
 				>
 				["at0001"] = <
@@ -396,7 +368,7 @@ ontology
 					description = <"@ internal @">
 				>
 				["at0002"] = <
-					text = <"*Any event(en)">
+					text = <"*Chief Complaint (en)">
 					description = <"*Default, unspecified point in time or interval event which may be explicitly defined in a template or at run-time.(en)">
 				>
 				["at0003"] = <
@@ -404,29 +376,20 @@ ontology
 					description = <"@ internal @">
 				>
 				["at0004"] = <
-					text = <"*Story(en)">
+					text = <"*Complaint (en)">
 					description = <"*Narrative description of the story or clinical history for the subject of care.(en)">
 				>
 				["at0006"] = <
-					text = <"*Structured detail(en)">
+					text = <"*Symptoms/Signs (en)">
 					description = <"*Structured detail about the individual's story or patient's history.(en)">
 					comment = <"*For example: a specific symptom such as nausea or pain; an event such as a fall off a bicycle; or an issue such as a desire to quit using tobacco.(en)">
-				>
-				["at0007"] = <
-					text = <"*Tree(en)">
-					description = <"*@ internal @(en)">
-				>
-				["at0008"] = <
-					text = <"*Extension(en)">
-					description = <"*Additional information required to capture local content or to align with other reference models/formalisms.(en)">
-					comment = <"*For example: Local information requirements or additional metadata to align with FHIR equivalents. (en)">
 				>
 			>
 		>
 		["ko"] = <
 			items = <
 				["at0000"] = <
-					text = <"*Story/History(en)">
+					text = <"*Chief Complaint (en)">
 					description = <"*The subjective clinical history of the subject of care as recorded directly by the subject, or reported to a clinician by the subject or a carer.(en)">
 				>
 				["at0001"] = <
@@ -434,7 +397,7 @@ ontology
 					description = <"*@ internal @(en)">
 				>
 				["at0002"] = <
-					text = <"*Any event(en)">
+					text = <"*Chief Complaint (en)">
 					description = <"*Default, unspecified point in time or interval event which may be explicitly defined in a template or at run-time.(en)">
 				>
 				["at0003"] = <
@@ -442,29 +405,20 @@ ontology
 					description = <"*@ internal @(en)">
 				>
 				["at0004"] = <
-					text = <"*Story(en)">
+					text = <"*Complaint (en)">
 					description = <"*Narrative description of the story or clinical history for the subject of care.(en)">
 				>
 				["at0006"] = <
-					text = <"*Structured detail(en)">
+					text = <"*Symptoms/Signs (en)">
 					description = <"*Structured detail about the individual's story or patient's history.(en)">
 					comment = <"*For example: a specific symptom such as nausea or pain; an event such as a fall off a bicycle; or an issue such as a desire to quit using tobacco.(en)">
-				>
-				["at0007"] = <
-					text = <"*Tree(en)">
-					description = <"*@ internal @(en)">
-				>
-				["at0008"] = <
-					text = <"*Extension(en)">
-					description = <"*Additional information required to capture local content or to align with other reference models/formalisms.(en)">
-					comment = <"*For example: Local information requirements or additional metadata to align with FHIR equivalents. (en)">
 				>
 			>
 		>
 		["nb"] = <
 			items = <
 				["at0000"] = <
-					text = <"Anamnese">
+					text = <"*Chief Complaint (en)">
 					description = <"Et individs sykehistorie/anamnese, som fortalt til kliniker eller dokumentert direkte av individet.">
 				>
 				["at0001"] = <
@@ -472,7 +426,7 @@ ontology
 					description = <"@ internal @">
 				>
 				["at0002"] = <
-					text = <"Uspesifisert hendelse">
+					text = <"*Chief Complaint (en)">
 					description = <"Standard, uspesifisert tidspunkt eller tidsintervall som kan defineres mer eksplisitt i en templat eller i en applikasjon.">
 				>
 				["at0003"] = <
@@ -480,29 +434,20 @@ ontology
 					description = <"@ internal @">
 				>
 				["at0004"] = <
-					text = <"Anamnese">
+					text = <"*Complaint (en)">
 					description = <"Narrativ beskrivelse av sykehistorie/anamnese for et individ.">
 				>
 				["at0006"] = <
-					text = <"Strukturerte detaljer">
+					text = <"*Symptoms/Signs (en)">
 					description = <"Ytterligere detaljer i strukturert form, knyttet til individets sykehistorie/anamnese.">
 					comment = <"Eksempel: et spesifikt symptom som kvalme eller smerte, en hendelse som en sykkelvelt, eller en problemstilling som et ønske om å slutte med tobakk.">
-				>
-				["at0007"] = <
-					text = <"*Tree(en)">
-					description = <"*@ internal @(en)">
-				>
-				["at0008"] = <
-					text = <"Tilleggsinformasjon">
-					description = <"Ytterligere informasjon som trengs for å kunne registrere lokalt definert innhold eller for å tilpasse til andre referansemodeller/formalismer.">
-					comment = <"For eksempel lokale informasjonsbehov eller ytterligere metadata for å kunne tilpasse til tilsvarende konsepter i FHIR.">
 				>
 			>
 		>
 		["pt-br"] = <
 			items = <
 				["at0000"] = <
-					text = <"História">
+					text = <"*Chief Complaint (en)">
 					description = <"A história clínica subjetiva do sujeito do cuidado como registrada diretamente por ele, ou relatada a um médico pelo sujeito ou por um cuidador.">
 				>
 				["at0001"] = <
@@ -510,7 +455,7 @@ ontology
 					description = <"@ internal @">
 				>
 				["at0002"] = <
-					text = <"Algum Evento">
+					text = <"*Chief Complaint (en)">
 					description = <"Padrão, ponto indeterminado no tempo ou intervalo do evento que pode ser explicitamente definido em um modelo ou em tempo de execução.">
 				>
 				["at0003"] = <
@@ -518,29 +463,20 @@ ontology
 					description = <"@ internal @">
 				>
 				["at0004"] = <
-					text = <"História">
+					text = <"*Complaint (en)">
 					description = <"Descrição narrativa da história ou da história clínica para o sujeito do cuidado.">
 				>
 				["at0006"] = <
-					text = <"Detalhes Estruturados">
+					text = <"*Symptoms/Signs (en)">
 					description = <"Detalhes estruturados sobre a história do indivíduo ou a história do paciente.">
 					comment = <"Por exemplo: um sintoma específico, tais como náuseas ou dor; um evento como uma queda de bicicleta; ou um problema como o desejo de parar de usar tabaco.">
-				>
-				["at0007"] = <
-					text = <"Tree">
-					description = <"@ internal @">
-				>
-				["at0008"] = <
-					text = <"Extensão">
-					description = <"Informações adicionais necessárias para capturar o conteúdo local ou para se alinhar com outros modelos/formalismos de referência.">
-					comment = <"*For example: Local information requirements or additional metadata to align with FHIR equivalents. (en)">
 				>
 			>
 		>
 		["it"] = <
 			items = <
 				["at0000"] = <
-					text = <"Storia/Cronologia">
+					text = <"*Chief Complaint (en)">
 					description = <"La storia clinica soggettiva del persona assistita come registrata direttamente dal soggetto, o riportata ad un clinico dal soggetto o da chi lo assiste.">
 				>
 				["at0001"] = <
@@ -548,7 +484,7 @@ ontology
 					description = <"@ internal @">
 				>
 				["at0002"] = <
-					text = <"Qualsiasi evento">
+					text = <"*Chief Complaint (en)">
 					description = <"Evento predefinito, non specificato nel tempo o nell'intervallo di tempo, che può essere definito esplicitamente in un modello o in fase di esecuzione.">
 				>
 				["at0003"] = <
@@ -556,29 +492,20 @@ ontology
 					description = <"@ internal @">
 				>
 				["at0004"] = <
-					text = <"Storia">
+					text = <"*Complaint (en)">
 					description = <"Descrizione narrativa della storia o dell'anamnesi clinica del soggetto da curare.">
 				>
 				["at0006"] = <
-					text = <"Dettaglio strutturato">
+					text = <"*Symptoms/Signs (en)">
 					description = <"Dettagli strutturati sulla storia dell'individuo o sull'anamnesi del paziente.">
 					comment = <"Per esempio: un sintomo specifico come la nausea o il dolore; un evento come una caduta dalla bicicletta; o un fenomeno come il desiderio di smettere di usare il tabacco. ">
-				>
-				["at0007"] = <
-					text = <"Tree">
-					description = <"@ internal @">
-				>
-				["at0008"] = <
-					text = <"Estensione">
-					description = <"Informazioni aggiuntive necessarie per acquisire contenuti locali o per allinearsi con altri modelli/formalismi di riferimento. ">
-					comment = <"*For example: Local information requirements or additional metadata to align with FHIR equivalents. (en)">
 				>
 			>
 		>
 		["de"] = <
 			items = <
 				["at0000"] = <
-					text = <"Erzählung/Vorgeschichte">
+					text = <"*Chief Complaint (en)">
 					description = <"Die subjektive klinische Vorgeschichte der betreuten Person, wie sie direkt von der Person aufgezeichnet oder einem Kliniker von der Person oder einem Betreuer berichtet wird.">
 				>
 				["at0001"] = <
@@ -586,7 +513,7 @@ ontology
 					description = <"@ internal @">
 				>
 				["at0002"] = <
-					text = <"Beliebiges Ereignis">
+					text = <"*Chief Complaint (en)">
 					description = <"Standardwert, ein undefinierter/s Zeitpunkt oder Intervallereignis, das explizit im Template oder zur Laufzeit der Anwendung definiert werden kann.">
 				>
 				["at0003"] = <
@@ -594,43 +521,25 @@ ontology
 					description = <"@ internal @">
 				>
 				["at0004"] = <
-					text = <"Geschichte">
+					text = <"*Complaint (en)">
 					description = <"Beschreibung der Geschichte oder der klinischen Vorgeschichte für die betreute Person.">
 				>
 				["at0006"] = <
-					text = <"Strukturierte Angabe">
+					text = <"*Symptoms/Signs (en)">
 					description = <"Strukturierte Angaben über die Vorgeschichte der Person oder des Patienten.">
 					comment = <"Zum Beispiel: ein spezifisches Symptom wie Übelkeit oder Schmerzen; ein Ereignis wie ein Sturz vom Fahrrad; oder ein Anliegen wie der Wunsch, mit dem Tabakkonsum aufzuhören.">
-				>
-				["at0007"] = <
-					text = <"Tree">
-					description = <"@ internal @">
-				>
-				["at0008"] = <
-					text = <"Erweiterung">
-					description = <"Zusätzliche Informationen, die zur Erfassung lokaler Inhalte oder zur Anpassung an andere Referenzmodelle/Formalismen erforderlich sind.">
-					comment = <"Zum Beispiel: Lokale Informationsanforderungen oder zusätzliche Metadaten, um Verknüpfungen mit FHIR Äquivalenten herzustellen.">
 				>
 			>
 		>
 		["nl"] = <
 			items = <
-				["at0008"] = <
-					text = <"*Extension(en)">
-					description = <"*Additional information required to capture local content or to align with other reference models/formalisms.(en)">
-					comment = <"*For example: Local information requirements or additional metadata to align with FHIR equivalents. (en)">
-				>
-				["at0007"] = <
-					text = <"*Tree(en)">
-					description = <"*@ internal @(en)">
-				>
 				["at0006"] = <
-					text = <"*Structured detail(en)">
+					text = <"*Symptoms/Signs (en)">
 					description = <"*Structured detail about the individual's story or patient's history.(en)">
 					comment = <"*For example: a specific symptom such as nausea or pain; an event such as a fall off a bicycle; or an issue such as a desire to quit using tobacco.(en)">
 				>
 				["at0004"] = <
-					text = <"*Story(en)">
+					text = <"*Complaint (en)">
 					description = <"*Narrative description of the story or clinical history for the subject of care.(en)">
 				>
 				["at0003"] = <
@@ -638,7 +547,7 @@ ontology
 					description = <"*@ internal @(en)">
 				>
 				["at0002"] = <
-					text = <"*Any event(en)">
+					text = <"*Chief Complaint (en)">
 					description = <"*Default, unspecified point in time or interval event which may be explicitly defined in a template or at run-time.(en)">
 				>
 				["at0001"] = <
@@ -646,7 +555,7 @@ ontology
 					description = <"*@ internal @(en)">
 				>
 				["at0000"] = <
-					text = <"Anamnese">
+					text = <"*Chief Complaint (en)">
 					description = <"*The subjective clinical history of the subject of care as recorded directly by the subject, or reported to a clinician by the subject or a carer.(en)">
 				>
 			>
@@ -654,7 +563,7 @@ ontology
 		["sv"] = <
 			items = <
 				["at0000"] = <
-					text = <"Sjukdomshistoria">
+					text = <"*Chief Complaint (en)">
 					description = <"Vårdtagarens subjektiva sjukdomshistoria som registrerats direkt av vårdgivaren, eller rapporterats till en kliniker av vårdtagaren eller vårdgivaren.">
 				>
 				["at0001"] = <
@@ -662,7 +571,7 @@ ontology
 					description = <"@ internal @">
 				>
 				["at0002"] = <
-					text = <"Ospecificerad händelse">
+					text = <"*Chief Complaint (en)">
 					description = <"Ospecificerad standardhändelse vid en tidpunkt eller inom ett tidsintervall som explicit kan definieras i en mall eller genereras automatiskt av vissa IT-system.">
 				>
 				["at0003"] = <
@@ -670,29 +579,20 @@ ontology
 					description = <"@ internal @">
 				>
 				["at0004"] = <
-					text = <"Sjukdomshistoria">
+					text = <"*Complaint (en)">
 					description = <"Berättande beskrivning av vårdtagarens sjukdomshistoria.">
 				>
 				["at0006"] = <
-					text = <"Strukturerade detaljer">
+					text = <"*Symptoms/Signs (en)">
 					description = <"Strukturerade detaljer om individens eller vårdtagarens sjukdomshistoria.">
 					comment = <"Till exempel: ett specifikt symptom som illamående eller smärta; en händelse som att falla av en cykel; eller ett problem som en önskan om att sluta använda tobak.">
-				>
-				["at0007"] = <
-					text = <"Tree">
-					description = <"@ internal @">
-				>
-				["at0008"] = <
-					text = <"Tilläggsinformation">
-					description = <"Plats för att infoga tilläggsinformation som krävs för lokala anpassningar eller anpassning till andra referensmodeller eller formella krav.">
-					comment = <"*For example: Local information requirements or additional metadata to align with FHIR equivalents. (en)">
 				>
 			>
 		>
 		["zh-cn"] = <
 			items = <
 				["at0000"] = <
-					text = <"主观临床病史">
+					text = <"*Chief Complaint (en)">
 					description = <"照护服务对象所直接自行记录的主观性临床病史，或者说，照护服务对象或照护人员向临床医务人员/临床医生所报告的主观性临床病史。">
 				>
 				["at0001"] = <
@@ -700,7 +600,7 @@ ontology
 					description = <"@ internal @">
 				>
 				["at0002"] = <
-					text = <"任何事件">
+					text = <"*Chief Complaint (en)">
 					description = <"可在模板之中或运行时明确定义的默认的、未明确指定的时间点型/时间型或时间区间型/时间间隔型事件，。">
 				>
 				["at0003"] = <
@@ -708,22 +608,13 @@ ontology
 					description = <"@ internal @">
 				>
 				["at0004"] = <
-					text = <"临床病史叙述">
+					text = <"*Complaint (en)">
 					description = <"关于照护服务对象的健康状况或临床病史的叙述性描述。">
 				>
 				["at0006"] = <
-					text = <"结构化详情">
+					text = <"*Symptoms/Signs (en)">
 					description = <"关于个人临床病史叙述或患者病史的结构化详情。">
 					comment = <"例如：特定的症状（如恶心或疼痛）、从自行车上摔下来等事件，或者是希望戒烟等事项。">
-				>
-				["at0007"] = <
-					text = <"Tree">
-					description = <"@ internal @">
-				>
-				["at0008"] = <
-					text = <"扩展">
-					description = <"采集本地内容或与其他参考模型/形式保持一致时所需的其他信息。">
-					comment = <"例如：本地信息要求，或者是与 FHIR 等效项保持一致时所需的其他元数据。">
 				>
 			>
 		>
