@@ -58,11 +58,6 @@ Dieser Archetyp ist so konzipiert, dass er innerhalb des SLOTs \"Tägliche Verab
 Arketypen er laget for å brukes i SLOTet \"Administreringstidspunkt\" i arketypen CLUSTER.dosage (Dosering), men kan også brukes i andre CLUSTER- og ENTRY-arketyper der det er klinisk passende.">
 			misuse = <"Skal ikke brukes til å registrere detaljer om timing over lengre tidsperioder enn et døgn. Bruk arketypen CLUSTER.timing_repetition for dette formålet.">
 		>
-		["sl"] = <
-			language = <[ISO_639-1::sl]>
-			purpose = <"*To provide structured information on time schedules within a single day that is suitable for computation and display for human interpretation.(en)">
-			copyright = <"© openEHR Foundation">
-		>
 		["en"] = <
 			language = <[ISO_639-1::en]>
 			purpose = <"To record structured information about the intended timing of a therapeutic or diagnostic activity within any 24 hour period.">
@@ -73,6 +68,11 @@ Arketypen er laget for å brukes i SLOTet \"Administreringstidspunkt\" i arketyp
 This archetype is designed to be used within the 'Timing' SLOT within the CLUSTER.dosage archetype, but can also be used in other CLUSTER and ENTRY class archetypes where clinically appropriate.">
 			misuse = <"Not to be used for recording timing details over periods longer than a single 24 hour period. Use the CLUSTER.timing_repetition archetype for this purpose.">
 		>
+		["sl"] = <
+			language = <[ISO_639-1::sl]>
+			purpose = <"*To provide structured information on time schedules within a single day that is suitable for computation and display for human interpretation.(en)">
+			copyright = <"© openEHR Foundation">
+		>
 	>
 	other_details = <
 		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/3.0/.">
@@ -80,7 +80,7 @@ This archetype is designed to be used within the 'Timing' SLOT within the CLUSTE
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"BBF04254F8BEA1421AF2CC97A0B64624">
+		["MD5-CAM-1.0.1"] = <"8891aeee5c710f5d86fbbb1ff971e63a">
 		["build_uid"] = <"319e2df4-1bec-49a3-bbab-6b8a0e5bc218">
 		["revision"] = <"1.0.1">
 	>
@@ -198,61 +198,10 @@ definition
 					DV_TEXT matches {*}
 				}
 			}
-			ELEMENT[at0023] occurrences matches {0..1} matches {    -- Exact timing critical?
-				value matches {
-					DV_BOOLEAN matches {*}
-				}
-			}
 			ELEMENT[at0024] occurrences matches {0..1} matches {    -- As required
 				value matches {
 					DV_BOOLEAN matches {
 						value matches {true}
-					}
-				}
-			}
-			ELEMENT[at0025] occurrences matches {0..1} matches {    -- 'As required' criterion
-				value matches {
-					DV_TEXT matches {*}
-				}
-			}
-			CLUSTER[at0039] occurrences matches {0..*} matches {    -- Specific event
-				items cardinality matches {1..*; unordered} matches {
-					ELEMENT[at0026] occurrences matches {0..1} matches {    -- Event name
-						value matches {
-							DV_TEXT matches {*}
-						}
-					}
-					ELEMENT[at0040] occurrences matches {0..1} matches {    -- Time offset
-						value matches {
-							DV_DURATION matches {
-								value matches {PTHMS/|PT0S..PT24H|}
-							}
-						}
-					}
-				}
-			}
-			CLUSTER[at0035] occurrences matches {0..*} matches {    -- On / off cycle
-				items cardinality matches {1..*; unordered} matches {
-					ELEMENT[at0036] occurrences matches {0..1} matches {    -- On
-						value matches {
-							DV_DURATION matches {
-								value matches {PTHMS/|PT0S..PT24H|}
-							}
-						}
-					}
-					ELEMENT[at0037] occurrences matches {0..1} matches {    -- Off
-						value matches {
-							DV_DURATION matches {
-								value matches {PTHMS/|PT0S..PT24H|}
-							}
-						}
-					}
-					ELEMENT[at0038] occurrences matches {0..1} matches {    -- Repetitions
-						value matches {
-							DV_COUNT matches {
-								magnitude matches {|>=0|}
-							}
-						}
 					}
 				}
 			}
@@ -282,56 +231,15 @@ ontology
 					description = <"The time interval or minimum and maximum range of an interval between each scheduled activity.">
 					comment = <"For example: \"Every 4 hours\" or \"Every 4 to 6 hours\".">
 				>
-				["at0023"] = <
-					text = <"Exact timing critical?">
-					description = <"Is exact timing of the activity critical to effectiveness, or patient safety or wellbeing?">
-					comment = <"For example when administering antiparkinson medications.">
-				>
 				["at0024"] = <
 					text = <"As required">
 					description = <"Record as True if the activity should only occur when the \"'As required' criterion\" is met.">
 					comment = <"Termed 'PRN' (\"pro re nata\", latin: \"as the situation arises\") or 'PN' (\"per necessare\", latin: \"when required\") in some cultures.">
 				>
-				["at0025"] = <
-					text = <"'As required' criterion">
-					description = <"The condition which triggers an 'As required' activity.">
-					comment = <"For example: \"for pain\".">
-				>
-				["at0026"] = <
-					text = <"Event name">
-					description = <"The name of the event that triggers the activity to take place.">
-					comment = <"For example: \"Before each meal\", \"at bedtime\", \"in the morning\". It is understood that these event names may not equate to the same exact times in different cultures. Coding with a terminology, for example HL7 FHIR Named events, is recommended where appropriate.">
-				>
 				["at0027"] = <
 					text = <"Timing description">
 					description = <"Text description of the daily timing. This element is intended to allow implementers to use the structures for different timings without necessarily specifying the timings in a structured way.">
 					comment = <"For example: \"Take morning and evening\".">
-				>
-				["at0035"] = <
-					text = <"On / off cycle">
-					description = <"A cycle of activity where an on-off pattern is required.">
-					comment = <"For example: \"Apply an ice pack on for 20 minutes, off for an hour, repeat\".">
-				>
-				["at0036"] = <
-					text = <"On">
-					description = <"The period of time for which the activity should take place.">
-				>
-				["at0037"] = <
-					text = <"Off">
-					description = <"The period of time for which the activity should NOT take place.">
-				>
-				["at0038"] = <
-					text = <"Repetitions">
-					description = <"The number of repetitions of the on/off cycle.">
-				>
-				["at0039"] = <
-					text = <"Specific event">
-					description = <"A specific, named time event that the activity should occur in relation to.">
-				>
-				["at0040"] = <
-					text = <"Time offset">
-					description = <"The period of time before or after the named event when the activity should take place. Negative durations can be used to signify that the activity should take place before the event.">
-					comment = <"For example: '30 minutes after meal = meal + 30 minutes', '2 hours before bedtime = bedtime -2 hours'.">
 				>
 			>
 		>
@@ -356,55 +264,15 @@ ontology
 					description = <"*The time interval between each scheduled activity, limited to a single day.(en)">
 					comment = <"*e.g. \"Every 4 hours\".(en)">
 				>
-				["at0023"] = <
-					text = <"*Exact timing critical(en)">
-					description = <"*Is exact timing of the activity critical to patient safety or wellbeing?(en)">
-				>
 				["at0024"] = <
 					text = <"*As required(en)">
 					description = <"*The activity should only occur when the \"as required\" trigger condition is met.(en)">
 					comment = <"*Termed 'PRN' in some cultures.(en)">
 				>
-				["at0025"] = <
-					text = <"*As required criterion(en)">
-					description = <"*The condition which triggers an 'as required' activity.(en)">
-					comment = <"*e.g. as required for pain.(en)">
-				>
-				["at0026"] = <
-					text = <"*Event name(en)">
-					description = <"*The name of the event that triggers the activity to take place.(en)">
-					comment = <"*For example: \"Before each meal\", \"at bedtime\", \"in the morning\". It is understood that these event names may not equate to the same exact times in different cultures. Coding with a terminology, for example HL7 FHIR Named events, is recommended where appropriate.(en)">
-				>
 				["at0027"] = <
 					text = <"*Timing description(en)">
 					description = <"*Text description of the daily timing. This element is intended to allow implementers to use the structures for different timings without necessarily specifying the timings in a structured way.(en)">
 					comment = <"*For example: \"Take morning and evening\".(en)">
-				>
-				["at0035"] = <
-					text = <"*On / off cycle(en)">
-					description = <"*A cycle of activity where an on-off pattern is required.(en)">
-					comment = <"*e.g. 'apply patch for six hours, remove for 12 hours, repeat'(en)">
-				>
-				["at0036"] = <
-					text = <"*On(en)">
-					description = <"*The period of time for which the activity should take place.(en)">
-				>
-				["at0037"] = <
-					text = <"*Off(en)">
-					description = <"*The period of time for which the activity should NOT take place.(en)">
-				>
-				["at0038"] = <
-					text = <"*Repetitions(en)">
-					description = <"*The number of repetitions of the on/off cycle.(en)">
-				>
-				["at0039"] = <
-					text = <"*Specific event(en)">
-					description = <"*A specific, named time event that the activity should occur in relation to.(en)">
-				>
-				["at0040"] = <
-					text = <"*Time offset(en)">
-					description = <"*The period of time before or after the named event when the activity should take place. Negative durations can be used to signify that the activity should take place before the event.(en)">
-					comment = <"*For example: '30 minutes after meal = meal + 30 minutes', '2 hours before bedtime = bedtime -2 hours'.(en)">
 				>
 			>
 		>
@@ -429,56 +297,15 @@ ontology
 					description = <"Tidsintervall eller minimums- og maksimumsintervall mellom hver planlagte aktivitet.">
 					comment = <"For eksempel \"hver 4. time\" eller \"hver 4.-6. time\".">
 				>
-				["at0023"] = <
-					text = <"Nøyaktig timing kritisk">
-					description = <"Er nøyaktig timing av aktiviteten kritisk for effekt, eller pasientens sikkerhet eller velvære?">
-					comment = <"For eksempel ved administrering av antiparkinsonlegemidler.">
-				>
 				["at0024"] = <
 					text = <"Ved behov">
 					description = <"Registrer som Sann dersom aktiviteten kun skal utføres når \"Vilkår for \"Ved behov\"\" inntreffer.">
 					comment = <"Kalles \"PRN\" (\"pro re nata\", latin \"når situasjonen oppstår\") eller \"PN\" (\"per necessare\", latin: \"når påkrevet\") i noen kulturer.">
 				>
-				["at0025"] = <
-					text = <"Vilkår for \"Ved behov\"">
-					description = <"Vilkåret som utløser en aktivitet som er \"Ved behov\".">
-					comment = <"For eksempel \"Ved smerte\".">
-				>
-				["at0026"] = <
-					text = <"Hendelsesnavn">
-					description = <"Navnet på hendelsen aktiviteten skal uføres i sammenheng med.">
-					comment = <"For eksempel: Før hvert måltid, ved leggetid, om morgenen. Det er underforstått at disse termene ikke nødvendigvis tilsvarer de samme tidspunktene i forskjellige kulturer. Koding med en terminologi, for eksempel HL7 Named events, anbefales der det er passende.">
-				>
 				["at0027"] = <
 					text = <"Timingbeskrivelse">
 					description = <"Tekstbeskrivelse av timingen innenfor et døgn. Dette elementet er ment for å tillate implementeringer å bruke de overordnede strukturene rundt timing, for eksempel økning eller nedtrapping, uten nødvendigvis å oppgi timingen strukturert.">
 					comment = <"For eksempel: \"Tas morgen og kveld\".">
-				>
-				["at0035"] = <
-					text = <"På / av-syklus">
-					description = <"En aktivitetssyklus som krever et på/av-mønster.">
-					comment = <"For eksempel \"bruk en ispose på i 20 minutter, av i en time, gjenta\".">
-				>
-				["at0036"] = <
-					text = <"På">
-					description = <"Tidsperioden da aktiviteten skal utføres.">
-				>
-				["at0037"] = <
-					text = <"Av">
-					description = <"Tidsperioden da aktiviteten IKKE skal utføres.">
-				>
-				["at0038"] = <
-					text = <"Repetisjoner">
-					description = <"Antall ganger på/av-syklusen skal repeteres.">
-				>
-				["at0039"] = <
-					text = <"Spesifikk hendelse">
-					description = <"En spesifikk, navngitt hendelse aktiviteten skal utføres i sammenheng med.">
-				>
-				["at0040"] = <
-					text = <"Tidsforskyvelse">
-					description = <"Tidsintervallet før eller etter hendelsen når aktiviteten skal utføres. Negative intervaller kan benyttes for å spesifisere at aktiviteten skal utføres før den navngitte hendelsen.">
-					comment = <"For eksempel \"30 minutter etter måltid = måltid + 30 minutter\" eller \"2 timer før sengetid = sengetid -2 timer\".">
 				>
 			>
 		>
@@ -503,56 +330,15 @@ ontology
 					description = <"Das Zeitintervall oder der minimale und maximale Zeitspanne zwischen jeder geplanten Aktivität.">
 					comment = <"Zum Beispiel: \"Alle 4 Stunden\" oder \"Alle 4 bis 6 Stunden\".">
 				>
-				["at0023"] = <
-					text = <"Ist der genaue Zeitablauf entscheidend?">
-					description = <"Ist der genaue Zeitablauf der Aktivität entscheidend für die Wirksamkeit oder für die Sicherheit oder das Wohlbefinden des Patienten?">
-					comment = <"Zum Beispiel bei der Verabreichung von Antiparkinson-Medikamenten.">
-				>
 				["at0024"] = <
 					text = <"Bei Bedarf">
 					description = <"Als \"Wahr\" darstellen, wenn die Aktivität nur ausgeführt werden soll, wenn das \"Kriterium \"Bei Bedarf\"\" erfüllt ist.">
 					comment = <"In einigen Kulturen als \"PRN\" (\"pro re nata\", lateinisch: \"unter den gegenwärtigen Umständen\") oder \"PN\" (\"per necessare\", lateinisch: \"wenn erforderlich\") bezeichnet.">
 				>
-				["at0025"] = <
-					text = <"Kriterium \"Bei Bedarf\"">
-					description = <"Die Bedingung, die eine Aktivität \"Bei Bedarf\" auslöst.">
-					comment = <"Zum Beispiel: \"bei Schmerzen\".">
-				>
-				["at0026"] = <
-					text = <"Name des Ereignisses">
-					description = <"Der Name des Ereignisses, das die Aktivität auslöst.">
-					comment = <"Zum Beispiel: \"Vor jeder Mahlzeit\", \"vor dem Schlafengehen\", \"am Morgen\". Es versteht sich, dass diese Begriffe in verschiedenen Kulturen möglicherweise nicht unbedingt den gleichen Zeiten entsprechen. Gegebenenfalls wird die Kodierung mit einer Terminologie empfohlen, z. B. mit HL7 Named Events.">
-				>
 				["at0027"] = <
 					text = <"Beschreibung des Zeitablaufs">
 					description = <"Beschreibung des täglichen Zeitablaufs. Dieses Element soll es ermöglichen, die Strukturen für verschiedene Zeitabläufe zu verwenden, ohne notwendigerweise die Struktur der Zeitabläufe zu spezifizieren.">
 					comment = <"Zum Beispiel: \"Morgens und abends nehmen\".">
-				>
-				["at0035"] = <
-					text = <"Ein/Aus-Zyklus">
-					description = <"Ein Aktivitätszyklus, bei dem ein Ein/Aus-Zyklus erforderlich ist.">
-					comment = <"Zum Beispiel: \"Einen Eisbeutel 20 Minuten lang auflegen, eine Stunde lang weglassen, wiederholen\".">
-				>
-				["at0036"] = <
-					text = <"Ein">
-					description = <"Der Zeitraum, in dem die Aktivität ausgeführt werden soll.">
-				>
-				["at0037"] = <
-					text = <"Aus">
-					description = <"Der Zeitraum, in dem die Aktivität NICHT stattfinden soll.">
-				>
-				["at0038"] = <
-					text = <"Wiederholungen">
-					description = <"Die Häufigkeit, mit der der Ein/Aus-Zyklus wiederholt werden soll.">
-				>
-				["at0039"] = <
-					text = <"Bestimmtes Ereignis">
-					description = <"Ein bestimmtes, benanntes Zeitereignis, auf das sich die Aktivität bezieht und stattfinden soll.">
-				>
-				["at0040"] = <
-					text = <"Zeitspanne">
-					description = <"Das Zeitintervall vor oder nach dem Ereignis, in dem die Aktivität ausgeführt werden soll. Negative Intervalle können verwendet werden, um anzugeben, dass die Aktivität vor dem genannten Ereignis ausgeführt werden soll.">
-					comment = <"Zum Beispiel: \"30 Minuten nach dem Essen = Mahlzeit + 30 Minuten\", \"2 Stunden vor dem Schlafengehen = Schlafenszeit - 2 Stunden\".">
 				>
 			>
 		>
