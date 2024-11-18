@@ -153,7 +153,7 @@ INSTRUCTION.medication is suggested as the best archetype to represent a Medicat
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"D9A0BF65B696B4A73E68E4F2A7D6C74F">
+		["MD5-CAM-1.0.1"] = <"4fff8d532cf4b1f2f1c6c6b67390becd">
 		["build_uid"] = <"29ba71d4-6666-4306-8a3b-71897754b27b">
 		["revision"] = <"0.0.1-alpha">
 	>
@@ -164,14 +164,6 @@ definition
 			allow_archetype ENTRY[at0004] occurrences matches {0..*} matches {    -- Medications
 				include
 					archetype_id/value matches {/openEHR-EHR-INSTRUCTION\.medication_order(-[a-zA-Z0-9_]+)*\.v2|openEHR-EHR-ACTION\.medication(-[a-zA-Z0-9_]+)*\.v1/}
-			}
-			allow_archetype ENTRY[at0005] occurrences matches {0..*} matches {    -- Exclusion statement
-				include
-					archetype_id/value matches {/openEHR-EHR-EVALUATION\.exclusion_global(-[a-zA-Z0-9_]+)*\.v1/}
-			}
-			allow_archetype ENTRY[at0006] occurrences matches {0..*} matches {    -- Absence statement
-				include
-					archetype_id/value matches {/openEHR-EHR-EVALUATION\.absence(-[a-zA-Z0-9_]+)*\.v2/}
 			}
 		}
 	}
@@ -188,16 +180,6 @@ ontology
 					text = <"Medications">
 					description = <"Positive statements about the use of medications.">
 				>
-				["at0005"] = <
-					text = <"Exclusion statement">
-					description = <"A positive statement about the exclusion of the use of medications.">
-					comment = <"For example: \"No known use of medication\".">
-				>
-				["at0006"] = <
-					text = <"Absence statement">
-					description = <"A positive statement that no information is available about the use of medications.">
-					comment = <"For example: \"No information available about use of medications\".">
-				>
 			>
 		>
 		["ru"] = <
@@ -209,16 +191,6 @@ ontology
 				["at0004"] = <
 					text = <"*Medications (en)">
 					description = <"*Positive statements about the use of medications. (en)">
-				>
-				["at0005"] = <
-					text = <"*Exclusion statement (en)">
-					description = <"*Positive statement about the exclusion of use of medications. (en)">
-					comment = <"*For example: \"No known use of medication\". (en)">
-				>
-				["at0006"] = <
-					text = <"*Absence statement (en)">
-					description = <"*A positive statement that no information is available about the use of medications. (en)">
-					comment = <"*For example: \"No information available about use of medications\". (en)">
 				>
 			>
 		>
@@ -232,16 +204,6 @@ ontology
 					text = <"*Medications (en)">
 					description = <"*Positive statements about the use of medications. (en)">
 				>
-				["at0005"] = <
-					text = <"*Exclusion statement (en)">
-					description = <"*Positive statement about the exclusion of use of medications. (en)">
-					comment = <"*For example: \"No known use of medication\". (en)">
-				>
-				["at0006"] = <
-					text = <"*Absence statement (en)">
-					description = <"*A positive statement that no information is available about the use of medications. (en)">
-					comment = <"*For example: \"No information available about use of medications\". (en)">
-				>
 			>
 		>
 		["pt-br"] = <
@@ -254,16 +216,6 @@ ontology
 					text = <"*Medications (en)">
 					description = <"*Positive statements about the use of medications. (en)">
 				>
-				["at0005"] = <
-					text = <"*Exclusion statement (en)">
-					description = <"*Positive statement about the exclusion of use of medications. (en)">
-					comment = <"*For example: \"No known use of medication\". (en)">
-				>
-				["at0006"] = <
-					text = <"*Absence statement (en)">
-					description = <"*A positive statement that no information is available about the use of medications. (en)">
-					comment = <"*For example: \"No information available about use of medications\". (en)">
-				>
 			>
 		>
 		["es-ar"] = <
@@ -275,16 +227,6 @@ ontology
 				["at0004"] = <
 					text = <"*Medications (en)">
 					description = <"*Positive statements about the use of medications. (en)">
-				>
-				["at0005"] = <
-					text = <"*Exclusion statement (en)">
-					description = <"*Positive statement about the exclusion of use of medications. (en)">
-					comment = <"*For example: \"No known use of medication\". (en)">
-				>
-				["at0006"] = <
-					text = <"*Absence statement (en)">
-					description = <"*A positive statement that no information is available about the use of medications. (en)">
-					comment = <"*For example: \"No information available about use of medications\". (en)">
 				>
 			>
 		>
