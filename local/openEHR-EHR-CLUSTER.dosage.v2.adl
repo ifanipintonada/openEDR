@@ -142,7 +142,7 @@ Standards for the clinical structure and content of patient records (Complete do
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"926B8773E3FBB271F2820D4198B4F63E">
+		["MD5-CAM-1.0.1"] = <"b294db01dce55541e5e997d6928bcafa">
 		["build_uid"] = <"54847bc3-76e5-48b9-831f-d3002ef5cf63">
 		["revision"] = <"2.0.2">
 	>
@@ -150,88 +150,15 @@ Standards for the clinical structure and content of patient records (Complete do
 definition
 	CLUSTER[at0000] occurrences matches {0..*} matches {    -- Dosage
 		items cardinality matches {1..*; unordered} matches {
-			ELEMENT[at0164] occurrences matches {0..1} matches {    -- Dosage sequence
-				value matches {
-					DV_COUNT matches {
-						magnitude matches {|>=1|}
-					}
-				}
-			}
 			ELEMENT[at0144] occurrences matches {0..1} matches {    -- Dose
 				value matches {
 					DV_QUANTITY matches {*}
 					DV_INTERVAL<DV_QUANTITY> matches {*}
 				}
 			}
-			ELEMENT[at0135] occurrences matches {0..1} matches {    -- Dose formula
-				value matches {
-					DV_TEXT matches {*}
-					DV_QUANTITY matches {*}
-				}
-			}
-			ELEMENT[at0178] occurrences matches {0..1} matches {    -- Dose description
-				value matches {
-					DV_TEXT matches {*}
-				}
-			}
 			allow_archetype CLUSTER[at0037] occurrences matches {0..*} matches {    -- Daily timing
 				include
 					archetype_id/value matches {/openEHR-EHR-CLUSTER\.timing_daily(-[a-zA-Z0-9_]+)*\.v1/}
-			}
-			ELEMENT[at0134] occurrences matches {0..1} matches {    -- Administration rate
-				value matches {
-					C_DV_QUANTITY <
-						property = <[openehr::126]>
-						list = <
-							["1"] = <
-								units = <"l/h">
-								magnitude = <|>=0.0|>
-							>
-							["2"] = <
-								units = <"ml/min">
-								magnitude = <|>=0.0|>
-							>
-							["3"] = <
-								units = <"ml/s">
-								magnitude = <|>=0.0|>
-							>
-							["4"] = <
-								units = <"ml/h">
-								magnitude = <|>=0.0|>
-							>
-						>
-					>
-					DV_TEXT matches {*}
-				}
-			}
-			ELEMENT[at0102] occurrences matches {0..1} matches {    -- Administration duration
-				value matches {
-					DV_DURATION matches {
-						value matches {PDTHMS/|>=PT0S|}
-					}
-					DV_INTERVAL<DV_DURATION> matches {
-						lower matches {
-							DV_DURATION matches {
-								value matches {PDTHMS/|>=PT0S|}
-							}
-						}
-						upper matches {
-							DV_DURATION matches {
-								value matches {PDTHMS/|>=PT0S|}
-							}
-						}
-					}
-				}
-			}
-			ELEMENT[at0176] occurrences matches {0..1} matches {    -- Alternate dose
-				value matches {
-					DV_QUANTITY matches {*}
-					DV_INTERVAL<DV_QUANTITY> matches {
-						upper matches {
-							DV_QUANTITY matches {*}
-						}
-					}
-				}
 			}
 		}
 	}
@@ -250,41 +177,10 @@ ontology
 					description = <"Structured details about the timing pattern for a single day.">
 					comment = <"For example: 'in the morning', 'at 0600, 1400, 2100'.">
 				>
-				["at0102"] = <
-					text = <"Administration duration">
-					description = <"The period of time over which a single dose of the medication or vaccine should be administered.">
-					comment = <"For example: 'Administer over 10 minutes'.">
-				>
-				["at0134"] = <
-					text = <"Administration rate">
-					description = <"The rate at which the medication, such as an infusion, is to be administered.">
-					comment = <"For example: '200 ml/h'. Use the text data type to record non- or semi-quantifiable instructions.">
-				>
-				["at0135"] = <
-					text = <"Dose formula">
-					description = <"The formula used to calculate the dose amount or administration rate where this is dependent on some other factor, such as body weight or surface area.">
-					comment = <"For example: '10 mg/kg/day'. The result of this formula would normally be held in Dose or Administration rate/duration. Where clinical measurements such as body weight is used in the dose calculation, a LINK attribute should used to specify which particular measurement has been used.">
-				>
 				["at0144"] = <
 					text = <"Dose">
 					description = <"The amount of medication administered at one time.">
 					comment = <"For example: 1 mg, 1.5 ml, 0.125 g; or 1-2 ml, 12.5-20.5 mg.">
-				>
-				["at0164"] = <
-					text = <"Dosage sequence">
-					description = <"The intended position of this dosage within the overall sequence of dosages.">
-					comment = <"For example: '1', '2', '3'. 
-Where multiple dosages are expressed, the 'Pattern sequence' makes the order in which they should be executed explicit. For example: (1) 1 tab in the morning, (2) 2 tab at 2pm, (3) 1 tab at night.">
-				>
-				["at0176"] = <
-					text = <"Alternate dose">
-					description = <"An alternate representation of the amount of medication administered at one time.">
-					comment = <"For example, can be used to represent a unit-dose based value such as 'tabs', when the Dose amount is expressed as an SI unit such as 'mg', or where it is required to express the total volume of an infusion as well as the amount of the active ingredient.">
-				>
-				["at0178"] = <
-					text = <"Dose description">
-					description = <"Text description of the dose.">
-					comment = <"For example: \"Apply ointment to affected area until it glistens\". This element is intended to allow implementers to use the structures for increasing/tapering dosages without necessarily specifying the doses in a structured way.">
 				>
 			>
 		>
@@ -300,40 +196,10 @@ Where multiple dosages are expressed, the 'Pattern sequence' makes the order in 
 					description = <"Strukturerte detaljer om mønsteret for administreringstidspunkter innenfor en dag.">
 					comment = <"For eksempel \"om morgenen\", \"kl 6, 14 og 21\".">
 				>
-				["at0102"] = <
-					text = <"Administreringsvarighet">
-					description = <"Tidsperioden en enkelt dose av legemiddelet eller vaksinen skal administreres over.">
-					comment = <"For eksempel \"Administreres over 10 minutter\".">
-				>
-				["at0134"] = <
-					text = <"Administreringshastighet">
-					description = <"Hastigheten som skal benyttes under administreringen, for eksempel ved en infusjon.">
-					comment = <"For eksempel \"200 ml/t\". Bruk datatypen \"tekst\" for å registrere ikke- eller semikvantifiserbare instruksjoner.">
-				>
-				["at0135"] = <
-					text = <"Doseringsformel">
-					description = <"Formelen som er brukt for å regne ut dosen eller administreringshastigheten der dette er avhengig av en annen faktor som f.eks. kroppsvekt eller hudoverflate.">
-					comment = <"For eksempel \"10 mg/kg/dag\". Resultatet av denne formelen vil normalt registreres i Dosemengde/-enhet eller Administreringshastighet/-varighet. Der det benyttes kliniske målinger som for eksempel kroppsvekt i doseberegningen, bør det brukes en LINK-attributt for å spesifisere hvilken måling som er brukt.">
-				>
 				["at0144"] = <
 					text = <"Dose">
 					description = <"Legemiddelmengden (dosen) administrert på ett tidspunkt">
 					comment = <"For eksempel 1 mg, 1,5 ml, 0.125 g eller 1-2 ml, 12.5-20.5 mg.">
-				>
-				["at0164"] = <
-					text = <"Doseringsrekkefølge">
-					description = <"Tilsiktet rekkefølge for denne doseringen i den overordnede sekvensen av doseringer.">
-					comment = <"For eksempel \"1\", \"2\", \"3\". Der det er spesifisert flere doseringer, gjør Doseringsrekkefølge det tydelig hvilken rekkefølge de hører hjemme i. Eksempel: (1) 1 tablett om morgenen, (2) 2 tabletter kl. 14, (3) 1 tablett om kvelden.">
-				>
-				["at0176"] = <
-					text = <"Alternativ dose">
-					description = <"En alternativ representasjon av legemiddelmengden (dosen) administrert på ett tidspunkt.">
-					comment = <"Kan for eksempel brukes for å representere en verdi basert på pakningsenheter som \"tabletter\", der Dosemengde uttrykkes som en SI-enhet som \"mg\", eller der det er nødvendig å uttrykke den totale mengden infusjonsvæske i tillegg til mengden aktiv substans.">
-				>
-				["at0178"] = <
-					text = <"Dosebeskrivelse">
-					description = <"Tekstbeskrivelse av dosen.">
-					comment = <"For eksempel \"Påfør salve på det affiserte området til det glinser\". Dette elementet har som hensikt å tillate implementasjoner å bruke strukturene for økende og avtagende dosering uten å nødvendigvis spesifisere dosene strukturert.">
 				>
 			>
 		>
@@ -350,41 +216,10 @@ Where multiple dosages are expressed, the 'Pattern sequence' makes the order in 
 					description = <"Detalhes estruturados sobre o padrão temporal dentro de um único dia.">
 					comment = <"Por exemplo: \"pela manhã\", às 6h, 14h, 21h.">
 				>
-				["at0102"] = <
-					text = <"Duração da administração">
-					description = <"O período de tempo no qual uma única dose do medicamento ou vacina deve ser administrado.">
-					comment = <"Por exemplo: \"Administrar por 10 minutos\".">
-				>
-				["at0134"] = <
-					text = <"Taxa de administração">
-					description = <"A taxa na qual o medicamento, como uma infusão, deve ser administrado.">
-					comment = <"Por exemplo: \"200 ml/h\". Use o tipo de dado texto para gravar instruções qualitativas ou semi-quantitativas.">
-				>
-				["at0135"] = <
-					text = <"Fórmula da dose">
-					description = <"A fórmula utilizada para calcular a quantidade da dose ou taxa de administração à qual é dependente ou algum outro fator, como peso corporal ou área de superfície.">
-					comment = <"*For example: '10mg/kg/day'. The result of this formula would normally be held in Dose or Administration rate/duration. Where clinical measurements such as body weight is used in the dose calculation, a LINK attribute should used to specify which particular measurement has been used. (en)">
-				>
 				["at0144"] = <
 					text = <"*Dose (en)">
 					description = <"*The value of the amount of medication administered at one time. (en)">
 					comment = <"*For example: 1 mg, 1.5 ml, 0.125 g; or 1-2 ml, 12.5-20.5 mg. (en)">
-				>
-				["at0164"] = <
-					text = <"Sequência de dosagem">
-					description = <"A posição determinada desta dose dentro da sequência geral de doses.">
-					comment = <"Por exemplo: \"1\", \"2\", \"3\". 
-Quando são expressas múltiplas doses, a \"Sequência Padrão\" indica a ordem na qual deve ser explicitamente executada. Por exemplo: (1) 1 comprimido pela manhã, (2) 2 comprimidos às 14h, (3) 1 comprimido à noite.">
-				>
-				["at0176"] = <
-					text = <"*Alternate dose (en)">
-					description = <"*An alternate representation of the value of the amount of medication administered at one time. (en)">
-					comment = <"*For example, can be used to represent a unit-dose based value such as 'tabs', when the Dose amount is expressed as an SI unit such as 'mg', or where it is required to express the total volume of an infusion as well as the amount of the active ingredient. (en)">
-				>
-				["at0178"] = <
-					text = <"Descrição da dose">
-					description = <"Descrição textual da dose.">
-					comment = <"Por exemplo: \"Aplicar pomada na área afetada até preenchê-la\". Este elemento pretende permitir aos implementadores o uso de estruturas para doses crescentes/decrescentes sem especificar necessariamente as doses de uma forma estruturada.">
 				>
 			>
 		>
@@ -400,42 +235,10 @@ Quando são expressas múltiplas doses, a \"Sequência Padrão\" indica a ordem 
 					description = <"Strukturierte Details des Musters für Verabreichungszeiten innerhalb eines Tages.">
 					comment = <"Zum Beispiel: \"Morgens\", \"Um 06:00, 14:00, 21:00\".">
 				>
-				["at0102"] = <
-					text = <"Verabreichungsdauer">
-					description = <"Der Zeitraum, in dem eine Einzeldosis des Medikaments oder Impfstoffs verabreicht werden soll.">
-					comment = <"Zum Beispiel: \"Über 10 Minuten verabreichen\".">
-				>
-				["at0134"] = <
-					text = <"Verabreichungsrate">
-					description = <"Die Rate, mit der das Medikament, beispielsweise eine Infusion, verabreicht werden soll.">
-					comment = <"Zum Beispiel: \"200 ml/h\". Verwenden Sie den Datentyp Text, um nicht- oder nur teilweise quantifizierbare Anweisungen aufzuzeichnen.">
-				>
-				["at0135"] = <
-					text = <"Dosisformel">
-					description = <"Die Formel zur Berechnung der Dosismenge oder der Verabreichungsrate, wenn dies von einem anderen Faktor abhängt, wie z. B. dem Körpergewicht oder der Hautoberfläche.">
-					comment = <"Zum Beispiel: \"10mg/kg/Tag\". Das Ergebnis der Formel würde üblicherweise in Dosierung oder Verabreichungsrate/-dauer gehalten werden. Wenn klinische Maße, wie das Körpergewicht, bei der Berechnung der Dosis verwendet werden, sollte ein LINK-Attribut genutzt werden, um anzugeben, welche bestimmte Messung verwendet wurde.
-">
-				>
 				["at0144"] = <
 					text = <"Dosis">
 					description = <"Die Menge der verabreichten Medikation zu einem Zeitpunkt.">
 					comment = <"Zum Beispiel: 1 mg, 1,5 ml, 0,125 g; oder 1-2 ml, 1,5-20,5 mg.">
-				>
-				["at0164"] = <
-					text = <"Dosierungsreihenfolge">
-					description = <"Beabsichtigte Reihenfolge dieser Dosierung in der Gesamtdosierungsfolge.">
-					comment = <"Zum Beispiel: \"1\", \"2\", \"3\".
-Wenn mehrere Dosierungen angegeben werden, gibt die \"Dosierungsreihenfolge\" die Reihenfolge an, in der sie ausgeführt werden soll. Zum Beispiel: (1) 1 Tablette am Morgen, (2) 2 Tabletten um 14 Uhr, (3) 1 Tablette am Abend.">
-				>
-				["at0176"] = <
-					text = <"Alternative Dosis">
-					description = <"Eine alternative Darstellung vom Wert der verabreichten Medikation zu einem Zeitpunkt.">
-					comment = <"Kann zum Beispiel verwendet werden, um einen Wert darzustellen, der auf Verpackungseinheit wie \"Tabletten\" basiert, wobei die Dosismenge als SI-Einheit angegeben ist, z. B. \"mg\"; oder wenn sowohl die Gesamtmenge als auch die Dosismenge des Wirkstoffes einer Infusionslösung angegeben werden müssen.">
-				>
-				["at0178"] = <
-					text = <"Dosisbeschreibung">
-					description = <"Textbeschreibung der Dosis.">
-					comment = <"Zum Beispiel: \"Salbe auf die betroffene Stelle auftragen, bis sie glänzt\". Dieses Element soll den Entwicklern ermöglichen, die Strukturen zum Erhöhen / Verringern von Dosierungen zu verwenden, ohne die Dosierungen notwendigerweise auf strukturierte Weise spezifizieren zu müssen.">
 				>
 			>
 		>
@@ -451,41 +254,10 @@ Wenn mehrere Dosierungen angegeben werden, gibt die \"Dosierungsreihenfolge\" di
 					description = <"Strukturerade detaljer om tidsmönstret för en dag.">
 					comment = <"Till exempel: \"på morgonen\", \"0600, 1400, 2100\".">
 				>
-				["at0102"] = <
-					text = <"Administrationens varaktighet">
-					description = <"Tiden under vilken en enda dos av läkemedlet eller vaccinet ska administreras.">
-					comment = <"Till exempel: 'Administrera över 10 minuter'.">
-				>
-				["at0134"] = <
-					text = <"Administrationshastighet">
-					description = <"Den hastighet med vilken läkemedlet, såsom en infusion, ska administreras.">
-					comment = <"Till exempel: '200 ml / h'. Använd textdatatypen för att spela in icke- eller halvkvantifierbara instruktioner.">
-				>
-				["at0135"] = <
-					text = <"Doseringsformel">
-					description = <"Formeln som används för att beräkna dosmängden eller administreringshastigheten då detta är beroende av någon annan faktor, såsom kroppsvikt eller ytarea.">
-					comment = <"*For example: '10mg/kg/day'. The result of this formula would normally be held in Dose or Administration rate/duration. Where clinical measurements such as body weight is used in the dose calculation, a LINK attribute should used to specify which particular measurement has been used. (en)">
-				>
 				["at0144"] = <
 					text = <"*Dose (en)">
 					description = <"*The value of the amount of medication administered at one time. (en)">
 					comment = <"*For example: 1 mg, 1.5 ml, 0.125 g; or 1-2 ml, 12.5-20.5 mg. (en)">
-				>
-				["at0164"] = <
-					text = <"Doseringssekvens">
-					description = <"Den avsedda positionen för denna dosering inom den totala doseringssekvensen.">
-					comment = <"Till exempel: '1', '2', '3'.
-När flera doser uttrycks, gör 'Mönstresekvensen' ordningen i vilken de ska köras. Till exempel: (1) 1 flik på morgonen, (2) 2 flik vid 14:00, (3) 1 flik på natten.">
-				>
-				["at0176"] = <
-					text = <"*Alternate dose (en)">
-					description = <"*An alternate representation of the value of the amount of medication administered at one time. (en)">
-					comment = <"*For example, can be used to represent a unit-dose based value such as 'tabs', when the Dose amount is expressed as an SI unit such as 'mg', or where it is required to express the total volume of an infusion as well as the amount of the active ingredient. (en)">
-				>
-				["at0178"] = <
-					text = <"Doseringsbeskrivning">
-					description = <"Textbeskrvining av dosen.">
-					comment = <"Till exempel: \"Applicera salva på det drabbade området tills det glänser\". Detta element är avsett att tillåta implementerare att använda strukturerna för att öka/minska doser utan att nödvändigtvis specificera doserna på ett strukturerat sätt.">
 				>
 			>
 		>
