@@ -159,6 +159,51 @@ Ska inte användas för att registrera beställning av blodprodukter, då denna 
 
 Ska inte användas för att registrera beställning av insättning av implantat eller medicintekniska produkter som pacemaker och defibrillatorer. Använd i stället INSTRUCTION.procedure för detta ändamål.">
 		>
+		["es-ar"] = <
+			language = <[ISO_639-1::es-ar]>
+			purpose = <"Registrar todos los aspectos de una orden de medicamento, vacuna, producto nutricional u otro ítem terapéutico para un individuo identificado.">
+			keywords = <"medicamento","orden","prescribir","prescripción","terapéutica","substancia","droga","terapéutico","sin receta","insumo terapéutico","fármaco","producto","posología","tratamiento","fluido","nutrición","CPOE">
+			use = <"Utilizar para el registro de todos los aspectos de una orden de medicamento, vacuna, producto nutricional u otro ítem terapéutico para un individuo identificado.
+
+Su objetivo es la utilización para cualquier orden de medicamento o ítems relacionados, ya sea que los prescriba un profesional de la salud o que se encuentren disponibles sin receta médica. El alcance de este arquetipo de medicamento incluye órdenes de vacuna, fluidos parenterales u otros insumos terpéuticos tales como vendajes, productos nutricionales u otros ítems que se aplican o son administrados para obtener un efecto terapéutico, y que tiene un patrón común de registro de datos.
+
+Este arquetipo seta diseñado para ser utilizado en un conjunto de contexto clínicos que incluyen, pero no se limitan, a:
+- un registro de una consulta clínica (COMPOSITION.encounter);
+- una prescripción escrita por un médico, odontólogo, enfermero u otro profesional de la salud, para una medicación o producto nutricional a ser dispensado y administrado (como parte de una COMPOSITION.prescription);
+- un ítem incluido en una lista de medicamentos recibidos actualmente, en una prescripción o en una lista de medicamentos (como parte de una COMPOSITION.medication_list); y como
+- un ítem incluido en un documento de resumen, tal como una transferencia de sitio de cuidados (COMPOSITION.transfer_summary) o una interconsulta (COMPOSITION.request).
+
+En muchos casos una orden de medicamento será simple -típicamente para un solo ítem medicamentoso con instrucciones carentes de complejidad para su dispensación y administración. Sin embargo, este arquetipo también esta diseñado para permitir órdenes terapéuticas mas complejas, como por ejemplo:
+- la reducción de una dosis de prednisolona a lo largo de un período de semanas;
+- la titulación de insulina, donde la dosis dependerá de los resultados de una prueba;
+- la prescripción simultanea de varios medicamentos como parte de un régimen único de medicamentos, tales como la terapia triple para la úlcera péptica; y
+- la administración endovenosa de medicamentos o suplementos nutricionales, incluyendo nutrición parenteral.
+
+El arquetipo ha sido por lo tanto diseñado para permitir diversos rangos de complejidad, desde:
+- instrucciones narrativas simples para órdenes tales como \"furosemida 40 miligramos, dos tabletas por la mañana y una al almuerzo\", para asegurar la compatibilidad con sistemas existentes
+- la cantidad de la medicación, usualmente representada en términos de un número y su correspondiente unidad de dosis, pero que alternativamente puede ser representada mediante una narrativa para asegurar compatibilidad con sistemas existentes y la cobertura de diferentes escenarios clínicos; hasta
+- el detalle estructurado de la dosis, vía de administración y temporalidad, para así representar una especificación completamente computable.
+
+También ha sido diseñado de modo tal que la estructura de una sola orden de medicamento permita representar:
+- una secuencia compleja de órdenes de medicamento que utiliza la misma potencia del preparado como una sola estructura de orden; y
+- múltiples órdenes de medicamentos encadenadas en circunstancias donde diferentes medicamentos o preparados deben ser administrados conforme a una secuencia.
+
+Este arquetipo es también adecuado para ordenar fluidos en entornos de cuidado donde es de uso corriente que estos ítems sean \"prescribibles\". EN otros contextos una orden separada de fluido parenteral podría ser mas apropiada.
+
+Los SLOTs que contienen arquetipos CLUSTER han sido utilizados para representar parte del contenido por tres razones:
+- Para asegurar un arquetipo de base que pueda ser utilizado en todos los casos arriba descritos pero que permitan flexibilidad alli donde esta es requerida, como por ejemplo el SLOT `Detalles de la preparación´ en el cual un mayor detalle estructurado puede ser agregado. Se ha sugerido un arquetipo candidato para Medicaciones. Es posible que otros arquetipos CLUSTER sean necesarios en el futuro para otros propósitos tal como las órdenes de nutrición parenteral compleja;
+- Para permitir la re-utilización del arquetipo en situaciones en las cuales el contenido ha sido identificado como utilizado también en otros contextos clínicos, en particular en forma apareada como el arquetipo ACTION.medication, para el registro de la dispensación, administración, etc. concretas; y
+- Para remover del arquetipo base los contenidos menos comúnmente utilizados.
+
+Varias órdenes pueden ser representadas como actividades separadas dentro de una sola instancia de este arquetipo, para el uso de órdenes fuertemente vinculadas (como la terapia del Helicobacter Pylori) cuando estas nos son prescriptas como paquete único.
+
+Debe tenerse en cuenta que estos usos subsumen lso casos de uso tanto de la Orden de Medicamento FHIR como de la Declaración de Medicamento, es decir que este arquetipo coincide con ambos recursos FHIR, utilizados en el contexto apropiado.">
+			misuse = <"No debe ser utilizado para el registro de las actividades relacionadas con el cumplimiento de la orden del medicamento, vacuna, producto nutricional o ítem terapéutico, tal como los detalles de su administración o dispensa. Se debe utilizar el ACTION.medication para este propósito.
+
+No debe ser utilizado para el registro de órdenes de sangre o sus preparados, lo cual involucra un proceso clínico fundamentalmente diferente que muy probablemente requiera otro tipo de información. Se debe utilizar el ACTION.transfusion para este propósito.
+
+No debe ser utilizado para el registro de órdenes de inserción de implantes o dispositivos médicos tales como marcapasos o defibriladores. Se debe utilizar el ACTION.procedure para este propósito.">
+		>
 		["nb"] = <
 			language = <[ISO_639-1::nb]>
 			purpose = <"For å registrere alle aspekter av ordinering av et legemiddel, en vaksine, ernæringsprodukt eller medisinsk forbruksmateriell for et spesifikt individ.">
@@ -208,51 +253,6 @@ Merk at disse bruksområdene innbefatter FHIR-ressursene for både \"Medication 
 Skal ikke brukes for å registrere ordinering av blodkomponenter, som omfatter en fundamentalt ulik klinisk prosess og sannsynligvis vil trenge ulik støtteinformasjon. Bruk arketypen INSTRUCTION.transfusion for dette formålet.
 
 Skal ikke brukes for å registrere ordinering av innlegging av implantater og medisinsk utstyr som pacemakere og defibrillatorer. Bruk arketypen INSTRUCTION.procedure for dette formålet.">
-		>
-		["es-ar"] = <
-			language = <[ISO_639-1::es-ar]>
-			purpose = <"Registrar todos los aspectos de una orden de medicamento, vacuna, producto nutricional u otro ítem terapéutico para un individuo identificado.">
-			keywords = <"medicamento","orden","prescribir","prescripción","terapéutica","substancia","droga","terapéutico","sin receta","insumo terapéutico","fármaco","producto","posología","tratamiento","fluido","nutrición","CPOE">
-			use = <"Utilizar para el registro de todos los aspectos de una orden de medicamento, vacuna, producto nutricional u otro ítem terapéutico para un individuo identificado.
-
-Su objetivo es la utilización para cualquier orden de medicamento o ítems relacionados, ya sea que los prescriba un profesional de la salud o que se encuentren disponibles sin receta médica. El alcance de este arquetipo de medicamento incluye órdenes de vacuna, fluidos parenterales u otros insumos terpéuticos tales como vendajes, productos nutricionales u otros ítems que se aplican o son administrados para obtener un efecto terapéutico, y que tiene un patrón común de registro de datos.
-
-Este arquetipo seta diseñado para ser utilizado en un conjunto de contexto clínicos que incluyen, pero no se limitan, a:
-- un registro de una consulta clínica (COMPOSITION.encounter);
-- una prescripción escrita por un médico, odontólogo, enfermero u otro profesional de la salud, para una medicación o producto nutricional a ser dispensado y administrado (como parte de una COMPOSITION.prescription);
-- un ítem incluido en una lista de medicamentos recibidos actualmente, en una prescripción o en una lista de medicamentos (como parte de una COMPOSITION.medication_list); y como
-- un ítem incluido en un documento de resumen, tal como una transferencia de sitio de cuidados (COMPOSITION.transfer_summary) o una interconsulta (COMPOSITION.request).
-
-En muchos casos una orden de medicamento será simple -típicamente para un solo ítem medicamentoso con instrucciones carentes de complejidad para su dispensación y administración. Sin embargo, este arquetipo también esta diseñado para permitir órdenes terapéuticas mas complejas, como por ejemplo:
-- la reducción de una dosis de prednisolona a lo largo de un período de semanas;
-- la titulación de insulina, donde la dosis dependerá de los resultados de una prueba;
-- la prescripción simultanea de varios medicamentos como parte de un régimen único de medicamentos, tales como la terapia triple para la úlcera péptica; y
-- la administración endovenosa de medicamentos o suplementos nutricionales, incluyendo nutrición parenteral.
-
-El arquetipo ha sido por lo tanto diseñado para permitir diversos rangos de complejidad, desde:
-- instrucciones narrativas simples para órdenes tales como \"furosemida 40 miligramos, dos tabletas por la mañana y una al almuerzo\", para asegurar la compatibilidad con sistemas existentes
-- la cantidad de la medicación, usualmente representada en términos de un número y su correspondiente unidad de dosis, pero que alternativamente puede ser representada mediante una narrativa para asegurar compatibilidad con sistemas existentes y la cobertura de diferentes escenarios clínicos; hasta
-- el detalle estructurado de la dosis, vía de administración y temporalidad, para así representar una especificación completamente computable.
-
-También ha sido diseñado de modo tal que la estructura de una sola orden de medicamento permita representar:
-- una secuencia compleja de órdenes de medicamento que utiliza la misma potencia del preparado como una sola estructura de orden; y
-- múltiples órdenes de medicamentos encadenadas en circunstancias donde diferentes medicamentos o preparados deben ser administrados conforme a una secuencia.
-
-Este arquetipo es también adecuado para ordenar fluidos en entornos de cuidado donde es de uso corriente que estos ítems sean \"prescribibles\". EN otros contextos una orden separada de fluido parenteral podría ser mas apropiada.
-
-Los SLOTs que contienen arquetipos CLUSTER han sido utilizados para representar parte del contenido por tres razones:
-- Para asegurar un arquetipo de base que pueda ser utilizado en todos los casos arriba descritos pero que permitan flexibilidad alli donde esta es requerida, como por ejemplo el SLOT `Detalles de la preparación´ en el cual un mayor detalle estructurado puede ser agregado. Se ha sugerido un arquetipo candidato para Medicaciones. Es posible que otros arquetipos CLUSTER sean necesarios en el futuro para otros propósitos tal como las órdenes de nutrición parenteral compleja;
-- Para permitir la re-utilización del arquetipo en situaciones en las cuales el contenido ha sido identificado como utilizado también en otros contextos clínicos, en particular en forma apareada como el arquetipo ACTION.medication, para el registro de la dispensación, administración, etc. concretas; y
-- Para remover del arquetipo base los contenidos menos comúnmente utilizados.
-
-Varias órdenes pueden ser representadas como actividades separadas dentro de una sola instancia de este arquetipo, para el uso de órdenes fuertemente vinculadas (como la terapia del Helicobacter Pylori) cuando estas nos son prescriptas como paquete único.
-
-Debe tenerse en cuenta que estos usos subsumen lso casos de uso tanto de la Orden de Medicamento FHIR como de la Declaración de Medicamento, es decir que este arquetipo coincide con ambos recursos FHIR, utilizados en el contexto apropiado.">
-			misuse = <"No debe ser utilizado para el registro de las actividades relacionadas con el cumplimiento de la orden del medicamento, vacuna, producto nutricional o ítem terapéutico, tal como los detalles de su administración o dispensa. Se debe utilizar el ACTION.medication para este propósito.
-
-No debe ser utilizado para el registro de órdenes de sangre o sus preparados, lo cual involucra un proceso clínico fundamentalmente diferente que muy probablemente requiera otro tipo de información. Se debe utilizar el ACTION.transfusion para este propósito.
-
-No debe ser utilizado para el registro de órdenes de inserción de implantes o dispositivos médicos tales como marcapasos o defibriladores. Se debe utilizar el ACTION.procedure para este propósito.">
 		>
 		["pt-br"] = <
 			language = <[ISO_639-1::pt-br]>
@@ -410,7 +410,7 @@ Standards for medication and medical device records – technical annex [Interne
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"a3e87ad8026e69aae1bac8bce5fb812c">
+		["MD5-CAM-1.0.1"] = <"b305db9f15ca7ca78e4030a15707c195">
 		["build_uid"] = <"b3d018f2-28c7-4d2c-ab3f-3ef146701037">
 		["revision"] = <"3.1.0">
 	>
@@ -422,11 +422,6 @@ definition
 				description matches {
 					ITEM_TREE[at0002] matches {    -- Tree
 						items cardinality matches {1..*; ordered} matches {
-							ELEMENT[at0070] matches {    -- Medication item
-								value matches {
-									DV_TEXT matches {*}
-								}
-							}
 							allow_archetype CLUSTER[at0143] occurrences matches {0..1} matches {    -- Medication details
 								include
 									archetype_id/value matches {/openEHR-EHR-CLUSTER\.medication(-[a-zA-Z0-9_]+)*\.v1|openEHR-EHR-CLUSTER\.medication(-[a-zA-Z0-9_]+)*\.v2/}
@@ -518,11 +513,6 @@ ontology
 					description = <"Details about the amount of the ordered item to be dispensed.">
 					comment = <"This SLOT allows for local variation in the different jurisdictions regarding medication dispensing amount to be managed.">
 				>
-				["at0070"] = <
-					text = <"Medication item">
-					description = <"Name of the medication, vaccine or other therapeutic/prescribable item being ordered.">
-					comment = <"Depending on the prescribing context this field could be used for either generic- or product-based prescribing. This data field can be used to record tightly bound orders of different medications when they are prescribed as a single pack. It is strongly recommended that the 'Medication item' be coded with a terminology capable of triggering decision support, where possible. The extent of coding may vary from the simple name of the medication item through to structured details about the actual medication pack to be used. Free text entry should only be used if there is no appropriate terminology available.">
-				>
 				["at0091"] = <
 					text = <"Route">
 					description = <"The route by which the ordered item is to be administered into the subject's body.">
@@ -590,11 +580,6 @@ Coding of the route with a terminology is preferred, where possible. Multiple po
 					text = <"Utdelingsmengde">
 					description = <"Detaljer om mengden av den ordinerte varen som skal utdeles.">
 					comment = <"Dette SLOTet tillater lokal variasjon i regelverk for legemiddelutdeling mellom forskjellige myndighetsområder.">
-				>
-				["at0070"] = <
-					text = <"Legemiddel">
-					description = <"Navnet på legemiddelet, vaksinen eller det medisinske forbruksmateriellet som ordineres.">
-					comment = <"Avhengig av kontekst kan dette elementet brukes enten for generisk eller varebasert ordinering. Dataelementet kan brukes til å registrere tett sammenbundne ordineringer av forskjellige legemidler når de ordineres som en pakke. Det anbefales sterkt at \"Legemiddel\" kodes med en terminologi som understøtter beslutningsstøtte der dette er mulig, f.eks. FEST. Nivå av koding kan variere fra legemiddelnavn til strukturerte detaljer om den aktuelle legemiddelforpakningen som skal brukes. Fritekst bør bare brukes om ingen passende terminologi er tilgjengelig.">
 				>
 				["at0091"] = <
 					text = <"Administreringsvei">
@@ -664,11 +649,6 @@ Det bør om mulig benyttes terminologi, f.eks. FEST, for å angi administrerings
 					description = <"Detalhes sobre a quantidade do item prescrito a ser dispensada.">
 					comment = <"Este SLOT possibilita ajustes locais para acomodar as legislações vigentes sobre como as quantidades do ítem prescrito devem ser dispensadas.">
 				>
-				["at0070"] = <
-					text = <"Item da prescrição de medicamentos">
-					description = <"Nome do medicamento, vacina ou outro item terapêutico/prescritível a ser solicitado.">
-					comment = <"Dependendo do contexto da prescrição, esse campo pode ser utilizado para uma prescrição de medicamentos genériicos ou comerciais. Este campo de dados pode ser utilizado para registrar prescrições relacionadas de vários medicamentos diferentes quando estão são prescritos como um único pacote. É altamente recomendável que o \"item de medicação\" seja codificado com uma terminologia capaz de desencadear o suporte à decisão, sempre que possível. A extensão da codificação pode variar do nome simples do item de medicação até os detalhes estruturados sobre o a embalagem da medicação a ser utilizada. A entrada de texto livre só deve ser utilizada se não houver uma terminologia apropriada disponível.">
-				>
 				["at0091"] = <
 					text = <"Via de Administração">
 					description = <"A via de administração pela qual o item prescrito deve ser administrada à pessoa.">
@@ -736,11 +716,6 @@ Det bør om mulig benyttes terminologi, f.eks. FEST, for å angi administrerings
 					text = <"Cantidad a dispensar">
 					description = <"Detalles acerca de la cantidad del ítem ordenado a dispensar.">
 					comment = <"Este SLOT permite la variación local en diferentes jurisdicciones respecto de la gestión de la cantidad del medicamento que debe ser dispensada.">
-				>
-				["at0070"] = <
-					text = <"Ítem medicamentoso">
-					description = <"Nombre del medicamento, vacuna, u otro ítem terapéutico o prescribible que es ordenado">
-					comment = <"Dependiendo del contexto de prescripción este campo puede ser utilizado para una prescripción basada tanto en genéricos como en productos. Este campo puede ser utilizado para registrar ordenes de diferentes medicamentos estrechamente vinculados que son prescriptos como paquete único. Se recomienda fuertemente que este atributo sea codificado mediante una terminología capaz de disparar procesos de apoyo a la decisión cuando esto sea posible. El alcance de la codificación puede variar desde el simple nombre del medicamento hasta los detalles estructurados del paquete a ser utilizado. El texto libre solo debe ser utilizado cuando no exista una terminología disponible.">
 				>
 				["at0091"] = <
 					text = <"Ruta">
@@ -810,12 +785,6 @@ La codificación de la ruta mediante una terminología debe preferirse cuando se
 					description = <"Detaillierte Angaben zur Menge des verordneten Arzneimittels, das abgegeben werden soll.">
 					comment = <"Dieser SLOT ermöglicht die lokaler Unterschiede in den verschiedenen Rechtsordnungen in Bezug auf die Abgabemenge von Arzneimitteln zu verwalten.">
 				>
-				["at0070"] = <
-					text = <"Arzneimittel">
-					description = <"Name des verordneten Medikaments, Impfstoffs oder anderen therapeutischen / verschreibungsfähigen Mittels.">
-					comment = <"Je nach Kontext kann dieses Feld entweder für die generische oder die produktbasierte Verschreibung verwendet werden. In diesem Datenelement können eng gebundene Verordnungen verschiedener Medikamente dargestellt werden, wenn diese als Einzelpackung verschrieben werden. Es wird dringend empfohlen, das „Arzneimittel“ mit einer Terminologie zu kodieren, die nach Möglichkeit eine Entscheidungsunterstützung triggern kann. Der Umfang der Kodierung kann vom einfachen Medikamentennamen bis zu strukturierten Details über die tatsächlich zu verwendende Medikamentenpackung variieren. 
-Die Freitexteingabe sollte nur verwendet werden, wenn keine entsprechende Terminologie verfügbar ist.">
-				>
 				["at0091"] = <
 					text = <"Verabreichungsweg">
 					description = <"Die Angabe darüber, auf welche Art das verordnete Arzneimittel am Körper des Patienten angewendet wird.">
@@ -884,12 +853,6 @@ Die Kodierung des Verabreichungswegs mit einer Terminologie wird nach Möglichke
 					description = <"Detaljer om den mängden av beställd artikel som ska dispenseras.">
 					comment = <"Denna SLOT gör det möjligt att hantera lokal variation i olika jurisdiktioner angående läkemedelsdispensering.">
 				>
-				["at0070"] = <
-					text = <"Läkemedelsartikel">
-					description = <"Benämning på det läkemedel, vaccin eller annan terapeutisk/ordinerbar artikel som beställs.
-">
-					comment = <"Beroende på ordinationstyp, kan detta fält användas för antingen generisk eller produktbaserad ordination. Detta datafält kan användas för att registrera relaterade beställningar av olika läkemedel när de ordineras som enpack. Om möjligt, benämn läkemedelsartikeln med en terminologi. Omfattningen av benämningen kan variera från namn på läkemedelsartikeln till detaljer om själva läkemedelspaketet. Fri textinmatning bör endast användas om det inte finns någon lämplig terminologi tillgänglig.">
-				>
 				["at0091"] = <
 					text = <"Administreringsväg">
 					description = <"Sättet genom vilken den beställda artikeln ska administreras i patientens kropp.">
@@ -956,11 +919,6 @@ Die Kodierung des Verabreichungswegs mit einer Terminologie wird nach Möglichke
 					text = <"Quantitat de dispensació">
 					description = <"Detalls sobre la quantitat de l'article ordenat a dispensació.">
 					comment = <"Aquest SLOT permet gestionar la variació local en diferents jurisdiccions pel que fa a la quantitat de dispensació medicaments.">
-				>
-				["at0070"] = <
-					text = <"Producte de medicació">
-					description = <"Nom del medicament, vacuna, o altre producte terapèutic/prescriptible que s'ha ordenat.">
-					comment = <"Depenent del context de prescripció, aquest camp podria ser utilitzat per a la prescripció genèrica o basada en productes. Aquest camp de dades es pot utilitzar per registrar ordres estretament lligades de diferents medicaments quan es prescriguin com un únic paquet. Es recomana encaridament que el \"producte de medicació \"sigui codificat amb una terminologia capaç de provocar el suport de la decisió, sempre que sigui possible. L'extensió de la codificació pot variar des del nom senzill de l'element de medicació fins als detalls estructurats sobre el paquet de medicació que s'utilitzarà. L'entrada de text lliure només s'ha d'utilitzar si no hi ha disponible una terminologia adequada.">
 				>
 				["at0091"] = <
 					text = <"Ruta">
