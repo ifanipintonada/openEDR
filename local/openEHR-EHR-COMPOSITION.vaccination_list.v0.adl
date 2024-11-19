@@ -79,7 +79,7 @@ Dit archetype is bedoeld om te worden weergegeven en beheerd als een permanente 
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"F2C3BD9252691BB3975C53648208D672">
+		["MD5-CAM-1.0.1"] = <"7d064032d6c1beef27d6fcb5a953a573">
 		["build_uid"] = <"5fe10314-0b75-4673-8e12-e6e0695bd457">
 		["revision"] = <"0.0.1-alpha">
 	>
@@ -93,20 +93,6 @@ definition
 				}
 			}
 		}
-		context matches {
-			EVENT_CONTEXT matches {
-				other_context matches {
-					ITEM_TREE[at0004] matches {    -- Tree
-						items cardinality matches {0..*; unordered} matches {
-							allow_archetype CLUSTER[at0005] occurrences matches {0..*} matches {    -- Extension
-								include
-									archetype_id/value matches {/.*/}
-							}
-						}
-					}
-				}
-			}
-		}
 	}
 
 ontology
@@ -117,15 +103,6 @@ ontology
 					text = <"Vaccination list">
 					description = <"A persistent and managed list of vaccinations that have been administered to an individual over time.">
 				>
-				["at0004"] = <
-					text = <"Tree">
-					description = <"@ internal @">
-				>
-				["at0005"] = <
-					text = <"Extension">
-					description = <"Additional information required to capture local context or to align with other reference models/formalisms.">
-					comment = <"For example: Local hospital departmental infomation or additional metadata to align with FHIR or CIMI equivalents.">
-				>
 			>
 		>
 		["nl"] = <
@@ -133,15 +110,6 @@ ontology
 				["at0000"] = <
 					text = <"Vaccinatie lijst">
 					description = <"Een permanente en beheerde lijst van toegediende vaccinaties aan een persoon over een periode van tijd">
-				>
-				["at0004"] = <
-					text = <"Tree">
-					description = <"@ internal @">
-				>
-				["at0005"] = <
-					text = <"Extensie">
-					description = <"Aanvullende informatie die nodig is om de lokale context vast te leggen of om af te stemmen op andere referentiemodellen/formalismen.">
-					comment = <"Bijvoorbeeld: lokale ziekenhuisafdelingsinformatie of aanvullende metadata om af te stemmen op FHIR- of CIMI-equivalenten.">
 				>
 			>
 		>
