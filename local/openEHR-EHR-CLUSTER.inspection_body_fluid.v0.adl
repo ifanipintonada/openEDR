@@ -145,7 +145,7 @@ Not to be used to record the details about examination of faeces - use the CLUST
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"91ACD3D83FE57B07C01AAA6B8E46B872">
+		["MD5-CAM-1.0.1"] = <"4e4cb7284193ffcb0deb22a1318116cb">
 		["build_uid"] = <"b0c76a3b-d9a9-4535-a610-32e3287980f3">
 		["revision"] = <"0.0.1-alpha">
 	>
@@ -197,10 +197,6 @@ definition
 					}
 				}
 			}
-			allow_archetype CLUSTER[at0004] occurrences matches {0..*} matches {    -- Specific findings
-				include
-					archetype_id/value matches {/openEHR-EHR-CLUSTER\.physical_properties\.v0/}
-			}
 			allow_archetype CLUSTER[at0005] occurrences matches {0..*} matches {    -- Multimedia representation
 				include
 					archetype_id/value matches {/openEHR-EHR-CLUSTER\.multimedia(-[a-zA-Z0-9_]+)*\.v1/}
@@ -214,10 +210,6 @@ definition
 				value matches {
 					DV_TEXT matches {*}
 				}
-			}
-			allow_archetype CLUSTER[at0008] occurrences matches {0..*} matches {    -- Examination not done
-				include
-					archetype_id/value matches {/openEHR-EHR-CLUSTER\.exclusion_exam(-[a-zA-Z0-9_]+)*\.v1/}
 			}
 		}
 	}
@@ -239,11 +231,6 @@ ontology
 					text = <"Description">
 					description = <"Narrative description about the fluid.">
 				>
-				["at0004"] = <
-					text = <"Specific findings">
-					description = <"Additional structured details about the body fluid.">
-					comment = <"For example: inclusion of detailed CLUSTER archetypes to record details about specific fluids such as clear fluids; or inclusion of further CLUSTER.exam_body_fluid archetypes could describe components of substances such as required to describe a mixture of blood and meconium post childbirth.">
-				>
 				["at0005"] = <
 					text = <"Multimedia representation">
 					description = <"Digital image, video or diagram representing the inspection findings.">
@@ -255,10 +242,6 @@ ontology
 				["at0007"] = <
 					text = <"Comment">
 					description = <"Additional narrative about the inspection findings, not captured in other fields.">
-				>
-				["at0008"] = <
-					text = <"Examination not done">
-					description = <"Details to explicitly record that this examination was not performed.">
 				>
 				["at0017"] = <
 					text = <"Odour">
@@ -319,11 +302,6 @@ ontology
 					text = <"*Description (en)">
 					description = <"Fritekstbeskrivelse av kroppsvæsken.">
 				>
-				["at0004"] = <
-					text = <"Spesifikke funn">
-					description = <"Ytterligere strukturerte detaljer om kroppsvæsken.">
-					comment = <"For eksempel til å legge inn detaljerte CLUSTER-arketyper for spesifikke væsker som for eksempel kroppsvæsker som normalt er klare/gjennomsiktige og som har bunnfall. Eller ved å legge til CLUSTER.exam_body_fluid arketyper for å beskrive komponenter av substanser for for eksempel å kunne beskrive blandinger av blod og mekonium i fostervann.">
-				>
 				["at0005"] = <
 					text = <"Multimedia">
 					description = <"Digitale bilder, video eller diagram som representerer funn ved undersøkelsen.">
@@ -335,10 +313,6 @@ ontology
 				["at0007"] = <
 					text = <"Kommentar">
 					description = <"Ytterligere fritekst om funn ved undersøkelsen ikke registrert i andre felt.">
-				>
-				["at0008"] = <
-					text = <"Undersøkelse ikke utført">
-					description = <"Detaljer for å eksplisitt registrere at denne undersøkelsen ikke ble utført.">
 				>
 				["at0017"] = <
 					text = <"Lukt">
