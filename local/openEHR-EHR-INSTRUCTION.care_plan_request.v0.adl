@@ -51,7 +51,7 @@ description
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"79CCC1762AFD328C6AB3C495A8B89C3C">
+		["MD5-CAM-1.0.1"] = <"5ec7d457e1b72434f4a427ec9997a564">
 		["build_uid"] = <"5ddc05d4-8a3c-4677-a696-230455786f3e">
 		["revision"] = <"0.0.1-alpha">
 	>
@@ -90,16 +90,6 @@ definition
 								}
 							}
 						}
-					}
-				}
-			}
-		}
-		protocol matches {
-			ITEM_TREE[at0020] matches {    -- Tree
-				items cardinality matches {0..*; unordered} matches {
-					allow_archetype CLUSTER[at0021] occurrences matches {0..*} matches {    -- Extension
-						include
-							archetype_id/value matches {/.*/}
 					}
 				}
 			}
@@ -143,15 +133,6 @@ ontology
 					text = <"Comment">
 					description = <"Additional narrative about the care plan request, not captured in other fields.">
 				>
-				["at0020"] = <
-					text = <"Tree">
-					description = <"@ internal @">
-				>
-				["at0021"] = <
-					text = <"Extension">
-					description = <"Additional information required to capture local content or to align with other reference models/formalisms.">
-					comment = <"For example: local information requirements or additional metadata to align with FHIR or CIMI equivalents.">
-				>
 			>
 		>
 		["pt-br"] = <
@@ -188,14 +169,6 @@ ontology
 				["at0019"] = <
 					text = <"Comentário">
 					description = <"Narrativa adicional sobre a ordem de plano de cuidados não capturados em outros campos.">
-				>
-				["at0020"] = <
-					text = <"*Tree(en)">
-					description = <"*@ internal @(en)">
-				>
-				["at0021"] = <
-					text = <"*Cluster(en)">
-					description = <"**(en)">
 				>
 			>
 		>
