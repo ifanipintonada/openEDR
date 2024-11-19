@@ -67,17 +67,6 @@ Dieser Archetyp kann auch verwendet werden, wenn keine strukturierten Archetypen
 
 Darf nicht verwendet werden, um eine beschreibende, zusammenfassende Ansicht des Gesundheitszustands des Patienten darzustellen, beispielsweise um eine kurze Zusammenfassung der stationären Aufnahme des Patienten als Bestandteil eines umfassenden und strukturierten Entlassungsberichtes zu übermitteln. Verwenden Sie zu diesem Zweck den Archetyp EVALUATION.clinical_synopsis.">
 		>
-		["es-ar"] = <
-			language = <[ISO_639-1::es-ar]>
-			purpose = <"Para la síntesis y registro manuales de la descripción narrativa de eventos actuales relacionados con la salud, desde la perspectiva del proveedor de cuidados de la salud.">
-			keywords = <"comentario","nota","evolución">
-			copyright = <"© openEHR Foundation">
-			use = <"utilizado para la síntesis y registro manuales de la descripción narrativa de eventos y actividades actuales relacionados con la salud, desde la perspectiva del proveedor de cuidados de la salud.
-Esta descripción no estructurada puede incluir el estado de salud y hallazgos propios del sujeto que corresponden al momento del registro. El caso mas común probablemente se relacione con las notas de enfermería al final de un turno o las notas diarias del proveedor de cuidados de la salud, como es el caso de un médico o un fisioterapeuta. En la práctica, la Nota de Evolución es una meta observación que complementará el registro estructurado, permitiendo la expresión de información sutil, subjetiva o interpretativa acerca del paciente que de otro modo podría no resultar obvia a partir de los datos estructurados solamente, proveyendo así balance y contexto al registro clínico. En muchas situaciones, este arquetipo puede usarse en combinación con otros arquetipos mas estructurados dentro de una misma COMPOSITION.
-
-Este arquetipo también puede ser utilizado si no existe un arquetipo estructurado disponible para un dato determinado, o para importar notas de evolución de sistemas legados.">
-			misuse = <"No debe utilizarse para registrar información específica de salud estructurada o semiestructurada. Por ejemplo, la información detallada acerca de problemas o diagnósticos, resultados de exámenes y signos vitales, hallazgos del examen y la enfermedad actual descrita por el paciente deben ser registrada utilizando los arquetipos específicos relevantes del tipo EVALUATION u OBSERVATION.">
-		>
 		["nb"] = <
 			language = <[ISO_639-1::nb]>
 			purpose = <"For at helsepersonell skal kunne lage og lagre en oppsummering i fritekst om helserelaterte hendelser eller status som er gyldig på tidspunktet det registreres.">
@@ -89,6 +78,17 @@ Arketypen kan også benyttes når det ikke finnes strukturerte arketyper tilgjen
 			misuse = <"Skal ikke brukes for å registrere spesifikk strukturert eller semistrukturert helseinformasjon, for eksempel detaljert informasjon om problem/diagnose, laboratoriesvar og vitale tegn, undersøkelsesfunn og anamneseinformasjon. Denne type data skal registreres i de spesifikke relevante EVALUATION- eller OBSERVATION-arketypene.
 
 Brukes ikke for registrere en fritekstoppsummering av en pasients helse, for eksempel for å gi en konkret oppsummering av en sykehusinnleggelse som en del av en strukturert epikrise eller en sykepleiesammenfatning. Bruk arketypen EVALUATION.clinical_synopsis (Klinisk sammendrag) for dette formålet.">
+		>
+		["es-ar"] = <
+			language = <[ISO_639-1::es-ar]>
+			purpose = <"Para la síntesis y registro manuales de la descripción narrativa de eventos actuales relacionados con la salud, desde la perspectiva del proveedor de cuidados de la salud.">
+			keywords = <"comentario","nota","evolución">
+			copyright = <"© openEHR Foundation">
+			use = <"utilizado para la síntesis y registro manuales de la descripción narrativa de eventos y actividades actuales relacionados con la salud, desde la perspectiva del proveedor de cuidados de la salud.
+Esta descripción no estructurada puede incluir el estado de salud y hallazgos propios del sujeto que corresponden al momento del registro. El caso mas común probablemente se relacione con las notas de enfermería al final de un turno o las notas diarias del proveedor de cuidados de la salud, como es el caso de un médico o un fisioterapeuta. En la práctica, la Nota de Evolución es una meta observación que complementará el registro estructurado, permitiendo la expresión de información sutil, subjetiva o interpretativa acerca del paciente que de otro modo podría no resultar obvia a partir de los datos estructurados solamente, proveyendo así balance y contexto al registro clínico. En muchas situaciones, este arquetipo puede usarse en combinación con otros arquetipos mas estructurados dentro de una misma COMPOSITION.
+
+Este arquetipo también puede ser utilizado si no existe un arquetipo estructurado disponible para un dato determinado, o para importar notas de evolución de sistemas legados.">
+			misuse = <"No debe utilizarse para registrar información específica de salud estructurada o semiestructurada. Por ejemplo, la información detallada acerca de problemas o diagnósticos, resultados de exámenes y signos vitales, hallazgos del examen y la enfermedad actual descrita por el paciente deben ser registrada utilizando los arquetipos específicos relevantes del tipo EVALUATION u OBSERVATION.">
 		>
 		["en"] = <
 			language = <[ISO_639-1::en]>
@@ -126,7 +126,7 @@ Not to be used to record a narrative, summary view of the patient's health, for 
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"0DC26E43DE454A2B3FE00A7AEA553E2A">
+		["MD5-CAM-1.0.1"] = <"5b3413a1b6ab078a160f1dbc14ad0232">
 		["build_uid"] = <"715f68b3-8720-4824-aca9-b437ebf5dbba">
 		["revision"] = <"1.1.1">
 	>
@@ -136,7 +136,7 @@ definition
 		data matches {
 			HISTORY[at0001] matches {    -- Event Series
 				events cardinality matches {1..*; unordered} matches {
-					EVENT[at0002] occurrences matches {0..*} matches {    -- Any event
+					EVENT[at0002] occurrences matches {0..*} matches {    -- Date
 						data matches {
 							ITEM_TREE[at0003] matches {    -- Tree
 								items cardinality matches {0..*; unordered} matches {
@@ -148,16 +148,6 @@ definition
 								}
 							}
 						}
-					}
-				}
-			}
-		}
-		protocol matches {
-			ITEM_TREE[at0005] matches {    -- Tree
-				items cardinality matches {0..*; unordered} matches {
-					allow_archetype CLUSTER[at0006] occurrences matches {0..*} matches {    -- Extension
-						include
-							archetype_id/value matches {/.*/}
 					}
 				}
 			}
@@ -177,7 +167,7 @@ ontology
 					description = <"@ internal @">
 				>
 				["at0002"] = <
-					text = <"Any event">
+					text = <"Date">
 					description = <"Default, unspecified point in time or interval event which may be explicitly defined in a template or at run-time.">
 				>
 				["at0003"] = <
@@ -187,15 +177,6 @@ ontology
 				["at0004"] = <
 					text = <"Progress Note">
 					description = <"Narrative description of health-related events, health status, findings, opinions at a specific point-in-time.">
-				>
-				["at0005"] = <
-					text = <"Tree">
-					description = <"@ internal @">
-				>
-				["at0006"] = <
-					text = <"Extension">
-					description = <"Additional information required to extend the model with local content or to align with other reference models or formalisms.">
-					comment = <"For example: local information requirements; or additional metadata to align with FHIR.">
 				>
 			>
 		>
@@ -210,7 +191,7 @@ ontology
 					description = <"@ internal @">
 				>
 				["at0002"] = <
-					text = <"Uspesifisert hendelse">
+					text = <"*Date (en)">
 					description = <"Standard, uspesifisert tidspunkt eller tidsintervall som kan defineres mer eksplisitt i en template eller i en applikasjon.">
 				>
 				["at0003"] = <
@@ -220,15 +201,6 @@ ontology
 				["at0004"] = <
 					text = <"Tidfestet fritekst">
 					description = <"Fritekstbeskrivelse av helserelaterte hendelser, status, funn eller oppfatninger på et spesifikt tidspunkt.">
-				>
-				["at0005"] = <
-					text = <"*Tree(en)">
-					description = <"*@ internal @(en)">
-				>
-				["at0006"] = <
-					text = <"Tilleggsinformasjon">
-					description = <"Ytterligere informasjon som trengs for å kunne registrere lokalt definert innhold eller for å tilpasse til andre referansemodeller/formalismer.">
-					comment = <"For eksempel lokale informasjonsbehov eller ytterligere metadata for å kunne tilpasse til tilsvarende konsepter i FHIR.">
 				>
 			>
 		>
@@ -243,7 +215,7 @@ ontology
 					description = <"@ internal @">
 				>
 				["at0002"] = <
-					text = <"Cualquier evento">
+					text = <"*Date (en)">
 					description = <"Punto en el tiempo o intervalo no especificado que puede ser explícitamente definido en una plantilla o en tiempo de ejecución.">
 				>
 				["at0003"] = <
@@ -254,28 +226,10 @@ ontology
 					text = <"Nota de evolución">
 					description = <"Descripción narrativa de eventos relacionados con la salud, estado de salud, hallazgos u opiniones para un punto específico en el tiempo.">
 				>
-				["at0005"] = <
-					text = <"Tree">
-					description = <"@ internal @">
-				>
-				["at0006"] = <
-					text = <"Extensión">
-					description = <"Información adicional requerida para el registro de contenidos locales o para el alineamiento con otros modelos o formalismos.">
-					comment = <"Por ejemplo: requerimientos de información local o metadatos adicionales para el alineamiento con equivalentes de FHIR o CIMI.">
-				>
 			>
 		>
 		["nl"] = <
 			items = <
-				["at0006"] = <
-					text = <"*Extension(en)">
-					description = <"*Additional information required to capture local content or to align with other reference models/formalisms.(en)">
-					comment = <"*For example: Local information requirements or additional metadata to align with FHIR or CIMI equivalents.(en)">
-				>
-				["at0005"] = <
-					text = <"*Tree(en)">
-					description = <"*@ internal @(en)">
-				>
 				["at0004"] = <
 					text = <"Beloopsnotitie">
 					description = <"Verhalende beschrijving van gezondheids gebeurtenissen op een specifiek moment in de tijd over een individu, specifiek vanuit het perspectief van een zorgvelener.">
@@ -285,7 +239,7 @@ ontology
 					description = <"*@ internal @(en)">
 				>
 				["at0002"] = <
-					text = <"*Any event(en)">
+					text = <"*Date (en)">
 					description = <"*Default, unspecified point in time or interval event which may be explicitly defined in a template or at run-time.(en)">
 				>
 				["at0001"] = <
@@ -309,7 +263,7 @@ ontology
 					description = <"@ internal @">
 				>
 				["at0002"] = <
-					text = <"Beliebiges Ereignis">
+					text = <"*Date (en)">
 					description = <"Standardwert, ein undefinierter/s Zeitpunkt oder Intervallereignis, das explizit im Template oder zur Laufzeit der Anwendung definiert werden kann.">
 				>
 				["at0003"] = <
@@ -319,15 +273,6 @@ ontology
 				["at0004"] = <
 					text = <"Fortschrittbericht">
 					description = <"Einfache Beschreibung von gesundheitsbezogenen Ereignissen, Gesundheitszustand, Befunden, Meinungen zu einem bestimmten Zeitpunkt.">
-				>
-				["at0005"] = <
-					text = <"Tree">
-					description = <"@ internal @">
-				>
-				["at0006"] = <
-					text = <"Erweiterung">
-					description = <"Zusätzliche Informationen zur Erfassung lokaler Inhalte oder Anpassung an andere Referenzmodelle/Formalismen.">
-					comment = <"Zum Beispiel: Lokaler Informationsbedarf oder zusätzliche Metadaten zur Anpassung an FHIR-Ressourcen oder CIMI-Modelle.">
 				>
 			>
 		>
