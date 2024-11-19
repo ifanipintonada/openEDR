@@ -50,7 +50,7 @@ Medication order status valueset[Internet]. HL7 FHIR , HL7 FHIR DSTU2 [cited: 20
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"265C1CDDA945CB118C70D38BB4E9E0C2">
+		["MD5-CAM-1.0.1"] = <"f0b2d72b6d6f18c890208f45ad935cd9">
 		["build_uid"] = <"64291c7b-e4f0-496f-a3b2-43114624cbd5">
 		["revision"] = <"0.0.1-alpha">
 	>
@@ -74,7 +74,7 @@ definition
 					}
 				}
 			}
-			ELEMENT[at0002] occurrences matches {0..*} matches {    -- Key order dates
+			ELEMENT[at0002] occurrences matches {0..*} matches {    -- Order dates
 				name matches {
 					DV_CODED_TEXT matches {
 						defining_code matches {
@@ -104,11 +104,6 @@ definition
 					DV_DATE_TIME matches {*}
 				}
 			}
-			ELEMENT[at0028] occurrences matches {0..1} matches {    -- Date reported
-				value matches {
-					DV_DATE_TIME matches {*}
-				}
-			}
 		}
 	}
 
@@ -125,7 +120,7 @@ ontology
 					description = <"The overall status of this order.">
 				>
 				["at0002"] = <
-					text = <"Key order dates">
+					text = <"Order dates">
 					description = <"Key medication event dates.">
 				>
 				["at0003"] = <
@@ -228,10 +223,6 @@ ontology
 					text = <"Draft">
 					description = <"The medication order has been made but further processes e.g. sign-off or verification are required before it becomes actionable.">
 				>
-				["at0028"] = <
-					text = <"Date reported">
-					description = <"The date at which this medication summary was reported to be correct.">
-				>
 			>
 		>
 		["pt-br"] = <
@@ -245,7 +236,7 @@ ontology
 					description = <"*The overall status of this order.(en)">
 				>
 				["at0002"] = <
-					text = <"*Key order dates(en)">
+					text = <"*Order dates (en)">
 					description = <"*Key medication event dates.(en)">
 				>
 				["at0003"] = <
@@ -350,10 +341,6 @@ ontology
 				["at0027"] = <
 					text = <"Aguardando validação">
 					description = <"Prescrição que necessita validação adicional, p. ex. assinatura para se tornar executável.">
-				>
-				["at0028"] = <
-					text = <"*Date reported(en)">
-					description = <"*The date at which this medication summary was reported to be correct.(en)">
 				>
 			>
 		>
