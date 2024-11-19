@@ -87,7 +87,7 @@ This list can be comprised of three types of statements, each represented by spe
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"6900D18BA6F2C488398A4E20FFFF54AF">
+		["MD5-CAM-1.0.1"] = <"3525348fee53694cecc84556d7c80d91">
 		["build_uid"] = <"7838dcfa-e0f0-43f3-867d-20a61ef567f9">
 		["revision"] = <"0.0.1-alpha">
 	>
@@ -98,14 +98,6 @@ definition
 			allow_archetype EVALUATION[at0001] occurrences matches {0..*} matches {    -- Adverse reactions
 				include
 					archetype_id/value matches {/openEHR-EHR-EVALUATION\.adverse_reaction_risk(-[a-zA-Z0-9_]+)*\.v1/}
-			}
-			allow_archetype EVALUATION[at0002] occurrences matches {0..*} matches {    -- Exclusion statement
-				include
-					archetype_id/value matches {/openEHR-EHR-EVALUATION\.exclusion_global(-[a-zA-Z0-9_]+)*\.v1/}
-			}
-			allow_archetype EVALUATION[at0003] occurrences matches {0..*} matches {    -- Absence statement
-				include
-					archetype_id/value matches {/openEHR-EHR-EVALUATION\.absence(-[a-zA-Z0-9_]+)*\.v2/}
 			}
 		}
 	}
@@ -122,16 +114,6 @@ ontology
 					text = <"Adverse reactions">
 					description = <"Positive statements about the presence of adverse reactions.">
 				>
-				["at0002"] = <
-					text = <"Exclusion statement">
-					description = <"A positive statement about the exclusion of adverse reactions.">
-					comment = <"For example: 'No known adverse reactions'.">
-				>
-				["at0003"] = <
-					text = <"Absence statement">
-					description = <"A positive statement that no information is available about adverse reactions.">
-					comment = <"For example: 'No information available about adverse reactions'.">
-				>
 			>
 		>
 		["ru"] = <
@@ -144,16 +126,6 @@ ontology
 					text = <"*Adverse reactions(en)">
 					description = <"*Positive statements about the presence of adverse reactions.(en)">
 				>
-				["at0002"] = <
-					text = <"*Exclusion statement(en)">
-					description = <"*Positive statement about the exclusion of adverse reactions.(en)">
-					comment = <"*For example: 'No known adverse reactions'.(en)">
-				>
-				["at0003"] = <
-					text = <"*Absence statement(en)">
-					description = <"*Positive statement that no information is available about adverse reactions.(en)">
-					comment = <"*For example: 'No information available about adverse reactions'.(en)">
-				>
 			>
 		>
 		["pt-br"] = <
@@ -165,16 +137,6 @@ ontology
 				["at0001"] = <
 					text = <"*Adverse reactions(en)">
 					description = <"*Positive statements about the presence of adverse reactions.(en)">
-				>
-				["at0002"] = <
-					text = <"*Exclusion statement(en)">
-					description = <"*Positive statement about the exclusion of adverse reactions.(en)">
-					comment = <"*For example: 'No known adverse reactions'.(en)">
-				>
-				["at0003"] = <
-					text = <"*Absence statement(en)">
-					description = <"*Positive statement that no information is available about adverse reactions.(en)">
-					comment = <"*For example: 'No information available about adverse reactions'.(en)">
 				>
 			>
 		>
