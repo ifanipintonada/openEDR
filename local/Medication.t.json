@@ -21,7 +21,7 @@
       "custodian_namespace" : "",
       "sem_ver" : "0.1.0",
       "build_uid" : "",
-      "MD5-CAM-1.0.1" : "30c70b4a36f11fd19babb15df4433675",
+      "MD5-CAM-1.0.1" : "d4daf2f98034f419f9af78336b6e54f5",
       "PARENT:MD5-CAM-1.0.1" : "3378bf8bf103234a3303cbf29ede3dd1"
     },
     "details" : {
@@ -229,7 +229,83 @@
       "otherDetails" : {
         "PARENT:MD5-CAM-1.0.1" : "4fff8d532cf4b1f2f1c6c6b67390becd"
       },
-      "details" : { }
+      "details" : {
+        "ru" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "ru"
+          },
+          "purpose" : "*To provide a framework and design guidance for consistent modelling of content within a template for a Medication list. (en)",
+          "keywords" : [ "лекарство", "медикамент", "препарат", "текущий", "список", "лист", "назначений", "отмена" ],
+          "use" : "*Use as a framework and suggested design guidance for consistent modelling of content within a template for an Medication list.\r\n\r\nThis archetype is intended to be used within the COMPOSITION.medication_list or as one component of other COMPOSITION archetypes. For example: complex documents, such as a discharge summary or referral.\r\n\r\nThis list can be comprised of three types of statements, each represented by specific archetypes:\r\n- statements about the positive use of medications can be recorded using multiple instances of the INSTRUCTION.medication_order; OR\r\n- statements about the positive exclusion of use of medications can be recorded using the specific EVALUATION.exclusion-global  - for example: 'No known adverse reactions'; OR\r\n- statements about no information being available - neither a positive use of medications nor a positive exclusion - can be recorded using the EVALUATION.absence archetype..\r\n\r\nStatements about the absence of medication orders, either general or specific, can only indicate the state of the subject at the time that the information was actually recorded - that is, they are event based. It is not sensible to persist the recording of a positive absence of a medication order as it may subsequently be ordered or self-administered by the patient, which may render any or all previous positive statements of absence obsolete. \r\n\r\nINSTRUCTION.medication is suggested as the best archetype to represent a Medication list in this instance as it generally provides the best representation of a local Current Medication List. Clinicians can enter patient-administered medications or 'over the counter' medications into a Prescribing system as INSTRUCTIONs, which in turn can enable adverse reaction checking against all INSTRUCTIONS, whether prescribed/printed or not. So Current Medication lists can effectively contain all orders for medications, given by both the recording clinician, other clinicians and the patient. An alternative form of the  Medication list comprising only ACTIONs can be used represent only those medication that have been prescribed/printed by the recording clinician. (en)",
+          "copyright" : "© openEHR Foundation",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "es-ar" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "es-ar"
+          },
+          "purpose" : "*To provide a framework and design guidance for consistent modelling of content within a template for a Medication list. (en)",
+          "keywords" : [ "medicamento", "medicación", "exclusión", "ausencia", "actual", "list" ],
+          "use" : "*Use as a framework and suggested design guidance for consistent modelling of content within a template for an Medication list.\r\n\r\nThis archetype is intended to be used within the COMPOSITION.medication_list or as one component of other COMPOSITION archetypes. For example: complex documents, such as a discharge summary or referral.\r\n\r\nThis list can be comprised of three types of statements, each represented by specific archetypes:\r\n- statements about the positive use of medications can be recorded using multiple instances of the INSTRUCTION.medication_order; OR\r\n- statements about the positive exclusion of use of medications can be recorded using the specific EVALUATION.exclusion-global  - for example: 'No known adverse reactions'; OR\r\n- statements about no information being available - neither a positive use of medications nor a positive exclusion - can be recorded using the EVALUATION.absence archetype..\r\n\r\nStatements about the absence of medication orders, either general or specific, can only indicate the state of the subject at the time that the information was actually recorded - that is, they are event based. It is not sensible to persist the recording of a positive absence of a medication order as it may subsequently be ordered or self-administered by the patient, which may render any or all previous positive statements of absence obsolete. \r\n\r\nINSTRUCTION.medication is suggested as the best archetype to represent a Medication list in this instance as it generally provides the best representation of a local Current Medication List. Clinicians can enter patient-administered medications or 'over the counter' medications into a Prescribing system as INSTRUCTIONs, which in turn can enable adverse reaction checking against all INSTRUCTIONS, whether prescribed/printed or not. So Current Medication lists can effectively contain all orders for medications, given by both the recording clinician, other clinicians and the patient. An alternative form of the  Medication list comprising only ACTIONs can be used represent only those medication that have been prescribed/printed by the recording clinician. (en)",
+          "copyright" : "© openEHR Foundation",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "pt-br" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "pt-br"
+          },
+          "purpose" : "*To provide a framework and design guidance for consistent modelling of content within a template for a Medication list. (en)",
+          "keywords" : [ "medicamento", "exclusão", "ausência", "atual", "lista" ],
+          "use" : "*Use as a framework and suggested design guidance for consistent modelling of content within a template for an Medication list.\r\n\r\nThis archetype is intended to be used within the COMPOSITION.medication_list or as one component of other COMPOSITION archetypes. For example: complex documents, such as a discharge summary or referral.\r\n\r\nThis list can be comprised of three types of statements, each represented by specific archetypes:\r\n- statements about the positive use of medications can be recorded using multiple instances of the INSTRUCTION.medication_order; OR\r\n- statements about the positive exclusion of use of medications can be recorded using the specific EVALUATION.exclusion-global  - for example: 'No known adverse reactions'; OR\r\n- statements about no information being available - neither a positive use of medications nor a positive exclusion - can be recorded using the EVALUATION.absence archetype..\r\n\r\nStatements about the absence of medication orders, either general or specific, can only indicate the state of the subject at the time that the information was actually recorded - that is, they are event based. It is not sensible to persist the recording of a positive absence of a medication order as it may subsequently be ordered or self-administered by the patient, which may render any or all previous positive statements of absence obsolete. \r\n\r\nINSTRUCTION.medication is suggested as the best archetype to represent a Medication list in this instance as it generally provides the best representation of a local Current Medication List. Clinicians can enter patient-administered medications or 'over the counter' medications into a Prescribing system as INSTRUCTIONs, which in turn can enable adverse reaction checking against all INSTRUCTIONS, whether prescribed/printed or not. So Current Medication lists can effectively contain all orders for medications, given by both the recording clinician, other clinicians and the patient. An alternative form of the  Medication list comprising only ACTIONs can be used represent only those medication that have been prescribed/printed by the recording clinician. (en)",
+          "copyright" : "© openEHR Foundation",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "en" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "en"
+          },
+          "purpose" : "To provide a framework and design guidance for consistent modelling of content within a template for a Medication list.",
+          "keywords" : [ "medication", "exclusion", "absence", "current", "list" ],
+          "use" : "Use as a framework and suggested design guidance for consistent modelling of content within a template for an Medication list.\r\n\r\nThis archetype is intended to be used within the COMPOSITION.medication_list or as one component of other COMPOSITION archetypes. For example: complex documents, such as a discharge summary or referral.\r\n\r\nThis list can be comprised of three types of statements, each represented by specific archetypes:\r\n- statements about the positive use of medications can be recorded using multiple instances of the INSTRUCTION.medication_order; OR\r\n- statements about the positive exclusion of use of medications can be recorded using the specific EVALUATION.exclusion-global  - for example: 'No known adverse reactions'; OR\r\n- statements about no information being available - neither a positive use of medications nor a positive exclusion - can be recorded using the EVALUATION.absence archetype..\r\n\r\nStatements about the absence of medication orders, either general or specific, can only indicate the state of the subject at the time that the information was actually recorded - that is, they are event based. It is not sensible to persist the recording of a positive absence of a medication order as it may subsequently be ordered or self-administered by the patient, which may render any or all previous positive statements of absence obsolete. \r\n\r\nINSTRUCTION.medication is suggested as the best archetype to represent a Medication list in this instance as it generally provides the best representation of a local Current Medication List. Clinicians can enter patient-administered medications or 'over the counter' medications into a Prescribing system as INSTRUCTIONs, which in turn can enable adverse reaction checking against all INSTRUCTIONS, whether prescribed/printed or not. So Current Medication lists can effectively contain all orders for medications, given by both the recording clinician, other clinicians and the patient. An alternative form of the  Medication list comprising only ACTIONs can be used represent only those medication that have been prescribed/printed by the recording clinician.",
+          "copyright" : "© openEHR Foundation",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "es" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "es"
+          },
+          "purpose" : "*To provide a framework and design guidance for consistent modelling of content within a template for a Medication list. (en)",
+          "keywords" : [ "medicación", "exclusión", "orden", "prescripción", "lista" ],
+          "use" : "*Use as a framework and suggested design guidance for consistent modelling of content within a template for an Medication list.\r\n\r\nThis archetype is intended to be used within the COMPOSITION.medication_list or as one component of other COMPOSITION archetypes. For example: complex documents, such as a discharge summary or referral.\r\n\r\nThis list can be comprised of three types of statements, each represented by specific archetypes:\r\n- statements about the positive use of medications can be recorded using multiple instances of the INSTRUCTION.medication_order; OR\r\n- statements about the positive exclusion of use of medications can be recorded using the specific EVALUATION.exclusion-global  - for example: 'No known adverse reactions'; OR\r\n- statements about no information being available - neither a positive use of medications nor a positive exclusion - can be recorded using the EVALUATION.absence archetype..\r\n\r\nStatements about the absence of medication orders, either general or specific, can only indicate the state of the subject at the time that the information was actually recorded - that is, they are event based. It is not sensible to persist the recording of a positive absence of a medication order as it may subsequently be ordered or self-administered by the patient, which may render any or all previous positive statements of absence obsolete. \r\n\r\nINSTRUCTION.medication is suggested as the best archetype to represent a Medication list in this instance as it generally provides the best representation of a local Current Medication List. Clinicians can enter patient-administered medications or 'over the counter' medications into a Prescribing system as INSTRUCTIONs, which in turn can enable adverse reaction checking against all INSTRUCTIONS, whether prescribed/printed or not. So Current Medication lists can effectively contain all orders for medications, given by both the recording clinician, other clinicians and the patient. An alternative form of the  Medication list comprising only ACTIONs can be used represent only those medication that have been prescribed/printed by the recording clinician. (en)",
+          "copyright" : "© openEHR Foundation",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        }
+      }
     },
     "parentArchetypeId" : "openEHR-EHR-SECTION.medication_list.v0",
     "differential" : true,
@@ -353,7 +429,7 @@
     } ]
   }, {
     "@type" : "TEMPLATE_OVERLAY",
-    "uid" : "3a2c51a9-3a04-419f-977a-0d6e6a880a0c",
+    "uid" : "6924e54b-73f0-4970-baca-9d069635e67e",
     "description" : {
       "@type" : "RESOURCE_DESCRIPTION",
       "originalAuthor" : { },
@@ -362,7 +438,7 @@
       "references" : { },
       "conversionDetails" : { },
       "otherDetails" : {
-        "PARENT:MD5-CAM-1.0.1" : "a3e87ad8026e69aae1bac8bce5fb812c"
+        "PARENT:MD5-CAM-1.0.1" : "b305db9f15ca7ca78e4030a15707c195"
       },
       "details" : { }
     },
@@ -575,7 +651,7 @@
     } ]
   }, {
     "@type" : "TEMPLATE_OVERLAY",
-    "uid" : "29146f20-4737-4c06-ba60-cc2c1891f6f4",
+    "uid" : "16a3b738-d25a-41dd-a9e7-e6da9a236daf",
     "description" : {
       "@type" : "RESOURCE_DESCRIPTION",
       "originalAuthor" : { },
@@ -703,7 +779,7 @@
     } ]
   }, {
     "@type" : "TEMPLATE_OVERLAY",
-    "uid" : "0cd075b6-424e-437f-b998-f4adea6fd317",
+    "uid" : "0510f60e-4b37-43a3-b8bd-1284355c467b",
     "description" : {
       "@type" : "RESOURCE_DESCRIPTION",
       "originalAuthor" : { },
@@ -813,7 +889,7 @@
     } ]
   }, {
     "@type" : "TEMPLATE_OVERLAY",
-    "uid" : "33c4105c-b9a4-45d8-8d06-a7bfa0f43acf",
+    "uid" : "7d61b8da-82db-496a-af04-1c1edaa94897",
     "description" : {
       "@type" : "RESOURCE_DESCRIPTION",
       "originalAuthor" : { },
@@ -938,7 +1014,7 @@
     } ]
   }, {
     "@type" : "TEMPLATE_OVERLAY",
-    "uid" : "5e2ebbbc-b9ec-4c7a-84ac-16dacb36ecb6",
+    "uid" : "b4f93cf3-c827-42bc-84af-b708737018e4",
     "description" : {
       "@type" : "RESOURCE_DESCRIPTION",
       "originalAuthor" : { },
@@ -1031,7 +1107,7 @@
     } ]
   }, {
     "@type" : "TEMPLATE_OVERLAY",
-    "uid" : "b90e970e-6de0-4bcc-b64a-e6b09c6ef0d8",
+    "uid" : "67086dc0-8a4e-472f-89e1-9bc40ce4948e",
     "description" : {
       "@type" : "RESOURCE_DESCRIPTION",
       "originalAuthor" : { },
@@ -1098,7 +1174,7 @@
     } ]
   }, {
     "@type" : "TEMPLATE_OVERLAY",
-    "uid" : "098da81f-996f-4c02-a24b-8e441cb5e8e8",
+    "uid" : "569d8a68-9ca7-4cf9-8886-606cd5567488",
     "description" : {
       "@type" : "RESOURCE_DESCRIPTION",
       "originalAuthor" : { },
