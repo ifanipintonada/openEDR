@@ -120,6 +120,16 @@ description
 
 Der Hauptabschnitt \"Content\" wurden absichtlich ausgelassen. Dadurch kann dieser Abschnitt mit beliebigen SECTION- oder ENTRY-Archetypen gefüllt werden.">
 		>
+		["fi"] = <
+			language = <[ISO_639-1::fi]>
+			purpose = <"*Generic container archetype to carry information that needs to be shared with others.(en)">
+			keywords = <"*report(en)", ...>
+			use = <"*Use as a generic archetype to carry information that needs to be shared with others, where no specialised archetype for a specific report type exists.
+
+Common use cases are: documenting a response to a request for information; the outcome of testing; activities that have been performed; or events that have occurred.
+
+The main Sections/Content component has been deliberately left unconstrained. This will allow it to be populated with any SECTION or ENTRY archetypes appropriate for the clinical purpose within a template. (en)">
+		>
 		["sv"] = <
 			language = <[ISO_639-1::sv]>
 			purpose = <"En generell behållare för information som behöver delas med andra.">
@@ -130,10 +140,11 @@ Vanliga användningsfall är att dokumentera ett svar på en förfrågan om info
 
 Rapporten kan fyllas med alla SECTION- eller ENTRY-arketyper som är lämpliga för det kliniska syftet i en mall.">
 		>
-		["fi"] = <
-			language = <[ISO_639-1::fi]>
-			purpose = <"*Generic container archetype to carry information that needs to be shared with others.(en)">
-			keywords = <"*report(en)", ...>
+		["es-ar"] = <
+			language = <[ISO_639-1::es-ar]>
+			purpose = <"Arquetipo contenedor genérico para la portación de información que necesita ser compartida con otros.">
+			keywords = <"informe", ...>
+			copyright = <"© openEHR Foundation">
 			use = <"*Use as a generic archetype to carry information that needs to be shared with others, where no specialised archetype for a specific report type exists.
 
 Common use cases are: documenting a response to a request for information; the outcome of testing; activities that have been performed; or events that have occurred.
@@ -149,17 +160,6 @@ The main Sections/Content component has been deliberately left unconstrained. Th
 Vanlige bruksområder: Dokumentasjon av svar på informasjonsforespørsel, prøveresultat, aktiviteter som er utført, eller hendelser som har skjedd eller hendelser som har skjedd, der det ikke finnes spesialiserte arketyper for de spesifikke rapporttypene. Eksempler på dette kan være laboratoriesvar, logistikkmeldinger, dialogmeldinger, helseopplysningsmeldinger og statusrapporter til fastlege.
 
 Innholdskomponenten er bevisst latt være ubegrenset. Dette tillater bruk av enhver SECTION- og/eller ENTRY-arketype som er nødvendig/hensiktsmessig i templaten brukt i den aktuelle kliniske konteksten.">
-		>
-		["es-ar"] = <
-			language = <[ISO_639-1::es-ar]>
-			purpose = <"Arquetipo contenedor genérico para la portación de información que necesita ser compartida con otros.">
-			keywords = <"informe", ...>
-			copyright = <"© openEHR Foundation">
-			use = <"*Use as a generic archetype to carry information that needs to be shared with others, where no specialised archetype for a specific report type exists.
-
-Common use cases are: documenting a response to a request for information; the outcome of testing; activities that have been performed; or events that have occurred.
-
-The main Sections/Content component has been deliberately left unconstrained. This will allow it to be populated with any SECTION or ENTRY archetypes appropriate for the clinical purpose within a template. (en)">
 		>
 		["ko"] = <
 			language = <[ISO_639-1::ko]>
@@ -192,17 +192,6 @@ Common use cases are: documenting a response to a request for information; the o
 
 The main Sections/Content component has been deliberately left unconstrained. This will allow it to be populated with any SECTION or ENTRY archetypes appropriate for the clinical purpose within a template. (en)">
 		>
-		["en"] = <
-			language = <[ISO_639-1::en]>
-			purpose = <"Generic container archetype to carry information that needs to be shared with others.">
-			keywords = <"report", ...>
-			copyright = <"© openEHR Foundation">
-			use = <"Use as a generic archetype to carry information that needs to be shared with others, where no specialised archetype for a specific report type exists.
-
-Common use cases are: documenting a response to a request for information; the outcome of testing; activities that have been performed; or events that have occurred.
-
-The main Sections/Content component has been deliberately left unconstrained. This will allow it to be populated with any SECTION or ENTRY archetypes appropriate for the clinical purpose within a template.">
-		>
 		["ar-sy"] = <
 			language = <[ISO_639-1::ar-sy]>
 			purpose = <"نموذج جنيس (غير محدود الملكية) يحتوي على معلومات من أجل مشاركتها مع الجميع.">
@@ -213,6 +202,17 @@ The main Sections/Content component has been deliberately left unconstrained. Th
 Common use cases are: documenting a response to a request for information; the outcome of testing; activities that have been performed; or events that have occurred.
 
 The main Sections/Content component has been deliberately left unconstrained. This will allow it to be populated with any SECTION or ENTRY archetypes appropriate for the clinical purpose within a template. (en)">
+		>
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"Generic container archetype to carry information that needs to be shared with others.">
+			keywords = <"report", ...>
+			copyright = <"© openEHR Foundation">
+			use = <"Use as a generic archetype to carry information that needs to be shared with others, where no specialised archetype for a specific report type exists.
+
+Common use cases are: documenting a response to a request for information; the outcome of testing; activities that have been performed; or events that have occurred.
+
+The main Sections/Content component has been deliberately left unconstrained. This will allow it to be populated with any SECTION or ENTRY archetypes appropriate for the clinical purpose within a template.">
 		>
 		["it"] = <
 			language = <[ISO_639-1::it]>
@@ -250,7 +250,7 @@ The main Sections/Content component has been deliberately left unconstrained. Th
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"005501C1FA493A4838F5F1121F2870EC">
+		["MD5-CAM-1.0.1"] = <"dd408b0a649af3fb65e47c3cd6463b2e">
 		["build_uid"] = <"1c3064db-dccf-4a7a-bba6-f1697ce2eb3c">
 		["revision"] = <"1.2.1">
 	>
@@ -279,10 +279,6 @@ definition
 									DV_TEXT matches {*}
 								}
 							}
-							allow_archetype CLUSTER[at0006] occurrences matches {0..*} matches {    -- Extension
-								include
-									archetype_id/value matches {/.*/}
-							}
 						}
 					}
 				}
@@ -310,11 +306,6 @@ ontology
 					text = <"الحالة">
 					description = <"حالة التقرير بشكل كلي. و لا تمثل هذه الحالة جزءا من التقرير و إنما جميعه ككل.">
 				>
-				["at0006"] = <
-					text = <"*Extension(en)">
-					description = <"*Additional information required to capture local context or to align with other reference models/formalisms.(en)">
-					comment = <"* e.g. Local hospital departmental infomation or additional metadata to align with FHIR or CIMI equivalents.(en)">
-				>
 			>
 		>
 		["sl"] = <
@@ -334,11 +325,6 @@ ontology
 				["at0005"] = <
 					text = <"Status">
 					description = <"*The status of the entire report. Note: This is not the status of any of the report components.(en)">
-				>
-				["at0006"] = <
-					text = <"*Extension(en)">
-					description = <"*Additional information required to capture local context or to align with other reference models/formalisms.(en)">
-					comment = <"* e.g. Local hospital departmental infomation or additional metadata to align with FHIR or CIMI equivalents.(en)">
 				>
 			>
 		>
@@ -360,11 +346,6 @@ ontology
 					text = <"Status">
 					description = <"The status of the entire report. Note: This is not the status of any of the report components.">
 				>
-				["at0006"] = <
-					text = <"Extension">
-					description = <"Additional information required to capture local context or to align with other reference models/formalisms.">
-					comment = <"For example: local information requirements or additional metadata to align with FHIR or CIMI equivalents.">
-				>
 			>
 		>
 		["es-ar"] = <
@@ -384,11 +365,6 @@ ontology
 				["at0005"] = <
 					text = <"Estado">
 					description = <"El estado del informe como un todo. Nota: no se refiere al estado de alguno de los componentes del informe.">
-				>
-				["at0006"] = <
-					text = <"*Extension(en)">
-					description = <"*Additional information required to capture local context or to align with other reference models/formalisms.(en)">
-					comment = <"* e.g. Local hospital departmental infomation or additional metadata to align with FHIR or CIMI equivalents.(en)">
 				>
 			>
 		>
@@ -410,11 +386,6 @@ ontology
 					text = <"Estado">
 					description = <"O estado de todo o relatório. Nota: este não é o estado de qualquer dos componentes do relatório.">
 				>
-				["at0006"] = <
-					text = <"Extensão">
-					description = <"Informação adicional requerida para capturar o contexto local ou para alinhar a outros modelos de referência/formalismos.">
-					comment = <"Por exemplo: requisitos de informações locais ou metadados para alinhar com equivalentes do FHIR or CIMI.">
-				>
 			>
 		>
 		["nb"] = <
@@ -434,11 +405,6 @@ ontology
 				["at0005"] = <
 					text = <"Status">
 					description = <"Status for hele rapporten. Merk: Dette er ikke statusen for noen av enkeltkomponentene i rapporten.">
-				>
-				["at0006"] = <
-					text = <"Tilleggsinformasjon">
-					description = <"Ytterligere informasjon som trengs for å kunne registrere lokalt definert innhold eller for å tilpasse til andre referansemodeller/formalismer.">
-					comment = <"For eksempel lokale informasjonsbehov eller ytterligere metadata for å kunne tilpasse til tilsvarende konsepter i FHIR eller CIMI.">
 				>
 			>
 		>
@@ -460,11 +426,6 @@ ontology
 					text = <"Status">
 					description = <"Der Status des gesamten Berichts. Hinweis: Dies ist nicht der Status einer Berichtskomponente.">
 				>
-				["at0006"] = <
-					text = <"Erweiterung">
-					description = <"Zusätzliche Informationen zur Erfassung lokaler Inhalte oder Anpassung an andere Referenzmodelle/Formalismen.">
-					comment = <"Zum Beispiel: lokaler Informationsbedarf oder zusätzliche Metadaten zur Anpassung an FHIR-Ressourcen oder CIMI-Modelle.">
-				>
 			>
 		>
 		["ko"] = <
@@ -484,11 +445,6 @@ ontology
 				["at0005"] = <
 					text = <"*Status(en)">
 					description = <"전체 리포트의 상태. 주의: 이것은 리포트 컴포넌트들 중 어떤 부분의 상태가 아님.">
-				>
-				["at0006"] = <
-					text = <"*Extension(en)">
-					description = <"로컬 컨텍스트를 획득하는데 필요하거나 다른 참조 모델/표현과 조정에 필요한 추가 정보">
-					comment = <"예: 로컬 정보 요구사항 또는 FHIR나 CIMI의 동등한 것들과 조정하는 추가 메타데이터">
 				>
 			>
 		>
@@ -510,12 +466,6 @@ ontology
 					text = <"Status">
 					description = <"Koko raportin tila. Huomaa: Tämä ei ole minkään raporttiosien tila.">
 				>
-				["at0006"] = <
-					text = <"Laajennus">
-					description = <"Tarvitaan lisätietoja paikallisen tilanteen mallintamiseksi tai yhdenmukaistamiseksi muiden vertailumallien / muodollisuuksien kanssa. 
-">
-					comment = <"Esimerkiksi: paikalliset tietovaatimukset tai ylimääräiset metatiedot FHIR- tai CIMI-vastaavien mukaisiksi.">
-				>
 			>
 		>
 		["it"] = <
@@ -536,11 +486,6 @@ ontology
 					text = <"Stato">
 					description = <"Lo stato dell'intero rapporto. Nota: Questo non è lo stato di alcuna delle componenti del rapporto.">
 				>
-				["at0006"] = <
-					text = <"Estensione">
-					description = <"Informazioni aggiuntive necessarie per catturare il contesto locale o per allinearsi con altri modelli/formalismi di riferimento.">
-					comment = <"Per esempio: requisiti informativi locali o metadati aggiuntivi per allinearsi con gli equivalenti FHIR o CIMI.">
-				>
 			>
 		>
 		["nl"] = <
@@ -560,11 +505,6 @@ ontology
 				["at0005"] = <
 					text = <"Status">
 					description = <"De status van de rapportage. Let op, dit is niet de status van een van de onderdelen van de rapportage.">
-				>
-				["at0006"] = <
-					text = <"Uitbreiding">
-					description = <"Extra informatie nodig om de context te beschrijven of te voldoen aan andere modellen of formalismen.">
-					comment = <"Bijvoorbeeld: lokale informatievereisten of aanvullende metadata om overeen te komen met FHIR- of CIMI-equivalenten.">
 				>
 			>
 		>
@@ -587,11 +527,6 @@ ontology
 					text = <"Status">
 					description = <"Status för hela rapporten. Observera att detta inte är status för någon av rapportkomponenterna.">
 				>
-				["at0006"] = <
-					text = <"Tilläggsinformation">
-					description = <"Plats för tilläggsinformation som krävs för lokala anpassningar eller anpassning till andra referensmodeller eller formella krav.">
-					comment = <"Exempelvis lokala informationskrav eller metadata för anpassning till FHIR- eller CIMI-motsvarigheter.">
-				>
 			>
 		>
 		["zh"] = <
@@ -611,11 +546,6 @@ ontology
 				["at0005"] = <
 					text = <"状态">
 					description = <"整份报告的状态。注意：这不是指报告的任何一个组成部分的状态">
-				>
-				["at0006"] = <
-					text = <"扩展">
-					description = <"用于捕获本地的上下文或与其他参考模型/形式保持一致所需的其他信息。">
-					comment = <"比如：本地的信息需求或是为了与FHIR或CIMI保持一致的其他元数据。">
 				>
 			>
 		>
