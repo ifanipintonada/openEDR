@@ -231,7 +231,7 @@ Let op dat er in het openEHR Referentiemodel een attribuut 'Tijd' is, dat bedoel
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"AD593E18455631079CCA895C6A3612C5">
+		["MD5-CAM-1.0.1"] = <"e46e9dc03f22ad59bffbe65f2cf2e3c6">
 		["build_uid"] = <"f596dd3a-2cba-4dec-9d40-ecfefe33b142">
 		["revision"] = <"1.0.1">
 	>
@@ -424,26 +424,8 @@ definition
 							DV_TEXT matches {*}
 						}
 					}
-					ELEMENT[at0014] occurrences matches {0..1} matches {    -- Service type
-						value matches {
-							DV_TEXT matches {*}
-						}
-					}
 					ELEMENT[at0013] occurrences matches {0..1} matches {    -- Description
 						value matches {
-							DV_TEXT matches {*}
-						}
-					}
-					allow_archetype CLUSTER[at0027] occurrences matches {0..*} matches {    -- Service detail
-						include
-							archetype_id/value matches {/.*/}
-					}
-					ELEMENT[at0032] occurrences matches {0..1} matches {    -- Planned date/time
-						value matches {
-							DV_DATE_TIME matches {*}
-							DV_INTERVAL<DV_DATE_TIME> matches {*}
-							DV_DURATION matches {*}
-							DV_INTERVAL<DV_DURATION> matches {*}
 							DV_TEXT matches {*}
 						}
 					}
@@ -452,60 +434,15 @@ definition
 							DV_DATE_TIME matches {*}
 						}
 					}
-					ELEMENT[at0021] occurrences matches {0..1} matches {    -- Sequence
-						value matches {
-							DV_COUNT matches {
-								magnitude matches {|>=1|}
-							}
-						}
-					}
-					allow_archetype CLUSTER[at0029] occurrences matches {0..*} matches {    -- Multimedia representation
-						include
-							archetype_id/value matches {/openEHR-EHR-CLUSTER\.media_file(-[a-zA-Z0-9_]+)*\.v1/}
-					}
 					ELEMENT[at0012] occurrences matches {0..1} matches {    -- Reason
 						value matches {
 							DV_TEXT matches {*}
 						}
 					}
-					allow_archetype CLUSTER[at0036] occurrences matches {0..*} matches {    -- Additional details
-						include
-							archetype_id/value matches {/.*/}
-					}
 					ELEMENT[at0028] occurrences matches {0..1} matches {    -- Comment
 						value matches {
 							DV_TEXT matches {*}
 						}
-					}
-				}
-			}
-		}
-		protocol matches {
-			ITEM_TREE[at0015] matches {    -- Tree
-				items cardinality matches {0..*; unordered} matches {
-					ELEMENT[at0016] occurrences matches {0..1} matches {    -- Requestor identifier
-						value matches {
-							DV_IDENTIFIER matches {*}
-							DV_TEXT matches {*}
-						}
-					}
-					allow_archetype CLUSTER[at0017] occurrences matches {0..*} matches {    -- Requestor
-						include
-							archetype_id/value matches {/openEHR-EHR-CLUSTER\.person(-[a-zA-Z0-9_]+)*\.v1|openEHR-EHR-CLUSTER\.organisation(-[a-zA-Z0-9_]+)*\.v1/}
-					}
-					ELEMENT[at0018] occurrences matches {0..1} matches {    -- Service provider identifier
-						value matches {
-							DV_IDENTIFIER matches {*}
-							DV_TEXT matches {*}
-						}
-					}
-					allow_archetype CLUSTER[at0019] occurrences matches {0..*} matches {    -- Receiver
-						include
-							archetype_id/value matches {/openEHR-EHR-CLUSTER\.person(-[a-zA-Z0-9_]+)*\.v1|openEHR-EHR-CLUSTER\.organisation(-[a-zA-Z0-9_]+)*\.v1/}
-					}
-					allow_archetype CLUSTER[at0031] occurrences matches {0..*} matches {    -- Extension
-						include
-							archetype_id/value matches {/.*/}
 					}
 				}
 			}
@@ -570,38 +507,6 @@ ontology
 					text = <"Description">
 					description = <"Narrative description about the service, as appropriate for the pathway step.">
 				>
-				["at0014"] = <
-					text = <"Service type">
-					description = <"Type of service carried out.">
-					comment = <"For example: 'MDT meeting' or 'Referral'">
-				>
-				["at0015"] = <
-					text = <"Tree">
-					description = <"@ internal @">
-				>
-				["at0016"] = <
-					text = <"Requestor identifier">
-					description = <"The local ID assigned to the order by the healthcare provider or organisation requesting the service.">
-					comment = <"This is equivalent to Placer Identifier in FHIR.">
-				>
-				["at0017"] = <
-					text = <"Requestor">
-					description = <"Details about the healthcare provider or organisation requesting the service.">
-				>
-				["at0018"] = <
-					text = <"Service provider identifier">
-					description = <"The ID assigned to the order by the provider fulfilling the service.">
-					comment = <"This is equivalent to Filler Identifier in FHIR.">
-				>
-				["at0019"] = <
-					text = <"Receiver">
-					description = <"Details about the healthcare provider or organisation receiving the service request.">
-				>
-				["at0021"] = <
-					text = <"Sequence">
-					description = <"The sequence of the specified clinical service.">
-					comment = <"Only for use in association with the 'Service delivered' pathway step. For example: record that this is the 3rd physiotherapy appointment in a planned sequence.">
-				>
 				["at0023"] = <
 					text = <"Service expired">
 					description = <"The referral has expired before the referral episode has been completed.">
@@ -615,36 +520,13 @@ ontology
 					text = <"Service request sent">
 					description = <"Request for service sent.">
 				>
-				["at0027"] = <
-					text = <"Service detail">
-					description = <"Structured information about the service.">
-					comment = <"Use to capture detailed, structured information about specified aspects of the service.">
-				>
 				["at0028"] = <
 					text = <"Comment">
 					description = <"Additional narrative about the activity or care pathway step not captured in other fields.">
 				>
-				["at0029"] = <
-					text = <"Multimedia representation">
-					description = <"Digital image, video, diagram or other media representing the service.">
-				>
-				["at0031"] = <
-					text = <"Extension">
-					description = <"Additional information required to capture local content or to align with other reference models/formalisms.">
-					comment = <"For example: local information requirements or additional metadata to align with FHIR equivalents.">
-				>
-				["at0032"] = <
-					text = <"Planned date/time">
-					description = <"The estimated date and/or time on which the service is intended to be performed.">
-					comment = <"The planned date/time can be expressed as a date/time, interval of date/time, duration or interval of duration from the time of planning, or free or coded text. Only for use in association with the 'Service planned' pathway step.">
-				>
 				["at0035"] = <
 					text = <"Service request received">
 					description = <"Request for service received by the service provider.">
-				>
-				["at0036"] = <
-					text = <"Additional details">
-					description = <"Additional structured details about the service.">
 				>
 			>
 		>
@@ -706,38 +588,6 @@ ontology
 					text = <"Descrição">
 					description = <"Descrição narrativa sobre o serviço, conforme apropriado para a etapa do percurso.">
 				>
-				["at0014"] = <
-					text = <"Tipo do serviço">
-					description = <"*Type of service carried out. (en)">
-					comment = <"*For example: 'MDT meeting' or 'Referral' (en)">
-				>
-				["at0015"] = <
-					text = <"Tree">
-					description = <"@ internal @">
-				>
-				["at0016"] = <
-					text = <"Identificador do solicitante">
-					description = <"*The local ID assigned to the order by the healthcare provider or organisation requesting the service. (en)">
-					comment = <"*This is equivalent to Placer Identifier in FHIR. (en)">
-				>
-				["at0017"] = <
-					text = <"Solicitante">
-					description = <"Detalhes sobre o prestador de cuidados de saúde ou organização que solicita o serviço.">
-				>
-				["at0018"] = <
-					text = <"*Service provider identifier (en)">
-					description = <"*The ID assigned to the order by the provider fulfilling the service. (en)">
-					comment = <"*This is equivalent to Filler Identifier in FHIR. (en)">
-				>
-				["at0019"] = <
-					text = <"Receptor">
-					description = <"*Details about the healthcare provider or organisation receiving the service request. (en)">
-				>
-				["at0021"] = <
-					text = <"Sequência">
-					description = <"A sequência do serviço clínico especificado.">
-					comment = <"Apenas para uso em associação com a etapa 'Serviço entregue'. Por exemplo: registre que esta é a terceira consulta de fisioterapia em uma seqüência planejada.">
-				>
 				["at0023"] = <
 					text = <"Serviço expirado">
 					description = <"O encaminhamento expirou antes do episódio de encaminhamento ter sido concluído.">
@@ -751,36 +601,13 @@ ontology
 					text = <"Solicitação de serviço enviada">
 					description = <"Solicitação de serviço enviada.">
 				>
-				["at0027"] = <
-					text = <"Detalhes do serviço">
-					description = <"Informações estruturadas sobre o serviço.">
-					comment = <"Use para capturar informações detalhadas e estruturadas sobre aspectos específicos do serviço.">
-				>
 				["at0028"] = <
 					text = <"Comentário">
 					description = <"Narrativa adicional sobre a atividade ou o caminho da assistência não capturado em outros campos.">
 				>
-				["at0029"] = <
-					text = <"*Multimedia representation (en)">
-					description = <"*Digital image, video, diagram or other media representing the service. (en)">
-				>
-				["at0031"] = <
-					text = <"*Extension (en)">
-					description = <"*Additional information required to capture local content or to align with other reference models/formalisms. (en)">
-					comment = <"*For example: local information requirements or additional metadata to align with FHIR equivalents. (en)">
-				>
-				["at0032"] = <
-					text = <"*Planned date/time (en)">
-					description = <"*The estimated date and/or time on which the service is intended to be performed. (en)">
-					comment = <"*The planned date/time can be expressed as a date/time, interval of date/time, duration or interval of duration from the time of planning, or free or coded text. Only for use in association with the 'Service planned' pathway step. (en)">
-				>
 				["at0035"] = <
 					text = <"*Service request received (en)">
 					description = <"*Request for service received by the service provider. (en)">
-				>
-				["at0036"] = <
-					text = <"*Additional details (en)">
-					description = <"*Additional structured details about the service. (en)">
 				>
 			>
 		>
@@ -840,38 +667,6 @@ ontology
 					text = <"Beschreibung">
 					description = <"Beschreibung der Dienstleistung entsprechend dem jeweiligen Schritt im Pfad.">
 				>
-				["at0014"] = <
-					text = <"Art der Dienstleistung">
-					description = <"Art der durchgeführten Dienstleistung.">
-					comment = <"Beispiel: \"MDT-Meeting\" oder \"Überweisung\".">
-				>
-				["at0015"] = <
-					text = <"Tree">
-					description = <"@ internal @">
-				>
-				["at0016"] = <
-					text = <"Anforderer ID">
-					description = <"Die lokale ID, die der Anforderung vom Gesundheitsdienstleister oder der Organisation zugewiesen wurde, die den Service anfordert.">
-					comment = <"Dies entspricht dem \"Placer Identifier\" in FHIR.">
-				>
-				["at0017"] = <
-					text = <"Antragsteller">
-					description = <"Angaben über den Gesundheitsdienstleister oder die Organisation, die die Dienstleistung anfordert.">
-				>
-				["at0018"] = <
-					text = <"Service Provider Identifier">
-					description = <"Die ID, die dem Auftrag vom Dienstleister zugewiesen wird, der die Dienstleistung erfüllt.">
-					comment = <"Dies entspricht dem \"Filler Identifier\" in FHIR.">
-				>
-				["at0019"] = <
-					text = <"Empfänger">
-					description = <"Details über den Gesundheitsdienstleister oder die Organisation, die den Dienstleistungsantrag erhalten hat.">
-				>
-				["at0021"] = <
-					text = <"Abfolge">
-					description = <"Die Reihenfolge der angegebenen klinischen Dienstleistung.">
-					comment = <"Nur in Verbindung mit \"Dienstleistung erbracht\" verwenden. Zum Beispiel: Aufzeichnung, dass es sich um den 3. Physiotherapietermin einer geplanten Abfolge handelt.">
-				>
 				["at0023"] = <
 					text = <"Dienstleistung abgelaufen">
 					description = <"Die Überweisung ist abgelaufen, bevor der Überweisungs-Zeitraum beendet war.">
@@ -885,36 +680,13 @@ ontology
 					text = <"Dienstleistungsanforderung versendet">
 					description = <"Dienstleistungsanforderung an den Gesundheitsdienstleister ist versendet.">
 				>
-				["at0027"] = <
-					text = <"Dienstleistungsdetails">
-					description = <"Strukturierte Informationen über die Dienstleistung.">
-					comment = <"Verwenden um ausführliche, strukturierte Informationen über spezielle Aspekte der Dienstleistung festzuhalten.">
-				>
 				["at0028"] = <
 					text = <"Kommentar">
 					description = <"Zusätzliche Beschreibung über die Aktivität oder den Pfadschritt, die in anderen Feldern nicht erfasst wurde.">
 				>
-				["at0029"] = <
-					text = <"Multimediale Darstellung">
-					description = <"Digitales Bild, Video, Diagramm oder andere Medien, die die Dienstleistung darstellen.">
-				>
-				["at0031"] = <
-					text = <"Erweiterung">
-					description = <"Zusätzliche Informationen, die zur Erfassung lokaler Inhalte oder zur Anpassung an andere Referenzmodelle/Formalismen erforderlich sind.">
-					comment = <"Zum Beispiel: Lokale Informationsanforderungen oder zusätzliche Metadaten, um Verknüpfungen mit FHIR herzustellen.">
-				>
-				["at0032"] = <
-					text = <"Geplantes Datum/geplante Uhrzeit">
-					description = <"Das geschätzte Datum und/oder die geschätzte Uhrzeit, zu der die Dienstleistung durchgeführt werden soll.">
-					comment = <"Das geplante Datum/Uhrzeit kann als Datum/Uhrzeit, Intervall von Datum/Uhrzeit, Dauer oder Intervall von Dauer ab dem Zeitpunkt der Planung oder als freier oder codierter Text ausgedrückt werden. Nur in Verbindung mit dem Schritt \"Dienstleistung geplant\" zu verwenden.">
-				>
 				["at0035"] = <
 					text = <"Dienstleistungsanforderung erhalten">
 					description = <"Anfrage für eine Dienstleistung wurde vom Gesundheitsdienstleister erhalten.">
-				>
-				["at0036"] = <
-					text = <"Zusätzliche Angaben">
-					description = <"Zusätzliche strukturierte Details zur Dienstleistung.">
 				>
 			>
 		>
@@ -974,38 +746,6 @@ ontology
 					text = <"Beskrivelse">
 					description = <"Fritekstbeskrivelse av tjenesten, som passer for prosesstrinnet.">
 				>
-				["at0014"] = <
-					text = <"Tjenestetype">
-					description = <"Typen tjeneste som utføres.">
-					comment = <"For eksempel \"MDT-møte\" eller \"Henvisning\".">
-				>
-				["at0015"] = <
-					text = <"Tree">
-					description = <"@ internal @">
-				>
-				["at0016"] = <
-					text = <"Rekvisisjonsidentifikator">
-					description = <"Den lokale IDen tilordnet rekvisisjonen av helsepersonellet eller organisasjonen som rekvirerer helsetjenesteaktiviteten.">
-					comment = <"Dette tilsvarer \"Placer Identifier\" i FHIR.">
-				>
-				["at0017"] = <
-					text = <"Rekvirent">
-					description = <"Detaljer om helsepersonellet eller organisasjonen som har rekvirert helsetjenesteaktiviteten.">
-				>
-				["at0018"] = <
-					text = <"Utførers identifikator">
-					description = <"IDen tilordnet rekvisisjonen av helsepersonellet eller organisasjonen som utfører tjenesten.">
-					comment = <"Dette tilsvarer \"Filler Identifier\" i FHIR.">
-				>
-				["at0019"] = <
-					text = <"Mottaker">
-					description = <"Detaljer om helsepersonellet eller organisasjonen som mottar helsetjenesteforespørselen.">
-				>
-				["at0021"] = <
-					text = <"Sekvens">
-					description = <"Sekvensen av den kliniske tjenesten.">
-					comment = <"Kun for bruk i forbindelse med prosesstrinnet \"Tjeneste utført\". For eksempel: angi at dette er 3. fysioterapitime i planlagt sekvens.">
-				>
 				["at0023"] = <
 					text = <"Tjeneste utløpt">
 					description = <"Tjenesteforespørselen har utløpt før tjenesten var fullført.">
@@ -1019,36 +759,13 @@ ontology
 					text = <"Tjenesteforespørsel sendt">
 					description = <"Tjenesteforespørsel sendt.">
 				>
-				["at0027"] = <
-					text = <"Tjenestedetaljer">
-					description = <"Strukturert informasjon om tjenesten.">
-					comment = <"Bruk for å registrere detaljert, strukturert informasjon om spesifikke aspekter av tjenesten.">
-				>
 				["at0028"] = <
 					text = <"Kommentar">
 					description = <"Ytterligere fritekst om helsetjenesteaktiviteten eller prosesstrinnet som ikke fanges opp i andre felt.">
 				>
-				["at0029"] = <
-					text = <"Multimediarepresentasjon">
-					description = <"Digitalt bilde, video, diagram eller andre media som representerer helsetjenesten.">
-				>
-				["at0031"] = <
-					text = <"Tilleggsinformasjon">
-					description = <"Ytterligere informasjon som trengs for å kunne registrere lokalt definert innhold eller for å tilpasse til andre referansemodeller/formalismer.">
-					comment = <"For eksempel lokale informasjonsbehov eller ytterligere metadata for å kunne tilpasse til tilsvarende konsepter i FHIR.">
-				>
-				["at0032"] = <
-					text = <"Ønsket dato/tid">
-					description = <"Den estimerte datoen og/eller tidspunktet for når tjenesten ønskes utført.">
-					comment = <"Den ønskede dato/tiden kan uttrykkes som en dato/tid, et intervall av dato/tid, varighet eller intervall av varighet fra planleggingstidspunktet, eller fri eller kodet tekst. Elementet skal kun brukes i forbindelse med prosesstrinnet \"Tjeneste planlagt\".">
-				>
 				["at0035"] = <
 					text = <"Tjenesteforespørsel mottatt">
 					description = <"Tjenesteforespørsel mottatt av tjenesteutføreren.">
-				>
-				["at0036"] = <
-					text = <"Ytterligere detaljer">
-					description = <"Ytterligere strukturerte detaljer om tjenesten.">
 				>
 			>
 		>
@@ -1108,38 +825,6 @@ ontology
 					text = <"Beschrijving">
 					description = <"Verhalende beschrijving over de dienst, zoals passend bij de stap van het traject.">
 				>
-				["at0014"] = <
-					text = <"Type dienst">
-					description = <"Type dienst die is uitgevoerd.">
-					comment = <"Bijvoorbeeld: \"Verwijzing\".">
-				>
-				["at0015"] = <
-					text = <"Tree">
-					description = <"@ internal @">
-				>
-				["at0016"] = <
-					text = <"Identificatiecode aanvrager">
-					description = <"De lokale ID die aan de opdracht is toegewezen door de zorgverlener of organisatie die de dienst aanvraagt.">
-					comment = <"Dit is gelijkwaardig aan Placer Identifier in FHIR.">
-				>
-				["at0017"] = <
-					text = <"Aanvrager">
-					description = <"Gegevens over de zorgverlener of organisatie die de dienst aanvraagt.">
-				>
-				["at0018"] = <
-					text = <"Identificatiecode serviceprovider">
-					description = <"Het ID dat aan de bestelling is toegewezen door de dienstverlener die de dienst uitvoert.">
-					comment = <"Dit is gelijkwaardig aan Filler Identifier in FHIR.">
-				>
-				["at0019"] = <
-					text = <"Ontvanger">
-					description = <"Gegevens over de zorgverlener of organisatie die de dienstaanvraag ontvangt.">
-				>
-				["at0021"] = <
-					text = <"Volgorde">
-					description = <"De volgorde van de gespecificeerde klinische dienst.">
-					comment = <"Alleen te gebruiken in combinatie met de stap \"Dienst geleverd\". Bijvoorbeeld: Registreer dat dit de 3de fysiotherapie afspraak is in een geplande reeks.">
-				>
 				["at0023"] = <
 					text = <"Dienst verlopen">
 					description = <"De verwijzing is verlopen voordat de verwijzingsepisode is afgerond.">
@@ -1153,36 +838,13 @@ ontology
 					text = <"Dienstverzoek verzonden">
 					description = <"Verzoek om dienst verstuurd.">
 				>
-				["at0027"] = <
-					text = <"Details over dienst">
-					description = <"Gestructureerde informatie over de dienst.">
-					comment = <"Voor het vastleggen van gedetailleerde, gestructureerde informatie over specifieke aspecten van de dienst.">
-				>
 				["at0028"] = <
 					text = <"Opmerking">
 					description = <"Aanvullende informatie over de activiteit of zorgtrajectstap die niet in andere velden is opgenomen.">
 				>
-				["at0029"] = <
-					text = <"Multimedia-representatie">
-					description = <"Digitale afbeelding, video, diagram of andere media die de service weergeven.">
-				>
-				["at0031"] = <
-					text = <"Uitbreiding">
-					description = <"Aanvullende informatie die nodig is om lokale inhoud vast te leggen of om aan te sluiten bij andere referentiemodellen/formaliseringen.">
-					comment = <"Bijvoorbeeld: lokale informatievereisten of aanvullende metadata om aan te sluiten bij FHIR-equivalenten.">
-				>
-				["at0032"] = <
-					text = <"Geplande datum/tijd">
-					description = <"De geschatte datum en/of tijd waarop de dienst zal worden uitgevoerd.">
-					comment = <"De geplande datum/tijd kan worden uitgedrukt als een datum/tijd, datum/tijd interval, duur of interval van duur vanaf het moment van planning, of vrije of gecodeerde tekst. Alleen te gebruiken in combinatie met de stap \"Dienst gepland\".">
-				>
 				["at0035"] = <
 					text = <"Dienstverzoek ontvangen">
 					description = <"Verzoek om dienst ontvangen door de uitvoerder.">
-				>
-				["at0036"] = <
-					text = <"Extra details">
-					description = <"Extra gestructureerde details over de service.">
 				>
 			>
 		>
