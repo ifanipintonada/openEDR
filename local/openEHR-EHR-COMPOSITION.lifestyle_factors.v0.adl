@@ -106,7 +106,7 @@ Initieel ontwerp van dit archetype was gesubsidieerd door het iCareNet Antenatal
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"D58C6DA0C5FC12B15E83F7CE21D66F6B">
+		["MD5-CAM-1.0.1"] = <"2757db0d2225c230f4b4179337be2066">
 		["build_uid"] = <"d0d4bf04-59f9-4e37-910b-1833a4f96020">
 		["revision"] = <"0.0.1-alpha">
 	>
@@ -120,20 +120,6 @@ definition
 				}
 			}
 		}
-		context matches {
-			EVENT_CONTEXT matches {
-				other_context matches {
-					ITEM_TREE[at0002] matches {    -- Tree
-						items cardinality matches {0..*; unordered} matches {
-							allow_archetype ITEM[at0003] occurrences matches {0..*} matches {    -- Extension
-								include
-									archetype_id/value matches {/openEHR-EHR-CLUSTER\.document_entry_metadata(-[a-zA-Z0-9_]+)*\.v1|openEHR-EHR-CLUSTER\.document_entry_metadata(-[a-zA-Z0-9_]+)*\.v0/}
-							}
-						}
-					}
-				}
-			}
-		}
 	}
 
 ontology
@@ -144,15 +130,6 @@ ontology
 					text = <"Lifestyle risk factors">
 					description = <"A persistent and evolving summary record of information about lifestyle risk factors that may influence health outcomes, clinical decision-making and provision of care.">
 				>
-				["at0002"] = <
-					text = <"Tree">
-					description = <"@ internal @">
-				>
-				["at0003"] = <
-					text = <"Extension">
-					description = <"Additional information required to extend the model with local content or to align with other reference models or formalisms.">
-					comment = <"For example: local information requirements; or additional metadata to align with FHIR.">
-				>
 			>
 		>
 		["de"] = <
@@ -160,15 +137,6 @@ ontology
 				["at0000"] = <
 					text = <"Lifestyle-Risikofaktoren">
 					description = <"Eine beständige und sich entwickelnde Zusammenfassung von Informationen über Lifestyle-Risikofaktoren, die den gesundheitlichen Zustand, die klinische Entscheidungsfindung und die Gesundheitsversorgung beeinflussen könnten.">
-				>
-				["at0002"] = <
-					text = <"Tree">
-					description = <"@ internal @">
-				>
-				["at0003"] = <
-					text = <"Erweiterung">
-					description = <"Zusätzliche Informationen zur Erfassung lokaler Inhalte oder Anpassung an andere Referenzmodelle/Formalismen.">
-					comment = <"Zum Beispiel: lokaler Informationsbedarf oder zusätzliche Metadaten zur Anpassung an FHIR-Ressourcen.">
 				>
 			>
 		>
@@ -178,15 +146,6 @@ ontology
 					text = <"Levensstijl risicofactoren">
 					description = <"Een blijvende en voortschrijdende samenvatting van informatie over leefstijlkeuzes en activiteiten vast te leggen die van invloed kunnen zijn op klinische beslissingen en levering van zorg.">
 				>
-				["at0002"] = <
-					text = <"Tree">
-					description = <"@ internal @">
-				>
-				["at0003"] = <
-					text = <"Uitbreiding">
-					description = <"Aanvullende informatie benodigd om het model uit te breiden met lokale inhoud of om aan te sluiten bij andere referentiemodellen of formalismen.">
-					comment = <"Bijvoorbeeld: lokale informatie eisen; of aanvullende metadata om aan te sluiten bij FHIR.">
-				>
 			>
 		>
 		["el"] = <
@@ -194,14 +153,6 @@ ontology
 				["at0000"] = <
 					text = <"Παράγοντες κινδύνου τρόπου ζωής">
 					description = <"Ένα επίμονο και εξελισσόμενο συνοπτικό αρχείο πληροφοριών σχετικά με τους παράγοντες κινδύνου του τρόπου ζωής που μπορεί να επηρεάσουν τα αποτελέσματα της υγείας, τη λήψη κλινικών αποφάσεων και την παροχή φροντίδας.">
-				>
-				["at0002"] = <
-					text = <"Tree">
-					description = <"@ internal @">
-				>
-				["at0003"] = <
-					text = <"*Extension(en)">
-					description = <"*Additional information required to extend the model with local content or to align with other reference models or formalisms.(en)">
 				>
 			>
 		>
