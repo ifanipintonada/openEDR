@@ -33,17 +33,17 @@ Based on the data model developed within the EMPOWER project, www.empower-fp7,eu
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"11AC37BAB99DEA4547D0C1F1FBBD1CDF">
+		["MD5-CAM-1.0.1"] = <"c7087d9316d143ce796968dbce748fb6">
 		["build_uid"] = <"8e2e6349-caf1-43bc-995e-1e427d0bbb1b">
 		["revision"] = <"0.0.1-alpha">
 	>
 
 definition
-	OBSERVATION[at0000] matches {    -- Stress (EMPOWER)
+	OBSERVATION[at0000] matches {    -- Stress
 		data matches {
 			HISTORY[at0001] matches {    -- Event Series
 				events cardinality matches {1..*; unordered} matches {
-					EVENT[at0002] occurrences matches {0..1} matches {    -- Any event
+					EVENT[at0002] occurrences matches {0..1} matches {    -- Date
 						data matches {
 							ITEM_TREE[at0003] matches {    -- Tree
 								items cardinality matches {1..*; unordered} matches {
@@ -71,7 +71,7 @@ ontology
 		["en"] = <
 			items = <
 				["at0000"] = <
-					text = <"Stress (EMPOWER)">
+					text = <"Stress">
 					description = <"Self-assesment of the level of perceived stress as an observation of daily living.">
 				>
 				["at0001"] = <
@@ -79,7 +79,7 @@ ontology
 					description = <"@ internal @">
 				>
 				["at0002"] = <
-					text = <"Any event">
+					text = <"Date">
 					description = <"Timepoint.">
 				>
 				["at0003"] = <
