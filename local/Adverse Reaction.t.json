@@ -19,9 +19,9 @@
       "original_namespace" : "",
       "original_publisher" : "",
       "custodian_namespace" : "",
-      "sem_ver" : "0.2.0",
+      "sem_ver" : "1.0.0",
       "build_uid" : "",
-      "MD5-CAM-1.0.1" : "afda68ba4ba5fae87e986582a29e8002",
+      "MD5-CAM-1.0.1" : "933f8a04ede29cf4117ff9a4d5712044",
       "PARENT:MD5-CAM-1.0.1" : "5a249b04e673aa7b988c0356e67212ba"
     },
     "details" : {
@@ -247,7 +247,14 @@
       "@type" : "ARCHETYPE_TERMINOLOGY",
       "conceptCode" : "at0000",
       "termDefinitions" : {
-        "en" : { },
+        "en" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "Adverse reaction",
+            "description" : "Framework for consistent modelling of content within a template for an Adverse reaction list."
+          }
+        },
         "ru" : { },
         "pt-br" : { }
       },
