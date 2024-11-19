@@ -88,7 +88,7 @@ This archetype is intended to be nested in the 'Specific details' SLOT within ei
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"E39F106284172E536F5DDD79A62CA873">
+		["MD5-CAM-1.0.1"] = <"05f5c2fc16f08d0eda45bda594fc0220">
 		["build_uid"] = <"4178054c-28f8-4191-a60c-173b5522e0c2">
 		["revision"] = <"1.0.2">
 	>
@@ -96,11 +96,6 @@ This archetype is intended to be nested in the 'Specific details' SLOT within ei
 definition
 	CLUSTER[at0000] matches {    -- Common Terminology Criteria for Adverse Events (CTCAE)
 		items cardinality matches {1..*; unordered} matches {
-			ELEMENT[at0001] occurrences matches {0..1} matches {    -- Category
-				value matches {
-					DV_TEXT matches {*}
-				}
-			}
 			ELEMENT[at0002] matches {    -- Term
 				value matches {
 					DV_TEXT matches {*}
@@ -121,11 +116,6 @@ definition
 					DV_TEXT matches {*}
 				}
 			}
-			ELEMENT[at0009] occurrences matches {0..1} matches {    -- CTCAE version
-				value matches {
-					DV_TEXT matches {*}
-				}
-			}
 		}
 	}
 
@@ -138,11 +128,6 @@ ontology
 					description = <"A framework for recording the CTCAE classification for an unfavourable and unintended sign, symptom or disease.">
 					comment = <"Formerly known as Common Toxicity Criteria (CTC).">
 				>
-				["at0001"] = <
-					text = <"Category">
-					description = <"The MedDRA System Organ Class (SOC) category corresponding to the CTCAE 'Term' (LLT).">
-					comment = <"This element identifies the anatomical or physiological system, aetiology or purpose.">
-				>
 				["at0002"] = <
 					text = <"Term">
 					description = <"The name of the sign, symptom or disease observed, recorded as a MedDRA Lowest Level Term (LLT).">
@@ -152,10 +137,6 @@ ontology
 					text = <"Grade category">
 					description = <"The category representing the severity of the adverse event.">
 					comment = <"The clinical descriptions for each 'Grade category' are documented in the published CTCAE v5.0 specification. Grade 0 has not been in use since CTCAE v2 but allows for the use of all versions of CTCAE.">
-				>
-				["at0009"] = <
-					text = <"CTCAE version">
-					description = <"The version of the CTCAE terminology used.">
 				>
 				["at0015"] = <
 					text = <"Grade 1">
@@ -195,11 +176,6 @@ ontology
 					description = <"Eine Rahmenstruktur zur Darstellung der CTCAE-Klassifikation eines ungünstigen und unbeabsichtigten Anzeichens, Symptoms oder einer Krankheit.">
 					comment = <"Früher bekannt als Common Toxicity Criteria (CTC).">
 				>
-				["at0001"] = <
-					text = <"Kategorie">
-					description = <"Die MedDRA-Systemorganklasse (SOC) welche den CTCAE-\"Term\" (LLT) einschließt.">
-					comment = <"Dieses Element identifiziert das anatomische oder physiologische System, die Ätiologie oder den Zweck.">
-				>
 				["at0002"] = <
 					text = <"Term">
 					description = <"Der Name des beobachteten Anzeichens, Symptoms oder der Krankheit, dargestellt mit MedDRA Lowest Level Term (LLT).">
@@ -209,10 +185,6 @@ ontology
 					text = <"Grad-Kategorie">
 					description = <"Die Kategorie, die den Schweregrad des unerwünschten Ereignisses darstellt.">
 					comment = <"Die klinischen Beschreibungen für jede „Grad-Kategorie“ sind in der veröffentlichten CTCAE v5.0-Spezifikation dokumentiert. Grad 0 wird seit CTCAE v2 nicht mehr verwendet, ermöglicht jedoch die Verwendung aller Versionen von CTCAE.">
-				>
-				["at0009"] = <
-					text = <"CTCAE-Version">
-					description = <"Die verwendete Version der CTCAE-Terminologie.">
 				>
 				["at0015"] = <
 					text = <"Grad 1">
@@ -253,13 +225,6 @@ ontology
 ">
 					comment = <"Tidigare känd som Common Toxicity Criteria (CTC).">
 				>
-				["at0001"] = <
-					text = <"Kategori (SOC)">
-					description = <"Kategorin i MedDRA System Organ Class (SOC) som den aktuella CTCAE-termen tillhör.
-">
-					comment = <"Detta fält identifierar ett anatomiskt eller fysiologiskt system, etiologi eller syfte.
-">
-				>
 				["at0002"] = <
 					text = <"Term">
 					description = <"Namnet på tecknet, symtomet eller sjukdomen som observerats. Registreras som en MedDRA Lowest Level Term (LLT).
@@ -271,10 +236,6 @@ ontology
 					description = <"Kategorisering av biverkningens allvarlighetshetsgrad.
 ">
 					comment = <"De kliniska beskrivningarna av varje \"allvarlighetsgrad\" finns dokumenterade i CTCAE v5.0-specifikationen. Grad 0 har inte använts sedan CTCAE v2 men finns kvar i arketypen för att möjliggöra användning av alla versioner av CTCAE.">
-				>
-				["at0009"] = <
-					text = <"CTCAE-version">
-					description = <"Den version av CTCAE-terminologin som använts.">
 				>
 				["at0015"] = <
 					text = <"Grad 1">
@@ -314,13 +275,6 @@ ontology
 					description = <"Et rammeverk for å registrere CTCAE klassifikasjon av en uønsket hendelse, symptom eller sykdomtilstand.">
 					comment = <"Tidligere kjent som Common Toxicity Criteria (CTC).">
 				>
-				["at0001"] = <
-					text = <"Kategori">
-					description = <"Kategorien innenfor MedDRA System Organ Class (SOC) som er knyttet til CTCAE Term (LTT).">
-					comment = <"Dette elementet identifiserer et anatomisk eller fysiologisk system, etiologi eller formål.
-
-">
-				>
 				["at0002"] = <
 					text = <"Term">
 					description = <"Navnet på sykdomstegnet, symptomet eller sykdommen som er observert, registrert som en MedDRA Lowest Level Term (LLT).">
@@ -330,10 +284,6 @@ ontology
 					text = <"Kategori for grad">
 					description = <"Kategorien som representerer alvorlighetsgraden av den uønskede hendelsen.">
 					comment = <"Den kliniske beskrivelsen for hver \"Kategori for grad\" er dokumentert i den publiserte spesifikasjonen av CTCAE v5.0. Grad 0 har ikke vært i bruk siden CTCAE v2, men er tatt med for å kunne brukes for alle versjoner av CTCAE.">
-				>
-				["at0009"] = <
-					text = <"CTCAE- versjon">
-					description = <"Den versjonen av CTCAE-terminologien som er brukt.">
 				>
 				["at0015"] = <
 					text = <"Grad 1">
