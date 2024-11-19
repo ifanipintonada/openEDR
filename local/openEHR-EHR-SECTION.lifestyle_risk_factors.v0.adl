@@ -33,15 +33,15 @@ This archetype is intended to be used within the COMPOSITION.lifestyle_factors o
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"999CF2285FE14684F1D9B29CC45BAD80">
+		["MD5-CAM-1.0.1"] = <"8ea92bdb9bf284a4d9b9b65410156466">
 		["build_uid"] = <"ea00fe88-bf89-4309-bdab-282608d73be6">
 		["revision"] = <"0.0.1-alpha">
 	>
 
 definition
-	SECTION[at0000] matches {    -- Lifestyle risk factors
+	SECTION[at0000] matches {    -- Social History
 		items cardinality matches {1..*; unordered} matches {
-			allow_archetype ENTRY[at0005] occurrences matches {0..*} matches {    -- Risk factors
+			allow_archetype ENTRY[at0005] occurrences matches {0..*} matches {    -- Lifestyle risk factors
 				include
 					archetype_id/value matches {/openEHR-EHR-EVALUATION\.tobacco_smoking_summary\.v1|openEHR-EHR-EVALUATION\.alcohol_consumption_summary\.v1|openEHR-EHR-EVALUATION\.physical_activity_summary\.v0|openEHR-EHR-EVALUATION\.food_nutrition_summary\.v0|openEHR-EHR-EVALUATION\.gambling_summary\.v0|openEHR-EHR-EVALUATION\.sexual_health_summary\.v0|openEHR-EHR-EVALUATION\.vaping_summary\.v0|openEHR-EHR-EVALUATION\.smokeless_tobacco_summary\.v1/}
 			}
@@ -53,11 +53,11 @@ ontology
 		["en"] = <
 			items = <
 				["at0000"] = <
-					text = <"Lifestyle risk factors">
+					text = <"Social History">
 					description = <"Framework for consistent modelling of content within a template for Lifestyle risk factors.">
 				>
 				["at0005"] = <
-					text = <"Risk factors">
+					text = <"Lifestyle risk factors">
 					description = <"">
 				>
 			>
