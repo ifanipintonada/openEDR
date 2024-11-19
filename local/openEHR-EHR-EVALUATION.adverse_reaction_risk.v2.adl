@@ -302,7 +302,7 @@ Thien FC. Drug hypersensitivity. Med J Aust. 2006 Sep 18;185(6):333-8. Review. P
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"19F2BC4F565422749861B468594E50E7">
+		["MD5-CAM-1.0.1"] = <"f1a31ea56da27ac62e15d094474168df">
 		["build_uid"] = <"63592b37-306a-4201-a529-181128ace219">
 		["revision"] = <"2.0.0">
 	>
@@ -312,33 +312,21 @@ definition
 		data matches {
 			ITEM_TREE[at0001] matches {    -- Tree
 				items cardinality matches {1..*; unordered} matches {
+					ELEMENT[at0120] occurrences matches {0..1} matches {    -- Category
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0121,    -- Food
+									at0122,    -- Medication
+									at0123]    -- Other
+								}
+							}
+							DV_TEXT matches {*}
+						}
+					}
 					ELEMENT[at0002] matches {    -- Substance
 						value matches {
-							DV_TEXT matches {*}
-						}
-					}
-					ELEMENT[at0130] occurrences matches {0..1} matches {    -- Active/inactive status
-						value matches {
-							DV_CODED_TEXT matches {
-								defining_code matches {
-									[local::
-									at0131,    -- Active
-									at0132]    -- Inactive
-								}
-							}
-							DV_TEXT matches {*}
-						}
-					}
-					ELEMENT[at0063] occurrences matches {0..1} matches {    -- Verification status
-						value matches {
-							DV_CODED_TEXT matches {
-								defining_code matches {
-									[local::
-									at0064,    -- Unconfirmed
-									at0065,    -- Confirmed
-									at0066]    -- Refuted
-								}
-							}
 							DV_TEXT matches {*}
 						}
 					}
@@ -350,19 +338,6 @@ definition
 									at0102,    -- Low
 									at0103,    -- High
 									at0124]    -- Indeterminate
-								}
-							}
-							DV_TEXT matches {*}
-						}
-					}
-					ELEMENT[at0120] occurrences matches {0..1} matches {    -- Category
-						value matches {
-							DV_CODED_TEXT matches {
-								defining_code matches {
-									[local::
-									at0121,    -- Food
-									at0122,    -- Medication
-									at0123]    -- Other
 								}
 							}
 							DV_TEXT matches {*}
@@ -386,19 +361,6 @@ definition
 							DV_INTERVAL<DV_DURATION> matches {*}
 						}
 					}
-					ELEMENT[at0058] occurrences matches {0..1} matches {    -- Reaction mechanism
-						value matches {
-							DV_CODED_TEXT matches {
-								defining_code matches {
-									[local::
-									at0059,    -- Immune mediated
-									at0060,    -- Non-immune mediated
-									at0126]    -- Indeterminate
-								}
-							}
-							DV_TEXT matches {*}
-						}
-					}
 					allow_archetype CLUSTER[at0129] occurrences matches {0..*} matches {    -- Reaction event summary
 						include
 							archetype_id/value matches {/openEHR-EHR-CLUSTER\.adverse_reaction_event(-[a-zA-Z0-9_]+)*\.v0|openEHR-EHR-CLUSTER\.adverse_reaction_event(-[a-zA-Z0-9_]+)*\.v1/}
@@ -407,26 +369,6 @@ definition
 						value matches {
 							DV_TEXT matches {*}
 						}
-					}
-				}
-			}
-		}
-		protocol matches {
-			ITEM_TREE[at0042] matches {    -- Tree
-				items cardinality matches {1..*; unordered} matches {
-					ELEMENT[at0062] occurrences matches {0..1} matches {    -- Last updated
-						value matches {
-							DV_DATE_TIME matches {*}
-						}
-					}
-					ELEMENT[at0047] occurrences matches {0..*} matches {    -- Supporting clinical record information
-						value matches {
-							DV_EHR_URI matches {*}
-						}
-					}
-					allow_archetype CLUSTER[at0128] occurrences matches {0..*} matches {    -- Extension
-						include
-							archetype_id/value matches {/.*/}
 					}
 				}
 			}
@@ -456,53 +398,6 @@ ontology
 					text = <"Comment">
 					description = <"Additional narrative about the propensity for the adverse reaction, not captured in other fields.">
 					comment = <"For example: including reason for flagging a 'Criticality' of 'High risk'; and instructions related to future exposure or administration of the Substance, such as administration within an Intensive Care Unit or under corticosteroid cover.">
-				>
-				["at0042"] = <
-					text = <"Tree">
-					description = <"@ internal @">
-				>
-				["at0047"] = <
-					text = <"Supporting clinical record information">
-					description = <"Link to further information about the presentation and findings that exist elsewhere in the health record, including allergy test reports.">
-					comment = <"For example, presenting symptoms, examination findings, diagnosis etc.">
-				>
-				["at0058"] = <
-					text = <"Reaction mechanism">
-					description = <"Identification of the underlying physiological mechanism for the adverse reaction.">
-					comment = <"Immune-mediated responses have been traditionally regarded as an indicator for escalation of significant future risk. Contemporary knowledge suggests that some reactions previously thought to be immune are actually non-immune and still carry life threatening risk. 
-
-Immunological testing may provide supporting evidence for the mechanism and causative substance , but no tests are 100% sensitive or specific for a sensitivity. 
-
-It is acknowledged that most clinicians will NOT be able to distinguish the mechanism of any specific reaction. However this data element is included because many legacy systems have captured this attribute.">
-				>
-				["at0059"] = <
-					text = <"Immune mediated">
-					description = <"Immune mediated reaction, including allergic reactions and hypersensitivities.">
-				>
-				["at0060"] = <
-					text = <"Non-immune mediated">
-					description = <"A non-immune mediated reaction, which can include pseudo-allergic reactions, side effects, intolerances, drug toxicities (for example, to Gentamicin).">
-				>
-				["at0062"] = <
-					text = <"Last updated">
-					description = <"Date when the propensity or the reaction event was updated.">
-				>
-				["at0063"] = <
-					text = <"Verification status">
-					description = <"Assertion about the certainty of the propensity, or potential future risk, of the identified 'Substance' to cause a reaction.">
-					comment = <"Decision support would typically raise alerts for 'Unconfirmed' and 'Confirmed', and ignore a 'Refuted' reaction. Clinical systems may choose not to display Adverse reaction entries with a 'Refuted' status in the Adverse Reaction List. However, 'Refuted' may be useful for reconciliation of the adverse reaction list or when communicating between systems. Some implementations may choose to make this field mandatory. The free text data type will allow for local variation by enabling other value sets to be applied to this data element in a template - in this situation it is recommended that values should be coded using a terminology.">
-				>
-				["at0064"] = <
-					text = <"Unconfirmed">
-					description = <"The propensity for a reaction to the identified 'Substance' has not been objectively verified.">
-				>
-				["at0065"] = <
-					text = <"Confirmed">
-					description = <"The propensity for a reaction to the identified 'Substance' has been objectively verified. This may include clinical evidence by testing, re-challenge or observation.">
-				>
-				["at0066"] = <
-					text = <"Refuted">
-					description = <"A propensity for a reaction to the identified 'Substance' has been disputed or disproven with a sufficient level of clinical certainty to justify invalidating the assertion. This may include clinical evidence by testing, re-challenge or observation.">
 				>
 				["at0101"] = <
 					text = <"Criticality">
@@ -543,30 +438,9 @@ It is acknowledged that most clinicians will NOT be able to distinguish the mech
 					text = <"Indeterminate">
 					description = <"Unable to assess with information available.">
 				>
-				["at0126"] = <
-					text = <"Indeterminate">
-					description = <"The physiological mechanism could not be determined.">
-				>
-				["at0128"] = <
-					text = <"Extension">
-					description = <"Additional information required to capture local content or to align with other reference models/formalisms.">
-					comment = <"For example: local information requirements or additional metadata to align with FHIR equivalents.">
-				>
 				["at0129"] = <
 					text = <"Reaction event summary">
 					description = <"Summary details about each adverse reaction event linked to exposure to the identified 'Substance'.">
-				>
-				["at0130"] = <
-					text = <"Active/inactive status">
-					description = <"Status about whether the adverse reaction risk statement is active or inactive.">
-				>
-				["at0131"] = <
-					text = <"Active">
-					description = <"The subject is currently experiencing, or is at risk of, a reaction to the identified substance.">
-				>
-				["at0132"] = <
-					text = <"Inactive">
-					description = <"The subject is no longer at risk of a reaction to the identified substance.">
 				>
 				["at0133"] = <
 					text = <"Onset of first reaction">
@@ -596,53 +470,6 @@ It is acknowledged that most clinicians will NOT be able to distinguish the mech
 					text = <"Comentários">
 					description = <"Narrativa adicional sobre a propensão para a reação adversa, não capturada em outros campos.">
 					comment = <"Por exemplo: incluir motivo para sinalizar uma criticidade de alto risco; e instruções relacionadas com a exposição futura ou a administração da substância, tais como a administração dentro de uma unidade de terapia intensiva ou sob cobertura de corticosteróide">
-				>
-				["at0042"] = <
-					text = <"Tree">
-					description = <"@ internal @">
-				>
-				["at0047"] = <
-					text = <"Apoio às informações clínicas do registro">
-					description = <"Link para mais informações sobre a apresentação e as conclusões que existe em outro lugar no registro de saúde, incluindo relatórios de teste de alergia.">
-					comment = <"*For example, presenting symptoms, examination findings, diagnosis etc. (en)">
-				>
-				["at0058"] = <
-					text = <"Mecanismo da Reação">
-					description = <"Identificação do mecanismo fisiológico subjacente para a reação adversa">
-					comment = <"Respostas imune-mediada tem sido tradicionalmente consideradas como um indicador para a escalada de risco significativo no futuro. Conhecimentos atuais sugerem que algumas reações que previamente se pensava serem imunes são na verdade não imunes e ainda carregam o risco de ameaça à vida.
-
-Testes imunológicos podem fornecer elementos de prova para o mecanismo e a substância causal, mas os testes não são 100% sensíveis ou específicos para uma sensibilidade.
-
-É reconhecido que a maioria dos clínicos não serão capazes de distinguir o mecanismo de qualquer reação específica. No entanto, este elemento de dados está incluído porque muitos sistemas legados tem capturado esse atributo">
-				>
-				["at0059"] = <
-					text = <"Imune - mediada">
-					description = <"Reação imune-mediada, incluindo hipersensibilidade e reações alérgicas.">
-				>
-				["at0060"] = <
-					text = <"Não imune-mediada">
-					description = <"Reação Não Imuno-mediada, que inclui pseudo alergias, intolerâncias, efeitos colaterais, toxicidade de drogas (por exemplo, a gentamicina).">
-				>
-				["at0062"] = <
-					text = <"Ultima atualização">
-					description = <"Data quando a propensão ou o evento de reação foi atualizado.">
-				>
-				["at0063"] = <
-					text = <"*Verification status (en)">
-					description = <"Declaração sobre a certeza da propensão ou potenciais riscos futuros, da substância identificada para causar uma reação.">
-					comment = <"*Decision support would typically raise alerts for 'Unconfirmed' and 'Confirmed', and ignore a 'Refuted' reaction. Clinical systems may choose not to display Adverse reaction entries with a 'Refuted' status in the Adverse Reaction List. However, 'Refuted' may be useful for reconciliation of the adverse reaction list or when communicating between systems. Some implementations may choose to make this field mandatory. The free text data type will allow for local variation by enabling other value sets to be applied to this data element in a template - in this situation it is recommended that values should be coded using a terminology. (en)">
-				>
-				["at0064"] = <
-					text = <"*Unconfirmed (en)">
-					description = <"*The propensity for a reaction to the identified 'Substance' has not been objectively verified. (en)">
-				>
-				["at0065"] = <
-					text = <"Confirmada">
-					description = <"*The propensity for a reaction to the identified 'Substance' has been objectively verified. This may include clinical evidence by testing, re-challenge or observation. (en)">
-				>
-				["at0066"] = <
-					text = <"Refutada">
-					description = <"*A propensity for a reaction to the identified 'Substance' has been disputed or disproven with a sufficient level of clinical certainty to justify invalidating the assertion. This may include clinical evidence by testing, re-challenge or observation. (en)">
 				>
 				["at0101"] = <
 					text = <"Criticidade">
@@ -683,30 +510,9 @@ Testes imunológicos podem fornecer elementos de prova para o mecanismo e a subs
 					text = <"Indeterminado">
 					description = <"Não é possível avaliar com informações disponíveis.">
 				>
-				["at0126"] = <
-					text = <"Indeterminada">
-					description = <"O mecanismo fisiológico não pôde ser determinado.">
-				>
-				["at0128"] = <
-					text = <"*Extension(en)">
-					description = <"*Additional information required to capture local content or to align with other reference models/formalisms.(en)">
-					comment = <"*For example: local information requirements or additional metadata to align with FHIR equivalents. (en)">
-				>
 				["at0129"] = <
 					text = <"*Reaction event summary (en)">
 					description = <"*Summary details about each adverse reaction event linked to exposure to the identified 'Substance'. (en)">
-				>
-				["at0130"] = <
-					text = <"*Active/inactive status (en)">
-					description = <"*Status about whether the adverse reaction risk statement is active or inactive. (en)">
-				>
-				["at0131"] = <
-					text = <"*Active (en)">
-					description = <"*The subject is currently experiencing, or is at risk of, a reaction to the identified substance. (en)">
-				>
-				["at0132"] = <
-					text = <"*Inactive (en)">
-					description = <"*The subject is no longer at risk of a reaction to the identified substance. (en)">
 				>
 				["at0133"] = <
 					text = <"*Onset of first reaction (en)">
@@ -735,53 +541,6 @@ Testes imunológicos podem fornecer elementos de prova para o mecanismo e a subs
 					text = <"Kommentar">
 					description = <"Ytterligere fritekstbeskrivelse om risikoen for overfølsomhetsreaksjon, som ikke fanges opp i andre felter.">
 					comment = <"For eksempel: Grunnlag for at \"Alvorlighetsgrad\" er satt til \"Høy\", instruksjoner relatert til fremtidige eksponeringer for eller administrasjon av substansen, som administrasjon ved en intensivenhet eller under kortikosteroidbehandling.">
-				>
-				["at0042"] = <
-					text = <"Tree">
-					description = <"@ internal @">
-				>
-				["at0047"] = <
-					text = <"Understøttende klinisk informasjon">
-					description = <"Lenke til ytterligere informasjon om symptomer, tegn og funn som finnes andre steder i journalen, inklusiv allergitestrapporter.">
-					comment = <"For eksempel symptomer, undersøkelsesfunn eller diagnoser.">
-				>
-				["at0058"] = <
-					text = <"Reaksjonsmekanisme">
-					description = <"Identifisering av overfølsomhetsreaksjonens underliggende fysiologiske mekanisme.">
-					comment = <"Immunmediert respons har tradisjonelt blitt ansett som en indikator for eskalering av signifikant fremtidig risiko. Moderne kunnskap tyder på at noen reaksjoner tidligere antatt å være immune faktisk er ikke-immune og likevel innebærer livstruende risiko. I tillegg kan mange antatt ikke-immunologiske reaksjoner faktisk være immunologiske, siden det finnes mangler i vårt diagnostiske apparat som gjør at vi ikke klarer å identifisere mekanismen.
-
-Immunologiske tester kan gi evidens for identifisering av mekanisme og årsakssubstans, men ingen tester er 100% sensitive eller spesifikke.
-
-Det erkjennes at klinikere ofte ikke kan identifisere mekanismen for en gitt reaksjon. Dette dataelementet er likevel inkludert fordi det blir brukt i mange eldre systemer.">
-				>
-				["at0059"] = <
-					text = <"Immunmediert">
-					description = <"Immunmediert reaksjon, inklusive allergiske reaksjoner og hypersensitiviteter.">
-				>
-				["at0060"] = <
-					text = <"Ikke-immunmediert">
-					description = <"En ikke-immunmediert reaksjon, som kan omfatte pseudoallergiske reaksjoner, bivirkninger, intoleranser eller legemiddeltoksisitet (f.eks gentamicin).">
-				>
-				["at0062"] = <
-					text = <"Sist oppdatert">
-					description = <"Dato da informasjonen sist ble oppdatert.">
-				>
-				["at0063"] = <
-					text = <"Verifikasjonsstatus">
-					description = <"Påstand om hvor sikkert det er at individet har en tendens eller framtidig risiko på få en overfølsomhetsreaksjon på den angitte substansen.">
-					comment = <"Beslutningsstøttesystemer vil typisk reagere på statusene \"Ubekreftet\" og \"Bekreftet\", og ignorere \"Avkreftet\". Kliniske systemer kan velge å ikke vise overfølsomhetsreaksjoner som har status \"Avkreftet\" i listen over overfølsomhetsreaksjoner. Imidlertid kan \"Avkreftet\" være nyttig for samstemming av listen over overfølsomhetsreaksjoner, eller ved kommunikasjon mellom systemer. Noen implementasjoner kan velge å gjøre dette elementet obligatorisk. Fritekst-datatypen tillater lokal variasjon ved å gjøre det mulig å legge til andre verdisett i et templat. I disse tilfellene er det anbefalt at verdiene kodes med en terminologi.">
-				>
-				["at0064"] = <
-					text = <"Ubekreftet">
-					description = <"Tendensen til reaksjon på den angitte substansen har ikke blitt objektivt verifisert.">
-				>
-				["at0065"] = <
-					text = <"Bekreftet">
-					description = <"Tendensen til reaksjon på den angitte substansen har blitt objektivt verifisert. Dette kan omfatte klinisk evidens fra testing, provokasjonstesting eller observasjon.">
-				>
-				["at0066"] = <
-					text = <"Avkreftet">
-					description = <"Tendensen til å reagere på den angitte substansen har blitt avkreftet med tilstrekkelig nivå av klinisk sikkerhet til at utsagnet kan invalideres. Dette kan omfatte klinisk evidens fra testing, provokasjonstesting eller observasjon.">
 				>
 				["at0101"] = <
 					text = <"Alvorlighetsgrad">
@@ -822,30 +581,9 @@ Det erkjennes at klinikere ofte ikke kan identifisere mekanismen for en gitt rea
 					text = <"Ubestemt">
 					description = <"Umulig å vurdere med tilgjengelig informasjon.">
 				>
-				["at0126"] = <
-					text = <"Uviss">
-					description = <"Den fysiologiske mekanismen kunne ikke fastslås.">
-				>
-				["at0128"] = <
-					text = <"Utvidelse">
-					description = <"Ytterligere informasjon som trengs for å kunne registrere lokalt definert innhold eller for å tilpasse til andre referansemodeller/formalismer.">
-					comment = <"For eksempel lokale informasjonsbehov eller ytterligere metadata for å kunne tilpasse til tilsvarende konsepter i FHIR.">
-				>
 				["at0129"] = <
 					text = <"Sammendrag av reaksjonshendelse">
 					description = <"Detaljert sammendrag om hver enkelt reaksjonshendelse, koblet til eksponering for den angitte substansen.">
-				>
-				["at0130"] = <
-					text = <"Aktiv/inaktiv status">
-					description = <"Status for hvorvidt risikoen for overfølsomhetsreaksjon er aktiv eller inaktiv.">
-				>
-				["at0131"] = <
-					text = <"Aktiv">
-					description = <"Individet har ved registreringstidspunktet en risiko for å få en reaksjon på den angitte substansen.">
-				>
-				["at0132"] = <
-					text = <"Inaktiv">
-					description = <"Individet har ved registreringstidspunktet ikke lenger en risiko for å få en reaksjon på den angitte substansen.">
 				>
 				["at0133"] = <
 					text = <"Debut av første reaksjon">
@@ -877,57 +615,6 @@ Det erkjennes at klinikere ofte ikke kan identifisere mekanismen for en gitt rea
 					description = <"Zusätzliche Beschreibung ber die Tendenz zur Nebenwirkung, die in anderen Bereichen nicht erfasst wurde.">
 					comment = <"Zum Beispiel: einschließlich des Grundes für die Kennzeichnung des Risikos mit einer hohen \"Gefährlichkeit\" und Anweisungen in Bezug auf die zukünftige Exposition oder Verabreichung der Substanz, wie zum Beispiel die Verabreichung auf einer Intensivstation oder unter Kortikosteroidabdeckung.">
 					source = <"openEHR">
-				>
-				["at0042"] = <
-					text = <"Tree">
-					description = <"@ internal @">
-				>
-				["at0047"] = <
-					text = <"Unterstützung von klinischen Informationen">
-					description = <"Link zu weiteren Informationen über die Präsentation und den Befunden, die an anderer Stelle in der Gesundheitsakte vorhanden sind, einschließlich Allergietestberichten.">
-					comment = <"Zum Beispiel Darstellung von Symptomen, Untersuchungsbefunden, Diagnose etc.">
-					source = <"FHIR, openEHR, DAM">
-				>
-				["at0058"] = <
-					text = <"Reaktionsmechanismus">
-					description = <"Identifizierung des zugrunde liegenden physiologischen Mechanismus für die Nebenwirkung.">
-					comment = <"Immunvermittelte Reaktionen wurden üblicherweise als Indikator für die Eskalation eines signifikanten künftigen Risikos betrachtet. Aktuelles Wissen führt zur Annahme, dass einige bisher als immun betrachteten Reaktionen, tatsächlich nicht immun sind und dennoch ein lebensbedrohliches Risiko bergen.
-
-Immunologische Tests können Belege für den Mechanismus und die verursachende Substanz liefern, aber keine Tests sind 100% sensitiv oder spezifisch für eine Sensitivität.
-
-Es wird anerkannt, dass die meisten Kliniker den Mechanismus einer bestimmten Reaktion NICHT unterscheiden können. Dieses Datenelement ist jedoch enthalten, da viele veraltete Systeme diese Eigenschaft erfasst haben.">
-					source = <"FHIR, DAM">
-				>
-				["at0059"] = <
-					text = <"Immunvermittelt">
-					description = <"Immunvermittelte Reaktion, einschließlich allergischer Reaktionen und Überempfindlichkeit.">
-				>
-				["at0060"] = <
-					text = <"Nicht-Immunvermittelt">
-					description = <"Eine nicht immunvermittelte Reaktion, die pseudoallergische Reaktionen, Nebenwirkungen, Unverträglichkeiten und Arzneimitteltoxizitäten (z. B. gegen Gentamicin) umfassen kann.">
-				>
-				["at0062"] = <
-					text = <"Letzte Aktualisierung">
-					description = <"Datum, an dem die Neigung zur Reaktion oder der Fall einer Reaktion aktualisiert wurde.">
-					source = <"openEHR, FHIR, DAM">
-				>
-				["at0063"] = <
-					text = <"Verifizierungsstatus">
-					description = <"Aussage zur Sicherheit über die Tendenz oder über das potenzielle zukünftige Risiko der identifizierten „Substanz“, eine Reaktion auszulösen.">
-					comment = <"Die Entscheidungsunterstützung löst in der Regel Warnungen für „Unbestätigt“ und „Bestätigt“ aus und ignoriert eine „Widerlegt“-Reaktion. Klinische Systeme können sich dafür entscheiden, Einträge zu Nebenwirkungen mit dem Status „Widerlegt“ in der Liste der Nebenwirkungen nicht anzuzeigen. „Widerlegt“ kann jedoch für den Abgleich der Nebenwirkungsliste oder bei der Kommunikation zwischen Systemen nützlich sein. Einige Implementierungen entscheiden sich möglicherweise dafür, dieses Feld obligatorisch zu machen. Der Freitext-Datentyp ermöglicht lokale Variationen, indem er die Anwendung anderer Wertesätze auf dieses Datenelement in einer Vorlage ermöglicht. In dieser Situation wird empfohlen, Werte mithilfe einer Terminologie zu codieren.">
-					source = <"FHIR, DAM">
-				>
-				["at0064"] = <
-					text = <"Nicht bestätigt">
-					description = <"*The propensity for a reaction to the identified 'Substance' has not been objectively verified. (en)">
-				>
-				["at0065"] = <
-					text = <"Bestätigt">
-					description = <"*The propensity for a reaction to the identified 'Substance' has been objectively verified. This may include clinical evidence by testing, re-challenge or observation. (en)">
-				>
-				["at0066"] = <
-					text = <"Widerlegt">
-					description = <"*A propensity for a reaction to the identified 'Substance' has been disputed or disproven with a sufficient level of clinical certainty to justify invalidating the assertion. This may include clinical evidence by testing, re-challenge or observation. (en)">
 				>
 				["at0101"] = <
 					text = <"Kritikalität">
@@ -970,30 +657,9 @@ Es wird anerkannt, dass die meisten Kliniker den Mechanismus einer bestimmten Re
 					text = <"Unbestimmt">
 					description = <"Eine Bewertung ist mit verfügbaren Informationen nicht möglich.">
 				>
-				["at0126"] = <
-					text = <"Unbestimmt">
-					description = <"Der physiologische Mechanismus konnte nicht bestimmt werden.">
-				>
-				["at0128"] = <
-					text = <"Erweiterung">
-					description = <"Zusätzliche Informationen zur Erfassung lokaler Inhalte oder Anpassung an andere Referenzmodelle/Formalismen.">
-					comment = <"Zum Beispiel: lokale Informationsanforderungen oder zusätzliche Metadaten zur Anpassung an FHIR-Äquivalente.">
-				>
 				["at0129"] = <
 					text = <"Zusammenfassung des Reaktionsereignis">
 					description = <"Zusammenfassende Details zu jedem Nebenwirkungsereignis im Zusammenhang mit der Exposition gegenüber dem identifizierten „Stoff“.">
-				>
-				["at0130"] = <
-					text = <"Aktiver/inaktiver Status">
-					description = <"Status darüber, ob die Risikoerklärung zu Nebenwirkungen aktiv oder inaktiv ist.">
-				>
-				["at0131"] = <
-					text = <"Aktiv">
-					description = <"Bei der Person kommt es derzeit zu einer Reaktion auf die identifizierte Substanz oder es besteht die Gefahr einer solchen.">
-				>
-				["at0132"] = <
-					text = <"Inaktiv">
-					description = <"Für den Probanden besteht kein Risiko mehr, dass er auf den identifizierten Stoff reagiert.">
 				>
 				["at0133"] = <
 					text = <"Beginn der ersten Reaktion">
@@ -1024,56 +690,6 @@ Es wird anerkannt, dass die meisten Kliniker den Mechanismus einer bestimmten Re
 					description = <"Kommentarer avseende benägenheten för biverkningen som inte beskrivs i övriga fält.">
 					comment = <"Exempelvis skäl för markering av \"Kritisk nivå\" som \"Hög risk\"; och instruktioner relaterade till framtida exponering eller administrering av ämnet, såsom administrering inom en intensivvårdsavdelning eller under kortikosteroidskydd.">
 					source = <"openEHR">
-				>
-				["at0042"] = <
-					text = <"Tree">
-					description = <"@ internal @">
-				>
-				["at0047"] = <
-					text = <"Stöd till information i hälsojournal">
-					description = <"Koppling till ytterligare information om presentationen och fynd lokaliserad på annan plats i hälsojournalen, inklusive allergitestrapporter.">
-					comment = <"*For example, presenting symptoms, examination findings, diagnosis etc. (en)">
-					source = <"FHIR, openEHR, DAM">
-				>
-				["at0058"] = <
-					text = <"Reaktionsmekanism">
-					description = <"Identifiering av den underliggande fysiologiska mekanismen för biverkningen.">
-					comment = <"Immunmedierad respons har traditionellt betraktats som en indikator för upptrappning av framtida risk. Dagens forskning tyder på att vissa reaktioner som man tidigare trodde var immuna i stället är icke-immuna och bär livshotande risk.
-
-Immunologiska tester kan ge bevis för mekanismen och orsakssubstansen. Inga tester kan dock erhålla 100% sensitivitet eller specificitet.
-
-Att de flesta kliniker INTE kommer att kunna skilja mekanismen för en specifik reaktion är välkänt. Detta dataelement ingår dock då många äldre system har fångat upp detta attribut.">
-					source = <"FHIR, DAM">
-				>
-				["at0059"] = <
-					text = <"Immunmedierad">
-					description = <"Immunmedierad reaktion, inklusive allergiska reaktioner och överkänslighet.">
-				>
-				["at0060"] = <
-					text = <"Icke immunmedierad">
-					description = <"En icke immunförmedlad reaktion, vilken kan inkludera pseudoallergiska reaktioner, biverkningar, intoleranser, läkemedeltoxicitet (exempelvis gentamicin).">
-				>
-				["at0062"] = <
-					text = <"Senast uppdaterad">
-					description = <"Datum då benägenheten eller reaktionshändelsen uppdaterades.">
-				>
-				["at0063"] = <
-					text = <"*Verification status (en)">
-					description = <"Angivelse om sannolikheten att det identifierade ämnet som orsakar en reaktion även medför potentiella risker.">
-					comment = <"*Decision support would typically raise alerts for 'Unconfirmed' and 'Confirmed', and ignore a 'Refuted' reaction. Clinical systems may choose not to display Adverse reaction entries with a 'Refuted' status in the Adverse Reaction List. However, 'Refuted' may be useful for reconciliation of the adverse reaction list or when communicating between systems. Some implementations may choose to make this field mandatory. The free text data type will allow for local variation by enabling other value sets to be applied to this data element in a template - in this situation it is recommended that values should be coded using a terminology. (en)">
-					source = <"FHIR, DAM">
-				>
-				["at0064"] = <
-					text = <"*Unconfirmed (en)">
-					description = <"*The propensity for a reaction to the identified 'Substance' has not been objectively verified. (en)">
-				>
-				["at0065"] = <
-					text = <"Bekräftat">
-					description = <"*The propensity for a reaction to the identified 'Substance' has been objectively verified. This may include clinical evidence by testing, re-challenge or observation. (en)">
-				>
-				["at0066"] = <
-					text = <"Vederlagt">
-					description = <"*A propensity for a reaction to the identified 'Substance' has been disputed or disproven with a sufficient level of clinical certainty to justify invalidating the assertion. This may include clinical evidence by testing, re-challenge or observation. (en)">
 				>
 				["at0101"] = <
 					text = <"Kritisk nivå">
@@ -1116,30 +732,9 @@ Att de flesta kliniker INTE kommer att kunna skilja mekanismen för en specifik 
 					text = <"Obestämbar">
 					description = <"Det går inte att bedöma med tillgänglig information.">
 				>
-				["at0126"] = <
-					text = <"Obestämd">
-					description = <"Den fysiologiska mekanismen kunde inte bestämmas.">
-				>
-				["at0128"] = <
-					text = <"Tilläggsinformation">
-					description = <"Plats för att infoga tilläggsinformation som krävs för lokala anpassningar eller anpassning till andra referensmodeller eller formella krav.">
-					comment = <"*For example: local information requirements or additional metadata to align with FHIR equivalents. (en)">
-				>
 				["at0129"] = <
 					text = <"*Reaction event summary (en)">
 					description = <"*Summary details about each adverse reaction event linked to exposure to the identified 'Substance'. (en)">
-				>
-				["at0130"] = <
-					text = <"*Active/inactive status (en)">
-					description = <"*Status about whether the adverse reaction risk statement is active or inactive. (en)">
-				>
-				["at0131"] = <
-					text = <"*Active (en)">
-					description = <"*The subject is currently experiencing, or is at risk of, a reaction to the identified substance. (en)">
-				>
-				["at0132"] = <
-					text = <"*Inactive (en)">
-					description = <"*The subject is no longer at risk of a reaction to the identified substance. (en)">
 				>
 				["at0133"] = <
 					text = <"*Onset of first reaction (en)">
