@@ -118,6 +118,12 @@ Forespørselsdokumentet kan ha en spesifikk mottaker (spesifikk helsetjenesteyte
 
 Brukes ikke som overflyttingsnotat/epikrise til andre organisasjoner eller tjenesteytere. Bruk Overføringsdokument (COMPOSITION.transfer_summary) for dette formålet.">
 		>
+		["ar-sy"] = <
+			language = <[ISO_639-1::ar-sy]>
+			purpose = <"لتوصيل طلب إحالة أو طلب تقديم خدمة إلى من يقوم بتقديمها.">
+			keywords = <"إحالة","طلب">
+			copyright = <"© openEHR Foundation">
+		>
 		["en"] = <
 			language = <[ISO_639-1::en]>
 			purpose = <"To request advice, a specified service or transfer of care from a healthcare provider or organisation about the subject of care.">
@@ -138,12 +144,6 @@ Requests may be targeted (identifying a specific healthcare provider or organisa
 			misuse = <"Not to be used to represent the document recorded as part of a single clinical encounter or visit. Use COMPOSITION.encounter for this purpose.
 
 Not to be used to provide a transfer of care summary to another organisation or provider - use COMPOSITION.transfer_summary for this purpose.">
-		>
-		["ar-sy"] = <
-			language = <[ISO_639-1::ar-sy]>
-			purpose = <"لتوصيل طلب إحالة أو طلب تقديم خدمة إلى من يقوم بتقديمها.">
-			keywords = <"إحالة","طلب">
-			copyright = <"© openEHR Foundation">
 		>
 		["nl"] = <
 			language = <[ISO_639-1::nl]>
@@ -174,7 +174,7 @@ Niet te gebruiken om een samenvattende zorgoverdracht te leveren aan een andere 
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"B8AD0C7EB492491CE6F7968C1AFFB40C">
+		["MD5-CAM-1.0.1"] = <"c2fbe810052d579a0c7c8c51296280bb">
 		["build_uid"] = <"3a928712-c81a-4d9b-82ad-c01857468560">
 		["revision"] = <"1.1.3">
 	>
@@ -189,18 +189,7 @@ definition
 			}
 		}
 		context matches {
-			EVENT_CONTEXT matches {
-				other_context matches {
-					ITEM_TREE[at0001] matches {    -- Tree
-						items cardinality matches {0..*; unordered} matches {
-							allow_archetype CLUSTER[at0042] occurrences matches {0..*} matches {    -- Extension
-								include
-									archetype_id/value matches {/.*/}
-							}
-						}
-					}
-				}
-			}
+			EVENT_CONTEXT matches {*}
 		}
 	}
 
@@ -212,15 +201,6 @@ ontology
 					text = <"Request for service">
 					description = <"Document sent from one treating healthcare provider or organisation to another, for the purpose of requesting advice, a service or transfer of care.">
 				>
-				["at0001"] = <
-					text = <"Tree">
-					description = <"@ internal @">
-				>
-				["at0042"] = <
-					text = <"Extension">
-					description = <"Additional information required to capture local context or to align with other reference models/formalisms.">
-					comment = <"For example: Local hospital departmental information or additional metadata to align with FHIR or CIMI equivalents.">
-				>
 			>
 		>
 		["ar-sy"] = <
@@ -228,15 +208,6 @@ ontology
 				["at0000"] = <
 					text = <"*Request for service(en)">
 					description = <"*Document sent from one treating healthcare provider or organisation to another, for the purpose of requesting advice, a service or transfer of care.(en)">
-				>
-				["at0001"] = <
-					text = <"*Tree(en)">
-					description = <"*@ internal @(en)">
-				>
-				["at0042"] = <
-					text = <"*Extension(en)">
-					description = <"*Additional information required to capture local context or to align with other reference models/formalisms.(en)">
-					comment = <"*For example: Local hospital departmental information or additional metadata to align with FHIR or CIMI equivalents.(en)">
 				>
 			>
 		>
@@ -246,15 +217,6 @@ ontology
 					text = <"Tjenesteforespørsel">
 					description = <"Dokument som sendes fra en helsetjenesteyter til en annen, med hensikt om å forespørre om råd, en tjeneste eller overføring av ansvar.">
 				>
-				["at0001"] = <
-					text = <"Tree">
-					description = <"@ internal @">
-				>
-				["at0042"] = <
-					text = <"Tilleggsinformasjon">
-					description = <"Ytterligere informasjon som er nødvendig for å registrere lokalt innhold/kontekst, eller for å sammenstille med andre referansemodeller/formalismer.">
-					comment = <"F.eks lokale informasjonskrav eller ekstra metadata for å tilpasse med FHIR eller CIMI ekvivalenter.">
-				>
 			>
 		>
 		["nl"] = <
@@ -262,15 +224,6 @@ ontology
 				["at0000"] = <
 					text = <"Verzoek voor een dienst">
 					description = <"Document verstuurd van de ene behandelende zorgaanbieder of organisatie naar een andere, met als doel het vragen van advies, een dienst of overdracht van zorg.">
-				>
-				["at0001"] = <
-					text = <"Tree">
-					description = <"@ internal @">
-				>
-				["at0042"] = <
-					text = <"Extensie">
-					description = <"Aanvullende informatie vereist om de lokale context te vatten of om te verbinden met andere referentie modellen/formalismen.">
-					comment = <"Bijvoorbeeld: Informatie van lokale ziekenhuis afdelingen of aanvullende metagegevens verbinden met FHIR of CIMI equivalenten.">
 				>
 			>
 		>
@@ -280,15 +233,6 @@ ontology
 					text = <"Tjänstebegäran">
 					description = <"Dokument som skickas från en vårdgivare eller organisation till en annan, i syfte att be om råd, begära en tjänst eller att begära vårdöverföring.">
 				>
-				["at0001"] = <
-					text = <"Tree">
-					description = <"@ internal @">
-				>
-				["at0042"] = <
-					text = <"Tilläggsinformation">
-					description = <"Plats för att infoga tilläggsinformation som krävs för lokala anpassningar eller anpassning till andra referensmodeller eller formella krav.">
-					comment = <"Exempelvis lokala informationskrav eller metadata för anpassning till FHIR- eller CIMI-motsvarigheter.">
-				>
 			>
 		>
 		["de"] = <
@@ -296,15 +240,6 @@ ontology
 				["at0000"] = <
 					text = <"Leistungsanforderung">
 					description = <"Das Dokument, das von einem behandelnden Gesundheitsdienstleister oder einer behandelnden Organisation an einen anderen gesendet wird, um Beratung, eine Dienstleistung oder Übertragung der Versorgung anzufordern.">
-				>
-				["at0001"] = <
-					text = <"Tree">
-					description = <"@ internal @">
-				>
-				["at0042"] = <
-					text = <"Erweiterung">
-					description = <"Zusätzliche Informationen zur Erfassung lokaler Inhalte oder Anpassung an andere Referenzmodelle/Formalismen.">
-					comment = <"Zum Beispiel: Lokaler Informationsbedarf oder zusätzliche Metadaten zur Anpassung an FHIR-Ressourcen oder CIMI-Modelle.">
 				>
 			>
 		>
