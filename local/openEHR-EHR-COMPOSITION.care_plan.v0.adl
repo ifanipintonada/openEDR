@@ -91,7 +91,7 @@ Het SECTION.care_plan archetype is een voorbeeld van een kader voor klinische in
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"13D55DE5073CB5A79B7527DCB7E65582">
+		["MD5-CAM-1.0.1"] = <"96002a69f8c5b32b85f6435958dc2da3">
 		["build_uid"] = <"cfd4c0aa-e83a-4a8f-9967-1b98724a229f">
 		["revision"] = <"0.0.1-alpha">
 	>
@@ -105,20 +105,6 @@ definition
 				}
 			}
 		}
-		context matches {
-			EVENT_CONTEXT matches {
-				other_context matches {
-					ITEM_TREE[at0001] matches {    -- Tree
-						items cardinality matches {0..*; unordered} matches {
-							allow_archetype CLUSTER[at0002] occurrences matches {0..*} matches {    -- Extension
-								include
-									archetype_id/value matches {/.*/}
-							}
-						}
-					}
-				}
-			}
-		}
 	}
 
 ontology
@@ -129,15 +115,6 @@ ontology
 					text = <"Care plan">
 					description = <"A persistent and managed list of any combination of archetypes that will support the accurate recording of a Care plan.">
 				>
-				["at0001"] = <
-					text = <"Tree">
-					description = <"@ internal @">
-				>
-				["at0002"] = <
-					text = <"Extension">
-					description = <"Additional information required to extend the model with local content or to align with other reference models or formalisms.">
-					comment = <"For example: local information requirements; or additional metadata to align with FHIR.">
-				>
 			>
 		>
 		["nl"] = <
@@ -146,15 +123,6 @@ ontology
 					text = <"Zorgplan">
 					description = <"Een persistente en beheerde lijst van elke combinatie van archetypen die de nauwkeurige vastlegging van een Zorgplan ondersteunt.">
 				>
-				["at0001"] = <
-					text = <"Tree">
-					description = <"@ internal @">
-				>
-				["at0002"] = <
-					text = <"Extensie">
-					description = <"Extra informatie benodigd voor het uitbreiden van het model met lokale informatie of voor het in lijn brengen met andere referentiemodellen of formalismen.">
-					comment = <"Bijvoorbeeld: lokale informatie eisen; of extra metadata om in lijn te brengen met FHIR.">
-				>
 			>
 		>
 		["nb"] = <
@@ -162,15 +130,6 @@ ontology
 				["at0000"] = <
 					text = <"Behandlingsplan">
 					description = <"Et rammeverk for støtte registrering av alle aspekter av en behandlingsplan.">
-				>
-				["at0001"] = <
-					text = <"Tree">
-					description = <"@ internal @">
-				>
-				["at0002"] = <
-					text = <"Tilleggsinformasjon">
-					description = <"Ytterligere informasjon som trengs for å kunne registrere lokalt definert innhold eller for å tilpasse til andre referansemodeller eller formalismer.">
-					comment = <"For eksempel: lokale informasjonsbehov eller ytterligere metadata for å kunne tilpasse til tilsvarende konsepter i FHIR.">
 				>
 			>
 		>
