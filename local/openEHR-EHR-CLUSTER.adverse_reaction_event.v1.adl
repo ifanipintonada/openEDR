@@ -56,7 +56,7 @@ The scope of this archetype has deliberately focused on identifying a pragmatic 
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"46f3dac072c380f9d574cfb04f2fba74">
+		["MD5-CAM-1.0.1"] = <"9a7177fc7a88a00c5171f1d46ba5fa52">
 		["build_uid"] = <"ef89065a-33cb-47ff-8f03-941bff0e7a87">
 		["revision"] = <"1.0.0">
 	>
@@ -64,11 +64,6 @@ The scope of this archetype has deliberately focused on identifying a pragmatic 
 definition
 	CLUSTER[at0000] matches {    -- Adverse reaction event
 		items cardinality matches {1..*; unordered} matches {
-			ELEMENT[at0001] occurrences matches {0..1} matches {    -- Specific substance
-				value matches {
-					DV_TEXT matches {*}
-				}
-			}
 			ELEMENT[at0002] occurrences matches {0..1} matches {    -- Certainty
 				value matches {
 					DV_CODED_TEXT matches {
@@ -124,11 +119,6 @@ ontology
 				["at0000"] = <
 					text = <"Adverse reaction event">
 					description = <"Information about a specific adverse reaction event caused by exposure to a specific substance.">
-				>
-				["at0001"] = <
-					text = <"Specific substance">
-					description = <"The substance considered to be responsible for the specific adverse reaction event.">
-					comment = <"For example: 'Amoxycillin'. Only an individual substance is a valid entry in 'Specific substance'. A substance may be a compound of simpler substances, for example a medicinal product. If the 'Substance' recorded in the archetype in which this archetype is nested is an individual substance and not a substance class, then it may be duplicated in this data element, or this element may be redundant. It is strongly recommended that 'Specific substance' be coded with a terminology, for example: RxNorm, SNOMED CT, DM+D, NDFRT, ICD-9, ICD-10, UNI, ATC or CPT.">
 				>
 				["at0002"] = <
 					text = <"Certainty">
@@ -188,11 +178,6 @@ ontology
 				["at0000"] = <
 					text = <"Reaksjonshendelse">
 					description = <"Informasjon om en spesifikk overfølsomhetsreaksjonshendelse forårsaket av eksponering for en spesifikk substans.">
-				>
-				["at0001"] = <
-					text = <"Spesifikk substans">
-					description = <"Substansen som anses for å være årsaken til den spesifikke reaksjonshendelsen.">
-					comment = <"For eksempel \"Amoxicillin\". I feltet \"Spesifikk substans\" kan kun en spesifikk substans, og ikke en substansgruppe, registreres. En substans kan være en blanding av enkeltsubstanser, for eksempel et legemiddelprodukt. Om verdien som registreres i \"Substans\" i foreldrearketypen er en spesifikk substans kan verdien dupliseres i dette dataelementet. Det anbefales sterkt at \"Spesifikk substans\" kodes med en terminologi, for eksempel FEST, ATC eller SNOMED CT.">
 				>
 				["at0002"] = <
 					text = <"Sikkerhet">
