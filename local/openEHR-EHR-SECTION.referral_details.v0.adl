@@ -33,13 +33,13 @@ This archetype is intended to be nested within the COMPOSITION.request or any re
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"7DAA69B9A4F026B57C71629C1B49D260">
+		["MD5-CAM-1.0.1"] = <"5fc51d3a68cf27e4203df98aa3f95c40">
 		["build_uid"] = <"cac8073d-4bf0-45b2-9dc8-39829125c1e5">
 		["revision"] = <"0.0.1-alpha">
 	>
 
 definition
-	SECTION[at0000] matches {    -- Referral details
+	SECTION[at0000] matches {    -- Referral
 		items cardinality matches {0..*; unordered} matches {
 			allow_archetype INSTRUCTION[at0001] occurrences matches {0..*} matches {    -- Referral request
 				include
@@ -57,7 +57,7 @@ ontology
 		["en"] = <
 			items = <
 				["at0000"] = <
-					text = <"Referral details">
+					text = <"Referral">
 					description = <"Example framework for modelling a template for a referral.">
 				>
 				["at0001"] = <
