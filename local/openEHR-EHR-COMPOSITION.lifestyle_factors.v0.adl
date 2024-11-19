@@ -106,19 +106,22 @@ Initieel ontwerp van dit archetype was gesubsidieerd door het iCareNet Antenatal
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"2757db0d2225c230f4b4179337be2066">
+		["MD5-CAM-1.0.1"] = <"048842086b717a8c7f75fda827c2900a">
 		["build_uid"] = <"d0d4bf04-59f9-4e37-910b-1833a4f96020">
 		["revision"] = <"0.0.1-alpha">
 	>
 
 definition
-	COMPOSITION[at0000] matches {    -- Lifestyle risk factors
+	COMPOSITION[at0000] matches {    -- Social History
 		category matches {
 			DV_CODED_TEXT matches {
 				defining_code matches {
 					[openehr::433]
 				}
 			}
+		}
+		context matches {
+			EVENT_CONTEXT matches {*}
 		}
 	}
 
@@ -127,7 +130,7 @@ ontology
 		["en"] = <
 			items = <
 				["at0000"] = <
-					text = <"Lifestyle risk factors">
+					text = <"Social History">
 					description = <"A persistent and evolving summary record of information about lifestyle risk factors that may influence health outcomes, clinical decision-making and provision of care.">
 				>
 			>
@@ -135,7 +138,7 @@ ontology
 		["de"] = <
 			items = <
 				["at0000"] = <
-					text = <"Lifestyle-Risikofaktoren">
+					text = <"*Social History (en)">
 					description = <"Eine beständige und sich entwickelnde Zusammenfassung von Informationen über Lifestyle-Risikofaktoren, die den gesundheitlichen Zustand, die klinische Entscheidungsfindung und die Gesundheitsversorgung beeinflussen könnten.">
 				>
 			>
@@ -143,7 +146,7 @@ ontology
 		["nl"] = <
 			items = <
 				["at0000"] = <
-					text = <"Levensstijl risicofactoren">
+					text = <"*Social History (en)">
 					description = <"Een blijvende en voortschrijdende samenvatting van informatie over leefstijlkeuzes en activiteiten vast te leggen die van invloed kunnen zijn op klinische beslissingen en levering van zorg.">
 				>
 			>
@@ -151,7 +154,7 @@ ontology
 		["el"] = <
 			items = <
 				["at0000"] = <
-					text = <"Παράγοντες κινδύνου τρόπου ζωής">
+					text = <"*Social History (en)">
 					description = <"Ένα επίμονο και εξελισσόμενο συνοπτικό αρχείο πληροφοριών σχετικά με τους παράγοντες κινδύνου του τρόπου ζωής που μπορεί να επηρεάσουν τα αποτελέσματα της υγείας, τη λήψη κλινικών αποφάσεων και την παροχή φροντίδας.">
 				>
 			>
