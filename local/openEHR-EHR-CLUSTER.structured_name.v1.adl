@@ -129,30 +129,25 @@ HL7 FHIR Resource - Person v4.0.1: R4 [Internet]. Health Level Seven Internation
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"4C91B974D7EE4B40B0579711D6B62439">
+		["MD5-CAM-1.0.1"] = <"20201a686747d29b5c8aba1ff0c2aaf7">
 		["build_uid"] = <"efeed73f-bc3f-4b27-a1f9-f2ac5d082e4a">
 		["revision"] = <"1.0.1">
 	>
 
 definition
-	CLUSTER[at0000] matches {    -- Structured name of a person
+	CLUSTER[at0000] matches {    -- Name
 		items cardinality matches {1..*; unordered} matches {
-			ELEMENT[at0001] occurrences matches {0..*} matches {    -- Title
+			ELEMENT[at0002] occurrences matches {0..*} matches {    -- First Name
 				value matches {
 					DV_TEXT matches {*}
 				}
 			}
-			ELEMENT[at0002] occurrences matches {0..*} matches {    -- Given name
+			ELEMENT[at0005] occurrences matches {0..*} matches {    -- Middle Name
 				value matches {
 					DV_TEXT matches {*}
 				}
 			}
-			ELEMENT[at0005] occurrences matches {0..*} matches {    -- Family name
-				value matches {
-					DV_TEXT matches {*}
-				}
-			}
-			ELEMENT[at0006] occurrences matches {0..*} matches {    -- Suffix
+			ELEMENT[at0006] occurrences matches {0..*} matches {    -- Last Name
 				value matches {
 					DV_TEXT matches {*}
 				}
@@ -165,26 +160,21 @@ ontology
 		["en"] = <
 			items = <
 				["at0000"] = <
-					text = <"Structured name of a person">
+					text = <"Name">
 					description = <"Discrete components of an individual's name.">
 				>
-				["at0001"] = <
-					text = <"Title">
-					description = <"One or more honorific form(s) of address commencing a name.">
-					comment = <"Occurrences for this data element are set to 0..* to allow for more than one Title to be recorded. Coding with an external terminology is preferred, where possible. For example: 'Doctor'; 'Ms'; 'Mx'; or 'Professor Dr'.">
-				>
 				["at0005"] = <
-					text = <"Family name">
+					text = <"Middle Name">
 					description = <"One or more name(s) that an individual has in common with a family group.">
 					comment = <"Also known as 'Last name' or 'Surname'. Occurrences for this data element are set to 0..* to allow for more than one Family name to be recorded. Complex names such as 'El Haddad' or 'van der Heyden' can be recorded using this naming pattern, as identified in ISO 22220 (Annex F), but for the intended use case for this archetype it is most likely that the full family name will be recorded as a string.">
 				>
 				["at0002"] = <
-					text = <"Given name">
+					text = <"First Name">
 					description = <"One or more unique name(s) used to identify an individual within a family group.">
 					comment = <"Occurrences for this data element are set to 0..* to allow for more than one Given name to be recorded. In addition, this data element may be cloned and renamed within a template to allow discrete recording of different types of Given name - for example 'First name', 'Middle name', 'Preferred name' or 'Nickname', as required for a specific use case.">
 				>
 				["at0006"] = <
-					text = <"Suffix">
+					text = <"Last Name">
 					description = <"One or more term(s) placed after all other name components, usually to differentiate an individual from a family member with identical Given and Family name components.">
 					comment = <"Occurrences for this data element are set to 0..* to allow for more than one Suffix to be recorded. Coding with an external terminology is preferred, where possible. For example: 'Junior (Jr)'; 'Senior (Sr)'; 'Second (II)'.">
 				>
@@ -193,27 +183,22 @@ ontology
 		["de"] = <
 			items = <
 				["at0000"] = <
-					text = <"Strukturierter Name der Person">
+					text = <"*Name (en)">
 					description = <"Getrennte Bestandteile des Namens einer Person.">
 				>
-				["at0001"] = <
-					text = <"Titel">
-					description = <"Eine oder mehrere ehrenhafte Anrede(n) am Anfang eines Namens.">
-					comment = <"Vorkommen für dieses Datenelement werden auf 0..* gesetzt, damit mehr als ein Titel dargestellt werden können. Die Kodierung mit einer externen Terminologie wird nach Möglichkeit bevorzugt. Beispiel: \"Doktor\", \"Ms\", \"Mx\" oder \"Professor Dr\".">
-				>
 				["at0002"] = <
-					text = <"Vorname">
+					text = <"*First Name (en)">
 					description = <"Ein oder mehrere eindeutige Namen, die verwendet werden, um eine Person innerhalb einer Familiengruppe zu identifizieren.
 ">
 					comment = <"Vorkommen für dieses Datenelement werden auf 0..* gesetzt, damit mehr als ein Vorname dargestellt werden können. Darüber hinaus kann dieses Datenelement innerhalb eines Templates geklont und umbenannt werden, um eine getrennte Darstellung verschiedener Arten von Vornamen zu ermöglichen – zum Beispiel „Vorname“, „Zweiter Vorname“, „bevorzugter Name“ oder „Spitzname“, wie für einen konkreten Anwendungsfall erforderlich.">
 				>
 				["at0005"] = <
-					text = <"Nachname">
+					text = <"*Middle Name (en)">
 					description = <"Ein oder mehrere Namen, die eine Person mit einer Familiengruppe gemeinsam hat.">
 					comment = <"Auch bekannt als „Familienname“. Vorkommen für dieses Datenelement werden auf 0..* gesetzt, damit mehr als ein Familienname dargestellt werden können. Komplexe Namen wie „El Haddad“ oder „van der Heyden“ können mit diesem Benennungsmuster dargestellt werden, wie in ISO 22220 (Anhang F) definiert, aber für den beabsichtigten Anwendungsfall für diesen Archetyp ist es am wahrscheinlichsten, dass der vollständige Nachname als Zeichenfolge aufgezeichnet wird.">
 				>
 				["at0006"] = <
-					text = <"Suffix">
+					text = <"*Last Name (en)">
 					description = <"Ein oder mehrere Begriffe, die allen anderen Namensbestandteilen nachgestellt werden, normalerweise um eine Person von einem Familienmitglied mit identischen Vor- und Nachnamensbestandteilen zu unterscheiden.">
 					comment = <"Vorkommen für dieses Datenelement werden auf 0..* gesetzt, damit mehr als ein Suffix aufgezeichnet werden können. Die Codierung mit einer externen Terminologie wird nach Möglichkeit bevorzugt. Zum Beispiel: „Junior (Jr)“, „Senior (Sr)“, \" Der Zweite (II)\".">
 				>
@@ -222,27 +207,22 @@ ontology
 		["nb"] = <
 			items = <
 				["at0000"] = <
-					text = <"Strukturert navn">
+					text = <"*Name (en)">
 					description = <"Detaljer om de ulike enkeltkomponentene i en person sitt navn.">
 				>
-				["at0001"] = <
-					text = <"Tittel">
-					description = <"En eller flere tiltaleform(er) plassert foran de andre navnekomponentene.">
-					comment = <"Forekomster for dette dataelementet er satt til 0..* slik at mer enn én tittel kan registreres. Koding med ekstern terminologi foretrekkes der det er mulig. For eksempel: \"Doktor\"; \"Fru\"; \"Herr\"; eller \"Professor dr\".">
-				>
 				["at0002"] = <
-					text = <"Fornavn">
+					text = <"*First Name (en)">
 					description = <"Ett eller flere unike navn som unikt identifiserer vedkommende i en familie.">
 					comment = <"Forekomster for dette dataelementet er satt til 0..* slik at mer enn ett \"Fornavn\" kan registreres. I tillegg kan dette dataelementet klones og gis et nytt navn i et templat for å tillate registrering av \"Fornavn\", \"Mellomnavn\" og \"Kallenavn\" eller liknende typer fornavn, som kreves for et spesifikt brukstilfelle. På engelsk er fornavn kjent som en del av \"Given name\".">
 				>
 				["at0005"] = <
-					text = <"Etternavn">
+					text = <"*Middle Name (en)">
 					description = <"Ett eller flere unike navn som unikt identifiserer vedkommende med en familie.">
 					comment = <"Forekomster for dette dataelementet er satt til 0..* slik at mer en ett \"Etternavn\" kan registreres. Også kjent som \"Slektsnavn\" eller \"Familienavn\".
 Komplekse navn som for eksempel \"El Haddad\" eller \"van der Heyden\" kan registreres ved å bruke dette navnemønsteret som i ISO 22220 (Annex F), men det antas at i de fleste brukstilfeller som denne arketypen er designet for, vil komplekse familienavn ganske enkelt bli registrert som en streng.">
 				>
 				["at0006"] = <
-					text = <"Suffiks">
+					text = <"*Last Name (en)">
 					description = <"En eller flere termer som legges etter alle de andre komponentene i en persons navn, vanligvis for å skille ulike familiemedlemmer med identiske fornavn- og etternavnkomponenter.">
 					comment = <"Forekomster for dette dataelementet er satt til 0..* slik at mer en ett \"Suffiks\" kan registreres. Koding med en ekstern terminologi er foretrukket, hvor mulig. For eksempel: \"Junior (Jr)\", \"Senior (Sr)\" og \"Den Andre (II)\".">
 				>
