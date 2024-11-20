@@ -75,27 +75,6 @@ Exempel på tillstånd som berättigar skapandet av en försiktighetsåtgärder 
 
 Not to be used to record decisions about limitations on the individuals care or future interventions or the individuals preferences of future medical treatment and care. Use EVALUATION.advance_intervention_decisions and EVALUATION.advance_care_directive respectively for this purpose.(en)">
 		>
-		["nb"] = <
-			language = <[ISO_639-1::nb]>
-			purpose = <"For å registrere en klinisk tilstand eller status som er unik eller særegen for et individ, og som regnes som viktig informasjon i forbindelse med beslutninger om behandling.">
-			keywords = <"forsiktighetshensyn","forhindre","unngå","uønsket hendelse","forebygging","forsiktighet","advarsel","varsel">
-			use = <"Brukes for å registrere en klinisk tilstand eller status som er unik eller særegen for et individ, og som regnes som viktig informasjon i forbindelse med beslutning om behandling.
-
-Denne arketypen bør regnes som en viktig arketype for beslutningsstøttesystemer i forbindelse med forordning av nye kliniske intervensjoner.
-
-Eksempler på tilstander som kan være grunnlag for å registrere forholdsregler kan være:
-- Immunhemmende/-modulerende behandling - knyttet til en ordinasjon av kjemoterapi eller steroider, eller en leukemidiagnose
-- Nyresvikt - knyttet til nyrefunksjonstester eller en formell nyresviktdiagnose.
-- Står i transplantasjonskø
-- Pågående regelmessig behandling, som strålebehandling eller dialyse
-- Har fått transplantert et organ eller implantert metall i kroppen.
-- Pågående utredning/oppfølging av mistenkt eller verifisert malign lidelse.
-- Deltagelse i klinisk studie.
-- Står på blodfortynnende behandling.">
-			misuse = <"Skal ikke brukes for å registrere en klinisk intervensjon (f.eks. en undersøkelse eller behandling) som ikke må utføres på grunn av sannsynligheten eller muligheten for skade på individet. Bruk EVALUATION.contraindication (Norsk: Kontraindikasjon) for dette formålet.
-
-Skal ikke brukes for beslutninger om avgrensing av behandling eller fremtidige intervensjoner, eller for å registrere individets preferanser om fremtidig behandling og omsorg. Bruk henholdsvis EVALUATION.advance_intervention_decisions (Behandlingsbegrensning) og EVALUATION.advance_care_directive (Fremtidig behandlingsvalg) for dette formålet.">
-		>
 		["es-ar"] = <
 			language = <[ISO_639-1::es-ar]>
 			purpose = <"El registro de una condición o estado del individuo que es clínicamente significativa y única o idiosincrática para con este individuo, y que se considera información vital al momento de la toma de decisiones.">
@@ -116,6 +95,27 @@ Los ejemplos de afecciones que ameritan la creación de una precaución incluyen
 			misuse = <"*Not to be used to record a clinical intervention (including, but not limited to, use of a treatment or performance of a test or procedure) that should not be carried out due to the likelihood, or possibility, of harm being caused to an individual. Use the EVALUATION.contraindication for this purpose.
 
 Not to be used to record decisions about limitations on the individuals care or future interventions or the individuals preferences of future medical treatment and care. Use EVALUATION.advance_intervention_decisions and EVALUATION.advance_care_directive respectively for this purpose. (en)">
+		>
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"For å registrere en klinisk tilstand eller status som er unik eller særegen for et individ, og som regnes som viktig informasjon i forbindelse med beslutninger om behandling.">
+			keywords = <"forsiktighetshensyn","forhindre","unngå","uønsket hendelse","forebygging","forsiktighet","advarsel","varsel">
+			use = <"Brukes for å registrere en klinisk tilstand eller status som er unik eller særegen for et individ, og som regnes som viktig informasjon i forbindelse med beslutning om behandling.
+
+Denne arketypen bør regnes som en viktig arketype for beslutningsstøttesystemer i forbindelse med forordning av nye kliniske intervensjoner.
+
+Eksempler på tilstander som kan være grunnlag for å registrere forholdsregler kan være:
+- Immunhemmende/-modulerende behandling - knyttet til en ordinasjon av kjemoterapi eller steroider, eller en leukemidiagnose
+- Nyresvikt - knyttet til nyrefunksjonstester eller en formell nyresviktdiagnose.
+- Står i transplantasjonskø
+- Pågående regelmessig behandling, som strålebehandling eller dialyse
+- Har fått transplantert et organ eller implantert metall i kroppen.
+- Pågående utredning/oppfølging av mistenkt eller verifisert malign lidelse.
+- Deltagelse i klinisk studie.
+- Står på blodfortynnende behandling.">
+			misuse = <"Skal ikke brukes for å registrere en klinisk intervensjon (f.eks. en undersøkelse eller behandling) som ikke må utføres på grunn av sannsynligheten eller muligheten for skade på individet. Bruk EVALUATION.contraindication (Norsk: Kontraindikasjon) for dette formålet.
+
+Skal ikke brukes for beslutninger om avgrensing av behandling eller fremtidige intervensjoner, eller for å registrere individets preferanser om fremtidig behandling og omsorg. Bruk henholdsvis EVALUATION.advance_intervention_decisions (Behandlingsbegrensning) og EVALUATION.advance_care_directive (Fremtidig behandlingsvalg) for dette formålet.">
 		>
 		["pt-br"] = <
 			language = <[ISO_639-1::pt-br]>
@@ -169,7 +169,7 @@ Not to be used to record decisions about limitations on the individuals care or 
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"1F847D0C7A85E138BBBDEA568702B601">
+		["MD5-CAM-1.0.1"] = <"2c35a397978bd2488e605c4d7bbb1c44">
 		["build_uid"] = <"504c8b10-ac7b-446d-8e1b-2efcc0d0828b">
 		["revision"] = <"1.1.0">
 	>
@@ -197,16 +197,6 @@ definition
 							DV_TEXT matches {*}
 						}
 					}
-					ELEMENT[at0003] occurrences matches {0..*} matches {    -- Evidence
-						value matches {
-							DV_TEXT matches {*}
-						}
-					}
-					ELEMENT[at0013] occurrences matches {0..1} matches {    -- Category
-						value matches {
-							DV_TEXT matches {*}
-						}
-					}
 					allow_archetype CLUSTER[at0025] occurrences matches {0..*} matches {    -- Additional details
 						include
 							archetype_id/value matches {/openEHR-EHR-CLUSTER\.clinical_evidence\.v1/}
@@ -214,36 +204,6 @@ definition
 					ELEMENT[at0008] occurrences matches {0..1} matches {    -- Comment
 						value matches {
 							DV_TEXT matches {*}
-						}
-					}
-				}
-			}
-		}
-		protocol matches {
-			ITEM_TREE[at0006] matches {    -- Tree
-				items cardinality matches {0..*; unordered} matches {
-					allow_archetype CLUSTER[at0020] occurrences matches {0..*} matches {    -- Extension
-						include
-							archetype_id/value matches {/.*/}
-					}
-					ELEMENT[at0022] occurrences matches {0..1} matches {    -- Valid period start
-						value matches {
-							DV_DATE_TIME matches {*}
-						}
-					}
-					ELEMENT[at0024] occurrences matches {0..1} matches {    -- Valid period end
-						value matches {
-							DV_DATE_TIME matches {*}
-						}
-					}
-					ELEMENT[at0009] occurrences matches {0..1} matches {    -- Review date
-						value matches {
-							DV_DATE_TIME matches {*}
-						}
-					}
-					ELEMENT[at0004] occurrences matches {0..1} matches {    -- Last updated
-						value matches {
-							DV_DATE_TIME matches {*}
 						}
 					}
 				}
@@ -268,32 +228,9 @@ ontology
 					description = <"Identification, by name, of a condition or state.">
 					comment = <"Coding of the identified 'Condition' with a terminology is desirable, where possible.">
 				>
-				["at0003"] = <
-					text = <"Evidence">
-					description = <"Description of the evidence identified to support the precaution.">
-					comment = <"This data element can be optionally linked to a diagnosis, test result, medication order etc via a URI (as per the Reference Model) in order to provide the rationale or evidence for the precaution assertion. Please note: as this URI link may not be accessible from a message or by receiving clinical system it is desirable that a narrative description of the evidence should also be explicitly recorded.">
-				>
-				["at0004"] = <
-					text = <"Last updated">
-					description = <"Date when the precaution information was last updated.">
-				>
-				["at0006"] = <
-					text = <"Tree">
-					description = <"@ internal @">
-				>
 				["at0008"] = <
 					text = <"Comment">
 					description = <"Additional narrative about the precaution, not captured in other fields.">
-				>
-				["at0009"] = <
-					text = <"Review date">
-					description = <"Date when next due for review by a clinician.">
-					comment = <"In circumstances where precautions are not indefinite or life-long, use this data element to record the date/time when this precaution should be reassessed in the context of the clinical circumstances at the time.">
-				>
-				["at0013"] = <
-					text = <"Category">
-					description = <"Type of the 'Condition' identified.">
-					comment = <"This data element has been included because it is currently being captured in some clinical systems. This information could be derived when terminology codes are used to represent the condition in clinical systems, and is effectively redundant in that situation.">
 				>
 				["at0014"] = <
 					text = <"Status">
@@ -311,21 +248,6 @@ ontology
 				["at0019"] = <
 					text = <"Refuted">
 					description = <"The precaution has been clinically reassessed or has been disproved with a high level of clinical certainty by testing.">
-				>
-				["at0020"] = <
-					text = <"Extension">
-					description = <"Additional information required to capture local content or to align with other reference models/formalisms.">
-					comment = <"For example: local information requirements or additional metadata to align with FHIR or CIMI equivalents.">
-				>
-				["at0022"] = <
-					text = <"Valid period start">
-					description = <"Date/time after which the 'Condition' is regarded as active.">
-					comment = <"This data element is intended for use when a precaution is identified to start at some time in the future. For example: the commencement date for a pharmaceutical trial.">
-				>
-				["at0024"] = <
-					text = <"Valid period end">
-					description = <"Date/time after which the 'Condition' is regarded as inactive.">
-					comment = <"This data element is intended for use when a precaution is known to have a definitive end date/time in the future. For example: the cessation date for a pharmaceutical trial.">
 				>
 				["at0025"] = <
 					text = <"Additional details">
@@ -349,32 +271,9 @@ ontology
 					description = <"Navnet på tilstanden eller statusen.">
 					comment = <"Koding av tilstanden med en terminologi er ønskelig, dersom mulig.">
 				>
-				["at0003"] = <
-					text = <"Underlag">
-					description = <"Beskrivelse av underlaget som understøtter forholdsregelen.">
-					comment = <"Dette dataelementet kan dersom ønskelig lenkes til en diagnose, testresultat eller legemiddelordinering ved hjelp av en URI (spesifisert i referansemodellen) for å oppgi rasjonalet eller evidensen for forholdsregelen. NB: Siden URI-lenken kan være utilgjengelige fra en melding eller et mottakende system, er det ønskelig at en fritekstbeskrivelse av underlaget registreres eksplisitt.">
-				>
-				["at0004"] = <
-					text = <"Sist oppdatert">
-					description = <"Dato da forholdsregelinformasjonen sist ble oppdatert.">
-				>
-				["at0006"] = <
-					text = <"Tree">
-					description = <"@ internal @">
-				>
 				["at0008"] = <
 					text = <"Kommentar">
 					description = <"Ytterligere informasjon om forholdsregelen, som ikke kan registreres i andre felter.">
-				>
-				["at0009"] = <
-					text = <"Evalueringsdato">
-					description = <"Dato for neste kliniske evaluering.">
-					comment = <"Ved omstendigheter der forholdsregler ikke er på ubestemt tid eller livslange, kan dette dataelementet brukes til å registrere når forholdsregelen bør evalueres.">
-				>
-				["at0013"] = <
-					text = <"Kategori">
-					description = <"Type \"Tilstand\".">
-					comment = <"Dette dataelementet er inkludert fordi det registreres i flere eksisterende kliniske systemer. Informasjonen kan avledes fra Tilstand dersom hierarkiske kodesystemer er brukt, og vil i slike tilfeller være redundant.">
 				>
 				["at0014"] = <
 					text = <"Status">
@@ -392,21 +291,6 @@ ontology
 				["at0019"] = <
 					text = <"Avkreftet">
 					description = <"Forholdsregelen har blitt klinisk revurdert eller er avkreftet med høy grad av sikkerhet ved testing.">
-				>
-				["at0020"] = <
-					text = <"Tilleggsinformasjon">
-					description = <"Ytterligere informasjon som trengs for å kunne registrere lokalt definert innhold eller for å tilpasse til andre referansemodeller/formalismer.">
-					comment = <"For eksempel lokale informasjonsbehov eller ytterligere metadata for å kunne tilpasse til tilsvarende konsepter i FHIR eller CIMI.">
-				>
-				["at0022"] = <
-					text = <"Gyldighetsperiode start">
-					description = <"Forholdsregelen regnes som aktiv etter denne datoen.">
-					comment = <"Dette dataelementet er ment for å brukes når en forholdregel er ment å starte på et tidspunkt i fremtiden, for eksempel startdatoen for en farmakologisk studie.">
-				>
-				["at0024"] = <
-					text = <"Gyldighetsperiode slutt">
-					description = <"Forholdsregelen regnes som inaktiv etter denne datoen.">
-					comment = <"Dette dataelementet er ment for å brukes når en forholdsregel er ment å avsluttes på et tidspunkt i fremtiden, for eksempel sluttdatoen for en farmakologisk studie.">
 				>
 				["at0025"] = <
 					text = <"Ytterligere detaljer">
@@ -430,32 +314,9 @@ ontology
 					description = <"Identificación, por nombre, de la condición o estado.">
 					comment = <"La codificación de la 'condición' identificada mediante una terminología es deseable cuando sea posible.">
 				>
-				["at0003"] = <
-					text = <"Evidencia">
-					description = <"Descripción de la evidencia identificada que fundamenta la precaución.">
-					comment = <"Este elemento puede ser opcionalmente vinculado a un diagnóstico, resultado de prueba, orden de medicamento, etc., a través de una URI (conforme al Modelo de Referencia) a fin de proveer la base o evidencia para la precaución declarada. Se debe tener en cuenta que dado que este vínculo URI puede no ser accesible desde un mensaje o por el sistema clínico receptor, resulta deseable que se registre explícitamente una descripción narrativa de la evidencia.">
-				>
-				["at0004"] = <
-					text = <"Última actualización">
-					description = <"Fecha en la cual la información sobre la precaución fue actualizada por última vez.">
-				>
-				["at0006"] = <
-					text = <"Tree">
-					description = <"@ internal @">
-				>
 				["at0008"] = <
 					text = <"Comentario">
 					description = <"Narrativa adicional acerca de la precaución, no registrada en otros campos.">
-				>
-				["at0009"] = <
-					text = <"Fecha de Revisión">
-					description = <"La fecha en la cual un clínico debe efectuar una revisión.">
-					comment = <"En circunstancias en las cuales las precauciones no son indefinidas o de por vida, se debe utilizar este elemento para registrar la fecha y hora en la cual esta precaución debe ser reevaluada en el contexto de las circunstancias clínicas imperantes en el momento.">
-				>
-				["at0013"] = <
-					text = <"Categoría">
-					description = <"Tipo de 'condición' identificada.">
-					comment = <"Este elemento ha sido incluido dado que esta siendo actualmente registrado en algunos sistemas clínicos. Esta información podrá ser derivada cuando se utilicen códigos terminológicos para representar la condición en sistemas clínicos y es efectivamente redundante en tales situaciones.">
 				>
 				["at0014"] = <
 					text = <"Estado">
@@ -473,21 +334,6 @@ ontology
 				["at0019"] = <
 					text = <"Refutada">
 					description = <"La precaución previamente declarada ha sido reevaluada clínicamente o negada con un grado alto de certeza a través de pruebas.">
-				>
-				["at0020"] = <
-					text = <"Extensión">
-					description = <"Información adicional requerida para registrar contenido local o para el alineamiento con otros modelos de referencia o formalismos.">
-					comment = <"Por ejemplo: requerimientos locales de información o metadatos adicionales para el alineamiento con equivalentes FHIR o CIMI.">
-				>
-				["at0022"] = <
-					text = <"Comienzo del período de validez">
-					description = <"Fecha y hora a partir de la cual la 'condición' debe considerarse activa.">
-					comment = <"Este elemento se utiliza cuando se pretende que una precaución tenga vigencia en algún momento futuro. Por ejemplo: la fecha de comienzo de un ensayo farmacológico.">
-				>
-				["at0024"] = <
-					text = <"Final del período de validez">
-					description = <"Fecha y hora a partir de la cual la 'condición' debe considerarse inactiva.">
-					comment = <"Este elemento se utiliza cuando una precaución tiene una fecha de finalización futura conocida. Por ejemplo: la fecha de finalización de un ensayo farmacológico.">
 				>
 				["at0025"] = <
 					text = <"*Additional details (en)">
@@ -511,32 +357,9 @@ ontology
 					description = <"Identificação da condição ou estado pelo nome.">
 					comment = <"A codificação da \"Condição\" identificada com uma terminologia é desejável, quando possível.">
 				>
-				["at0003"] = <
-					text = <"Evidência">
-					description = <"Descrição da evidência identificada para suportar a precaução.">
-					comment = <"Este elemento de dado pode ser opcionalmente ligado a um diagnóstico, resultado de exame, solicitação de medicamento etc via URI (como pelo Modelo de Referência) para prover uma razão ou evidência para a assertiva de precaução. Por favor note: como este link URI pode não ser acessível por uma mensagem ou pelo sistema clínico receptor é desejável que a descrição narrativa da evidência seja também explicitamente gravada.">
-				>
-				["at0004"] = <
-					text = <"Última atualização">
-					description = <"Data na qual a informação de precaução foi atualizada pela última vez.">
-				>
-				["at0006"] = <
-					text = <"Tree">
-					description = <"@ internal @">
-				>
 				["at0008"] = <
 					text = <"Comentário">
 					description = <"Narrativa adicional sobre a precaução, não capturada em outros campos.">
-				>
-				["at0009"] = <
-					text = <"Data de revisão">
-					description = <"Data na qual a revisão pelo clínico deverá ser realizada.">
-					comment = <"Em circunstâncias onde as precauções não são de longo prazo ou vitalícias, use este elemento de dado para gravar a data/hora na qual esta precaução deve ser reavaliada no contexto das circunstâncias clínicas do momento.">
-				>
-				["at0013"] = <
-					text = <"Categoria">
-					description = <"Tipo de \"Condição\" identificada.">
-					comment = <"Este elemento de dado foi incluído porque é atualmente capturado em alguns sistemas clínicos. Esta informação pode ser derivada quando códigos terminológicos são utilizados para representar a condição em sistemas clínicos, e é efetivamente redundante nesta situação.">
 				>
 				["at0014"] = <
 					text = <"Estado">
@@ -554,21 +377,6 @@ ontology
 				["at0019"] = <
 					text = <"Refutada">
 					description = <"A precaução foi reavaliada clinicamente ou foi reprovada com um alto grau de certeza clínica por meio de testes.">
-				>
-				["at0020"] = <
-					text = <"Extensão">
-					description = <"Informação adicional requerida para capturar conteúdo local ou alinhar a outros modelos de referência/formalismos.">
-					comment = <"Por exemplo: requisitos de informação local ou metadados adicionais para alinhar a equivalentes de FHIR ou CIMI.">
-				>
-				["at0022"] = <
-					text = <"Início do período válido">
-					description = <"Data/hora na qual a \"Condição\" foi considerada ativa.">
-					comment = <"Este elemento de dado é indicado para uso quando é identificado o início da precaução em algum momento no futuro. Por exemplo: a data de início para uma pesquisa farmacêutica.">
-				>
-				["at0024"] = <
-					text = <"Final do período válido">
-					description = <"Data/hora na qual a \"Condição\" foi considerada inativa.">
-					comment = <"Este elemento de dado é indicado para uso quando sabe-se que a precaução tem uma data de finalização no futuro. Por exemplo: a data de término de uma pesquisa clínica.">
 				>
 				["at0025"] = <
 					text = <"*Additional details (en)">
@@ -592,32 +400,9 @@ ontology
 					description = <"Namnet på tillståndet eller statusen.">
 					comment = <"Kodning med en terminologi till det identifierade tillståndet är önskvärt där så är möjligt.">
 				>
-				["at0003"] = <
-					text = <"Belägg">
-					description = <"Beskrivning av de belägg som identifierats vilka stödjer försiktighetsåtgärden.">
-					comment = <"Det här data elementet kan valfritt länkas till en diagnos, testresultat, läkemedelsordination etc via ett URI (enligt Referensmodellen) i syfte att förse den logiska grunden eller bevisen för den påstådda försiktighetsåtgärden. Vänligen notera: eftersom den här URI-länken kanske inte är tillgänglig från ett meddelande eller att kliniska system inte kan ta emot den är det önskvärt att en berättande beskrivning görs av fynden samt att de blir tydligt dokumenterade.">
-				>
-				["at0004"] = <
-					text = <"Senast uppdaterad">
-					description = <"Datum då informationen om försiktighetsåtgärden senast uppdaterades.">
-				>
-				["at0006"] = <
-					text = <"Tree">
-					description = <"@ internal @">
-				>
 				["at0008"] = <
 					text = <"Kommentar">
 					description = <"Ytterligare beskrivning av försiktighetsåtgärden som inte fångas i några andra fält.">
-				>
-				["at0009"] = <
-					text = <"Granskningsdatum">
-					description = <"Lämpligt datum för nästa granskning av en kliniker.">
-					comment = <"Vid omständigheter där försiktighetsåtgärden inte är definitiv eller livslång, använd då det här dataelementet för att dokumentera datum eller tid när försiktighetsåtgärden bör omvärderas i förhållande till den kliniska kontexten för det aktuella tillfället.">
-				>
-				["at0013"] = <
-					text = <"Kategori">
-					description = <"Typ av identifierat tillstånd.">
-					comment = <"Det här dataelementet har inkluderats eftersom det för närvarande fångas i en del kliniska system. Informationen kan härledas när terminologikoder används för att representera tillståndet i ett kliniskt system och är effektivt redundant i en sådan situation.">
 				>
 				["at0014"] = <
 					text = <"Status">
@@ -635,21 +420,6 @@ ontology
 				["at0019"] = <
 					text = <"Avfärdad">
 					description = <"Försiktighetsåtgärden har blivit kliniskt omvärderad eller genom tester blivit motbevisad med en hög grad av klinisk säkerhet">
-				>
-				["at0020"] = <
-					text = <"Tilläggsinformation">
-					description = <"Plats för att infoga tilläggsinformation som krävs för lokala anpassningar eller anpassning till andra referensmodeller eller formella krav.">
-					comment = <"Exempelvis lokala informationskrav eller metadata för anpassning till FHIR- eller CIMI-motsvarigheter.">
-				>
-				["at0022"] = <
-					text = <"Giltlig startperiod">
-					description = <"Datum eller tid från vilket tillståndet anses vara aktivt.">
-					comment = <"Det här dataelementet syftar till att användas när en försiktighetsåtgärd beräknas starta någon gång i framtiden. Exempelvis det inledande datumet för en läkemedelsprövning.">
-				>
-				["at0024"] = <
-					text = <"Giltlig slutperiod">
-					description = <"Datum eller tid från vilket tillståndet anses vara inaktivt.">
-					comment = <"Det här dataelementet syftar till att användas när en försiktighetsåtgärd har ett definitivt slutdatum eller tid någon gång i framtiden. Exempelvis det datum då en läkemedelsprövning upphör.">
 				>
 				["at0025"] = <
 					text = <"*Additional details(en)">
