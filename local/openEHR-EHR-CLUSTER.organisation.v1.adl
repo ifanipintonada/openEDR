@@ -119,28 +119,41 @@ HL7 FHIR Resource - Organization v4.0.1: R4 [Internet]. Health Level Seven Inter
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"5DFD0809E7CD46EA0712A590C68F545B">
+		["MD5-CAM-1.0.1"] = <"ca5463d0f4afde4ff770b2693f69286d">
 		["build_uid"] = <"8543bf4b-0e15-4990-8a02-c7d082df8617">
 		["revision"] = <"1.0.1">
 	>
 
 definition
-	CLUSTER[at0000] matches {    -- Organisation
+	CLUSTER[at0000] matches {    -- Facility
 		items cardinality matches {1..*; unordered} matches {
-			ELEMENT[at0001] occurrences matches {0..1} matches {    -- Name
+			ELEMENT[at0001] occurrences matches {0..1} matches {    -- Facility Name
 				value matches {
 					DV_TEXT matches {*}
 				}
 			}
-			ELEMENT[at0003] occurrences matches {0..*} matches {    -- Identifier
+			ELEMENT[at0023] occurrences matches {0..1} matches {    -- Facility ID
 				value matches {
 					DV_IDENTIFIER matches {*}
-					DV_TEXT matches {*}
 				}
 			}
-			ELEMENT[at0004] occurrences matches {0..*} matches {    -- Role
+			ELEMENT[at0024] occurrences matches {0..1} matches {    -- Facility Type
 				value matches {
-					DV_TEXT matches {*}
+					DV_CODED_TEXT matches {
+						defining_code matches {
+							[local::
+							at0025,    -- Hospital
+							at0026,    -- Clinic
+							at0027,    -- Academia
+							at0028,    -- Laboratory
+							at0029]    -- Pharmacy
+						}
+					}
+				}
+			}
+			ELEMENT[at0032] occurrences matches {0..1} matches {    -- Organization Number
+				value matches {
+					DV_IDENTIFIER matches {*}
 				}
 			}
 			allow_archetype CLUSTER[at0005] occurrences matches {0..*} matches {    -- Address
@@ -151,19 +164,7 @@ definition
 				include
 					archetype_id/value matches {/openEHR-EHR-CLUSTER\.electronic_communication(-[a-zA-Z0-9_]+)*\.v1/}
 			}
-			allow_archetype CLUSTER[at0002] occurrences matches {0..*} matches {    -- Contact person
-				include
-					archetype_id/value matches {/openEHR-EHR-CLUSTER\.person(-[a-zA-Z0-9_]+)*\.v1/}
-			}
-			allow_archetype CLUSTER[at0021] occurrences matches {0..*} matches {    -- Parent organisation
-				include
-					archetype_id/value matches {/openEHR-EHR-CLUSTER\.organisation(-[a-zA-Z0-9_]+)*\.v1/}
-			}
-			allow_archetype CLUSTER[at0017] occurrences matches {0..*} matches {    -- Additional details
-				include
-					archetype_id/value matches {/.*/}
-			}
-			ELEMENT[at0019] occurrences matches {0..1} matches {    -- Comment
+			ELEMENT[at0019] occurrences matches {0..1} matches {    -- Description
 				value matches {
 					DV_TEXT matches {*}
 				}
@@ -176,193 +177,232 @@ ontology
 		["en"] = <
 			items = <
 				["at0000"] = <
-					text = <"Organisation">
+					text = <"Facility">
 					description = <"An entity comprising one or more people and having a particular purpose.">
 					comment = <"For example: a company, institution, association, network, department, community group, healthcare practice group, payer/insurer, care team, or a group of neighbours who provide care or support.">
 				>
 				["at0001"] = <
-					text = <"Name">
+					text = <"Facility Name">
 					description = <"The unstructured name or label for the organisation.">
 					comment = <"For example: 'Royal Children's Hospital'; 'ABC District Nursing Service'; 'YNWA Oslo' or 'JB Smith Lawyers'.">
-				>
-				["at0002"] = <
-					text = <"Contact person">
-					description = <"Details about one or more people within the organisation.">
-				>
-				["at0003"] = <
-					text = <"Identifier">
-					description = <"Identifier associated with the organisation.">
-					comment = <"Occurrences for this data element is set to 0..* to allow for more than one Identifier to be recorded. Note that the ID data type contains multiple subcomponents for recording the ID value, type, issuer and assigner.">
-				>
-				["at0004"] = <
-					text = <"Role">
-					description = <"The relationship or role of the organisation to the individual or subject of care.">
-					comment = <"For example: oncologist; palliative care home nursing service; or informal support network.">
 				>
 				["at0005"] = <
 					text = <"Address">
 					description = <"Details about an address for the organisation.">
 				>
-				["at0017"] = <
-					text = <"Additional details">
-					description = <"Additional details about the organisation.">
-				>
 				["at0019"] = <
-					text = <"Comment">
+					text = <"Description">
 					description = <"Additional narrative about the organisation not captured in other fields.">
-				>
-				["at0021"] = <
-					text = <"Parent organisation">
-					description = <"A larger organisation of which this organisation is a child or subsidiary.">
 				>
 				["at0022"] = <
 					text = <"Electronic communication">
 					description = <"Details about one or more types of electronic communication for the organisation.">
+				>
+				["at0023"] = <
+					text = <"Facility ID">
+					description = <"">
+				>
+				["at0024"] = <
+					text = <"Facility Type">
+					description = <"">
+				>
+				["at0025"] = <
+					text = <"Hospital">
+					description = <"Hospital">
+				>
+				["at0026"] = <
+					text = <"Clinic">
+					description = <"Clinic">
+				>
+				["at0027"] = <
+					text = <"Academia">
+					description = <"Academia">
+				>
+				["at0028"] = <
+					text = <"Laboratory">
+					description = <"Laboratory">
+				>
+				["at0029"] = <
+					text = <"Pharmacy">
+					description = <"Pharmacy">
+				>
+				["at0032"] = <
+					text = <"Organization Number">
+					description = <"">
 				>
 			>
 		>
 		["nb"] = <
 			items = <
 				["at0000"] = <
-					text = <"Organisasjon">
+					text = <"*Facility (en)">
 					description = <"En entitet som består av ett eller flere mennesker med et bestemt formål.">
 					comment = <"For eksempel: Et firma, institusjon, selskap, forening, nettverk, avdeling, gruppe i nærmiljøet, forsikringsselskap, behandlingsteam eller en gruppe av naboer som opptrer som støtte.">
 				>
 				["at0001"] = <
-					text = <"Navn">
+					text = <"*Facility Name (en)">
 					description = <"Ustrukturert navn for organisasjonen.">
 					comment = <"For eksempel: \"Haukeland Sykehus\", \"Årstad hjemmesykepleie\", \"YNWA Oslo\" eller \"JB Smith advokater\".">
-				>
-				["at0002"] = <
-					text = <"Kontaktperson">
-					description = <"Detaljer om én eller flere personer i organisasjonen.">
-				>
-				["at0003"] = <
-					text = <"Identifikator">
-					description = <"Identifikator for organisasjonen.">
-					comment = <"Forekomster for dette dataelementet er satt til 0..* for å tillate at mer enn én identifikator kan registreres. Merk at ID-datatypen inneholder flere underkomponenter for registrering av ID-verdi, type, utsteder og tilordnet.">
-				>
-				["at0004"] = <
-					text = <"Rolle">
-					description = <"Forholdet eller rollen organisasjonen har til individet som pasientjournalen omhandler.">
-					comment = <"For eksempel: onkolog; palliativ hjemmetjeneste; eller uformelt støttenettverk.">
 				>
 				["at0005"] = <
 					text = <"Adresse">
 					description = <"Detaljer om organisasjonens adresse.">
 				>
-				["at0017"] = <
-					text = <"Ytterligere detaljer">
-					description = <"Ytterligere strukturerte detaljer om organisasjonen.">
-				>
 				["at0019"] = <
-					text = <"Kommentar">
+					text = <"*Description (en)">
 					description = <"Ytterligere fritekst om organisasjonen som ikke er registrert i andre felt.">
-				>
-				["at0021"] = <
-					text = <"Overordnet organisasjon">
-					description = <"En større organisasjon som denne organisasjonen er en del av.">
 				>
 				["at0022"] = <
 					text = <"Elektronisk kommunikasjon">
 					description = <"Detaljer om én eller flere former for elektronisk kommunikasjon med organisasjonen.">
+				>
+				["at0023"] = <
+					text = <"*Facility ID (en)">
+					description = <"">
+				>
+				["at0024"] = <
+					text = <"*Facility Type (en)">
+					description = <"">
+				>
+				["at0025"] = <
+					text = <"*Hospital (en)">
+					description = <"*Hospital (en)">
+				>
+				["at0026"] = <
+					text = <"*Clinic (en)">
+					description = <"*Clinic (en)">
+				>
+				["at0027"] = <
+					text = <"*Academia (en)">
+					description = <"*Academia (en)">
+				>
+				["at0028"] = <
+					text = <"*Laboratory (en)">
+					description = <"*Laboratory (en)">
+				>
+				["at0029"] = <
+					text = <"*Pharmacy (en)">
+					description = <"*Pharmacy (en)">
+				>
+				["at0032"] = <
+					text = <"*Organization Number (en)">
+					description = <"">
 				>
 			>
 		>
 		["de"] = <
 			items = <
 				["at0000"] = <
-					text = <"Organisation">
+					text = <"*Facility (en)">
 					description = <"Eine Einheit, die aus einer oder mehreren Personen besteht und ein bestimmtes Ziel hat.">
 					comment = <"Zum Beispiel: ein Unternehmen, eine Institution, ein Verband, ein Netzwerk, eine Abteilung, eine Gemeindegruppe, eine Gesundheitspraxisgruppe, ein Kostenträger/Versicherer, ein Pflegeteam oder eine Gruppe von Nachbarn, die Pflege oder Unterstützung leisten.">
 				>
 				["at0001"] = <
-					text = <"Namenszeile">
+					text = <"*Facility Name (en)">
 					description = <"Der Name oder Bezeichnung der Organisation in unstrukturierter Form.">
 					comment = <"Zum Beispiel: „Royal Children's Hospital“, \"ABC-Krankenpflegedienst\", „YNWA Oslo“ oder „JB Smith Rechtsanwälte“.">
-				>
-				["at0002"] = <
-					text = <"Kontaktperson">
-					description = <"Details zu einer oder mehreren Personen innerhalb der Organisation.">
-				>
-				["at0003"] = <
-					text = <"Identifier">
-					description = <"Identifikator, der der identifizierten Organisation zugeordnet ist.">
-					comment = <"Kardinalität für dieses Datenelement wird auf 0..* gesetzt, damit mehr als ein Identifikator aufgezeichnet werden kann. Beachten Sie, dass der ID-Datentyp mehrere Unterkomponenten zum Aufzeichnen des ID-Werts, -Typs, -Ausstellers und -Zuweisers enthält.">
-				>
-				["at0004"] = <
-					text = <"Funktion">
-					description = <"Die Beziehung oder Rolle der Organisation zum Pflegebedürftigen oder Patient.">
-					comment = <"Zum Beispiel: Onkologe, ambulanter Palliativdienst oder informelles Supportnetzwerk.">
 				>
 				["at0005"] = <
 					text = <"Adresse">
 					description = <"Angaben zu einer Adresse der Organisation.">
 				>
-				["at0017"] = <
-					text = <"Zusätzliche Details">
-					description = <"Weitere Angaben zur Organisation.">
-				>
 				["at0019"] = <
-					text = <"Kommentar">
+					text = <"*Description (en)">
 					description = <"Zusätzlicher Text zu der Organisation, der in anderen Bereichen nicht erfasst wird.">
-				>
-				["at0021"] = <
-					text = <"Muttergesellschaft">
-					description = <"Eine größere Organisation, von der diese Organisation ein Sub- oder Tochterunternehmen ist.">
 				>
 				["at0022"] = <
 					text = <"Elektronische Kommunikation">
 					description = <"Details zu einer oder mehreren Arten der elektronischen Kommunikation für die Organisation.">
+				>
+				["at0023"] = <
+					text = <"*Facility ID (en)">
+					description = <"">
+				>
+				["at0024"] = <
+					text = <"*Facility Type (en)">
+					description = <"">
+				>
+				["at0025"] = <
+					text = <"*Hospital (en)">
+					description = <"*Hospital (en)">
+				>
+				["at0026"] = <
+					text = <"*Clinic (en)">
+					description = <"*Clinic (en)">
+				>
+				["at0027"] = <
+					text = <"*Academia (en)">
+					description = <"*Academia (en)">
+				>
+				["at0028"] = <
+					text = <"*Laboratory (en)">
+					description = <"*Laboratory (en)">
+				>
+				["at0029"] = <
+					text = <"*Pharmacy (en)">
+					description = <"*Pharmacy (en)">
+				>
+				["at0032"] = <
+					text = <"*Organization Number (en)">
+					description = <"">
 				>
 			>
 		>
 		["sv"] = <
 			items = <
 				["at0000"] = <
-					text = <"Organisation">
+					text = <"*Facility (en)">
 					description = <"*An entity comprising one or more people and having a particular purpose. (en)">
 					comment = <"*For example: a company, institution, association, network, department, community group, healthcare practice group, payer/insurer, care team, or a group of neighbours who provide care or support. (en)">
 				>
 				["at0001"] = <
-					text = <"Namn">
+					text = <"*Facility Name (en)">
 					description = <"Namnet som en organisation är känd för.">
 					comment = <"Exempelvis: 'Royal Children's Hospital'; 'ABC District Nursing Service'; 'YNWA Oslo' or 'JB Smith Lawyers'.">
-				>
-				["at0002"] = <
-					text = <"Kontaktperson">
-					description = <"Detaljer om en eller flera personer inom organisationen.">
-				>
-				["at0003"] = <
-					text = <"Identifierare">
-					description = <"Identifierare associerad med den identifierade organisationen.">
-					comment = <"Förekomster (Occurrences) för detta dataelement är satt till 0..* för att tillåta att mer än en identifierare kan användas samtidigt. Observera att ID-datatypen innehåller flera underkomponenter för ID-värde, typ, utfärdare och tilldelare.">
-				>
-				["at0004"] = <
-					text = <"Roll">
-					description = <"Den roll eller kapacitet i vilken organisationen bidrar till vårdpersonens hälsa eller sociala vård.">
-					comment = <"*For example: oncologist; palliative care home nursing service; or informal support network. (en)">
 				>
 				["at0005"] = <
 					text = <"Adress">
 					description = <"Detaljer om en specifik adress för organisationen.">
 				>
-				["at0017"] = <
-					text = <"Ytterligare detaljer">
-					description = <"Ytterligare detaljer om organisationen.">
-				>
 				["at0019"] = <
-					text = <"Kommentar">
+					text = <"*Description (en)">
 					description = <"Beskrivning av organisationen som inte kunnat anges i övriga fält.">
-				>
-				["at0021"] = <
-					text = <"Överordnad organisation">
-					description = <"En större organisation som denna organisation är en del av.
-">
 				>
 				["at0022"] = <
 					text = <"Elektronisk kommunikation">
 					description = <"Detaljer om en viss typ av elektronisk kommunikation för organisationen.">
+				>
+				["at0023"] = <
+					text = <"*Facility ID (en)">
+					description = <"">
+				>
+				["at0024"] = <
+					text = <"*Facility Type (en)">
+					description = <"">
+				>
+				["at0025"] = <
+					text = <"*Hospital (en)">
+					description = <"*Hospital (en)">
+				>
+				["at0026"] = <
+					text = <"*Clinic (en)">
+					description = <"*Clinic (en)">
+				>
+				["at0027"] = <
+					text = <"*Academia (en)">
+					description = <"*Academia (en)">
+				>
+				["at0028"] = <
+					text = <"*Laboratory (en)">
+					description = <"*Laboratory (en)">
+				>
+				["at0029"] = <
+					text = <"*Pharmacy (en)">
+					description = <"*Pharmacy (en)">
+				>
+				["at0032"] = <
+					text = <"*Organization Number (en)">
+					description = <"">
 				>
 			>
 		>
