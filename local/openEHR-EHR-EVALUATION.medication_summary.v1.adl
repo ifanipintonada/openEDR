@@ -168,7 +168,7 @@ Not to be used to record an observation about the use of a medication - use OBSE
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"50B8849AB9B274AB2D8E0456FA33FF85">
+		["MD5-CAM-1.0.1"] = <"71c9fd361a7898aa2aa91219b7b50426">
 		["build_uid"] = <"0c00cb63-d882-4789-83b5-9e27946b84d8">
 		["revision"] = <"1.0.1">
 	>
@@ -179,11 +179,6 @@ definition
 			ITEM_TREE[at0001] matches {    -- Tree
 				items cardinality matches {0..*; unordered} matches {
 					ELEMENT[at0002] matches {    -- Medication name
-						value matches {
-							DV_TEXT matches {*}
-						}
-					}
-					ELEMENT[at0007] occurrences matches {0..1} matches {    -- Clinical description
 						value matches {
 							DV_TEXT matches {*}
 						}
@@ -203,11 +198,6 @@ definition
 							ELEMENT[at0011] occurrences matches {0..1} matches {    -- Episode onset
 								value matches {
 									DV_DATE_TIME matches {*}
-								}
-							}
-							ELEMENT[at0018] occurrences matches {0..*} matches {    -- Episode indication
-								value matches {
-									DV_TEXT matches {*}
 								}
 							}
 							ELEMENT[at0020] occurrences matches {0..*} matches {    -- Therapeutic intent
@@ -269,32 +259,12 @@ definition
 							DV_DATE_TIME matches {*}
 						}
 					}
-					ELEMENT[at0030] occurrences matches {0..1} matches {    -- Reason for cessation
-						value matches {
-							DV_TEXT matches {*}
-						}
-					}
 					ELEMENT[at0027] occurrences matches {0..1} matches {    -- Cumulative duration
 						value matches {
 							DV_DURATION matches {
 								value matches {|>=PT0S|}
 							}
 						}
-					}
-				}
-			}
-		}
-		protocol matches {
-			ITEM_TREE[at0005] matches {    -- Tree
-				items cardinality matches {0..*; unordered} matches {
-					ELEMENT[at0006] occurrences matches {0..1} matches {    -- Last updated
-						value matches {
-							DV_DATE_TIME matches {*}
-						}
-					}
-					allow_archetype CLUSTER[at0019] occurrences matches {0..*} matches {    -- Extension
-						include
-							archetype_id/value matches {/.*/}
 					}
 				}
 			}
@@ -317,19 +287,6 @@ ontology
 					text = <"Medication name">
 					description = <"Name of medication or group of medications.">
 					comment = <"The medication name can be represented as a generic substance, trade name or a group or class of medications. Coding of 'Medication name' with a terminology capable of triggering decision support is strongly recommended where possible. Free text entry should only be used if there is no appropriate terminology available. For example: 'Adriamycin'; 'doxorubicin' or 'anthracyclines'; 'Fosamax', 'alendronate' or 'bisphosphanates'.">
-				>
-				["at0005"] = <
-					text = <"Tree">
-					description = <"@ internal @">
-				>
-				["at0006"] = <
-					text = <"Last updated">
-					description = <"The date this medication summary was last updated.">
-				>
-				["at0007"] = <
-					text = <"Clinical description">
-					description = <"Narrative description about the overall use of the medication.">
-					comment = <"For example: \"Used between 1996 and 2001 against osteoporosis. Ceased after five years of use to minimise risk of adverse effects.\"">
 				>
 				["at0008"] = <
 					text = <"Episode">
@@ -379,18 +336,6 @@ May be manually calculated or derived via the EHR from multiple sources.
 					text = <"Episode amount">
 					description = <"Cumulative dose of the medication used in this episode.">
 				>
-				["at0018"] = <
-					text = <"Episode indication">
-					description = <"The clinical indication for the use of the medication during this episode, particularly if this is more specific or differs from the 'Clinical indication', or there is no clinical indication that applies for all episodes.">
-					comment = <"This element and the root level 'Clinical indication' element can potentially be in conflict with each other. In those situations, this element takes precedence over 'Clinical indication' for this episode.
-Coding with an external terminology is preferred, where possible. 
-For example: 'Cancer therapy' or 'rheumatoid arthritis for osteoporosis'.">
-				>
-				["at0019"] = <
-					text = <"Extension">
-					description = <"Additional information required to extend the model with local content or to align with other reference models or formalisms.">
-					comment = <"For example: local information requirements; or additional metadata to align with FHIR.">
-				>
 				["at0020"] = <
 					text = <"Therapeutic intent">
 					description = <"The therapeutic intent for use of the medication during this episode.">
@@ -414,11 +359,6 @@ For example: 'Cancer therapy' or 'rheumatoid arthritis for osteoporosis'.">
 				["at0029"] = <
 					text = <"Additional details">
 					description = <"Additional details about medication use during this episode.">
-				>
-				["at0030"] = <
-					text = <"Reason for cessation">
-					description = <"The reason why all use of the medication was stopped.">
-					comment = <"Coding with an external terminology is preferred, where possible. For example: sub-optimal control of diabetes; adverse reaction; or high cost.">
 				>
 				["at0031"] = <
 					text = <"Episode duration">
@@ -447,19 +387,6 @@ For example: 'Cancer therapy' or 'rheumatoid arthritis for osteoporosis'.">
 					description = <"Navn på legemiddel eller gruppe av legemidler.">
 					comment = <"Navn på legemiddel kan representeres som en generisk substans, handelsnavn, gruppe eller klasse av legemidler. Det anbefales å kode \"Navn på legemiddel\" med en terminologi om mulig, slik at det kan brukes for eksempel i beslutningsstøtte. Fritekst bør bare benyttes der det ikke finnes en passende terminologi.
 For eksempel: '\"Adriamycin\"; \"doxorubicin\" eller \"anthracycliner\"; \"Fosamax\", \"alendronsyre\" eller \"bifosonater\".">
-				>
-				["at0005"] = <
-					text = <"Tree">
-					description = <"@ internal @">
-				>
-				["at0006"] = <
-					text = <"Sist oppdatert">
-					description = <"Datoen da legemiddelsammendraget sist ble oppdatert.">
-				>
-				["at0007"] = <
-					text = <"Klinisk beskrivelse">
-					description = <"Fritekstbeskrivelse om den overordnede bruken av legemiddelet.">
-					comment = <"For eksempel: \"Brukt i perioden mellom 1996 og 2001 mot osteoporose, avsluttet etter fem år for å redusere risikoen for bivirkninger.\"">
 				>
 				["at0008"] = <
 					text = <"Periode">
@@ -505,17 +432,6 @@ Kan regnes ut manuelt eller utledes via ulike kilder, som for eksempel kurvesyst
 					text = <"Mengde i perioden">
 					description = <"Kumulativ mengde brukt av legemiddelet i denne perioden.">
 				>
-				["at0018"] = <
-					text = <"Indikasjon for perioden">
-					description = <"Klinisk indikasjon for bruk av legemiddelet i denne perioden, særlig der dette er mer spesifikt eller skiller seg fra informasjonen i dataelementet 'Klinisk indikasjon'. Kan også brukes der det ikke er noen klinisk indikasjon som gjelder for alle episoder.">
-					comment = <"Dette dataelementet og dataelementet \"Klinisk indikasjon\" på arketypens toppnivå, kan potensielt komme i konflikt med hverandre. I disse tilfellene vil dette dataelementet ha forrang over \"Klinisk indikasjon\". Koding med en terminologi er foretrekkes, der det er mulig. For eksempel: kreftbehandling eller revmatoid artritt ved osteoporose.
-">
-				>
-				["at0019"] = <
-					text = <"Tilleggsinformasjon">
-					description = <"Ytterligere informasjon som trengs for å kunne registrere lokalt definert innhold eller for å tilpasse til andre referansemodeller/formalismer.">
-					comment = <"For eksempel lokale informasjonsbehov eller ytterligere metadata for å kunne tilpasse til tilsvarende konsepter i FHIR.">
-				>
 				["at0020"] = <
 					text = <"Terapeutisk hensikt">
 					description = <"Den terapeutiske hensikten for bruken av legemiddelet i denne perioden.">
@@ -539,11 +455,6 @@ Kan regnes ut manuelt eller utledes via ulike kilder, som for eksempel kurvesyst
 				["at0029"] = <
 					text = <"Ytterligere detaljer">
 					description = <"Ytterligere detaljer om legemiddelbruken i denne perioden.">
-				>
-				["at0030"] = <
-					text = <"Årsak til seponering">
-					description = <"Årsak til at bruken av legemiddelet ble avsluttet.">
-					comment = <"Koding med en terminologi foretrekkes, der det er mulig. For eksempel: Dårlig kontrollert diabetes, overfølsomhetsreaksjoner eller høye kostnader.">
 				>
 				["at0031"] = <
 					text = <"Periodens varighet">
@@ -571,19 +482,6 @@ Kan regnes ut manuelt eller utledes via ulike kilder, som for eksempel kurvesyst
 					text = <"Nome do medicamento">
 					description = <"*Name of medication or group of medications. (en)">
 					comment = <"*The medication name can be represented as a generic substance, trade name or a group or class of medications. Coding of 'Medication name' with a terminology capable of triggering decision support is strongly recommended where possible. Free text entry should only be used if there is no appropriate terminology available. For example: 'Adriamycin'; 'doxorubicin' or 'anthracyclines'; 'Fosamax', 'alendronate' or 'bisphosphanates'. (en)">
-				>
-				["at0005"] = <
-					text = <"Tree">
-					description = <"@ internal @">
-				>
-				["at0006"] = <
-					text = <"Última atualização">
-					description = <"A última data em que esse sumário de medicamente foi atualizado.">
-				>
-				["at0007"] = <
-					text = <"Descrição clínica">
-					description = <"*Changing the description to: Narrative description about the overall use of the medication. (en)">
-					comment = <"*For example: \"Used between 1996 and 2001 against osteoporosis. Ceased after five years of use to minimise risk of adverse effects.\" (en)">
 				>
 				["at0008"] = <
 					text = <"Episódio">
@@ -633,18 +531,6 @@ May be manually calculated or derived via the EHR from multiple sources.
 					text = <"*Episode amount (en)">
 					description = <"*Cumulative dose of the medication used in this episode. (en)">
 				>
-				["at0018"] = <
-					text = <"*Episode indication (en)">
-					description = <"*The clinical indication for the administration or consumption of the medication during this episode. (en)">
-					comment = <"*This element and the root level 'Clinical indication' element can potentially be in conflict with each other. In those situations, this element takes precedence over 'Clinical indication' for this episode.
-Coding with an external terminology is preferred, where possible. 
-For example: 'Cancer therapy' or 'rheumatoid arthritis for osteoporosis'. (en)">
-				>
-				["at0019"] = <
-					text = <"Extensão">
-					description = <"Informação adicional requerida para entender o contexto local ou alinhar com outros modelos de referência/formalismos.">
-					comment = <"Por exemplo: requisitos de informação local ou metadados adicionais para alinhar com equivalentes do FHIR ou CIMI.">
-				>
 				["at0020"] = <
 					text = <"*Therapeutic intent (en)">
 					description = <"*The therapeutic intent for use of the medication during this episode. (en)">
@@ -668,11 +554,6 @@ For example: 'Cancer therapy' or 'rheumatoid arthritis for osteoporosis'. (en)">
 				["at0029"] = <
 					text = <"*Additional details (en)">
 					description = <"*Additional details about medication use during this episode. (en)">
-				>
-				["at0030"] = <
-					text = <"*Reason for cessation (en)">
-					description = <"*The reason why all use of the medication was stopped. (en)">
-					comment = <"*Coding with an external terminology is preferred, where possible. For example: sub-optimal control of diabetes; adverse reaction; or high cost. (en)">
 				>
 				["at0031"] = <
 					text = <"*Episode duration (en)">
@@ -700,19 +581,6 @@ For example: 'Cancer therapy' or 'rheumatoid arthritis for osteoporosis'. (en)">
 					text = <"Name des Medikaments">
 					description = <"Name des Medikaments oder der Medikamentengruppe.">
 					comment = <"Der Medikamentenname kann als generische Substanz, Handelsname oder eine Medikamentengruppe oder -klasse dargestellt werden. Die Codierung des „Name des Medikaments“ mit einer Terminologie, die eine Entscheidungsunterstützung auslösen kann, wird nach Möglichkeit dringend empfohlen. Die Freitexteingabe sollte nur verwendet werden, wenn keine passende Terminologie vorhanden ist. Zum Beispiel: „Adriamycin“, „Doxorubicin“ oder „Anthracycline“, „Fosamax“, „Alendronat“ oder „Bisphosphanate“.">
-				>
-				["at0005"] = <
-					text = <"Tree">
-					description = <"@ internal @">
-				>
-				["at0006"] = <
-					text = <"Datum der letzten Aktualisierung">
-					description = <"Das Datum der letzten Aktualisierung der Zusammenfassung der Medikation.">
-				>
-				["at0007"] = <
-					text = <"Klinische Beschreibung">
-					description = <"Einfache Beschreibung über die allgemeine Anrwendung des Medikaments.">
-					comment = <"Zum Beispiel: „Zwischen 1996 und 2001 gegen Osteoporose eingesetzt. Nach fünfjähriger Anwendung eingestellt, um das Risiko von Nebenwirkungen zu minimieren.“">
 				>
 				["at0008"] = <
 					text = <"Anwendungszeitraum">
@@ -760,17 +628,6 @@ Kann manuell berechnet oder über die EHR aus mehreren Quellen abgeleitet werden
 					text = <"Menge im Anwendungszeitraum">
 					description = <"Kumulative Dosis des in dieser Episode verwendeten Medikaments.">
 				>
-				["at0018"] = <
-					text = <"Indikation für den Anwendungszeitraum">
-					description = <"Die klinische Indikation für die Anwendung des Medikaments in dem Anwendungszeitraum, insbesondere wenn dieser spezifischer ist oder von der „Klinischen Indikation“ abweicht oder es keine klinische Indikation gibt, die für alle Anwendungszeiträume gilt.">
-					comment = <"Möglicherweise können dieses Element und das Element auf dem Grundlevel „Klinische Indikation“ miteinander in Konflikt stehen. In diesen Situationen hat dieses Element den Vorrang vor der „Klinischen Indikation“ für diese Episode.
-Wenn möglich, wird die Kodierung mit einer externen Terminologie bevorzugt. Zum Beispiel: „Krebstherapie“ oder „rheumatoide Arthritis bei Osteoporose“.">
-				>
-				["at0019"] = <
-					text = <"Erweiterung">
-					description = <"Zusätzliche Informationen zur Erfassung lokaler Inhalte oder Anpassung an andere Referenzmodelle/Formalismen.">
-					comment = <"Zum Beispiel: Lokaler Informationsbedarf oder zusätzliche Metadaten zur Anpassung an FHIR-Ressourcen.">
-				>
 				["at0020"] = <
 					text = <"Therapeutische Intention">
 					description = <"Die therapeutische Absicht für die Anrwendung des Medikaments in diesem Anwendungszeitraum.">
@@ -797,11 +654,6 @@ Wenn möglich, wird die Kodierung mit einer externen Terminologie bevorzugt. Zum
 				["at0029"] = <
 					text = <"Zusätzliche Angaben">
 					description = <"Zusätzliche Angaben zur Anwendung des Medikaments innerhalb des Anwendungszeitraums.">
-				>
-				["at0030"] = <
-					text = <"Grund für das Ende">
-					description = <"Der Grund, warum die Anwendung des Medikaments eingestellt wurde.">
-					comment = <"Wenn möglich, wird die Codierung mit einer externen Terminologie bevorzugt. Zum Beispiel: suboptimale Kontrolle von Diabetes; Nebenwirkung oder hohe Kosten.">
 				>
 				["at0031"] = <
 					text = <"Dauer des Anwendungszeitraums">
