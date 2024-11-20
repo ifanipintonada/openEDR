@@ -69,7 +69,7 @@ Not to be used to represent or replace formal identification management or for t
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"631B12227B6F857367CA40D256DD814A">
+		["MD5-CAM-1.0.1"] = <"e78d4b97d3713f9ac8f719eb3743de7b">
 		["build_uid"] = <"ae57162c-7e2f-4096-a08f-8f03574e4a72">
 		["revision"] = <"1.0.2">
 	>
@@ -98,23 +98,6 @@ definition
 					DV_URI matches {*}
 				}
 			}
-			ELEMENT[at0003] occurrences matches {0..1} matches {    -- Purpose
-				value matches {
-					DV_TEXT matches {*}
-					DV_CODED_TEXT matches {
-						defining_code matches {
-							[local::
-							at0010,    -- Business use
-							at0011,    -- Personal use
-							at0012]    -- Both business and personal use
-						}
-					}
-				}
-			}
-			allow_archetype CLUSTER[at0013] occurrences matches {0..*} matches {    -- Additional details
-				include
-					archetype_id/value matches {/openEHR-EHR-CLUSTER\.language(-[a-zA-Z0-9_]+)*\.v1/}
-			}
 			ELEMENT[at0004] occurrences matches {0..1} matches {    -- Comment
 				value matches {
 					DV_TEXT matches {*}
@@ -141,10 +124,6 @@ ontology
 					description = <"The unique combination of alphanumeric characters, relevant for representation of 'Type'.">
 					comment = <"For example: area code + landline phone/pager number; country code + mobile phone number; or email address.">
 				>
-				["at0003"] = <
-					text = <"Purpose">
-					description = <"The purpose or use for the identified type of electronic communication.">
-				>
 				["at0004"] = <
 					text = <"Comment">
 					description = <"Additional narrative about the electronic communication not captured in other fields.">
@@ -169,22 +148,6 @@ ontology
 					text = <"Fax">
 					description = <"">
 				>
-				["at0010"] = <
-					text = <"Business use">
-					description = <"">
-				>
-				["at0011"] = <
-					text = <"Personal use">
-					description = <"">
-				>
-				["at0012"] = <
-					text = <"Both business and personal use">
-					description = <"">
-				>
-				["at0013"] = <
-					text = <"Additional details">
-					description = <"Additional details about the electronic communication.">
-				>
 			>
 		>
 		["de"] = <
@@ -202,10 +165,6 @@ ontology
 					text = <"Daten">
 					description = <"Die eindeutige Kombination alphanumerischer Zeichen, die für die Darstellung von \"Art\" relevant ist.">
 					comment = <"Zum Beispiel: Vorwahl + Telefon/Pagernummer; Ländervorwahl + Mobiltelefonnummer oder E-Mail-Adresse.">
-				>
-				["at0003"] = <
-					text = <"Zweck">
-					description = <"Der Zweck oder die Verwendung für die identifizierte Art der elektronischen Kommunikation.">
 				>
 				["at0004"] = <
 					text = <"Kommentar">
@@ -231,22 +190,6 @@ ontology
 					text = <"Fax">
 					description = <"">
 				>
-				["at0010"] = <
-					text = <"Geschäftliche Nutzung">
-					description = <"">
-				>
-				["at0011"] = <
-					text = <"Private Nutzung">
-					description = <"">
-				>
-				["at0012"] = <
-					text = <"Geschäftliche und private Nutzung">
-					description = <"">
-				>
-				["at0013"] = <
-					text = <"Zusätzliche Details">
-					description = <"Weitere Details zur elektronischen Kommunikation.">
-				>
 			>
 		>
 		["nb"] = <
@@ -264,10 +207,6 @@ ontology
 					text = <"Verdi">
 					description = <"Den unike kombinasjonen av alfanumeriske tegn for å representere \"Type\".">
 					comment = <"For eksempel: landskode + mobilnummer eller e-postadresse.">
-				>
-				["at0003"] = <
-					text = <"Bruksområde">
-					description = <"Formålet med den spesifikke typen elektronisk kommunikasjon.">
 				>
 				["at0004"] = <
 					text = <"Kommentar">
@@ -292,22 +231,6 @@ ontology
 				["at0009"] = <
 					text = <"Faks">
 					description = <"">
-				>
-				["at0010"] = <
-					text = <"Arbeid">
-					description = <"">
-				>
-				["at0011"] = <
-					text = <"Privat">
-					description = <"">
-				>
-				["at0012"] = <
-					text = <"Både arbeid og privat">
-					description = <"">
-				>
-				["at0013"] = <
-					text = <"Ytterligere detaljer">
-					description = <"Ytterligere detaljer om den elektroniske kommunikasjonen.">
 				>
 			>
 		>
