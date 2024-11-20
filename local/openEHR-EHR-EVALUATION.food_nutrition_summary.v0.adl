@@ -66,7 +66,7 @@ description
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"559F25C87D73B82A23AB0EE77152B626">
+		["MD5-CAM-1.0.1"] = <"4846a2124fae1fbc2efdb5524c133195">
 		["build_uid"] = <"79dbcb67-f65b-4e32-bed1-5c611d704415">
 		["revision"] = <"0.0.1-alpha">
 	>
@@ -91,11 +91,6 @@ definition
 									at0016]    -- Insecure
 								}
 							}
-						}
-					}
-					ELEMENT[at0020] occurrences matches {0..1} matches {    -- Food security description
-						value matches {
-							DV_TEXT matches {*}
 						}
 					}
 					ELEMENT[at0002] occurrences matches {0..1} matches {    -- Nutrition status
@@ -141,21 +136,6 @@ definition
 						value matches {
 							DV_TEXT matches {*}
 						}
-					}
-				}
-			}
-		}
-		protocol matches {
-			ITEM_TREE[at0012] matches {    -- Item tree
-				items cardinality matches {0..*; unordered} matches {
-					ELEMENT[at0018] occurrences matches {0..1} matches {    -- Last updated
-						value matches {
-							DV_DATE_TIME matches {*}
-						}
-					}
-					allow_archetype CLUSTER[at0019] occurrences matches {0..*} matches {    -- Extension
-						include
-							archetype_id/value matches {/.*/}
 					}
 				}
 			}
@@ -216,10 +196,6 @@ ontology
 					text = <"Description">
 					description = <"Narrative description about the individual's diet and eating patterns.">
 				>
-				["at0012"] = <
-					text = <"Item tree">
-					description = <"@ internal @">
-				>
 				["at0013"] = <
 					text = <"Food security status">
 					description = <"Category describing the individual's perception about about secure and reliable access to food that is adequate in quantity and nutritional quality; culturally acceptable; safe; and acquired in socially acceptable ways.">
@@ -235,19 +211,6 @@ ontology
 				["at0016"] = <
 					text = <"Insecure">
 					description = <"The individual has a sense of worry and concern about their access to appropriate food.">
-				>
-				["at0018"] = <
-					text = <"Last updated">
-					description = <"The date this summary was last updated.">
-				>
-				["at0019"] = <
-					text = <"Extension">
-					description = <"Additional information required to extend the model with local content or to align with other reference models/formalisms.">
-					comment = <"For example: local information requirements or additional metadata to align with FHIR or CIMI equivalents.">
-				>
-				["at0020"] = <
-					text = <"Food security description">
-					description = <"Narrative description about the individual's ability to access appropriate food.">
 				>
 				["at0021"] = <
 					text = <"Milk supply">
@@ -315,10 +278,6 @@ ontology
 					text = <"Beschreibung">
 					description = <"Eine Beschreibung der Essgewohnheiten des Individuums.">
 				>
-				["at0012"] = <
-					text = <"Item tree">
-					description = <"@ internal @">
-				>
 				["at0013"] = <
 					text = <"Status der Ernährungssicherheit">
 					description = <"Kategorie, die die Wahrnehmung des Individuums über einen sicheren und zuverlässigen Zugang zu Nahrungsmitteln beschreibt, der in Bezug auf Quantität und Ernährungsqualität angemessen, kulturell akzeptabel, sicher und auf sozial verträgliche Weise erworben ist.">
@@ -334,19 +293,6 @@ ontology
 				["at0016"] = <
 					text = <"Unsicher">
 					description = <"Die Person hat ein Gefühl von Angst und Sorge über sein Zugang zu angemessener Nahrung.">
-				>
-				["at0018"] = <
-					text = <"Letzte Aktualisierung">
-					description = <"Das Datum, an dem diese Zusammenfassung das letzte Mal aktualisiert wurde.">
-				>
-				["at0019"] = <
-					text = <"Erweiterung">
-					description = <"Zusätzliche Informationen zur Erfassung lokaler Inhalte oder Anpassung an andere Referenzmodelle/Formalismen.">
-					comment = <"Zum Beispiel: Lokaler Informationsbedarf oder zusätzliche Metadaten zur Anpassung an FHIR-Ressourcen oder CIMI-Modelle.">
-				>
-				["at0020"] = <
-					text = <"Beschreibung der Ernährungssicherheit">
-					description = <"Beschreibung der Fähigkeit der Person, auf geeignete Nahrung zuzugreifen.">
 				>
 				["at0021"] = <
 					text = <"Milchversorgung">
@@ -414,10 +360,6 @@ ontology
 					text = <"Omschrijving">
 					description = <"Verhalende beschrijving over het individu's dieet en eetgewoonten.">
 				>
-				["at0012"] = <
-					text = <"Item tree">
-					description = <"@ internal @">
-				>
 				["at0013"] = <
 					text = <"Voedselzekerheid">
 					description = <"*Category describing the individual's perception about about secure and reliable access to food that is adequate in quantity and nutritional quality; culturally acceptable; safe; and acquired in socially acceptable ways. (en)">
@@ -433,19 +375,6 @@ ontology
 				["at0016"] = <
 					text = <"*Insecure (en)">
 					description = <"*The individual has a sense of worry and concern about their access to appropriate food. (en)">
-				>
-				["at0018"] = <
-					text = <"Laatst bijgewerkt">
-					description = <"De datum waarop dit overzicht het laatst is bijgewerkt.">
-				>
-				["at0019"] = <
-					text = <"Uitbreiding">
-					description = <"Aanvullende informatie benodigd om het model uit te breiden met lokale materie of om aan te sluiten bij andere referentiemodellen/formalismen.">
-					comment = <"Bijvoorbeeld: lokale informatievereisten of aanvullende metadata om aan te sluiten bij FHIR of CIMI equivalenten.">
-				>
-				["at0020"] = <
-					text = <"Voedselzekerheid beschrijving">
-					description = <"*Narrative description about the individual's ability to access appropriate food. (en)">
 				>
 				["at0021"] = <
 					text = <"*Milk supply (en)">
