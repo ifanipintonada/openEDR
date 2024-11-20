@@ -88,6 +88,18 @@ Die Absicht dieses Archetyps besteht darin, potentielle Risiken zu einem bestimm
 
 Da Risikofaktoren im Laufe der Zeit schrittweise identifiziert werden und das Gesamtrisiko infolgedessen neu bewertet wird, wird der \"Identifizierungszeitpunkt\" das Datum erfassen, an dem der Risikofaktor identifiziert wurde. Das Datenelement \"Letzte Aktualisierung\" gibt an, wann die gesamte Bewertung zuletzt aktualisiert wurde.">
 		>
+		["sv"] = <
+			language = <[ISO_639-1::sv]>
+			purpose = <"Att registrera kända riskfaktorer för en identifierad sjukdom, tillstånd eller annat potentiellt skadligt hälsotillstånd, och / eller en utvärdering av sannolikheten för att personen upplever det i framtiden.
+
+Denna arketyp har medvetet lämnats öppen och omfattande. Risken kan bestämmas av riskfaktorer från någon eller alla följande domäner: medicinska; biomarkör; livsstil; social; yrkesrisk; eller miljödomäner.
+
+Avsikten med denna arketyp är att dokumentera potentiell risk vid en tidpunkt och att stödja beslutsfattande som kan minska den identifierade risken, vare sig av kliniker eller individen själva.">
+			keywords = <"Bedömning","Risk","Utvärdering","Negativ","Faktor","Hälsa","Fråga","Beräknad","Förvaltning","Riskfaktor","Risklagstiftning","Hälsorisk">
+			use = <"Används för att registrera kända riskfaktorer för en identifierad sjukdom, tillstånd eller annat potentiellt skadligt hälsotillstånd, och / eller en utvärdering av sannolikheten för att personen drabbas av det i framtiden.
+
+Eftersom riskfaktorer kan identifieras gradvis över tiden och den övergripande risken omvärderas som ett resultat kommer den \"identifierade Datum\" att registrera det datum då varje riskfaktor har identifierats och \"Senast uppdaterad\" dataelement registrerar sista gången att hela utvärderingen uppdaterades.">
+		>
 		["fi"] = <
 			language = <[ISO_639-1::fi]>
 			purpose = <"*To record known risk factors for an identified disease, condition, or other potentially adverse health issue, and/or an evaluation of the likelihood of the individual experiencing it in the future.
@@ -100,17 +112,15 @@ The intent of this archetype is to document potential risk at a point in time, a
 
 As risk factors may be gradually identified over time and the overall risk reassessed as a result, the 'Date identified' will record the date on which each risk factor has been identified and the 'Last updated' data element will record the last time that the whole assessment was updated.(en)">
 		>
-		["sv"] = <
-			language = <[ISO_639-1::sv]>
-			purpose = <"Att registrera kända riskfaktorer för en identifierad sjukdom, tillstånd eller annat potentiellt skadligt hälsotillstånd, och / eller en utvärdering av sannolikheten för att personen upplever det i framtiden.
+		["es-ar"] = <
+			language = <[ISO_639-1::es-ar]>
+			purpose = <"Para el registro de factores de riesgo para una enfermedad, condición u otro problema potencialmente adverso para la salud, y/o para la evaluación de la probabilidad de que el individuo experimente estas situaciones en el futuro.
+Este arquetipo se mantiene deliberadamente abierto y amplio en su alcance. El 'Riesgo para la Salud' puede ser determinado a partir de todos o algunos de los factores de riesgo: médicos, marcadores biológicos, estilo de vidas, sociales, riesgo ocupacional o cuestiones ambientales.
+El propósito de este arquetipo es la documentación de un riesgo potencial en un punto en el tiempo, y para asistir en la toma de decisiones que puedan reducir el mencionado riesgo, ya sea por parte de los médicos o del/de los individuo/s mismo/s.">
+			keywords = <"evaluación","riesgo","adverso","factor","salud","problema","estimado","manejo","factor de riesgo","estratificación de riesgo">
+			use = <"*Use to record known risk factors for an identified disease, condition, or other potentially adverse health issue, and/or an evaluation of the likelihood of the individual experiencing it in the future.
 
-Denna arketyp har medvetet lämnats öppen och omfattande. Risken kan bestämmas av riskfaktorer från någon eller alla följande domäner: medicinska; biomarkör; livsstil; social; yrkesrisk; eller miljödomäner.
-
-Avsikten med denna arketyp är att dokumentera potentiell risk vid en tidpunkt och att stödja beslutsfattande som kan minska den identifierade risken, vare sig av kliniker eller individen själva.">
-			keywords = <"Bedömning","Risk","Utvärdering","Negativ","Faktor","Hälsa","Fråga","Beräknad","Förvaltning","Riskfaktor","Risklagstiftning","Hälsorisk">
-			use = <"Används för att registrera kända riskfaktorer för en identifierad sjukdom, tillstånd eller annat potentiellt skadligt hälsotillstånd, och / eller en utvärdering av sannolikheten för att personen drabbas av det i framtiden.
-
-Eftersom riskfaktorer kan identifieras gradvis över tiden och den övergripande risken omvärderas som ett resultat kommer den \"identifierade Datum\" att registrera det datum då varje riskfaktor har identifierats och \"Senast uppdaterad\" dataelement registrerar sista gången att hela utvärderingen uppdaterades.">
+As risk factors may be gradually identified over time and the overall risk reassessed as a result, the 'Date identified' will record the date on which each risk factor has been identified and the 'Last updated' data element will record the last time that the whole assessment was updated.(en)">
 		>
 		["nb"] = <
 			language = <[ISO_639-1::nb]>
@@ -124,16 +134,6 @@ Intensjonen med arketypen er å dokumentere en potensiell risiko ved et gitt tid
 
 Siden risikofaktorer gradvis kan identifiseres over tid og den generelle risikoen revurderes som et resultat, vil 'Dato identifisert' registrere datoen hvor hver risikofaktor er identifisert og dataelementet 'Sist oppdatert' registrerer siste gang hele vurderingen ble oppdatert.">
 		>
-		["es-ar"] = <
-			language = <[ISO_639-1::es-ar]>
-			purpose = <"Para el registro de factores de riesgo para una enfermedad, condición u otro problema potencialmente adverso para la salud, y/o para la evaluación de la probabilidad de que el individuo experimente estas situaciones en el futuro.
-Este arquetipo se mantiene deliberadamente abierto y amplio en su alcance. El 'Riesgo para la Salud' puede ser determinado a partir de todos o algunos de los factores de riesgo: médicos, marcadores biológicos, estilo de vidas, sociales, riesgo ocupacional o cuestiones ambientales.
-El propósito de este arquetipo es la documentación de un riesgo potencial en un punto en el tiempo, y para asistir en la toma de decisiones que puedan reducir el mencionado riesgo, ya sea por parte de los médicos o del/de los individuo/s mismo/s.">
-			keywords = <"evaluación","riesgo","adverso","factor","salud","problema","estimado","manejo","factor de riesgo","estratificación de riesgo">
-			use = <"*Use to record known risk factors for an identified disease, condition, or other potentially adverse health issue, and/or an evaluation of the likelihood of the individual experiencing it in the future.
-
-As risk factors may be gradually identified over time and the overall risk reassessed as a result, the 'Date identified' will record the date on which each risk factor has been identified and the 'Last updated' data element will record the last time that the whole assessment was updated.(en)">
-		>
 		["el"] = <
 			language = <[ISO_639-1::el]>
 			purpose = <"Για την καταγραφή γνωστών παραγόντων κινδύνου για μια αναγνωρισμένη ασθένεια, πάθηση ή άλλο δυνητικά δυσμενές πρόβλημα υγείας ή/και αξιολόγηση της πιθανότητας να το βιώσει το άτομο στο μέλλον.
@@ -145,6 +145,15 @@ As risk factors may be gradually identified over time and the overall risk reass
 			use = <"Χρησιμοποιείται για την καταγραφή γνωστών παραγόντων κινδύνου για μια αναγνωρισμένη ασθένεια, κατάσταση ή άλλο δυνητικά δυσμενές πρόβλημα υγείας ή/και αξιολόγηση της πιθανότητας να το βιώσει το άτομο στο μέλλον.
 
 Δεδομένου ότι οι παράγοντες κινδύνου μπορούν να προσδιοριστούν σταδιακά με την πάροδο του χρόνου και, ως εκ τούτου, ο συνολικός κίνδυνος να επανεκτιμηθεί, η «ημερομηνία που προσδιορίστηκε» θα καταγράψει την ημερομηνία κατά την οποία προσδιορίστηκε κάθε παράγοντας κινδύνου και το στοιχείο δεδομένων «Τελευταία ενημέρωση» θα καταγράψει την τελευταία φορά που επικαιροποιήθηκε ολόκληρη η αξιολόγηση.">
+		>
+		["ar-sy"] = <
+			language = <[ISO_639-1::ar-sy]>
+			purpose = <"لتسجيل التخاطر/احتمالية الخطر لظرف صحي قد يحدث في المستقبل">
+			keywords = <"تقييم", ...>
+			copyright = <"© openEHR Foundation">
+			use = <"*Use to record known risk factors for an identified disease, condition, or other potentially adverse health issue, and/or an evaluation of the likelihood of the individual experiencing it in the future.
+
+As risk factors may be gradually identified over time and the overall risk reassessed as a result, the 'Date identified' will record the date on which each risk factor has been identified and the 'Last updated' data element will record the last time that the whole assessment was updated.(en)">
 		>
 		["en"] = <
 			language = <[ISO_639-1::en]>
@@ -158,15 +167,6 @@ The intent of this archetype is to document potential risk at a point in time, a
 			use = <"Use to record known risk factors for an identified disease, condition, or other potentially adverse health issue, and/or an evaluation of the likelihood of the individual experiencing it in the future.
 
 As risk factors may be gradually identified over time and the overall risk reassessed as a result, the 'Date identified' will record the date on which each risk factor has been identified and the 'Last updated' data element will record the last time that the whole assessment was updated.">
-		>
-		["ar-sy"] = <
-			language = <[ISO_639-1::ar-sy]>
-			purpose = <"لتسجيل التخاطر/احتمالية الخطر لظرف صحي قد يحدث في المستقبل">
-			keywords = <"تقييم", ...>
-			copyright = <"© openEHR Foundation">
-			use = <"*Use to record known risk factors for an identified disease, condition, or other potentially adverse health issue, and/or an evaluation of the likelihood of the individual experiencing it in the future.
-
-As risk factors may be gradually identified over time and the overall risk reassessed as a result, the 'Date identified' will record the date on which each risk factor has been identified and the 'Last updated' data element will record the last time that the whole assessment was updated.(en)">
 		>
 		["it"] = <
 			language = <[ISO_639-1::it]>
@@ -189,7 +189,7 @@ Poiché i fattori di rischio possono essere identificati gradualmente nel tempo 
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"65D0CC64E5D5CFA5CA44B57B9AC40D39">
+		["MD5-CAM-1.0.1"] = <"1aaf9655d25935b007dbb39db8454571">
 		["build_uid"] = <"33dd9e54-8348-4c5a-a246-3046fb6ed302">
 		["ip_acknowledgements"] = <"This artefact includes content from SNOMED Clinical Terms® (SNOMED CT®) which is copyrighted material of the International Health Terminology Standards Development Organisation (IHTSDO). Where an implementation of this artefact makes use of SNOMED CT content, the implementer must have the appropriate SNOMED CT Affiliate license - for more information contact http://www.snomed.org/snomed-ct/get-snomedct or info@snomed.org.">
 		["revision"] = <"1.1.9">
@@ -241,15 +241,6 @@ definition
 									}
 								}
 							}
-							ELEMENT[at0012] occurrences matches {0..*} matches {    -- Link to evidence
-								value matches {
-									DV_URI matches {*}
-								}
-							}
-							allow_archetype CLUSTER[at0027] occurrences matches {0..*} matches {    -- Detail
-								include
-									archetype_id/value matches {/openEHR-EHR-CLUSTER\.family_prevalence\.v1/}
-							}
 							ELEMENT[at0030] occurrences matches {0..1} matches {    -- Comment
 								value matches {
 									DV_TEXT matches {*}
@@ -282,40 +273,10 @@ definition
 							}
 						}
 					}
-					ELEMENT[at0023] occurrences matches {0..1} matches {    -- Time period
-						value matches {
-							DV_DURATION matches {*}
-						}
-					}
 					ELEMENT[at0004] occurrences matches {0..1} matches {    -- Rationale
 						value matches {
 							DV_TEXT matches {*}
 						}
-					}
-					ELEMENT[at0015] occurrences matches {0..1} matches {    -- Comment
-						value matches {
-							DV_TEXT matches {*}
-						}
-					}
-				}
-			}
-		}
-		protocol matches {
-			ITEM_TREE[at0010] matches {    -- Tree
-				items cardinality matches {0..*; unordered} matches {
-					ELEMENT[at0024] occurrences matches {0..1} matches {    -- Last updated
-						value matches {
-							DV_DATE_TIME matches {*}
-						}
-					}
-					ELEMENT[at0025] occurrences matches {0..1} matches {    -- Assessment method
-						value matches {
-							DV_TEXT matches {*}
-						}
-					}
-					allow_archetype CLUSTER[at0011] occurrences matches {0..*} matches {    -- Extension
-						include
-							archetype_id/value matches {/.*/}
 					}
 				}
 			}
@@ -350,19 +311,6 @@ ontology
 					description = <"*Justification for this risk assessment.(en)">
 					comment = <"*Details that may be added to this data element may include information about the population subgroups etc against which the determination of risk is assessed.(en)">
 				>
-				["at0010"] = <
-					text = <"*Tree(en)">
-					description = <"*@ internal @(en)">
-				>
-				["at0011"] = <
-					text = <"*Extension(en)">
-					description = <"*Additional information required to capture local content or to align with other reference models/formalisms.(en)">
-					comment = <"*For example:  local information requirements or additional metadata to align with FHIR or CIMI equivalents.(en)">
-				>
-				["at0012"] = <
-					text = <"*Link to evidence(en)">
-					description = <"*Identification of the path to the archetype or data node for the evidence of risk.(en)">
-				>
 				["at0013"] = <
 					text = <"*Risk factor(en)">
 					description = <"*Identification of the risk factor, by name.(en)">
@@ -372,10 +320,6 @@ ontology
 				["at0014"] = <
 					text = <"*Description(en)">
 					description = <"*Narrative description about the risk factor.(en)">
-				>
-				["at0015"] = <
-					text = <"*Comment(en)">
-					description = <"*Additional narrative about the risk assessment not captured in other fields.(en)">
 				>
 				["at0016"] = <
 					text = <"*Risk factors(en)">
@@ -405,29 +349,9 @@ ontology
 					text = <"*Absolute risk(en)">
 					description = <"*Ratio of probability of a health event or condition occurring compared to the population as a whole.(en)">
 				>
-				["at0023"] = <
-					text = <"*Time period(en)">
-					description = <"*The time period during which the predicted health risk is relevant.(en)">
-					comment = <"*That is: the risk of experiencing the identified 'Health risk' in the next <X> years.(en)">
-				>
-				["at0024"] = <
-					text = <"*Last Updated(en)">
-					description = <"*The date this health risk assessment was last updated.(en)">
-					comment = <"*This data element may be thought redundant if the data is recorded and stored using COMPOSITIONs within a closed clinical system. However if this information is extracted from its original COMPOSITION context, for example, to be included in another document or message then the temporal context is effectively removed. This 'Last updated' data element has been explicitly added to allow the critical temporal data to be kept alongside the clinical data in all circumstances. It is assumed that the clinical system can copy the date from the COMPOSITION to reduce the need for duplication of data entry by the clinician. (en)">
-				>
-				["at0025"] = <
-					text = <"*Assessment method(en)">
-					description = <"*Identification of the algorithm or guideline used to make the assessment of risk.(en)">
-					comment = <"*For example: Framingham cardiovascular risk calculator.(en)">
-				>
 				["at0026"] = <
 					text = <"*Indeterminate(en)">
 					description = <"*It is not possible to determine if the risk factor is present or absent.(en)">
-				>
-				["at0027"] = <
-					text = <"*Detail(en)">
-					description = <"*Structured detail about other aspects of the risk factor assessment.(en)">
-					comment = <"*For example: Prevalence of the risk factor in family members.(en)">
 				>
 				["at0028"] = <
 					text = <"*Mitigated(en)">
@@ -469,19 +393,6 @@ ontology
 					description = <"Begründung für die Risikobewertung.">
 					comment = <"Angaben, die zu diesem Datenelement hinzugefügt werden können. Diese können z.B. Informationen über die Bevölkerungsuntergruppen usw. enthalten, anhand derer die Risikobewertung erfolgt.">
 				>
-				["at0010"] = <
-					text = <"*Tree(en)">
-					description = <"*@ internal @(en)">
-				>
-				["at0011"] = <
-					text = <"Erweiterung">
-					description = <"Zusätzliche Informationen zur Erfassung lokaler Inhalte oder Anpassung an andere Referenzmodelle/Formalismen.">
-					comment = <"Zum Beispiel: Lokaler Informationsbedarf oder zusätzliche Metadaten zur Anpassung an FHIR-Ressourcen oder CIMI-Modelle.">
-				>
-				["at0012"] = <
-					text = <"Link zum Nachweis">
-					description = <"Identifizierung des Pfades zum Archetyp oder Datenknoten zum Nachweis des Risikos.">
-				>
 				["at0013"] = <
 					text = <"Risikofaktor">
 					description = <"Identifizierung des Risikofaktors über einen Namen.">
@@ -490,10 +401,6 @@ ontology
 				["at0014"] = <
 					text = <"Beschreibung">
 					description = <"Beschreibung des Risikofaktors.">
-				>
-				["at0015"] = <
-					text = <"Kommentar">
-					description = <"Zusätzliche Informationen über die Risikobewertung, welche in anderen Bereichen nicht erfasst wurden.">
 				>
 				["at0016"] = <
 					text = <"Risikofaktoren">
@@ -523,29 +430,9 @@ ontology
 					text = <"Absolutes Risiko">
 					description = <"Verhältnis der Wahrscheinlichkeit des Auftretens eines Gesundheitsereignisses oder -zustands im Vergleich zur Gesamtbevölkerung.">
 				>
-				["at0023"] = <
-					text = <"Zeitraum">
-					description = <"Der Zeitraum, in dem das vorhergesagte Gesundheitsrisiko relevant ist.">
-					comment = <"Das heißt: das Risiko, in den nächsten <X> Jahren das identifizierte „Gesundheitsrisiko“ zu erfahren.">
-				>
-				["at0024"] = <
-					text = <"Letzte Aktualisierung">
-					description = <"Das Datum an dem die Bewertung des Gesundheitsrisikos zuletzt aktualisiert wurde.">
-					comment = <"Dieses Datenelement kann als redundant angesehen werden, wenn die Daten unter Verwendung von COMPOSITIONs innerhalb eines geschlossenen klinischen Systems aufgezeichnet und gespeichert werden. Wenn diese Informationen jedoch aus dem ursprünglichen COMPOSITION-Kontext extrahiert werden, um beispielsweise in ein anderes Dokument oder eine andere Nachricht aufzunehmen, dann wird der zeitliche Kontext effektiv entfernt. Dieses Datenelement \"Letzte Aktualisierung\" wurde explizit hinzugefügt, damit die kritischen Zeitdaten unter allen Umständen neben den klinischen Daten aufbewahrt werden können. Es wird angenommen, dass das klinische System das Datum aus der COMPOSITION kopieren kann, um doppelte Dateneingabe durch den Kliniker zu vermeiden.">
-				>
-				["at0025"] = <
-					text = <"Bewertungsmethode">
-					description = <"Identifikation des Algorithmus oder der Leitlinie, welche für die Risikobewertung verwendet wurde.">
-					comment = <"Zum Beispiel: Framingham Herz-Kreislauf-Risiko-Kalkulator.">
-				>
 				["at0026"] = <
 					text = <"Unbestimmt">
 					description = <"Es ist nicht möglich festzustellen, ob der Risikofaktor vorhanden oder nicht vorhanden ist.">
-				>
-				["at0027"] = <
-					text = <"Details">
-					description = <"Strukturierte Informationen zu anderen Aspekten der Risikofaktorenbewertung.">
-					comment = <"Zum Beispiel: Prävalenz des Risikofaktors bei Familienmitgliedern.">
 				>
 				["at0028"] = <
 					text = <"Verringert">
@@ -587,19 +474,6 @@ ontology
 					description = <"Justification for this risk assessment.">
 					comment = <"Details that may be added to this data element may include information about the population subgroups etc against which the determination of risk is assessed.">
 				>
-				["at0010"] = <
-					text = <"Tree">
-					description = <"@ internal @">
-				>
-				["at0011"] = <
-					text = <"Extension">
-					description = <"Additional information required to capture local content or to align with other reference models/formalisms.">
-					comment = <"For example:  local information requirements or additional metadata to align with FHIR or CIMI equivalents.">
-				>
-				["at0012"] = <
-					text = <"Link to evidence">
-					description = <"Identification of the path to the archetype or data node for the evidence of risk.">
-				>
 				["at0013"] = <
 					text = <"Risk factor">
 					description = <"Identification of the risk factor, by name.">
@@ -609,10 +483,6 @@ ontology
 				["at0014"] = <
 					text = <"Description">
 					description = <"Narrative description about the risk factor.">
-				>
-				["at0015"] = <
-					text = <"Comment">
-					description = <"Additional narrative about the risk assessment not captured in other fields.">
 				>
 				["at0016"] = <
 					text = <"Risk factors">
@@ -642,29 +512,9 @@ ontology
 					text = <"Absolute risk">
 					description = <"Ratio of probability of a health event or condition occurring compared to the population as a whole.">
 				>
-				["at0023"] = <
-					text = <"Time period">
-					description = <"The time period during which the predicted health risk is relevant.">
-					comment = <"That is: the risk of experiencing the identified 'Health risk' in the next <X> years.">
-				>
-				["at0024"] = <
-					text = <"Last updated">
-					description = <"The date this health risk assessment was last updated.">
-					comment = <"This data element may be thought redundant if the data is recorded and stored using COMPOSITIONs within a closed clinical system. However if this information is extracted from its original COMPOSITION context, for example, to be included in another document or message then the temporal context is effectively removed. This 'Last updated' data element has been explicitly added to allow the critical temporal data to be kept alongside the clinical data in all circumstances. It is assumed that the clinical system can copy the date from the COMPOSITION to reduce the need for duplication of data entry by the clinician.">
-				>
-				["at0025"] = <
-					text = <"Assessment method">
-					description = <"Identification of the algorithm or guideline used to make the assessment of risk.">
-					comment = <"For example: Framingham cardiovascular risk calculator.">
-				>
 				["at0026"] = <
 					text = <"Indeterminate">
 					description = <"It is not possible to determine if the risk factor is present or absent.">
-				>
-				["at0027"] = <
-					text = <"Detail">
-					description = <"Structured detail about other aspects of the risk factor assessment.">
-					comment = <"For example: Prevalence of the risk factor in family members.">
 				>
 				["at0028"] = <
 					text = <"Mitigated">
@@ -706,19 +556,6 @@ ontology
 					description = <"Justificación para esta evaluación de riesgo.">
 					comment = <"Detalles que pueden ser agregados en este elemento pueden incluir información acerca de la población, subgrupos, etc, frente a los cuales se evalúa el riesgo.">
 				>
-				["at0010"] = <
-					text = <"Tree">
-					description = <"@ internal @">
-				>
-				["at0011"] = <
-					text = <"Extensión">
-					description = <"Información adicional requerida para registrar contenido local o para alinear con otros modelos o formalismos de referencia.">
-					comment = <"Por ejemplo: requerimientos locales de información o metadatos adicionales para alinear con equivalentes FHIR o CIMI.">
-				>
-				["at0012"] = <
-					text = <"Vínculo a la evidencia">
-					description = <"Identificación del path al arquetipo o nodo de datos que contiene la evidencia del riesgo.">
-				>
 				["at0013"] = <
 					text = <"Factor de riesgo">
 					description = <"Identificación, por nombre, del factor de riesgo.">
@@ -727,10 +564,6 @@ ontology
 				["at0014"] = <
 					text = <"Descripción">
 					description = <"Descripción narrativa del factor de riesgo.">
-				>
-				["at0015"] = <
-					text = <"Comentario">
-					description = <"Narrativa adicional acerca de la evaluación de riesgo no contemplada en otros campos.">
 				>
 				["at0016"] = <
 					text = <"Factores de riesgo">
@@ -760,29 +593,9 @@ ontology
 					text = <"Riesgo absoluto">
 					description = <"Probabilidad de la ocurrencia de un evento o condición de salud en comparación con el total de la población.">
 				>
-				["at0023"] = <
-					text = <"Período de tiempo">
-					description = <"El período de tiempo durante el cual el riesgo para la salud previsto es relevante.">
-					comment = <"Esto es: el riesgo de incurrir en el 'riesgo para la salud' identificado, en el curso de los próximos <X> años.">
-				>
-				["at0024"] = <
-					text = <"Última actualización">
-					description = <"La fecha en la cual se realizó la ultima actualización de este factor de riesgo para la salud.">
-					comment = <"*This data element may be thought redundant if the data is recorded and stored using COMPOSITIONs within a closed clinical system. However if this information is extracted from its original COMPOSITION context, for example, to be included in another document or message then the temporal context is effectively removed. This 'Last updated' data element has been explicitly added to allow the critical temporal data to be kept alongside the clinical data in all circumstances. It is assumed that the clinical system can copy the date from the COMPOSITION to reduce the need for duplication of data entry by the clinician. (en)">
-				>
-				["at0025"] = <
-					text = <"Método de evaluación">
-					description = <"Identificación del algoritmo o de la guia utilziada para realizar la evaluación de riesgo.">
-					comment = <"Por ejemplo: el cálculo de riesgo cardiovascular de Framingham.">
-				>
 				["at0026"] = <
 					text = <"Indeterminado">
 					description = <"No es posible determinar la presencia o ausencia del factor de riesgo.">
-				>
-				["at0027"] = <
-					text = <"Detalle">
-					description = <"Detalle estructurado acerca de otros aspectos de la evaluación del factor de riesgo.">
-					comment = <"Por ejemplo: Prevalencia del factor de riesgo en famililares.">
 				>
 				["at0028"] = <
 					text = <"Mitigado">
@@ -824,19 +637,6 @@ ontology
 					description = <"Motivering för denna riskbedömning.">
 					comment = <"Detaljer som kan läggas till i detta dataelement kan innehålla information om befolkningsundergrupperna etc mot vilka bestämningen av risken bedöms.">
 				>
-				["at0010"] = <
-					text = <"Tree">
-					description = <"@ internal @">
-				>
-				["at0011"] = <
-					text = <"Extension">
-					description = <"Ytterligare information som krävs för att fånga upp lokalt innehåll eller för anpassning sig till andra referensmodeller / formaliteter.">
-					comment = <"Till exempel: lokala informationskrav eller ytterligare metadata för att anpassa sig till FHIR- eller CIMI-ekvivalenter.">
-				>
-				["at0012"] = <
-					text = <"Länk till evidens">
-					description = <"Identifiering av sökvägen till arketypen eller datanoden för evidensen för risk.">
-				>
 				["at0013"] = <
 					text = <"Riskfaktor">
 					description = <"Identifiering med namn av riskfaktorn.">
@@ -846,10 +646,6 @@ Riskfaktor använd en terminologi om det är möjligt.">
 				["at0014"] = <
 					text = <"Beskrivning">
 					description = <"Berättande beskrivning om riksfaktorn.">
-				>
-				["at0015"] = <
-					text = <"Kommentar">
-					description = <"Ytterligare beskrivning om riskbedömningen som inte tagits med i andra fält.">
 				>
 				["at0016"] = <
 					text = <"Riskfaktorer">
@@ -879,30 +675,9 @@ Riskfaktor använd en terminologi om det är möjligt.">
 					text = <"Absolut risk">
 					description = <"Förhållandet mellan sannolikheten för en hälsohändelse eller ett tillstånd som uppstår i förhållande till befolkningen som helhet.">
 				>
-				["at0023"] = <
-					text = <"Tidsperiod">
-					description = <"Den tidsperiod under vilken den förutspådda hälsorisken är relevant.">
-					comment = <"Det vill säga: risken att drabbas av den identifierade hälsorisken under de kommande <X> åren.">
-				>
-				["at0024"] = <
-					text = <"Senast uppdaterad">
-					description = <"Datumet när hälsoriskbedömningen senast uppdaterades.">
-					comment = <"*This data element may be thought redundant if the data is recorded and stored using COMPOSITIONs within a closed clinical system. However if this information is extracted from its original COMPOSITION context, for example, to be included in another document or message then the temporal context is effectively removed. This 'Last updated' data element has been explicitly added to allow the critical temporal data to be kept alongside the clinical data in all circumstances. It is assumed that the clinical system can copy the date from the COMPOSITION to reduce the need for duplication of data entry by the clinician. (en)">
-				>
-				["at0025"] = <
-					text = <"Bedömningsmetod">
-					description = <"Identifiering av metoden eller riktlinjen som används för bedömning av risker.">
-					comment = <"Till exempel: Framingham kardiovaskulär riskkalkylator.
-">
-				>
 				["at0026"] = <
 					text = <"Obestämd">
 					description = <"Det är inte möjligt att bestämma om riskfaktorn finns eller är frånvarande.">
-				>
-				["at0027"] = <
-					text = <"Detaljer">
-					description = <"Strukturerad detalj om andra aspekter av riskfaktorbedömningen.">
-					comment = <"Till exempel: Förekomst av riskfaktorn hos familjemedlemmar.">
 				>
 				["at0028"] = <
 					text = <"Minskad/mildrad">
@@ -944,19 +719,6 @@ Riskfaktor använd en terminologi om det är möjligt.">
 					description = <"*Justification for this risk assessment.(en)">
 					comment = <"*Details that may be added to this data element may include information about the population subgroups etc against which the determination of risk is assessed.(en)">
 				>
-				["at0010"] = <
-					text = <"Tree">
-					description = <"@ internal @">
-				>
-				["at0011"] = <
-					text = <"*Extension(en)">
-					description = <"*Additional information required to capture local content or to align with other reference models/formalisms.(en)">
-					comment = <"*For example:  local information requirements or additional metadata to align with FHIR or CIMI equivalents.(en)">
-				>
-				["at0012"] = <
-					text = <"*Link to evidence(en)">
-					description = <"*Identification of the path to the archetype or data node for the evidence of risk.(en)">
-				>
 				["at0013"] = <
 					text = <"*Risk factor(en)">
 					description = <"*Identification of the risk factor, by name.(en)">
@@ -966,10 +728,6 @@ Riskfaktor använd en terminologi om det är möjligt.">
 				["at0014"] = <
 					text = <"*Description(en)">
 					description = <"*Narrative description about the risk factor.(en)">
-				>
-				["at0015"] = <
-					text = <"*Comment(en)">
-					description = <"*Additional narrative about the risk assessment not captured in other fields.(en)">
 				>
 				["at0016"] = <
 					text = <"*Risk factors(en)">
@@ -999,29 +757,9 @@ Riskfaktor använd en terminologi om det är möjligt.">
 					text = <"*Absolute risk(en)">
 					description = <"*Ratio of probability of a health event or condition occurring compared to the population as a whole.(en)">
 				>
-				["at0023"] = <
-					text = <"*Time period(en)">
-					description = <"*The time period during which the predicted health risk is relevant.(en)">
-					comment = <"*That is: the risk of experiencing the identified 'Health risk' in the next <X> years.(en)">
-				>
-				["at0024"] = <
-					text = <"*Last updated(en)">
-					description = <"*The date this health risk assessment was last updated.(en)">
-					comment = <"*This data element may be thought redundant if the data is recorded and stored using COMPOSITIONs within a closed clinical system. However if this information is extracted from its original COMPOSITION context, for example, to be included in another document or message then the temporal context is effectively removed. This 'Last updated' data element has been explicitly added to allow the critical temporal data to be kept alongside the clinical data in all circumstances. It is assumed that the clinical system can copy the date from the COMPOSITION to reduce the need for duplication of data entry by the clinician.(en)">
-				>
-				["at0025"] = <
-					text = <"*Assessment method(en)">
-					description = <"*Identification of the algorithm or guideline used to make the assessment of risk.(en)">
-					comment = <"*For example: Framingham cardiovascular risk calculator.(en)">
-				>
 				["at0026"] = <
 					text = <"*Indeterminate(en)">
 					description = <"*It is not possible to determine if the risk factor is present or absent.(en)">
-				>
-				["at0027"] = <
-					text = <"*Detail(en)">
-					description = <"*Structured detail about other aspects of the risk factor assessment.(en)">
-					comment = <"*For example: Prevalence of the risk factor in family members.(en)">
 				>
 				["at0028"] = <
 					text = <"*Mitigated(en)">
@@ -1063,21 +801,6 @@ Riskfaktor använd en terminologi om det är möjligt.">
 					description = <"Berettigelse for risikovurderingen.">
 					comment = <"Detaljer som kan legges til dette dataelementet kan omfatte informasjon om populasjonssubgrupper etc. som risikovurderingen er gjort for.">
 				>
-				["at0010"] = <
-					text = <"Tree">
-					description = <"@ internal @">
-				>
-				["at0011"] = <
-					text = <"Tilleggsinformasjon">
-					description = <"Ytterligere informasjon som trengs for å kunne registrere lokalt definert innhold eller for å tilpasse til andre referansemodeller/formalismer.">
-					comment = <"For eksempel lokale informasjonsbehov eller ytterligere metadata for å kunne tilpasse til tilsvarende konsepter i FHIR eller CIMI.">
-				>
-				["at0012"] = <
-					text = <"Lenke til underlag">
-					description = <"Sti til arketypen eller dataelementet der underlagsinformasjonen for risikofaktoren er lagret.
-">
-					comment = <"For eksempel: Lenke til siste blodtrykksverdi, røykestatus eller kolesterolmåling i journalen.">
-				>
 				["at0013"] = <
 					text = <"Risikofaktor">
 					description = <"Navnet på risikofaktoren.">
@@ -1086,10 +809,6 @@ Riskfaktor använd en terminologi om det är möjligt.">
 				["at0014"] = <
 					text = <"Beskrivelse">
 					description = <"Fritekst beskrivelse av risikofaktoren.">
-				>
-				["at0015"] = <
-					text = <"Kommentar">
-					description = <"Fritekst om risikovurderingen som ikke passer i andre felt.">
 				>
 				["at0016"] = <
 					text = <"Risikofaktorer">
@@ -1119,31 +838,9 @@ Riskfaktor använd en terminologi om det är möjligt.">
 					text = <"Absolutt risiko">
 					description = <"Proporsjonal sannsynlighet for at en helserelatert hendelse eller tilstand skal opptre sammenlignet med befolkningen som en helhet.">
 				>
-				["at0023"] = <
-					text = <"Tidsramme">
-					description = <"Tidsrammen helserisikoen er relevant i.">
-					comment = <"Risikoen for å oppleve den identifiserte \"Helserisiko\" i løpet av de neste X årene.">
-				>
-				["at0024"] = <
-					text = <"Sist oppdatert">
-					description = <"Datoen da risikovurderingen sist ble oppdatert.">
-					comment = <"Dette dataelementet kan tenkes å være unødvendig dersom dataene registreres og lagres ved hjelp av COMPOSITION arketyper innenfor et lukket klinisk system. Dersom risikodata hentes ut fra den opprinnelige COMPOSITION-konteksten f.eks. for å legges ved en oppsummering eller melding, blir den tidsmessige konteksten i praksis fjernet hvis arketypen brukes i en annen COMPOSITION-arketype. Dette dataelementet er eksplisitt lagt til for å tillate bevaring av kritisk tidsmessige data sammen med de kliniske dataene i alle sammenhenger. Det antas at det kliniske systemet kan kopiere datoen fra COMPOSITION-arketypen for å redusere behovet for manuell registrering av klinikeren.">
-				>
-				["at0025"] = <
-					text = <"Vurderingsmetode">
-					description = <"Algoritmen eller regelen som ble brukt til å gjøre risikovurderingen.
-">
-					comment = <"For eksempel: Framingham cardiovascular risk calculator.">
-				>
 				["at0026"] = <
 					text = <"Ubestemmelig">
 					description = <"Det er ikke mulig å fastslå om risikofaktoren er tilstede eller fraværende.">
-				>
-				["at0027"] = <
-					text = <"Detaljer">
-					description = <"Strukturerte detaljer om andre aspekter ved risikovurderingen.
-">
-					comment = <"For eksempel: Forekomst av risikofaktorer hos familiemedlemmer.">
 				>
 				["at0028"] = <
 					text = <"Moderert">
@@ -1185,19 +882,6 @@ Riskfaktor använd en terminologi om det är möjligt.">
 					description = <"Giustificazione di questa valutazione del rischio.">
 					comment = <"I dati che possono essere aggiunti a questo elemento di dati possono includere informazioni sui sottogruppi di popolazione ecc. rispetto ai quali viene valutata la determinazione del rischio.">
 				>
-				["at0010"] = <
-					text = <"*Tree(en)">
-					description = <"*@ internal @(en)">
-				>
-				["at0011"] = <
-					text = <"Extension">
-					description = <"Informazioni aggiuntive necessarie per acquisire contenuti locali o per allinearsi con altri modelli/formalismi di riferimento.">
-					comment = <"Per esempio: requisiti informativi locali o metadati aggiuntivi per allinearsi con gli equivalenti FHIR o CIMI.">
-				>
-				["at0012"] = <
-					text = <"Collegamento alle prove">
-					description = <"Identificazione del percorso dell'archetipo o del nodo dati per l'evidenza del rischio.">
-				>
 				["at0013"] = <
 					text = <"Fattore di rischio">
 					description = <"Identificazione del fattore di rischio, per nome.">
@@ -1207,10 +891,6 @@ Fattore di rischio\" con una terminologia, ove possibile.">
 				["at0014"] = <
 					text = <"Descrizione">
 					description = <"Descrizione narrativa del fattore di rischio.">
-				>
-				["at0015"] = <
-					text = <"Commento">
-					description = <"Narrativa aggiuntiva sulla valutazione del rischio non catturata in altri campi.">
 				>
 				["at0016"] = <
 					text = <"Fattori di rischio">
@@ -1240,31 +920,9 @@ Fattore di rischio\" con una terminologia, ove possibile.">
 					text = <"Rischio assoluto">
 					description = <"Rapporto di probabilità che un evento o una condizione di salute si verifichi rispetto alla popolazione nel suo complesso.">
 				>
-				["at0023"] = <
-					text = <"Periodo di tempo">
-					description = <"Il periodo di tempo durante il quale il rischio previsto per la salute è rilevante.">
-					comment = <"Vale a dire: il rischio di incorrere nel \"rischio sanitario\" identificato nei prossimi <X> anni.">
-				>
-				["at0024"] = <
-					text = <"Ultimo aggiornamento">
-					description = <"La data dell'ultimo aggiornamento di questa valutazione del rischio per la salute.">
-					comment = <"Questo elemento di dati può essere considerato ridondante se i dati sono registrati e memorizzati utilizzando COMPOSIZIONI all'interno di un sistema clinico chiuso. Tuttavia, se queste informazioni sono estratte dal suo contesto COMPOSIZIONE originale, per esempio, per essere incluse in un altro documento o messaggio, allora il contesto temporale viene effettivamente rimosso. Questo elemento di dati \"Ultimo aggiornamento\" è stato aggiunto esplicitamente per permettere che i dati temporali critici siano conservati accanto ai dati clinici in tutte le circostanze. Si presume che il sistema clinico possa copiare la data dal COMPOSIZIONE per ridurre la necessità di duplicare l'inserimento dei dati da parte del clinico. 
-
-Tradotto con www.DeepL.com/Translator (versione gratuita)">
-				>
-				["at0025"] = <
-					text = <"Metodo di valutazione">
-					description = <"Identificazione dell'algoritmo o della linea guida utilizzata per effettuare la valutazione del rischio.">
-					comment = <"Per esempio: Calcolatore del rischio cardiovascolare Framingham.">
-				>
 				["at0026"] = <
 					text = <"Indeterminato">
 					description = <"Non è possibile determinare se il fattore di rischio è presente o assente.">
-				>
-				["at0027"] = <
-					text = <"Dettaglio">
-					description = <"Dettaglio strutturato su altri aspetti della valutazione dei fattori di rischio.">
-					comment = <"Per esempio: Prevalenza del fattore di rischio nei membri della famiglia.">
 				>
 				["at0028"] = <
 					text = <"Mitigato">
@@ -1308,18 +966,6 @@ Tradotto con www.DeepL.com/Translator (versione gratuita)">
 					description = <"Αιτιολόγηση αυτής της εκτίμησης κινδύνου.">
 					comment = <"Οι λεπτομέρειες που μπορούν να προστεθούν σε αυτό το στοιχείο δεδομένων μπορεί να περιλαμβάνουν πληροφορίες σχετικά με τον πληθυσμό, τις υποομάδες κ. λπ. βάσει των οποίων αξιολογείται ο προσδιορισμός του κινδύνου.">
 				>
-				["at0010"] = <
-					text = <"Tree">
-					description = <"@ internal @">
-				>
-				["at0011"] = <
-					text = <"*Extension(en)">
-					description = <"*Additional information required to capture local content or to align with other reference models/formalisms.(en)">
-				>
-				["at0012"] = <
-					text = <"Σύνδεσμος σε αποδεικτικά στοιχεία">
-					description = <"Προσδιορισμός της διαδρομής προς το αρχέτυπο ή τον κόμβο δεδομένων για την απόδειξη κινδύνου.">
-				>
 				["at0013"] = <
 					text = <"Παράγοντας κινδύνου">
 					description = <"Προσδιορισμός του παράγοντα κινδύνου, ονομαστικά.">
@@ -1329,10 +975,6 @@ Tradotto con www.DeepL.com/Translator (versione gratuita)">
 				["at0014"] = <
 					text = <"Περιγραφή">
 					description = <"Αφηγηματική περιγραφή σχετικά με τον παράγοντα κινδύνου.">
-				>
-				["at0015"] = <
-					text = <"Σχόλιο">
-					description = <"Πρόσθετη αφήγηση σχετικά με την εκτίμηση κινδύνου που δεν αποτυπώνεται σε άλλους τομείς.">
 				>
 				["at0016"] = <
 					text = <"Παράγοντες κινδύνου">
@@ -1362,29 +1004,9 @@ Tradotto con www.DeepL.com/Translator (versione gratuita)">
 					text = <"Απόλυτο ρίσκο">
 					description = <"Λόγος πιθανότητας εμφάνισης συμβάντος ή κατάστασης υγείας σε σύγκριση με τον πληθυσμό στο σύνολό του.">
 				>
-				["at0023"] = <
-					text = <"Χρονική περίοδος">
-					description = <"Η χρονική περίοδος κατά την οποία ο προβλεπόμενος κίνδυνος για την υγεία είναι σημαντικός.">
-					comment = <"Δηλαδή: ο κίνδυνος να βιώσουμε τον εντοπισμένο «κίνδυνο για την υγεία» τα επόμενα <X> χρόνια.">
-				>
-				["at0024"] = <
-					text = <"Τελευταία ενημέρωση">
-					description = <"Η ημερομηνία τελευταίας επικαιροποίησης αυτής της εκτίμησης κινδύνου για την υγεία.">
-					comment = <"Το στοιχείο δεδομένων του μπορεί να θεωρηθεί περιττό εάν τα δεδομένα καταγράφονται και αποθηκεύονται χρησιμοποιώντας ΣΥΝΘΕΣΕΙΣ μέσα σε ένα κλειστό κλινικό σύστημα. Ωστόσο, εάν αυτές οι πληροφορίες εξαχθούν από το αρχικό πλαίσιο ΣΥΝΘΕΣΗΣ, για παράδειγμα, για να συμπεριληφθούν σε άλλο έγγραφο ή μήνυμα, τότε το χρονικό πλαίσιο αφαιρείται αποτελεσματικά. Αυτό το στοιχείο δεδομένων «τελευταίας ενημέρωσης» προστέθηκε ρητά για να επιτρέψει τη διατήρηση των κρίσιμων χρονικών δεδομένων παράλληλα με τα κλινικά δεδομένα σε όλες τις περιστάσεις. Θεωρείται ότι το κλινικό σύστημα μπορεί να αντιγράψει την ημερομηνία από τη ΣΥΝΘΕΣΗ για να μειώσει την ανάγκη επανάληψης της εισαγωγής δεδομένων από τον κλινικό ιατρό.">
-				>
-				["at0025"] = <
-					text = <"Μέθοδος αξιολόγησης">
-					description = <"Προσδιορισμός του αλγορίθμου ή της κατευθυντήριας γραμμής που χρησιμοποιείται για την εκτίμηση του κινδύνου.">
-					comment = <"Για παράδειγμα: Υπολογιστής καρδιαγγειακού κινδύνου Framingham.">
-				>
 				["at0026"] = <
 					text = <"Απροσδιόριστος">
 					description = <"Δεν είναι δυνατόν να προσδιοριστεί εάν ο παράγοντας κινδύνου είναι παρών ή απουσιάζει.">
-				>
-				["at0027"] = <
-					text = <"Λεπτομέρειες">
-					description = <"Δομημένη λεπτομέρεια σχετικά με άλλες πτυχές της εκτίμησης των παραγόντων κινδύνου.">
-					comment = <"Για παράδειγμα: Επιπολασμός του παράγοντα κινδύνου στα μέλη της οικογένειας.">
 				>
 				["at0028"] = <
 					text = <"Μετρίαση">
