@@ -164,7 +164,7 @@ RSNA.org: Proposed Standard Radiology Report Headings. Radiological Society of N
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"6b762815f874b03dfbc8d85ff2d6e7f6">
+		["MD5-CAM-1.0.1"] = <"661cbd44e623683e5a942b9d873ed5c1">
 		["build_uid"] = <"7a6046b4-804f-4b4f-bda2-661f5814f290">
 		["revision"] = <"1.1.1">
 	>
@@ -225,10 +225,6 @@ definition
 										value matches {
 											DV_TEXT matches {*}
 										}
-									}
-									allow_archetype CLUSTER[at0044] occurrences matches {0..*} matches {    -- Structured imaging findings
-										include
-											archetype_id/value matches {/openEHR-EHR-CLUSTER\.imaging_exam(-[a-zA-Z0-9_]+)*\.v1/}
 									}
 									ELEMENT[at0056] occurrences matches {0..1} matches {    -- Comparison findings
 										value matches {
@@ -316,10 +312,6 @@ ontology
 					text = <"Comment">
 					description = <"Additional narrative about the examination not captured in other fields.">
 					comment = <"For example: a note that the film was given to the patient. Equivalent to DiagnosticReport.note in FHIR.">
-				>
-				["at0044"] = <
-					text = <"Structured imaging findings">
-					description = <"Structured details about the imaging examination findings targeting a specific structure or region.">
 				>
 				["at0045"] = <
 					text = <"Report representation">
@@ -445,10 +437,6 @@ ontology
 					text = <"Kommentar">
 					description = <"Ytterligere kommentarer om undersøkelsen som ikke passer i andre felter.">
 					comment = <"For eksempel et notat om at kopi av bilde eller svarrapport er gitt til pasienten. Tilsvarer DiagnosticReport.note i FHIR.">
-				>
-				["at0044"] = <
-					text = <"Strukturerte funn">
-					description = <"Strukturerte detaljer om funn ved bruk av bildeundersøkelse i spesifikke regioner eller strukturer i kroppen.">
 				>
 				["at0045"] = <
 					text = <"Presentasjon av rapporten">
@@ -577,10 +565,6 @@ Dette dataelementet kan være overflødig hvis modaliteten er tydelig represente
 					description = <"Zusätzliche Informationen über die Untersuchung, welche noch nicht an anderer Stelle dargestellt wurden.">
 					comment = <"Zum Beispiel: eine Anmerkung, dass der Film dem Patienten gegeben wurde. Entspricht DiagnosticReport.note in FHIR.">
 				>
-				["at0044"] = <
-					text = <"Strukturierte bildgebende Befunde">
-					description = <"Strukturierte Informationen zu den bildgebenden Befunden, die auf eine bestimmte Körperstruktur oder -region abzielen.">
-				>
 				["at0045"] = <
 					text = <"Berichtsrepräsentation">
 					description = <"Digitale Darstellung des Ergebnisses der Untersuchung.">
@@ -705,10 +689,6 @@ Dette dataelementet kan være overflødig hvis modaliteten er tydelig represente
 					text = <"Kommentar">
 					description = <"Ytterligare beskrivning av undersökningen som inte fångats i andra fält.">
 					comment = <"*For example: a note that the film was given to the patient. Equivalent to DiagnosticReport.note in FHIR. (en)">
-				>
-				["at0044"] = <
-					text = <"*Structured imaging findings (en)">
-					description = <"*Structured details about the imaging examination findings targeting a specific structure or region. (en)">
 				>
 				["at0045"] = <
 					text = <"*Report representation (en)">
