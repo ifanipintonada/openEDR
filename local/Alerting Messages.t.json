@@ -19,9 +19,9 @@
       "original_namespace" : "",
       "original_publisher" : "",
       "custodian_namespace" : "",
-      "sem_ver" : "1.0.0",
+      "sem_ver" : "2.0.0",
       "build_uid" : "",
-      "MD5-CAM-1.0.1" : "4b10388b9ac7ea1428b48fa3b3db0cc4",
+      "MD5-CAM-1.0.1" : "2ef4dc38bdeba2a66dcb6123d537bada",
       "PARENT:MD5-CAM-1.0.1" : "e81d4c77098018f5ca395e12a750d75b"
     },
     "details" : {
@@ -70,21 +70,30 @@
         "referenceType" : "archetypeOverlay"
       }, {
         "@type" : "C_ARCHETYPE_ROOT",
+        "rmTypeName" : "OBSERVATION",
+        "occurrences" : "0..1",
+        "nodeId" : "at0.18",
+        "attributes" : [ ],
+        "attributeTuples" : [ ],
+        "archetypeRef" : "openEHR-EHR-OBSERVATION.ovl-pregnancy_finding-001.v0",
+        "referenceType" : "archetypeOverlay"
+      }, {
+        "@type" : "C_ARCHETYPE_ROOT",
+        "rmTypeName" : "EVALUATION",
+        "occurrences" : "0..1",
+        "nodeId" : "at0.19",
+        "attributes" : [ ],
+        "attributeTuples" : [ ],
+        "archetypeRef" : "openEHR-EHR-EVALUATION.ovl-infectious_disease_summary-001.v0",
+        "referenceType" : "archetypeOverlay"
+      }, {
+        "@type" : "C_ARCHETYPE_ROOT",
         "rmTypeName" : "EVALUATION",
         "occurrences" : "0..1",
         "nodeId" : "at0.4",
         "attributes" : [ ],
         "attributeTuples" : [ ],
         "archetypeRef" : "openEHR-EHR-EVALUATION.ovl-contraindication-001.v1",
-        "referenceType" : "archetypeOverlay"
-      }, {
-        "@type" : "C_ARCHETYPE_ROOT",
-        "rmTypeName" : "OBSERVATION",
-        "occurrences" : "0..1",
-        "nodeId" : "at0.14",
-        "attributes" : [ ],
-        "attributeTuples" : [ ],
-        "archetypeRef" : "openEHR-EHR-OBSERVATION.ovl-pregnancy_finding-001.v0",
         "referenceType" : "archetypeOverlay"
       }, {
         "@type" : "C_ARCHETYPE_ROOT",
@@ -628,7 +637,99 @@
       "otherDetails" : {
         "PARENT:MD5-CAM-1.0.1" : "af215ccd20407971caf4363c3731e6fa"
       },
-      "details" : { }
+      "details" : {
+        "de" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "de"
+          },
+          "purpose" : "Zur Darstellung einer Mediendatei erworbenen und verwendeten im Bereich des Gesundheitswesens sowie der Informationen zu den zugehörigen Metadaten.",
+          "keywords" : [ "Bild", "Audio", "Text", "Video", "Anwendung", "Datei", "Multimedia", "DICOM", "digital", "Dokument", "Foto", "Sprachaufnahme" ],
+          "use" : "Zur Darstellung einer Mediendatei erworbenen und verwendeten im Bereich des Gesundheitswesens sowie der Informationen zu den zugehörigen Metadaten.\r\n\r\nDie Absicht dieses Archetyps besteht nur darin, die Mediendatei und die Metadaten, die ihre Erfassung beschreiben, darzustellen. Dieser Archetyp wird in einen anderen Archetyp verschachtelt, normalerweise ein OBSERVATION- oder ACTION-Archetyp, der den Kontext und die Umstände im Zusammenhang mit der Erfassung der Mediendatei enthält. Zum Beispiel werden Details zu Modalität, Ansicht oder Aspekt eines Röntgenbildes und DICOM-Details im Archetyp OBSERVATION.imaging_exam_result dargestellt.\r\n\r\nDie Beispiele umfassen, sind aber nicht beschränkt auf:\r\n- Ein Foto einer Verletzung;\r\n- Ein Diagramm der Lokalisation eines bestimmten klinischen Befundes;\r\n- Ein digitales Ergebnis der Röntgen- oder CT-Aufnahme;\r\n- Eine Audio- oder Videoaufzeichnung eines Interviews;\r\n- Gescannte pathologische Schnitte;\r\n- Datenausgabe von einem klinischen Gerät, wie z.B. einem EKG-Gerät; oder\r\n- Ein gescanntes Bild von handgeschriebenen klinischen Notizen.\r\n\r\nDas Datenelement „Inhalt“ ermöglicht mithilfe des Multimedia-Datentyps die Erfassung und Speicherung der Mediendatei in der Gesundheitsakte. Der Multimedia-Datentyp hat viele RM-Attribute wie die Dateigröße und URI zu einer externen Quelle. Siehe https://specifications.openehr.org/releases/RM/latest/data_types.html#_dv_multimedia_class.\r\n\r\nWenn mehr als eine Mediendatei erfasst wurde, z. B. „Vorher“- und „Nachher“-Bilder einer Wunde, verwenden Sie eine Instanz dieses Archetyps, um jede Mediendatei darzustellen.\r\n\r\nWenn eine Reihe von Mediendateien als einzelnes Element dargestellt wird, z. B. ein CT-Scan, kann eine Instanz dieses Archetyps verwendet werden, um einen URI-Pfad zu der Gruppe darzustellen.\r\n\r\n\r\n\r\n",
+          "misuse" : "Nicht zur Darstellung von Informationen, Lehr- oder Schulungsmaterial verwenden, die außerhalb des Gesundheitsprozesses generiert werden, z. B. Broschüren zur Patientenaufklärung, die dem Patienten oder der Pflegeperson zur Verfügung gestellt werden. Verwenden Sie für diesen Zweck den Archetyp CLUSTER.information_resource.\r\n\r\nNicht zur Darstellung von Referenz auf eine externe digitale Ressource, die als Quelle für maßgebliche Informationen oder Experteninformationen verwendet wird. Verwenden Sie für diesen Zweck den Archetyp CLUSTER.knowledge_base_reference.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "sv" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "sv"
+          },
+          "purpose" : "Att registrera en mediefil som förvärvats eller använts som en del i en vårdprocess, samt detaljer om filens metadata.",
+          "keywords" : [ "bild", "foto", "ljud", "text", "video", "film", "applikation", "fil", "multimedia", "DICOM", "digital", "dokument", "röst" ],
+          "use" : "Används för att registrera en mediefil som förvärvats eller används som del i en vårdprocess, samt detaljer om filens metadata. \r\n\r\nAvsikten för denna arketyp är att inneha mediefilen och dess metadata som beskriver insamlingen. Arketypen kan nästlas i en annan arketyp, vanligtvis en OBSERVATION eller ACTION arketyp som innehar sammanhanget och omständigheterna för registreringen av mediefilen. Till exempel detaljer om modaliteten, synvinkel eller aspekt av en röntgenbild eller detaljer rörande DICOM-filer kan lagras i arketypen OBSERVATION.imaging_exam_result.\r\n\r\nExempel inkluderar, men är inte begränsade till:\r\n-Ett foto av en skada\r\n-Ett diagram över anatomisk lokalisation för ett specifikt kliniskt fynd\r\n-En röntgenbild\r\n-En ljud- eller videoinspelning av en intervju\r\n-Inskannade histopatologiska glas\r\n-Data från medicinsk utrustning, så som en EKG-mätare, eller\r\n-Inskannat foto av pappersdokumentation eller handskrivna kliniska anteckningar\r\n\r\nDatafältet \"Innehåll\" tillåter mediefilen att förvärvas och lagras i journalen via datatypen Multimedia. Multimedia datatypen har flertalet RM attribut som filstorlek och URI till en extern källa. Se https://specifications.openehr.org/releases/RM/latest/data_types.html#_dv_multimedia_class.\r\n\r\nOm mer än en mediefil har registrerats, såsom \"före\" och \"efter\" bilder av ett sår, använd separata instanser av denna arketyp för att representera varje mediefil.\r\n\r\nOm en serie av mediefiler representeras av ett enda objekt, till exempel en datortomografi, kan en instans av denna arketyp användas för att representera en URI sträng till filen.",
+          "misuse" : "Ska inte användas för att representera information, instruktions- eller undervisningsmaterial tilldelade till en patient eller deras vårdgivare, till exempel som utbildningsbroschyrer. Använd CLUSTER.information_resource för detta syfte.\r\n\r\nSka inte användas för att registrera en referens till en databas. Använd CLUSTER.knowledge_base_reference för detta syfte.\r\n\r\n",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "nb" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "nb"
+          },
+          "purpose" : "For å dokumentere detaljer om en mediafil, samt tilknyttede metadata, som er ervervet eller brukt i forbindelse med en helsetjeneste.",
+          "keywords" : [ "bilde", "foto", "audio", "tekstfil", "video", "applikasjon", "fil", "multimedia", "DICOM", "digital", "dokument", "skannet", "scannet", "lyd" ],
+          "use" : "Brukes for å dokumentere detaljer om en mediafil, samt tilknyttede metadata, som er ervervet eller brukt i forbindelse med en helsetjeneste.\r\n\r\nHensikten med denne arketypen er kun å være en bærer for mediafilen og metadataene som beskriver innholdet i filen. Denne arketypen vil være nøstet i en annen arketype, vanligvis en OBSERVATION eller ACTION arketype, som vil inneholde konteksten og omstendighetene knyttet til hvordan innholdet ble dannet. For eksempel blir detaljer om modalitet, visning eller aspekt av et radiologisk bilde og DICOM-detaljer dokumentert i arketypen OBSERVATION.imaging_exam_result.\r\n\r\nEksempler inkluderer, men er ikke begrenset til:\r\n- Et bilde av en skade;\r\n- Et diagram over plasseringen av et spesifikt klinisk funn;\r\n- Et digital radiologisk bilde;\r\n- Et lyd- eller videoopptak av et intervju;\r\n- Et skannet objektglass til mikroskopisk diagnostikk;\r\n- Data fra medisinsk utstyr, for eksempel en EKG-apparat;\r\n- Et skannet bilde av papirdokumentasjon eller håndskrevne kliniske notater.\r\n\r\nDataelementet \"Innhold\" gjør det mulig å fange og lagre mediafiler i den elektroniske pasientjournalen (EPJ) ved hjelp av multimedia-datatypen. Multimedia-datatypen har mange RM-attributter, for eksempel filstørrelsen og URI til en ekstern kilde. Se https://specifications.openehr.org/releases/RM/latest/data_types.html#_dv_multimedia_class.\r\n\r\nHvis mer enn én mediafil skal dokumenteres, for eksempel bilder før og etter behandling av et sår, bruk en forekomst av denne arketypen for hvert bilde.\r\n\r\nHvis en serie mediafiler er representert som et enkelt element, for eksempel en CT-skanning, kan en forekomst av denne arketypen brukes til å representere en URI til gruppen/serien.",
+          "misuse" : "Skal ikke brukes til å representere informasjon, instruksjons- eller utdanningsmateriale levert til en person, eller dens omsorgsperson, for eksempel brosjyrer for pasientopplæring. Bruk CLUSTER.information_resource til dette formålet.\r\n\r\nSkal ikke brukes til å registrere en referanse til en kunnskapsbase - bruk CLUSTER. Knowledge_base_reference for dette formålet.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "sk" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "sk"
+          },
+          "purpose" : "Na zaznamenanie mediálneho súboru, ktorý sa získa alebo použije ako súčasť procesu zdravotnej starostlivosti, a podrobností o súvisiacich metadátach.",
+          "keywords" : [ "obrázky", "zvuky", "text", "video", "aplikácie", "súbory", "multimédiá", "zvuky", "DICOM", "digital", "dokument", "fotka", "hlasový záznam" ],
+          "use" : "Používa sa na zaznamenanie mediálneho súboru, ktorý sa získa alebo použije ako súčasť procesu zdravotnej starostlivosti, a podrobností o súvisiacich metadátach.\r\n\r\nZámerom tohto archetypu je iba uchovávať mediálny súbor a metadáta popisujúce jeho zachytenie. Tento archetyp bude vnorený do iného archetypu, zvyčajne POZOROVANIA alebo AKCIE, ktorá bude obsahovať kontext a okolnosti súvisiace so zachytením mediálneho súboru. Napríklad podrobnosti o modalite, zobrazení alebo aspekte rádiografickej snímky a podrobnosti DICOM budú zachytené v rámci archetypu OBSERVATION.imaging_exam_result.\r\n\r\nPríklady zahŕňajú, ale nie sú obmedzené na:\r\n- fotografia zranenia;\r\n- Schéma lokalizácie konkrétneho klinického nálezu;\r\n- rádiologický obraz;\r\n- audio alebo video záznam rozhovoru;\r\n- Naskenovaný patologický diapozitív;\r\n- Výstup údajov z klinického zariadenia, ako je EKG prístroj; alebo\r\n- Naskenovaný obraz papierovej dokumentácie alebo ručne písané klinické poznámky.\r\n\r\nÚdajový prvok „Obsah“ umožňuje zaznamenať a uložiť mediálny súbor do zdravotného záznamu pomocou dátového typu Multimedia. Dátový typ Multimedia má veľa atribútov RM, ako je veľkosť súboru a URI pre externý zdroj. Pozrite si https://specifications.openehr.org/releases/RM/latest/data_types.html#_dv_multimedia_class.\r\n\r\nAk bol zachytený viac ako jeden mediálny súbor, napríklad obrázky rany „pred“ a „po“, použite na reprezentáciu každého mediálneho súboru samostatnú inštanciu tohto archetypu.\r\n\r\nAk je séria mediálnych súborov reprezentovaná ako jedna položka, ako napríklad CT sken, tak sa môže jedna inštancia tohto archetypu použiť na reprezentáciu cesty pomocou URI k skupine.",
+          "misuse" : "Nesmie sa používať na reprezentáciu informácií, inštruktážnych alebo vzdelávacích materiálov dodávaných jednotlivcom alebo ich opatrovateľom, napríklad letáky s informáciami pre pacientov. Na tento účel použite CLUSTER.information_resource.\r\n\r\nNesmie sa používať na zaznamenanie odkazu na bázu znalostí – na tento účel použite CLUSTER.knowledge_base_reference.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "en" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "en"
+          },
+          "purpose" : "To record a media file that is acquired or used as part of the healthcare process, and details about associated metadata.",
+          "keywords" : [ "image", "audio", "text", "video", "application", "file", "multimedia", "audio", "DICOM", "digital", "document", "photo", "voice" ],
+          "use" : "Use to record a media file that is acquired or used as part of the healthcare process, and details about associated metadata.\r\n\r\nThe intent of this archetype is only to hold the media file and the metadata describing its capture. This archetype will be nested within another archetype, usually an OBSERVATION or ACTION that will hold the context and circumstances related to the capture of the media file. For example, details about the modality, view or aspect of a radiographic image and DICOM details will be captured within the OBSERVATION.imaging_exam_result archetype. \r\n\r\nExamples include, but are not limited to:\r\n- A photo of an injury;\r\n- A diagram of the location of a specific clinical finding;\r\n- A radiological image;\r\n- An audio or video recording of an interview;\r\n- Scanned pathology slide;\r\n- Data output from a clinical device, such as an ECG machine; or\r\n- A scanned image of paper documentation or hand-written clinical notes.\r\n\r\nThe 'Content' data element allows for the media file to be captured and stored within the health record using the Multimedia data type. The Multimedia data type has many RM attributes such as the size of file and URI to an external source. See https://specifications.openehr.org/releases/RM/latest/data_types.html#_dv_multimedia_class.\r\n\r\nIf more than one media file has been captured, such as 'before' and 'after' images of a wound, use a separate instance of this archetype to represent each media file.\r\n\r\nIf a series of media files is represented as a single item, such as a CT scan, one instance of this archetype can be used to represent a URI path to the group.",
+          "misuse" : "Not to be used to represent information, instructional or educational material supplied to an individual, or their carer, for example patient education leaflets. Use the CLUSTER.information_resource for this purpose.\r\n\r\nNot to be used to record a reference to a knowledge base - use CLUSTER.knowledge_base_reference for this purpose.",
+          "copyright" : "© openEHR Foundation",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "nl" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "nl"
+          },
+          "purpose" : "Om een mediabestand vast te leggen dat is verkregen of gebruikt als onderdeel van het zorgproces, en details over bijbehorende metadata.",
+          "keywords" : [ "afbeelding", "audio", "tekst", "video", "applicatie", "bestand", "multimedia", "geluid", "DICOM", "digitaal", "document", "foto", "spraak" ],
+          "use" : "Te gebruiken om een mediabestand vast te leggen dat is verkregen of gebruikt als onderdeel van het zorgproces, en details over bijbehorende metadata.\r\n\r\nDit archetype is alleen bedoeld voor het mediabestand en de metadata die het vastleggen ervan beschrijven. Dit archetype wordt genest binnen een ander archetype, meestal een OBSERVATION of ACTION die de context en omstandigheden bevat die verband houden met het vastleggen van het mediabestand. Bijvoorbeeld, details over de modaliteit, weergave of aspect van een radiografisch beeld en DICOM-details worden vastgelegd in het archetype OBSERVATION.imaging_exam_result.\r\n\r\nVoorbeelden omvatten, maar zijn niet beperkt tot:\r\n- Een foto van een blessure;\r\n- Een diagram van de locatie van een specifieke klinische bevinding;\r\n- Een radiologisch beeld;\r\n- Een audio- of video-opname van een interview;\r\n- Gescande pathologiedia;\r\n- Gegevensuitvoer van een klinisch apparaat, zoals een ECG-apparaat; of\r\n- Een gescande afbeelding van papieren documentatie of handgeschreven klinische aantekeningen.\r\n\r\nMet het gegevenselement 'Inhoud' kan het mediabestand worden vastgelegd en opgeslagen in het gezondheidsdossier met behulp van het gegevenstype Multimedia. Het gegevenstype Multimedia heeft veel RM-attributen, zoals de grootte van het bestand en de URI naar een externe bron. Zie https://specifications.openehr.org/releases/RM/latest/data_types.html#_dv_multimedia_class.\r\n\r\nAls er meer dan één mediabestand is vastgelegd, zoals 'voor' en 'na' beelden van een wond, gebruik dan een afzonderlijke instantie van dit archetype om elk mediabestand te vertegenwoordigen.\r\n\r\nAls een reeks mediabestanden wordt weergegeven als een enkel item, zoals een CT-scan, kan één instantie van dit archetype worden gebruikt om een URI-pad naar de groep weer te vertegenwoordigen.",
+          "misuse" : "Niet te gebruiken om informatie, instructie- of educatief materiaal weer te geven dat aan een persoon of hun verzorger wordt verstrekt, bijvoorbeeld folders voor patiënteneducatie. Gebruik hiervoor de CLUSTER.information_resource.\r\n\r\nNiet te gebruiken om een verwijzing naar een kennisbank op te nemen - gebruik hiervoor CLUSTER.knowledge_base_reference.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        }
+      }
     },
     "parentArchetypeId" : "openEHR-EHR-CLUSTER.media_file.v1",
     "differential" : true,
@@ -753,7 +854,54 @@
       "otherDetails" : {
         "PARENT:MD5-CAM-1.0.1" : "efb0384fa40eaceb09b2fd7949804fd6"
       },
-      "details" : { }
+      "details" : {
+        "de" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "de"
+          },
+          "purpose" : "Aufzeichnung einer Aussage oder Feststellung über den Schwangerschaftsstatus einer Person, die nur zum Zeitpunkt der Feststellung als richtig anzusehen ist.",
+          "keywords" : [ "Schwangerschaft, schwanger, Ausschluss" ],
+          "use" : "Zur Aufzeichnung einer Aussage oder Feststellung über den Schwangerschaftsstatus der Person zu einem bestimmten Zeitpunkt. Eine klinische Aussage darüber, ob eine Schwangerschaft vorliegt, ausgeschlossen wird oder möglich ist, ist in einigen klinischen Szenarien von klinischer Bedeutung, z. B. als Leitlinie für Behandlungsentscheidungen, die einer schwangeren Frau oder dem Fötus bei einer nicht erkannten Schwangerschaft Schaden zufügen können.\r\n\r\nWährend das Vorliegen einer bekannten Schwangerschaft oft sicher angenommen oder aus anderen routinemäßig erfassten Daten in der Gesundheitsakte abgeleitet werden kann, wird in der klinischen Praxis in der Regel davon ausgegangen, dass eine Frau im gebärfähigen Alter schwanger sein kann, bis das Gegenteil bewiesen ist, und es besteht die Möglichkeit, die Ungewissheit über die Möglichkeit einer Schwangerschaft zu erfassen. In einigen klinischen Szenarien ist der Ausschluss einer Schwangerschaft notwendig und hat erhebliche Auswirkungen auf die klinische Sicherheit und die medizinische Rechtslage. \r\n\r\nEin absoluter Ausschluss einer Schwangerschaft ist nur in wenigen Fällen möglich, beispielsweise nach der bestätigten chirurgischen Entfernung beider Eierstöcke und der Gebärmutter. In den meisten anderen Situationen muss der Arzt auf der Grundlage einer Kombination aus aktueller klinischer Bewertung und Urteilsvermögen eine Schwangerschaft ausschließen. Dieser Ausschluss sollte eine Begründung oder Rechtfertigung des Arztes enthalten, die sich auf aktuelle Testergebnisse, ein Organzustand oder eine Vorgeschichte von Diagnosen und Verfahren beziehen kann.\r\n\r\nEs ist von entscheidender Bedeutung, dass jede Aussage zum Ausschluss einer Schwangerschaft in der Krankenakte in der Regel nur zu dem Zeitpunkt relevant ist, zu dem sie dokumentiert wird.",
+          "misuse" : "Nicht für die Aufzeichnung zusammenfassender Informationen über eine einzelne Schwangerschaft zu verwenden. Verwenden Sie zu diesem Zweck den Archetyp EVALUATION.pregnancy_summary.\r\n\r\nNicht zur Aufzeichnung der Phase einer aktiven Schwangerschaft, wie z. B. vor der Empfängnis, schwanger oder nach der Geburt, zu verwenden. Verwenden Sie zu diesem Zweck den Archetyp EVALUATION.pregnancy_phase.\r\n\r\nNicht zu verwenden für die Erfassung von Details zu Eingriffen, die während einer Schwangerschaft durchgeführt wurden, z. B. Abbrüche oder Entbindungen. Verwenden Sie zu diesem Zweck den Archetyp ACTION.procedure oder andere relevante Archetypen.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "nb" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "nb"
+          },
+          "purpose" : "Å registrere en påstand eller erklæring om graviditetsstatusen til en person, som kun skal anses som nøyaktig på datoen og tidspunktet for påstanden.",
+          "keywords" : [ "graviditet, gravid, ekskludering, utelukkelse" ],
+          "use" : "*Brukes til å registrere en påstand eller erklæring om graviditetsstatusen til en person på et bestemt tidspunkt. En klinisk påstand om hvorvidt en graviditet er tilstede, utelukket eller mulig er klinisk viktig i noen kliniske scenarier, for eksempel veiledende ledelsesbeslutninger(???) som kan forårsake skade på en gravid kvinne eller fosteret i et ukjent svangerskap.\r\n\r\nMens tilstedeværelsen av en kjent graviditet ofte trygt kan antas eller utledes fra andre rutinemessig registrerte data i pasientjournalen, forutsetter klinisk praksis typisk at en kvinne i fertil alder kan være gravid inntil det motsatte er bevist og evnen til å registrere usikkerhet angående muligheten for at personen er gravid. I noen kliniske scenarier er det nødvendig å utelukke tilstedeværelsen av en graviditet som kan ha betydelige kliniske sikkerhets- og medisinske implikasjoner. \r\n\r\nAbsolutt utelukkelse av graviditet er bare mulig i begrensede tilfeller, for eksempel etter bekreftet kirurgisk fjerning av både eggstokkene og livmoren. I de fleste andre situasjoner er klinikere pålagt å påstå en eksklusjon av graviditet basert på en kombinasjon av gjeldende kliniske vurderinger og skjønn. Denne ekskluderingen bør inkludere klinikerens begrunnelse eller skjønn, som kan referere til oppdaterte testresultater, fravær av organ eller en tidligere historie med diagnoser og prosedyrer.\r\n\r\nDet er avgjørende å merke seg at enhver påstand om utelukkelse av graviditet i pasientjournalen vanligvis er relevant først på det tidspunktet den er dokumentert.",
+          "misuse" : "Skal ikke brukes til å registrere informasjon om sammendrag av en enkelt graviditet. Bruk arketypen EVALUATION.pregnancy_summary til dette formålet.\r\n\r\nSkal ikke brukes til å registrere fasen av en aktiv graviditet, prekonsepsjon (før unnfangelsen), gravid eller postpartum (24 timer etter fødsel). Bruk arketypen EVALUATION.pregnancy_phase til dette formålet.\r\n\r\nSkal ikke brukes til å registrere detaljer om prosedyrer utført under en graviditet, for eksempel avbrudd eller fødsel. Bruk ACTION.prosedyren eller andre relevante arketyper for dette formålet.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "en" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "en"
+          },
+          "purpose" : "To record a statement or declaration about the pregnancy status of the individual, which is to be considered accurate only at the date and time of assertion.",
+          "keywords" : [ "pregnancy, pregnant, exclusion," ],
+          "use" : "Use to record a statement or declaration about the pregnancy status of the individual at a specific point in time. A clinical assertion about whether a pregnancy is present, excluded or possible is clinically important in some clinical scenarios, such as guiding management decisions which may cause harm to a pregnant woman or the fetus in an unrecognised pregnancy.\r\n\r\nWhile the presence of a known pregnancy can often be safely assumed or inferred from other routinely recorded data in the health record, clinical practice typically presumes that a woman of child-bearing age may be pregnant until proven otherwise and the ability to record uncertainty regarding the possibility of the individual being pregnant. In some clinical scenarios, excluding the presence of a pregnancy is necessary and carries significant clinical safety and medicolegal implications.  \r\n\r\nAbsolute exclusion of pregnancy is possible only in limited cases, such as after the confirmed surgical removal of both ovaries and the uterus. In most other situations, clinicians are required to assert a pregnancy exclusion based on a combination of current clinical assessments and judgment. This exclusion should include the clinician’s rationale or justification, which may reference contemporaneous test results, an organ inventory or a past history of diagnoses and procedures.\r\n\r\nIt is crucial to note that any assertion of pregnancy exclusion in the health record is usually relevant only at the time it is documented.",
+          "misuse" : "Not to be used to record summary information about a single pregnancy. Use the EVALUATION.pregnancy_summary archetype for this purpose.\r\n\r\nNot to be used to record the phase of an active pregnancy, such as preconception, pregnant, or postpartum. Use the EVALUATION.pregnancy_phase archetype for this purpose.\r\n\r\nNot to be used to record details about procedures performed during a pregnancy, for example terminations or deliveries. Use the ACTION.procedure or other relevant archetypes for this purpose.",
+          "copyright" : "© openEHR Foundation",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        }
+      }
     },
     "parentArchetypeId" : "openEHR-EHR-OBSERVATION.pregnancy_finding.v0",
     "differential" : true,
@@ -877,7 +1025,72 @@
       "otherDetails" : {
         "PARENT:MD5-CAM-1.0.1" : "065396457cc703e64ac7af92542fb8e4"
       },
-      "details" : { }
+      "details" : {
+        "de" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "de"
+          },
+          "purpose" : "Zur Dokumentation eines expliziten Befundes zur Unterstützung einer klinischen Behauptung, wie z.B. eines Problems/einer Diagnose, eines Nebenwirkungsrisikos, einer Gesundheitsrisikobewertung oder einer Kontraindikation.",
+          "keywords" : [ "Diagnose", "Beweis", "Bedingung", "Krankheit", "Problem", "Feststellung", "Befund", "Beobachtung" ],
+          "use" : "Zur Dokumentationn von Details zu Befunden, die eine klinische Feststellung unterstützen, entweder als Zusammenfassung von Daten, die in anderen (oft der Klasse OBSERVATION) Archetypen verfügbar sind, oder wenn die ursprünglichen Beobachtungsdaten nicht verfügbar sind.\r\n\r\nDiesen Archetypen innerhalb eines SLOTS Archetypen wie EVALUATION.problem_diagnose, EVALUATION.adverse_reaction_risk, EVALUATION.health_risk, EVALUATION.contraindication oder ähnlichen zusammenfassenden Archetypen verwenden, bei denen der Name der Feststellung bereits in der EVALUATION angegeben wurde, verschachtelt wird, um den Inhalt um diesen zusätzlichen und optionalen Datensatz zu erweitern. Während LINKs innerhalb des openEHR-Referenzmodells eine Verknüpfung mit Daten ermöglichen, die an anderer Stelle in der Gesundheitsakte gespeichert sind, wurde dieser Archetyp entwickelt, um diese Funktionalität explizit zu machen und um die klinische Sichtbarkeit und Überprüfung dieser Daten zu ermöglichen, wo sie in einer Vorlage oder Spezifikation relevant sein können.\r\n\r\nDer klinische Beweis kann direkt in diesen Archetyp als \"Finding\" eingegeben werden, oder es kann ein Zitat verwendet werden, um explizit auf Daten innerhalb der Gesundheitsakte zu verweisen.\r\n\r\n",
+          "misuse" : "Nicht zur Dokumentation von zusammenfassende Details zu einem identifizierten Problem oder einer Diagnose verwenden - verwenden Sie dazu die EVALUATION.problem_diagnosis.\r\n\r\nNicht zur Dokumentation von zusammenfassenden Details über ein identifiziertes Nebenwirkungsrisiko verwenden - verwenden Sie dazu die Datei EVALUATION.adverse_reaction_risk.\r\n\r\nNicht zur Dokumentation von zusammenfassenden Details über ein identifiziertes Gesundheitsrisiko zu verwenden - verwenden Sie zu diesem Zweck die Datei EVALUATION.health_risk.\r\n\r\nNicht zur Dokumentation von zusammenfassende Einzelheiten über eine identifizierte Kontraindikation verwenden - verwenden Sie dazu die Datei EVALUATION.contraindication.\r\n",
+          "copyright" : "© openEHR Foundation, Nasjonal IKT HF",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "sv" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "sv"
+          },
+          "purpose" : "Att registrera ett uttryckligt resultat till stöd för ett kliniskt påstående, såsom ett problem / diagnos, biverkningsrisk, hälsoriskbedömning eller kontraindikation.",
+          "keywords" : [ "diagnos", "bevis", "tillstånd", "sjukdom", "problem", "påstående", "fynd", "observation" ],
+          "use" : "Används för att registrera detaljer om fynd som stöder ett kliniskt påstående, antingen som en sammanfattning av data som finns tillgängliga i andra (ofta OBSERVATION-klass) arketyper, eller när de ursprungliga observationsdata inte är tillgängliga.\r\n\r\nDenna arketyp är utformad för att kapslas in i en SLOT i EVALUATION.problem_diagnosis, EVALUATION.adverse_reaction_risk, EVALUATION.health_risk, EVALUATION.contraindication, eller liknande sammanfattande arketyper, där namnet på påståendet redan har specificerats i EVALUATIONEN, för att utöka innehållet med denna extra och valfria dataset. Medan LÄNKAR inom openEHR-referensmodellen möjliggör koppling till data som hålls någon annanstans inom hälsojournalen har denna arketyp utvecklats för att göra denna funktion tydlig och för att möjliggöra klinisk synlighet och granskning av dessa data, där det kan vara relevant i en template eller specifikation.\r\n\r\nDe kliniska bevisen kan matas in direkt i denna arketyp som en \"Finding\", eller en citering kan användas för att uttryckligen peka på data i hälsojournalen.",
+          "misuse" : "Är inte utformad för att registrera sammanfattade detaljer om ett identifierat problem eller diagnos - använd EVALUATION.problem_diagnosis för detta ändamål.\r\n\r\nÄr inte utformad för att registrera sammanfattande detaljer om en identifierad biverkningsrisk - använd EVALUATION.adverse_reaction_risk för detta ändamål.\r\n\r\nÄr inte utformad för att registrera sammanfattande detaljer om en identifierad hälsorisk - använd EVALUATION.health_risk för detta ändamål.\r\n\r\nÄr inte utformad för att registrera sammanfattande detaljer om en identifierad kontraindikation - använd EVALUATION.-kontraindikationen för detta ändamål.",
+          "copyright" : "© openEHR Foundation, Nasjonal IKT HF",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "nb" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "nb"
+          },
+          "purpose" : "For å registrere eksplisitte detaljer om grunnlaget for et klinisk utsagn, for eksempel en problem/diagnose, risiko for overfølsomhetsreaksjon, helserisiko, eller kontraindikasjon.",
+          "keywords" : [ "diagnose", "evidens", "tilstand", "sykdom", "problem", "observasjon", "begrunnelse" ],
+          "use" : "Brukes for å registrere eksplisitte detaljer om grunnlaget for et klinisk utsagn, enten som en oppsummering av data som er tilgjengelig i andre arketyper (ofte av OBSERVATION-klassen), eller når de opprinnelige dataene ikke er tilgjengelige for applikasjonen.\r\n\r\nDenne arketypen er ment å legges i et SLOT i arketypene EVALUATION.problem_diagnosis, EVALUATION.adverse_reaction_risk, EVALUATION.health_risk, EVALUATION.contraindication eller lignende oppsummerende arketyper, der utsagnet allerede er spesifisert i EVALUATION-arketypen. Den fungerer der som en valgfri utvidelse av datasettet i EVALUATION-arketypen.\r\n\r\nSom spesifisert i openEHR referansemodellen kan det benyttes lenker for å lenke til data som ligger andre steder i journalen, mens denne arketypen er laget for å gjøre dette eksplisitt, og for å gjøre det mulig å vise og gjennomgå disse dataene klinisk der dette er relevant.\r\n\r\nGrunnlaget kan legges direkte i denne i arketypen som et \"Funn\", eller referansen kan benyttes for å peke direkte til dataene som ligger et annet sted i journalen.",
+          "misuse" : "Skal ikke brukes til å registrere sammendrag om et problem eller en diagnose. For dette brukes arketypen EVALUATION.problem_diagnosis.\r\n\r\nSkal ikke brukes til å registrere sammendrag om risiko for overfølsomhetsreaksjoner. For dette brukes arketypen EVALUATION.adverse_reaction_risk.\r\n\r\nSkal ikke brukes til å registrere sammendrag om en helserisiko. For dette brukes arketypen EVALUATION.health_risk.\r\n\r\nSkal ikke brukes til å registrere sammendrag om en kontraindikasjon. For dette brukes arketypen EVALUATION.contraindication.",
+          "copyright" : "© openEHR Foundation, Nasjonal IKT HF",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "en" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "en"
+          },
+          "purpose" : "To record an explicit finding in support of a clinical assertion, such as a problem/diagnosis, adverse reaction risk, health risk assessment, or contraindication.",
+          "keywords" : [ "diagnosis", "evidence", "condition", "disease", "problem", "assertion", "finding", "observation" ],
+          "use" : "Use to record details about findings that support a clinical assertion, either as a summary of data available in other (often OBSERVATION class) archetypes, or when the original observational data is not available.\r\n\r\nThis archetype is designed to be nested within a SLOT in the EVALUATION.problem_diagnosis, EVALUATION.adverse_reaction_risk, EVALUATION.health_risk, EVALUATION.contraindication, or similar summary archetypes, where the name of the assertion has already been specified in the EVALUATION, in order to extend its content with this additional and optional dataset. While LINKs within the openEHR Reference Model allow for linkage to data held elsewhere within the health record, this archetype has been developed to make this functionality explicit, and to enable clinical visibility and review of this data, where it may be relevant in a template or specification.\r\n\r\nThe clinical evidence can be entered directly into this archetype as a 'Finding', or a citation can be used to explicitly point to data within the health record.",
+          "misuse" : "Not to be used to record summary details about an identified problem or diagnosis - use the EVALUATION.problem_diagnosis for this purpose.\r\n\r\nNot to be used to record summary details about an identified adverse reaction risk - use the EVALUATION.adverse_reaction_risk for this purpose.\r\n\r\nNot to be used to record summary details about an identified health risk - use the EVALUATION.health_risk for this purpose.\r\n\r\nNot to be used to record summary details about an identified contraindication - use the EVALUATION.contraindication for this purpose.",
+          "copyright" : "© openEHR Foundation, Nasjonal IKT HF",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        }
+      }
     },
     "parentArchetypeId" : "openEHR-EHR-CLUSTER.clinical_evidence.v1",
     "differential" : true,
@@ -986,7 +1199,99 @@
       "otherDetails" : {
         "PARENT:MD5-CAM-1.0.1" : "af215ccd20407971caf4363c3731e6fa"
       },
-      "details" : { }
+      "details" : {
+        "de" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "de"
+          },
+          "purpose" : "Zur Darstellung einer Mediendatei erworbenen und verwendeten im Bereich des Gesundheitswesens sowie der Informationen zu den zugehörigen Metadaten.",
+          "keywords" : [ "Bild", "Audio", "Text", "Video", "Anwendung", "Datei", "Multimedia", "DICOM", "digital", "Dokument", "Foto", "Sprachaufnahme" ],
+          "use" : "Zur Darstellung einer Mediendatei erworbenen und verwendeten im Bereich des Gesundheitswesens sowie der Informationen zu den zugehörigen Metadaten.\r\n\r\nDie Absicht dieses Archetyps besteht nur darin, die Mediendatei und die Metadaten, die ihre Erfassung beschreiben, darzustellen. Dieser Archetyp wird in einen anderen Archetyp verschachtelt, normalerweise ein OBSERVATION- oder ACTION-Archetyp, der den Kontext und die Umstände im Zusammenhang mit der Erfassung der Mediendatei enthält. Zum Beispiel werden Details zu Modalität, Ansicht oder Aspekt eines Röntgenbildes und DICOM-Details im Archetyp OBSERVATION.imaging_exam_result dargestellt.\r\n\r\nDie Beispiele umfassen, sind aber nicht beschränkt auf:\r\n- Ein Foto einer Verletzung;\r\n- Ein Diagramm der Lokalisation eines bestimmten klinischen Befundes;\r\n- Ein digitales Ergebnis der Röntgen- oder CT-Aufnahme;\r\n- Eine Audio- oder Videoaufzeichnung eines Interviews;\r\n- Gescannte pathologische Schnitte;\r\n- Datenausgabe von einem klinischen Gerät, wie z.B. einem EKG-Gerät; oder\r\n- Ein gescanntes Bild von handgeschriebenen klinischen Notizen.\r\n\r\nDas Datenelement „Inhalt“ ermöglicht mithilfe des Multimedia-Datentyps die Erfassung und Speicherung der Mediendatei in der Gesundheitsakte. Der Multimedia-Datentyp hat viele RM-Attribute wie die Dateigröße und URI zu einer externen Quelle. Siehe https://specifications.openehr.org/releases/RM/latest/data_types.html#_dv_multimedia_class.\r\n\r\nWenn mehr als eine Mediendatei erfasst wurde, z. B. „Vorher“- und „Nachher“-Bilder einer Wunde, verwenden Sie eine Instanz dieses Archetyps, um jede Mediendatei darzustellen.\r\n\r\nWenn eine Reihe von Mediendateien als einzelnes Element dargestellt wird, z. B. ein CT-Scan, kann eine Instanz dieses Archetyps verwendet werden, um einen URI-Pfad zu der Gruppe darzustellen.\r\n\r\n\r\n\r\n",
+          "misuse" : "Nicht zur Darstellung von Informationen, Lehr- oder Schulungsmaterial verwenden, die außerhalb des Gesundheitsprozesses generiert werden, z. B. Broschüren zur Patientenaufklärung, die dem Patienten oder der Pflegeperson zur Verfügung gestellt werden. Verwenden Sie für diesen Zweck den Archetyp CLUSTER.information_resource.\r\n\r\nNicht zur Darstellung von Referenz auf eine externe digitale Ressource, die als Quelle für maßgebliche Informationen oder Experteninformationen verwendet wird. Verwenden Sie für diesen Zweck den Archetyp CLUSTER.knowledge_base_reference.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "sv" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "sv"
+          },
+          "purpose" : "Att registrera en mediefil som förvärvats eller använts som en del i en vårdprocess, samt detaljer om filens metadata.",
+          "keywords" : [ "bild", "foto", "ljud", "text", "video", "film", "applikation", "fil", "multimedia", "DICOM", "digital", "dokument", "röst" ],
+          "use" : "Används för att registrera en mediefil som förvärvats eller används som del i en vårdprocess, samt detaljer om filens metadata. \r\n\r\nAvsikten för denna arketyp är att inneha mediefilen och dess metadata som beskriver insamlingen. Arketypen kan nästlas i en annan arketyp, vanligtvis en OBSERVATION eller ACTION arketyp som innehar sammanhanget och omständigheterna för registreringen av mediefilen. Till exempel detaljer om modaliteten, synvinkel eller aspekt av en röntgenbild eller detaljer rörande DICOM-filer kan lagras i arketypen OBSERVATION.imaging_exam_result.\r\n\r\nExempel inkluderar, men är inte begränsade till:\r\n-Ett foto av en skada\r\n-Ett diagram över anatomisk lokalisation för ett specifikt kliniskt fynd\r\n-En röntgenbild\r\n-En ljud- eller videoinspelning av en intervju\r\n-Inskannade histopatologiska glas\r\n-Data från medicinsk utrustning, så som en EKG-mätare, eller\r\n-Inskannat foto av pappersdokumentation eller handskrivna kliniska anteckningar\r\n\r\nDatafältet \"Innehåll\" tillåter mediefilen att förvärvas och lagras i journalen via datatypen Multimedia. Multimedia datatypen har flertalet RM attribut som filstorlek och URI till en extern källa. Se https://specifications.openehr.org/releases/RM/latest/data_types.html#_dv_multimedia_class.\r\n\r\nOm mer än en mediefil har registrerats, såsom \"före\" och \"efter\" bilder av ett sår, använd separata instanser av denna arketyp för att representera varje mediefil.\r\n\r\nOm en serie av mediefiler representeras av ett enda objekt, till exempel en datortomografi, kan en instans av denna arketyp användas för att representera en URI sträng till filen.",
+          "misuse" : "Ska inte användas för att representera information, instruktions- eller undervisningsmaterial tilldelade till en patient eller deras vårdgivare, till exempel som utbildningsbroschyrer. Använd CLUSTER.information_resource för detta syfte.\r\n\r\nSka inte användas för att registrera en referens till en databas. Använd CLUSTER.knowledge_base_reference för detta syfte.\r\n\r\n",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "nb" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "nb"
+          },
+          "purpose" : "For å dokumentere detaljer om en mediafil, samt tilknyttede metadata, som er ervervet eller brukt i forbindelse med en helsetjeneste.",
+          "keywords" : [ "bilde", "foto", "audio", "tekstfil", "video", "applikasjon", "fil", "multimedia", "DICOM", "digital", "dokument", "skannet", "scannet", "lyd" ],
+          "use" : "Brukes for å dokumentere detaljer om en mediafil, samt tilknyttede metadata, som er ervervet eller brukt i forbindelse med en helsetjeneste.\r\n\r\nHensikten med denne arketypen er kun å være en bærer for mediafilen og metadataene som beskriver innholdet i filen. Denne arketypen vil være nøstet i en annen arketype, vanligvis en OBSERVATION eller ACTION arketype, som vil inneholde konteksten og omstendighetene knyttet til hvordan innholdet ble dannet. For eksempel blir detaljer om modalitet, visning eller aspekt av et radiologisk bilde og DICOM-detaljer dokumentert i arketypen OBSERVATION.imaging_exam_result.\r\n\r\nEksempler inkluderer, men er ikke begrenset til:\r\n- Et bilde av en skade;\r\n- Et diagram over plasseringen av et spesifikt klinisk funn;\r\n- Et digital radiologisk bilde;\r\n- Et lyd- eller videoopptak av et intervju;\r\n- Et skannet objektglass til mikroskopisk diagnostikk;\r\n- Data fra medisinsk utstyr, for eksempel en EKG-apparat;\r\n- Et skannet bilde av papirdokumentasjon eller håndskrevne kliniske notater.\r\n\r\nDataelementet \"Innhold\" gjør det mulig å fange og lagre mediafiler i den elektroniske pasientjournalen (EPJ) ved hjelp av multimedia-datatypen. Multimedia-datatypen har mange RM-attributter, for eksempel filstørrelsen og URI til en ekstern kilde. Se https://specifications.openehr.org/releases/RM/latest/data_types.html#_dv_multimedia_class.\r\n\r\nHvis mer enn én mediafil skal dokumenteres, for eksempel bilder før og etter behandling av et sår, bruk en forekomst av denne arketypen for hvert bilde.\r\n\r\nHvis en serie mediafiler er representert som et enkelt element, for eksempel en CT-skanning, kan en forekomst av denne arketypen brukes til å representere en URI til gruppen/serien.",
+          "misuse" : "Skal ikke brukes til å representere informasjon, instruksjons- eller utdanningsmateriale levert til en person, eller dens omsorgsperson, for eksempel brosjyrer for pasientopplæring. Bruk CLUSTER.information_resource til dette formålet.\r\n\r\nSkal ikke brukes til å registrere en referanse til en kunnskapsbase - bruk CLUSTER. Knowledge_base_reference for dette formålet.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "sk" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "sk"
+          },
+          "purpose" : "Na zaznamenanie mediálneho súboru, ktorý sa získa alebo použije ako súčasť procesu zdravotnej starostlivosti, a podrobností o súvisiacich metadátach.",
+          "keywords" : [ "obrázky", "zvuky", "text", "video", "aplikácie", "súbory", "multimédiá", "zvuky", "DICOM", "digital", "dokument", "fotka", "hlasový záznam" ],
+          "use" : "Používa sa na zaznamenanie mediálneho súboru, ktorý sa získa alebo použije ako súčasť procesu zdravotnej starostlivosti, a podrobností o súvisiacich metadátach.\r\n\r\nZámerom tohto archetypu je iba uchovávať mediálny súbor a metadáta popisujúce jeho zachytenie. Tento archetyp bude vnorený do iného archetypu, zvyčajne POZOROVANIA alebo AKCIE, ktorá bude obsahovať kontext a okolnosti súvisiace so zachytením mediálneho súboru. Napríklad podrobnosti o modalite, zobrazení alebo aspekte rádiografickej snímky a podrobnosti DICOM budú zachytené v rámci archetypu OBSERVATION.imaging_exam_result.\r\n\r\nPríklady zahŕňajú, ale nie sú obmedzené na:\r\n- fotografia zranenia;\r\n- Schéma lokalizácie konkrétneho klinického nálezu;\r\n- rádiologický obraz;\r\n- audio alebo video záznam rozhovoru;\r\n- Naskenovaný patologický diapozitív;\r\n- Výstup údajov z klinického zariadenia, ako je EKG prístroj; alebo\r\n- Naskenovaný obraz papierovej dokumentácie alebo ručne písané klinické poznámky.\r\n\r\nÚdajový prvok „Obsah“ umožňuje zaznamenať a uložiť mediálny súbor do zdravotného záznamu pomocou dátového typu Multimedia. Dátový typ Multimedia má veľa atribútov RM, ako je veľkosť súboru a URI pre externý zdroj. Pozrite si https://specifications.openehr.org/releases/RM/latest/data_types.html#_dv_multimedia_class.\r\n\r\nAk bol zachytený viac ako jeden mediálny súbor, napríklad obrázky rany „pred“ a „po“, použite na reprezentáciu každého mediálneho súboru samostatnú inštanciu tohto archetypu.\r\n\r\nAk je séria mediálnych súborov reprezentovaná ako jedna položka, ako napríklad CT sken, tak sa môže jedna inštancia tohto archetypu použiť na reprezentáciu cesty pomocou URI k skupine.",
+          "misuse" : "Nesmie sa používať na reprezentáciu informácií, inštruktážnych alebo vzdelávacích materiálov dodávaných jednotlivcom alebo ich opatrovateľom, napríklad letáky s informáciami pre pacientov. Na tento účel použite CLUSTER.information_resource.\r\n\r\nNesmie sa používať na zaznamenanie odkazu na bázu znalostí – na tento účel použite CLUSTER.knowledge_base_reference.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "en" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "en"
+          },
+          "purpose" : "To record a media file that is acquired or used as part of the healthcare process, and details about associated metadata.",
+          "keywords" : [ "image", "audio", "text", "video", "application", "file", "multimedia", "audio", "DICOM", "digital", "document", "photo", "voice" ],
+          "use" : "Use to record a media file that is acquired or used as part of the healthcare process, and details about associated metadata.\r\n\r\nThe intent of this archetype is only to hold the media file and the metadata describing its capture. This archetype will be nested within another archetype, usually an OBSERVATION or ACTION that will hold the context and circumstances related to the capture of the media file. For example, details about the modality, view or aspect of a radiographic image and DICOM details will be captured within the OBSERVATION.imaging_exam_result archetype. \r\n\r\nExamples include, but are not limited to:\r\n- A photo of an injury;\r\n- A diagram of the location of a specific clinical finding;\r\n- A radiological image;\r\n- An audio or video recording of an interview;\r\n- Scanned pathology slide;\r\n- Data output from a clinical device, such as an ECG machine; or\r\n- A scanned image of paper documentation or hand-written clinical notes.\r\n\r\nThe 'Content' data element allows for the media file to be captured and stored within the health record using the Multimedia data type. The Multimedia data type has many RM attributes such as the size of file and URI to an external source. See https://specifications.openehr.org/releases/RM/latest/data_types.html#_dv_multimedia_class.\r\n\r\nIf more than one media file has been captured, such as 'before' and 'after' images of a wound, use a separate instance of this archetype to represent each media file.\r\n\r\nIf a series of media files is represented as a single item, such as a CT scan, one instance of this archetype can be used to represent a URI path to the group.",
+          "misuse" : "Not to be used to represent information, instructional or educational material supplied to an individual, or their carer, for example patient education leaflets. Use the CLUSTER.information_resource for this purpose.\r\n\r\nNot to be used to record a reference to a knowledge base - use CLUSTER.knowledge_base_reference for this purpose.",
+          "copyright" : "© openEHR Foundation",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "nl" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "nl"
+          },
+          "purpose" : "Om een mediabestand vast te leggen dat is verkregen of gebruikt als onderdeel van het zorgproces, en details over bijbehorende metadata.",
+          "keywords" : [ "afbeelding", "audio", "tekst", "video", "applicatie", "bestand", "multimedia", "geluid", "DICOM", "digitaal", "document", "foto", "spraak" ],
+          "use" : "Te gebruiken om een mediabestand vast te leggen dat is verkregen of gebruikt als onderdeel van het zorgproces, en details over bijbehorende metadata.\r\n\r\nDit archetype is alleen bedoeld voor het mediabestand en de metadata die het vastleggen ervan beschrijven. Dit archetype wordt genest binnen een ander archetype, meestal een OBSERVATION of ACTION die de context en omstandigheden bevat die verband houden met het vastleggen van het mediabestand. Bijvoorbeeld, details over de modaliteit, weergave of aspect van een radiografisch beeld en DICOM-details worden vastgelegd in het archetype OBSERVATION.imaging_exam_result.\r\n\r\nVoorbeelden omvatten, maar zijn niet beperkt tot:\r\n- Een foto van een blessure;\r\n- Een diagram van de locatie van een specifieke klinische bevinding;\r\n- Een radiologisch beeld;\r\n- Een audio- of video-opname van een interview;\r\n- Gescande pathologiedia;\r\n- Gegevensuitvoer van een klinisch apparaat, zoals een ECG-apparaat; of\r\n- Een gescande afbeelding van papieren documentatie of handgeschreven klinische aantekeningen.\r\n\r\nMet het gegevenselement 'Inhoud' kan het mediabestand worden vastgelegd en opgeslagen in het gezondheidsdossier met behulp van het gegevenstype Multimedia. Het gegevenstype Multimedia heeft veel RM-attributen, zoals de grootte van het bestand en de URI naar een externe bron. Zie https://specifications.openehr.org/releases/RM/latest/data_types.html#_dv_multimedia_class.\r\n\r\nAls er meer dan één mediabestand is vastgelegd, zoals 'voor' en 'na' beelden van een wond, gebruik dan een afzonderlijke instantie van dit archetype om elk mediabestand te vertegenwoordigen.\r\n\r\nAls een reeks mediabestanden wordt weergegeven als een enkel item, zoals een CT-scan, kan één instantie van dit archetype worden gebruikt om een URI-pad naar de groep weer te vertegenwoordigen.",
+          "misuse" : "Niet te gebruiken om informatie, instructie- of educatief materiaal weer te geven dat aan een persoon of hun verzorger wordt verstrekt, bijvoorbeeld folders voor patiënteneducatie. Gebruik hiervoor de CLUSTER.information_resource.\r\n\r\nNiet te gebruiken om een verwijzing naar een kennisbank op te nemen - gebruik hiervoor CLUSTER.knowledge_base_reference.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        }
+      }
     },
     "parentArchetypeId" : "openEHR-EHR-CLUSTER.media_file.v1",
     "differential" : true,
@@ -1111,7 +1416,137 @@
       "otherDetails" : {
         "PARENT:MD5-CAM-1.0.1" : "1aaf9655d25935b007dbb39db8454571"
       },
-      "details" : { }
+      "details" : {
+        "de" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "de"
+          },
+          "purpose" : "Zur Darstellung bekannter Risikofaktoren für eine identifizierte Krankheit, einen Zustand oder ein anderes potenziell gesundheitsschädliches Problem und / oder einer Beurteilung der Wahrscheinlichkeit, dass die Person in der Zukunft davon betroffen ist.\r\n\r\nDieser Archetyp wurde absichtlich offen und breit angelegt. Das \"Gesundheitsrisiko\" kann aus den Risikofaktoren aus dem einen oder allen den folgenden Bereichen ermittelt werden: medizinische Risikofaktoren, Biomarker, Lebensstil, soziale Risikofaktoren, Berufsrisiko oder Umweltbereich.\r\nDie Absicht dieses Archetyps besteht darin, potentielle Risiken zu einem bestimmten Zeitpunkt zu dokumentieren und Entscheidungen zu unterstützen, die das erkannte Risiko verringern können, sei es durch Kliniker oder die Person selbst.",
+          "keywords" : [ "Einschätzung", "Begutachtung", "Beurteilung", "unerwünscht", "Evaluation", "Gesundheitsstatus", "Befinden", "Gesundheitszustand", "Einschätzung", "Risiko", "Risikofaktor", "Faktor", "Bewertung", "Gesundheit", "Gesundheitsrisiko", "Risikostratifizierung", "Risikostratifikation", "Management" ],
+          "use" : "Der Archetyp \"Bewertung des Gesundheitsrisikos\" wird verwendet, um bekannte Risikofaktoren für eine identifizierte Krankheit, einen Zustand oder ein anderes potenziell gesundheitsschädliches Problem darzustellenn und / oder zur Bewertung der Wahrscheinlichkeit, dass die Person in Zukunft davon betroffen ist.\r\n\r\nDa Risikofaktoren im Laufe der Zeit schrittweise identifiziert werden und das Gesamtrisiko infolgedessen neu bewertet wird, wird der \"Identifizierungszeitpunkt\" das Datum erfassen, an dem der Risikofaktor identifiziert wurde. Das Datenelement \"Letzte Aktualisierung\" gibt an, wann die gesamte Bewertung zuletzt aktualisiert wurde.",
+          "copyright" : "© openEHR Foundation",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "sv" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "sv"
+          },
+          "purpose" : "Att registrera kända riskfaktorer för en identifierad sjukdom, tillstånd eller annat potentiellt skadligt hälsotillstånd, och / eller en utvärdering av sannolikheten för att personen upplever det i framtiden.\r\n\r\nDenna arketyp har medvetet lämnats öppen och omfattande. Risken kan bestämmas av riskfaktorer från någon eller alla följande domäner: medicinska; biomarkör; livsstil; social; yrkesrisk; eller miljödomäner.\r\n\r\nAvsikten med denna arketyp är att dokumentera potentiell risk vid en tidpunkt och att stödja beslutsfattande som kan minska den identifierade risken, vare sig av kliniker eller individen själva.",
+          "keywords" : [ "Bedömning", "Risk", "Utvärdering", "Negativ", "Faktor", "Hälsa", "Fråga", "Beräknad", "Förvaltning", "Riskfaktor", "Risklagstiftning", "Hälsorisk" ],
+          "use" : "Används för att registrera kända riskfaktorer för en identifierad sjukdom, tillstånd eller annat potentiellt skadligt hälsotillstånd, och / eller en utvärdering av sannolikheten för att personen drabbas av det i framtiden.\r\n\r\nEftersom riskfaktorer kan identifieras gradvis över tiden och den övergripande risken omvärderas som ett resultat kommer den \"identifierade Datum\" att registrera det datum då varje riskfaktor har identifierats och \"Senast uppdaterad\" dataelement registrerar sista gången att hela utvärderingen uppdaterades.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "fi" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "fi"
+          },
+          "purpose" : "*To record known risk factors for an identified disease, condition, or other potentially adverse health issue, and/or an evaluation of the likelihood of the individual experiencing it in the future.\r\n\r\nThis archetype has been deliberately left open and broad in scope. The 'Health Risk' could be determined from risk factors from any or all of: medical; biomarker; lifestyle; social; occupational hazard; or environmental domains.\r\n\r\nThe intent of this archetype is to document potential risk at a point in time, and to support decision-making that may reduce the identified risk, whether by clinicians or the individual themselves.(en)",
+          "keywords" : [ "*assessment(en)", "*risk(en)", "*evaluation(en)", "*adverse(en)", "*factor(en)", "*health(en)", "*issue(en)", "*estimated(en)", "*management(en)", "*risk factor(en)", "*risk stratification(en)" ],
+          "use" : "*Use to record known risk factors for an identified disease, condition, or other potentially adverse health issue, and/or an evaluation of the likelihood of the individual experiencing it in the future.\r\n\r\nAs risk factors may be gradually identified over time and the overall risk reassessed as a result, the 'Date identified' will record the date on which each risk factor has been identified and the 'Last updated' data element will record the last time that the whole assessment was updated.(en)",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "es-ar" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "es-ar"
+          },
+          "purpose" : "Para el registro de factores de riesgo para una enfermedad, condición u otro problema potencialmente adverso para la salud, y/o para la evaluación de la probabilidad de que el individuo experimente estas situaciones en el futuro.\r\nEste arquetipo se mantiene deliberadamente abierto y amplio en su alcance. El 'Riesgo para la Salud' puede ser determinado a partir de todos o algunos de los factores de riesgo: médicos, marcadores biológicos, estilo de vidas, sociales, riesgo ocupacional o cuestiones ambientales.\r\nEl propósito de este arquetipo es la documentación de un riesgo potencial en un punto en el tiempo, y para asistir en la toma de decisiones que puedan reducir el mencionado riesgo, ya sea por parte de los médicos o del/de los individuo/s mismo/s.",
+          "keywords" : [ "evaluación", "riesgo", "adverso", "factor", "salud", "problema", "estimado", "manejo", "factor de riesgo", "estratificación de riesgo" ],
+          "use" : "*Use to record known risk factors for an identified disease, condition, or other potentially adverse health issue, and/or an evaluation of the likelihood of the individual experiencing it in the future.\r\n\r\nAs risk factors may be gradually identified over time and the overall risk reassessed as a result, the 'Date identified' will record the date on which each risk factor has been identified and the 'Last updated' data element will record the last time that the whole assessment was updated.(en)",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "nb" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "nb"
+          },
+          "purpose" : "Brukes til å registrere kjente risikofaktorer for en spesifikk sykdom, tilstand eller andre potensielt uønskede helseproblemer. Det kan også registreres en vurdering av sannsynligheten for at individet vil oppleve den aktuelle tilstanden i fremtiden.\r\n\r\nArketypen er med vilje laget åpen og bred. Helserisikoen kan bestemmes ut fra risikofaktorer fra det medisinske feltet, biomarkører, livsstil, sosiale forhold, yrkesmessige farer eller omgivelser.\r\n\r\nIntensjonen med arketypen er å dokumentere en potensiell risiko ved et gitt tidspunkt, og å støtte beslutninger som kan redusere risikoen enten de er tatt av en kliniker eller av individet selv.",
+          "keywords" : [ "vurdering", "risiko", "evaluering", "uønsket", "faktor", "helse", "problem", "estimert", "håndtering", "risikofaktor", "risikostratifisering" ],
+          "use" : "Brukes til å registrere kjente risikofaktorer for en spesifikk sykdom, tilstand eller andre potensielt uønskede helseproblemer. Det kan også registreres en vurdering av sannsynligheten for at individet vil oppleve den aktuelle tilstanden i fremtiden.\r\n\r\nSiden risikofaktorer gradvis kan identifiseres over tid og den generelle risikoen revurderes som et resultat, vil 'Dato identifisert' registrere datoen hvor hver risikofaktor er identifisert og dataelementet 'Sist oppdatert' registrerer siste gang hele vurderingen ble oppdatert.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "el" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "el"
+          },
+          "purpose" : "Για την καταγραφή γνωστών παραγόντων κινδύνου για μια αναγνωρισμένη ασθένεια, πάθηση ή άλλο δυνητικά δυσμενές πρόβλημα υγείας ή/και αξιολόγηση της πιθανότητας να το βιώσει το άτομο στο μέλλον.\r\n\r\nΑυτό το αρχέτυπο έχει σκόπιμα αφεθεί ανοικτό και ευρύ σε εύρος. Ο «κίνδυνος για την υγεία» θα μπορούσε να προσδιοριστεί από παράγοντες κινδύνου από οποιοδήποτε ή όλα: ιατρικά; βιοδείκτης; τρόπος ζωής; κοινωνικός; επαγγελματικός κίνδυνος· ή περιβαλλοντικούς τομείς.\r\n\r\nΗ πρόθεση αυτού του αρχέτυπου είναι να τεκμηριώσει τον πιθανό κίνδυνο σε μια χρονική στιγμή και να υποστηρίξει τη λήψη αποφάσεων που μπορεί να μειώσουν τον αναγνωρισμένο κίνδυνο, είτε από κλινικούς ιατρούς είτε από το ίδιο το άτομο.",
+          "keywords" : [ "εκτίμηση", "κίνδυνος", "αξιολόγηση", "αντίθετος", "παράγοντας", "Υγεία", "ζήτημα", "υπολογισμένος", "διαχείριση", "παράγοντας κινδύνου", "Διαστρωμάτωση κινδύνου" ],
+          "use" : "Χρησιμοποιείται για την καταγραφή γνωστών παραγόντων κινδύνου για μια αναγνωρισμένη ασθένεια, κατάσταση ή άλλο δυνητικά δυσμενές πρόβλημα υγείας ή/και αξιολόγηση της πιθανότητας να το βιώσει το άτομο στο μέλλον.\r\n\r\nΔεδομένου ότι οι παράγοντες κινδύνου μπορούν να προσδιοριστούν σταδιακά με την πάροδο του χρόνου και, ως εκ τούτου, ο συνολικός κίνδυνος να επανεκτιμηθεί, η «ημερομηνία που προσδιορίστηκε» θα καταγράψει την ημερομηνία κατά την οποία προσδιορίστηκε κάθε παράγοντας κινδύνου και το στοιχείο δεδομένων «Τελευταία ενημέρωση» θα καταγράψει την τελευταία φορά που επικαιροποιήθηκε ολόκληρη η αξιολόγηση.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "ar-sy" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "ar-sy"
+          },
+          "purpose" : "لتسجيل التخاطر/احتمالية الخطر لظرف صحي قد يحدث في المستقبل",
+          "keywords" : [ "تقييم" ],
+          "use" : "*Use to record known risk factors for an identified disease, condition, or other potentially adverse health issue, and/or an evaluation of the likelihood of the individual experiencing it in the future.\r\n\r\nAs risk factors may be gradually identified over time and the overall risk reassessed as a result, the 'Date identified' will record the date on which each risk factor has been identified and the 'Last updated' data element will record the last time that the whole assessment was updated.(en)",
+          "copyright" : "© openEHR Foundation",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "en" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "en"
+          },
+          "purpose" : "To record known risk factors for an identified disease, condition, or other potentially adverse health issue, and/or an evaluation of the likelihood of the individual experiencing it in the future.\r\n\r\nThis archetype has been deliberately left open and broad in scope. The 'Health Risk' could be determined from risk factors from any or all of: medical; biomarker; lifestyle; social; occupational hazard; or environmental domains.\r\n\r\nThe intent of this archetype is to document potential risk at a point in time, and to support decision-making that may reduce the identified risk, whether by clinicians or the individual themselves.",
+          "keywords" : [ "assessment", "risk", "evaluation", "adverse", "factor", "health", "issue", "estimated", "management", "risk factor", "risk stratification" ],
+          "use" : "Use to record known risk factors for an identified disease, condition, or other potentially adverse health issue, and/or an evaluation of the likelihood of the individual experiencing it in the future.\r\n\r\nAs risk factors may be gradually identified over time and the overall risk reassessed as a result, the 'Date identified' will record the date on which each risk factor has been identified and the 'Last updated' data element will record the last time that the whole assessment was updated.",
+          "copyright" : "© openEHR Foundation",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "it" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "it"
+          },
+          "purpose" : "Registrare i fattori di rischio noti per una malattia, una condizione o un altro problema di salute potenzialmente avverso e/o una valutazione della probabilità che l'individuo ne sia colpito in futuro.\r\n\r\nQuesto archetipo è stato deliberatamente lasciato aperto e di ampio respiro. Il \"rischio per la salute\" potrebbe essere determinato dai fattori di rischio di uno o di tutti i settori: medico, biomarcatore, stile di vita, sociale, rischio professionale o ambientale.\r\n\r\nL'intento di questo archetipo è quello di documentare il rischio potenziale in un determinato momento e di supportare il processo decisionale che può ridurre il rischio identificato, sia da parte dei medici che dell'individuo stesso.",
+          "keywords" : [ "valutazione", "rischio", "valutazione", "avverso", "fattore", "salute", "numero", "stimato", "gestione", "fattore di rischio", "stratificazione del rischio" ],
+          "use" : "Utilizzare per registrare i fattori di rischio noti per una malattia, condizione o altro problema di salute potenzialmente avverso identificato, e/o una valutazione della probabilità che l'individuo ne sia colpito in futuro.\r\n\r\nPoiché i fattori di rischio possono essere identificati gradualmente nel tempo e il rischio complessivo può essere rivalutato di conseguenza, la \"Data identificata\" registrerà la data in cui ciascun fattore di rischio è stato identificato e l'elemento di dati \"Ultimo aggiornamento\" registrerà l'ultima volta che l'intera valutazione è stata aggiornata.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        }
+      }
     },
     "parentArchetypeId" : "openEHR-EHR-EVALUATION.health_risk.v1",
     "differential" : true,
@@ -1260,6 +1695,57 @@
       "author" : { },
       "otherDetails" : { }
     } ]
+  }, {
+    "@type" : "TEMPLATE_OVERLAY",
+    "uid" : "fc15170b-1f13-421d-b641-90845ac5e8cc",
+    "description" : {
+      "@type" : "RESOURCE_DESCRIPTION",
+      "originalAuthor" : { },
+      "otherContributors" : [ ],
+      "ipAcknowledgements" : { },
+      "references" : { },
+      "conversionDetails" : { },
+      "otherDetails" : {
+        "PARENT:MD5-CAM-1.0.1" : "ee936d4d5ee6674c040e7abec1711a06"
+      },
+      "details" : { }
+    },
+    "parentArchetypeId" : "openEHR-EHR-EVALUATION.infectious_disease_summary.v0",
+    "differential" : true,
+    "archetypeId" : {
+      "@type" : "ARCHETYPE_HRID",
+      "value" : "openEHR-EHR-EVALUATION.ovl-infectious_disease_summary-001.v0"
+    },
+    "definition" : {
+      "@type" : "C_COMPLEX_OBJECT",
+      "rmTypeName" : "EVALUATION",
+      "nodeId" : "at0000.1",
+      "attributes" : [ ],
+      "attributeTuples" : [ ]
+    },
+    "terminology" : {
+      "@type" : "ARCHETYPE_TERMINOLOGY",
+      "conceptCode" : "at0000",
+      "termDefinitions" : {
+        "en" : { }
+      },
+      "termBindings" : { },
+      "terminologyExtracts" : { },
+      "valueSets" : { }
+    },
+    "adlVersion" : "1.4",
+    "buildUid" : "24cacbf7-0836-4903-9a34-96e588c0645b",
+    "rmName" : "openehr",
+    "rmRelease" : "1.1.0",
+    "generated" : true,
+    "otherMetaData" : { },
+    "originalLanguage" : {
+      "terminologyId" : {
+        "value" : "ISO_639-1"
+      },
+      "codeString" : "en"
+    },
+    "translations" : [ ]
   } ],
   "originalLanguage" : {
     "terminologyId" : {
