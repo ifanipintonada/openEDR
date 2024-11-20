@@ -94,7 +94,7 @@ Not to be used to record details about procedures performed during a pregnancy, 
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"19428E604E0128B613D7A9CBC8D62FAB">
+		["MD5-CAM-1.0.1"] = <"efb0384fa40eaceb09b2fd7949804fd6">
 		["build_uid"] = <"61991cdb-002b-461c-8c0d-4755abedc1da">
 		["ip_acknowledgements"] = <"This artefact includes content from SNOMED Clinical Terms® (SNOMED CT®) which is copyrighted material of the International Health Terminology Standards Development Organisation (IHTSDO). Where an implementation of this artefact makes use of SNOMED CT content, the implementer must have the appropriate SNOMED CT Affiliate license - for more information contact http://www.snomed.org/snomed-ct/get-snomedct or info@snomed.org.">
 		["revision"] = <"0.0.1-alpha">
@@ -105,7 +105,7 @@ definition
 		data matches {
 			HISTORY[at0001] matches {    -- History
 				events cardinality matches {0..*; unordered} matches {
-					POINT_EVENT[at0016] occurrences matches {0..1} matches {    -- Any point in time event
+					POINT_EVENT[at0016] occurrences matches {0..1} matches {    -- Date
 						data matches {
 							ITEM_TREE[at0003] matches {    -- Tree
 								items cardinality matches {0..*; unordered} matches {
@@ -139,16 +139,6 @@ definition
 								}
 							}
 						}
-					}
-				}
-			}
-		}
-		protocol matches {
-			ITEM_TREE[at0017] matches {    -- Item tree
-				items cardinality matches {0..*; unordered} matches {
-					allow_archetype CLUSTER[at0018] occurrences matches {0..*} matches {    -- Extension
-						include
-							archetype_id/value matches {/.*/}
 					}
 				}
 			}
@@ -196,21 +186,12 @@ ontology
 					text = <"Justification">
 					description = <"Narrative description of the justification or rationale for the assertion.">
 				>
-				["at0017"] = <
-					text = <"Item tree">
-					description = <"@ internal @">
-				>
-				["at0018"] = <
-					text = <"Extension">
-					description = <"Additional information required to extend the model with local content or to align with other reference models or formalisms.">
-					comment = <"For example: local information requirements; or additional metadata to align with FHIR.">
-				>
 				["at0006"] = <
 					text = <"Possibly pregnant">
 					description = <"Pregnancy is considered possible.">
 				>
 				["at0016"] = <
-					text = <"Any point in time event">
+					text = <"Date">
 					description = <"Default, unspecified point in time event which may be explicitly defined in a template or at run-time.">
 				>
 				["at0019"] = <
@@ -263,17 +244,8 @@ ontology
 					description = <"Zusätzliche Informationen über die Schwangerschaft, die nicht in anderen Feldern erfasst wurden.">
 				>
 				["at0016"] = <
-					text = <"Jeder Zeitpunkt des Ereignisses">
+					text = <"*Date (en)">
 					description = <"Standardmäßiges, nicht spezifiziertes Ereignis zu einem bestimmten Zeitpunkt, das explizit in einer Vorlage oder zur Laufzeit definiert werden kann.">
-				>
-				["at0017"] = <
-					text = <"Item tree">
-					description = <"@ internal @">
-				>
-				["at0018"] = <
-					text = <"Erweiterungen">
-					description = <"Zusätzliche Informationen zur Erfassung lokaler Inhalte oder Anpassung an andere Referenzmodelle/Formalismen.">
-					comment = <"Zum Beispiel: Lokaler Informationsbedarf oder zusätzliche Metadaten zur Anpassung an FHIR-Ressourcen.">
 				>
 				["at0019"] = <
 					text = <"Klinischer Nachweis">
@@ -325,17 +297,8 @@ ontology
 					description = <"Ytterligere beskrivelse angående påstanden om graviditetsstatus som ikke fanget i andre felt.">
 				>
 				["at0016"] = <
-					text = <"Enhver hendelse på tidspunktet">
+					text = <"*Date (en)">
 					description = <"*Default, unspecified point in time event which may be explicitly defined in a template or at run-time.(en)">
-				>
-				["at0017"] = <
-					text = <"Item tree">
-					description = <"@ internal @">
-				>
-				["at0018"] = <
-					text = <"Tillegg">
-					description = <"Ytterligere informasjon som kreves for å utvide modellen med lokalt innhold eller for å tilpasse seg andre referansemodeller eller formaliteter.">
-					comment = <"For eksempel: lokale informasjonskrav, eller ytterligere metadata for å tilpasses FHIR.">
 				>
 				["at0019"] = <
 					text = <"Klinisk dokumentasjon">
