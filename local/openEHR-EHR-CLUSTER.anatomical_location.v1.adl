@@ -157,20 +157,6 @@ A estrutura alternativa SLOT permite a inclusão de arquétipos adicionais que f
 Se este arquétipo é usado dentro de outros arquétipos onde o assunto especificado de cuidados não é o indivíduo para quem o registro está sendo criado, por exemplo um feto em útero, então a localização anatômica vai estar realizada identificando um local do corpo ou com o feto.">
 			misuse = <"Não deve ser usado para especificar as ocorrências unilateral/bilateral de uma característica anatômica.">
 		>
-		["ar-sy"] = <
-			language = <[ISO_639-1::ar-sy]>
-			purpose = <"تسجيل المكان التشريحي بالتفصيل">
-			keywords = <"الموقع","المكان","تشريحي">
-			copyright = <"© openEHR Foundation">
-			misuse = <"لا يستخدم لتحديد حالات الحدوث في جانب واحد أو في الجانبين - حيث إن ذلك متعلق بتقييم قد يتضمن العديد من الأماكن">
-		>
-		["sl"] = <
-			language = <[ISO_639-1::sl]>
-			purpose = <"*To record details about anatomical location.(en)">
-			keywords = <"*location(en)","*site(en)","*anatomical(en)">
-			copyright = <"© openEHR Foundation">
-			misuse = <"*Not for specifiying unilateral/bilateral occurence - this is related to an evaluation which perhaps includes multiple locations.(en)">
-		>
 		["en"] = <
 			language = <[ISO_639-1::en]>
 			purpose = <"To identify and record structured details about a single physical site on, or within, the human body using macroscopic anatomical terms.">
@@ -190,6 +176,20 @@ The 'Alternative structure' SLOT allows inclusion of additional archetypes that 
 
 If this archetype is used within other archetypes where the specified subject of care is not the individual for whom the record is being created, for example a fetus in-utero, then the anatomical location will be identifying a body site on or within the fetus.">
 			misuse = <"Not to be used for specifiying unilateral/bilateral occurrences of an anatomical feature.">
+		>
+		["sl"] = <
+			language = <[ISO_639-1::sl]>
+			purpose = <"*To record details about anatomical location.(en)">
+			keywords = <"*location(en)","*site(en)","*anatomical(en)">
+			copyright = <"© openEHR Foundation">
+			misuse = <"*Not for specifiying unilateral/bilateral occurence - this is related to an evaluation which perhaps includes multiple locations.(en)">
+		>
+		["ar-sy"] = <
+			language = <[ISO_639-1::ar-sy]>
+			purpose = <"تسجيل المكان التشريحي بالتفصيل">
+			keywords = <"الموقع","المكان","تشريحي">
+			copyright = <"© openEHR Foundation">
+			misuse = <"لا يستخدم لتحديد حالات الحدوث في جانب واحد أو في الجانبين - حيث إن ذلك متعلق بتقييم قد يتضمن العديد من الأماكن">
 		>
 		["fr"] = <
 			language = <[ISO_639-1::fr]>
@@ -226,10 +226,10 @@ Si cet archétype est utilisé dans d'autres archétypes où le sujet de soins s
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"6ba1e560b1ec1a1b4d5fc013f9170733">
+		["MD5-CAM-1.0.1"] = <"e8e63d0b210f8b9b6e14c6415f26acb5">
 		["build_uid"] = <"ddf968d7-cfa7-4ee9-930c-55efd1afc2b7">
-		["revision"] = <"1.2.6">
 		["ip_acknowledgements"] = <"This artefact includes content from SNOMED Clinical Terms® (SNOMED CT®) which is copyrighted material of the International Health Terminology Standards Development Organisation (IHTSDO). Where an implementation of this artefact makes use of SNOMED CT content, the implementer must have the appropriate SNOMED CT Affiliate license - for more information contact https://www.snomed.org/snomed-ct/get-snomed or info@snomed.org.">
+		["revision"] = <"1.2.6">
 	>
 
 definition
@@ -299,10 +299,6 @@ definition
 					DV_TEXT matches {*}
 				}
 			}
-			allow_archetype CLUSTER[at0054] occurrences matches {0..*} matches {    -- Multimedia representation
-				include
-					archetype_id/value matches {/openEHR-EHR-CLUSTER\.media_file\.v1/}
-			}
 		}
 	}
 
@@ -342,10 +338,6 @@ If the 'Body site name' data element uses pre-coordinated terms that include lat
 					text = <"*Description(en)">
 					description = <"*Narrative description that can be used to further refine and support the 'Body site name'.(en)">
 					comment = <"*For example: adjacent to the vermilion border; a tattoo covers the bottom half of this area.(en)">
-				>
-				["at0054"] = <
-					text = <"*Multimedia representation(en)">
-					description = <"*Image or other media used to support identification of the body site.(en)">
 				>
 				["at0055"] = <
 					text = <"*Anatomical Line(en)">
@@ -484,10 +476,6 @@ If the 'Body site name' data element uses pre-coordinated terms that include lat
 					text = <"*Description(en)">
 					description = <"*Narrative description that can be used to further refine and support the 'Body site name'.(en)">
 					comment = <"*For example: adjacent to the vermilion border; a tattoo covers the bottom half of this area.(en)">
-				>
-				["at0054"] = <
-					text = <"*Multimedia representation(en)">
-					description = <"*Image or other media used to support identification of the body site.(en)">
 				>
 				["at0055"] = <
 					text = <"*Anatomical Line(en)">
@@ -627,10 +615,6 @@ If the 'Body site name' data element uses pre-coordinated terms that include lat
 					description = <"Narrative description that can be used to further refine and support the 'Body site name'.">
 					comment = <"For example: adjacent to the vermilion border; a tattoo covers the bottom half of this area.">
 				>
-				["at0054"] = <
-					text = <"Multimedia representation">
-					description = <"Image or other media used to support identification of the body site.">
-				>
 				["at0055"] = <
 					text = <"Anatomical Line">
 					description = <"Additional detail using theoretical lines drawn through anatomical structures used to provide a consistent reference point on the human body.">
@@ -767,10 +751,6 @@ Dersom navn på kroppssted er oppgitt i foreldrearketypen kan dette dataelemente
 					text = <"Beskrivelse">
 					description = <"Fritekstbeskrivelse som kan brukes for å ytterligere presisere og støtte \"Navn på kroppsted\".">
 					comment = <"For eksempel: Tilgrensende til leppens overgang fra slimhinne til hud; en tatovering dekker nedre halvdel av dette området.">
-				>
-				["at0054"] = <
-					text = <"Multimediarepresentasjon">
-					description = <"Bilde eller annet medium brukt for å understøtte identifikasjonen av kroppsstedet.">
 				>
 				["at0055"] = <
 					text = <"Anatomisk linje">
@@ -910,10 +890,6 @@ Se o elemento de dados de nome de local do corpo usa termos predefinidos que inc
 					description = <"Descrição narrativa que pode ser usada para refinar e apoiar o 'nome do local do corpo'.">
 					comment = <"Por exemplo: adjacentes à borda do vermelhão; uma tatuagem cobre a metade inferior desta área.">
 				>
-				["at0054"] = <
-					text = <"Representação multimídia">
-					description = <"Imagem ou outros meios de comunicação utilizados para apoiar a identificação do local do corpo.">
-				>
 				["at0055"] = <
 					text = <"Linha anatômica">
 					description = <"Detalhes adicionais utilizando-se linhas teóricas desenhadas através de estruturas anatômicas, utilizadas para fornecer um ponto de referência consistente no corpo humano.">
@@ -1051,10 +1027,6 @@ Wenn der Name der Körperstelle bereits im übergeordneten Archetyp identifizier
 					description = <"Aussagekräftige Erläuterung, die verwendet werden kann, um die \"Körperstelle\" weiter zu verfeinern.">
 					comment = <"Zum Beispiel: Angrenzend an den Amorbogen; eine Tätowierung bedeckt die untere Hälfte dieses Bereichs.">
 				>
-				["at0054"] = <
-					text = <"Multimediale Darstellung">
-					description = <"Bilder oder andere Medien, die der Identifizierung der Körperstelle dienen.">
-				>
 				["at0055"] = <
 					text = <"Anatomische Linie">
 					description = <"Zusätzliches Detail unter Verwendung theoretischer Linien, die durch anatomische Strukturen erweitert werden können, um einen einheitlichen Bezugspunkt auf dem menschlichen Körper zu erhalten.">
@@ -1184,10 +1156,6 @@ Wenn der Name der Körperstelle bereits im übergeordneten Archetyp identifizier
 				["at0023"] = <
 					text = <"Beschrijving">
 					description = <"Verhalende beschrijving die kan worden gebruikt om de 'Lichaamslocatie' verder te verfijnen en te ondersteunen.">
-				>
-				["at0054"] = <
-					text = <"Multimedia representatie">
-					description = <"Afbeelding of andere media die worden gebruikt om identificatie van de lichaamslocatie te ondersteunen.">
 				>
 				["at0055"] = <
 					text = <"Anatomische lijn">
@@ -1330,10 +1298,6 @@ Om data elementet \"Namn på kroppställe\" har prekoordinerade termer som innef
 					text = <"Beskrivning">
 					description = <"Beskrivning för att ytterligare specificera och detaljera \"Namn på kroppsställe\".">
 					comment = <"Till exempel: intill läppröda; en tatuering täcker den nedre halvan av detta område.">
-				>
-				["at0054"] = <
-					text = <"Multimediarepresentation">
-					description = <"Bild eller annat medium som används för att stödja identifiering av anatomisk plats.">
 				>
 				["at0055"] = <
 					text = <"Anatomisk linje">
@@ -1486,10 +1450,6 @@ Si l'élément de données \"Nom du site corporel\" utilise des termes pré-coor
 					text = <"Description">
 					description = <"Description narrative pouvant être utilisée pour affiner et étayer le \"nom du site\".">
 					comment = <"Par exemple : à côté de la bordure vermillon, un tatouage couvre la moitié inférieure de cette zone.">
-				>
-				["at0054"] = <
-					text = <"Représentation multimédia">
-					description = <"Image ou autre support utilisé pour appuyer l'identification de l'emplacement du corps.">
 				>
 				["at0055"] = <
 					text = <"Ligne anatomique">
