@@ -19,9 +19,9 @@
       "original_namespace" : "",
       "original_publisher" : "",
       "custodian_namespace" : "",
-      "sem_ver" : "0.1.0",
+      "sem_ver" : "1.0.0",
       "build_uid" : "",
-      "MD5-CAM-1.0.1" : "b42430a10136fc2ceb47912db47b1b38",
+      "MD5-CAM-1.0.1" : "4b10388b9ac7ea1428b48fa3b3db0cc4",
       "PARENT:MD5-CAM-1.0.1" : "e81d4c77098018f5ca395e12a750d75b"
     },
     "details" : {
@@ -77,6 +77,24 @@
         "attributeTuples" : [ ],
         "archetypeRef" : "openEHR-EHR-EVALUATION.ovl-contraindication-001.v1",
         "referenceType" : "archetypeOverlay"
+      }, {
+        "@type" : "C_ARCHETYPE_ROOT",
+        "rmTypeName" : "OBSERVATION",
+        "occurrences" : "0..1",
+        "nodeId" : "at0.14",
+        "attributes" : [ ],
+        "attributeTuples" : [ ],
+        "archetypeRef" : "openEHR-EHR-OBSERVATION.ovl-pregnancy_finding-001.v0",
+        "referenceType" : "archetypeOverlay"
+      }, {
+        "@type" : "C_ARCHETYPE_ROOT",
+        "rmTypeName" : "EVALUATION",
+        "occurrences" : "0..1",
+        "nodeId" : "at0.13",
+        "attributes" : [ ],
+        "attributeTuples" : [ ],
+        "archetypeRef" : "openEHR-EHR-EVALUATION.ovl-health_risk-001.v1",
+        "referenceType" : "archetypeOverlay"
       } ]
     } ],
     "attributeTuples" : [ ]
@@ -118,7 +136,84 @@
       "otherDetails" : {
         "PARENT:MD5-CAM-1.0.1" : "2c35a397978bd2488e605c4d7bbb1c44"
       },
-      "details" : { }
+      "details" : {
+        "sv" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "sv"
+          },
+          "purpose" : "Används för att dokumentera ett tillstånd eller status hos en individ som är kliniskt signifikant och unik eller idiosynkratisk för den här individen, och anses vara vital information i samband med beslut om behandling.",
+          "keywords" : [ "Försiktighet", "Förhindra", "Avvikande händelse", "Förebygga", "Försiktighet", "Uppmärksamhet", "Varning" ],
+          "use" : "Används för att dokumentera ett tillstånd eller status hos en individ som är kliniskt signifikant och unik eller idiosynkratisk för den här individen, och anses vara vital information i samband med beslut om behandling.\r\n\r\nDen här arketypen bör betraktas som en kritisk arketyp för kliniska beslutsstödssystem när det ska testa relevanta terapeutiska försiktighetsåtgärder i samband med att en kliniker inleder en ny klinisk intervention för en individ.\r\n\r\nExempel på tillstånd som berättigar skapandet av en försiktighetsåtgärder kan vara:\r\n- Immunosupprimerad eller genomgår immunosupprimerande behandling - kopplad till en läkemedelsordination för cytostatika eller steroider, eller diagnosen leukemi\r\n- Njursvikt - kopplad till njurfunktionstest eller formell diagnos av njursvikt eller båda\r\n- Väntar på organtransplantation\r\n- Genomgår behandling som strålbehandling eller dialys\r\n- Organtransplanterad eller metallimplantat in situ\r\n- Pågående utredning eller uppföljning av misstänkt eller verifierad malign sjukdom\r\n- Deltagande i läkemedelsprövning; eller\r\n- Använder blodförtunnande läkemedel\r\n",
+          "misuse" : "*Not to be used to record a clinical intervention (including, but not limited to, use of a treatment or performance of a test or procedure) that should not be carried out due to the likelihood, or possibility, of harm being caused to an individual. Use the EVALUATION.contraindication for this purpose.\r\n\r\nNot to be used to record decisions about limitations on the individuals care or future interventions or the individuals preferences of future medical treatment and care. Use EVALUATION.advance_intervention_decisions and EVALUATION.advance_care_directive respectively for this purpose.(en)",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "es-ar" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "es-ar"
+          },
+          "purpose" : "El registro de una condición o estado del individuo que es clínicamente significativa y única o idiosincrática para con este individuo, y que se considera información vital al momento de la toma de decisiones.",
+          "keywords" : [ "precaución", "prevenir", "evitar", "evento adverso", "prevención", "precaución", "advertencia" ],
+          "use" : "Utilizado para el registro de una condición o estado del individuo que es clínicamente significativa y única o idiosincrática para con este individuo, y que se considera información vital al momento de la toma de decisiones.\r\n\r\nEste arquetipo debe ser considerado crítico por parte de cualquier sistema de apoyo a la decisión clínica y para cualquier precaución terapéuticamente relevante cuando un médico comienza una nueva intervención clínica para con un individuo.\r\n\r\nLos ejemplos de afecciones que ameritan la creación de una precaución incluyen, pero no se limitan a:\r\n- estado de inmunosupresión o terapia inmunosupresora asociada a una orden de medicamento para quimioterapia o esteroides, o diagnóstico de leucemia;\r\n- fallo renal, asociado a pruebas de función renal y/o el diagnóstico formal de fallo renal;\r\n- en espera de trasplante de órgano;\r\n- bajo tratamiento radiante o diálisis;\r\n- trasplantado de órgano o sujeto de implante metálico;\r\n- bajo estudio o bajo seguimiento de enfermedad maligna presuntiva o confirmada;\r\n- participante de ensayo farmacológico;\r\n- anticoagulado.",
+          "misuse" : "*Not to be used to record a clinical intervention (including, but not limited to, use of a treatment or performance of a test or procedure) that should not be carried out due to the likelihood, or possibility, of harm being caused to an individual. Use the EVALUATION.contraindication for this purpose.\r\n\r\nNot to be used to record decisions about limitations on the individuals care or future interventions or the individuals preferences of future medical treatment and care. Use EVALUATION.advance_intervention_decisions and EVALUATION.advance_care_directive respectively for this purpose. (en)",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "nb" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "nb"
+          },
+          "purpose" : "For å registrere en klinisk tilstand eller status som er unik eller særegen for et individ, og som regnes som viktig informasjon i forbindelse med beslutninger om behandling.",
+          "keywords" : [ "forsiktighetshensyn", "forhindre", "unngå", "uønsket hendelse", "forebygging", "forsiktighet", "advarsel", "varsel" ],
+          "use" : "Brukes for å registrere en klinisk tilstand eller status som er unik eller særegen for et individ, og som regnes som viktig informasjon i forbindelse med beslutning om behandling.\r\n\r\nDenne arketypen bør regnes som en viktig arketype for beslutningsstøttesystemer i forbindelse med forordning av nye kliniske intervensjoner.\r\n\r\nEksempler på tilstander som kan være grunnlag for å registrere forholdsregler kan være:\r\n- Immunhemmende/-modulerende behandling - knyttet til en ordinasjon av kjemoterapi eller steroider, eller en leukemidiagnose\r\n- Nyresvikt - knyttet til nyrefunksjonstester eller en formell nyresviktdiagnose.\r\n- Står i transplantasjonskø\r\n- Pågående regelmessig behandling, som strålebehandling eller dialyse\r\n- Har fått transplantert et organ eller implantert metall i kroppen.\r\n- Pågående utredning/oppfølging av mistenkt eller verifisert malign lidelse.\r\n- Deltagelse i klinisk studie.\r\n- Står på blodfortynnende behandling.",
+          "misuse" : "Skal ikke brukes for å registrere en klinisk intervensjon (f.eks. en undersøkelse eller behandling) som ikke må utføres på grunn av sannsynligheten eller muligheten for skade på individet. Bruk EVALUATION.contraindication (Norsk: Kontraindikasjon) for dette formålet.\r\n\r\nSkal ikke brukes for beslutninger om avgrensing av behandling eller fremtidige intervensjoner, eller for å registrere individets preferanser om fremtidig behandling og omsorg. Bruk henholdsvis EVALUATION.advance_intervention_decisions (Behandlingsbegrensning) og EVALUATION.advance_care_directive (Fremtidig behandlingsvalg) for dette formålet.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "pt-br" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "pt-br"
+          },
+          "purpose" : "Para gravar uma condição ou estado do indivíduo que é clinicamente significante e único ou idiossincrásico para este indivíduo, e é considerada informação vital na tomada de decisão clínica.",
+          "keywords" : [ "precaução", "prevenir", "evitar", "evento adverso", "prevenção", "cuidado", "alerta", "atenção" ],
+          "use" : "Usado para gravar uma condição ou estado do indivíduo que é clinicamente significante e único ou idiossincrásico para este indivíduo, e é considerada informação vital na tomada de decisão clínica.\r\n\r\nEste arquétipo deve ser considerado como crítico para qualquer teste de sistema de suporte à decisão clínica para qualquer precaução terapêutica relevante como o início de uma intervenção clínica a um indivíduo por um clínico.\r\n\r\nExemplos de condições que garantem a criação de uma precaução incluem, mas não são limitadas a:\r\n- imunossuprimido/em terapia imunossupressiva - ligado à solicitação de medicação para quimioterápicos ou esteróides; ou diagnóstico de leucemia;\r\n- falência renal - ligado a testes de função renal e/ou um diagnóstico formal de falência renal;\r\n- na espera por transplante de órgãos;\r\n- em tratamento regular de radioterapia ou diálise;\r\n- transplantado ou com implante metálico in situ;\r\n- em investigação ou acompanhamento de suspeita ou confirmação de doença maligna;\r\n- participação em pesquisa farmacológica; ou\r\n- em tratamento com anticoagulante.\r\n",
+          "misuse" : "*Not to be used to record a clinical intervention (including, but not limited to, use of a treatment or performance of a test or procedure) that should not be carried out due to the likelihood, or possibility, of harm being caused to an individual. Use the EVALUATION.contraindication for this purpose.\r\n\r\nNot to be used to record decisions about limitations on the individuals care or future interventions or the individuals preferences of future medical treatment and care. Use EVALUATION.advance_intervention_decisions and EVALUATION.advance_care_directive respectively for this purpose. (en)",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "en" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "en"
+          },
+          "purpose" : "To record a condition or state of the individual that is clinically significant and unique or idiosyncratic for this individual, and is considered vital information when making treatment decisions.",
+          "keywords" : [ "precaution", "prevent", "avoid", "adverse event", "prevention", "caution", "alert", "warning" ],
+          "use" : "Use to record a condition or state of the individual that is clinically significant and unique or idiosyncratic for this individual, and which are considered vital information when making treatment decisions.\r\n\r\nThis archetype should be regarded as a critical archetype by any clinical decision support system testing for any relevant therapeutic precautions as a clinician commences a new clinical intervention for an individual. \r\n\r\nExamples of conditions that warrant creation of a precaution include, but are not limited to:\r\n- Immunosuppressed/on immunosuppressive therapy – linked to medication order for chemo or steroids; or diagnosis of leukaemia;\r\n- Renal failure – linked to renal function tests and/or a formal diagnosis of renal failure;\r\n- Waiting for organ transplant;\r\n- Undergoing a regular treatment such as radiation therapy or dialysis;\r\n- Transplanted organ or metal implant in situ;\r\n- Ongoing investigation or follow up of suspected or verified malignant disease;\r\n- Participation in a pharmacological trial; or\r\n- Using anticoagulant treatment.",
+          "misuse" : "Not to be used to record a clinical intervention (including, but not limited to, use of a treatment or performance of a test or procedure) that should not be carried out due to the likelihood, or possibility, of harm being caused to an individual. Use the EVALUATION.contraindication for this purpose.\r\n\r\nNot to be used to record decisions about limitations on the individuals care or future interventions or the individuals preferences of future medical treatment and care. Use EVALUATION.advance_intervention_decisions and EVALUATION.advance_care_directive respectively for this purpose.",
+          "copyright" : "© openEHR Foundation",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        }
+      }
     },
     "parentArchetypeId" : "openEHR-EHR-EVALUATION.precaution.v1",
     "differential" : true,
@@ -254,7 +349,72 @@
       "otherDetails" : {
         "PARENT:MD5-CAM-1.0.1" : "065396457cc703e64ac7af92542fb8e4"
       },
-      "details" : { }
+      "details" : {
+        "de" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "de"
+          },
+          "purpose" : "Zur Dokumentation eines expliziten Befundes zur Unterstützung einer klinischen Behauptung, wie z.B. eines Problems/einer Diagnose, eines Nebenwirkungsrisikos, einer Gesundheitsrisikobewertung oder einer Kontraindikation.",
+          "keywords" : [ "Diagnose", "Beweis", "Bedingung", "Krankheit", "Problem", "Feststellung", "Befund", "Beobachtung" ],
+          "use" : "Zur Dokumentationn von Details zu Befunden, die eine klinische Feststellung unterstützen, entweder als Zusammenfassung von Daten, die in anderen (oft der Klasse OBSERVATION) Archetypen verfügbar sind, oder wenn die ursprünglichen Beobachtungsdaten nicht verfügbar sind.\r\n\r\nDiesen Archetypen innerhalb eines SLOTS Archetypen wie EVALUATION.problem_diagnose, EVALUATION.adverse_reaction_risk, EVALUATION.health_risk, EVALUATION.contraindication oder ähnlichen zusammenfassenden Archetypen verwenden, bei denen der Name der Feststellung bereits in der EVALUATION angegeben wurde, verschachtelt wird, um den Inhalt um diesen zusätzlichen und optionalen Datensatz zu erweitern. Während LINKs innerhalb des openEHR-Referenzmodells eine Verknüpfung mit Daten ermöglichen, die an anderer Stelle in der Gesundheitsakte gespeichert sind, wurde dieser Archetyp entwickelt, um diese Funktionalität explizit zu machen und um die klinische Sichtbarkeit und Überprüfung dieser Daten zu ermöglichen, wo sie in einer Vorlage oder Spezifikation relevant sein können.\r\n\r\nDer klinische Beweis kann direkt in diesen Archetyp als \"Finding\" eingegeben werden, oder es kann ein Zitat verwendet werden, um explizit auf Daten innerhalb der Gesundheitsakte zu verweisen.\r\n\r\n",
+          "misuse" : "Nicht zur Dokumentation von zusammenfassende Details zu einem identifizierten Problem oder einer Diagnose verwenden - verwenden Sie dazu die EVALUATION.problem_diagnosis.\r\n\r\nNicht zur Dokumentation von zusammenfassenden Details über ein identifiziertes Nebenwirkungsrisiko verwenden - verwenden Sie dazu die Datei EVALUATION.adverse_reaction_risk.\r\n\r\nNicht zur Dokumentation von zusammenfassenden Details über ein identifiziertes Gesundheitsrisiko zu verwenden - verwenden Sie zu diesem Zweck die Datei EVALUATION.health_risk.\r\n\r\nNicht zur Dokumentation von zusammenfassende Einzelheiten über eine identifizierte Kontraindikation verwenden - verwenden Sie dazu die Datei EVALUATION.contraindication.\r\n",
+          "copyright" : "© openEHR Foundation, Nasjonal IKT HF",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "sv" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "sv"
+          },
+          "purpose" : "Att registrera ett uttryckligt resultat till stöd för ett kliniskt påstående, såsom ett problem / diagnos, biverkningsrisk, hälsoriskbedömning eller kontraindikation.",
+          "keywords" : [ "diagnos", "bevis", "tillstånd", "sjukdom", "problem", "påstående", "fynd", "observation" ],
+          "use" : "Används för att registrera detaljer om fynd som stöder ett kliniskt påstående, antingen som en sammanfattning av data som finns tillgängliga i andra (ofta OBSERVATION-klass) arketyper, eller när de ursprungliga observationsdata inte är tillgängliga.\r\n\r\nDenna arketyp är utformad för att kapslas in i en SLOT i EVALUATION.problem_diagnosis, EVALUATION.adverse_reaction_risk, EVALUATION.health_risk, EVALUATION.contraindication, eller liknande sammanfattande arketyper, där namnet på påståendet redan har specificerats i EVALUATIONEN, för att utöka innehållet med denna extra och valfria dataset. Medan LÄNKAR inom openEHR-referensmodellen möjliggör koppling till data som hålls någon annanstans inom hälsojournalen har denna arketyp utvecklats för att göra denna funktion tydlig och för att möjliggöra klinisk synlighet och granskning av dessa data, där det kan vara relevant i en template eller specifikation.\r\n\r\nDe kliniska bevisen kan matas in direkt i denna arketyp som en \"Finding\", eller en citering kan användas för att uttryckligen peka på data i hälsojournalen.",
+          "misuse" : "Är inte utformad för att registrera sammanfattade detaljer om ett identifierat problem eller diagnos - använd EVALUATION.problem_diagnosis för detta ändamål.\r\n\r\nÄr inte utformad för att registrera sammanfattande detaljer om en identifierad biverkningsrisk - använd EVALUATION.adverse_reaction_risk för detta ändamål.\r\n\r\nÄr inte utformad för att registrera sammanfattande detaljer om en identifierad hälsorisk - använd EVALUATION.health_risk för detta ändamål.\r\n\r\nÄr inte utformad för att registrera sammanfattande detaljer om en identifierad kontraindikation - använd EVALUATION.-kontraindikationen för detta ändamål.",
+          "copyright" : "© openEHR Foundation, Nasjonal IKT HF",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "nb" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "nb"
+          },
+          "purpose" : "For å registrere eksplisitte detaljer om grunnlaget for et klinisk utsagn, for eksempel en problem/diagnose, risiko for overfølsomhetsreaksjon, helserisiko, eller kontraindikasjon.",
+          "keywords" : [ "diagnose", "evidens", "tilstand", "sykdom", "problem", "observasjon", "begrunnelse" ],
+          "use" : "Brukes for å registrere eksplisitte detaljer om grunnlaget for et klinisk utsagn, enten som en oppsummering av data som er tilgjengelig i andre arketyper (ofte av OBSERVATION-klassen), eller når de opprinnelige dataene ikke er tilgjengelige for applikasjonen.\r\n\r\nDenne arketypen er ment å legges i et SLOT i arketypene EVALUATION.problem_diagnosis, EVALUATION.adverse_reaction_risk, EVALUATION.health_risk, EVALUATION.contraindication eller lignende oppsummerende arketyper, der utsagnet allerede er spesifisert i EVALUATION-arketypen. Den fungerer der som en valgfri utvidelse av datasettet i EVALUATION-arketypen.\r\n\r\nSom spesifisert i openEHR referansemodellen kan det benyttes lenker for å lenke til data som ligger andre steder i journalen, mens denne arketypen er laget for å gjøre dette eksplisitt, og for å gjøre det mulig å vise og gjennomgå disse dataene klinisk der dette er relevant.\r\n\r\nGrunnlaget kan legges direkte i denne i arketypen som et \"Funn\", eller referansen kan benyttes for å peke direkte til dataene som ligger et annet sted i journalen.",
+          "misuse" : "Skal ikke brukes til å registrere sammendrag om et problem eller en diagnose. For dette brukes arketypen EVALUATION.problem_diagnosis.\r\n\r\nSkal ikke brukes til å registrere sammendrag om risiko for overfølsomhetsreaksjoner. For dette brukes arketypen EVALUATION.adverse_reaction_risk.\r\n\r\nSkal ikke brukes til å registrere sammendrag om en helserisiko. For dette brukes arketypen EVALUATION.health_risk.\r\n\r\nSkal ikke brukes til å registrere sammendrag om en kontraindikasjon. For dette brukes arketypen EVALUATION.contraindication.",
+          "copyright" : "© openEHR Foundation, Nasjonal IKT HF",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "en" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "en"
+          },
+          "purpose" : "To record an explicit finding in support of a clinical assertion, such as a problem/diagnosis, adverse reaction risk, health risk assessment, or contraindication.",
+          "keywords" : [ "diagnosis", "evidence", "condition", "disease", "problem", "assertion", "finding", "observation" ],
+          "use" : "Use to record details about findings that support a clinical assertion, either as a summary of data available in other (often OBSERVATION class) archetypes, or when the original observational data is not available.\r\n\r\nThis archetype is designed to be nested within a SLOT in the EVALUATION.problem_diagnosis, EVALUATION.adverse_reaction_risk, EVALUATION.health_risk, EVALUATION.contraindication, or similar summary archetypes, where the name of the assertion has already been specified in the EVALUATION, in order to extend its content with this additional and optional dataset. While LINKs within the openEHR Reference Model allow for linkage to data held elsewhere within the health record, this archetype has been developed to make this functionality explicit, and to enable clinical visibility and review of this data, where it may be relevant in a template or specification.\r\n\r\nThe clinical evidence can be entered directly into this archetype as a 'Finding', or a citation can be used to explicitly point to data within the health record.",
+          "misuse" : "Not to be used to record summary details about an identified problem or diagnosis - use the EVALUATION.problem_diagnosis for this purpose.\r\n\r\nNot to be used to record summary details about an identified adverse reaction risk - use the EVALUATION.adverse_reaction_risk for this purpose.\r\n\r\nNot to be used to record summary details about an identified health risk - use the EVALUATION.health_risk for this purpose.\r\n\r\nNot to be used to record summary details about an identified contraindication - use the EVALUATION.contraindication for this purpose.",
+          "copyright" : "© openEHR Foundation, Nasjonal IKT HF",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        }
+      }
     },
     "parentArchetypeId" : "openEHR-EHR-CLUSTER.clinical_evidence.v1",
     "differential" : true,
@@ -359,7 +519,7 @@
     } ]
   }, {
     "@type" : "TEMPLATE_OVERLAY",
-    "uid" : "b35cf206-8e23-42c4-80bf-387733ae4f85",
+    "uid" : "e7160900-fd2a-4899-b6fe-109d1fca6099",
     "description" : {
       "@type" : "RESOURCE_DESCRIPTION",
       "originalAuthor" : { },
@@ -368,7 +528,105 @@
       "references" : { },
       "conversionDetails" : { },
       "otherDetails" : {
-        "PARENT:MD5-CAM-1.0.1" : "a3715ed33aa08a966fbe37fa90141a14"
+        "PARENT:MD5-CAM-1.0.1" : "af70a4b420a4d497fb27114578f12529"
+      },
+      "details" : {
+        "nb" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "nb"
+          },
+          "purpose" : "For å registrere en kontraindikasjon for en klinisk intervensjon (for eksempel - men ikke begrenset til, en behandling, en prøve eller prosedyre) som ikke må utføres på pasienten på grunn av sannsynlighet eller mulighet for at individet kan påføres skade.",
+          "keywords" : [ "forebygge", "unngå", "uønsket hendelse", "forsiktighet", "advarsel" ],
+          "use" : "Brukes for å registrere en kontraindikasjon for en klinisk intervensjon i journalen på grunn av sannsynlighet eller mulighet for at individet kan påføres skade om intervensjonen utføres.\r\n\r\nDenne arketypen kan også brukes å opprette en kontraindikasjon for en klinisk intervensjon i journalen til en pasient også i tilfeller hvor den uønskede kliniske effekten kan påføre andre skade og ikke direkte pasienten selv. For eksempel: Administrasjon av levende vaksiner bør registreres som en kontraindikasjon hos et individ som har familiemedlemmer som er immunosupprimert eller som er i en aktiv immunosupprimerende behandling fordi dette familiemedlemmet kan ha en stor risiko for å få en infeksjonssykdom.\r\n\r\nDenne arketypen bør regnes som en viktig arketype for beslutningsstøttesystemer i forbindelse med forordning av nye kliniske intervensjoner.\r\n\r\nKontraindikasjonen kan angis på en rekke måter, for eksempel:\r\n- Tidligere erfaring med en utført prosedyre og med påfølgende klinisk vurdering om at dette ikke skal gjentas.\r\n- Implantasjon av metallimplantater som utelukker noen bildediagnostiske undersøkelser.\r\n- Resultat av genundersøkelser som indikerer at en uønsket hendelse kan forekomme om en behandling utføres eller et legemiddel administreres.\r\n- Ugunstig effekt av liknende behandling, legemiddel eller prosedyre hos familiemedlemmer.\r\n\r\nI tilfeller som omhandler legemidler eller vaksiner vil denne arketypen supplere arketypen EVALUATION.adverse_reaction_risk (Risiko for overfølsomhetsreaksjon) ved å angi andre årsaker til at et legemiddel eller en vaksine ikke bør administreres, utover overfølsomhetsreaksjoner. I lys av dette bør klinisk beslutningsstøtte for ordinering inneholde en referanse til denne arketypen samt arketypen EVALUATION.adverse_reaction_risk som en del av en trygg ordineringsprosess.",
+          "misuse" : "Brukes ikke for å registrere forekomst av en overfølsomhetsreaksjon knyttet til en substans eller agens. EVALUATION.adverse_reaction_risk (Risiko for overfølsomhetsreaksjon) er en veldig spesifikk type kontraindikasjon, og på grunn av dens allestedsnærværende bruk i journalsystemer er modellert som en egen arketype. \r\n\r\nBrukes ikke for å registrere en tilstand hos et individ som er klinisk signifikant og unikt for dette individet og som er vurdert som viktig informasjon for å gjøre valg om behandling. Bruk arketypen EVALUATION.precaution (Forholdsregel) for dette.\r\n\r\nBrukes ikke til å registrere individets personlige preferanser. Bruk spesifikke arketyper for dette formålet.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "en" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "en"
+          },
+          "purpose" : "To record a contraindication for a clinical intervention (including, but not limited to, a treatment, test or procedure) that should not be carried out due to the likelihood, or possibility, of harm being caused to an individual.",
+          "keywords" : [ "contraindication", "prevent", "avoid", "adverse event", "caution", "alert", "warning" ],
+          "use" : "To record a contraindication for a clinical intervention in the health record of an individual due to the likelihood, or possibility, of causing harm to the individual if the identified intervention is carried out. \r\n\r\nThis archetype may also be used to record a contraindication for a clinical intervention in the health record of the individual, even though the resulting clinical effect may cause harm to others and not directly on the individual. For example: administration of live vaccines should be contraindicated in an individual who has a family member in an immunosuppressed state or actively taking immunosuppressive therapy, as that family member may be at significant risk of contracting the infectious disease. \r\n\r\nThis archetype should be regarded as a critical archetype by any clinical decision support system testing for any relevant therapeutic precautions as a clinician commences a new clinical Intervention for an individual.\r\n\r\nThis contraindication may be identified in a number of ways including, but not limited to: \r\n- previous experience of a procedure being performed and subsequent clinical assessment that this should not be repeated; \r\n- implantation of a metal device which precludes some imaging examinations\r\n- genomic test results that indicate an adverse event may take place if a treatment or medication is administered; or\r\n- adverse experience by a family member to a similar treatment, medication or procedure.\r\n\r\nIn the case of medications or vaccines, this archetype complements the EVALUATION.adverse_reaction_risk archetype by identifying other reasons why a medication or vaccine should not be administered, other than an adverse reaction. In view of this, clinical decision support for prescribing should include reference to this archetype plus the EVALUATION.adverse_reaction_risk as part of a safe prescribing process.",
+          "misuse" : "Not to be used to record the occurrence of an adverse reaction to a substance or agent. Adverse reaction risk is a very specific type of contradiction and because of its ubiquity has been modelled separately as EVALUATION.adverse_reaction_risk for this purpose.\r\n\r\nNot to be used to record a condition or state of the individual that is clinically significant and unique or idiosyncratic for this individual, and is considered vital information when making treatment decisions. Use EVALUATION.precaution for this purpose.\r\n\r\nNot to be used to record personal preferences of the individual. Use specific archetypes for this purpose.",
+          "copyright" : "© openEHR Foundation",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        }
+      }
+    },
+    "parentArchetypeId" : "openEHR-EHR-EVALUATION.contraindication.v1",
+    "differential" : true,
+    "archetypeId" : {
+      "@type" : "ARCHETYPE_HRID",
+      "value" : "openEHR-EHR-EVALUATION.ovl-contraindication-001.v1"
+    },
+    "definition" : {
+      "@type" : "C_COMPLEX_OBJECT",
+      "rmTypeName" : "EVALUATION",
+      "nodeId" : "at0000.1",
+      "attributes" : [ ],
+      "attributeTuples" : [ ]
+    },
+    "terminology" : {
+      "@type" : "ARCHETYPE_TERMINOLOGY",
+      "conceptCode" : "at0000",
+      "termDefinitions" : {
+        "en" : { },
+        "nb" : { }
+      },
+      "termBindings" : { },
+      "terminologyExtracts" : { },
+      "valueSets" : { }
+    },
+    "adlVersion" : "1.4",
+    "buildUid" : "00e0e6eb-6f7d-4f05-b63c-23eaafc8cfc6",
+    "rmName" : "openehr",
+    "rmRelease" : "1.1.0",
+    "generated" : true,
+    "otherMetaData" : { },
+    "originalLanguage" : {
+      "terminologyId" : {
+        "value" : "ISO_639-1"
+      },
+      "codeString" : "en"
+    },
+    "translations" : [ {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "nb"
+      },
+      "author" : {
+        "name" : "Vebjørn Arntzen",
+        "organisation" : "Oslo University Hospital",
+        "email" : "varntzen@ous-hf.no"
+      },
+      "otherDetails" : { }
+    } ]
+  }, {
+    "@type" : "TEMPLATE_OVERLAY",
+    "uid" : "24e8cbd9-8d7a-4cde-bb34-6b9e0501eed4",
+    "description" : {
+      "@type" : "RESOURCE_DESCRIPTION",
+      "originalAuthor" : { },
+      "otherContributors" : [ ],
+      "ipAcknowledgements" : { },
+      "references" : { },
+      "conversionDetails" : { },
+      "otherDetails" : {
+        "PARENT:MD5-CAM-1.0.1" : "af215ccd20407971caf4363c3731e6fa"
       },
       "details" : { }
     },
@@ -382,20 +640,7 @@
       "@type" : "C_COMPLEX_OBJECT",
       "rmTypeName" : "CLUSTER",
       "nodeId" : "at0000.1",
-      "attributes" : [ {
-        "@type" : "C_ATTRIBUTE",
-        "rmAttributeName" : "items",
-        "children" : [ {
-          "@type" : "C_ARCHETYPE_ROOT",
-          "rmTypeName" : "CLUSTER",
-          "occurrences" : "0..*",
-          "nodeId" : "at0012.1",
-          "attributes" : [ ],
-          "attributeTuples" : [ ],
-          "archetypeRef" : "openEHR-DEMOGRAPHIC-CLUSTER.ovl-person_identifier-provider-001.v0",
-          "referenceType" : "archetypeOverlay"
-        } ]
-      } ],
+      "attributes" : [ ],
       "attributeTuples" : [ ]
     },
     "terminology" : {
@@ -497,7 +742,7 @@
     } ]
   }, {
     "@type" : "TEMPLATE_OVERLAY",
-    "uid" : "a77e640f-433c-4cb1-8adc-0ff8344d41fd",
+    "uid" : "853055d0-130e-4f92-a2da-9ac4c07edb1a",
     "description" : {
       "@type" : "RESOURCE_DESCRIPTION",
       "originalAuthor" : { },
@@ -506,36 +751,80 @@
       "references" : { },
       "conversionDetails" : { },
       "otherDetails" : {
-        "PARENT:MD5-CAM-1.0.1" : "239A14834B79DBD3BF9C7E628C84418E"
+        "PARENT:MD5-CAM-1.0.1" : "efb0384fa40eaceb09b2fd7949804fd6"
       },
       "details" : { }
     },
-    "parentArchetypeId" : "openEHR-DEMOGRAPHIC-CLUSTER.person_identifier-provider.v0",
+    "parentArchetypeId" : "openEHR-EHR-OBSERVATION.pregnancy_finding.v0",
     "differential" : true,
     "archetypeId" : {
       "@type" : "ARCHETYPE_HRID",
-      "value" : "openEHR-DEMOGRAPHIC-CLUSTER.ovl-person_identifier-provider-001.v0"
+      "value" : "openEHR-EHR-OBSERVATION.ovl-pregnancy_finding-001.v0"
     },
     "definition" : {
       "@type" : "C_COMPLEX_OBJECT",
-      "rmTypeName" : "CLUSTER",
-      "nodeId" : "at0000.1.1",
-      "attributes" : [ ],
+      "rmTypeName" : "OBSERVATION",
+      "nodeId" : "at0000.1",
+      "attributes" : [ {
+        "@type" : "C_ATTRIBUTE",
+        "rmAttributeName" : "data",
+        "children" : [ {
+          "@type" : "C_COMPLEX_OBJECT",
+          "rmTypeName" : "HISTORY",
+          "nodeId" : "at0001",
+          "attributes" : [ {
+            "@type" : "C_ATTRIBUTE",
+            "rmAttributeName" : "events",
+            "children" : [ {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "POINT_EVENT",
+              "nodeId" : "at0016",
+              "attributes" : [ {
+                "@type" : "C_ATTRIBUTE",
+                "rmAttributeName" : "data",
+                "children" : [ {
+                  "@type" : "C_COMPLEX_OBJECT",
+                  "rmTypeName" : "ITEM_TREE",
+                  "nodeId" : "at0003",
+                  "attributes" : [ {
+                    "@type" : "C_ATTRIBUTE",
+                    "rmAttributeName" : "items",
+                    "children" : [ {
+                      "@type" : "C_ARCHETYPE_ROOT",
+                      "rmTypeName" : "CLUSTER",
+                      "occurrences" : "0..*",
+                      "nodeId" : "at0019.1",
+                      "attributes" : [ ],
+                      "attributeTuples" : [ ],
+                      "archetypeRef" : "openEHR-EHR-CLUSTER.ovl-clinical_evidence-002.v1",
+                      "referenceType" : "archetypeOverlay"
+                    } ]
+                  } ],
+                  "attributeTuples" : [ ]
+                } ]
+              } ],
+              "attributeTuples" : [ ]
+            } ]
+          } ],
+          "attributeTuples" : [ ]
+        } ]
+      } ],
       "attributeTuples" : [ ]
     },
     "terminology" : {
       "@type" : "ARCHETYPE_TERMINOLOGY",
-      "conceptCode" : "at0000.1",
+      "conceptCode" : "at0000",
       "termDefinitions" : {
         "en" : { },
-        "pt-br" : { }
+        "de" : { },
+        "nb" : { }
       },
       "termBindings" : { },
       "terminologyExtracts" : { },
       "valueSets" : { }
     },
     "adlVersion" : "1.4",
-    "buildUid" : "ce37dad5-a661-4a49-a833-4cdd68e8e75e",
+    "buildUid" : "61991cdb-002b-461c-8c0d-4755abedc1da",
     "rmName" : "openehr",
     "rmRelease" : "1.1.0",
     "generated" : true,
@@ -552,18 +841,32 @@
         "terminologyId" : {
           "value" : "ISO_639-1"
         },
-        "codeString" : "pt-br"
+        "codeString" : "de"
       },
       "author" : {
-        "name" : "Sergio Miranda Freire",
-        "organisation" : "Universidade do Estado do Rio de Janeiro - UERJ",
-        "email" : "sergio@lampada.uerj.br"
+        "name" : "Sarah Ballout, Natalia Strauch, Darin Leonhardt",
+        "organisation" : "MHH-Hannover, Medizinische Hochschule Hannover, PLRI für medizinische Informatik/ Medizinische Hochschule",
+        "email" : "ballout.sarah@mh-hannover.de, Strauch.Natalia@mh-hannover.de, leonhardt.darin@mh-hannover.de"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "nb"
+      },
+      "author" : {
+        "name" : "Eli Larsen",
+        "organisation" : "UNN",
+        "email" : "eli.larsen@unn.no"
       },
       "otherDetails" : { }
     } ]
   }, {
     "@type" : "TEMPLATE_OVERLAY",
-    "uid" : "e7160900-fd2a-4899-b6fe-109d1fca6099",
+    "uid" : "799ba34e-8a34-4b47-b658-af10d93c798b",
     "description" : {
       "@type" : "RESOURCE_DESCRIPTION",
       "originalAuthor" : { },
@@ -572,15 +875,249 @@
       "references" : { },
       "conversionDetails" : { },
       "otherDetails" : {
-        "PARENT:MD5-CAM-1.0.1" : "af70a4b420a4d497fb27114578f12529"
+        "PARENT:MD5-CAM-1.0.1" : "065396457cc703e64ac7af92542fb8e4"
       },
       "details" : { }
     },
-    "parentArchetypeId" : "openEHR-EHR-EVALUATION.contraindication.v1",
+    "parentArchetypeId" : "openEHR-EHR-CLUSTER.clinical_evidence.v1",
     "differential" : true,
     "archetypeId" : {
       "@type" : "ARCHETYPE_HRID",
-      "value" : "openEHR-EHR-EVALUATION.ovl-contraindication-001.v1"
+      "value" : "openEHR-EHR-CLUSTER.ovl-clinical_evidence-002.v1"
+    },
+    "definition" : {
+      "@type" : "C_COMPLEX_OBJECT",
+      "rmTypeName" : "CLUSTER",
+      "nodeId" : "at0000.1",
+      "attributes" : [ {
+        "@type" : "C_ATTRIBUTE",
+        "rmAttributeName" : "items",
+        "children" : [ {
+          "@type" : "C_ARCHETYPE_ROOT",
+          "rmTypeName" : "CLUSTER",
+          "occurrences" : "0..*",
+          "nodeId" : "at0018.1",
+          "attributes" : [ ],
+          "attributeTuples" : [ ],
+          "archetypeRef" : "openEHR-EHR-CLUSTER.ovl-media_file-002.v1",
+          "referenceType" : "archetypeOverlay"
+        } ]
+      } ],
+      "attributeTuples" : [ ]
+    },
+    "terminology" : {
+      "@type" : "ARCHETYPE_TERMINOLOGY",
+      "conceptCode" : "at0000",
+      "termDefinitions" : {
+        "en" : { },
+        "nb" : { },
+        "de" : { },
+        "sv" : { }
+      },
+      "termBindings" : { },
+      "terminologyExtracts" : { },
+      "valueSets" : { }
+    },
+    "adlVersion" : "1.4",
+    "buildUid" : "30b6505d-5aef-450d-82f5-fdb7b5973dc9",
+    "rmName" : "openehr",
+    "rmRelease" : "1.1.0",
+    "generated" : true,
+    "otherMetaData" : { },
+    "originalLanguage" : {
+      "terminologyId" : {
+        "value" : "ISO_639-1"
+      },
+      "codeString" : "en"
+    },
+    "translations" : [ {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "de"
+      },
+      "author" : {
+        "name" : "Alina Rehberg, Darin Leonhardt",
+        "organisation" : "Medizinische Hochschule Hannover, PLRI",
+        "email" : "rehberg.alina@mh-hannover.de, leonhardt.darin@mh-hannover.de"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "sv"
+      },
+      "author" : {
+        "name" : "Therese Lindberg",
+        "organisation" : "Cambio CDS",
+        "email" : "therese.lindberg@cambio.se"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "nb"
+      },
+      "author" : {
+        "name" : "Silje Ljosland Bakke, Liv Laugen",
+        "organisation" : "Nasjonal IKT HF, ​Oslo University Hospital, Norway",
+        "email" : "silje.ljosland.bakke@nasjonalikt.no, liv.laugen@ous-hf.no"
+      },
+      "otherDetails" : { }
+    } ]
+  }, {
+    "@type" : "TEMPLATE_OVERLAY",
+    "uid" : "cf5f7c16-e7ba-43fd-b093-49493d8c4722",
+    "description" : {
+      "@type" : "RESOURCE_DESCRIPTION",
+      "originalAuthor" : { },
+      "otherContributors" : [ ],
+      "ipAcknowledgements" : { },
+      "references" : { },
+      "conversionDetails" : { },
+      "otherDetails" : {
+        "PARENT:MD5-CAM-1.0.1" : "af215ccd20407971caf4363c3731e6fa"
+      },
+      "details" : { }
+    },
+    "parentArchetypeId" : "openEHR-EHR-CLUSTER.media_file.v1",
+    "differential" : true,
+    "archetypeId" : {
+      "@type" : "ARCHETYPE_HRID",
+      "value" : "openEHR-EHR-CLUSTER.ovl-media_file-002.v1"
+    },
+    "definition" : {
+      "@type" : "C_COMPLEX_OBJECT",
+      "rmTypeName" : "CLUSTER",
+      "nodeId" : "at0000.1",
+      "attributes" : [ ],
+      "attributeTuples" : [ ]
+    },
+    "terminology" : {
+      "@type" : "ARCHETYPE_TERMINOLOGY",
+      "conceptCode" : "at0000",
+      "termDefinitions" : {
+        "en" : { },
+        "sv" : { },
+        "de" : { },
+        "nb" : { },
+        "nl" : { },
+        "sk" : { }
+      },
+      "termBindings" : { },
+      "terminologyExtracts" : { },
+      "valueSets" : { }
+    },
+    "adlVersion" : "1.4",
+    "buildUid" : "a5332c85-dd4d-4b75-915b-c7c65e990200",
+    "rmName" : "openehr",
+    "rmRelease" : "1.1.0",
+    "generated" : true,
+    "otherMetaData" : { },
+    "originalLanguage" : {
+      "terminologyId" : {
+        "value" : "ISO_639-1"
+      },
+      "codeString" : "en"
+    },
+    "translations" : [ {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "de"
+      },
+      "author" : {
+        "name" : "Natalia Strauch",
+        "organisation" : "Medizinische Hochschule Hannover",
+        "email" : "Strauch.Natalia@mh-hannover.de"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "sv"
+      },
+      "author" : {
+        "name" : "Åsa Skagerhult, Erik Sundvall, Manna Vosta",
+        "organisation" : "Region Östergötland, Karolinska University Hospital",
+        "email" : "asa.skagerhult@regionostergotland.se, erik.sundvall@regionostergotland.se, manna.vosta@regionstockholm.se"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "nb"
+      },
+      "author" : {
+        "name" : "Liv Laugen, John Tore Valand",
+        "organisation" : "​Oslo University Hospital, Norway, Helse Bergen",
+        "email" : "liv.laugen@ous-hf.no, john.tore.valand@helse-bergen.no"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "sk"
+      },
+      "author" : {
+        "name" : "Maritn Kapinos",
+        "organisation" : "PROSOFT Košice, a.s.",
+        "email" : "kapinos.martin@prosoftke.sk"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "nl"
+      },
+      "author" : {
+        "name" : "Jelte Zeilstra",
+        "organisation" : "Nedap"
+      },
+      "otherDetails" : { }
+    } ]
+  }, {
+    "@type" : "TEMPLATE_OVERLAY",
+    "uid" : "dde1dc83-1dc3-4407-a28f-590117163093",
+    "description" : {
+      "@type" : "RESOURCE_DESCRIPTION",
+      "originalAuthor" : { },
+      "otherContributors" : [ ],
+      "ipAcknowledgements" : { },
+      "references" : { },
+      "conversionDetails" : { },
+      "otherDetails" : {
+        "PARENT:MD5-CAM-1.0.1" : "1aaf9655d25935b007dbb39db8454571"
+      },
+      "details" : { }
+    },
+    "parentArchetypeId" : "openEHR-EHR-EVALUATION.health_risk.v1",
+    "differential" : true,
+    "archetypeId" : {
+      "@type" : "ARCHETYPE_HRID",
+      "value" : "openEHR-EHR-EVALUATION.ovl-health_risk-001.v1"
     },
     "definition" : {
       "@type" : "C_COMPLEX_OBJECT",
@@ -593,15 +1130,22 @@
       "@type" : "ARCHETYPE_TERMINOLOGY",
       "conceptCode" : "at0000",
       "termDefinitions" : {
+        "ar-sy" : { },
+        "de" : { },
         "en" : { },
-        "nb" : { }
+        "es-ar" : { },
+        "sv" : { },
+        "fi" : { },
+        "nb" : { },
+        "it" : { },
+        "el" : { }
       },
       "termBindings" : { },
       "terminologyExtracts" : { },
       "valueSets" : { }
     },
     "adlVersion" : "1.4",
-    "buildUid" : "00e0e6eb-6f7d-4f05-b63c-23eaafc8cfc6",
+    "buildUid" : "33dd9e54-8348-4c5a-a246-3046fb6ed302",
     "rmName" : "openehr",
     "rmRelease" : "1.1.0",
     "generated" : true,
@@ -618,13 +1162,102 @@
         "terminologyId" : {
           "value" : "ISO_639-1"
         },
+        "codeString" : "de"
+      },
+      "author" : {
+        "name" : "Jasmin Buck, Sebastian Garde, Anneka Sargeant, Weronika Gujo, Natalia Strauch",
+        "organisation" : "University of Heidelberg, Cental Queensland University, Universitätsmedizin Göttingen, Medizinische Hochschule Hannover",
+        "email" : "Weronika.Gujo@med.uni-heidelberg.de, Strauch.Natalia@mh-hannover.de"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "sv"
+      },
+      "author" : {
+        "name" : "Annika Terner",
+        "organisation" : "B3 Healthcare Consulting AB",
+        "email" : "annika.terner@b3.se"
+      },
+      "accreditation" : ".",
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "fi"
+      },
+      "author" : { },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "es-ar"
+      },
+      "author" : {
+        "name" : "Alan March",
+        "organisation" : "Hospital Universitario Austral, Pilar, Buenos Aires, Argentina",
+        "email" : "alandmarch@gmail.com"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
         "codeString" : "nb"
       },
       "author" : {
-        "name" : "Vebjørn Arntzen",
-        "organisation" : "Oslo University Hospital",
-        "email" : "varntzen@ous-hf.no"
+        "name" : "John Tore Valand, Silje Ljosland Bakke, Marit Alice Venheim",
+        "organisation" : "Helse Bergen HF, Nasjonal IKT HF, Helse Vest IKT, Helse Vest IKT AS",
+        "email" : "marit.alice.venheim@helse-vest-ikt.no, silje.ljosland.bakke@helse-vest-ikt.no"
       },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "el"
+      },
+      "author" : {
+        "name" : "Erasmia Partafylla",
+        "organisation" : "Sigmasoft",
+        "email" : "c.partafylla@sigmasoft.gr"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "ar-sy"
+      },
+      "author" : {
+        "name" : "Mona Saleh"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "it"
+      },
+      "author" : { },
       "otherDetails" : { }
     } ]
   } ],
