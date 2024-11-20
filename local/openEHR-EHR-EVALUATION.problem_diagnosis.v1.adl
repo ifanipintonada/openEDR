@@ -707,7 +707,7 @@ Weed LL. Medical records that guide and teach. N Engl J Med. 1968 Mar 14;278(11)
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"01a1b8b3b97df71efcc49d0313752028">
+		["MD5-CAM-1.0.1"] = <"b35e025938fbaefc1885ceea432de0c6">
 		["build_uid"] = <"5084c995-e34b-4832-aa41-b43ca3fe7fdf">
 		["revision"] = <"1.4.1">
 		["ip_acknowledgements"] = <"This artefact includes content from SNOMED Clinical Terms® (SNOMED CT®) which is copyrighted material of the International Health Terminology Standards Development Organisation (IHTSDO). Where an implementation of this artefact makes use of SNOMED CT content, the implementer must have the appropriate SNOMED CT Affiliate license - for more information contact https://www.snomed.org/snomed-ct/get-snomed or info@snomed.org.">
@@ -792,7 +792,7 @@ definition
 	}
 
 ontology
-	terminologies_available = <"ICD10", ...>
+	terminologies_available = <"ICD10","SNOMED CT">
 	term_definitions = <
 		["es"] = <
 			items = <
@@ -2121,6 +2121,11 @@ If the anatomical location is included in the Problem/diagnosis name via precoor
 		["ICD10"] = <
 			items = <
 				["ac0000"] = <terminology:ICD10>
+			>
+		>
+		["SNOMED CT"] = <
+			items = <
+				["ac0000"] = <terminology:http://snomed.info/id/404684003>
 			>
 		>
 	>
