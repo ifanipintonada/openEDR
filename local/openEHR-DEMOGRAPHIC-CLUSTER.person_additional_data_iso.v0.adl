@@ -49,13 +49,13 @@ description
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"F04358152899C2F3F18EE67E6253A027">
+		["MD5-CAM-1.0.1"] = <"2484b1c6ceabeac93b6f8d962c1bb020">
 		["build_uid"] = <"49c3ed31-6935-426a-8b22-9c2bd5f1dfbd">
 		["revision"] = <"0.0.1-alpha">
 	>
 
 definition
-	CLUSTER[at0000] occurrences matches {0..1} matches {    -- Person additional demographic data
+	CLUSTER[at0000] occurrences matches {0..1} matches {    -- Sex and Gender
 		items cardinality matches {0..*; ordered} matches {
 			ELEMENT[at0001] occurrences matches {0..*} matches {    -- Sex
 				value matches {
@@ -70,12 +70,7 @@ definition
 					}
 				}
 			}
-			ELEMENT[at0002] occurrences matches {0..*} matches {    -- Mother's family name
-				value matches {
-					DV_TEXT matches {*}
-				}
-			}
-			ELEMENT[at0003] occurrences matches {0..*} matches {    -- Identification comment
+			ELEMENT[at0003] occurrences matches {0..*} matches {    -- Gender
 				value matches {
 					DV_TEXT matches {*}
 				}
@@ -88,19 +83,15 @@ ontology
 		["pt-br"] = <
 			items = <
 				["at0000"] = <
-					text = <"ISO: Dados demográficos adicionais de uma pessoa">
+					text = <"*Sex and Gender (en)">
 					description = <"Dados demográficos adicionais de uma pessoa segundo a ISO 22220: sexo e sobrenome da mãe">
 				>
 				["at0001"] = <
 					text = <"sexo">
 					description = <"sexo da pessoa">
 				>
-				["at0002"] = <
-					text = <"Sobrenome da Mãe">
-					description = <"Sobrenome da mãe">
-				>
 				["at0003"] = <
-					text = <"Comentários de identificação">
+					text = <"*Gender (en)">
 					description = <"Comentários registrados para uma pessoa para distinguir entre duas ou mais pessoas com a mesma informação demográfica ou similar.">
 				>
 				["at0010"] = <
@@ -124,19 +115,15 @@ ontology
 		["en"] = <
 			items = <
 				["at0000"] = <
-					text = <"Person additional demographic data">
+					text = <"Sex and Gender">
 					description = <"Person additional demographic data according to ISO 22220: sex and mother's family name">
 				>
 				["at0001"] = <
 					text = <"Sex">
 					description = <"The sex of the subject.">
 				>
-				["at0002"] = <
-					text = <"Mother's family name">
-					description = <"Mother's original family name">
-				>
 				["at0003"] = <
-					text = <"Identification comment">
+					text = <"Gender">
 					description = <"Comments recorded for a person registration to distinguish between two or more persons with the same or similar demographic information">
 				>
 				["at0010"] = <
