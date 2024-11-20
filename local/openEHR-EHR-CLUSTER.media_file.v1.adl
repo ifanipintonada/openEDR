@@ -230,7 +230,7 @@ Niet te gebruiken om een verwijzing naar een kennisbank op te nemen - gebruik hi
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"E1C0201AED51855810B4D9FD7633573E">
+		["MD5-CAM-1.0.1"] = <"af215ccd20407971caf4363c3731e6fa">
 		["build_uid"] = <"a5332c85-dd4d-4b75-915b-c7c65e990200">
 		["revision"] = <"1.0.3">
 	>
@@ -243,15 +243,14 @@ definition
 					DV_MULTIMEDIA matches {*}
 				}
 			}
-			ELEMENT[at0002] occurrences matches {0..1} matches {    -- Content name
+			ELEMENT[at0002] occurrences matches {0..1} matches {    -- Name
 				value matches {
 					DV_TEXT matches {*}
 				}
 			}
-			ELEMENT[at0010] occurrences matches {0..*} matches {    -- Identifier
+			ELEMENT[at0015] occurrences matches {0..1} matches {    -- Identifier
 				value matches {
 					DV_IDENTIFIER matches {*}
-					DV_TEXT matches {*}
 				}
 			}
 			ELEMENT[at0005] occurrences matches {0..1} matches {    -- Description
@@ -259,23 +258,10 @@ definition
 					DV_TEXT matches {*}
 				}
 			}
-			ELEMENT[at0004] occurrences matches {0..1} matches {    -- Created
+			ELEMENT[at0014] occurrences matches {0..1} matches {    -- Date/Time Created
 				value matches {
 					DV_DATE_TIME matches {*}
-					DV_INTERVAL<DV_DATE_TIME> matches {*}
 				}
-			}
-			allow_archetype CLUSTER[at0012] occurrences matches {0..*} matches {    -- Creator
-				include
-					archetype_id/value matches {/openEHR-EHR-CLUSTER\.person(-[a-zA-Z0-9_]+)*\.v1|openEHR-EHR-CLUSTER\.person(-[a-zA-Z0-9_]+)*\.v0/}
-			}
-			allow_archetype CLUSTER[at0011] occurrences matches {0..*} matches {    -- Source device
-				include
-					archetype_id/value matches {/openEHR-EHR-CLUSTER\.device\.v1/}
-			}
-			allow_archetype CLUSTER[at0013] occurrences matches {0..*} matches {    -- Additional details
-				include
-					archetype_id/value matches {/.*/}
 			}
 			ELEMENT[at0007] occurrences matches {0..1} matches {    -- Comment
 				value matches {
@@ -299,13 +285,9 @@ ontology
 					comment = <"If the file is stored locally, the actual content will be captured and stored using the Multimedia data type. For example: RTF or PDF for a document; JPG for an image; MP4 for a video; or WAV for an audio file. If the file is stored at a location outside of the health record, the detailed path to the file is captured using the URI attribute in the Multimedia data type. The Multimedia data type has many RM attributes such as the size of file and URI to an external source - see https://specifications.openehr.org/releases/RM/latest/data_types.html#_dv_multimedia_class.">
 				>
 				["at0002"] = <
-					text = <"Content name">
+					text = <"Name">
 					description = <"Descriptive name or title for the media file.">
 					comment = <"A description of the content of the media file. Use an agreed standardised naming convention, if available. For example: \"Right hand burn #1\" or \"Cardiology video consultation on May 2\".">
-				>
-				["at0004"] = <
-					text = <"Created">
-					description = <"The date/time, partial date or period when the media file was generated or authored.">
 				>
 				["at0005"] = <
 					text = <"Description">
@@ -315,22 +297,13 @@ ontology
 					text = <"Comment">
 					description = <"Additional narrative about the media file not captured in other fields.">
 				>
-				["at0010"] = <
+				["at0014"] = <
+					text = <"Date/Time Created">
+					description = <"">
+				>
+				["at0015"] = <
 					text = <"Identifier">
-					description = <"Unique ID for the media file.">
-				>
-				["at0011"] = <
-					text = <"Source device">
-					description = <"Details about the device used to generate or author the media file.">
-					comment = <"For example: the camera used to capture an image.">
-				>
-				["at0012"] = <
-					text = <"Creator">
-					description = <"Details about the individual or organisation who generated or authored the media file.">
-				>
-				["at0013"] = <
-					text = <"Additional details">
-					description = <"Additional structured details about the media file.">
+					description = <"">
 				>
 			>
 		>
@@ -346,13 +319,9 @@ ontology
 					comment = <"Om filen lagras lokalt kommer det faktiska innehållet förvärvas och sparas i Multimedia datatypen. Till exempel: RTF eller PDF för ett dokument, JPG för en bild, MP4 för en video, eller WAV för en ljudfil. Om filen sparas på en plats utanför journalen, används URI-attributet i Multimedia datatypen för att identifiera sökvägen. Multimedia datatypen har många RM attribut, såsom filstorlek och URI till en extern källa - se https://specifications.openehr.org/releases/RM/latest/data_types.html#_dv_multimedia_class.">
 				>
 				["at0002"] = <
-					text = <"Innehållets namn">
+					text = <"*Name (en)">
 					description = <"Deskriptivt namn eller titel för mediefilen.">
 					comment = <"En beskrivning av innehållet i mediefilen. Om tillgängligt, använd ett standardiserat sätt för att namnge filen. Till exempel: \"Höger hand brännskada #1\" eller \"Kardiologi video konsultation 2/5\".">
-				>
-				["at0004"] = <
-					text = <"Skapad">
-					description = <"Datum och tid eller period då mediefilen skapades.">
 				>
 				["at0005"] = <
 					text = <"Beskrivning">
@@ -362,22 +331,13 @@ ontology
 					text = <"Kommentar">
 					description = <"Ytterligare redogörelse om mediefilen som inte beskrivits i andra fält.">
 				>
-				["at0010"] = <
-					text = <"Identifierare">
-					description = <"Unikt ID för mediefilen.">
+				["at0014"] = <
+					text = <"*Date/Time Created (en)">
+					description = <"">
 				>
-				["at0011"] = <
-					text = <"Enhetskälla">
-					description = <"Detaljer om källan använd för att skapa mediefilen.">
-					comment = <"Till exempel: kameran som användes för att ta en bild.">
-				>
-				["at0012"] = <
-					text = <"Skapare">
-					description = <"Detaljer om individ eller organisation som skapade mediefilen.">
-				>
-				["at0013"] = <
-					text = <"Ytterligare detaljer">
-					description = <"Ytterligare strukturerade detaljer om mediefilen.">
+				["at0015"] = <
+					text = <"*Identifier (en)">
+					description = <"">
 				>
 			>
 		>
@@ -393,13 +353,9 @@ ontology
 					comment = <"Wenn die Datei lokal gespeichert wird, wird der eigentliche Inhalt erfasst und mit dem Datentyp Multimedia gespeichert. Beispiel: RTF oder PDF für ein Dokument, JPG für ein Bild, MP4 für ein Video oder WAV für eine Audiodatei. Wenn die Datei an einem Ort außerhalb der Gesundheitsakte gespeichert ist, wird der detaillierte Pfad zur Datei mithilfe des URI-Attributs im Multimedia-Datentyp erfasst. Der Multimedia-Datentyp hat viele RM-Attribute wie die Größe der Datei und URI zu einer externen Quelle - siehe https://specifications.openehr.org/releases/RM/latest/data_types.html#_dv_multimedia_class.">
 				>
 				["at0002"] = <
-					text = <"Inhalt">
+					text = <"*Name (en)">
 					description = <"Beschreibender Name oder Titel für die Mediendatei.">
 					comment = <"Eine Beschreibung des Inhalts der Mediendatei. Verwenden Sie, falls verfügbar, eine vereinbarte standardisierte Namenskonvention. Zum Beispiel: „Verbrennung der rechten Hand Nr. 1“ oder „Videosprechstunde Kardiologie am 2. Mai“.">
-				>
-				["at0004"] = <
-					text = <"Erstellt">
-					description = <"Datum/Uhrzeit, Teildatum oder Zeitraum, in dem die Mediendatei generiert oder verfasst wurde.">
 				>
 				["at0005"] = <
 					text = <"Beschreibung">
@@ -409,22 +365,13 @@ ontology
 					text = <"Kommentar">
 					description = <"Zusätzliche Information zu der Mediendatei, die nicht in anderen Feldern erfasst wurde.">
 				>
-				["at0010"] = <
-					text = <"Identifikator">
-					description = <"Eindeutige ID für die Mediendatei.">
+				["at0014"] = <
+					text = <"*Date/Time Created (en)">
+					description = <"">
 				>
-				["at0011"] = <
-					text = <"Quellgerät">
-					description = <"Informationen zu dem Gerät, mit dem die Mediendatei generiert oder erzeugt wurde.">
-					comment = <"Zum Beispiel: Die Kamera, mit der ein Bild aufgenommen wurde.">
-				>
-				["at0012"] = <
-					text = <"Urheber">
-					description = <"Informationen zu der Person oder Organisation, die die Mediendatei generiert oder verfasst hat.">
-				>
-				["at0013"] = <
-					text = <"Zusätzliche Informationen">
-					description = <"Zusätzliche strukturierte Details zur Mediendatei.">
+				["at0015"] = <
+					text = <"*Identifier (en)">
+					description = <"">
 				>
 			>
 		>
@@ -442,13 +389,9 @@ ontology
 ">
 				>
 				["at0002"] = <
-					text = <"Navn på innhold">
+					text = <"*Name (en)">
 					description = <"Beskrivende navn eller tittel på mediafilen.">
 					comment = <"En beskrivelse av innholdet i mediafilen. For eksempel: \"Brannsår høyre hånd #1\" eller \"Kardiologisk videokonsultasjon 2. mai\". Bruk avtalt standardisert navnekonvensjon dersom det er mulig.">
-				>
-				["at0004"] = <
-					text = <"Opprettet dato">
-					description = <"Dato/klokkeslett, delvis dato eller periode da multimediafilen ble generert eller laget.">
 				>
 				["at0005"] = <
 					text = <"Beskrivelse">
@@ -458,22 +401,13 @@ ontology
 					text = <"Kommentar">
 					description = <"Ytterligere fritekst om mediafilen som ikke dekkes av andre elementer.">
 				>
-				["at0010"] = <
-					text = <"ID">
-					description = <"Unik identifikator til mediafilen.">
+				["at0014"] = <
+					text = <"*Date/Time Created (en)">
+					description = <"">
 				>
-				["at0011"] = <
-					text = <"Kildeenhet">
-					description = <"Detaljer om enheten som ble brukt til å generere eller skape mediafilen.">
-					comment = <"For eksempel: kamera som ble brukt til å ta bildet.">
-				>
-				["at0012"] = <
-					text = <"Forfatter">
-					description = <"Detaljer om personen eller organisasjonen som genererte eller skapte mediafilen.">
-				>
-				["at0013"] = <
-					text = <"Ytterligere detaljer">
-					description = <"Ytterligere strukturerte detaljer om mediafilen.">
+				["at0015"] = <
+					text = <"*Identifier (en)">
+					description = <"">
 				>
 			>
 		>
@@ -489,13 +423,9 @@ ontology
 					comment = <"Als het bestand lokaal wordt opgeslagen, wordt de daadwerkelijke inhoud vastgelegd en opgeslagen met behulp van het gegevenstype Multimedia. Bijvoorbeeld: RTF of PDF voor een document; JPG voor een afbeelding; MP4 voor een video; of WAV voor een audiobestand. Als het bestand wordt opgeslagen op een locatie buiten het medische dossier, wordt het gedetailleerde pad naar het bestand vastgelegd met behulp van het URI-attribuut in het gegevenstype Multimedia. Het gegevenstype Multimedia heeft veel RM-attributen, zoals de grootte van het bestand en de URI naar een externe bron - zie https://specifications.openehr.org/releases/RM/latest/data_types.html#_dv_multimedia_class.">
 				>
 				["at0002"] = <
-					text = <"Naam inhoud">
+					text = <"*Name (en)">
 					description = <"Beschrijvende naam of titel voor het mediabestand.">
 					comment = <"Een beschrijving van de inhoud van het mediabestand. Gebruik een overeengekomen gestandaardiseerde naamgevingsconventie, indien beschikbaar. Bijvoorbeeld: \"Brandwond rechterhand #1\" of \"Videoconsult Cardiologie op 2 mei\".">
-				>
-				["at0004"] = <
-					text = <"Aangemaakt op">
-					description = <"De datum/tijd, gedeeltelijke datum of periode waarop het mediabestand is gegenereerd of gemaakt.">
 				>
 				["at0005"] = <
 					text = <"Beschrijving">
@@ -505,22 +435,13 @@ ontology
 					text = <"Opmerking">
 					description = <"Aanvullende beschrijving over het mediabestand dat niet in andere velden is vastgelegd.">
 				>
-				["at0010"] = <
-					text = <"Identificatie">
-					description = <"Unieke identificatie voor het mediabestand.">
+				["at0014"] = <
+					text = <"*Date/Time Created (en)">
+					description = <"">
 				>
-				["at0011"] = <
-					text = <"Bronapparaat">
-					description = <"Details over het apparaat dat is gebruikt om het mediabestand te genereren of te maken.">
-					comment = <"Bijvoorbeeld: de camera die wordt gebruikt om een beeld vast te leggen.">
-				>
-				["at0012"] = <
-					text = <"Aangemaakt door">
-					description = <"Details over de persoon of organisatie die het mediabestand heeft gegenereerd of gemaakt.">
-				>
-				["at0013"] = <
-					text = <"Aanvullende details">
-					description = <"Aanvullende gestructureerde details over het mediabestand.">
+				["at0015"] = <
+					text = <"*Identifier (en)">
+					description = <"">
 				>
 			>
 		>
@@ -536,13 +457,9 @@ ontology
 					comment = <"Ak je súbor uložený lokálne, skutočný obsah sa zachytí a uloží pomocou dátového typu Multimedia. Napríklad: RTF alebo PDF pre dokument; JPG pre obrázok; MP4 pre video; alebo WAV pre zvukový súbor. Ak je súbor uložený mimo zdravotného záznamu, podrobná cesta k súboru sa zaznamená pomocou atribútu URI v d8tovom type Multimedia. Dátový typ Multimedia má veľa atribútov RM, ako je veľkosť súboru a URI k externému zdroju – pozri https://specifications.openehr.org/releases/RM/latest/data_types.html#_dv_multimedia_class.">
 				>
 				["at0002"] = <
-					text = <"Názov obsahu">
+					text = <"*Name (en)">
 					description = <"Popisný názov alebo názov pre mediálny súbor.">
 					comment = <"Popis obsahu mediálneho súboru. Použite dohodnutú štandardizovanú konvenciu pomenovania, ak je k dispozícii. Napríklad: „Popálenina pravej ruky č. 1“ alebo „Kardiologická videokonzultácia 2. mája“.">
-				>
-				["at0004"] = <
-					text = <"Vytvorený">
-					description = <"Dátum/čas, čiastočný dátum alebo obdobie, kedy bol mediálny súbor vygenerovaný alebo vytvorený.">
 				>
 				["at0005"] = <
 					text = <"Popis">
@@ -552,22 +469,13 @@ ontology
 					text = <"Poznámky">
 					description = <"Dodatočné poznámky o mediálnom súbore nezachytené v iných poliach.">
 				>
-				["at0010"] = <
-					text = <"Identifikátor">
-					description = <"Jedinečný identifikátor pre mediálny súbor.">
+				["at0014"] = <
+					text = <"*Date/Time Created (en)">
+					description = <"">
 				>
-				["at0011"] = <
-					text = <"Zdrojový prístroj">
-					description = <"Podrobnosti o prístroji použitom na generovanie alebo vytvorenie mediálneho súboru.">
-					comment = <"Napríklad: fotoaparát použitý zachytenie snímky.">
-				>
-				["at0012"] = <
-					text = <"Tvorca">
-					description = <"Podrobnosti o jednotlivcovi alebo organizácii, ktorá vygenerovala alebo vytvorila mediálny súbor.">
-				>
-				["at0013"] = <
-					text = <"Ďalšie detaily">
-					description = <"Ďalšie štruktúrované detaily o mediálnom súbore.">
+				["at0015"] = <
+					text = <"*Identifier (en)">
+					description = <"">
 				>
 			>
 		>
