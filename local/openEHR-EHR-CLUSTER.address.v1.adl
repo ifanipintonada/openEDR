@@ -259,7 +259,7 @@ HL7 FHIR Resource - Organization v4.0.1: R4 [Internet]. Health Level Seven Inter
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"4CB383854196F76408BABBEB02117881">
+		["MD5-CAM-1.0.1"] = <"0da7b3bf25e596bf2b004aa506a67620">
 		["build_uid"] = <"98bc048f-0811-45f4-8f58-46853c50ac46">
 		["revision"] = <"1.1.2">
 	>
@@ -267,27 +267,16 @@ HL7 FHIR Resource - Organization v4.0.1: R4 [Internet]. Health Level Seven Inter
 definition
 	CLUSTER[at0000] matches {    -- Address
 		items cardinality matches {1..*; unordered} matches {
-			ELEMENT[at0001] occurrences matches {0..*} matches {    -- Address line
+			allow_archetype CLUSTER[at0020] occurrences matches {0..*} matches {    -- Structured address
+				include
+					archetype_id/value matches {/openEHR-EHR-CLUSTER\.structured_address(-[a-zA-Z0-9_]+)*\.v0/}
+			}
+			ELEMENT[at0002] occurrences matches {0..*} matches {    -- City
 				value matches {
 					DV_TEXT matches {*}
 				}
 			}
-			ELEMENT[at0002] occurrences matches {0..*} matches {    -- City/Town
-				value matches {
-					DV_TEXT matches {*}
-				}
-			}
-			ELEMENT[at0003] occurrences matches {0..*} matches {    -- District/County
-				value matches {
-					DV_TEXT matches {*}
-				}
-			}
-			ELEMENT[at0004] occurrences matches {0..1} matches {    -- State/Territory/Province
-				value matches {
-					DV_TEXT matches {*}
-				}
-			}
-			ELEMENT[at0005] occurrences matches {0..1} matches {    -- Postal code
+			ELEMENT[at0003] occurrences matches {0..*} matches {    -- State
 				value matches {
 					DV_TEXT matches {*}
 				}
@@ -297,57 +286,7 @@ definition
 					DV_TEXT matches {*}
 				}
 			}
-			allow_archetype CLUSTER[at0020] occurrences matches {0..*} matches {    -- Structured address
-				include
-					archetype_id/value matches {/openEHR-EHR-CLUSTER\.structured_address(-[a-zA-Z0-9_]+)*\.v0/}
-			}
-			ELEMENT[at0021] occurrences matches {0..1} matches {    -- Geolocation code
-				value matches {
-					DV_TEXT matches {*}
-				}
-			}
-			ELEMENT[at0007] occurrences matches {0..1} matches {    -- Latitude
-				value matches {
-					C_DV_QUANTITY <
-						property = <[openehr::497]>
-						list = <
-							["1"] = <
-								units = <"deg">
-								magnitude = <|-90.0..90.0|>
-								precision = <|6|>
-							>
-						>
-					>
-				}
-			}
-			ELEMENT[at0008] occurrences matches {0..1} matches {    -- Longitude
-				value matches {
-					C_DV_QUANTITY <
-						property = <[openehr::497]>
-						list = <
-							["1"] = <
-								units = <"deg">
-								magnitude = <|-180.0..180.0|>
-								precision = <|6|>
-							>
-						>
-					>
-				}
-			}
-			ELEMENT[at0009] occurrences matches {0..1} matches {    -- Altitude
-				value matches {
-					C_DV_QUANTITY <
-						property = <[openehr::122]>
-						list = <
-							["1"] = <
-								units = <"m">
-								precision = <|2|>
-							>
-						>
-					>
-				}
-			}
-			ELEMENT[at0019] occurrences matches {0..1} matches {    -- Map URL
+			ELEMENT[at0005] occurrences matches {0..1} matches {    -- Postal code
 				value matches {
 					DV_TEXT matches {*}
 				}
@@ -383,6 +322,16 @@ definition
 					DV_TEXT matches {*}
 				}
 			}
+			ELEMENT[at0023] occurrences matches {0..1} matches {    -- Start date
+				value matches {
+					DV_DATE matches {*}
+				}
+			}
+			ELEMENT[at0024] occurrences matches {0..1} matches {    -- End date
+				value matches {
+					DV_DATE matches {*}
+				}
+			}
 		}
 	}
 
@@ -394,25 +343,15 @@ ontology
 					text = <"Address">
 					description = <"Details about the location of a person, physical building or landmark.">
 				>
-				["at0001"] = <
-					text = <"Address line">
-					description = <"An unstructured address line representing all relevant street-level or post-box details that would support the identification of a location.">
-					comment = <"Occurrences for this data element is set to 0..* to allow one or more free text 'Address line' data elements to represent the huge variety of ways that ‘street-level' details may need to be recorded within the context of a specified 'Town'. Multiple address lines can be represented in a template, renamed as 'Address line 1', 'Address line 2,' etc. For example: '7A/52 Davis Street' or 'Apartment 7A' as Address line 1 with '52 Davis Street' as Address line 2; a roadside mail box location, such as 'RMB 725, Princes Highway'; or using a descriptive landmark, such as or 'Corner of Smith & Brown Streets' or 'Second house north of the general store with the red door'.">
-				>
 				["at0002"] = <
-					text = <"City/Town">
+					text = <"City">
 					description = <"The name of the lowest level locality that contains the address.">
 					comment = <"For example: suburb, town, city, settlement, village, or community. Coding with an external terminology is preferred, where possible. For example: 'Fitzroy'; 'Manchester'; 'Kingston' or 'Bergen'.">
 				>
 				["at0003"] = <
-					text = <"District/County">
+					text = <"State">
 					description = <"The name of a local government district or geographical area that contains the address.">
 					comment = <"Coding with an external terminology is preferred, where possible. For example: 'Surf Coast' and 'Yarra' local government councils in Victoria, Australia;and the Parishes of 'Saint Andrew' and 'Kingston' in Jamaica..">
-				>
-				["at0004"] = <
-					text = <"State/Territory/Province">
-					description = <"The name of a major government district or geographical area that contains the address.">
-					comment = <"Coding with an external terminology is preferred, where possible. For example: 'New South Wales' and 'Queensland' in Australia; 'British Columbia' and 'Nova Scotia' in Canada; and the Counties of 'Cornwall', 'Middlesex' & 'Surrey' in Jamaica.">
 				>
 				["at0005"] = <
 					text = <"Postal code">
@@ -424,21 +363,6 @@ ontology
 					text = <"Country">
 					description = <"The name of the country containing the address.">
 					comment = <"For example: Australia; Canada; Jamaica; or Norway. Coding with an external terminology, such as EN ISO 3166–1 Alpha 2 country code, is recommended.">
-				>
-				["at0007"] = <
-					text = <"Latitude">
-					description = <"Horizontal (y) coordinate of a geolocation for the address.">
-					comment = <"Latitude is represented by positive values north of the equator and negative values south of the equator. For example the latitude of the Eiffel Tower is 48.858093.">
-				>
-				["at0008"] = <
-					text = <"Longitude">
-					description = <"Horizontal (x) coordinate of a geolocation for the address.">
-					comment = <"Longitude is represented by negative values west of Prime Meridian and positive values east of Prime Meridian. For example the longitude of the Eiffel Tower is 2.294694.">
-				>
-				["at0009"] = <
-					text = <"Altitude">
-					description = <"The vertical coordinate of a geolocation representing height or depth of the address.">
-					comment = <"For example, the altitude of the top of the Eiffel Tower is +324m.">
 				>
 				["at0010"] = <
 					text = <"Type">
@@ -477,20 +401,18 @@ ontology
 					text = <"Comment">
 					description = <"Additional narrative about the address not captured in other fields.">
 				>
-				["at0019"] = <
-					text = <"Map URL">
-					description = <"Link to a location on an online map.">
-					comment = <"For example: a location on a Google or iOS map.">
-				>
 				["at0020"] = <
 					text = <"Structured address">
 					description = <"Structured details or extensions to the address.">
 					comment = <"For example: to represent a  structured, fine-grained address, or be used as standardised concepts that can be concatenated together to consistently construct a single 'Address line'.">
 				>
-				["at0021"] = <
-					text = <"Geolocation code">
-					description = <"Unique identifier that represents a precise geographical location.">
-					comment = <"Also known as a geocode. For example: GPS coordinates concatenating longitude, latitude +/-altitude; Open Location Code or Plus Code; Universal Transverse Mercator (UTM); and geohash.">
+				["at0023"] = <
+					text = <"Start date">
+					description = <"">
+				>
+				["at0024"] = <
+					text = <"End date">
+					description = <"">
 				>
 			>
 		>
@@ -500,28 +422,15 @@ ontology
 					text = <"Adresse">
 					description = <"Informasjon om lokalisasjonen til en person, en fysisk bygning eller et landemerke.">
 				>
-				["at0001"] = <
-					text = <"Adresselinje">
-					description = <"En ustrukturert adresselinje som representerer alle gatenivå- eller postboksdetaljer som kan støtte identifikasjon av en lokalisering.">
-					comment = <"Forekomster for dette dataelementet er satt til 0..* for å tillate registrering av flere fritekst-\"Adresselinje\"-dataelementer for å representerer alle ulike måter man har behov for å uttrykke en «adresse» i kontekst av dataelementet «By». Flere adresselinjer kan representeres i et templat, omdøpt til 'Adresselinje 1', 'Adresselinje 2' osv.
-
-For eksempel: 
- \"7A/52 Davis Street\" eller \"Leilighet 7A\" som adresselinje 1 og \"52 Davis Street\" som adresselinje 2; en postboksplassering langs veien, for eksempel \"RMB 725, Princes Highway\"; eller et beskrivende landemerke, for eksempel \"På hjørnet mellom Storgaten og Lillegaten\" eller \"Det andre huset til høyre etter butikken med rød dør\".">
-				>
 				["at0002"] = <
-					text = <"By">
+					text = <"*City (en)">
 					description = <"Navnet på forstaden, byen, landsbyen eller det laveste nivå som inneholder adressen.">
 					comment = <"For eksempel: forstad, by, bygd, bosetting, eller tettsted. Koding med med ekstern terminologi er ønskelig om mulig. For eksempel: \"Fitzroy\", \"Manchester\", \"Kingston\" eller \"Bergen\".">
 				>
 				["at0003"] = <
-					text = <"Distrikt/fylke">
+					text = <"*State (en)">
 					description = <"Navnet på et politisk eller geografisk område som inneholder adressen.">
 					comment = <"Koding med ekstern terminologi er foretrukket om mulig. For eksempel: 'Surf Coast' og 'Yarra' lokale myndigheter i Victoria, Australia;og sognene 'Saint Andrew' og 'Kingston' på Jamaica.">
-				>
-				["at0004"] = <
-					text = <"Stat/territorium/provins">
-					description = <"Navnet på en politisk eller geografisk inndeling av et land som en del av adressen.">
-					comment = <"Koding med ekstern terminologi er foretrukket om mulig. For eksempel: 'New South Wales og Queensland i Australia, 'Britisk Columbia' og 'Nova Scotia' i Canada; og fylkene 'Cornwall' og 'Middlesex' & 'Surrey' på Jamaica.">
 				>
 				["at0005"] = <
 					text = <"Postnummer">
@@ -532,21 +441,6 @@ For eksempel:
 					text = <"Land">
 					description = <"Navnet på landet som en del av adressen.">
 					comment = <"For eksempel: Australia, Canada, Jamaica eller Norge. Koding med ekstern terminologi, som for eksempel EN ISO 3166-1 Alpha 2 landskode, er foretrukket om mulig.">
-				>
-				["at0007"] = <
-					text = <"Breddegrad">
-					description = <"Horisontal (y) koordinat for en geolokalisering for adressen.">
-					comment = <"Breddegrad er representert med positive verdier nord for ekvator og negative verdier sør for ekvator. For eksempel er breddegraden til Eiffeltårnet 48.858093.">
-				>
-				["at0008"] = <
-					text = <"Lengdegrad">
-					description = <"Horisontal (x) koordinat for en geolokalisering for adressen.">
-					comment = <"Lengdegrad er representert med negative verdier vest for nullmeridianen og positive verdier øst for nullmeridianen. For eksempel er lengdegraden til Eiffeltårnet 2.294694.">
-				>
-				["at0009"] = <
-					text = <"Høyde">
-					description = <"Den vertikale koordinaten til en geolokasjon som representerer høyden eller dybden til adressen.">
-					comment = <"For eksempel er høyden på toppen av Eiffeltårnet +324m.">
 				>
 				["at0010"] = <
 					text = <"Type">
@@ -585,20 +479,18 @@ For eksempel:
 					text = <"Kommentar">
 					description = <"Ytterligere fritekst om adressen som ikke er registrert i andre felt.">
 				>
-				["at0019"] = <
-					text = <"Kart URL">
-					description = <"Lenke til en lokalisering på et online kart.">
-					comment = <"For eksempel: en lokalisering i et Google eller iOS kart.">
-				>
 				["at0020"] = <
 					text = <"Strukturert adresse">
 					description = <"Strukturerte detaljer eller utvidelser av adressen.">
 					comment = <"For eksempel for å representere en strukturert, mer presis/detaljert adresse, eller brukes som et standardisert konsept som kan konkatineres/kjedes sammen for å bygge opp en enkelt \"Adresselinje\".">
 				>
-				["at0021"] = <
-					text = <"Geolokaliseringskode">
-					description = <"Unik identifikator som representerer en presis geografisk plassering.">
-					comment = <"Også kjent som en geokode. For eksempel: GPS-koordinater som kombinerer lengdegrad, breddegrad +/- høyde; Open Location Code eller Plus Code; Universal Transverse Mercator (UTM); og geohash.">
+				["at0023"] = <
+					text = <"*Start date (en)">
+					description = <"">
+				>
+				["at0024"] = <
+					text = <"*End date (en)">
+					description = <"">
 				>
 			>
 		>
@@ -608,26 +500,16 @@ For eksempel:
 					text = <"Adresse">
 					description = <"Informationen über den Standort einer Person, eines physischen Gebäudes oder einer Landmarke.">
 				>
-				["at0001"] = <
-					text = <"Adresszeile">
-					description = <"Eine unstrukturierte Adresszeile, die alle relevanten Details auf Straßenebene oder zum Postfach darstellt, die die Identifizierung eines Standorts unterstützen würden.">
-					comment = <"Vorkommen für dieses Datenelement ist auf 0..* gesetzt, damit ein oder mehrere Freitext-„Adresszeilen“-Datenelemente die große Vielfalt an Möglichkeiten darstellen können, wie Details auf „Straßenebene“ möglicherweise im Kontext einer bestimmten \"Stadt\" erfasst werden müssen. Mehrere Adresszeilen können in einem Template dargestellt und in „Adresszeile 1“, „Adresszeile 2“ usw. umbenannt werden. Beispiel: „7A/52 Davis Street“ oder „Appartment 7A“ als Adresszeile 1 mit „52 Davis Street“ als Adresszeile 2; ein Postfachstandort am Straßenrand, wie z. B. „RMB 725, Princes Highway“ oder Verwendung eines beschreibenden Orientierungspunkts wie „Ecke Smith & Brown Street“ oder „Zweites Haus nördlich des Gemischtwarenladens mit der roten Tür“.">
-				>
 				["at0002"] = <
-					text = <"Stadt / Gemeinde">
+					text = <"*City (en)">
 					description = <"Der Name des Ortes der untersten Ebene der Adresse.
 ">
 					comment = <"Zum Beispiel: Vorort, Stadt, Stadt, Siedlung, Dorf oder Gemeinde. Die Codierung mit einer externen Terminologie wird nach Möglichkeit bevorzugt. Zum Beispiel: „Fitzroy“; 'Manchester'; „Kingston“ oder „Bergen“.">
 				>
 				["at0003"] = <
-					text = <"Bezirk / Landkreis">
+					text = <"*State (en)">
 					description = <"Der Name eines internen politischen Bezirks oder geografischen Gebiets, der/das die Adresse enthält.">
 					comment = <"Die Codierung mit einer externen Terminologie wird nach Möglichkeit bevorzugt. Zum Beispiel. For example: Kommunalverwaltungen 'Surf Coast“ und „Yarra“ in Victoria, Australien und die Grafschaften \"Cornwall\", Australia; und die Pfarreien von „Saint Andrew“ und „Kingston“ in Jamaika(en)">
-				>
-				["at0004"] = <
-					text = <"Staat / Land / Bundesland">
-					description = <"Der Name eines großen politischen Bezirks oder geografischen Gebiets, der/das die Adresse enthält.">
-					comment = <"Die Codierung mit einer externen Terminologie wird nach Möglichkeit bevorzugt. Zum Beispiel: „New South Wales“ und „Queensland“ in Australien; „British Columbia“ und „Nova Scotia“ in Kanada; und die Grafschaften „Cornwall\",„Middlesex\" und „Surrey\" in Jamaika.">
 				>
 				["at0005"] = <
 					text = <"Postleitzahl">
@@ -638,21 +520,6 @@ For eksempel:
 					text = <"Land">
 					description = <"Der Name des Landes, in dem sich die Adresse befindet.">
 					comment = <"Zum Beispiel: Australien, Kanada, Jamaika oder Norwegen. Die Codierung mit einer externen Terminologie, wie z. B. EN ISO 3166–1 Alpha 2 Ländercode, wird empfohlen.">
-				>
-				["at0007"] = <
-					text = <"Breitengrad">
-					description = <"Horizontale (y) Koordinate einer Geolokalisierung für die Adresse.">
-					comment = <"Der Breitengrad wird durch positive Werte nördlich des Äquators und negative Werte südlich des Äquators dargestellt. Zum Beispiel ist der Breitengrad des Eiffelturms 48.858093.">
-				>
-				["at0008"] = <
-					text = <"Längengrad">
-					description = <"Horizontale (x) Koordinate einer Geolokalisierung für die Adresse.">
-					comment = <"Der Längengrad wird durch negative Werte westlich des Nullmeridians und positive Werte östlich des Nullmeridians dargestellt. Zum Beispiel ist der Längengrad des Eiffelturms 2.294694.">
-				>
-				["at0009"] = <
-					text = <"Höhe">
-					description = <"Die vertikale Koordinate einer Geolokalisierung, die die Höhe oder Tiefe der Adresse darstellt.">
-					comment = <"Zum Beispiel, die Höhe der Spitze des Eiffelturms beträgt +324 m.">
 				>
 				["at0010"] = <
 					text = <"Art">
@@ -691,20 +558,18 @@ For eksempel:
 					text = <"Kommentar">
 					description = <"Zusätzliche Erläuterungen zur Adresse, die nicht in anderen Feldern erfasst werden.">
 				>
-				["at0019"] = <
-					text = <"Karte URL">
-					description = <"Link zu einem Ort auf einer Online-Karte.">
-					comment = <"Zum Beispiel: ein Standort auf einer Google- oder iOS-Map.">
-				>
 				["at0020"] = <
 					text = <"Strukturierte Adresse">
 					description = <"Strukturierte Angaben oder Erweiterungen der Adresse.">
 					comment = <"Zum Beispiel: um eine strukturierte, detailgenaue Adresse darzustellen oder als standardisierte Konzepte zu verwenden, die miteinander verkettet werden können, um konsistent eine einzige „Adresszeile“ zu erstellen.">
 				>
-				["at0021"] = <
-					text = <"Geolocation-Code">
-					description = <"Eindeutige Kennung, die einen genauen geografischen Standort darstellt.">
-					comment = <"Wird auch als Geocode bezeichnet. Zum Beispiel: GPS-Koordinaten, die Längengrad, Breitengrad +/-Höhe verketten; Standortcode oder Pluscode öffnen; Universeller transversaler Mercator (UTM); und Geohash.">
+				["at0023"] = <
+					text = <"*Start date (en)">
+					description = <"">
+				>
+				["at0024"] = <
+					text = <"*End date (en)">
+					description = <"">
 				>
 			>
 		>
@@ -714,25 +579,15 @@ For eksempel:
 					text = <"Morada">
 					description = <"Detalhes sobre a localização de uma pessoa, edifício físico ou ponto de referência.">
 				>
-				["at0001"] = <
-					text = <"Linha de endereço">
-					description = <"Uma linha de endereço não estruturada que representa todos os detalhes relevantes ao nível da rua ou da caixa de correio que apoiariam a identificação de um local.">
-					comment = <"As ocorrências para este elemento de dados são definidas como 0..* para permitir que um ou mais elementos de dados de texto livre 'Linha de endereços' representem a enorme variedade de formas pelas quais os detalhes do 'nível da rua' podem ter de ser registados no contexto de uma 'Cidade' especificada. Podem ser representadas várias linhas de endereço num modelo, renomeadas como 'Linha de endereço 1', 'Linha de endereço 2' etc. Por exemplo: '7A/52 Davis Street' ou 'Apartamento 7A' como Linha de endereço 1 com ' 52 Davis Street' como linha de endereço 2; uma localização de caixa de correio à beira da estrada, como 'RMB 725, Princes Highway'; ou utilizando um ponto de referência descritivo, como 'Esquina das ruas Smith & Brown' ou 'Segunda casa a norte do armazém com a porta vermelha'.">
-				>
 				["at0002"] = <
-					text = <"Cidade">
+					text = <"*City (en)">
 					description = <"O nome da localidade de nível mais baixo que contém o endereço.">
 					comment = <"Por exemplo: subúrbio, vila, cidade, povoação, vila ou comunidade. É preferível codificar com uma terminologia externa, sempre que possível. Por exemplo: 'Fitzroy'; 'Manchester'; 'Kingston' ou 'Bergen'.">
 				>
 				["at0003"] = <
-					text = <"Distrito/Concelho">
+					text = <"*State (en)">
 					description = <"O nome de um distrito governamental local ou área geográfica que contém o endereço.">
 					comment = <"É preferível codificar com uma terminologia externa, sempre que possível. Por exemplo: os conselhos governamentais locais de 'Surf Coast' e 'Yarra' em Victoria, Austrália; e as paróquias de 'Saint Andrew' e 'Kingston' na Jamaica.">
-				>
-				["at0004"] = <
-					text = <"Estado/Território/Província">
-					description = <"O nome de um importante distrito governamental ou área geográfica que contém o endereço.">
-					comment = <"É preferível codificar com uma terminologia externa, sempre que possível. Por exemplo: 'Nova Gales do Sul' e 'Queensland' na Austrália; 'Colúmbia Britânica' e 'Nova Escócia' no Canadá; e os condados de 'Cornwall', 'Middlesex' e 'Surrey' na Jamaica.">
 				>
 				["at0005"] = <
 					text = <"Código postal">
@@ -743,21 +598,6 @@ For eksempel:
 					text = <"País">
 					description = <"O nome do país que contém o endereço.">
 					comment = <"Por exemplo: Austrália; Canadá; Jamaica; ou Noruega. Recomenda-se a codificação com uma terminologia externa, como o código de país EN ISO 3166–1 Alpha 2.">
-				>
-				["at0007"] = <
-					text = <"Latitude">
-					description = <"Coordenada horizontal (y) de uma geolocalização para o endereço.">
-					comment = <"A latitude é representada por valores positivos a norte do equador e valores negativos a sul do equador. Por exemplo, a latitude da Torre Eiffel é 48,858093.">
-				>
-				["at0008"] = <
-					text = <"Longitude">
-					description = <"Coordenada horizontal (x) de uma geolocalização para o endereço.">
-					comment = <"A longitude é representada por valores negativos a oeste do Meridiano Principal e valores positivos a este do Meridiano Principal. Por exemplo, a longitude da Torre Eiffel é 2,294694.">
-				>
-				["at0009"] = <
-					text = <"Altitude">
-					description = <"A coordenada vertical de uma geolocalização que representa a altura ou profundidade do endereço.">
-					comment = <"Por exemplo, a altitude do topo da Torre Eiffel é de +324m.">
 				>
 				["at0010"] = <
 					text = <"Tipo">
@@ -796,20 +636,18 @@ For eksempel:
 					text = <"Comentário">
 					description = <"Narrativa adicional sobre o endereço não capturada noutros campos.">
 				>
-				["at0019"] = <
-					text = <"URL do mapa">
-					description = <"Ligação para um local num mapa online.">
-					comment = <"Por exemplo: uma localização num mapa do Google ou iOS.">
-				>
 				["at0020"] = <
 					text = <"Endereço estruturado">
 					description = <"Detalhes estruturados ou extensões do endereço.">
 					comment = <"Por exemplo: para representar um endereço estruturado e refinado ou para ser utilizado como conceitos padronizados que podem ser concatenados para construir consistentemente uma única ‘linha de endereço’.">
 				>
-				["at0021"] = <
-					text = <"Código de geolocalização">
-					description = <"Identificador único que representa uma localização geográfica precisa.">
-					comment = <"Também conhecido como geocódigo. Por exemplo: coordenadas GPS concatenando longitude, latitude +/-altitude; Código de localização aberto ou Plus Code; Mercator Transversal Universal (UTM); e geohash.">
+				["at0023"] = <
+					text = <"*Start date (en)">
+					description = <"">
+				>
+				["at0024"] = <
+					text = <"*End date (en)">
+					description = <"">
 				>
 			>
 		>
@@ -819,25 +657,15 @@ For eksempel:
 					text = <"Στοιχεία Διεύθυνσης">
 					description = <"*Details about the location of a person, physical building or landmark.(en)">
 				>
-				["at0001"] = <
-					text = <"Διεύθυνση">
-					description = <"Μια μη δομημένη γραμμή διεύθυνσης που αντιπροσωπεύει όλες τις σχετικές λεπτομέρειες σε επίπεδο δρόμου ή ταχυδρομικής θυρίδας που θα υποστήριζαν την αναγνώριση μιας τοποθεσίας.">
-					comment = <"Οι εμφανίσεις για αυτό το στοιχείο δεδομένων έχουν οριστεί σε 0..* για να επιτραπεί σε ένα ή περισσότερα στοιχεία δεδομένων «Γραμμή διεύθυνσης» ελεύθερου κειμένου να αντιπροσωπεύουν την τεράστια ποικιλία τρόπων με τους οποίους ενδέχεται να χρειάζεται να καταγράφονται οι λεπτομέρειες «σε επίπεδο δρόμου» στο πλαίσιο ενός καθορισμένου 'Πόλη'. Πολλές γραμμές διευθύνσεων μπορούν να αναπαρασταθούν σε ένα πρότυπο, που μετονομάζεται σε \"Γραμμή διεύθυνσης 1\", \"Γραμμή διεύθυνσης 2\" κ.λπ. Για παράδειγμα: \"7A/52 Davis Street\" ή \"Apartment 7A\" ως γραμμή διεύθυνσης 1 με \"52 Davis Street\" ' ως γραμμή διεύθυνσης 2, μια θέση ταχυδρομικής θυρίδας στην άκρη του δρόμου, όπως «RMB 725, Princes Highway». ή χρησιμοποιώντας ένα περιγραφικό ορόσημο, όπως ή \"Corner of Smith & Brown Streets\" ή \"Second house βόρεια του γενικού καταστήματος με την κόκκινη πόρτα\"">
-				>
 				["at0002"] = <
-					text = <"Πόλη">
+					text = <"*City (en)">
 					description = <"Το όνομα της τοποθεσίας χαμηλότερου επιπέδου που περιέχει τη διεύθυνση">
 					comment = <"Για παράδειγμα: προάστιο, πόλη, πόλη, οικισμός, χωριό ή κοινότητα. Προτιμάται η κωδικοποίηση με εξωτερική ορολογία, όπου είναι δυνατόν.Για παράδειγμα: 'Αθήνα'; 'Λάρισα'">
 				>
 				["at0003"] = <
-					text = <"Χώρα">
+					text = <"*State (en)">
 					description = <"Το όνομα μιας τοπικής περιφέρειας ή γεωγραφικής περιοχής που περιέχει τη διεύθυνση.">
 					comment = <"Προτιμάται η κωδικοποίηση με εξωτερική ορολογία, όπου είναι δυνατόν. Για παράδειγμα: τα συμβούλια τοπικής αυτοδιοίκησης «Surf Coast» και «Yarra» στη Βικτώρια της Αυστραλίας και οι Ενορίες του «Saint Andrew» και «Kingston» στην Τζαμάικα.">
-				>
-				["at0004"] = <
-					text = <"Πολιτεία /περιοχή /Επαρχία">
-					description = <"Το όνομα μιας μεγάλης κυβερνητικής περιφέρειας ή γεωγραφικής περιοχής που περιέχει τη διεύθυνση.">
-					comment = <"Προτιμάται η κωδικοποίηση με εξωτερική ορολογία, όπου είναι δυνατόν. Για παράδειγμα: «New South Wales» και «Queensland» στην Αυστραλία. «British Columbia» και «Nova Scotia» στον Καναδά. και οι κομητείες της «Κορνουάλης», «Middlesex» και «Surrey» στην Τζαμάικα.">
 				>
 				["at0005"] = <
 					text = <"Ταχυδρομικός κώδικας">
@@ -849,21 +677,6 @@ For eksempel:
 					text = <"Χώρα">
 					description = <"Το όνομα της χώρας που περιέχει τη διεύθυνση.">
 					comment = <"*For example: Australia; Canada; Jamaica; or Norway. Coding with an external terminology, such as EN ISO 3166–1 Alpha 2 country code, is recommended.(en)">
-				>
-				["at0007"] = <
-					text = <"Γεωγραφικό πλάτος">
-					description = <"Οριζόντια (y) συντεταγμένη μιας γεωγραφικής θέσης για τη διεύθυνση.">
-					comment = <"*Latitude is represented by positive values north of the equator and negative values south of the equator. For example the latitude of the Eiffel Tower is 48.858093.(en)">
-				>
-				["at0008"] = <
-					text = <"Γεωγραφικό Μήκος">
-					description = <"Οριζόντια (x) συντεταγμένη μιας γεωγραφικής θέσης για τη διεύθυνση.">
-					comment = <"*Longitude is represented by negative values west of Prime Meridian and positive values east of Prime Meridian. For example the longitude of the Eiffel Tower is 2.294694.(en)">
-				>
-				["at0009"] = <
-					text = <"Υψόμετρο">
-					description = <"Η κατακόρυφη συντεταγμένη μιας γεωγραφικής θέσης που αντιπροσωπεύει το ύψος ή το βάθος της διεύθυνσης.">
-					comment = <"*For example, the altitude of the top of the Eiffel Tower is +324m.(en)">
 				>
 				["at0010"] = <
 					text = <"Τύπος">
@@ -902,20 +715,18 @@ For eksempel:
 					text = <"Σχόλιο">
 					description = <"Πρόσθετη αφήγηση σχετικά με τη διεύθυνση που δεν καταγράφεται σε άλλα πεδία.">
 				>
-				["at0019"] = <
-					text = <"Χάρτης URL">
-					description = <"Σύνδεσμος σε μια τοποθεσία σε έναν διαδικτυακό χάρτη.">
-					comment = <"*For example: a location on a Google or iOS map.(en)">
-				>
 				["at0020"] = <
 					text = <"Διεύθυνση">
 					description = <"Δομημένες λεπτομέρειες ή επεκτάσεις στη διεύθυνση.">
 					comment = <"*For example: to represent a  structured, fine-grained address, or be used as standardised concepts that can be concatenated together to consistently construct a single 'Address line'.(en)">
 				>
-				["at0021"] = <
-					text = <"Kωδικός Γεωγραφικής Θέσης">
-					description = <"Μοναδικό αναγνωριστικό που αντιπροσωπεύει μια ακριβή γεωγραφική τοποθεσία.">
-					comment = <"*Also known as a geocode. For example: GPS coordinates concatenating longitude, latitude +/-altitude; Open Location Code or Plus Code; Universal Transverse Mercator (UTM); and geohash.(en)">
+				["at0023"] = <
+					text = <"*Start date (en)">
+					description = <"">
+				>
+				["at0024"] = <
+					text = <"*End date (en)">
+					description = <"">
 				>
 			>
 		>
@@ -925,25 +736,15 @@ For eksempel:
 					text = <"Adresse">
 					description = <"Détails sur l'emplacement d'une personne, d'un bâtiment physique ou d'un point de repère.">
 				>
-				["at0001"] = <
-					text = <"Ligne d'adresse">
-					description = <"Une ligne d'adresse non structurée représentant tous les détails pertinents au niveau de la rue ou de la boîte postale qui permettraient d'identifier un lieu.">
-					comment = <"Le nombre d'occurrences de cet élément de données est fixé à 0...* pour permettre à un ou plusieurs éléments de données \"Ligne d'adresse\" à texte libre de représenter la grande variété de façons dont les détails \"au niveau de la rue\" peuvent devoir être enregistrés dans le contexte d'une \"ville\" spécifiée. Plusieurs lignes d'adresse peuvent être représentées dans un modèle, renommées \"ligne d'adresse 1\", \"ligne d'adresse 2\", etc. Par exemple : \"7A/52 Davis Street\" ou \"Appartement 7A\" comme ligne d'adresse 1 et \"52 Davis Street\" comme ligne d'adresse 2 ; l'emplacement d'une boîte aux lettres en bordure de route, comme \"RMB 725, Princes Highway\" ; ou l'utilisation d'un point de repère descriptif, comme \"Angle des rues Smith et Brown\" ou \"Deuxième maison au nord du magasin général avec la porte rouge\".">
-				>
 				["at0002"] = <
-					text = <"Ville">
+					text = <"*City (en)">
 					description = <"Le nom de la localité de niveau le plus bas qui contient l'adresse.">
 					comment = <"Par exemple : banlieue, ville, agglomération, village ou communauté. Dans la mesure du possible, il est préférable de coder avec une terminologie externe. Par exemple : \"Fitzroy\" ; \"Manchester\" ; \"Kingston\" ou \"Bergen\"">
 				>
 				["at0003"] = <
-					text = <"District/Comté">
+					text = <"*State (en)">
 					description = <"Le nom d'une circonscription administrative locale ou d'une zone géographique qui contient l'adresse.">
 					comment = <"Dans la mesure du possible, il est préférable de coder avec une terminologie externe. Par exemple : les conseils locaux de \"Surf Coast\" et de \"Yarra\" dans l'État de Victoria, en Australie ; et les paroisses de \"Saint Andrew\" et de \"Kingston\" en Jamaïque...">
-				>
-				["at0004"] = <
-					text = <"État/Territoire/Province">
-					description = <"Le nom d'un grand district gouvernemental ou d'une zone géographique qui contient l'adresse.">
-					comment = <"Dans la mesure du possible, il est préférable de coder avec une terminologie externe. Par exemple : \"New South Wales\" et \"Queensland\" en Australie ; \"British Columbia\" et \"Nova Scotia\" au Canada ; et les comtés de \"Cornwall\", \"Middlesex\" et \"Surrey\" en Jamaïque.">
 				>
 				["at0005"] = <
 					text = <"Code postal">
@@ -954,21 +755,6 @@ For eksempel:
 					text = <"Pays">
 					description = <"Le nom du pays où se trouve l'adresse.">
 					comment = <"Par exemple, l'Australie, le Canada, la Jamaïque ou la Norvège : Australie ; Canada ; Jamaïque ; ou Norvège. Il est recommandé d'utiliser une terminologie externe, telle que le code pays EN ISO 3166-1 Alpha 2.">
-				>
-				["at0007"] = <
-					text = <"Latitude">
-					description = <"Coordonnée horizontale (y) d'une géolocalisation pour l'adresse.">
-					comment = <"La latitude est représentée par des valeurs positives au nord de l'équateur et des valeurs négatives au sud de l'équateur. Par exemple, la latitude de la Tour Eiffel est de 48,858093.">
-				>
-				["at0008"] = <
-					text = <"Longitude">
-					description = <"Coordonnée horizontale (x) d'une géolocalisation pour l'adresse.">
-					comment = <"La longitude est représentée par des valeurs négatives à l'ouest du méridien d'origine et des valeurs positives à l'est du méridien d'origine. Par exemple, la longitude de la Tour Eiffel est de 2,294694.">
-				>
-				["at0009"] = <
-					text = <"Altitude">
-					description = <"Coordonnée verticale d'une géolocalisation représentant la hauteur ou la profondeur de l'adresse.">
-					comment = <"Par exemple, l'altitude du sommet de la Tour Eiffel est de +324m.">
 				>
 				["at0010"] = <
 					text = <"Type">
@@ -1007,20 +793,18 @@ For eksempel:
 					text = <"Commentaire">
 					description = <"Informations supplémentaires sur l'adresse qui n'ont pas été saisies dans d'autres champs.">
 				>
-				["at0019"] = <
-					text = <"URL de la carte">
-					description = <"Lien vers un lieu sur une carte en ligne.">
-					comment = <"Par exemple : un emplacement sur une carte Google ou iOS.">
-				>
 				["at0020"] = <
 					text = <"Adresse structurée">
 					description = <"Détails structurés ou extensions de l'adresse.">
 					comment = <"Par exemple : représenter une adresse structurée et précise, ou être utilisés comme concepts normalisés pouvant être concaténés pour construire de manière cohérente une \"ligne d'adresse\" unique.">
 				>
-				["at0021"] = <
-					text = <"Code de géolocalisation">
-					description = <"Identifiant unique qui représente une localisation géographique précise.">
-					comment = <"Également appelé géocode. Par exemple, les coordonnées GPS concaténant la longitude, la latitude et l'altitude : coordonnées GPS concaténant longitude, latitude +/-altitude ; Open Location Code ou Plus Code ; Universal Transverse Mercator (UTM) ; et geohash.">
+				["at0023"] = <
+					text = <"*Start date (en)">
+					description = <"">
+				>
+				["at0024"] = <
+					text = <"*End date (en)">
+					description = <"">
 				>
 			>
 		>
@@ -1030,25 +814,15 @@ For eksempel:
 					text = <"Adress">
 					description = <"Detaljer om platsen för en person, fysisk byggnad eller landmärke.">
 				>
-				["at0001"] = <
-					text = <"Gatuadress">
-					description = <"*An unstructured address line representing all relevant street-level or post-box details that would support the identification of a location.(en)">
-					comment = <"*Occurrences for this data element is set to 0..* to allow one or more free text 'Address line' data elements to represent the huge variety of ways that ‘street-level' details may need to be recorded within the context of a specified 'Town'. Multiple address lines can be represented in a template, renamed as 'Address line 1', 'Address line 2,' etc. For example: '7A/52 Davis Street' or 'Apartment 7A' as Address line 1 with '52 Davis Street' as Address line 2; a roadside mail box location, such as 'RMB 725, Princes Highway'; or using a descriptive landmark, such as or 'Corner of Smith & Brown Streets' or 'Second house north of the general store with the red door'.(en)">
-				>
 				["at0002"] = <
-					text = <"Ort/Postort">
+					text = <"*City (en)">
 					description = <"*The name of the lowest level locality that contains the address.(en)">
 					comment = <"*For example: suburb, town, city, settlement, village, or community. Coding with an external terminology is preferred, where possible. For example: 'Fitzroy'; 'Manchester'; 'Kingston' or 'Bergen'.(en)">
 				>
 				["at0003"] = <
-					text = <"Kommun">
+					text = <"*State (en)">
 					description = <"*The name of a local government district or geographical area that contains the address.(en)">
 					comment = <"*Coding with an external terminology is preferred, where possible. For example: 'Surf Coast' and 'Yarra' local government councils in Victoria, Australia;and the Parishes of 'Saint Andrew' and 'Kingston' in Jamaica..(en)">
-				>
-				["at0004"] = <
-					text = <"Region">
-					description = <"*The name of a major government district or geographical area that contains the address.(en)">
-					comment = <"*Coding with an external terminology is preferred, where possible. For example: 'New South Wales' and 'Queensland' in Australia; 'British Columbia' and 'Nova Scotia' in Canada; and the Counties of 'Cornwall', 'Middlesex' & 'Surrey' in Jamaica.(en)">
 				>
 				["at0005"] = <
 					text = <"Postnummer">
@@ -1060,21 +834,6 @@ For eksempel:
 					text = <"Land">
 					description = <"*The name of the country containing the address.(en)">
 					comment = <"*For example: Australia; Canada; Jamaica; or Norway. Coding with an external terminology, such as EN ISO 3166–1 Alpha 2 country code, is recommended.(en)">
-				>
-				["at0007"] = <
-					text = <"Latitud">
-					description = <"*Horizontal (y) coordinate of a geolocation for the address.(en)">
-					comment = <"*Latitude is represented by positive values north of the equator and negative values south of the equator. For example the latitude of the Eiffel Tower is 48.858093.(en)">
-				>
-				["at0008"] = <
-					text = <"Longitud">
-					description = <"*Horizontal (x) coordinate of a geolocation for the address.(en)">
-					comment = <"*Longitude is represented by negative values west of Prime Meridian and positive values east of Prime Meridian. For example the longitude of the Eiffel Tower is 2.294694.(en)">
-				>
-				["at0009"] = <
-					text = <"Altitud">
-					description = <"*The vertical coordinate of a geolocation representing height or depth of the address.(en)">
-					comment = <"*For example, the altitude of the top of the Eiffel Tower is +324m.(en)">
 				>
 				["at0010"] = <
 					text = <"Typ">
@@ -1113,20 +872,18 @@ For eksempel:
 					text = <"Kommentar">
 					description = <"*Additional narrative about the address not captured in other fields.(en)">
 				>
-				["at0019"] = <
-					text = <"URL till karta">
-					description = <"*Link to a location on an online map.(en)">
-					comment = <"*For example: a location on a Google or iOS map.(en)">
-				>
 				["at0020"] = <
 					text = <"*Structured address(en)">
 					description = <"*Structured details or extensions to the address.(en)">
 					comment = <"*For example: to represent a  structured, fine-grained address, or be used as standardised concepts that can be concatenated together to consistently construct a single 'Address line'.(en)">
 				>
-				["at0021"] = <
-					text = <"*Geolocation code(en)">
-					description = <"*Unique identifier that represents a precise geographical location.(en)">
-					comment = <"*Also known as a geocode. For example: GPS coordinates concatenating longitude, latitude +/-altitude; Open Location Code or Plus Code; Universal Transverse Mercator (UTM); and geohash.(en)">
+				["at0023"] = <
+					text = <"*Start date (en)">
+					description = <"">
+				>
+				["at0024"] = <
+					text = <"*End date (en)">
+					description = <"">
 				>
 			>
 		>
