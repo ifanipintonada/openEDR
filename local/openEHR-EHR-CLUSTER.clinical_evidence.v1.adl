@@ -128,7 +128,7 @@ Not to be used to record summary details about an identified contraindication - 
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"B54C8E41D6A32E4A769F4F9240A53D63">
+		["MD5-CAM-1.0.1"] = <"065396457cc703e64ac7af92542fb8e4">
 		["build_uid"] = <"30b6505d-5aef-450d-82f5-fdb7b5973dc9">
 		["revision"] = <"1.2.2">
 	>
@@ -152,10 +152,6 @@ definition
 					DV_DATE_TIME matches {*}
 				}
 			}
-			allow_archetype CLUSTER[at0007] occurrences matches {0..*} matches {    -- Citation
-				include
-					archetype_id/value matches {/openEHR-EHR-CLUSTER\.citation(-[a-zA-Z0-9_]+)*\.v1/}
-			}
 			ELEMENT[at0022] occurrences matches {0..*} matches {    -- Method
 				value matches {
 					DV_TEXT matches {*}
@@ -169,10 +165,6 @@ definition
 			allow_archetype CLUSTER[at0018] occurrences matches {0..*} matches {    -- Multimedia representation
 				include
 					archetype_id/value matches {/openEHR-EHR-CLUSTER\.media_file\.v1/}
-			}
-			allow_archetype CLUSTER[at0024] occurrences matches {0..*} matches {    -- Additional details
-				include
-					archetype_id/value matches {/.*/}
 			}
 			ELEMENT[at0023] occurrences matches {0..1} matches {    -- Comment
 				value matches {
@@ -213,10 +205,6 @@ ontology
 					description = <"The date on which the finding was clinically identified.">
 					comment = <"For example: The date when the finding was made by or made available to the clinician.">
 				>
-				["at0007"] = <
-					text = <"Citation">
-					description = <"Detailed data available about the evidence held in another part of the health record.">
-				>
 				["at0018"] = <
 					text = <"Multimedia representation">
 					description = <"Digital image, video or diagram representing the clinical evidence.">
@@ -229,10 +217,6 @@ ontology
 				["at0023"] = <
 					text = <"Comment">
 					description = <"Additional narrative about the finding not captured in other fields.">
-				>
-				["at0024"] = <
-					text = <"Additional details">
-					description = <"Additional structured details about the finding.">
 				>
 			>
 		>
@@ -265,10 +249,6 @@ ontology
 					description = <"Datoen da funnet ble klinisk anerkjent.">
 					comment = <"For eksempel: Datoen da funnet ble gjort eller gjort tilgjengelig for klinikeren.">
 				>
-				["at0007"] = <
-					text = <"Referanse">
-					description = <"Detaljerte data om funnet i andre deler av journalen.">
-				>
 				["at0018"] = <
 					text = <"Multimediarepresentasjon">
 					description = <"Digitalt bilde, video eller diagram som representerer det kliniske grunnlaget.">
@@ -281,10 +261,6 @@ ontology
 				["at0023"] = <
 					text = <"Kommentar">
 					description = <"Ytterligere informasjon om funnet, som ikke kan registreres i andre felter.">
-				>
-				["at0024"] = <
-					text = <"Ytterligere detaljer">
-					description = <"Ytterligere strukturerte detaljer om funnet.">
 				>
 			>
 		>
@@ -317,10 +293,6 @@ ontology
 					description = <"Das Datum, an dem der Befund klinisch festgestellt wurde.">
 					comment = <"Zum Beispiel: Das Datum, an dem der Befund vom Arzt gemacht oder ihm zur Verfügung gestellt wurde.">
 				>
-				["at0007"] = <
-					text = <"Zitat">
-					description = <"Detaillierte Daten über die in einem anderen Teil der Gesundheitsakte enthaltenen Beweise sind verfügbar.">
-				>
 				["at0018"] = <
 					text = <"Multimediale Darstellung">
 					description = <"Digitales Bild, Video oder Diagramm, welches die klinischen Evidenz darstellt.">
@@ -333,10 +305,6 @@ ontology
 				["at0023"] = <
 					text = <"Kommentar">
 					description = <"Zusätzliche Informationen über die Befunde, welche noch nicht an anderer Stelle dokumentiert wurden.">
-				>
-				["at0024"] = <
-					text = <"Zusätzliche Angaben">
-					description = <"Zusätzliche strukturierte Angaben zu den Ergebnissen.">
 				>
 			>
 		>
@@ -369,10 +337,6 @@ ontology
 					description = <"Datum då fyndet kliniskt identifierades.">
 					comment = <"Till exempel: Datumet då fynden gjordes av eller gjordes tillgänglig för läkaren.">
 				>
-				["at0007"] = <
-					text = <"Citat">
-					description = <"Detaljerad information tillgänglig om bevisen som finns i en annan del av hälsojournalen.">
-				>
 				["at0018"] = <
 					text = <"Multimedia representation">
 					description = <"Digital bild, video eller diagram som representerar kliniska bevis.">
@@ -385,10 +349,6 @@ ontology
 				["at0023"] = <
 					text = <"Kommentar">
 					description = <"Ytterligare beskrivning om fynden som inte redan inkluderats.">
-				>
-				["at0024"] = <
-					text = <"*Additional details (en)">
-					description = <"*Additional structured details about findings. (en)">
 				>
 			>
 		>
