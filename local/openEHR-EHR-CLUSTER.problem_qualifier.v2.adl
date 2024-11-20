@@ -128,23 +128,6 @@ Full DRG-kodning kräver DRG-relaterade dataelement från denna arketyp i kombin
 
 Inte utformad för att representera diagnostisk säkerhet - använd dataelementet 'Diagnostisk säkerhet' inom EVALUATION.problem_diagnosis-arketypen.">
 		>
-		["nb"] = <
-			language = <[ISO_639-1::nb]>
-			purpose = <"For å registrere en kontekstspesifikk eller tidsspesifikk kvalifikator for et problem eller en diagnose.">
-			keywords = <"problem","aktivt","inaktivt","status","episode","tilstand","aktiv","inaktiv","remisjon","kronisk","akutt">
-			use = <"Brukes for å registrere en kontekstspesifikk eller tidsspesifikk kvalifikator som gir ytterligere detaljer som er relevante på tidspunktet man registrerer et problem eller en diagnose. Kvalifikatoren er ikke nødvendigvis passende på et annet tidspunkt eller i en annen klinisk sammenheng.
-
-Denne arketypen skal brukes i SLOTet \"Status\" i arketypen EVALUATION.problem_diagnosis (Problem/diagnose). Intensjonen er at EVALUATION.problem_diagnosis-arketypen skal inneholde all informasjonen som gjelder i alle sammenhenger, i motsetning til denne arketypen som skal inneholde informasjonen som avhenger av brukssammenheng.
-
-VIKTIG INFORMASJON FOR IMPLEMENTERING:
-- Det er ikke meningen eller implisert at alle disse kvalifikatorene skal brukes i den samme sammenhengen eller det samme tidsperioden. I motsetning til den vanlige måten å lage arketyper på, er denne arketypen laget for å samle flere vanlige kvalifikatorer på ett sted for å forsøksvis oppnå et visst nivå av standardisering innenfor et ganske innfløkt område av klinisk praksis. Det erkjennes at dataelementene i denne arketypen omfatter mange forskjellige, og til dels også konkurrerende, konsepter. Dette ble gjort hovedsakelig for å unngå behov for å ha mange arketyper for kvalifikatorer, der hver av dem kun inneholder ett eller to dataelementer.
-- Noen av disse dataelementene er potensielt direkte motstridende dersom de brukes samtidig og i den samme sammenhengen. For eksempel gir det ikke mening å ha et \"inaktivt\" problem innenfor en \"pågående\" episode. Av den grunn bør disse kvalifikatorene brukes med stor omhu, siden de i praksis vil brukes for varierende formål, og interoperabilitet kan ikke garanteres med mindre det er definert klare retningslinjer for bruk innenfor de kliniske omstendighetene der \"Problem/diagnose\"- og \"Problem/diagnose-kvalifikatorer\"-arketypeparet brukes.
-
-Fullstendig DRG-koding vil kreve DRG-relaterte dataelementer fra denne arketypen, i kombinasjon med elementer fra andre arketyper.">
-			misuse = <"Brukes ikke for å representere differensialdiagnoser. Bruk arketypen EVALUATION.differential_diagnosis for dette formålet.
-
-Brukes ikke for å representere diagnostisk sikkerhet. Bruk elementet \"Diagnostisk sikkerhet\" i arketypen EVALUATION.problem_diagnosis.">
-		>
 		["ko"] = <
 			language = <[ISO_639-1::ko]>
 			purpose = <"특정 문제 또는 진단을 위한 임상 문맥-특징적인 또는 시간-특징적인 한정자(qualifier)를 기록하기 위함.">
@@ -161,6 +144,23 @@ Brukes ikke for å representere diagnostisk sikkerhet. Bruk elementet \"Diagnost
 			misuse = <"감별진단을 표현하는데 사용하지 않아야 함 - 이 목적을 위해서는 EVALUATION.differential_diagnosis archetype를 사용해야 함.
 
 진단의 확실성(certainty)를 표현하기 위해 사용하지 않아야 함 - EVALUATION.problem_diagnosis archetype 내의 'Diagnostic certainty' 데이터 엘리먼트를 사용해야 함.">
+		>
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"For å registrere en kontekstspesifikk eller tidsspesifikk kvalifikator for et problem eller en diagnose.">
+			keywords = <"problem","aktivt","inaktivt","status","episode","tilstand","aktiv","inaktiv","remisjon","kronisk","akutt">
+			use = <"Brukes for å registrere en kontekstspesifikk eller tidsspesifikk kvalifikator som gir ytterligere detaljer som er relevante på tidspunktet man registrerer et problem eller en diagnose. Kvalifikatoren er ikke nødvendigvis passende på et annet tidspunkt eller i en annen klinisk sammenheng.
+
+Denne arketypen skal brukes i SLOTet \"Status\" i arketypen EVALUATION.problem_diagnosis (Problem/diagnose). Intensjonen er at EVALUATION.problem_diagnosis-arketypen skal inneholde all informasjonen som gjelder i alle sammenhenger, i motsetning til denne arketypen som skal inneholde informasjonen som avhenger av brukssammenheng.
+
+VIKTIG INFORMASJON FOR IMPLEMENTERING:
+- Det er ikke meningen eller implisert at alle disse kvalifikatorene skal brukes i den samme sammenhengen eller det samme tidsperioden. I motsetning til den vanlige måten å lage arketyper på, er denne arketypen laget for å samle flere vanlige kvalifikatorer på ett sted for å forsøksvis oppnå et visst nivå av standardisering innenfor et ganske innfløkt område av klinisk praksis. Det erkjennes at dataelementene i denne arketypen omfatter mange forskjellige, og til dels også konkurrerende, konsepter. Dette ble gjort hovedsakelig for å unngå behov for å ha mange arketyper for kvalifikatorer, der hver av dem kun inneholder ett eller to dataelementer.
+- Noen av disse dataelementene er potensielt direkte motstridende dersom de brukes samtidig og i den samme sammenhengen. For eksempel gir det ikke mening å ha et \"inaktivt\" problem innenfor en \"pågående\" episode. Av den grunn bør disse kvalifikatorene brukes med stor omhu, siden de i praksis vil brukes for varierende formål, og interoperabilitet kan ikke garanteres med mindre det er definert klare retningslinjer for bruk innenfor de kliniske omstendighetene der \"Problem/diagnose\"- og \"Problem/diagnose-kvalifikatorer\"-arketypeparet brukes.
+
+Fullstendig DRG-koding vil kreve DRG-relaterte dataelementer fra denne arketypen, i kombinasjon med elementer fra andre arketyper.">
+			misuse = <"Brukes ikke for å representere differensialdiagnoser. Bruk arketypen EVALUATION.differential_diagnosis for dette formålet.
+
+Brukes ikke for å representere diagnostisk sikkerhet. Bruk elementet \"Diagnostisk sikkerhet\" i arketypen EVALUATION.problem_diagnosis.">
 		>
 		["pt-br"] = <
 			language = <[ISO_639-1::pt-br]>
@@ -179,16 +179,6 @@ A codificação DRG completa vai exigir os elementos de dados DRG deste arquéti
 
 Não deve ser usado para representar certeza diagnóstica - use elemento de dado \"Certeza de diagnóstico\" no arquétipo EVALUATION.problem_diagnosis.">
 		>
-		["sl"] = <
-			language = <[ISO_639-1::sl]>
-			purpose = <"Za zapisovanje različnih statusov, ki se ponavadi uporablja za aplikacijskimi in kliničnimi sporočili, ki so odvisna od definirane vsebine
-
-">
-			keywords = <"problem","aktiven","ni aktiven">
-			copyright = <"© openEHR Foundation">
-			use = <"Za dodeljevanje pravic EVALUATION.problem_diagnosis.v1 archetype, dodaja informacije za povezovanje. ">
-			misuse = <"It should not be assumed that these qualifiers are safely interoperable unless further definition and alignment is agreed between all sharing parties. A problem which has been defined as 'Inactive' during a hospital admission cannot be assumed to be regarded as 'Inactive' in a primary care setting , where a much longer term perspective is being taken. Similarly terms such as Initial, Interim and Final, whilst helpful to the human observer are unlikely to be precisely enough defined to be safely computable e.g. for decision support. ">
-		>
 		["en"] = <
 			language = <[ISO_639-1::en]>
 			purpose = <"To record a clinical context-specific or time-specific qualifier for a specified problem or diagnosis.">
@@ -206,6 +196,16 @@ Full DRG coding will require the DRG-related data elements from this archetype i
 			misuse = <"Not to be used to represent a differential diagnosis - use the archetype EVALUATION.differential_diagnosis for this purpose.
 
 Not to be used to represent diagnostic certainty - use the 'Diagnostic certainty' data element within the EVALUATION.problem_diagnosis archetype.">
+		>
+		["sl"] = <
+			language = <[ISO_639-1::sl]>
+			purpose = <"Za zapisovanje različnih statusov, ki se ponavadi uporablja za aplikacijskimi in kliničnimi sporočili, ki so odvisna od definirane vsebine
+
+">
+			keywords = <"problem","aktiven","ni aktiven">
+			copyright = <"© openEHR Foundation">
+			use = <"Za dodeljevanje pravic EVALUATION.problem_diagnosis.v1 archetype, dodaja informacije za povezovanje. ">
+			misuse = <"It should not be assumed that these qualifiers are safely interoperable unless further definition and alignment is agreed between all sharing parties. A problem which has been defined as 'Inactive' during a hospital admission cannot be assumed to be regarded as 'Inactive' in a primary care setting , where a much longer term perspective is being taken. Similarly terms such as Initial, Interim and Final, whilst helpful to the human observer are unlikely to be precisely enough defined to be safely computable e.g. for decision support. ">
 		>
 		["it"] = <
 			language = <[ISO_639-1::it]>
@@ -269,7 +269,7 @@ Not to be used to represent diagnostic certainty - use the 'Diagnostic certainty
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"05D1938A66D853F1C88BFB73B3EB3693">
+		["MD5-CAM-1.0.1"] = <"9f365b746524be33ef9f5e775a09f32d">
 		["build_uid"] = <"4ec9fbd6-944e-483d-87af-f6838b692110">
 		["ip_acknowledgements"] = <"This artefact includes content from SNOMED Clinical Terms® (SNOMED CT®) which is copyrighted material of the International Health Terminology Standards Development Organisation (IHTSDO). Where an implementation of this artefact makes use of SNOMED CT content, the implementer must have the appropriate SNOMED CT Affiliate license - for more information contact http://www.snomed.org/snomed-ct/get-snomedct or info@snomed.org.">
 		["revision"] = <"2.0.1">
@@ -382,11 +382,6 @@ definition
 					DV_TEXT matches {*}
 				}
 			}
-			ELEMENT[at0107] occurrences matches {0..*} matches {    -- Reason for an ongoing episode
-				value matches {
-					DV_TEXT matches {*}
-				}
-			}
 			ELEMENT[at0071] occurrences matches {0..1} matches {    -- Occurrence
 				value matches {
 					DV_CODED_TEXT matches {
@@ -397,19 +392,6 @@ definition
 						}
 					}
 					DV_TEXT matches {*}
-				}
-			}
-			ELEMENT[at0077] occurrences matches {0..1} matches {    -- Course label
-				value matches {
-					DV_TEXT matches {*}
-					DV_CODED_TEXT matches {
-						defining_code matches {
-							[local::
-							at0081,    -- Acute
-							at0094,    -- Acute-on-chronic
-							at0079]    -- Chronic
-						}
-					}
 				}
 			}
 			ELEMENT[at0063] occurrences matches {0..*} matches {    -- Diagnostic category
@@ -545,19 +527,6 @@ Preliminary or working diagnoses are intended to represent the single most likel
 					text = <"Complication">
 					description = <"An unfavorable evolution of a problem or diagnosis.">
 				>
-				["at0077"] = <
-					text = <"Course label">
-					description = <"Category reflecting the speed of onset and/or duration and persistence of the problem or diagnosis.">
-					comment = <"Definitions of acute vs chronic will differ for each diagnosis.">
-				>
-				["at0079"] = <
-					text = <"Chronic">
-					description = <"A problem or diagnosis with persistent or long-lasting effects, or that evolves over time.">
-				>
-				["at0081"] = <
-					text = <"Acute">
-					description = <"A problem or diagnosis with a rapid onset, a short course, or both.">
-				>
 				["at0083"] = <
 					text = <"Resolution phase">
 					description = <"Phase of healing for an acute problem or diagnosis.">
@@ -599,10 +568,6 @@ Preliminary or working diagnoses are intended to represent the single most likel
 				["at0093"] = <
 					text = <"Indeterminate">
 					description = <"It is not possible to determine if there have been diminution of the signs or symptoms of the disease have been identified.">
-				>
-				["at0094"] = <
-					text = <"Acute-on-chronic">
-					description = <"A problem or diagnosis with an acute exacerbation of a chronic condition.">
 				>
 				["at0095"] = <
 					text = <"First occurrence">
@@ -651,11 +616,6 @@ Preliminary or working diagnoses are intended to represent the single most likel
 				["at0106"] = <
 					text = <"Indeterminate">
 					description = <"It is not possible to determine the progression of the problem or diagnosis.">
-				>
-				["at0107"] = <
-					text = <"Reason for an ongoing episode">
-					description = <"Reason for a problem or diagnosis not resolving as expected.">
-					comment = <"For example: incomplete or failed treatment.">
 				>
 				["at0108"] = <
 					text = <"Yes">
@@ -766,11 +726,6 @@ In addition, the free text choice permits use of other local value sets, as requ
 					text = <"*Complication(en)">
 					description = <"*An unfavorable evolution of a problem or diagnosis.(en)">
 				>
-				["at0077"] = <
-					text = <"*Course label(en)">
-					description = <"*Category reflecting the speed of onset and/or duration and persistence of the problem or diagnosis.(en)">
-					comment = <"*Definitions of acute vs chronic will differ for each diagnosis.(en)">
-				>
 				["at0083"] = <
 					text = <"*Resolution phase(en)">
 					description = <"*Phase of healing for an acute problem or diagnosis.(en)">
@@ -861,11 +816,6 @@ In addition, the free text choice permits use of other local value sets, as requ
 					text = <"*Indeterminate (en)">
 					description = <"*It is not possible to determine the progression of the problem or diagnosis. (en)">
 				>
-				["at0107"] = <
-					text = <"*Reason for an ongoing episode (en)">
-					description = <"*Reason for a problem or diagnosis not resolving as expected. (en)">
-					comment = <"*For example: incomplete or failed treatment. (en)">
-				>
 				["at0108"] = <
 					text = <"*Yes (en)">
 					description = <"">
@@ -877,18 +827,6 @@ In addition, the free text choice permits use of other local value sets, as requ
 				["at0110"] = <
 					text = <"*Comment (en)">
 					description = <"*Additional narrative about the Problem/Diagnosis qualifier values, not captured in other fields. (en)">
-				>
-				["at0081"] = <
-					text = <"*Acute (en)">
-					description = <"*A problem or diagnosis with a rapid onset, a short course, or both. (en)">
-				>
-				["at0094"] = <
-					text = <"*Acute-on-chronic (en)">
-					description = <"*A problem or diagnosis with an acute exacerbation of a chronic condition. (en)">
-				>
-				["at0079"] = <
-					text = <"*Chronic (en)">
-					description = <"*A problem or diagnosis with persistent or long-lasting effects, or that evolves over time. (en)">
 				>
 			>
 		>
@@ -986,11 +924,6 @@ Além disso, a opção de texto livre permite o uso de outros conjuntos de valor
 					text = <"Complicação">
 					description = <"Uma evolução desfavorável de um problema ou diagnóstico.">
 				>
-				["at0077"] = <
-					text = <"Classificação do curso">
-					description = <"Categoria que reflete a velocidade de início e / ou duração e persistência do problema ou diagnóstico.">
-					comment = <"Definições de aguda / crônica serão diferentes para cada diagnóstico.">
-				>
 				["at0083"] = <
 					text = <"Fase de resolução">
 					description = <"Fase de cura para um problema agudo ou diagnóstico.">
@@ -1081,11 +1014,6 @@ Além disso, a opção de texto livre permite o uso de outros conjuntos de valor
 					text = <"*Indeterminate (en)">
 					description = <"*It is not possible to determine the progression of the problem or diagnosis. (en)">
 				>
-				["at0107"] = <
-					text = <"*Reason for an ongoing episode (en)">
-					description = <"*Reason for a problem or diagnosis not resolving as expected. (en)">
-					comment = <"*For example: incomplete or failed treatment. (en)">
-				>
 				["at0108"] = <
 					text = <"*Yes (en)">
 					description = <"">
@@ -1097,18 +1025,6 @@ Além disso, a opção de texto livre permite o uso de outros conjuntos de valor
 				["at0110"] = <
 					text = <"*Comment (en)">
 					description = <"*Additional narrative about the Problem/Diagnosis qualifier values, not captured in other fields. (en)">
-				>
-				["at0081"] = <
-					text = <"*Acute (en)">
-					description = <"*A problem or diagnosis with a rapid onset, a short course, or both. (en)">
-				>
-				["at0094"] = <
-					text = <"*Acute-on-chronic (en)">
-					description = <"*A problem or diagnosis with an acute exacerbation of a chronic condition. (en)">
-				>
-				["at0079"] = <
-					text = <"*Chronic (en)">
-					description = <"*A problem or diagnosis with persistent or long-lasting effects, or that evolves over time. (en)">
 				>
 			>
 		>
@@ -1205,19 +1121,6 @@ Além disso, a opção de texto livre permite o uso de outros conjuntos de valor
 					text = <"Komplikasjon">
 					description = <"En ugunstig utvikling av et problem eller diagnose.">
 				>
-				["at0077"] = <
-					text = <"Forløpsbetegnelse">
-					description = <"Kategorisering som betegner debuten og/eller varigheten og vedvarenheten av problemet eller diagnosen.">
-					comment = <"Definisjoner av akutt og kronisk vil variere fra diagnose til diagnose.">
-				>
-				["at0079"] = <
-					text = <"Kronisk">
-					description = <"Et problem eller diagnose med varige eller langvarige effekter, eller som utvikler seg over tid.">
-				>
-				["at0081"] = <
-					text = <"Akutt">
-					description = <"Et problem eller diagnose med en rask inntreden, kortvarig forløp, eller begge.">
-				>
 				["at0083"] = <
 					text = <"Bedringsfase">
 					description = <"Fase av bedring eller tilheling for et akutt problem eller diagnose.">
@@ -1259,10 +1162,6 @@ Além disso, a opção de texto livre permite o uso de outros conjuntos de valor
 				["at0093"] = <
 					text = <"Ubestemmelig">
 					description = <"Det er ikke mulig å bestemme om sykdomstegnene eller symptomene av sykdommen er reduserte.">
-				>
-				["at0094"] = <
-					text = <"Akutt-på-kronisk">
-					description = <"Et problem eller en diagnose med en akutt forverring av en kronisk tilstand.">
 				>
 				["at0095"] = <
 					text = <"Første forekomst">
@@ -1311,11 +1210,6 @@ Além disso, a opção de texto livre permite o uso de outros conjuntos de valor
 				["at0106"] = <
 					text = <"Ubestemmelig">
 					description = <"Det er ikke mulig å bestemme problemet eller diagnosens progresjon.">
-				>
-				["at0107"] = <
-					text = <"Årsak for en pågående episode">
-					description = <"Årsak for at problemet eller diagnosen ikke bedres som forventet.">
-					comment = <"For eksempel: ufullstendig eller feilslått behandling.">
 				>
 				["at0108"] = <
 					text = <"Ja">
@@ -1427,11 +1321,6 @@ Além disso, a opção de texto livre permite o uso de outros conjuntos de valor
 					text = <"합병증">
 					description = <"문제 또는 진단의 원치않는 발전.">
 				>
-				["at0077"] = <
-					text = <"경과">
-					description = <"문제 또는 진단의 발생의 속도 그리고/또는 기간 그리고 영속성을 반영하는 범주.">
-					comment = <"급성 대 만성의 진단은 각 진단에서 따라 다를 것임.">
-				>
 				["at0083"] = <
 					text = <"치료 단계">
 					description = <"급성 문제 또는 진단이 치료되는 단계">
@@ -1522,11 +1411,6 @@ Além disso, a opção de texto livre permite o uso de outros conjuntos de valor
 					text = <"*Indeterminate (en)">
 					description = <"*It is not possible to determine the progression of the problem or diagnosis. (en)">
 				>
-				["at0107"] = <
-					text = <"*Reason for an ongoing episode (en)">
-					description = <"*Reason for a problem or diagnosis not resolving as expected. (en)">
-					comment = <"*For example: incomplete or failed treatment. (en)">
-				>
 				["at0108"] = <
 					text = <"*Yes (en)">
 					description = <"">
@@ -1538,18 +1422,6 @@ Além disso, a opção de texto livre permite o uso de outros conjuntos de valor
 				["at0110"] = <
 					text = <"*Comment (en)">
 					description = <"*Additional narrative about the Problem/Diagnosis qualifier values, not captured in other fields. (en)">
-				>
-				["at0081"] = <
-					text = <"*Acute (en)">
-					description = <"*A problem or diagnosis with a rapid onset, a short course, or both. (en)">
-				>
-				["at0094"] = <
-					text = <"*Acute-on-chronic (en)">
-					description = <"*A problem or diagnosis with an acute exacerbation of a chronic condition. (en)">
-				>
-				["at0079"] = <
-					text = <"*Chronic (en)">
-					description = <"*A problem or diagnosis with persistent or long-lasting effects, or that evolves over time. (en)">
 				>
 			>
 		>
@@ -1648,19 +1520,6 @@ Falls es nötig sein sollte, erlaubt das Freitextfeld die Benutzung von lokalen 
 					text = <"Komplikation">
 					description = <"Eine ungünstige Entwicklung eines Problems oder einer Diagnose.">
 				>
-				["at0077"] = <
-					text = <"Verlaufsbeschreibung">
-					description = <"Die Kategorie, die die Geschwindigkeit des Auftretens und/oder die Dauer sowie das Anhalten des Problems oder der Diagnose beschreibt.">
-					comment = <"Die Definition von akut und chronisch wird sich von Diagnose zu Diagnose unterscheiden.">
-				>
-				["at0079"] = <
-					text = <"Chronisch">
-					description = <"Ein Problem oder eine Diagnose mit beständigen, lang anhaltenden oder sich im Laufe der Zeit entwickelnden Auswirkungen.">
-				>
-				["at0081"] = <
-					text = <"Akut">
-					description = <"Ein Problem oder eine Diagnose mit schnellem Auftreten, einem kurzen Verlauf oder beidem.">
-				>
 				["at0083"] = <
 					text = <"Genesungsphase">
 					description = <"Die Phase der Heilung eines akuten Problems oder einer Diagnose.">
@@ -1702,10 +1561,6 @@ Falls es nötig sein sollte, erlaubt das Freitextfeld die Benutzung von lokalen 
 				["at0093"] = <
 					text = <"Unbestimmt">
 					description = <"Es ist nicht möglich zu überprüfen, ob eine Minderung der Anzeichen oder der Symptome der Krankheit festgestellt wurde.">
-				>
-				["at0094"] = <
-					text = <"Akut bei chronisch">
-					description = <"Ein Problem oder eine Diagnose mit einem akuten Schub einer chronischen Erkrankung.">
 				>
 				["at0095"] = <
 					text = <"Erstes Auftreten">
@@ -1754,11 +1609,6 @@ Falls es nötig sein sollte, erlaubt das Freitextfeld die Benutzung von lokalen 
 				["at0106"] = <
 					text = <"Unbestimmt">
 					description = <"Es ist nicht möglich, den Fortschritt des Problems oder der Diagnose zu bestimmen.">
-				>
-				["at0107"] = <
-					text = <"Grund für eine andauernde Episode.">
-					description = <"Grund für ein Problem oder eine Diagnose, die nicht wie erwartet behoben wird.">
-					comment = <"Zum Beispiel: unvollständige oder erfolglose Behandlung.">
 				>
 				["at0108"] = <
 					text = <"Ja">
@@ -1870,11 +1720,6 @@ Le diagnosi preliminari o di lavoro sono destinate a rappresentare la scelta pi�
 					text = <"Complicazione">
 					description = <"Un'evoluzione sfavorevole di un problema o di una diagnosi.">
 				>
-				["at0077"] = <
-					text = <"Decorso">
-					description = <"Categoria che riflette la velocità di insorgenza e/o la durata e la persistenza del problema o della diagnosi.">
-					comment = <"Le definizioni di acuto e cronico differiscono per ogni diagnosi.">
-				>
 				["at0083"] = <
 					text = <"Fase risolutoria">
 					description = <"Fase di guarigione per un problema acuto o una diagnosi. ">
@@ -1965,11 +1810,6 @@ Le diagnosi preliminari o di lavoro sono destinate a rappresentare la scelta pi�
 					text = <"*Indeterminate (en)">
 					description = <"*It is not possible to determine the progression of the problem or diagnosis. (en)">
 				>
-				["at0107"] = <
-					text = <"*Reason for an ongoing episode (en)">
-					description = <"*Reason for a problem or diagnosis not resolving as expected. (en)">
-					comment = <"*For example: incomplete or failed treatment. (en)">
-				>
 				["at0108"] = <
 					text = <"*Yes (en)">
 					description = <"">
@@ -1981,18 +1821,6 @@ Le diagnosi preliminari o di lavoro sono destinate a rappresentare la scelta pi�
 				["at0110"] = <
 					text = <"*Comment (en)">
 					description = <"*Additional narrative about the Problem/Diagnosis qualifier values, not captured in other fields. (en)">
-				>
-				["at0081"] = <
-					text = <"*Acute (en)">
-					description = <"*A problem or diagnosis with a rapid onset, a short course, or both. (en)">
-				>
-				["at0094"] = <
-					text = <"*Acute-on-chronic (en)">
-					description = <"*A problem or diagnosis with an acute exacerbation of a chronic condition. (en)">
-				>
-				["at0079"] = <
-					text = <"*Chronic (en)">
-					description = <"*A problem or diagnosis with persistent or long-lasting effects, or that evolves over time. (en)">
 				>
 			>
 		>
@@ -2091,11 +1919,6 @@ Preliminära eller fungerande diagnoser är avsedda att representera det mest tr
 					text = <"Komplikation">
 					description = <"En ogynnsam utveckling av ett problem eller en diagnos.">
 				>
-				["at0077"] = <
-					text = <"Förloppetikett">
-					description = <"Kategori som återspeglar hastigheten på uppkomst och/eller varaktighet och ihållande av problemet eller diagnosen.">
-					comment = <"Definitioner av hur akut kontra kronisk skiljer sig åt för varje diagnos.">
-				>
 				["at0083"] = <
 					text = <"Resolutionsfas">
 					description = <"Läkningsfas för akut problem eller diagnos.">
@@ -2186,11 +2009,6 @@ Preliminära eller fungerande diagnoser är avsedda att representera det mest tr
 					text = <"Indeterminate">
 					description = <"*It is not possible to determine the progression of the problem or diagnosis. (en)">
 				>
-				["at0107"] = <
-					text = <"*Reason for an ongoing episode (en)">
-					description = <"*Reason for a problem or diagnosis not resolving as expected. (en)">
-					comment = <"*For example: incomplete or failed treatment. (en)">
-				>
 				["at0108"] = <
 					text = <"*Yes (en)">
 					description = <"">
@@ -2202,18 +2020,6 @@ Preliminära eller fungerande diagnoser är avsedda att representera det mest tr
 				["at0110"] = <
 					text = <"*Comment (en)">
 					description = <"*Additional narrative about the Problem/Diagnosis qualifier values, not captured in other fields. (en)">
-				>
-				["at0081"] = <
-					text = <"*Acute (en)">
-					description = <"*A problem or diagnosis with a rapid onset, a short course, or both. (en)">
-				>
-				["at0094"] = <
-					text = <"*Acute-on-chronic (en)">
-					description = <"*A problem or diagnosis with an acute exacerbation of a chronic condition. (en)">
-				>
-				["at0079"] = <
-					text = <"*Chronic (en)">
-					description = <"*A problem or diagnosis with persistent or long-lasting effects, or that evolves over time. (en)">
 				>
 			>
 		>
@@ -2312,11 +2118,6 @@ Preliminära eller fungerande diagnoser är avsedda att representera det mest tr
 					text = <"*Complication(en)">
 					description = <"*An unfavorable evolution of a problem or diagnosis.(en)">
 				>
-				["at0077"] = <
-					text = <"*Course label(en)">
-					description = <"*Category reflecting the speed of onset and/or duration and persistence of the problem or diagnosis.(en)">
-					comment = <"*Definitions of acute vs chronic will differ for each diagnosis.(en)">
-				>
 				["at0083"] = <
 					text = <"治疗阶段">
 					description = <"治疗急性疾病或诊断的阶段。">
@@ -2407,11 +2208,6 @@ Preliminära eller fungerande diagnoser är avsedda att representera det mest tr
 					text = <"Indeterminate">
 					description = <"*It is not possible to determine the progression of the problem or diagnosis. (en)">
 				>
-				["at0107"] = <
-					text = <"*Reason for an ongoing episode (en)">
-					description = <"*Reason for a problem or diagnosis not resolving as expected. (en)">
-					comment = <"*For example: incomplete or failed treatment. (en)">
-				>
 				["at0108"] = <
 					text = <"*Yes (en)">
 					description = <"">
@@ -2423,18 +2219,6 @@ Preliminära eller fungerande diagnoser är avsedda att representera det mest tr
 				["at0110"] = <
 					text = <"*Comment (en)">
 					description = <"*Additional narrative about the Problem/Diagnosis qualifier values, not captured in other fields. (en)">
-				>
-				["at0081"] = <
-					text = <"*Acute (en)">
-					description = <"*A problem or diagnosis with a rapid onset, a short course, or both. (en)">
-				>
-				["at0094"] = <
-					text = <"*Acute-on-chronic (en)">
-					description = <"*A problem or diagnosis with an acute exacerbation of a chronic condition. (en)">
-				>
-				["at0079"] = <
-					text = <"*Chronic (en)">
-					description = <"*A problem or diagnosis with persistent or long-lasting effects, or that evolves over time. (en)">
 				>
 			>
 		>
@@ -2535,19 +2319,6 @@ Preliminära eller fungerande diagnoser är avsedda att representera det mest tr
 					text = <"并发症">
 					description = <"问题或诊断的不利演变。">
 				>
-				["at0077"] = <
-					text = <"进程标签">
-					description = <"旨在反映该问题或诊断的肇始速度和/或持续时长和持续性的类别。">
-					comment = <"关于急性与慢性的定义会因每种的诊断而异。">
-				>
-				["at0079"] = <
-					text = <"慢性">
-					description = <"具有持续或长期影响或者会随时间而发生演变的问题或诊断。">
-				>
-				["at0081"] = <
-					text = <"急性">
-					description = <"该问题或诊断肇始（起病）迅速、病程短暂或两者兼而有之。">
-				>
 				["at0083"] = <
 					text = <"解决阶段">
 					description = <"急性问题或诊断的愈合阶段。">
@@ -2589,10 +2360,6 @@ Preliminära eller fungerande diagnoser är avsedda att representera det mest tr
 				["at0093"] = <
 					text = <"不明确">
 					description = <"无法确定该疾病（问题/诊断）的症状或体征是否有所减轻。">
-				>
-				["at0094"] = <
-					text = <"慢加急性">
-					description = <"该问题或诊断的进程属于是慢性疾病急性加重。">
 				>
 				["at0095"] = <
 					text = <"首次出现/发生">
@@ -2642,11 +2409,6 @@ Preliminära eller fungerande diagnoser är avsedda att representera det mest tr
 					text = <"不明确">
 					description = <"无法确定该问题或诊断的进展类别/进展情况。">
 				>
-				["at0107"] = <
-					text = <"持续存在之中节段的原因">
-					description = <"关于该问题或诊断未按预期获得逐渐解决的原因。">
-					comment = <"例如：不完整或失败的治疗。">
-				>
 				["at0108"] = <
 					text = <"是">
 					description = <"">
@@ -2672,7 +2434,6 @@ Preliminära eller fungerande diagnoser är avsedda att representera det mest tr
 				["at0060"] = <[SNOMED-CT::410511007]>
 				["at0061"] = <[SNOMED-CT::410513005]>
 				["at0062"] = <[SNOMED-CT::15240007]>
-				["at0077"] = <[SNOMED-CT::288524001]>
 				["at0018"] = <[SNOMED-CT::14657009]>
 				["at0064"] = <[SNOMED-CT::8319008]>
 				["at0066"] = <[SNOMED-CT::85097005]>
