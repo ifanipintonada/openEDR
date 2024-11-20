@@ -76,7 +76,7 @@ description
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"E34F3CB975887B460840F95ADA73C4FF">
+		["MD5-CAM-1.0.1"] = <"82622ecc5efdfcba6a11818e5c2cd5aa">
 		["build_uid"] = <"f04996a5-f629-421a-867e-3103a3184a1c">
 		["revision"] = <"0.0.1-alpha">
 	>
@@ -93,25 +93,6 @@ definition
 				value matches {
 					DV_CODED_TEXT matches {*}
 				}
-			}
-			ELEMENT[at0003] occurrences matches {0..1} matches {    -- Birth plurality
-				value matches {
-					DV_CODED_TEXT matches {*}
-				}
-			}
-			ELEMENT[at0004] occurrences matches {0..1} matches {    -- Birth order
-				value matches {
-					DV_CODED_TEXT matches {*}
-				}
-			}
-			ELEMENT[at0005] occurrences matches {0..*} matches {    -- Date of birth follow-up indicator
-				value matches {
-					DV_BOOLEAN matches {*}
-				}
-			}
-			allow_archetype CLUSTER[at0006] occurrences matches {0..1} matches {    -- Country specific data
-				include
-					archetype_id/value matches {/.*/}
 			}
 		}
 	}
@@ -132,22 +113,6 @@ ontology
 					text = <"país de nascimento">
 					description = <"O país onde a pessoa nasceu">
 				>
-				["at0003"] = <
-					text = <"Nascimento multiplo">
-					description = <"Um indicador de nascimento múltiplo, mostrando o número total de nascimentos resultantes de uma única gestação">
-				>
-				["at0004"] = <
-					text = <"Ordem de Nascimento">
-					description = <"A ordem seqüencial desta pessoa em um nascimento múltiplo, não importando se foi um nascido vivo ou morto">
-				>
-				["at0005"] = <
-					text = <"Indicador de seguimento da data de nascimento">
-					description = <"Indicador que informa quando a data de nascimento corrente precisa de ser acompanhada para obter uma data mais acurada.">
-				>
-				["at0006"] = <
-					text = <"Dados específicos de um país">
-					description = <"Dados adicionais do nascimento que são específicos de cada país">
-				>
 			>
 		>
 		["en"] = <
@@ -163,22 +128,6 @@ ontology
 				["at0002"] = <
 					text = <"Country of birth">
 					description = <"The country where a person was born">
-				>
-				["at0003"] = <
-					text = <"Birth plurality">
-					description = <"An indicator of multiple birth, showing the total number of births resulting from a single pregnancy">
-				>
-				["at0004"] = <
-					text = <"Birth order">
-					description = <"The sequential order of this person in a multiple birth regardless of live or still birth">
-				>
-				["at0005"] = <
-					text = <"Date of birth follow-up indicator">
-					description = <"Flag that indicates when the current date of birth requires follow-up to obtain a more accurate date">
-				>
-				["at0006"] = <
-					text = <"Country specific data">
-					description = <"Additional birth data that are country specific">
 				>
 			>
 		>
@@ -196,22 +145,6 @@ ontology
 					text = <"País de nacimiento">
 					description = <"El país donde la persona nació.">
 				>
-				["at0003"] = <
-					text = <"Nacimiento múltiple">
-					description = <"Un indicador de nacimiento múltiple, mostrando el número total de nacimiento resultates de una única gestación">
-				>
-				["at0004"] = <
-					text = <"Orden de Nacimiento">
-					description = <"El orden secuencia de la persona un un nacimiento multiple, no importanto si fue un nacido vivo o muerto">
-				>
-				["at0005"] = <
-					text = <"Indicador de seguimiento de la fecha de nacimiento">
-					description = <"Indicador que informa cuando la fecha de nacimiento corriente necesita ser acompañada para obtener una fecha mas precisa.">
-				>
-				["at0006"] = <
-					text = <"Datos específicos de un país">
-					description = <"Datos adicionales del nacimiento que son específicos de cada país.">
-				>
 			>
 		>
 		["de"] = <
@@ -227,26 +160,6 @@ ontology
 				["at0002"] = <
 					text = <"Geburtsland">
 					description = <"Das Geburtsland der Person.">
-				>
-				["at0003"] = <
-					text = <"Anzahl der geborenen Personen">
-					description = <"Ein Indikator für Mehrlingsgeburten. Er gibt die Anzahl der geborenen Personen an, die aus einer Schwangerschaft resultierten.
-">
-				>
-				["at0004"] = <
-					text = <"Geburtsreihenfolge">
-					description = <"Die Nummer der Kinder bei einer Mehrlingsgeburt, unabhängig davon ob es sich um Lebend- oder Totgeburten handelte.">
-				>
-				["at0005"] = <
-					text = <"Ein Indikator für die Nachverfolgung eines Geburtsdatums.">
-					description = <"Kennzeichen das angibt, ob es
-notwendig ist das Geburtsdatum
-nachzuverfolgen, um ein genaueres
-Datum zu erhalten.">
-				>
-				["at0006"] = <
-					text = <"Länderspezifische Daten">
-					description = <"Zusätzliche länderspezifische Daten die Geburt betreffend">
 				>
 			>
 		>
