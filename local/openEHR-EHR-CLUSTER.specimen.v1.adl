@@ -143,6 +143,16 @@ Será finalmente utilizado dentro de um arquétipo de resultado laboratorial par
 			keywords = <"*specimen (en)","*laboratory (en)","*sample (en)","*collection (en)","*sampling (en)","*biopsy (en)","*tissue (en)","*cytology (en)","*microbiology (en)","*pathology (en)","*histopathology (en)","*histology (en)","*lab (en)","*fluid (en)","*smear (en)","*blood (en)","*exudate (en)","*serum (en)","*plasma (en)","*urine (en)","*saliva (en)","*secretion (en)","*synovial (en)","*lymph (en)","*feces (en)","*faeces (en)","*fæces (en)","*ascites (en)","*expectorate (en)","*swab (en)","*breast milk (en)","*pus (en)","*drain fluid (en)","*bone marrow (en)","*culture (en)","*scraping (en)","*aspirate (en)","*phlebotomy (en)","*test (en)","*cerebrospinal fluid (en)","*pleural fluid (en)","*resection (en)","*excision (en)">
 			use = <"Geralmente utilizado dentro de OBSERVATION. laboratory_test.v1 e outros arquétipos tipo Instruction ou Action relacionados.">
 		>
+		["ar-sy"] = <
+			language = <[ISO_639-1::ar-sy]>
+			purpose = <"لتسجيل تفاصيل حول عينة بالمعمل. 
+يستخدم غالبا في سياقات مختلفة, مثلا: في داخل نموذج (تعليمات) ليصف العينة التي ينبغي أخذها, أو يصف العينة المرافقة لطلب معملي. 
+و قد يحدث ذلك في داخل نموذج (فعل), مثال: وصف العينات التي تم أخذها كجزء من إجراء طبي جراحي. 
+و سيستخدم أخيرا في داخل نموذج نتيجة اختبار المعمل ليصف العينة التي يتم تقديم عينة حولها.">
+			keywords = <"*specimen (en)","*laboratory (en)","*sample (en)","*collection (en)","*sampling (en)","*biopsy (en)","*tissue (en)","*cytology (en)","*microbiology (en)","*pathology (en)","*histopathology (en)","*histology (en)","*lab (en)","*fluid (en)","*smear (en)","*blood (en)","*exudate (en)","*serum (en)","*plasma (en)","*urine (en)","*saliva (en)","*secretion (en)","*synovial (en)","*lymph (en)","*feces (en)","*faeces (en)","*fæces (en)","*ascites (en)","*expectorate (en)","*swab (en)","*breast milk (en)","*pus (en)","*drain fluid (en)","*bone marrow (en)","*culture (en)","*scraping (en)","*aspirate (en)","*phlebotomy (en)","*test (en)","*cerebrospinal fluid (en)","*pleural fluid (en)","*resection (en)","*excision (en)">
+			copyright = <"© openEHR Foundation">
+			use = <"يستخدم عادةً في داخل نموذج (ملاحظة. معمل) و النماذج الأخرى تعليمات و فعل المتعلقة بالمعمل.">
+		>
 		["en"] = <
 			language = <[ISO_639-1::en]>
 			purpose = <"To record details about a physical sample collected from, or related to, an individual for the purpose of investigation, examination or analysis.">
@@ -169,16 +179,6 @@ This archetype has been designed to be used with the Specimen container archetyp
 Please note: The term 'collection' used in this archetype always refers to the activity of obtaining a specimen from an individual. It is not intended to represent the transport of the specimen from the individual to the testing laboratory.">
 			misuse = <"Not intended to be used for recording information about specimens that are not related to a specific individual. For example routine water samples from a waterworks, or spot samples from food production facilities.">
 		>
-		["ar-sy"] = <
-			language = <[ISO_639-1::ar-sy]>
-			purpose = <"لتسجيل تفاصيل حول عينة بالمعمل. 
-يستخدم غالبا في سياقات مختلفة, مثلا: في داخل نموذج (تعليمات) ليصف العينة التي ينبغي أخذها, أو يصف العينة المرافقة لطلب معملي. 
-و قد يحدث ذلك في داخل نموذج (فعل), مثال: وصف العينات التي تم أخذها كجزء من إجراء طبي جراحي. 
-و سيستخدم أخيرا في داخل نموذج نتيجة اختبار المعمل ليصف العينة التي يتم تقديم عينة حولها.">
-			keywords = <"*specimen (en)","*laboratory (en)","*sample (en)","*collection (en)","*sampling (en)","*biopsy (en)","*tissue (en)","*cytology (en)","*microbiology (en)","*pathology (en)","*histopathology (en)","*histology (en)","*lab (en)","*fluid (en)","*smear (en)","*blood (en)","*exudate (en)","*serum (en)","*plasma (en)","*urine (en)","*saliva (en)","*secretion (en)","*synovial (en)","*lymph (en)","*feces (en)","*faeces (en)","*fæces (en)","*ascites (en)","*expectorate (en)","*swab (en)","*breast milk (en)","*pus (en)","*drain fluid (en)","*bone marrow (en)","*culture (en)","*scraping (en)","*aspirate (en)","*phlebotomy (en)","*test (en)","*cerebrospinal fluid (en)","*pleural fluid (en)","*resection (en)","*excision (en)">
-			copyright = <"© openEHR Foundation">
-			use = <"يستخدم عادةً في داخل نموذج (ملاحظة. معمل) و النماذج الأخرى تعليمات و فعل المتعلقة بالمعمل.">
-		>
 	>
 	other_details = <
 		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
@@ -189,7 +189,7 @@ Laboratory Technical Framework, Volume 3: Content, Revision 10 [Internet]. USA: 
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"9231ca3aebb0bd1fae67cd0412e9978b">
+		["MD5-CAM-1.0.1"] = <"1bd63dfe0a2d5ae108b291e78ed1ab62">
 		["build_uid"] = <"2135a42f-2b06-49c7-a71b-dd68896fa178">
 		["revision"] = <"1.1.2">
 	>
@@ -199,7 +199,11 @@ definition
 		items cardinality matches {1..*; unordered} matches {
 			ELEMENT[at0029] occurrences matches {0..1} matches {    -- Specimen type
 				value matches {
-					DV_TEXT matches {*}
+					DV_CODED_TEXT matches {
+						defining_code matches {
+							[ac0000]
+						}
+					}
 				}
 			}
 			ELEMENT[at0098] occurrences matches {0..1} matches {    -- Specimen label
@@ -291,6 +295,7 @@ definition
 	}
 
 ontology
+	terminologies_available = <"LOINC", ...>
 	term_definitions = <
 		["ar-sy"] = <
 			items = <
@@ -918,6 +923,20 @@ Använd detta dataelement för att ange prekoordinerade provkällor. Om behoven 
 					description = <"Namn eller etikett som beskriver provet">
 					comment = <"Vanligtvis endast relevant för anatomiska patologiprover. Till exempel: 'Sigmoid resektion med en bit av blåsväggen' eller 'Aggregering av flera hudbiopsifragment'.">
 				>
+			>
+		>
+	>
+	term_binding = <
+		["LOINC"] = <
+			items = <
+				["at0000"] = <[LOINC::66746-9]>
+			>
+		>
+	>
+	constraint_binding = <
+		["LOINC"] = <
+			items = <
+				["ac0000"] = <terminology:http://loinc.org&code=66746-9>
 			>
 		>
 	>
