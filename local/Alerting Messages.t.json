@@ -19,9 +19,9 @@
       "original_namespace" : "",
       "original_publisher" : "",
       "custodian_namespace" : "",
-      "sem_ver" : "2.0.0",
+      "sem_ver" : "2.1.0",
       "build_uid" : "",
-      "MD5-CAM-1.0.1" : "2ef4dc38bdeba2a66dcb6123d537bada",
+      "MD5-CAM-1.0.1" : "7274b7a94996160daf551fdb7d797349",
       "PARENT:MD5-CAM-1.0.1" : "e81d4c77098018f5ca395e12a750d75b"
     },
     "details" : {
@@ -441,7 +441,6 @@
         "children" : [ {
           "@type" : "C_COMPLEX_OBJECT",
           "rmTypeName" : "ELEMENT",
-          "occurrences" : "0..0",
           "nodeId" : "at0023.1",
           "attributes" : [ ],
           "attributeTuples" : [ ]
@@ -1708,7 +1707,23 @@
       "otherDetails" : {
         "PARENT:MD5-CAM-1.0.1" : "ee936d4d5ee6674c040e7abec1711a06"
       },
-      "details" : { }
+      "details" : {
+        "en" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "en"
+          },
+          "purpose" : "To record summary details about an infectious disease and factors related to assessment of immunity.",
+          "keywords" : [ ],
+          "use" : "Use to record summary details about an infectious disease and factors related to assessment of immunity.",
+          "copyright" : "© openEHR Foundation",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        }
+      }
     },
     "parentArchetypeId" : "openEHR-EHR-EVALUATION.infectious_disease_summary.v0",
     "differential" : true,
