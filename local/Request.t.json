@@ -19,9 +19,9 @@
       "original_namespace" : "",
       "original_publisher" : "",
       "custodian_namespace" : "",
-      "sem_ver" : "2.0.0",
+      "sem_ver" : "3.0.0",
       "build_uid" : "",
-      "MD5-CAM-1.0.1" : "a49c860b2b85d42ec11f550a097d5129",
+      "MD5-CAM-1.0.1" : "8249dae07e565116bd7dab0516fbd1ec",
       "PARENT:MD5-CAM-1.0.1" : "c2fbe810052d579a0c7c8c51296280bb"
     },
     "details" : {
@@ -120,6 +120,15 @@
         "unique" : false
       },
       "children" : [ {
+        "@type" : "C_ARCHETYPE_ROOT",
+        "rmTypeName" : "SECTION",
+        "occurrences" : "0..1",
+        "nodeId" : "at0.8",
+        "attributes" : [ ],
+        "attributeTuples" : [ ],
+        "archetypeRef" : "openEHR-EHR-SECTION.ovl-adhoc-002.v1",
+        "referenceType" : "archetypeOverlay"
+      }, {
         "@type" : "C_ARCHETYPE_ROOT",
         "rmTypeName" : "SECTION",
         "occurrences" : "0..1",
@@ -3808,7 +3817,98 @@
       "otherDetails" : {
         "PARENT:MD5-CAM-1.0.1" : "1bd63dfe0a2d5ae108b291e78ed1ab62"
       },
-      "details" : { }
+      "details" : {
+        "de" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "de"
+          },
+          "purpose" : "Zur Darstellung von Details zu einer physischen Probe, die von einer Person zum Zwecke der Untersuchung, Kontrolle oder Analyse entnommen wurde oder sich auf eine Person bezieht.",
+          "keywords" : [ "Probe", "Labor", "Laborprobe", "Entnahme", "Probenahme", "Biopsie", "Gewebe", "Zytologie", "Mikrobiologie", "Pathologie", "Histopathologie", "Histologie", "Laboratorium", "Flüssigkeit", "Abstrich", "Blut", "Exsudat", "Serum", "Plasma", "Urin", "Speichel", "Sekretion", "synovial", "Lymphe", "Kot", "Stuhl", "Exkremente", "Aszites", "Auswurf", "Tupfer", "Muttermilch", "Eiter", "Drainageflüssigkeit", "Knochenmark", "Kultur", "Ausschabung", "Aspirat", "Aderlass", "Test", "zerebrospinale Flüssigkeit", "Pleuraflüssigkeit", "Resektion", "Exzision" ],
+          "use" : "Zur Darstellung von Details zu einer physischen Probe, die von einer Person zum Zwecke der Untersuchung, Kontrolle oder Analyse entnommen wurde oder sich auf eine Person bezieht.\r\n\r\nDieser Archetyp wurde speziell für die Verwendung in den folgenden Anwendungsfällen entwickelt: \r\n- innerhalb von INSTRUCTION.service_request oder einem anderen laborbezogenen INSTRUCTION-Archetyp, um eine zu entnehmende Probe zu beschreiben, oder um eine Probe zu beschreiben, die einer Labordienstleistungsanforderung beigefügt ist;\r\n- innerhalb eines laborbezogenen ACTION-Archetyps zur Beschreibung der Probenentnahme oder einer entnommenen Probe; oder\r\n- innerhalb von OBSERVATION.laboratory_test_result oder anderen OBSERVATION-Archetypen im Laborbericht, um die berichtete Probe zu beschreiben.\r\nDarüber hinaus kann dieser Archetyp auch in andere ENTRY- oder CLUSTER-Archetypen eingebettet werden, wenn dies klinisch angemessen ist. \r\n\r\nDer Detaillierungsgrad dieses Archetyps wird wahrscheinlich den derzeit in den meisten Labors erfassten Levels übersteigen. Es wurde bewusst für eine einfache einzelne Probeentnahme konzipiert, gleichzeitige Entnahme mehrerer Proben mit einer einzigen Anforderung und komplexe Situationen, in denen es erforderlich ist, kleinste Details über die Verarbeitung und Aufteilung einer einzelnen Probe darzustellen.\r\n\r\nDie genaue Semantik mehrerer Elemente dieses Archetyps, kann sich, basierend auf dem vom Container-Archetyp bereitgestellten Kontext, ändern. Beispielsweise ist das Element \"Methode der Probenentnahme\" im Kontext eines INSTRUCTION-Archetyps die angeforderte Entnahmemethode, während das gleiche Element im Kontext eines ACTION-Archetyps im Status \"Abgeschlossen\" die tatsächliche Entnahmemethode ist.\r\n\r\nDieser Archetyp soll mit anderen CLUSTER-Archetypen wie \"Probenbehälter\", \"Probenverarbeitung\" und „Probentransport“ ergänzt werden.\r\n\r\nDieser Archetyp kann zusammen mit dem Archetyp \"Probenbehälter\" auf zwei Arten verwendet werden: \r\n- \"Probenbehälter\" verschachtelt in \"Probe\" (z.B. wenn eine venöse Blutprobe in zwei Röhrchen aufgeteilt wird oder ein ganzer Dickdarm in drei Behälter aufgeteilt wird); oder \r\n- \"Probe\" in \"Probenbehälter\" verschachtelt (z.B. wenn ein Eimer mit Formalin einen Abschnitt des Dickdarms und ein Rektum enthält oder ein Gefäß fünf einzeln markierte Muttermale enthält).\r\n\r\nDer Begriff \"Entnahme\" (EN: collection), das in diesem Archetyp verwendet wird, bezieht sich immer auf die Aktivität, die Probe von einer Person zu erhalten. Er soll nicht den Transport der Probe von der Person zum Testlabor darstellen.",
+          "misuse" : "Nicht zur Erfassung von Informationen über Proben, die sich nicht auf eine bestimmte Person beziehen. Zum Beispiel für routinemäßige Wasserproben aus einem Wasserwerk oder für Stichproben aus Einrichtungen der Lebensmittelproduktion.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "sv" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "sv"
+          },
+          "purpose" : "Att registrera detaljer om ett fysiskt provmaterial som tagits från eller relaterat till en individ för undersökning eller analys.",
+          "keywords" : [ "provmaterial", "laboratoriu", "prov", "provtagning", "samplimg", "biopsi", "vävnad", "kroppsvävnad", "vävnadsprov", "cytologi", "mikobiologi", "patologi", "histopatologi", "histologi", "labb", "vätska", "utstryk", "blod", "exudat", "serum", "plasma", "urin", "saliv", "sekret", "cysta", "lymfa", "avföring", "faeces", "ascites", "hostar upp", "sekret", "kompress", "bröstmjölk", "pus", "var", "dränagevätska", "benmärg", "mikroorganism", "odling", "skrapning", "aspirat", "venesektion", "test", "cerebrospinalvätska", "pleuravätska", "resektion", "excision" ],
+          "use" : "Används för att registrera detaljer om ett fysiskt provmaterial som tagits från eller relaterat till en individ för undersökning eller analys.\r\n\r\nDenna CLUSTER-arketyp är utformad för användning i de tre huvudkontexterna som beskrivs nedan:\r\n- Inom INSTRUCTION.service_request eller annan laboratorierelaterad INSTRUCTION-arketyp för att beskriva ett provmaterial som ska tas eller för att beskriva ett prov som åtföljer en begäran om laboratorietjänst.\r\n- Inom en laboratorierelaterad ACTION-arketyp för att beskriva provtagning eller provtaget material.\r\n- Inom OBSERVATION.laboratory_test_result eller annan laboratorierelaterad OBSERVATION-arketyp för att beskriva det provmaterial som ett laboratorieresultat bygger på.\r\nDessutom kan arketypen också användas inom andra ENTRY- eller CLUSTER-arketyper, där det är kliniskt lämpligt.\r\n\r\nDetaljnivån i denna arketyp överstiger sannolikt det som för närvarande registreras i de flesta laboratorier. Arketypen är avsedd att vara användbar för en enkel provtagning, samtidig provtagning av flera provmaterial utifrån en och samma beställning eller komplexa situationer där minsta detalj om beredning och uppdelning av ett provmaterial måste registreras.\r\n\r\nDe specifika betydelserna för flera element i den här arketypen kommer att ändras beroende på den överordnade arketyp där arketypen för provmaterial är infogad. Till exempel kommer elementet \"Provtagningsmetod\" i samband med en INSTRUCTION-arketyp att vara den erforderliga provtagningsmetoden, medan samma element i sammanhanget av en ACTION-arketyp i det \"färdiga\" tillståndet är den faktiska provtagningsmetod som används.\r\n\r\nDenna arketyp kompletteras av andra CLUSTER-arketyper för begrepp som exempelvis behållare, provberedning, transport och lagring av provmaterial.\r\n\r\nDen här arketypen har utformats för att användas med arketypen ”Specimen Container” på två huvudsakliga sätt:\r\n- ”Specimen Container” nästlad i ”Specimen” (till exempel när ett venöst blodprov är uppdelat mellan två injektionsflaskor eller om en hel tjocktarm är uppdelad i tre hinkar) eller\r\n- \"Specimen\" nästlad i \" Specimen Container\" (till exempel när en hink med formalin innehåller en sektion av tjocktarmen och en rektum).\r\n\r\nOBS! Termen \"provtagning\" i denna arketyp är avsedd att betyda aktiviteten för att samla in provmaterial från en individ. Det är inte avsett att representera transporten från individen till laboratoriet.\r\n",
+          "misuse" : "Ej avsedd att användas för att registrera information om provmaterial som inte är relaterat till en viss individ, såsom exempelvis rutinprover från vattenverk eller slumpmässiga prover från livsmedelsproduktion.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "nb" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "nb"
+          },
+          "purpose" : "For å registrere detaljer om et fysisk prøvemateriale tatt fra eller relatert til et individ, for undersøkelse eller analyse.",
+          "keywords" : [ "laboratorium", "prøve", "prøvetaking", "laboratorieprøve", "prøvemateriale", "prøveeksemplar", "preparat", "prøvesamling", "biopsi", "vevsprøve", "celleprøve", "mikrobiologi", "patologi", "histologi", "lab", "væske", "utstryk", "blod", "sårvæske", "serum", "plasma", "urin", "spytt", "sekret,", "leddvæske", "lymfe", "avføring", "ascites", "ekspektorat", "pensel", "morsmelk", "puss", "drensvæske", "beinmarg", "kultur", "avskrap", "aspirat" ],
+          "use" : "Brukes for å registrere detaljer om et fysisk prøvemateriale tatt fra eller relatert til et individ, for undersøkelse eller analyse.\r\n\r\nDenne CLUSTER-arketypen er laget for å brukes i de tre hovedsammenhengene beskrevet under:\r\n- Innenfor INSTRUCTION.service_request eller en annen laboratorierelatert INSTRUCTION-arketype for å beskrive et prøvemateriale som skal tas, eller for å beskrive prøvematerialet som ligger ved en laboratorierekvisisjon.\r\n- Innenfor en laboratorierelatert ACTION-arketype for å beskrive prøvetaking eller et prøvemateriale som er tatt\r\n- Innenfor OBSERVATION.laboratory_test_result eller en annen laboratorierelatert OBSERVATION-arketype for å beskrive prøvematerialet som ligger til grunn for et laboratorieresultat.\r\nI tillegg kan arketypen også brukes innenfor andre ENTRY- eller CLUSTER-arketyper, der det er klinisk passende.\r\n\r\nDet er sannsynlig at detaljnivået i denne arketypen overgår nåværende dataregistrering i de fleste laboratorier. Den er ment for å være brukbar både for en enkel prøvetaking, samtidig innhenting av flere prøvematerialer med én rekvisisjon, og komplekse situasjoner det det må registreres mye detaljer om preparering og oppdeling av et prøvemateriale.\r\n\r\nDe spesifikke betydningene av flere elementer i denne arketypen vil endre seg ut fra den overordnede arketypen som Prøvemateriale-arketypen settes inn i. For eksempel vil elementet \"Prøvetakingsmetode\" i kontekst av en INSTRUCTION-arketype være den rekvirerte prøvetakingsmetoden, mens det samme elementet i kontekst av en ACTION-arketype i tilstanden \"completed\" være den faktiske prøvetakingsmetoden som ble brukt.\r\n\r\nDenne arketypen kompletteres av andre CLUSTER-arketyper for konsepter som Prøvebeholder, Prøvepreparering, og transport og lagring av prøvemateriale.\r\n\r\nDenne arketypen kan brukes sammen med Prøvebeholder-arketypen på to hovedmåter:\r\n- Ved nøsting av \"Prøvebeholder\" inni \"Prøvemateriale\" (for eksempel når et vakuumglass med venøst blod fordeles på to mindre glass, eller en hel tykktarm deles på tre bøtter)\r\n- Med \"Prøvemateriale\" nøstet inni \"Prøvebeholder\" (for eksempel når en bøtte inneholder en seksjon av en tykktarm og en endetarm, eller et glass inneholder fem individuelt merkede føflekker)\r\n\r\nNB! Uttrykket \"prøvetaking\" er i denne arketypen ment å bety aktiviteten å ta en prøve fra et individ. Det er ikke ment å representere transporten fra individet til laboratoriet.",
+          "misuse" : "Ikke ment å brukes til å registrere informasjon om prøvemateriale som ikke er relaterte til et spesifikt individ, som for eksempel rutineprøver fra vannverk eller stikkprøver fra matvareproduksjon.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "pt-br" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "pt-br"
+          },
+          "purpose" : "Para gravar detalhes de um espécime laboratorial. Será frequentemente usado em diferentes contextos, p.e, dentro de um arquétipo tipo Instruction para descrever os espécimes que devem ser obtidos, ou descrevendo o espécime que acompanha a solicitação laboratorial. Pode ocorre dentro de um arquétipo tipo Action, p.e., descrevendo espécimes retirados como parte de um procedimento cirúrgico. \r\n\r\nSerá finalmente utilizado dentro de um arquétipo de resultado laboratorial para descrever o espécime reportado.",
+          "keywords" : [ "*specimen (en)", "*laboratory (en)", "*sample (en)", "*collection (en)", "*sampling (en)", "*biopsy (en)", "*tissue (en)", "*cytology (en)", "*microbiology (en)", "*pathology (en)", "*histopathology (en)", "*histology (en)", "*lab (en)", "*fluid (en)", "*smear (en)", "*blood (en)", "*exudate (en)", "*serum (en)", "*plasma (en)", "*urine (en)", "*saliva (en)", "*secretion (en)", "*synovial (en)", "*lymph (en)", "*feces (en)", "*faeces (en)", "*fæces (en)", "*ascites (en)", "*expectorate (en)", "*swab (en)", "*breast milk (en)", "*pus (en)", "*drain fluid (en)", "*bone marrow (en)", "*culture (en)", "*scraping (en)", "*aspirate (en)", "*phlebotomy (en)", "*test (en)", "*cerebrospinal fluid (en)", "*pleural fluid (en)", "*resection (en)", "*excision (en)" ],
+          "use" : "Geralmente utilizado dentro de OBSERVATION. laboratory_test.v1 e outros arquétipos tipo Instruction ou Action relacionados.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "ar-sy" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "ar-sy"
+          },
+          "purpose" : "لتسجيل تفاصيل حول عينة بالمعمل. \r\nيستخدم غالبا في سياقات مختلفة, مثلا: في داخل نموذج (تعليمات) ليصف العينة التي ينبغي أخذها, أو يصف العينة المرافقة لطلب معملي. \r\nو قد يحدث ذلك في داخل نموذج (فعل), مثال: وصف العينات التي تم أخذها كجزء من إجراء طبي جراحي. \r\nو سيستخدم أخيرا في داخل نموذج نتيجة اختبار المعمل ليصف العينة التي يتم تقديم عينة حولها.",
+          "keywords" : [ "*specimen (en)", "*laboratory (en)", "*sample (en)", "*collection (en)", "*sampling (en)", "*biopsy (en)", "*tissue (en)", "*cytology (en)", "*microbiology (en)", "*pathology (en)", "*histopathology (en)", "*histology (en)", "*lab (en)", "*fluid (en)", "*smear (en)", "*blood (en)", "*exudate (en)", "*serum (en)", "*plasma (en)", "*urine (en)", "*saliva (en)", "*secretion (en)", "*synovial (en)", "*lymph (en)", "*feces (en)", "*faeces (en)", "*fæces (en)", "*ascites (en)", "*expectorate (en)", "*swab (en)", "*breast milk (en)", "*pus (en)", "*drain fluid (en)", "*bone marrow (en)", "*culture (en)", "*scraping (en)", "*aspirate (en)", "*phlebotomy (en)", "*test (en)", "*cerebrospinal fluid (en)", "*pleural fluid (en)", "*resection (en)", "*excision (en)" ],
+          "use" : "يستخدم عادةً في داخل نموذج (ملاحظة. معمل) و النماذج الأخرى تعليمات و فعل المتعلقة بالمعمل.",
+          "copyright" : "© openEHR Foundation",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "en" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "en"
+          },
+          "purpose" : "To record details about a physical sample collected from, or related to, an individual for the purpose of investigation, examination or analysis.",
+          "keywords" : [ "specimen", "laboratory", "sample", "collection", "sampling", "biopsy", "tissue", "cytology", "microbiology", "pathology", "histopathology", "histology", "lab", "fluid", "smear", "blood", "exudate", "serum", "plasma", "urine", "saliva", "secretion", "synovial", "lymph", "feces", "faeces", "fæces", "ascites", "expectorate", "swab", "breast milk", "pus", "drain fluid", "bone marrow", "culture", "scraping", "aspirate", "phlebotomy", "test", "cerebrospinal fluid", "pleural fluid", "resection", "excision" ],
+          "use" : "Use to record details about a physical sample collected from, or related to, an individual for the purpose of investigation, examination or analysis.\r\n\r\nThis archetype has been specifically designed to be used in the following use cases:\r\n- within INSTRUCTION.service_request or another laboratory-related INSTRUCTION archetype to describe a specimen that is to be collected, or to describe a specimen that accompanies a laboratory service request; \r\n- within a laboratory-related ACTION archetype to describe specimen collection or a specimen that has been collected; or\r\n- within OBSERVATION.laboratory_test_result or other laboratory reporting OBSERVATION archetypes to describe the specimen being reported.\r\nIn addition this archetype can also be nested within other ENTRY or CLUSTER archetypes, where clinically appropriate.\r\n\r\nThe level of detail in this archetype is likely to exceed that currently collected in most laboratories. It has deliberately been designed to cater for a simple, single specimen collection; simultaneous collection of multiple specimens with a single request; and complex situations where it is required to record minute detail about the preparation and subdivision of a single specimen.\r\n\r\nThe exact semantics of several elements of this archetype may change based on the context provided by the parent archetype in which it is nested. For example, the 'Collection method' element in the context of an INSTRUCTION archetype is the requested collection method, while the same element in the context of an ACTION archetype in the 'completed' state is the actual collection method.\r\n\r\nOther complementary archetypes will carry the detail about 'Specimen container', 'Specimen preparation', and 'Specimen transport'.\r\n\r\nThis archetype has been designed to be used with the Specimen container archetype in two main ways: \r\n- 'Specimen container' nested within 'Specimen' (for example when a venous blood specimen is divided between two vials, or a whole large intestine is divided into three buckets); or\r\n- 'Specimen' nested within 'Specimen container' (for example when a bucket of formalin contains a section of large intestine and a rectum, or a jar contains five individually marked moles).\r\n\r\nPlease note: The term 'collection' used in this archetype always refers to the activity of obtaining a specimen from an individual. It is not intended to represent the transport of the specimen from the individual to the testing laboratory.",
+          "misuse" : "Not intended to be used for recording information about specimens that are not related to a specific individual. For example routine water samples from a waterworks, or spot samples from food production facilities.",
+          "copyright" : "© openEHR Foundation",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        }
+      }
     },
     "annotations" : {
       "@type" : "RESOURCE_ANNOTATIONS",
@@ -4065,7 +4165,40 @@
       "otherDetails" : {
         "PARENT:MD5-CAM-1.0.1" : "4e4cb7284193ffcb0deb22a1318116cb"
       },
-      "details" : { }
+      "details" : {
+        "nb" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "nb"
+          },
+          "purpose" : "For registrering av funn observert under undersøkelse av en kroppsvæske på et kroppssted eller fra en navngitt kroppskilde. Undersøkelsen gjøres vanligvis som en del av en fysisk undersøkelse utført av en kliniker.",
+          "keywords" : [ "kroppsvæske", "fostervann", "blod", "plasma", "cerebrospinal", "væske", "utflod", "urin", "puss", "spytt", "ekspektorat", "leddvæske", "svette", "oppkast", "mage", "diare", "slim", "spinalvæske", "galle", "ekskret", "morsmelk", "mucus", "magesyre", "sæd", "sekret", "ascites", "serøs", "intraokulærvæske", "dialysat", "pericardvæske", "pleuravæske", "tårevæske" ],
+          "use" : "Brukes for å registrere en fritekstbeskrivelse, strukturerte detaljer og klinisk fortolkning av funn observert under en undersøkelse av en kroppsvæske på et navngitt kroppssted eller fra en nanvgitt kroppskilde. Undersøkelsen gjøres vanligvis som en del av en fysisk undersøkelse utført av en kliniker.\r\n\r\nArketypen er utviklet spesifikt for å benyttes som et rammeverk for registrering av detaljer om en undersøkelse av en hvilken som helst kroppsvæske. For å registrere funn for:\r\n\r\n- For visse typer væske med spesielle egenskaper som man vil registrere strukturert, er det meningen å nøste spesifikke CLUSTER-arketyper i SLOT'et \"Spesifikke funn\". For eksempel vil ytterligere detaljer knyttet til klare væsker registreres i en egen CLUSTER-arketype for dette formålet. \r\n\r\n- Kroppsvæsker som består av flere komponenter som for eksempel fostervann registrerer man en instans av arketypen for å beskrive fostervannet, ytterligere instanser av den samme arketypen nøstes i dataelementet \"Spesifikke detaljer\" for å representere blod, mekonium og puss.\r\n\r\nKroppsvæsker referer vanligvis til væsker som er utskilt eller sekrert fra menneskekroppen og arketypen støtter detaljert registrering av:\r\n- Vanlige fysiologiske væsker.\r\n- Fysiologiske væsker som forandrer seg som følge av en patologisk prosess.\r\n- Væsker som genereres som en del av en patologisk prosess i kroppen.\r\n\r\nEksempler på kroppsvæsker kan være:\r\n- Fostervann\r\n- Blod eller plasma\r\n- Cerebrospinalvæske\r\n- Utflod\r\n- Urin\r\n- Puss\r\n- Spytt\r\n- Ekspektorat\r\n- Leddvæske\r\n- Svette\r\n- Oppkast\r\n\r\nArketypen er vil i de fleste tilfeller brukes i hos levende individer, men den kan også benyttes for registrering av funn ved obduksjon.\r\n\r\nKroppsted eller kroppskilde vil vanligvis identifiseres i konteksten arketypen nøstes i, eksempler på kontekst kan være, men ikke begrenset til:\r\n- I SLOT'et \"Funn ved undersøkelse\" i mange av de spesifikke undersøkelsesarketypene og relaterterte inspeksjons- og palpasjonsarketypene.\r\n- i SLOT'et for \"Physical properties\" i arketypen CLUSTER.specimen \r\n- I SLOTet \"Tilleggsinformasjon\" i arketypene OBSERVATION.urinanalysis og OBSERVATION.fluid_output\r\n- I andre OBSERVATION eller CLUSTER arketyper der dette er klinisk formålstjenlig.\r\n\r\nArketypen CLUSTER.exclusion_exam arketypen kan nøstes i SLOTet \"Undersøkelse ikke utført\" for å gi mulighet for en eksplisitt registrering av at en undersøkelse ikke er utført.\r\n\r\nBruk for å innlemme fritekstbeskrivelser av kliniske funn fra eksisterende eller tidligere kliniske systemer i et arketypeformat ved å bruke dataelementet \"Klinisk beskrivelse\".",
+          "misuse" : "Brukes ikke for å registrere målinger av væskevolum - bruk OBSERVATION-arketyper for dette formålet. For eksempel OBSERVATION.fluid_output.\r\n\r\nBrukes ikke for å registrere detaljer om ikke-fysiologiske væsker som er tilført kroppen eksternt fra, f.eks. kontrastvæske.\r\n\r\nBrukes ikke for å registrere en klinisk anamnese. Bruk spesifikke OBSERVATION eller CLUSTER arketyper for dette formålet. For eksempel OBSERVATION.story og CLUSTER.symptom_sign.\r\n\r\nBrukes ikke for å registrere resultat av en urinanalyse - bruk OBSERVATION.urinalysis. Denne arketypen kan legges til i SLOT'et \"Ytterliger detaljer\" for å gi ytterligere kontekst til prøveresultatet.\r\n\r\nBrukes ikke for å registrere andre detaljer om en prøve for bruk i laboratorier. Bruk CLUSTER.specimen for dette formålet. NB: På tross av dette unntaket, er det hensiktsmessig å benytte denne arketypen i SLOT'et \"Physical properties\" i CLUSTER.specimen for å beskrive de fysiske egenskapene til kroppsvæsken.\r\n\r\nBrukes ikke til å registrere detaljer om undersøkelse av fæces - bruk CLUSTER.examination_faeces.",
+          "copyright" : "© openEHR Foundation",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "en" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "en"
+          },
+          "purpose" : "To record the findings observed during the macroscopic inspection (including odour) of a body fluid.",
+          "keywords" : [ "biofluid", "amniotic", "cerebrospinal", "fluid", "discharge", "urine", "pus", "saliva", "sputum", "synovial", "sweat", "vomit", "gastric", "diarrhoea", "mucous", "mucus", "spinal", "bile", "breast", "milk", "gastric", "acid", "semen", "secretion", "ascites", "serous", "intraocular", "diasylate", "synovial", "bodily", "pericardial", "pleural" ],
+          "use" : "Use to record a narrative description, structured details and clinical interpretation about findings observed during the inspection (including odour) of a body fluid.\r\n\r\nThis archetype has been specifically designed to be used as the framework for recording details about examination of any body fluid and the context of the anatomical site or source of the body fluid will be carried in the archetypes in which it is nested, including but not limited to:\r\n- in the 'Examination findings' SLOT within many of the CLUSTER.exam family of archetypes and related inspection archetypes;\r\n- in the 'Physical properties' SLOT within the CLUSTER.specimen archetype; and\r\n- within other OBSERVATION or CLUSTER archetypes, where clinically appropriate.\r\n\r\nIn order to record examination findings for:\r\n- specific types of fluids with unique attributes that need to be recorded, it is intended that a specific CLUSTER archetype for this purpose be nested within the 'Specific findings' SLOT. For example additional details only relevant to clear fluids will be recorded within a specific archetype for this purpose that will effectively extend this generic body fluid archetype; and \r\n- multicomponent body fluids such as amniotic fluid that may also contain obvious blood, meconium or pus, it is intended that one instance of this archetype be used to describe the amniotic fluid overall and additional instances of this same archetype will be nested with the 'Specific findings' SLOT to represent each of blood, meconium and pus.\r\n\r\nBody fluid is a liquid that originates from the human body, and this archetype is intended to support detailed description of:\r\n- normal physiological fluids; \r\n- physiological fluids that may be altered due to a pathological process; and\r\n- fluids generated as part of a pathological process within the body.\r\n\r\nExtracellular body fluid examples include, but are not limited to:\r\n- Amniotic fluid;\r\n- Blood and plasma;\r\n- Cerebrospinal fluid;\r\n- Discharge;\r\n- Urine;\r\n- Pus;\r\n- Saliva;\r\n- Sputum;\r\n- Synovial fluid;\r\n- Sweat; and\r\n- Vomitus.\r\n\r\nThe CLUSTER.exclusion_exam archetype can be nested within the 'Examination not done' SLOT to optionally record explicit details about the examination not being performed.\r\n\r\nWhile this archetype will most likely be used in the context of a living subject, it is also appropriate to use in recording autopsy findings.\r\n\r\nUse to incorporate the narrative descriptions of clinical findings within existing or legacy clinical systems into an archetyped format, using the 'Clinical description' data element.",
+          "misuse" : "Not to be used to record the inspection of urine - use the specialisation CLUSTER.inspection_body_fluid-urine for this purpose.\r\n\r\nNot to be used to record the inspection of sputum - use the specialisation CLUSTER.inspection_body_fluid-sputum for this purpose.\r\n\r\nNot to be used to record the inspection of blood or blood clots, but only to record the presence of blood or blood clots within other fluids.\r\n\r\nNot to be used for recording measurements of fluid volume - use OBSERVATION archetypes for this purpose. For example: OBSERVATION.fluid_output.\r\n\r\nNot to be used to record details about a non-physiological fluid.\r\n\r\nNot to be used for recording the clinical history - use specific OBSERVATION and CLUSTER archetypes. For example: OBSERVATION.story and CLUSTER.symptom_sign.\r\n\r\nNot to be used to record the results of a urinalysis test - use OBSERVATION.urinalysis for this purpose.\r\n\r\nNot to be used to record the other details about a specimen for use in laboratory testing - use CLUSTER.specimen. Note: despite this exclusion, it is reasonable to use this archetype within the CLUSTER.specimen to describe physical properties about a body fluid as noted above.\r\n\r\nNot to be used to record the details about examination of faeces - use the CLUSTER.examination_faeces.",
+          "copyright" : "© openEHR Foundation",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        }
+      }
     },
     "parentArchetypeId" : "openEHR-EHR-CLUSTER.inspection_body_fluid.v0",
     "differential" : true,
@@ -4143,7 +4276,99 @@
       "otherDetails" : {
         "PARENT:MD5-CAM-1.0.1" : "af215ccd20407971caf4363c3731e6fa"
       },
-      "details" : { }
+      "details" : {
+        "de" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "de"
+          },
+          "purpose" : "Zur Darstellung einer Mediendatei erworbenen und verwendeten im Bereich des Gesundheitswesens sowie der Informationen zu den zugehörigen Metadaten.",
+          "keywords" : [ "Bild", "Audio", "Text", "Video", "Anwendung", "Datei", "Multimedia", "DICOM", "digital", "Dokument", "Foto", "Sprachaufnahme" ],
+          "use" : "Zur Darstellung einer Mediendatei erworbenen und verwendeten im Bereich des Gesundheitswesens sowie der Informationen zu den zugehörigen Metadaten.\r\n\r\nDie Absicht dieses Archetyps besteht nur darin, die Mediendatei und die Metadaten, die ihre Erfassung beschreiben, darzustellen. Dieser Archetyp wird in einen anderen Archetyp verschachtelt, normalerweise ein OBSERVATION- oder ACTION-Archetyp, der den Kontext und die Umstände im Zusammenhang mit der Erfassung der Mediendatei enthält. Zum Beispiel werden Details zu Modalität, Ansicht oder Aspekt eines Röntgenbildes und DICOM-Details im Archetyp OBSERVATION.imaging_exam_result dargestellt.\r\n\r\nDie Beispiele umfassen, sind aber nicht beschränkt auf:\r\n- Ein Foto einer Verletzung;\r\n- Ein Diagramm der Lokalisation eines bestimmten klinischen Befundes;\r\n- Ein digitales Ergebnis der Röntgen- oder CT-Aufnahme;\r\n- Eine Audio- oder Videoaufzeichnung eines Interviews;\r\n- Gescannte pathologische Schnitte;\r\n- Datenausgabe von einem klinischen Gerät, wie z.B. einem EKG-Gerät; oder\r\n- Ein gescanntes Bild von handgeschriebenen klinischen Notizen.\r\n\r\nDas Datenelement „Inhalt“ ermöglicht mithilfe des Multimedia-Datentyps die Erfassung und Speicherung der Mediendatei in der Gesundheitsakte. Der Multimedia-Datentyp hat viele RM-Attribute wie die Dateigröße und URI zu einer externen Quelle. Siehe https://specifications.openehr.org/releases/RM/latest/data_types.html#_dv_multimedia_class.\r\n\r\nWenn mehr als eine Mediendatei erfasst wurde, z. B. „Vorher“- und „Nachher“-Bilder einer Wunde, verwenden Sie eine Instanz dieses Archetyps, um jede Mediendatei darzustellen.\r\n\r\nWenn eine Reihe von Mediendateien als einzelnes Element dargestellt wird, z. B. ein CT-Scan, kann eine Instanz dieses Archetyps verwendet werden, um einen URI-Pfad zu der Gruppe darzustellen.\r\n\r\n\r\n\r\n",
+          "misuse" : "Nicht zur Darstellung von Informationen, Lehr- oder Schulungsmaterial verwenden, die außerhalb des Gesundheitsprozesses generiert werden, z. B. Broschüren zur Patientenaufklärung, die dem Patienten oder der Pflegeperson zur Verfügung gestellt werden. Verwenden Sie für diesen Zweck den Archetyp CLUSTER.information_resource.\r\n\r\nNicht zur Darstellung von Referenz auf eine externe digitale Ressource, die als Quelle für maßgebliche Informationen oder Experteninformationen verwendet wird. Verwenden Sie für diesen Zweck den Archetyp CLUSTER.knowledge_base_reference.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "sv" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "sv"
+          },
+          "purpose" : "Att registrera en mediefil som förvärvats eller använts som en del i en vårdprocess, samt detaljer om filens metadata.",
+          "keywords" : [ "bild", "foto", "ljud", "text", "video", "film", "applikation", "fil", "multimedia", "DICOM", "digital", "dokument", "röst" ],
+          "use" : "Används för att registrera en mediefil som förvärvats eller används som del i en vårdprocess, samt detaljer om filens metadata. \r\n\r\nAvsikten för denna arketyp är att inneha mediefilen och dess metadata som beskriver insamlingen. Arketypen kan nästlas i en annan arketyp, vanligtvis en OBSERVATION eller ACTION arketyp som innehar sammanhanget och omständigheterna för registreringen av mediefilen. Till exempel detaljer om modaliteten, synvinkel eller aspekt av en röntgenbild eller detaljer rörande DICOM-filer kan lagras i arketypen OBSERVATION.imaging_exam_result.\r\n\r\nExempel inkluderar, men är inte begränsade till:\r\n-Ett foto av en skada\r\n-Ett diagram över anatomisk lokalisation för ett specifikt kliniskt fynd\r\n-En röntgenbild\r\n-En ljud- eller videoinspelning av en intervju\r\n-Inskannade histopatologiska glas\r\n-Data från medicinsk utrustning, så som en EKG-mätare, eller\r\n-Inskannat foto av pappersdokumentation eller handskrivna kliniska anteckningar\r\n\r\nDatafältet \"Innehåll\" tillåter mediefilen att förvärvas och lagras i journalen via datatypen Multimedia. Multimedia datatypen har flertalet RM attribut som filstorlek och URI till en extern källa. Se https://specifications.openehr.org/releases/RM/latest/data_types.html#_dv_multimedia_class.\r\n\r\nOm mer än en mediefil har registrerats, såsom \"före\" och \"efter\" bilder av ett sår, använd separata instanser av denna arketyp för att representera varje mediefil.\r\n\r\nOm en serie av mediefiler representeras av ett enda objekt, till exempel en datortomografi, kan en instans av denna arketyp användas för att representera en URI sträng till filen.",
+          "misuse" : "Ska inte användas för att representera information, instruktions- eller undervisningsmaterial tilldelade till en patient eller deras vårdgivare, till exempel som utbildningsbroschyrer. Använd CLUSTER.information_resource för detta syfte.\r\n\r\nSka inte användas för att registrera en referens till en databas. Använd CLUSTER.knowledge_base_reference för detta syfte.\r\n\r\n",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "nb" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "nb"
+          },
+          "purpose" : "For å dokumentere detaljer om en mediafil, samt tilknyttede metadata, som er ervervet eller brukt i forbindelse med en helsetjeneste.",
+          "keywords" : [ "bilde", "foto", "audio", "tekstfil", "video", "applikasjon", "fil", "multimedia", "DICOM", "digital", "dokument", "skannet", "scannet", "lyd" ],
+          "use" : "Brukes for å dokumentere detaljer om en mediafil, samt tilknyttede metadata, som er ervervet eller brukt i forbindelse med en helsetjeneste.\r\n\r\nHensikten med denne arketypen er kun å være en bærer for mediafilen og metadataene som beskriver innholdet i filen. Denne arketypen vil være nøstet i en annen arketype, vanligvis en OBSERVATION eller ACTION arketype, som vil inneholde konteksten og omstendighetene knyttet til hvordan innholdet ble dannet. For eksempel blir detaljer om modalitet, visning eller aspekt av et radiologisk bilde og DICOM-detaljer dokumentert i arketypen OBSERVATION.imaging_exam_result.\r\n\r\nEksempler inkluderer, men er ikke begrenset til:\r\n- Et bilde av en skade;\r\n- Et diagram over plasseringen av et spesifikt klinisk funn;\r\n- Et digital radiologisk bilde;\r\n- Et lyd- eller videoopptak av et intervju;\r\n- Et skannet objektglass til mikroskopisk diagnostikk;\r\n- Data fra medisinsk utstyr, for eksempel en EKG-apparat;\r\n- Et skannet bilde av papirdokumentasjon eller håndskrevne kliniske notater.\r\n\r\nDataelementet \"Innhold\" gjør det mulig å fange og lagre mediafiler i den elektroniske pasientjournalen (EPJ) ved hjelp av multimedia-datatypen. Multimedia-datatypen har mange RM-attributter, for eksempel filstørrelsen og URI til en ekstern kilde. Se https://specifications.openehr.org/releases/RM/latest/data_types.html#_dv_multimedia_class.\r\n\r\nHvis mer enn én mediafil skal dokumenteres, for eksempel bilder før og etter behandling av et sår, bruk en forekomst av denne arketypen for hvert bilde.\r\n\r\nHvis en serie mediafiler er representert som et enkelt element, for eksempel en CT-skanning, kan en forekomst av denne arketypen brukes til å representere en URI til gruppen/serien.",
+          "misuse" : "Skal ikke brukes til å representere informasjon, instruksjons- eller utdanningsmateriale levert til en person, eller dens omsorgsperson, for eksempel brosjyrer for pasientopplæring. Bruk CLUSTER.information_resource til dette formålet.\r\n\r\nSkal ikke brukes til å registrere en referanse til en kunnskapsbase - bruk CLUSTER. Knowledge_base_reference for dette formålet.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "sk" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "sk"
+          },
+          "purpose" : "Na zaznamenanie mediálneho súboru, ktorý sa získa alebo použije ako súčasť procesu zdravotnej starostlivosti, a podrobností o súvisiacich metadátach.",
+          "keywords" : [ "obrázky", "zvuky", "text", "video", "aplikácie", "súbory", "multimédiá", "zvuky", "DICOM", "digital", "dokument", "fotka", "hlasový záznam" ],
+          "use" : "Používa sa na zaznamenanie mediálneho súboru, ktorý sa získa alebo použije ako súčasť procesu zdravotnej starostlivosti, a podrobností o súvisiacich metadátach.\r\n\r\nZámerom tohto archetypu je iba uchovávať mediálny súbor a metadáta popisujúce jeho zachytenie. Tento archetyp bude vnorený do iného archetypu, zvyčajne POZOROVANIA alebo AKCIE, ktorá bude obsahovať kontext a okolnosti súvisiace so zachytením mediálneho súboru. Napríklad podrobnosti o modalite, zobrazení alebo aspekte rádiografickej snímky a podrobnosti DICOM budú zachytené v rámci archetypu OBSERVATION.imaging_exam_result.\r\n\r\nPríklady zahŕňajú, ale nie sú obmedzené na:\r\n- fotografia zranenia;\r\n- Schéma lokalizácie konkrétneho klinického nálezu;\r\n- rádiologický obraz;\r\n- audio alebo video záznam rozhovoru;\r\n- Naskenovaný patologický diapozitív;\r\n- Výstup údajov z klinického zariadenia, ako je EKG prístroj; alebo\r\n- Naskenovaný obraz papierovej dokumentácie alebo ručne písané klinické poznámky.\r\n\r\nÚdajový prvok „Obsah“ umožňuje zaznamenať a uložiť mediálny súbor do zdravotného záznamu pomocou dátového typu Multimedia. Dátový typ Multimedia má veľa atribútov RM, ako je veľkosť súboru a URI pre externý zdroj. Pozrite si https://specifications.openehr.org/releases/RM/latest/data_types.html#_dv_multimedia_class.\r\n\r\nAk bol zachytený viac ako jeden mediálny súbor, napríklad obrázky rany „pred“ a „po“, použite na reprezentáciu každého mediálneho súboru samostatnú inštanciu tohto archetypu.\r\n\r\nAk je séria mediálnych súborov reprezentovaná ako jedna položka, ako napríklad CT sken, tak sa môže jedna inštancia tohto archetypu použiť na reprezentáciu cesty pomocou URI k skupine.",
+          "misuse" : "Nesmie sa používať na reprezentáciu informácií, inštruktážnych alebo vzdelávacích materiálov dodávaných jednotlivcom alebo ich opatrovateľom, napríklad letáky s informáciami pre pacientov. Na tento účel použite CLUSTER.information_resource.\r\n\r\nNesmie sa používať na zaznamenanie odkazu na bázu znalostí – na tento účel použite CLUSTER.knowledge_base_reference.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "en" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "en"
+          },
+          "purpose" : "To record a media file that is acquired or used as part of the healthcare process, and details about associated metadata.",
+          "keywords" : [ "image", "audio", "text", "video", "application", "file", "multimedia", "audio", "DICOM", "digital", "document", "photo", "voice" ],
+          "use" : "Use to record a media file that is acquired or used as part of the healthcare process, and details about associated metadata.\r\n\r\nThe intent of this archetype is only to hold the media file and the metadata describing its capture. This archetype will be nested within another archetype, usually an OBSERVATION or ACTION that will hold the context and circumstances related to the capture of the media file. For example, details about the modality, view or aspect of a radiographic image and DICOM details will be captured within the OBSERVATION.imaging_exam_result archetype. \r\n\r\nExamples include, but are not limited to:\r\n- A photo of an injury;\r\n- A diagram of the location of a specific clinical finding;\r\n- A radiological image;\r\n- An audio or video recording of an interview;\r\n- Scanned pathology slide;\r\n- Data output from a clinical device, such as an ECG machine; or\r\n- A scanned image of paper documentation or hand-written clinical notes.\r\n\r\nThe 'Content' data element allows for the media file to be captured and stored within the health record using the Multimedia data type. The Multimedia data type has many RM attributes such as the size of file and URI to an external source. See https://specifications.openehr.org/releases/RM/latest/data_types.html#_dv_multimedia_class.\r\n\r\nIf more than one media file has been captured, such as 'before' and 'after' images of a wound, use a separate instance of this archetype to represent each media file.\r\n\r\nIf a series of media files is represented as a single item, such as a CT scan, one instance of this archetype can be used to represent a URI path to the group.",
+          "misuse" : "Not to be used to represent information, instructional or educational material supplied to an individual, or their carer, for example patient education leaflets. Use the CLUSTER.information_resource for this purpose.\r\n\r\nNot to be used to record a reference to a knowledge base - use CLUSTER.knowledge_base_reference for this purpose.",
+          "copyright" : "© openEHR Foundation",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "nl" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "nl"
+          },
+          "purpose" : "Om een mediabestand vast te leggen dat is verkregen of gebruikt als onderdeel van het zorgproces, en details over bijbehorende metadata.",
+          "keywords" : [ "afbeelding", "audio", "tekst", "video", "applicatie", "bestand", "multimedia", "geluid", "DICOM", "digitaal", "document", "foto", "spraak" ],
+          "use" : "Te gebruiken om een mediabestand vast te leggen dat is verkregen of gebruikt als onderdeel van het zorgproces, en details over bijbehorende metadata.\r\n\r\nDit archetype is alleen bedoeld voor het mediabestand en de metadata die het vastleggen ervan beschrijven. Dit archetype wordt genest binnen een ander archetype, meestal een OBSERVATION of ACTION die de context en omstandigheden bevat die verband houden met het vastleggen van het mediabestand. Bijvoorbeeld, details over de modaliteit, weergave of aspect van een radiografisch beeld en DICOM-details worden vastgelegd in het archetype OBSERVATION.imaging_exam_result.\r\n\r\nVoorbeelden omvatten, maar zijn niet beperkt tot:\r\n- Een foto van een blessure;\r\n- Een diagram van de locatie van een specifieke klinische bevinding;\r\n- Een radiologisch beeld;\r\n- Een audio- of video-opname van een interview;\r\n- Gescande pathologiedia;\r\n- Gegevensuitvoer van een klinisch apparaat, zoals een ECG-apparaat; of\r\n- Een gescande afbeelding van papieren documentatie of handgeschreven klinische aantekeningen.\r\n\r\nMet het gegevenselement 'Inhoud' kan het mediabestand worden vastgelegd en opgeslagen in het gezondheidsdossier met behulp van het gegevenstype Multimedia. Het gegevenstype Multimedia heeft veel RM-attributen, zoals de grootte van het bestand en de URI naar een externe bron. Zie https://specifications.openehr.org/releases/RM/latest/data_types.html#_dv_multimedia_class.\r\n\r\nAls er meer dan één mediabestand is vastgelegd, zoals 'voor' en 'na' beelden van een wond, gebruik dan een afzonderlijke instantie van dit archetype om elk mediabestand te vertegenwoordigen.\r\n\r\nAls een reeks mediabestanden wordt weergegeven als een enkel item, zoals een CT-scan, kan één instantie van dit archetype worden gebruikt om een URI-pad naar de groep weer te vertegenwoordigen.",
+          "misuse" : "Niet te gebruiken om informatie, instructie- of educatief materiaal weer te geven dat aan een persoon of hun verzorger wordt verstrekt, bijvoorbeeld folders voor patiënteneducatie. Gebruik hiervoor de CLUSTER.information_resource.\r\n\r\nNiet te gebruiken om een verwijzing naar een kennisbank op te nemen - gebruik hiervoor CLUSTER.knowledge_base_reference.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        }
+      }
     },
     "parentArchetypeId" : "openEHR-EHR-CLUSTER.media_file.v1",
     "differential" : true,
@@ -4268,7 +4493,85 @@
       "otherDetails" : {
         "PARENT:MD5-CAM-1.0.1" : "EF1937C524E92D33AAC3547494C11DE5"
       },
-      "details" : { }
+      "details" : {
+        "de" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "de"
+          },
+          "purpose" : "Zur Darstellung der Messungen, die die physikalischen Größen einer Probe darstellen.",
+          "keywords" : [ "Probe", "Labor", "Laborprobe", "Pathologie", "Größe", "Volumen", "Bereich", "Fläche", "Gewicht", "Abmessungen", "Länge", "Breite", "Durchmesser", "Masse", "Dicke" ],
+          "use" : "Der Archetyp wird verwendet, um die Messwerte der physikalischen Größen einer Probe darzustellen.\r\n\r\nDieser Cluster kann im Slot „Physikalische Eigenschaften“ des Archetyps CLUSTER.specimen verschachtelt werden.\r\nZum Beispiel:\r\n- eine Tumorprobe aus dem Darm mit Größe von 8,0 x 10,2 x 6,5 mm;\r\n- eine Hautbiopsie mit 4 mm Durchmesser und 4 mm Dicke;\r\n- 7 ml Blut in einem Vakuumröhrchen.\r\n\r\nDie Größe einer Probe kann in zwei oder mehr linearen Messungen (Dimensionen) repräsentiert werden, z. B. Länge, Breite und Dicke (Höhe). Wenn es nicht möglich ist, die Ausrichtung der Probe zu bestimmen, kann jede Abmessung durch Wiederholung des Datenelements „Länge“ oder „Durchmesser“ erfasst werden.",
+          "misuse" : "Nicht zur Darstellung von Messungen der Körpersegmente verwenden. Verwenden Sie zu diesem Zweck die Archetypen-Familie der Körpersegmente.\r\n\r\nNicht zur Darstellung von Messungen bei körperlichen Untersuchungen verwenden. Verwenden Sie zu diesem Zweck messungsbezogene Datenelemente innerhalb der Archetypen-Familie CLUSTER.exam. Zum Beispiel: die gemessene Größe einer Pupille in CLUSTER.exam-pupil und Länge und Breite einer Perforation in CLUSTER.exam-tympanic_membrane.\r\n\r\nNicht zur Darstellung von Messungen bei bildgebenden Untersuchungen verwenden. Verwenden Sie messungsbezogene Datenelemente im Kontext von CLUSTER-Archetypen für jeden modalitäts- und/oder organspezifischen Bildgebungsbefund.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "sv" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "sv"
+          },
+          "purpose" : "Registrering av mått som representerar de fysiska dimensionerna för ett prov (provmaterial, specimen).",
+          "keywords" : [ "prov", "provmaterial", "laboratorium", "patologi", "storlek", "volym", "area", "vikt", "dimension", "längd", "vidd", "bredd", "diameter", "massa", "tjocklek", "djup", "omkrets" ],
+          "use" : "Används för att registrera de mått som representerar de fysiska dimensionerna för ett prov.\r\n\r\nDenna klusterarketyp kan infogas under \"Fysiska egenskaper\" i arketypen CLUSTER.specimen.\r\n\r\nTill exempel:\r\n- ett 8,0 x 10,2 x 6,5 mm tumörprov från tarmen;\r\n- en hudbiopsi 4 mm i diameter och 4 mm tjock;\r\n- 7 ml blod i ett vakuumrör.\r\n\r\nStorleken på ett prov kan registreras i två eller flera linjära mätningar (dimensioner), t.ex. längd, bredd och djup (höjd). Om det inte är möjligt att bestämma orienteringen av provet, kan varje dimension registreras genom att upprepa dataelementet 'Längd' eller 'Diameter'.",
+          "misuse" : "Skall inte användas för att registrera mått för kroppsdelar eller kroppssegment. Använd kroppssegmentfamiljen av arketyper för detta ändamål.\r\n\r\nSkall inte användas för att registrera mätningar vid fysiska undersökningar. Använd istället mätningsrelaterade dataelement inom CLUSTER.exam-familjen av arketyper för detta ändamål. Till exempel: den uppmätta storleken på en pupill i CLUSTER.exam-pupill och längden och bredden på en perforering i CLUSTER.exam-tympanic_membrane.\r\n\r\nSkall inte användas för att registrera mätningar vid bildgenererande undersökningar. Använd mätningsrelaterade dataelement inom ramen för CLUSTER-arketyper för varje modalitets- och/eller organspecifik avbildningsfynd.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "nb" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "nb"
+          },
+          "purpose" : "For å registrere målingene som representerer de fysiske dimensjonene til et prøvemateriale.",
+          "keywords" : [ "prøve", "materiale", "laboratorie", "patologi", "volum", "størrelse", "lengde", "bredde", "tykkelse", "vekt", "masse", "diameter", "dimensjon", "areal" ],
+          "use" : "Dette CLUSTERet kan nøstes inn i SLOTet \"Fysiske egenskaper\" i arketypen CLUSTER.specimen (Prøvemateriale).\r\nEksempel:\r\n- en 8,0 x 10,2 x 6,5 mm tumorprøve fra tarmen;\r\n- en hudbiopsi med en diameter på 4 mm og en tykkelse på 4 mm;\r\n- 7 ml blod i et vakuumrør.\r\n\r\nStørrelsen på en prøve kan registreres i to eller flere lineære mål (dimensjoner), f.eks. lengde, bredde og tykkelse (høyde). Hvis det ikke er mulig å bestemme orienteringen til prøven, kan hver dimensjon registreres ved å gjenta dataelementet 'Lengde' eller 'Diameter'.",
+          "misuse" : "Skal ikke brukes til å registrere målinger av kroppsdeler eller kroppssegmenter. Bruk spesifikke arketyper for måling av kroppssegmenter til dette formålet.\r\n\r\nSkal ikke brukes til å registrere målinger i fysiske undersøkelser. Bruk målerelaterte dataelementer i spesialiserte arketyper av CLUSTER.exam (Undersøkelsesfunn) til dette formålet. For eksempel: den målte størrelsen på en pupille i CLUSTER.exam-pupil (Undersøkelse av pupille) og lengden og bredden på en perforering i CLUSTER.exam-tympanic_membrane (Undersøkelse av trommehinnen).\r\n\r\nSkal ikke brukes til å registrere målinger i bildebehandling. Bruk målerelaterte dataelementer i sammenheng med CLUSTER-arketyper for hvert modalitets- og/eller organspesifikke bildefunn.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "en" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "en"
+          },
+          "purpose" : "To record the measurements that represent the physical dimensions of a specimen.",
+          "keywords" : [ "specimen", "laboratory", "sample", "pathology", "size", "volume", "area", "weight", "dimension", "length", "width", "diameter", "mass", "thickness" ],
+          "use" : "Use to record the measurements that represent the physical dimensions of a specimen.\r\n\r\nThis cluster can be nested in the 'Physical properties' slot of the archetype CLUSTER.specimen.\r\nFor example:\r\n- an 8.0 x 10.2 x 6.5 mm tumour specimen from the intestine;\r\n- a skin biopsy 4 mm diameter and 4 mm thick;\r\n- 7 ml of blood in a vacuum tube.\r\n\r\nThe size of a specimen may be recorded in two or more linear measurements (dimensions), e.g., length, width and depth (height). If it is not possible to determine the orientation of the specimen, each dimension can be recorded by repeating the 'Length' or 'Diameter' data element.",
+          "misuse" : "Not to be used to record measurements for body segments. Use the body segment family of archetypes for this purpose.\r\n\r\nNot to be used to record measurements in physical examinations. Use measurement-related data elements within the CLUSTER.exam family of archetypes for this purpose. For example: the measured size of a pupil in CLUSTER.exam-pupil and length and width of a perforation in CLUSTER.exam-tympanic_membrane.\r\n\r\nNot to be used to record measurements in imaging examinations. Use measurement-related data elements within the context of CLUSTER archetypes for each modality- and/or organ-specific imaging finding.",
+          "copyright" : "© openEHR Foundation",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "ar-sy" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "ar-sy"
+          },
+          "purpose" : "*To record the measurements that represent the physical dimensions of a specimen.  (en)",
+          "keywords" : [ "*specimen (en)", "*laboratory (en)", "*sample (en)", "*pathology (en)", "*size (en)", "*volume (en)", "*area (en)", "*weight (en)", "*dimension (en)", "*length (en)", "*width (en)", "*diameter (en)", "*mass (en)", "*thickness (en)" ],
+          "use" : "*Use to record the measurements that represent the physical dimensions of a specimen.\r\n\r\nThis cluster can be nested in the 'Physical properties' slot of the archetype CLUSTER.specimen.\"\r\nFor example:\r\n- an 8.0 x 10.2 x 6.5 mm tumor specimen from the intestine;\r\n- a skin biopsy 4 mm diameter and 4 mm thick;\r\n- 7 ml of blood in a vacuum tube.\r\n\r\nThe size of a specimen may be recorded in two or more linear measurements (dimensions), e.g. length, width and depth (height). If it is not possible to determine the orientation of the specimen, each dimension can be recorded by repeating the 'Length' or 'Diameter' data element. (en)",
+          "misuse" : "*Not to be used to record measurements for body segments. Use the body segment family of archetypes for this purpose.(en)",
+          "copyright" : "© openEHR Foundation",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        }
+      }
     },
     "parentArchetypeId" : "openEHR-EHR-CLUSTER.specimen_measurements.v1",
     "differential" : true,
@@ -4377,7 +4680,145 @@
       "otherDetails" : {
         "PARENT:MD5-CAM-1.0.1" : "e8e63d0b210f8b9b6e14c6415f26acb5"
       },
-      "details" : { }
+      "details" : {
+        "de" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "de"
+          },
+          "purpose" : "Zur Identifikation und Dokumentation von strukturierten Daten bezüglich einer bestimmten Körperstelle oder innerhalb des menschlichen Körpers, unter Verwendung makroskopischer anatomischer Fachbegriffe.",
+          "keywords" : [ "Lokalisation", "Stelle", "anatomisch", "anatomischer Bereich", "topographische Anatomie", "makroskopisch", "Anatomie" ],
+          "use" : "Zur Dokumentation von strukturierten und konsistenten Details eines einzelnen bestimmten physischen Bereich innerhalb des menschlichen Körpers verwenden.\r\n\r\nDieser Archetyp wurde speziell für die Verwendung im Rahmen von allen geeigneten ENTRY- oder CLUSTER-Archetypen entwickelt, die den Kontext des anatomischen Fundortes liefern.\r\n\r\nAls grundlegender Bestandteil der klinischen Praxis, können Mediziner anatomische Lokalisationen auf einer Vielzahl von komplexen und variablen Wegen definieren. In der Praxis tragen einige Archetypen ein einziges Datenelement für eine einfache Beschreibung der Körperstelle - zum Beispiel OBSERVATION.blood_pressure und CLUSTER.symptom bei der Beschreibung von Ohrenschmerzen. In dieser Situation, in der die Wertemenge berechenbar und simpel zu definieren ist, ist dieses einzelne Datenelement eine sehr genaue und pragmatische Möglichkeit, die Stelle im Körper zu protokollieren und zu einem späteren Zeitpunkt abzufragen. In der Situation, in der die anatomische Lage nicht genau definiert ist oder zur Laufzeit bestimmt werden muss, kann es flexibler sein, diesen strukturierten Archetyp zu verwenden. Wenn zum Beispiel jedes Symptom ohne einen vordefinierten Umfang der Symptomatik aufgezeichnet werden kann, dann ist es sinnvoll, diesen Archetyp zu verwenden, um eine spezifische anatomische Lokalisation im Körper zu definieren. In diesem Fall trägt der CLUSTER.symptom Archetyp auch einen SLOT für 'Detaillierte anatomische Lokalisation', der diesen Archetyp enthalten kann, um maximale Flexibilität bei der Erfassung der Daten zur anatomischen Lage zu gewährleisten.\r\n\r\nDieser Archetyp unterstützt die Aufnahme von komplex strukturierten anatomischen Stellen. Beispielsweise findet sich der Scheitelpunkt des Herzens typischerweise am fünften linken Interkostalraum in der Mittelklavikularlinie, Schmerzempfindlichkeit am McBurney-Punkt an der Bauchdecke oder eine Risswunde an der Handflächeninnenseite des proximalen rechten Daumens.\r\n\r\nEine Kombination der Datenelemente in diesem Archetyp kann verwendet werden, um jede Komponente eines postkoordinierten Terminologieausdrucks, der den anatomischen Bereich repräsentiert, individuell zu dokumentieren.\r\n\r\nDer SLOT \"Alternative Struktur\" erlaubt die Aufnahme zusätzlicher Archetypen, die eine alternative Struktur zur Beschreibung derselben Körperstelle bieten, wie z.B. CLUSTER.anatomical_location_relative oder CLUSTER.anatomical_location_clock, falls dies benötigt wird. Wenn dieser Archetyp nur zur Benennung eines großen und/oder unspezifischen Körperteils verwendet werden kann, unterstützt die zusätzliche Verwendung des Archetyps CLUSTER.anatomical_location_relative die Aufnahme einer genaueren Position - zum Beispiel 2 cm vor der kubitalen Fossa des linken Unterarms oder 4 cm unter dem Rippenrand an der Brustwand in der Mittelklavikularlinie.\r\n\r\nWenn dieser Archetyp in anderen Archetypen verwendet wird, in denen das angegebene Thema nicht die Person ist, für die der Datensatz erstellt wird, z.B. ein Fötus in-utero, dann wird der anatomische Ort eine Körperstelle auf oder innerhalb des Fötus identifizieren.\"\r\n",
+          "misuse" : "Nicht zur Angabe von unilateralen/bilateralen Vorkommen eines anatomischen Merkmals verwenden.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "sv" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "sv"
+          },
+          "purpose" : "Att identifiera och registrera strukturerade detaljer om ett enskilt fysiskt ställe, på eller i människokroppen genom att använda makroskopiska anatomiska termer.",
+          "keywords" : [ "lokalisation", "ställe", "anatomisk", "anatomiskt område", "topografisk anatomi", "makroskopisk", "anatomi" ],
+          "use" : "Används för att strukturerat och konsekvent registrera detaljer om ett enskilt fysiskt ställe på eller i människokroppen.\r\n\r\nArketypen är specifikt utformad för att användas i lämpliga ENTRY- och CLUSTER-arketyper som sätter den anatomiska lokalisationen i ett sammanhang.\r\n\r\nSom en grundläggande del av klinisk praxis kan kliniker beskriva anatomiska platser på en mängd olika sätt. Vissa arketyper innehåller ett enskilt dataelement för beskrivning av en anatomisk plats - till exempel OBSERVATION.blood_pressure och CLUSTER.symptoms när man beskriver smärta i örat. I situationer, där urvalet är förutsägbart och lätt att definiera, är detta enkla dataelement ett mycket exakt och praktiskt sätt att registrera en anatomisk plats och söka efter den vid ett senare tillfälle. När den anatomiska platsen inte är väldefinierad eller behöver genereras automatiskt av IT- system, kan det vara mer flexibelt att använda denna strukturerade arketyp. Till exempel, i en situation där symptom ska registreras utan fördefinierad omfattning om vilka typer av symptom det kan vara, kan denna arketyp vara användbar för att definiera en anatomisk plats i kroppen. I det här fallet har CLUSTER.symptom-arketypen en SLOT för detaljerad anatomisk lokalisation som kan innehålla denna arketyp för att stödja maximal flexibilitet vid registrering av anatomisk lokalisation.\r\n\r\nArketypen stöder registrering av komplexa strukturerade anatomiska platser. Till exempel finns hjärtspetsstöten typiskt i mitralområdet, ömhet vid McBurneys punkt på bukväggen eller sårskada på handflatan av den proximala högra tummen.\r\n\r\nEn kombination av dataelement i den här arketypen kan användas för att registrera varje komponent i ett postkoordinerat terminologiskt uttryck som representerar den anatomiska platsen. \r\n\r\nSLOT ‘Alternativt struktur’ möjliggör inkludering av ytterligare arketyper som ger en alternativ struktur för att beskriva samma anatomisk plats, så som CLUSTER.anatomical_location_relative eller CLUSTER.anatomical_location_clock, om detta skulle krävas. I situationen där denna arketyp kan användas endast för att namnge en stor och/eller ej specifik kroppsdel, kan användning av CLUSTER.anatomical_location_relative arketyp stödja registrering av mer exakt anatomisk plats – till exempel , 2cm anteriort från fossa cubitalis på vänster arm eller 4 cm under revbensbågen i medioklavikularlinjen på bröstväggen.\r\n\r\nOm denna arketyp används inom andra arketyper där patienten inte är den individen för vilken dokumentation skapas, till exempel ett foster i livmodern, används denna arketyp för att identifiera en anatomisk plats på eller i fostret.",
+          "misuse" : "Används inte för att specificera unilaterala/bilaterala förekomster av ett anatomiskt särdrag",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "nb" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "nb"
+          },
+          "purpose" : "For registering av strukturerte detaljer om én enkelt makroskopisk fysisk lokalisering på eller i menneskekroppen.",
+          "keywords" : [ "sted", "lokalisering", "lokalisasjon", "anatomisk", "kroppssted", "anatomisk region", "topografisk anatomi", "makroskopisk", "anatomi", "kroppsdel", "dermatom", "legemsdel" ],
+          "use" : "Brukes for å dokumentere strukturerte og ensartede detaljer om et enkelt identifisert fysisk sted på eller i menneskekroppen.\r\n\r\nDenne arketypen er spesifikt designet for bruk i ENTRY og CLUSTER-arketyper som gir konteksten for den anatomiske lokaliseringen.\r\n\r\nSom en grunnleggende del av klinisk praksis kan klinikere beskrive anatomiske lokaliseringer på et utall forskjellige måter. Noen arketyper inneholder et enkelt dataelement for enkel beskrivelse av en kroppslig lokalisering - for eksempel OBSERVATION.blood_pressure, og CLUSTER.symptom når man beskriver øresmerter. I denne situasjonen, hvor verdisettet er forutsigbart og enkelt å definere, er dette enkle dataelementet en meget nøyaktig og praktisk måte for å registrere et anatomisk sted på eller i kroppen og søke på det på et senere tidspunkt. Når den anatomiske lokaliseringen derimot ikke er veldefinert eller må defineres fortløpende, kan det være mer fleksibelt å bruke denne strukturerte arketypen. For eksempel i en situasjon hvor et hvilket som helst symptom kan bli registrert uten noen forkunnskaper om hvilke typer symptomer det kan være, så vil muligheten for å bruke denne arketypen være nyttig. I dette tilfellet har CLUSTER.symptom-arketypen et SLOT for \"Strukturert anatomisk lokalisering\" som kan inneholde denne arketypen for å støtte maksimal fleksibilitet i registrering av data om den anatomiske lokaliseringen.\r\n\r\nArketypen støtter registrering av komplekse strukturerte anatomiske steder. For eksempel finnes hjertespisstøt typisk i femte venstre intercostalrom i midtclaviculære linjen, ømhet ved McBurney's punkt på abdomen eller laserasjon på den palmare siden av den proksimale høyre tommelen.\r\n\r\nEn kombinasjon av dataelementer i denne arketypen kan brukes for individuell registrering av hver komponent av et postkoordinert terminologiuttrykk for anatomisk sted.\r\n\r\nArketypen inneholder et \"Alternativ struktur\" SLOT som tillater inklusjon av ytterligere arketyper som gir en alternativ struktur for beskrivelse av det samme kroppssted, som CLUSTER.anatomical_location_relative eller CLUSTER.anatomical_location_clock om dette er nødvendig. I en situasjon hvor denne arketypen bare brukes til å navngi en større og/eller ikke-spesifikk kroppsdel, kan ytterligere bruk av CLUSTER.anatomical_location_relative-arketypen understøtte registrering av en mer presis lokasjon - for eksempel 2 cm anteriort for venstre arms cubitalfossa eller 4 cm under høyre costamargin på brystveggen i midtclaviculærlinjen.\r\n\r\nHvis denne arketypen brukes i andre arketyper hvor pasienten/klienten ikke er den som dokumentasjonen omhandler, for eksempel foetus-in-utero, så vil den anatomiske lokaliseringen bli identifisert som en lokalisering på eller i kroppen til fosteret.",
+          "misuse" : "Brukes ikke for spesifisering av unilateral/bilateral forekomst av et anatomisk kjennetegn.",
+          "copyright" : "© openEHR Foundation",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "pt-br" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "pt-br"
+          },
+          "purpose" : "Para identificar e anotar informações estruturadas sobre um único local físico do corpo humano usando termos anatômicos macroscópicos.",
+          "keywords" : [ "localização", "local", "anatômico", "região anatômica", "topografia anatômica", "macroscópico", "anatomia" ],
+          "use" : "Use para gravar detalhes estruturados e consistentes sobre um único local físico identificado do corpo humano.\r\n\r\nEste arquétipo foi projetado especificamente para ser utilizado dentro do contexto de qualquer entrada ou CLUSTER arquétipo que forneça o contexto da localização anatômica.\r\n\r\nComo uma parte fundamental da prática clínica, os médicos podem descrever localizações anatômicas em uma miríade de formas complexas e variáveis. Na prática, alguns arquétipos carregam um elemento de dados único para o transporte de uma simples descrição do local do corpo - por exemplo, OBSERVATION.blood_pressure e CLUSTER.symptom quando descrevem a dor de ouvido. Nesta situação, onde o valor definido é previsível e simples de definir, este elemento de dados único é uma maneira muito precisa e pragmática para gravar o local no corpo e a consulta em uma data posterior. No entanto na situação onde a localização anatômica não é bem definida ou precisa ser determinada em tempo de execução, pode ser mais flexível para usar este arquétipo estruturado. Por exemplo, na situação onde qualquer sintoma pode ser gravado sem qualquer escopo predefinido do tipo, em seguida, permitindo o uso deste arquétipo especificamente, definir uma localização anatômica do corpo pode ser útil. Neste caso, o arquétipo CLUSTER.symptom carrega também um SLOT para localização anatômica detalhada que inclui este arquétipo para oferecer suporte a máxima flexibilidade na gravação de dados da localização anatômica.\r\n\r\nEste arquétipo suporta gravação de locais anatômicos estruturados complexos. Por exemplo, a batida do ápice do coração é normalmente encontrada no quinto espaço intercostal esquerdo na linha médio-clavicular, ou a sensibilidade em ponto de McBurneys na parede abdominal ou laceração na face palmar do polegar direito proximal.\r\n\r\nUma combinação de elementos de dados neste arquétipo pode ser usado para gravar individualmente cada componente de uma expressão de terminologia coordenada que representa o site anatômico.\r\n\r\nA estrutura alternativa SLOT permite a inclusão de arquétipos adicionais que fornecem uma estrutura alternativa para descrever o mesmo local do corpo, como CLUSTER.anatomical_location_relative ou CLUSTER.anatomical_location_clock, esta deve ser exigida. Na situação onde este arquétipo só pode ser usado para nomear uma parte do corpo e/ou não-específica, o uso adicional do arquétipo CLUSTER.anatomical_location_relative oferecerá suporte a gravação de uma localização mais precisa - por exemplo, 2 cm anterior da fossa cubital do antebraço esquerdo ou 4 cm abaixo da margem costal de R na parede torácica na linha médio-clavicular.\r\n\r\nSe este arquétipo é usado dentro de outros arquétipos onde o assunto especificado de cuidados não é o indivíduo para quem o registro está sendo criado, por exemplo um feto em útero, então a localização anatômica vai estar realizada identificando um local do corpo ou com o feto.",
+          "misuse" : "Não deve ser usado para especificar as ocorrências unilateral/bilateral de uma característica anatômica.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "en" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "en"
+          },
+          "purpose" : "To identify and record structured details about a single physical site on, or within, the human body using macroscopic anatomical terms.",
+          "keywords" : [ "location", "site", "anatomical", "anatomic region", "topographic anatomy", "macroscopic", "anatomic", "anatomy" ],
+          "use" : "Use to record structured and consistent details about a single identified physical site on, or within, the human body. \r\n\r\nThis archetype is specifically designed to be used within the context of any appropriate ENTRY or CLUSTER archetypes which supply the context of the anatomical location. \r\n\r\nAs a fundamental part of clinical practice, clinicians can describe anatomical locations in a myriad of complex and variable ways. In practice, some archetypes carry a single data element for carrying a simple description of body site - for example, OBSERVATION.blood_pressure and CLUSTER.symptom when describing ear pain. In this situation, where the value set is predictable and simple to define, this single data element is a very accurate and pragmatic way to record the site in the body and to query at a later date. However in the situation where the anatomical location is not well defined or needs to be determined at run-time, it may be more flexible to use this structured archetype. For example, in the situation where any symptom can be recorded without any predefined scope of the type of symptom, then allowing the use of this archetype to specifically define an anatomical location in the body may be useful. In this case the CLUSTER.symptom archetype also carries a SLOT for 'Detailed anatomical location' which can include this archetype to support maximal flexibility in recording anatomical location data.\r\n\r\nThis archetype supports recording complex structured anatomical sites. For example, the apex beat of the heart is typically found at the fifth left intercostal space in the mid-clavicular line, tenderness at McBurney's point on the abdominal wall or a laceration on the palmar aspect of the proximal right thumb.\r\n\r\nA combination of the data elements in this archetype can be used to individually record each component of a postcoordinated terminology expression that represents the anatomical site.\r\n\r\nThe 'Alternative structure' SLOT allows inclusion of additional archetypes that provide an alternative structure for describing the same body site, such as CLUSTER.anatomical_location_relative or CLUSTER.anatomical_location_clock, should this be required. In the situation where this archetype can only be used to name a large and/or non-specific body part, the additional use of the CLUSTER.anatomical_location_relative archetype will support recording of a more precise location - for example, 2 cm anterior to the cubital fossa of the left forearm or 4 cm below R costal margin on the chest wall in the mid-clavicular line.\r\n\r\nIf this archetype is used within other archetypes where the specified subject of care is not the individual for whom the record is being created, for example a fetus in-utero, then the anatomical location will be identifying a body site on or within the fetus.",
+          "misuse" : "Not to be used for specifiying unilateral/bilateral occurrences of an anatomical feature.",
+          "copyright" : "© openEHR Foundation",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "sl" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "sl"
+          },
+          "purpose" : "*To record details about anatomical location.(en)",
+          "keywords" : [ "*location(en)", "*site(en)", "*anatomical(en)" ],
+          "misuse" : "*Not for specifiying unilateral/bilateral occurence - this is related to an evaluation which perhaps includes multiple locations.(en)",
+          "copyright" : "© openEHR Foundation",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "ar-sy" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "ar-sy"
+          },
+          "purpose" : "تسجيل المكان التشريحي بالتفصيل",
+          "keywords" : [ "الموقع", "المكان", "تشريحي" ],
+          "misuse" : "لا يستخدم لتحديد حالات الحدوث في جانب واحد أو في الجانبين - حيث إن ذلك متعلق بتقييم قد يتضمن العديد من الأماكن",
+          "copyright" : "© openEHR Foundation",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "fr" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "fr"
+          },
+          "purpose" : "Identifier et enregistrer des détails structurés concernant un site physique unique sur ou dans le corps humain en utilisant des termes anatomiques macroscopiques.",
+          "keywords" : [ "emplacement", "site", "anatomique", "région anatomique", "anatomie topographique", "macroscopique", "anatomique", "anatomie" ],
+          "use" : "À utiliser pour enregistrer des détails structurés et cohérents sur un seul site physique identifié sur ou dans le corps humain. \r\n\r\nCet archétype est spécifiquement conçu pour être utilisé dans le contexte des archétypes ENTRY ou CLUSTER appropriés qui fournissent le contexte de la localisation anatomique. \r\n\r\nEn tant qu'élément fondamental de la pratique clinique, les cliniciens peuvent décrire les localisations anatomiques d'une myriade de façons complexes et variables. Dans la pratique, certains archétypes contiennent un seul élément de données pour une simple description du site corporel - par exemple, OBSERVATION.blood_pressure et CLUSTER.symptom pour la description d'une douleur à l'oreille. Dans cette situation, où l'ensemble des valeurs est prévisible et simple à définir, cet élément de données unique est un moyen très précis et pragmatique d'enregistrer le site dans le corps et de l'interroger à une date ultérieure. Toutefois, lorsque l'emplacement anatomique n'est pas bien défini ou doit être déterminé au moment de l'exécution, il peut être plus souple d'utiliser cet archétype structuré. Par exemple, lorsque n'importe quel symptôme peut être enregistré sans que le type de symptôme soit prédéfini, il peut être utile d'autoriser l'utilisation de cet archétype pour définir spécifiquement une localisation anatomique dans le corps. Dans ce cas, l'archétype CLUSTER.symptom comporte également un SLOT pour \"Localisation anatomique détaillée\", qui peut inclure cet archétype afin d'assurer une flexibilité maximale dans l'enregistrement des données relatives à la localisation anatomique.\r\n\r\nCet archétype permet d'enregistrer des sites anatomiques complexes et structurés. Par exemple, le battement de l'apex du cœur se trouve généralement au cinquième espace intercostal gauche sur la ligne médio-claviculaire, la sensibilité au point de McBurney sur la paroi abdominale ou une lacération sur la face palmaire de la partie proximale du pouce droit.\r\n\r\nUne combinaison des éléments de données de cet archétype peut être utilisée pour enregistrer individuellement chaque composante d'une expression terminologique postcoordonnée représentant le site anatomique.\r\n\r\nLe SLOT \"Structure alternative\" permet d'inclure des archétypes supplémentaires qui fournissent une structure alternative pour décrire le même site corporel, comme CLUSTER.anatomical_location_relative ou CLUSTER.anatomical_location_clock, si cela s'avère nécessaire. Dans le cas où cet archétype ne peut être utilisé que pour nommer une partie du corps importante et/ou non spécifique, l'utilisation supplémentaire de l'archétype CLUSTER.anatomical_location_relative permettra d'enregistrer une localisation plus précise - par exemple, 2 cm en avant de la fosse cubitale de l'avant-bras gauche ou 4 cm en dessous du rebord costal R sur la paroi thoracique, au niveau de la ligne claviculaire médiane.\r\n\r\nSi cet archétype est utilisé dans d'autres archétypes où le sujet de soins spécifié n'est pas la personne pour laquelle le dossier est créé, par exemple un fœtus in-utero, la localisation anatomique identifiera alors un site corporel sur ou dans le fœtus.",
+          "misuse" : "Ne pas utiliser pour spécifier les occurrences unilatérales/bilatérales d'une caractéristique anatomique.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "nl" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "nl"
+          },
+          "purpose" : "Om gestructureerde details over een structuur op of in het menselijk lichaam te identificeren en vast te leggen, in macroscopische anatomische termen.",
+          "keywords" : [ "locatie", "structuur", "anatomisch", "anatomische regio", "topografische anatomie", "macroscopisch" ],
+          "use" : "Gebruik om gestructureerde details over een structuur op of in het menselijk lichaam te identificeren en vast te leggen.",
+          "misuse" : "Niet gebruiken om meerdere unilaterale/bilaterale structuren vast te leggen.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        }
+      }
     },
     "parentArchetypeId" : "openEHR-EHR-CLUSTER.anatomical_location.v1",
     "differential" : true,
@@ -4544,7 +4985,81 @@
       "otherDetails" : {
         "PARENT:MD5-CAM-1.0.1" : "250b20ee21f041e983f9cced183cd298"
       },
-      "details" : { }
+      "details" : {
+        "de" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "de"
+          },
+          "purpose" : "Zur Darstellung von Details zu einem Behälter, in dem eine Probe für eine Laboruntersuchung gehalten, transportiert und/oder aufbewahrt wird.",
+          "keywords" : [ "Probe", "Labor", "Laboratorium", "Pathologie", "Transportmedium", "Tupfer", "Röhrchen", "Flasche", "Vakuumröhrchen", "Objektträger", "Zusatzstoff", "Substanz", "Additiv" ],
+          "use" : "Zur Darstellung von Details zu einem Behälter, in dem eine Probe für eine Laboruntersuchung gehalten, transportiert und/oder aufbewahrt wird.\r\n\t\r\nDieser Archetyp wurde für die Verwendung in OBSERVATION.laboratory test_result, CLUSTER.specimen, CLUSTER.biobank_storage, CLUSTER.biospecimen_summary und anderen klinisch geeigneten Archetypen entwickelt. Üblicherweise werden CLUSTER.specimen und CLUSTER.specimen_container als Paar verwendet, wobei die Reihenfolge der Verschachtelung je nach Anwendungsfall variiert.\r\nZum Beispiel:\r\n- Der „Probenbehälter“ kann innerhalb von „Probe“ verschachtelt werden; zum Beispiel, wenn eine venöse Blutprobe in zwei Röhrchen aufgeteilt wird oder ein ganzer Dickdarm in drei Behälter aufgeteilt wird.\r\n- Die \"Probe\" kann innerhalb des \"Probenbehälters\" verschachtelt werden; zum Beispiel, wenn ein Eimer Formalin einen Abschnitt des Dickdarms und ein Mastdarm enthält oder ein Behälter fünf einzeln markierte Muttermale enthält.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "sv" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "sv"
+          },
+          "purpose" : "*To record details of a container used to hold, transport and/or archive a specimen for laboratory examination. (en)",
+          "keywords" : [ "*specimen (en)", "*lab (en)", "*laboratory (en)", "*pathology (en)", "*transport medium (en)", "*swab (en)", "*vial (en)", "*vacuum tube (en)", "*slide (en)", "*additive (en)", "*sample (en)" ],
+          "use" : "*Use to record details of a container used to hold transport and/or archive a specimen for laboratory examination.\r\n\r\nThis archetype has been designed to be used within OBSERVATION.laboratory test_result, CLUSTER.specimen, CLUSTER.biobank_storage, CLUSTER.biospecimen_summary and other clinically appropriate archetypes. Commonly the CLUSTER.specimen and the CLUSTER.specimen_container will be used as a pair, with order of nesting varying as appropriate for the use case.\r\nFor example: \r\n-\tThe ‘Specimen container’ can be nested within 'Specimen'; for example, when a venous blood specimen is divided between two vials, or a whole large intestine is divided into three buckets. \r\n-\tThe 'Specimen' can be nested within 'Specimen container'; for example, when a bucket of formalin contains a section of large intestine and a rectum, or a jar contains five individually marked moles. (en)",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "nb" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "nb"
+          },
+          "purpose" : "For å registrere detaljer om en prøvebeholder brukt til å oppbevare, transportere og/eller arkivere en laboratorieprøve.",
+          "keywords" : [ "prøve", "laboratorium", "lab", "patologi", "beholder", "glass", "pensel", "transportmedie", "prøveglass", "vakumglass", "vakumrør", "swab", "dyrkningsmedie", "filterkort", "objektglass" ],
+          "use" : "Brukes for å registrere detaljer om en prøvebeholder brukt til å oppbevare, transportere og/eller arkivere en laboratorieprøve.\r\n\r\nDenne arketypen er laget for å brukes innenfor arketypen OBSERVATION.laboratory_test_result (Laboratorieresultat), CLUSTER.specimen (Prøvemateriale), Cluster.biospecimen_summary (Biologisk prøve sammendrag) og andre kliniske passende arketyper. Vanligvis vil CLUSTER.specimen (Prøvemateriale) og CLUSTER.specimen_container (Prøvebeholder) arketypene bli brukt som et par, nøstet inn i hverandre ut i fra hva som passer seg ut i fra brukertilfellet. \r\nFor eksempel:\r\n- Prøvebeholderen kan nøstes i prøvematerialet; for eksempel når en venøs blodprøve fordeles mellom to prøverør, eller en hel tykktarm fordeles i tre prøvebeholdere.\r\n- Prøvemateriale kan nøstes i prøvebeholderen; for eksempel når en enkelt prøvebeholder med formalin inneholder en del av tykktarmen samt endetarmen, eller en enkelt prøvebeholder inneholder fem individuelt merket føflekker.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "en" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "en"
+          },
+          "purpose" : "To record details of a container used to hold, transport and/or archive a specimen for laboratory examination.",
+          "keywords" : [ "specimen", "lab", "laboratory", "pathology", "transport medium", "swab", "vial", "vacuum tube", "slide", "additive", "sample" ],
+          "use" : "Use to record details of a container used to hold transport and/or archive a specimen for laboratory examination.\r\n\r\nThis archetype has been designed to be used within OBSERVATION.laboratory test_result, CLUSTER.specimen, CLUSTER.biobank_storage, CLUSTER.biospecimen_summary and other clinically appropriate archetypes. Commonly the CLUSTER.specimen and the CLUSTER.specimen_container will be used as a pair, with order of nesting varying as appropriate for the use case.\r\nFor example: \r\n-\tThe ‘Specimen container’ can be nested within 'Specimen'; for example, when a venous blood specimen is divided between two vials, or a whole large intestine is divided into three buckets. \r\n-\tThe 'Specimen' can be nested within 'Specimen container'; for example, when a bucket of formalin contains a section of large intestine and a rectum, or a jar contains five individually marked moles.",
+          "copyright" : "© openEHR Foundation",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "sl" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "sl"
+          },
+          "purpose" : "*To record details of a container used to hold, transport and/or archive a specimen for laboratory examination. (en)",
+          "keywords" : [ "*specimen (en)", "*lab (en)", "*laboratory (en)", "*pathology (en)", "*transport medium (en)", "*swab (en)", "*vial (en)", "*vacuum tube (en)", "*slide (en)", "*additive (en)", "*sample (en)" ],
+          "use" : "*Use to record details of a container used to hold transport and/or archive a specimen for laboratory examination.\r\n\r\nThis archetype has been designed to be used within OBSERVATION.laboratory test_result, CLUSTER.specimen, CLUSTER.biobank_storage, CLUSTER.biospecimen_summary and other clinically appropriate archetypes. Commonly the CLUSTER.specimen and the CLUSTER.specimen_container will be used as a pair, with order of nesting varying as appropriate for the use case.\r\nFor example: \r\n-\tThe ‘Specimen container’ can be nested within 'Specimen'; for example, when a venous blood specimen is divided between two vials, or a whole large intestine is divided into three buckets. \r\n-\tThe 'Specimen' can be nested within 'Specimen container'; for example, when a bucket of formalin contains a section of large intestine and a rectum, or a jar contains five individually marked moles. (en)",
+          "originalResourceUri" : { },
+          "otherDetails" : {
+            "notes" : "Generated automatically by Adl Designer"
+          }
+        }
+      }
     },
     "parentArchetypeId" : "openEHR-EHR-CLUSTER.specimen_container.v1",
     "differential" : true,
@@ -4655,7 +5170,99 @@
       "otherDetails" : {
         "PARENT:MD5-CAM-1.0.1" : "af215ccd20407971caf4363c3731e6fa"
       },
-      "details" : { }
+      "details" : {
+        "de" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "de"
+          },
+          "purpose" : "Zur Darstellung einer Mediendatei erworbenen und verwendeten im Bereich des Gesundheitswesens sowie der Informationen zu den zugehörigen Metadaten.",
+          "keywords" : [ "Bild", "Audio", "Text", "Video", "Anwendung", "Datei", "Multimedia", "DICOM", "digital", "Dokument", "Foto", "Sprachaufnahme" ],
+          "use" : "Zur Darstellung einer Mediendatei erworbenen und verwendeten im Bereich des Gesundheitswesens sowie der Informationen zu den zugehörigen Metadaten.\r\n\r\nDie Absicht dieses Archetyps besteht nur darin, die Mediendatei und die Metadaten, die ihre Erfassung beschreiben, darzustellen. Dieser Archetyp wird in einen anderen Archetyp verschachtelt, normalerweise ein OBSERVATION- oder ACTION-Archetyp, der den Kontext und die Umstände im Zusammenhang mit der Erfassung der Mediendatei enthält. Zum Beispiel werden Details zu Modalität, Ansicht oder Aspekt eines Röntgenbildes und DICOM-Details im Archetyp OBSERVATION.imaging_exam_result dargestellt.\r\n\r\nDie Beispiele umfassen, sind aber nicht beschränkt auf:\r\n- Ein Foto einer Verletzung;\r\n- Ein Diagramm der Lokalisation eines bestimmten klinischen Befundes;\r\n- Ein digitales Ergebnis der Röntgen- oder CT-Aufnahme;\r\n- Eine Audio- oder Videoaufzeichnung eines Interviews;\r\n- Gescannte pathologische Schnitte;\r\n- Datenausgabe von einem klinischen Gerät, wie z.B. einem EKG-Gerät; oder\r\n- Ein gescanntes Bild von handgeschriebenen klinischen Notizen.\r\n\r\nDas Datenelement „Inhalt“ ermöglicht mithilfe des Multimedia-Datentyps die Erfassung und Speicherung der Mediendatei in der Gesundheitsakte. Der Multimedia-Datentyp hat viele RM-Attribute wie die Dateigröße und URI zu einer externen Quelle. Siehe https://specifications.openehr.org/releases/RM/latest/data_types.html#_dv_multimedia_class.\r\n\r\nWenn mehr als eine Mediendatei erfasst wurde, z. B. „Vorher“- und „Nachher“-Bilder einer Wunde, verwenden Sie eine Instanz dieses Archetyps, um jede Mediendatei darzustellen.\r\n\r\nWenn eine Reihe von Mediendateien als einzelnes Element dargestellt wird, z. B. ein CT-Scan, kann eine Instanz dieses Archetyps verwendet werden, um einen URI-Pfad zu der Gruppe darzustellen.\r\n\r\n\r\n\r\n",
+          "misuse" : "Nicht zur Darstellung von Informationen, Lehr- oder Schulungsmaterial verwenden, die außerhalb des Gesundheitsprozesses generiert werden, z. B. Broschüren zur Patientenaufklärung, die dem Patienten oder der Pflegeperson zur Verfügung gestellt werden. Verwenden Sie für diesen Zweck den Archetyp CLUSTER.information_resource.\r\n\r\nNicht zur Darstellung von Referenz auf eine externe digitale Ressource, die als Quelle für maßgebliche Informationen oder Experteninformationen verwendet wird. Verwenden Sie für diesen Zweck den Archetyp CLUSTER.knowledge_base_reference.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "sv" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "sv"
+          },
+          "purpose" : "Att registrera en mediefil som förvärvats eller använts som en del i en vårdprocess, samt detaljer om filens metadata.",
+          "keywords" : [ "bild", "foto", "ljud", "text", "video", "film", "applikation", "fil", "multimedia", "DICOM", "digital", "dokument", "röst" ],
+          "use" : "Används för att registrera en mediefil som förvärvats eller används som del i en vårdprocess, samt detaljer om filens metadata. \r\n\r\nAvsikten för denna arketyp är att inneha mediefilen och dess metadata som beskriver insamlingen. Arketypen kan nästlas i en annan arketyp, vanligtvis en OBSERVATION eller ACTION arketyp som innehar sammanhanget och omständigheterna för registreringen av mediefilen. Till exempel detaljer om modaliteten, synvinkel eller aspekt av en röntgenbild eller detaljer rörande DICOM-filer kan lagras i arketypen OBSERVATION.imaging_exam_result.\r\n\r\nExempel inkluderar, men är inte begränsade till:\r\n-Ett foto av en skada\r\n-Ett diagram över anatomisk lokalisation för ett specifikt kliniskt fynd\r\n-En röntgenbild\r\n-En ljud- eller videoinspelning av en intervju\r\n-Inskannade histopatologiska glas\r\n-Data från medicinsk utrustning, så som en EKG-mätare, eller\r\n-Inskannat foto av pappersdokumentation eller handskrivna kliniska anteckningar\r\n\r\nDatafältet \"Innehåll\" tillåter mediefilen att förvärvas och lagras i journalen via datatypen Multimedia. Multimedia datatypen har flertalet RM attribut som filstorlek och URI till en extern källa. Se https://specifications.openehr.org/releases/RM/latest/data_types.html#_dv_multimedia_class.\r\n\r\nOm mer än en mediefil har registrerats, såsom \"före\" och \"efter\" bilder av ett sår, använd separata instanser av denna arketyp för att representera varje mediefil.\r\n\r\nOm en serie av mediefiler representeras av ett enda objekt, till exempel en datortomografi, kan en instans av denna arketyp användas för att representera en URI sträng till filen.",
+          "misuse" : "Ska inte användas för att representera information, instruktions- eller undervisningsmaterial tilldelade till en patient eller deras vårdgivare, till exempel som utbildningsbroschyrer. Använd CLUSTER.information_resource för detta syfte.\r\n\r\nSka inte användas för att registrera en referens till en databas. Använd CLUSTER.knowledge_base_reference för detta syfte.\r\n\r\n",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "nb" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "nb"
+          },
+          "purpose" : "For å dokumentere detaljer om en mediafil, samt tilknyttede metadata, som er ervervet eller brukt i forbindelse med en helsetjeneste.",
+          "keywords" : [ "bilde", "foto", "audio", "tekstfil", "video", "applikasjon", "fil", "multimedia", "DICOM", "digital", "dokument", "skannet", "scannet", "lyd" ],
+          "use" : "Brukes for å dokumentere detaljer om en mediafil, samt tilknyttede metadata, som er ervervet eller brukt i forbindelse med en helsetjeneste.\r\n\r\nHensikten med denne arketypen er kun å være en bærer for mediafilen og metadataene som beskriver innholdet i filen. Denne arketypen vil være nøstet i en annen arketype, vanligvis en OBSERVATION eller ACTION arketype, som vil inneholde konteksten og omstendighetene knyttet til hvordan innholdet ble dannet. For eksempel blir detaljer om modalitet, visning eller aspekt av et radiologisk bilde og DICOM-detaljer dokumentert i arketypen OBSERVATION.imaging_exam_result.\r\n\r\nEksempler inkluderer, men er ikke begrenset til:\r\n- Et bilde av en skade;\r\n- Et diagram over plasseringen av et spesifikt klinisk funn;\r\n- Et digital radiologisk bilde;\r\n- Et lyd- eller videoopptak av et intervju;\r\n- Et skannet objektglass til mikroskopisk diagnostikk;\r\n- Data fra medisinsk utstyr, for eksempel en EKG-apparat;\r\n- Et skannet bilde av papirdokumentasjon eller håndskrevne kliniske notater.\r\n\r\nDataelementet \"Innhold\" gjør det mulig å fange og lagre mediafiler i den elektroniske pasientjournalen (EPJ) ved hjelp av multimedia-datatypen. Multimedia-datatypen har mange RM-attributter, for eksempel filstørrelsen og URI til en ekstern kilde. Se https://specifications.openehr.org/releases/RM/latest/data_types.html#_dv_multimedia_class.\r\n\r\nHvis mer enn én mediafil skal dokumenteres, for eksempel bilder før og etter behandling av et sår, bruk en forekomst av denne arketypen for hvert bilde.\r\n\r\nHvis en serie mediafiler er representert som et enkelt element, for eksempel en CT-skanning, kan en forekomst av denne arketypen brukes til å representere en URI til gruppen/serien.",
+          "misuse" : "Skal ikke brukes til å representere informasjon, instruksjons- eller utdanningsmateriale levert til en person, eller dens omsorgsperson, for eksempel brosjyrer for pasientopplæring. Bruk CLUSTER.information_resource til dette formålet.\r\n\r\nSkal ikke brukes til å registrere en referanse til en kunnskapsbase - bruk CLUSTER. Knowledge_base_reference for dette formålet.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "sk" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "sk"
+          },
+          "purpose" : "Na zaznamenanie mediálneho súboru, ktorý sa získa alebo použije ako súčasť procesu zdravotnej starostlivosti, a podrobností o súvisiacich metadátach.",
+          "keywords" : [ "obrázky", "zvuky", "text", "video", "aplikácie", "súbory", "multimédiá", "zvuky", "DICOM", "digital", "dokument", "fotka", "hlasový záznam" ],
+          "use" : "Používa sa na zaznamenanie mediálneho súboru, ktorý sa získa alebo použije ako súčasť procesu zdravotnej starostlivosti, a podrobností o súvisiacich metadátach.\r\n\r\nZámerom tohto archetypu je iba uchovávať mediálny súbor a metadáta popisujúce jeho zachytenie. Tento archetyp bude vnorený do iného archetypu, zvyčajne POZOROVANIA alebo AKCIE, ktorá bude obsahovať kontext a okolnosti súvisiace so zachytením mediálneho súboru. Napríklad podrobnosti o modalite, zobrazení alebo aspekte rádiografickej snímky a podrobnosti DICOM budú zachytené v rámci archetypu OBSERVATION.imaging_exam_result.\r\n\r\nPríklady zahŕňajú, ale nie sú obmedzené na:\r\n- fotografia zranenia;\r\n- Schéma lokalizácie konkrétneho klinického nálezu;\r\n- rádiologický obraz;\r\n- audio alebo video záznam rozhovoru;\r\n- Naskenovaný patologický diapozitív;\r\n- Výstup údajov z klinického zariadenia, ako je EKG prístroj; alebo\r\n- Naskenovaný obraz papierovej dokumentácie alebo ručne písané klinické poznámky.\r\n\r\nÚdajový prvok „Obsah“ umožňuje zaznamenať a uložiť mediálny súbor do zdravotného záznamu pomocou dátového typu Multimedia. Dátový typ Multimedia má veľa atribútov RM, ako je veľkosť súboru a URI pre externý zdroj. Pozrite si https://specifications.openehr.org/releases/RM/latest/data_types.html#_dv_multimedia_class.\r\n\r\nAk bol zachytený viac ako jeden mediálny súbor, napríklad obrázky rany „pred“ a „po“, použite na reprezentáciu každého mediálneho súboru samostatnú inštanciu tohto archetypu.\r\n\r\nAk je séria mediálnych súborov reprezentovaná ako jedna položka, ako napríklad CT sken, tak sa môže jedna inštancia tohto archetypu použiť na reprezentáciu cesty pomocou URI k skupine.",
+          "misuse" : "Nesmie sa používať na reprezentáciu informácií, inštruktážnych alebo vzdelávacích materiálov dodávaných jednotlivcom alebo ich opatrovateľom, napríklad letáky s informáciami pre pacientov. Na tento účel použite CLUSTER.information_resource.\r\n\r\nNesmie sa používať na zaznamenanie odkazu na bázu znalostí – na tento účel použite CLUSTER.knowledge_base_reference.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "en" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "en"
+          },
+          "purpose" : "To record a media file that is acquired or used as part of the healthcare process, and details about associated metadata.",
+          "keywords" : [ "image", "audio", "text", "video", "application", "file", "multimedia", "audio", "DICOM", "digital", "document", "photo", "voice" ],
+          "use" : "Use to record a media file that is acquired or used as part of the healthcare process, and details about associated metadata.\r\n\r\nThe intent of this archetype is only to hold the media file and the metadata describing its capture. This archetype will be nested within another archetype, usually an OBSERVATION or ACTION that will hold the context and circumstances related to the capture of the media file. For example, details about the modality, view or aspect of a radiographic image and DICOM details will be captured within the OBSERVATION.imaging_exam_result archetype. \r\n\r\nExamples include, but are not limited to:\r\n- A photo of an injury;\r\n- A diagram of the location of a specific clinical finding;\r\n- A radiological image;\r\n- An audio or video recording of an interview;\r\n- Scanned pathology slide;\r\n- Data output from a clinical device, such as an ECG machine; or\r\n- A scanned image of paper documentation or hand-written clinical notes.\r\n\r\nThe 'Content' data element allows for the media file to be captured and stored within the health record using the Multimedia data type. The Multimedia data type has many RM attributes such as the size of file and URI to an external source. See https://specifications.openehr.org/releases/RM/latest/data_types.html#_dv_multimedia_class.\r\n\r\nIf more than one media file has been captured, such as 'before' and 'after' images of a wound, use a separate instance of this archetype to represent each media file.\r\n\r\nIf a series of media files is represented as a single item, such as a CT scan, one instance of this archetype can be used to represent a URI path to the group.",
+          "misuse" : "Not to be used to represent information, instructional or educational material supplied to an individual, or their carer, for example patient education leaflets. Use the CLUSTER.information_resource for this purpose.\r\n\r\nNot to be used to record a reference to a knowledge base - use CLUSTER.knowledge_base_reference for this purpose.",
+          "copyright" : "© openEHR Foundation",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "nl" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "nl"
+          },
+          "purpose" : "Om een mediabestand vast te leggen dat is verkregen of gebruikt als onderdeel van het zorgproces, en details over bijbehorende metadata.",
+          "keywords" : [ "afbeelding", "audio", "tekst", "video", "applicatie", "bestand", "multimedia", "geluid", "DICOM", "digitaal", "document", "foto", "spraak" ],
+          "use" : "Te gebruiken om een mediabestand vast te leggen dat is verkregen of gebruikt als onderdeel van het zorgproces, en details over bijbehorende metadata.\r\n\r\nDit archetype is alleen bedoeld voor het mediabestand en de metadata die het vastleggen ervan beschrijven. Dit archetype wordt genest binnen een ander archetype, meestal een OBSERVATION of ACTION die de context en omstandigheden bevat die verband houden met het vastleggen van het mediabestand. Bijvoorbeeld, details over de modaliteit, weergave of aspect van een radiografisch beeld en DICOM-details worden vastgelegd in het archetype OBSERVATION.imaging_exam_result.\r\n\r\nVoorbeelden omvatten, maar zijn niet beperkt tot:\r\n- Een foto van een blessure;\r\n- Een diagram van de locatie van een specifieke klinische bevinding;\r\n- Een radiologisch beeld;\r\n- Een audio- of video-opname van een interview;\r\n- Gescande pathologiedia;\r\n- Gegevensuitvoer van een klinisch apparaat, zoals een ECG-apparaat; of\r\n- Een gescande afbeelding van papieren documentatie of handgeschreven klinische aantekeningen.\r\n\r\nMet het gegevenselement 'Inhoud' kan het mediabestand worden vastgelegd en opgeslagen in het gezondheidsdossier met behulp van het gegevenstype Multimedia. Het gegevenstype Multimedia heeft veel RM-attributen, zoals de grootte van het bestand en de URI naar een externe bron. Zie https://specifications.openehr.org/releases/RM/latest/data_types.html#_dv_multimedia_class.\r\n\r\nAls er meer dan één mediabestand is vastgelegd, zoals 'voor' en 'na' beelden van een wond, gebruik dan een afzonderlijke instantie van dit archetype om elk mediabestand te vertegenwoordigen.\r\n\r\nAls een reeks mediabestanden wordt weergegeven als een enkel item, zoals een CT-scan, kan één instantie van dit archetype worden gebruikt om een URI-pad naar de groep weer te vertegenwoordigen.",
+          "misuse" : "Niet te gebruiken om informatie, instructie- of educatief materiaal weer te geven dat aan een persoon of hun verzorger wordt verstrekt, bijvoorbeeld folders voor patiënteneducatie. Gebruik hiervoor de CLUSTER.information_resource.\r\n\r\nNiet te gebruiken om een verwijzing naar een kennisbank op te nemen - gebruik hiervoor CLUSTER.knowledge_base_reference.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        }
+      }
     },
     "parentArchetypeId" : "openEHR-EHR-CLUSTER.media_file.v1",
     "differential" : true,
@@ -4764,6 +5371,499 @@
       "author" : {
         "name" : "Jelte Zeilstra",
         "organisation" : "Nedap"
+      },
+      "otherDetails" : { }
+    } ]
+  }, {
+    "@type" : "TEMPLATE_OVERLAY",
+    "uid" : "85836e33-57cc-400e-977d-13f4eaa75a9b",
+    "description" : {
+      "@type" : "RESOURCE_DESCRIPTION",
+      "originalAuthor" : { },
+      "otherContributors" : [ ],
+      "ipAcknowledgements" : { },
+      "references" : { },
+      "conversionDetails" : { },
+      "otherDetails" : {
+        "PARENT:MD5-CAM-1.0.1" : "8FE80F3E80C594AAF99D3BA540A53D73"
+      },
+      "details" : { }
+    },
+    "parentArchetypeId" : "openEHR-EHR-SECTION.adhoc.v1",
+    "differential" : true,
+    "archetypeId" : {
+      "@type" : "ARCHETYPE_HRID",
+      "value" : "openEHR-EHR-SECTION.ovl-adhoc-002.v1"
+    },
+    "definition" : {
+      "@type" : "C_COMPLEX_OBJECT",
+      "rmTypeName" : "SECTION",
+      "nodeId" : "at0000.1",
+      "attributes" : [ {
+        "@type" : "C_ATTRIBUTE",
+        "rmAttributeName" : "items",
+        "existence" : "0..1",
+        "cardinality" : {
+          "@type" : "CARDINALITY",
+          "interval" : "1..*",
+          "ordered" : false,
+          "unique" : false
+        },
+        "children" : [ {
+          "@type" : "C_ARCHETYPE_ROOT",
+          "rmTypeName" : "INSTRUCTION",
+          "occurrences" : "0..1",
+          "nodeId" : "at0.2",
+          "attributes" : [ ],
+          "attributeTuples" : [ ],
+          "archetypeRef" : "openEHR-EHR-INSTRUCTION.ovl-service_request-003.v1",
+          "referenceType" : "archetypeOverlay"
+        } ]
+      } ],
+      "attributeTuples" : [ ]
+    },
+    "terminology" : {
+      "@type" : "ARCHETYPE_TERMINOLOGY",
+      "conceptCode" : "at0000",
+      "termDefinitions" : {
+        "en" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "Appointment",
+            "description" : "A generic section header which should be renamed in a template to suit a specific clinical context."
+          }
+        },
+        "ru" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "заготовка заголовка (2)",
+            "description" : "Образец заголовка раздела"
+          }
+        },
+        "es-ar" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "Encabezado ad hoc (2)",
+            "description" : "Un encabezado de sección de tipo genérico que será renombrado en una plantilla para su empleo en un contexto clínico específico."
+          }
+        },
+        "sl" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "Naslov sekcije (2)",
+            "description" : "Naslov sekcije"
+          }
+        },
+        "nb" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "Templat-overskrift (2)",
+            "description" : "En generisk seksjonsoverskrift som skal gis nytt navn i en templat for å passe i en gitt klinisk kontekst."
+          }
+        },
+        "pt-br" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "Cabeçalho Ad hoc (2)",
+            "description" : "Um cabeçalho de sessão genérico que deve ser renomeado no template para adequar-se a um contexto clínico específico."
+          }
+        },
+        "sv" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "Rubrik (2)",
+            "description" : "En allmän avsnittsrubrik som döps om i en openEHR-mall för att passa in i en specifik klinisk kontext."
+          }
+        },
+        "de" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "Ad hoc Überschrift (2)",
+            "description" : "Eine generische Abschnittsüberschrift eines Templates, welche entsprechend dem spezifischen klinischen Kontext umbenannt werden sollte."
+          }
+        },
+        "it" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "Intestazione di sezione ad hoc (2)",
+            "description" : "Un'intestazione di sezione generica che dovrebbe essere rinominata in un template per adattarsi ad uno specifico contesto clinico."
+          }
+        },
+        "fr" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "Rubrique ad hoc (2)",
+            "description" : "Un en-tête de section générique qui doit être renommé dans un modèle pour s'adapter à un contexte clinique spécifique."
+          }
+        }
+      },
+      "termBindings" : { },
+      "terminologyExtracts" : { },
+      "valueSets" : { }
+    },
+    "adlVersion" : "1.4",
+    "buildUid" : "46fe0e95-f5cc-44c8-8616-3b9fd0ca6e61",
+    "rmName" : "openehr",
+    "rmRelease" : "1.1.0",
+    "generated" : true,
+    "otherMetaData" : { },
+    "originalLanguage" : {
+      "terminologyId" : {
+        "value" : "ISO_639-1"
+      },
+      "codeString" : "en"
+    },
+    "translations" : [ {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "de"
+      },
+      "author" : {
+        "name" : "Ramona Wellmann",
+        "organisation" : "Medizinische Hochschule Hannover",
+        "email" : "wellmann.ramona@mh-hannover.de"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "ru"
+      },
+      "author" : {
+        "name" : "Art Latyp Латыпов Артур Шамилевич",
+        "organisation" : "RusBITech РусБИТех, Москва"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "sv"
+      },
+      "author" : {
+        "name" : "Daniel Hall",
+        "organisation" : "Region Östergötland",
+        "email" : "daniel.hall@regionostergotland.se"
+      },
+      "accreditation" : "Åsa Skagerhult, Lisa Axelsson",
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "es-ar"
+      },
+      "author" : {
+        "name" : "Alan March",
+        "organisation" : "Hospital Universitario Austral, Buenos Aires, Argentina"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "nb"
+      },
+      "author" : {
+        "einar.fosse@unn.no" : "einar.fosse@unn.no",
+        "name" : "Einar Fosse",
+        "organisation" : "Norwegian Centre for Integrated Care and Telemedicine, Tromsø, Norway"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "pt-br"
+      },
+      "author" : {
+        "name" : "Vladimir Pizzo",
+        "organisation" : "Hospital Sírio Libanês, São Paulo, Brazil",
+        "email" : "vladimir.pizzo@hsl.org.br"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "sl"
+      },
+      "author" : {
+        "name" : "?"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "it"
+      },
+      "author" : {
+        "name" : "Paolo Anedda",
+        "organisation" : "Inpeco",
+        "email" : "paolo.anedda@inpeco.com"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "fr"
+      },
+      "author" : {
+        "name" : "Vanessa Pereira",
+        "organisation" : "Better - Pathfinder",
+        "email" : "vanessapereira@protonmail.com"
+      },
+      "otherDetails" : { }
+    } ]
+  }, {
+    "@type" : "TEMPLATE_OVERLAY",
+    "uid" : "932a9b1a-9365-40c4-9f75-674090b81709",
+    "description" : {
+      "@type" : "RESOURCE_DESCRIPTION",
+      "originalAuthor" : { },
+      "otherContributors" : [ ],
+      "ipAcknowledgements" : { },
+      "references" : { },
+      "conversionDetails" : { },
+      "otherDetails" : {
+        "PARENT:MD5-CAM-1.0.1" : "c17e1408503f597d0b70663ebe22d7b0"
+      },
+      "details" : { }
+    },
+    "parentArchetypeId" : "openEHR-EHR-INSTRUCTION.service_request.v1",
+    "differential" : true,
+    "archetypeId" : {
+      "@type" : "ARCHETYPE_HRID",
+      "value" : "openEHR-EHR-INSTRUCTION.ovl-service_request-003.v1"
+    },
+    "definition" : {
+      "@type" : "C_COMPLEX_OBJECT",
+      "rmTypeName" : "INSTRUCTION",
+      "nodeId" : "at0000.1",
+      "attributes" : [ {
+        "@type" : "C_ATTRIBUTE",
+        "rmAttributeName" : "activities",
+        "children" : [ {
+          "@type" : "C_COMPLEX_OBJECT",
+          "rmTypeName" : "ACTIVITY",
+          "nodeId" : "at0001",
+          "attributes" : [ {
+            "@type" : "C_ATTRIBUTE",
+            "rmAttributeName" : "description",
+            "children" : [ {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "ITEM_TREE",
+              "nodeId" : "at0009",
+              "attributes" : [ {
+                "@type" : "C_ATTRIBUTE",
+                "rmAttributeName" : "items",
+                "children" : [ {
+                  "@type" : "C_COMPLEX_OBJECT",
+                  "rmTypeName" : "ELEMENT",
+                  "nodeId" : "at0121.1",
+                  "attributes" : [ ],
+                  "attributeTuples" : [ ]
+                }, {
+                  "@type" : "C_COMPLEX_OBJECT",
+                  "rmTypeName" : "ELEMENT",
+                  "nodeId" : "at0062.1",
+                  "attributes" : [ ],
+                  "attributeTuples" : [ ]
+                }, {
+                  "@type" : "C_COMPLEX_OBJECT",
+                  "rmTypeName" : "ELEMENT",
+                  "nodeId" : "at0040.1",
+                  "attributes" : [ {
+                    "@type" : "C_ATTRIBUTE",
+                    "rmAttributeName" : "value",
+                    "children" : [ {
+                      "@type" : "C_COMPLEX_OBJECT",
+                      "rmTypeName" : "DV_DATE_TIME",
+                      "attributes" : [ ],
+                      "attributeTuples" : [ ]
+                    } ]
+                  } ],
+                  "attributeTuples" : [ ]
+                } ]
+              } ],
+              "attributeTuples" : [ ]
+            } ]
+          } ],
+          "attributeTuples" : [ ]
+        } ]
+      } ],
+      "attributeTuples" : [ ]
+    },
+    "terminology" : {
+      "@type" : "ARCHETYPE_TERMINOLOGY",
+      "conceptCode" : "at0000",
+      "termDefinitions" : {
+        "en" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "Appointment",
+            "description" : "Request for a health-related service or activity to be delivered by a clinician, organisation or agency."
+          },
+          "at0121.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0121.1",
+            "text" : "Appointment Type",
+            "description" : "The name of the service/s requested.",
+            "comment" : "Coding of the 'Service name' with an external terminology is strongly recommended, if available. This data element allows multiple occurrences to enable the user to record a multiple services as part of a single request, if required."
+          },
+          "at0062.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0062.1",
+            "text" : "Reason for Appointment",
+            "description" : "The specific problem needing attention or the clinical question that requires investigation.",
+            "comment" : "Coding of the 'Reason for request' with an external terminology is desirable, if available. This data element allows multiple occurrences to enable the user to record a multiple responses, if required."
+          },
+          "at0040.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0040.1",
+            "text" : "Appointment Date",
+            "description" : "The date/time or description about timing for provision of the requested service/s.",
+            "comment" : "This data element allows for recording of the timing for the service/s, either as a date and time, an interval of date and time, or a text descriptor. In practice, clinicians will often think in terms of ordering services as relative or approximate timing, for example: 'next available', or  in '3 months'. As clinical systems need more exact parameters to operate on, this '3 months' will usually be converted to an exact date 3 months from the date of recording and stored using this data element. If complex timing or sequences of timings are required, use the CLUSTER.service_direction archetype within the 'Complex timing' SLOT and this data element becomes redundant."
+          }
+        },
+        "nb" : { },
+        "it" : { },
+        "de" : { },
+        "sv" : { },
+        "pt-br" : { },
+        "nl" : { }
+      },
+      "termBindings" : { },
+      "terminologyExtracts" : { },
+      "valueSets" : { }
+    },
+    "adlVersion" : "1.4",
+    "buildUid" : "424d508f-afca-44c2-97fc-b45116d9bef4",
+    "rmName" : "openehr",
+    "rmRelease" : "1.1.0",
+    "generated" : true,
+    "otherMetaData" : { },
+    "originalLanguage" : {
+      "terminologyId" : {
+        "value" : "ISO_639-1"
+      },
+      "codeString" : "en"
+    },
+    "translations" : [ {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "de"
+      },
+      "author" : {
+        "name" : "Alina Rehberg, Natalia Strauch, Darin Leonhardt",
+        "organisation" : "Medizinische Hochschule Hannover, PLRI für medizinische Informatik/ Medizinische Hochschule",
+        "email" : "rehberg.alina@mh-hannover.de, Strauch.Natalia@mh-hannover.de, leonhardt.darin@mh-hannover.de"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "sv"
+      },
+      "author" : {
+        "name" : "Sofia Janstad",
+        "organisation" : "SLL",
+        "email" : "sofia.lang-janstad@sll.se"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "nb"
+      },
+      "author" : {
+        "name" : "Silje Ljosland Bakke, Marit Alice Venheim",
+        "organisation" : "Nasjonal IKT HF, Norway, Helse Vest IKT",
+        "email" : "marit.alice.venheim@helse-vest-ikt.no"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "pt-br"
+      },
+      "author" : {
+        "name" : "Vladimir Pizzo",
+        "organisation" : "Clínica Parente Pizzo",
+        "email" : "vrppizzo@gmail.com"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "it"
+      },
+      "author" : {
+        "name" : "Francesca Frexia",
+        "organisation" : "CRS4 - Center for advanced studies, research and development in Sardinia, Pula (Cagliari), Italy",
+        "email" : "francesca.frexia@crs4.it"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "nl"
+      },
+      "author" : {
+        "name" : "Mattijs Kuhlmann, Joost Holslag",
+        "organisation" : "Nedap",
+        "email" : "mattijs.kuhlmann@nedap.com, joost.holslag@nedap.com"
       },
       "otherDetails" : { }
     } ]
