@@ -150,7 +150,7 @@ Not to be used for recording the results of an imaging examination - use the CLU
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"630F8A62D774A56FDDD25D3FB072B794">
+		["MD5-CAM-1.0.1"] = <"0986d0b2bc06cb04804837769e9174ec">
 		["build_uid"] = <"cae78645-fcd6-49be-aa56-df864ad3bd75">
 		["ip_acknowledgements"] = <"This artefact includes content from SNOMED Clinical Terms® (SNOMED CT®) which is copyrighted material of the International Health Terminology Standards Development Organisation (IHTSDO). Where an implementation of this artefact makes use of SNOMED CT content, the implementer must have the appropriate SNOMED CT Affiliate license - for more information contact http://www.snomed.org/snomed-ct/get-snomedct or info@snomed.org.">
 		["revision"] = <"1.0.10-alpha">
@@ -159,12 +159,12 @@ Not to be used for recording the results of an imaging examination - use the CLU
 definition
 	CLUSTER[at0000] matches {    -- Examination findings
 		items cardinality matches {1..*; unordered} matches {
-			ELEMENT[at0001] matches {    -- System or structure examined
+			ELEMENT[at0001] matches {    -- Oral areas examine
 				value matches {
 					DV_TEXT matches {*}
 				}
 			}
-			ELEMENT[at0012] occurrences matches {0..1} matches {    -- Body site
+			ELEMENT[at0012] occurrences matches {0..1} matches {    -- Oral Site
 				value matches {
 					DV_TEXT matches {*}
 				}
@@ -213,7 +213,7 @@ ontology
 					description = <"Findings observed during the physical examination of a body system or anatomical structure.">
 				>
 				["at0001"] = <
-					text = <"System or structure examined">
+					text = <"Oral areas examine">
 					description = <"Identification of the examined body system or anatomical structure.">
 					comment = <"Coding of the system or structure examined with a terminology is preferred, where possible.">
 				>
@@ -248,7 +248,7 @@ ontology
 					comment = <"If the body site has been fully identified in the 'System or structure examined' or the 'Body site' data element, this SLOT becomes redundant.">
 				>
 				["at0012"] = <
-					text = <"Body site">
+					text = <"Oral Site">
 					description = <"Identification of the area of the body under examination.">
 					comment = <"If the body site has been fully identified in the 'System or structure examined' data element, this data element becomes redundant.">
 				>
@@ -261,7 +261,7 @@ ontology
 					description = <"Funn ved fysisk undersøkelse av et organsystem eller anatomisk struktur.">
 				>
 				["at0001"] = <
-					text = <"Undersøkt organsystem eller struktur">
+					text = <"*Oral areas examine (en)">
 					description = <"Identifisering av det undersøkte organsystemet eller anatomiske strukturen.">
 					comment = <"*Coding of the system or structure examined with a terminology is preferred, where possible. (en)">
 				>
@@ -296,7 +296,7 @@ ontology
 					comment = <"Hvis anatomisk lokalisasjon er entydig identifisert i elementet \"Undersøkt organsystem eller struktur\" er dette SLOTet ikke nødvendig å benytte.">
 				>
 				["at0012"] = <
-					text = <"Anatomisk lokalisasjon">
+					text = <"*Oral Site (en)">
 					description = <"Identifisering av et enkelt fysisk sted enten på eller i menneskekroppen.">
 					comment = <"*If the body site has been fully identified in the 'System or structure examined' data element, this data element becomes redundant. (en)">
 				>
@@ -309,7 +309,7 @@ ontology
 					description = <"Constatações observadas durante o exame físico de um sistema corporal ou estrutura anatômica.">
 				>
 				["at0001"] = <
-					text = <"Sistema ou estrutura examinada">
+					text = <"*Oral areas examine (en)">
 					description = <"Identificação do sistema do corpo examinado ou da estrutura anatômica.">
 					comment = <"A codificação do sistema ou estrutura examinada com uma terminologia é preferível, sempre que possível.">
 				>
@@ -344,7 +344,7 @@ ontology
 					comment = <"Se o local do corpo tiver sido totalmente identificado no elemento de dados 'Sistema ou estrutura examinada' ou 'Local do corpo', esse SLOT se tornará redundante.">
 				>
 				["at0012"] = <
-					text = <"Local do corpo">
+					text = <"*Oral Site (en)">
 					description = <"Identificação da área do corpo em exame.">
 					comment = <"Se o local do corpo foi totalmente identificado no elemento de dados 'Sistema ou estrutura examinada', esse elemento de dados se torna redundante.">
 				>
@@ -357,7 +357,7 @@ ontology
 					description = <"Während der körperlichen Untersuchung eines Körpersystems oder einer anatomischen Struktur beobachtete Befunde.">
 				>
 				["at0001"] = <
-					text = <"Untersuchtes System oder untersuchte Struktur">
+					text = <"*Oral areas examine (en)">
 					description = <"Identifizierung des untersuchten Körpersystems oder der anatomischen Struktur.">
 					comment = <"Wenn möglich wird die Kodierung des untersuchten Systems oder der untersuchten Struktur mit einer Terminologie bevorzugt.">
 				>
@@ -392,7 +392,7 @@ ontology
 					comment = <"Wenn die Körperstelle im Datenelement \"Untersuchtes System oder untersuchte Struktur\" oder im Datenelement \"Körperstelle\" vollständig identifiziert wurde, wird die Verwendung dieses SLOT überflüssig.">
 				>
 				["at0012"] = <
-					text = <"Körperstelle">
+					text = <"*Oral Site (en)">
 					description = <"Identifizierung des Untersuchungsbereichs.">
 					comment = <"Wenn die Körperstelle im Datenelement \"Untersuchtes System oder untersuchte Struktur\" vollständig identifiziert wurde, wird dieses Datenelement überflüssig.">
 				>
@@ -405,7 +405,7 @@ ontology
 					description = <"Observerade fynd vid fysisk undersökning av system i kroppen, eller av anatomisk struktur">
 				>
 				["at0001"] = <
-					text = <"System eller struktur som undersökts">
+					text = <"*Oral areas examine (en)">
 					description = <"Identifiering av systemet eller strukturen som undersökts.">
 					comment = <"Om möjligt, koda systemet eller strukturen med hjälp av ett terminologisystem.">
 				>
@@ -440,7 +440,7 @@ ontology
 					comment = <"Om den anatomiska platsen kan identifieras helt via dataelementet \"System eller struktur som undersökts\" så blir denna del redundant.">
 				>
 				["at0012"] = <
-					text = <"Anatomisk plats">
+					text = <"*Oral Site (en)">
 					description = <"Identifiering av den anatomiska plats som undersökts.
 ">
 					comment = <"Om den anatomiska platsen har identifierats fullt ut i \"System eller struktur som undersökts\" så blir detta element redundant.
