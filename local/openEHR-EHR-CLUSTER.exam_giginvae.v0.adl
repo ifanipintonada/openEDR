@@ -7,13 +7,13 @@ concept
 language
 	original_language = <[ISO_639-1::ja]>
 	translations = <
-		["en"] = <
-			language = <[ISO_639-1::en]>
+		["sv"] = <
+			language = <[ISO_639-1::sv]>
 			author = <
 			>
 		>
-		["sv"] = <
-			language = <[ISO_639-1::sv]>
+		["en"] = <
+			language = <[ISO_639-1::en]>
 			author = <
 			>
 		>
@@ -46,7 +46,7 @@ Shinji Kobayashi
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"29ae6962ce99446841e3574fa69741f7">
+		["MD5-CAM-1.0.1"] = <"a3930f1cf97a7c13099d5ea0ecd7e09d">
 		["build_uid"] = <"a51622a5-8395-4d38-9f73-69485d189a7b">
 		["revision"] = <"0.0.1-alpha">
 	>
@@ -88,9 +88,26 @@ definition
 			}
 			CLUSTER[at0008] occurrences matches {0..1} matches {    -- Specific findings
 				items cardinality matches {1..*; unordered} matches {
-					ELEMENT[at0009] occurrences matches {0..1} matches {    -- Bleeding
+					ELEMENT[at0025] occurrences matches {0..1} matches {    -- DV_TEXT
 						value matches {
 							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0009] occurrences matches {0..1} matches {    -- Bleeding
+						value matches {
+							DV_BOOLEAN matches {*}
+						}
+					}
+					ELEMENT[at0027] occurrences matches {0..1} matches {    -- DV_COUNT
+						value matches {
+							C_DV_QUANTITY <
+								property = <[openehr::122]>
+								list = <
+									["1"] = <
+										units = <"mm">
+									>
+								>
+							>
 						}
 					}
 					ELEMENT[at0010] occurrences matches {0..1} matches {    -- Extent
@@ -106,22 +123,29 @@ definition
 					}
 					ELEMENT[at0011] occurrences matches {0..1} matches {    -- Pocket depth
 						value matches {
-							DV_QUANTITY matches {*}
+							C_DV_QUANTITY <
+								property = <[openehr::122]>
+								list = <
+									["1"] = <
+										units = <"mm">
+									>
+								>
+							>
 						}
 					}
 					ELEMENT[at0012] occurrences matches {0..1} matches {    -- Swelling
 						value matches {
-							DV_TEXT matches {*}
+							DV_BOOLEAN matches {*}
 						}
 					}
 					ELEMENT[at0013] occurrences matches {0..1} matches {    -- Pus discharge
 						value matches {
-							DV_TEXT matches {*}
+							DV_BOOLEAN matches {*}
 						}
 					}
 					ELEMENT[at0014] occurrences matches {0..1} matches {    -- Ulceration
 						value matches {
-							DV_TEXT matches {*}
+							DV_BOOLEAN matches {*}
 						}
 					}
 					ELEMENT[at0015] occurrences matches {0..1} matches {    -- Number
@@ -130,6 +154,15 @@ definition
 						}
 					}
 					ELEMENT[at0016] occurrences matches {0..1} matches {    -- Site
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[ac0000]
+								}
+							}
+						}
+					}
+					ELEMENT[at0026] occurrences matches {0..1} matches {    -- DV_TEXT
 						value matches {
 							DV_TEXT matches {*}
 						}
@@ -167,6 +200,7 @@ definition
 	}
 
 ontology
+	terminologies_available = <"ICD10", ...>
 	term_definitions = <
 		["ja"] = <
 			items = <
@@ -270,6 +304,18 @@ ontology
 					text = <"Site">
 					description = <"*">
 				>
+				["at0025"] = <
+					text = <"DV_TEXT">
+					description = <"">
+				>
+				["at0026"] = <
+					text = <"DV_TEXT">
+					description = <"">
+				>
+				["at0027"] = <
+					text = <"DV_COUNT">
+					description = <"">
+				>
 			>
 		>
 		["en"] = <
@@ -279,8 +325,8 @@ ontology
 					description = <"*unknown (ja)">
 				>
 				["at0001"] = <
-					text = <"*No abnormality detected (ja)">
-					description = <"*">
+					text = <"Abnormality">
+					description = <"">
 				>
 				["at0002"] = <
 					text = <"*Clinical description (ja)">
@@ -311,8 +357,8 @@ ontology
 					description = <"*">
 				>
 				["at0009"] = <
-					text = <"*Bleeding (ja)">
-					description = <"*">
+					text = <"Bleeding on probing (BOP)">
+					description = <"">
 				>
 				["at0010"] = <
 					text = <"*Extent (ja)">
@@ -373,6 +419,18 @@ ontology
 				["at0024"] = <
 					text = <"*Site (ja)">
 					description = <"*">
+				>
+				["at0025"] = <
+					text = <"Tooth number">
+					description = <"">
+				>
+				["at0026"] = <
+					text = <"Description">
+					description = <"">
+				>
+				["at0027"] = <
+					text = <"Probing depth">
+					description = <"">
 				>
 			>
 		>
@@ -478,6 +536,25 @@ ontology
 					text = <"*Site (ja)">
 					description = <"*">
 				>
+				["at0025"] = <
+					text = <"*DV_TEXT (ja)">
+					description = <"">
+				>
+				["at0026"] = <
+					text = <"*DV_TEXT (ja)">
+					description = <"">
+				>
+				["at0027"] = <
+					text = <"*DV_COUNT (ja)">
+					description = <"">
+				>
+			>
+		>
+	>
+	constraint_binding = <
+		["ICD10"] = <
+			items = <
+				["ac0000"] = <terminology:ICD10>
 			>
 		>
 	>
