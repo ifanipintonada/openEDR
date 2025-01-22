@@ -110,7 +110,7 @@ Standards for medication and medical device records – technical annex [Interne
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"1ad82b73c5b8b32dad9c599c30168fe4">
+		["MD5-CAM-1.0.1"] = <"e070f49f9b3f23c64acb92bff9fa1f10">
 		["build_uid"] = <"ce856a71-af6c-4a3e-a3b0-47b14fb70b10">
 		["revision"] = <"1.4.1">
 	>
@@ -127,12 +127,12 @@ definition
 					DV_INTERVAL<DV_COUNT> matches {
 						lower matches {
 							DV_COUNT matches {
-								magnitude matches {|>=0|}
+								magnitude matches {|0..1|}
 							}
 						}
 						upper matches {
 							DV_COUNT matches {
-								magnitude matches {|>=1|}
+								magnitude matches {|1|}
 							}
 						}
 					}
