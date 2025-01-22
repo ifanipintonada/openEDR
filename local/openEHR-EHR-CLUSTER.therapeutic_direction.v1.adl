@@ -110,7 +110,7 @@ Standards for medication and medical device records – technical annex [Interne
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"f04c2e5ec924193d1954ce8fe6f4faa6">
+		["MD5-CAM-1.0.1"] = <"1ad82b73c5b8b32dad9c599c30168fe4">
 		["build_uid"] = <"ce856a71-af6c-4a3e-a3b0-47b14fb70b10">
 		["revision"] = <"1.4.1">
 	>
@@ -124,9 +124,6 @@ definition
 			}
 			ELEMENT[at0172] occurrences matches {0..1} matches {    -- Number of administrations
 				value matches {
-					DV_COUNT matches {
-						magnitude matches {|>=1|}
-					}
 					DV_INTERVAL<DV_COUNT> matches {
 						lower matches {
 							DV_COUNT matches {
