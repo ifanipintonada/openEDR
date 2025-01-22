@@ -235,7 +235,7 @@ Niet te gebruiken voor het vastleggen van toediening van alcohol op andere wijze
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"a0c0958c9debe2a429f50619f518b2ad">
+		["MD5-CAM-1.0.1"] = <"41112eab07957e11d7f90b152f9a119b">
 		["build_uid"] = <"4a795c08-43bc-4fe1-b5a5-855b56b02425">
 		["revision"] = <"1.0.7">
 	>
@@ -272,18 +272,6 @@ definition
 									ELEMENT[at0108] matches {    -- Type
 										value matches {
 											DV_TEXT matches {*}
-											DV_CODED_TEXT matches {
-												defining_code matches {
-													[local::
-													at0115,    -- Beer
-													at0116,    -- Wine
-													at0117,    -- Cider
-													at0118,    -- Mead
-													at0119,    -- Pulque
-													at0120,    -- Spirits
-													at0121]    -- Fortified wine
-												}
-											}
 										}
 									}
 									ELEMENT[at0053] occurrences matches {0..1} matches {    -- Description
@@ -342,7 +330,6 @@ definition
 											at0084]    -- Non-daily
 										}
 									}
-									DV_TEXT matches {*}
 								}
 							}
 							ELEMENT[at0013] occurrences matches {0..1} matches {    -- Start date
@@ -372,52 +359,6 @@ definition
 											>
 										>
 									>
-									DV_INTERVAL<DV_QUANTITY> matches {
-										lower matches {
-											C_DV_QUANTITY <
-												
-												list = <
-													["1"] = <
-														units = <"1/wk">
-														magnitude = <|0.0..7.0|>
-														precision = <|0|>
-													>
-													["2"] = <
-														units = <"1/mo">
-														magnitude = <|0.0..31.0|>
-														precision = <|0|>
-													>
-													["3"] = <
-														units = <"1/a">
-														magnitude = <|0.0..365.0|>
-														precision = <|0|>
-													>
-												>
-											>
-										}
-										upper matches {
-											C_DV_QUANTITY <
-												
-												list = <
-													["1"] = <
-														units = <"1/wk">
-														magnitude = <|0.0..7.0|>
-														precision = <|0|>
-													>
-													["2"] = <
-														units = <"1/mo">
-														magnitude = <|0.0..31.0|>
-														precision = <|0|>
-													>
-													["3"] = <
-														units = <"1/a">
-														magnitude = <|0.0..365.0|>
-														precision = <|0|>
-													>
-												>
-											>
-										}
-									}
 								}
 							}
 							ELEMENT[at0113] occurrences matches {0..1} matches {    -- Binge drinking description
@@ -591,34 +532,6 @@ ontology
 					text = <"Binge drinking description">
 					description = <"Narrative description about the individual's typical pattern of binge drinking.">
 				>
-				["at0115"] = <
-					text = <"Beer">
-					description = <"Fermented beverage made from grain mash.">
-				>
-				["at0116"] = <
-					text = <"Wine">
-					description = <"Fermented beverage made from grapes and sometimes other fruits.">
-				>
-				["at0117"] = <
-					text = <"Cider">
-					description = <"Fermented beverage made from any fruit juice.">
-				>
-				["at0118"] = <
-					text = <"Mead">
-					description = <"Fermented beverage made from honey, sometimes with various fruits spices, grains or hops.">
-				>
-				["at0119"] = <
-					text = <"Pulque">
-					description = <"Fermented beverage made from 'honey water\" of cacti.">
-				>
-				["at0120"] = <
-					text = <"Spirits">
-					description = <"Fermented beverage made by a distillation process. Usually has an alcohol content >20%. Includes liquers, cocktails and rectified spirits.">
-				>
-				["at0121"] = <
-					text = <"Fortified wine">
-					description = <"Wine with added spirits.">
-				>
 			>
 		>
 		["nb"] = <
@@ -739,34 +652,6 @@ ontology
 					text = <"Beskrivelse av episodisk høyt forbruk">
 					description = <"Beskrivelse i fritekst om individets typiske mønster for episodisk høyt forbruk.">
 				>
-				["at0115"] = <
-					text = <"Øl">
-					description = <"Gjæret alkoholholdig drikke brygget på korn.">
-				>
-				["at0116"] = <
-					text = <"Vin">
-					description = <"Gjæret alkoholholdig drikke laget av druesaft eller noen ganger av annen frukt.">
-				>
-				["at0117"] = <
-					text = <"Sider">
-					description = <"Gjæret alkoholholdig drikk laget av råsaft fra epler eller annen frukt.">
-				>
-				["at0118"] = <
-					text = <"Mjød">
-					description = <"Gjæret alkoholholdig drikk laget av honning, vann og gjær. Noen ganger med tilsatt krydder, som mjødurt.">
-				>
-				["at0119"] = <
-					text = <"Pulque">
-					description = <"Gjæret alkoholholdig drikk laget av sevje fra agaveplanten, for eksempel tequilla.">
-				>
-				["at0120"] = <
-					text = <"Brennevin (Sprit)">
-					description = <"Gjæret alkoholholdig drikk laget ved destillasjon. Vanligvis med en alkoholprosent > 20%. Omfatter også likører, coctails og teknisk etanol.">
-				>
-				["at0121"] = <
-					text = <"Sterkvin">
-					description = <"Vin som er tilsatt brennevin. Tidligere kalt hetvin.">
-				>
 			>
 		>
 		["sv"] = <
@@ -886,34 +771,6 @@ ontology
 				["at0113"] = <
 					text = <"Berusningsdrickandebeskrivning">
 					description = <"Beskrivande sammanfattning om individens typiska mönster av berusningsdrickande.">
-				>
-				["at0115"] = <
-					text = <"Öl">
-					description = <"Jäst dryck gjord av spannmålsmäsk.">
-				>
-				["at0116"] = <
-					text = <"Vin">
-					description = <"Jäst dryck gjord av druvor och ibland andra frukter.">
-				>
-				["at0117"] = <
-					text = <"Cider">
-					description = <"Jäst dryck gjord av fruktjuice.">
-				>
-				["at0118"] = <
-					text = <"Mjöd">
-					description = <"Jäst dryck gjord av honung, ibland med olika frukter, kryddor, spannmål eller humle.">
-				>
-				["at0119"] = <
-					text = <"Pulque">
-					description = <"Jäst dryck gjord på växtsaft från arter i agavesläktet.">
-				>
-				["at0120"] = <
-					text = <"Sprit">
-					description = <"Jäst dryck gjord genom en destillationsprocess. Har vanligtvis en alkoholhalt >20%.">
-				>
-				["at0121"] = <
-					text = <"Starkvin">
-					description = <"Vin med tillsatt sprit, till exempel portvin, sherry, madeira och marsala.">
 				>
 			>
 		>
@@ -1038,34 +895,6 @@ ontology
 					text = <"Beschreibung des Alkoholexzesses">
 					description = <"Beschreibung des typischen Musters eines Alkoholexzesses einer Person.">
 				>
-				["at0115"] = <
-					text = <"Bier">
-					description = <"Fermentiertes Getränk aus Getreidemaische.">
-				>
-				["at0116"] = <
-					text = <"Wein">
-					description = <"Fermentiertes Getränk aus Trauben und manchmal auch anderen Früchten.">
-				>
-				["at0117"] = <
-					text = <"Cider">
-					description = <"Fermentiertes Getränk aus einer beliebigen Art Fruchtsaft.">
-				>
-				["at0118"] = <
-					text = <"Met">
-					description = <"Fermentiertes Getränk aus Honig, manchmal mit verschiedenen Fruchtgewürzen, Getreide oder Hopfen.">
-				>
-				["at0119"] = <
-					text = <"Agavenwein">
-					description = <"Fermentiertes Getränk aus Honigwasser von Kakteen.">
-				>
-				["at0120"] = <
-					text = <"Spirituosen">
-					description = <"Fermentiertes Getränk, hergestellt durch ein Destillationsverfahren. Hat in der Regel einen Alkoholgehalt von >20%. Umfasst Liköre, Cocktails und rektifizierte Spirituosen.">
-				>
-				["at0121"] = <
-					text = <"Likörwein">
-					description = <"Wein mit hinzugefügten Spirituosen.">
-				>
 			>
 		>
 		["fr"] = <
@@ -1186,34 +1015,6 @@ ontology
 					text = <"Description de la consommation excessive">
 					description = <"Description narrative des habitudes typiques de consommation excessive d'alcool de l'individu.">
 				>
-				["at0115"] = <
-					text = <"Bière">
-					description = <"Boisson fermentée à base de purée de céréales.">
-				>
-				["at0116"] = <
-					text = <"Vin">
-					description = <"Boisson fermentée à base de raisins et parfois d'autres fruits.">
-				>
-				["at0117"] = <
-					text = <"Cidre">
-					description = <"Boisson fermentée à base de n'importe quel Cidre de fruit.">
-				>
-				["at0118"] = <
-					text = <"Hydromel">
-					description = <"Hydromel">
-				>
-				["at0119"] = <
-					text = <"Pulque">
-					description = <"Boisson fermentée à base d'\"eau de miel\" de cactus.">
-				>
-				["at0120"] = <
-					text = <"Spiritueux">
-					description = <"Spiritueux">
-				>
-				["at0121"] = <
-					text = <"Vin fortifié">
-					description = <"Vin additionné de spiritueux.">
-				>
 			>
 		>
 		["nl"] = <
@@ -1333,34 +1134,6 @@ ontology
 				["at0113"] = <
 					text = <"Overmatig drinken beschrijving">
 					description = <"Verhalende beschrijving over het individu's typische patroon van overmatig drinken.">
-				>
-				["at0115"] = <
-					text = <"Bier">
-					description = <"Gefermenteerde drank gemaakt van graanpuree.">
-				>
-				["at0116"] = <
-					text = <"Wijn">
-					description = <"Gefermenteerde drank gemaakt van druiven en soms andere vruchten.">
-				>
-				["at0117"] = <
-					text = <"Cider">
-					description = <"Gefermenteerde drank gemaakt van een vruchtensap.">
-				>
-				["at0118"] = <
-					text = <"Mede">
-					description = <"Gefermenteerde drank gemaakt van honing, soms met verscheidene vruchten, kruiden, granen of hop.">
-				>
-				["at0119"] = <
-					text = <"Pulque">
-					description = <"Gefermenteerde drank gemaakt van \"honingwater\" uit cacti.">
-				>
-				["at0120"] = <
-					text = <"Gedestileerde dranken">
-					description = <"Gefermenteerde drank gemaakt door een destilatieproces. Heeft doorgaans een alcoholgehalte >20%. Dit omvat likeuren, cocktails en gedenatureerde alcohol.">
-				>
-				["at0121"] = <
-					text = <"Versterkte wijn">
-					description = <"Wijn met toegevoegde gedestileerde drank.">
 				>
 			>
 		>
