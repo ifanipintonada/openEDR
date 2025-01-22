@@ -58,6 +58,11 @@ Dieser Archetyp ist so konzipiert, dass er innerhalb des SLOTs \"Tägliche Verab
 Arketypen er laget for å brukes i SLOTet \"Administreringstidspunkt\" i arketypen CLUSTER.dosage (Dosering), men kan også brukes i andre CLUSTER- og ENTRY-arketyper der det er klinisk passende.">
 			misuse = <"Skal ikke brukes til å registrere detaljer om timing over lengre tidsperioder enn et døgn. Bruk arketypen CLUSTER.timing_repetition for dette formålet.">
 		>
+		["sl"] = <
+			language = <[ISO_639-1::sl]>
+			purpose = <"*To provide structured information on time schedules within a single day that is suitable for computation and display for human interpretation.(en)">
+			copyright = <"© openEHR Foundation">
+		>
 		["en"] = <
 			language = <[ISO_639-1::en]>
 			purpose = <"To record structured information about the intended timing of a therapeutic or diagnostic activity within any 24 hour period.">
@@ -68,11 +73,6 @@ Arketypen er laget for å brukes i SLOTet \"Administreringstidspunkt\" i arketyp
 This archetype is designed to be used within the 'Timing' SLOT within the CLUSTER.dosage archetype, but can also be used in other CLUSTER and ENTRY class archetypes where clinically appropriate.">
 			misuse = <"Not to be used for recording timing details over periods longer than a single 24 hour period. Use the CLUSTER.timing_repetition archetype for this purpose.">
 		>
-		["sl"] = <
-			language = <[ISO_639-1::sl]>
-			purpose = <"*To provide structured information on time schedules within a single day that is suitable for computation and display for human interpretation.(en)">
-			copyright = <"© openEHR Foundation">
-		>
 	>
 	other_details = <
 		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/3.0/.">
@@ -80,7 +80,7 @@ This archetype is designed to be used within the 'Timing' SLOT within the CLUSTE
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"8891aeee5c710f5d86fbbb1ff971e63a">
+		["MD5-CAM-1.0.1"] = <"40e0aad1bf678fbcd702ba084473a06e">
 		["build_uid"] = <"319e2df4-1bec-49a3-bbab-6b8a0e5bc218">
 		["revision"] = <"1.0.1">
 	>
@@ -91,7 +91,7 @@ definition
 			ELEMENT[at0003] occurrences matches {0..1} matches {    -- Frequency
 				value matches {
 					C_DV_QUANTITY <
-						property = <[openehr::382]>
+						
 						list = <
 							["1"] = <
 								units = <"1/d">
@@ -115,62 +115,6 @@ definition
 							>
 						>
 					>
-					DV_INTERVAL<DV_QUANTITY> matches {
-						upper matches {
-							C_DV_QUANTITY <
-								property = <[openehr::382]>
-								list = <
-									["1"] = <
-										units = <"1/d">
-										magnitude = <|>=1.0|>
-										precision = <|0|>
-									>
-									["2"] = <
-										units = <"1/min">
-										magnitude = <|>=1.0|>
-										precision = <|0|>
-									>
-									["3"] = <
-										units = <"1/s">
-										magnitude = <|>=1.0|>
-										precision = <|0|>
-									>
-									["4"] = <
-										units = <"1/h">
-										magnitude = <|>=1.0|>
-										precision = <|0|>
-									>
-								>
-							>
-						}
-						lower matches {
-							C_DV_QUANTITY <
-								property = <[openehr::382]>
-								list = <
-									["1"] = <
-										units = <"1/d">
-										magnitude = <|>=1.0|>
-										precision = <|0|>
-									>
-									["2"] = <
-										units = <"1/min">
-										magnitude = <|>=1.0|>
-										precision = <|0|>
-									>
-									["3"] = <
-										units = <"1/s">
-										magnitude = <|>=1.0|>
-										precision = <|0|>
-									>
-									["4"] = <
-										units = <"1/h">
-										magnitude = <|>=1.0|>
-										precision = <|0|>
-									>
-								>
-							>
-						}
-					}
 				}
 			}
 			ELEMENT[at0014] occurrences matches {0..1} matches {    -- Interval
@@ -183,14 +127,6 @@ definition
 			ELEMENT[at0004] occurrences matches {0..*} matches {    -- Specific time
 				value matches {
 					DV_TIME matches {*}
-					DV_INTERVAL<DV_TIME> matches {
-						upper matches {
-							DV_TIME matches {*}
-						}
-						lower matches {
-							DV_TIME matches {*}
-						}
-					}
 				}
 			}
 			ELEMENT[at0027] occurrences matches {0..1} matches {    -- Timing description
