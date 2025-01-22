@@ -105,6 +105,22 @@ Skal ikke brukes til å registrere målinger i fysiske undersøkelser. Bruk mål
 
 Skal ikke brukes til å registrere målinger i bildebehandling. Bruk målerelaterte dataelementer i sammenheng med CLUSTER-arketyper for hvert modalitets- og/eller organspesifikke bildefunn.">
 		>
+		["ar-sy"] = <
+			language = <[ISO_639-1::ar-sy]>
+			purpose = <"*To record the measurements that represent the physical dimensions of a specimen.  (en)">
+			keywords = <"*specimen (en)","*laboratory (en)","*sample (en)","*pathology (en)","*size (en)","*volume (en)","*area (en)","*weight (en)","*dimension (en)","*length (en)","*width (en)","*diameter (en)","*mass (en)","*thickness (en)">
+			copyright = <"© openEHR Foundation">
+			use = <"*Use to record the measurements that represent the physical dimensions of a specimen.
+
+This cluster can be nested in the 'Physical properties' slot of the archetype CLUSTER.specimen.\"
+For example:
+- an 8.0 x 10.2 x 6.5 mm tumor specimen from the intestine;
+- a skin biopsy 4 mm diameter and 4 mm thick;
+- 7 ml of blood in a vacuum tube.
+
+The size of a specimen may be recorded in two or more linear measurements (dimensions), e.g. length, width and depth (height). If it is not possible to determine the orientation of the specimen, each dimension can be recorded by repeating the 'Length' or 'Diameter' data element. (en)">
+			misuse = <"*Not to be used to record measurements for body segments. Use the body segment family of archetypes for this purpose.(en)">
+		>
 		["en"] = <
 			language = <[ISO_639-1::en]>
 			purpose = <"To record the measurements that represent the physical dimensions of a specimen.">
@@ -125,22 +141,6 @@ Not to be used to record measurements in physical examinations. Use measurement-
 
 Not to be used to record measurements in imaging examinations. Use measurement-related data elements within the context of CLUSTER archetypes for each modality- and/or organ-specific imaging finding.">
 		>
-		["ar-sy"] = <
-			language = <[ISO_639-1::ar-sy]>
-			purpose = <"*To record the measurements that represent the physical dimensions of a specimen.  (en)">
-			keywords = <"*specimen (en)","*laboratory (en)","*sample (en)","*pathology (en)","*size (en)","*volume (en)","*area (en)","*weight (en)","*dimension (en)","*length (en)","*width (en)","*diameter (en)","*mass (en)","*thickness (en)">
-			copyright = <"© openEHR Foundation">
-			use = <"*Use to record the measurements that represent the physical dimensions of a specimen.
-
-This cluster can be nested in the 'Physical properties' slot of the archetype CLUSTER.specimen.\"
-For example:
-- an 8.0 x 10.2 x 6.5 mm tumor specimen from the intestine;
-- a skin biopsy 4 mm diameter and 4 mm thick;
-- 7 ml of blood in a vacuum tube.
-
-The size of a specimen may be recorded in two or more linear measurements (dimensions), e.g. length, width and depth (height). If it is not possible to determine the orientation of the specimen, each dimension can be recorded by repeating the 'Length' or 'Diameter' data element. (en)">
-			misuse = <"*Not to be used to record measurements for body segments. Use the body segment family of archetypes for this purpose.(en)">
-		>
 	>
 	other_details = <
 		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
@@ -149,7 +149,7 @@ The size of a specimen may be recorded in two or more linear measurements (dimen
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"EF1937C524E92D33AAC3547494C11DE5">
+		["MD5-CAM-1.0.1"] = <"ef8892409b7c7a5ade469299755af56c">
 		["build_uid"] = <"c2f040ab-ed8b-4cbb-8117-6b86a2fd89e2">
 		["ip_acknowledgements"] = <"This artefact includes content from SNOMED Clinical Terms® (SNOMED CT®) which is copyrighted material of the International Health Terminology Standards Development Organisation (IHTSDO). Where an implementation of this artefact makes use of SNOMED CT content, the implementer must have the appropriate SNOMED CT Affiliate license - for more information contact https://www.snomed.org/snomed-ct/get-snomed or info@snomed.org.">
 		["revision"] = <"1.0.2-alpha">
@@ -165,7 +165,7 @@ definition
 						list = <
 							["1"] = <
 								units = <"uL">
-								magnitude = <|>=0.0|>
+								magnitude = <|0.0..1.0|>
 							>
 							["2"] = <
 								units = <"ml">
@@ -271,7 +271,7 @@ definition
 						}
 						upper matches {
 							C_DV_QUANTITY <
-								property = <[openehr::129]>
+								
 								list = <
 									["1"] = <
 										units = <"uL">
@@ -334,7 +334,7 @@ definition
 						list = <
 							["1"] = <
 								units = <"nm">
-								magnitude = <|>=0.0|>
+								magnitude = <|0.0..1.0|>
 							>
 							["2"] = <
 								units = <"um">
@@ -400,7 +400,7 @@ definition
 						}
 						upper matches {
 							C_DV_QUANTITY <
-								
+								property = <[openehr::122]>
 								list = <
 									["1"] = <
 										units = <"nm">
@@ -455,7 +455,7 @@ definition
 						list = <
 							["1"] = <
 								units = <"nm">
-								magnitude = <|>=0.0|>
+								magnitude = <|0.0..1.0|>
 							>
 							["2"] = <
 								units = <"um">
@@ -564,7 +564,7 @@ definition
 						list = <
 							["1"] = <
 								units = <"ng">
-								magnitude = <|>=0.0|>
+								magnitude = <|0.0..1.0|>
 							>
 							["2"] = <
 								units = <"ug">
