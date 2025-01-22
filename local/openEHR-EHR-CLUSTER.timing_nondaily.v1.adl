@@ -99,7 +99,7 @@ In use cases where it can be safely assumed that an activity should be carried o
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"36c3b2c61c679d2362dea62a8d4a274b">
+		["MD5-CAM-1.0.1"] = <"dd8c80fc4740c159d06aa15e73c7a790">
 		["build_uid"] = <"2ef82baf-6b4f-4485-9308-810aaae13914">
 		["revision"] = <"1.1.2">
 	>
@@ -117,14 +117,6 @@ definition
 			ELEMENT[at0001] occurrences matches {0..*} matches {    -- Specific date
 				value matches {
 					DV_DATE matches {*}
-					DV_INTERVAL<DV_DATE> matches {
-						upper matches {
-							DV_DATE matches {*}
-						}
-						lower matches {
-							DV_DATE matches {*}
-						}
-					}
 				}
 			}
 			ELEMENT[at0021] occurrences matches {0..1} matches {    -- Timing description
